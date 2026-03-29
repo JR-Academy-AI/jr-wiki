@@ -1,0 +1,44 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ ! -f /tmp/.claude-wiki-pulled-$(date +%Y%m%d) ]; then cd /Users/lightman/Documents/sites/jr-academy-ai && git pull --rebase --quiet 2>/dev/null; touch /tmp/.claude-wiki-pulled-$(date +%Y%m%d); fi",
+            "timeout": 15000
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Edit(**)",
+      "Write(src/content/**)",
+      "Write(public/images/**)",
+      "Write(.claude/**)",
+      "Glob(**)",
+      "Grep(**)",
+      "Bash(bun *)",
+      "Bash(git status*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push*)",
+      "Bash(git pull*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(gh *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git reset --hard*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)"
+    ]
+  }
+}
