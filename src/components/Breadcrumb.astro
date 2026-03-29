@@ -1,0 +1,23 @@
+---
+interface Props {
+	items: { label: string; href?: string }[];
+}
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumb" aria-label="面包屑导航">
+	{items.map((item, i) => (
+		<>
+			{i > 0 && <span class="sep">/</span>}
+			{item.href ? <a href={item.href}>{item.label}</a> : <span class="current">{item.label}</span>}
+		</>
+	))}
+</nav>
+
+<style>
+	.breadcrumb { font-size: 13px; font-family: var(--font-mono); margin-bottom: 24px; color: var(--color-grey); }
+	.breadcrumb a { color: var(--color-grey); text-decoration: none; }
+	.breadcrumb a:hover { color: var(--color-red); }
+	.sep { margin: 0 6px; color: var(--color-light-grey); }
+	.current { color: var(--color-dark); font-weight: 700; }
+</style>

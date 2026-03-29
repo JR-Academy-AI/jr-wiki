@@ -1,0 +1,35 @@
+---
+interface Chapter { slug: string; title: string; order: number; href: string; }
+interface Props { bookTitle: string; chapters: Chapter[]; currentSlug?: string; }
+const { bookTitle, chapters, currentSlug } = Astro.props;
+const sorted = [...chapters].sort((a, b) => a.order - b.order);
+---
+
+<aside class="wiki-sidebar" id="wikiSidebar">
+	<div class="sidebar-header"><h4 class="sidebar-title">{bookTitle}</h4></div>
+	<nav class="sidebar-nav">
+		{sorted.map((ch, i) => (
+			<a href={ch.href} class:list={['sidebar-link', { active: ch.slug === currentSlug }]}>
+				<span class="chapter-num">{String(i + 1).padStart(2, '0')}</span>
+				<span class="chapter-title">{ch.title}</span>
+			</a>
+		))}
+	</nav>
+</aside>
+
+<style>
+	.wiki-sidebar { width: var(--sidebar-width); position: sticky; top: calc(var(--header-height) + 24px); align-self: flex-start; max-height: calc(100dvh - var(--header-height) - 48px); overflow-y: auto; background: var(--color-white); border: var(--border); box-shadow: var(--shadow-sm); }
+	.sidebar-header { padding: 16px 20px; border-bottom: var(--border-sm); background: var(--color-dark); }
+	.sidebar-title { font-size: 14px; font-weight: 800; color: var(--color-white); margin: 0; }
+	.sidebar-nav { display: flex; flex-direction: column; }
+	.sidebar-link { display: flex; align-items: flex-start; gap: 10px; padding: 12px 20px; font-size: 14px; color: var(--color-dark); text-decoration: none; border-bottom: 1px solid var(--color-light-grey); border-left: 3px solid transparent; transition: background 0.15s, border-color 0.15s; }
+	.sidebar-link:hover { background: var(--color-warm-bg); color: var(--color-dark); }
+	.sidebar-link.active { background: var(--color-warm-bg); border-left-color: var(--color-red); font-weight: 600; }
+	.chapter-num { font-family: var(--font-mono); font-size: 12px; color: var(--color-grey); flex-shrink: 0; margin-top: 2px; }
+	.sidebar-link.active .chapter-num { color: var(--color-red); }
+	.chapter-title { line-height: 1.4; }
+	@media (max-width: 1024px) {
+		.wiki-sidebar { display: none; position: fixed; top: var(--header-height); left: 0; bottom: 0; z-index: 98; width: 300px; max-height: none; box-shadow: 8px 0 24px rgba(0,0,0,0.2); }
+		.wiki-sidebar.open { display: block; }
+	}
+</style>

@@ -1,0 +1,76 @@
+---
+const navItems = [
+	{ label: '电子书', href: '/learn-wiki/' },
+	{ label: '文章', href: '/learn-wiki/articles/' },
+	{ label: '帮助中心', href: '/learn-wiki/help/' },
+	{ label: '学员故事', href: '/learn-wiki/stories/' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+	<div class="header-inner container">
+		<a href="/learn-wiki/" class="logo">
+			<span class="logo-badge">JR</span>
+			<span class="logo-text">电子书</span>
+		</a>
+		<nav class="nav">
+			{navItems.map((item) => (
+				<a
+					href={item.href}
+					class:list={['nav-link', { active: currentPath.startsWith(item.href) && (item.href !== '/learn-wiki/' || currentPath === '/learn-wiki/') }]}
+				>
+					{item.label}
+				</a>
+			))}
+		</nav>
+		<button class="mobile-menu-btn" aria-label="菜单" id="mobileMenuBtn">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+				<line x1="3" y1="6" x2="21" y2="6" />
+				<line x1="3" y1="12" x2="21" y2="12" />
+				<line x1="3" y1="18" x2="21" y2="18" />
+			</svg>
+		</button>
+	</div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay">
+	<nav class="mobile-nav">
+		{navItems.map((item) => (
+			<a href={item.href} class="mobile-nav-link">{item.label}</a>
+		))}
+	</nav>
+</div>
+
+<style>
+	.header {
+		height: var(--header-height);
+		background: var(--color-dark);
+		border-bottom: var(--border);
+		position: sticky;
+		top: 0;
+		z-index: 100;
+	}
+	.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+	.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+	.logo-badge { background: var(--color-red); color: var(--color-white); font-family: var(--font-heading); font-weight: 900; font-size: 18px; padding: 4px 10px; border: 2px solid var(--color-white); }
+	.logo-text { color: var(--color-white); font-family: var(--font-heading); font-weight: 800; font-size: 20px; }
+	.nav { display: flex; gap: 8px; }
+	.nav-link { color: rgba(255,255,255,0.75); font-family: var(--font-heading); font-weight: 600; font-size: 15px; padding: 6px 14px; transition: color 0.15s, background 0.15s; }
+	.nav-link:hover, .nav-link.active { color: var(--color-white); background: rgba(255,255,255,0.1); }
+	.mobile-menu-btn { display: none; background: none; border: none; color: var(--color-white); cursor: pointer; padding: 4px; }
+	.mobile-overlay { display: none; position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 99; }
+	.mobile-overlay.open { display: block; }
+	.mobile-nav { background: var(--color-white); border-bottom: var(--border); padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+	.mobile-nav-link { font-family: var(--font-heading); font-weight: 600; font-size: 16px; padding: 12px 16px; color: var(--color-dark); border: var(--border-sm); background: var(--color-warm-bg); transition: transform 0.15s, box-shadow 0.15s; box-shadow: var(--shadow-sm); }
+	.mobile-nav-link:hover { transform: translate(3px,3px); box-shadow: none; color: var(--color-dark); }
+	@media (max-width: 768px) { .nav { display: none; } .mobile-menu-btn { display: block; } }
+</style>
+
+<script>
+	const btn = document.getElementById('mobileMenuBtn');
+	const overlay = document.getElementById('mobileOverlay');
+	btn?.addEventListener('click', () => overlay?.classList.toggle('open'));
+	overlay?.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+</script>

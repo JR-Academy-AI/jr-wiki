@@ -1,0 +1,21 @@
+---
+interface NavItem { title: string; href: string; }
+interface Props { prev?: NavItem; next?: NavItem; }
+const { prev, next } = Astro.props;
+---
+
+{(prev || next) && (
+	<nav class="prev-next">
+		{prev ? <a href={prev.href} class="pn-link pn-prev card-sm"><span class="pn-label">上一章</span><span class="pn-title">{prev.title}</span></a> : <div />}
+		{next ? <a href={next.href} class="pn-link pn-next card-sm"><span class="pn-label">下一章</span><span class="pn-title">{next.title}</span></a> : <div />}
+	</nav>
+)}
+
+<style>
+	.prev-next { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; padding-top: 32px; border-top: var(--border-sm); }
+	.pn-link { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: inherit; }
+	.pn-next { text-align: right; }
+	.pn-label { font-family: var(--font-mono); font-size: 12px; color: var(--color-grey); }
+	.pn-title { font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: var(--color-dark); }
+	@media (max-width: 576px) { .prev-next { grid-template-columns: 1fr; } }
+</style>
