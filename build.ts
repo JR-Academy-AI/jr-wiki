@@ -1,0 +1,352 @@
+/**
+ * jr-wiki build script
+ *
+ * Reads markdown content → outputs:
+ *   dist/manifest.json       — metadata for main site discovery
+ *   dist/content/books/      — raw markdown files
+ *   dist/content/articles/   — raw markdown files
+ *   dist/content/help/       — raw markdown files
+ *   dist/content/stories/    — raw markdown files
+ *   dist/_preview/index.html — internal management preview page
+ *   dist/robots.txt          — disallow _preview from crawlers
+ */
+
+import { readFileSync, writeFileSync, readdirSync, statSync, mkdirSync, cpSync, existsSync, rmSync } from 'fs';
+import { join } from 'path';
+
+const SRC = './src/content';
+const DIST = './dist';
+
+// Clean
+if (existsSync(DIST)) rmSync(DIST, { recursive: true });
+mkdirSync(DIST, { recursive: true });
+
+// ─── Parse helpers ───
+
+function parseYaml(yaml: string): Record<string, any> {
+	const result: Record<string, any> = {};
+	const lines = yaml.split('\n');
+	let currentKey = '';
+	let currentArray: any[] | null = null;
+
+	for (const line of lines) {
+		const arrayMatch = line.match(/^\s+-\s+(.+)/);
+		if (arrayMatch && currentKey) {
+			if (!currentArray) { currentArray = []; result[currentKey] = currentArray; }
+			currentArray.push(parseValue(arrayMatch[1].trim()));
+			continue;
+		}
+		const kvMatch = line.match(/^(\w[\w-]*)\s*:\s*(.*)/);
+		if (kvMatch) {
+			currentArray = null;
+			currentKey = kvMatch[1];
+			const raw = kvMatch[2].trim();
+			result[currentKey] = raw === '' ? null : parseValue(raw);
+		}
+	}
+	return result;
+}
+
+function parseValue(val: string): any {
+	if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) return val.slice(1, -1);
+	if (val === 'true') return true;
+	if (val === 'false') return false;
+	if (/^-?\d+(\.\d+)?$/.test(val)) return Number(val);
+	return val;
+}
+
+function extractFrontmatter(content: string): { meta: Record<string, any>; body: string } {
+	const match = content.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)/);
+	if (!match) return { meta: {}, body: content };
+	return { meta: parseYaml(match[1]), body: match[2] };
+}
+
+function readMdFiles(dir: string) {
+	if (!existsSync(dir)) return [];
+	return readdirSync(dir).filter(f => f.endsWith('.md')).sort();
+}
+
+// ─── Build Books ───
+
+const booksDir = join(SRC, 'wiki');
+const books: any[] = [];
+
+for (const folder of readdirSync(booksDir).filter(f => statSync(join(booksDir, f)).isDirectory())) {
+	const metaPath = join(booksDir, folder, '_meta.yaml');
+	if (!existsSync(metaPath)) continue;
+
+	const meta = parseYaml(readFileSync(metaPath, 'utf-8'));
+	const chapters: any[] = [];
+
+	// Copy markdown files
+	const outDir = join(DIST, 'content/books', folder);
+	mkdirSync(outDir, { recursive: true });
+
+	for (const file of readMdFiles(join(booksDir, folder))) {
+		const raw = readFileSync(join(booksDir, folder, file), 'utf-8');
+		const { meta: fm } = extractFrontmatter(raw);
+		const slug = file.replace('.md', '');
+
+		// Copy raw markdown
+		cpSync(join(booksDir, folder, file), join(outDir, file));
+
+		chapters.push({
+			slug,
+			title: fm.title,
+			description: fm.description || null,
+			order: fm.order || 0,
+			contentUrl: `/learn-wiki/content/books/${folder}/${file}`,
+		});
+	}
+
+	chapters.sort((a, b) => a.order - b.order);
+
+	books.push({
+		slug: folder,
+		title: meta.title,
+		description: meta.description,
+		tags: meta.tags || [],
+		order: meta.order || 0,
+		chapterCount: chapters.length,
+		chapters,
+	});
+}
+
+books.sort((a, b) => a.order - b.order);
+
+// ─── Build Articles ───
+
+const articlesDir = join(SRC, 'articles');
+const articles: any[] = [];
+const articlesOutDir = join(DIST, 'content/articles');
+mkdirSync(articlesOutDir, { recursive: true });
+
+for (const file of readMdFiles(articlesDir)) {
+	const raw = readFileSync(join(articlesDir, file), 'utf-8');
+	const { meta: fm } = extractFrontmatter(raw);
+	const slug = file.replace('.md', '');
+
+	cpSync(join(articlesDir, file), join(articlesOutDir, file));
+
+	articles.push({
+		slug,
+		title: fm.title,
+		description: fm.description || null,
+		publishDate: fm.publishDate || null,
+		tags: fm.tags || [],
+		author: fm.author || 'JR Academy',
+		contentUrl: `/learn-wiki/content/articles/${file}`,
+	});
+}
+
+articles.sort((a, b) => {
+	if (!a.publishDate || !b.publishDate) return 0;
+	return new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime();
+});
+
+// ─── Build Help ───
+
+const helpDir = join(SRC, 'help');
+const helpItems: any[] = [];
+const helpOutDir = join(DIST, 'content/help');
+mkdirSync(helpOutDir, { recursive: true });
+
+for (const file of readMdFiles(helpDir)) {
+	const raw = readFileSync(join(helpDir, file), 'utf-8');
+	const { meta: fm } = extractFrontmatter(raw);
+	const slug = file.replace('.md', '');
+
+	cpSync(join(helpDir, file), join(helpOutDir, file));
+
+	helpItems.push({
+		slug,
+		title: fm.title,
+		description: fm.description || null,
+		category: fm.category || null,
+		order: fm.order || 0,
+		contentUrl: `/learn-wiki/content/help/${file}`,
+	});
+}
+
+helpItems.sort((a, b) => a.order - b.order);
+
+// ─── Build Stories ───
+
+const storiesDir = join(SRC, 'stories');
+const storyItems: any[] = [];
+const storiesOutDir = join(DIST, 'content/stories');
+mkdirSync(storiesOutDir, { recursive: true });
+
+for (const file of readMdFiles(storiesDir)) {
+	const raw = readFileSync(join(storiesDir, file), 'utf-8');
+	const { meta: fm } = extractFrontmatter(raw);
+	const slug = file.replace('.md', '');
+
+	cpSync(join(storiesDir, file), join(storiesOutDir, file));
+
+	storyItems.push({
+		slug,
+		title: fm.title,
+		description: fm.description || null,
+		name: fm.name,
+		role: fm.role,
+		company: fm.company || null,
+		course: fm.course || null,
+		highlight: fm.highlight || null,
+		publishDate: fm.publishDate || null,
+		tags: fm.tags || [],
+		contentUrl: `/learn-wiki/content/stories/${file}`,
+	});
+}
+
+storyItems.sort((a, b) => {
+	if (!a.publishDate || !b.publishDate) return 0;
+	return new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime();
+});
+
+// ─── Write manifest.json ───
+
+const manifest = {
+	generatedAt: new Date().toISOString(),
+	baseUrl: '/learn-wiki',
+	books,
+	articles,
+	help: helpItems,
+	stories: storyItems,
+	stats: {
+		totalBooks: books.length,
+		totalChapters: books.reduce((s, b) => s + b.chapterCount, 0),
+		totalArticles: articles.length,
+		totalHelp: helpItems.length,
+		totalStories: storyItems.length,
+	},
+};
+
+writeFileSync(join(DIST, 'manifest.json'), JSON.stringify(manifest, null, 2));
+
+// ─── Write robots.txt ───
+
+writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nDisallow: /_preview/\nDisallow: /content/\n`);
+
+// ─── Generate preview page ───
+
+const previewDir = join(DIST, '_preview');
+mkdirSync(previewDir, { recursive: true });
+
+const previewHtml = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>JR Wiki 内容管理预览</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root { --red: #ff5757; --dark: #10162f; --warm: #fff1e7; --grey: #6b7280; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "DM Sans", "Noto Sans SC", sans-serif; background: var(--warm); color: var(--dark); line-height: 1.6; }
+.header { background: var(--dark); color: #fff; padding: 20px 24px; border-bottom: 3px solid #000; }
+.header h1 { font-family: "Bricolage Grotesque", sans-serif; font-size: 22px; }
+.header p { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 4px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+.stats { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+.stat { background: #fff; border: 2px solid #000; box-shadow: 4px 4px 0 #000; padding: 12px 20px; font-family: "Space Mono", monospace; }
+.stat strong { font-size: 24px; color: var(--red); display: block; }
+.stat span { font-size: 12px; color: var(--grey); }
+.section { margin-bottom: 40px; }
+.section h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 20px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #000; }
+.card { background: #fff; border: 2px solid #000; box-shadow: 4px 4px 0 #000; padding: 16px; margin-bottom: 10px; transition: transform 0.15s, box-shadow 0.15s; }
+.card:hover { transform: translate(3px,3px); box-shadow: none; }
+.card h3 { font-size: 16px; margin-bottom: 4px; }
+.card p { font-size: 13px; color: var(--grey); }
+.tag { display: inline-block; font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700; padding: 2px 8px; border: 2px solid #000; background: #ffde59; margin-right: 4px; }
+.tag.green { background: #7ed957; }
+.tag.blue { background: #38b6ff; color: #fff; }
+.chapters { margin-top: 8px; padding-left: 20px; }
+.chapters li { font-size: 13px; color: var(--grey); margin-bottom: 2px; }
+.meta { font-family: "Space Mono", monospace; font-size: 11px; color: var(--grey); margin-top: 6px; }
+.badge { background: var(--red); color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border: 2px solid #000; margin-left: 8px; }
+@media (max-width: 768px) { .stats { flex-direction: column; } }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>JR Wiki 内容管理预览 <span class="badge">内部</span></h1>
+  <p>生成时间: ${new Date().toLocaleString('zh-CN', { timeZone: 'Australia/Sydney' })} AEST · 此页面不对外公开</p>
+</div>
+<div class="container">
+  <div class="stats">
+    <div class="stat"><strong>${manifest.stats.totalBooks}</strong><span>电子书</span></div>
+    <div class="stat"><strong>${manifest.stats.totalChapters}</strong><span>章节</span></div>
+    <div class="stat"><strong>${manifest.stats.totalArticles}</strong><span>文章</span></div>
+    <div class="stat"><strong>${manifest.stats.totalHelp}</strong><span>帮助文档</span></div>
+    <div class="stat"><strong>${manifest.stats.totalStories}</strong><span>学员故事</span></div>
+  </div>
+
+  <div class="section">
+    <h2>📖 电子书</h2>
+    ${books.map(b => `
+    <div class="card">
+      <h3>${b.title} <span class="tag">${b.chapterCount} 章</span></h3>
+      <p>${b.description}</p>
+      <div style="margin-top:6px">${(b.tags || []).map((t: string) => `<span class="tag">${t}</span>`).join('')}</div>
+      <ol class="chapters">
+        ${b.chapters.map((c: any) => `<li>${c.title}</li>`).join('')}
+      </ol>
+    </div>`).join('')}
+  </div>
+
+  <div class="section">
+    <h2>📝 文章</h2>
+    ${articles.map(a => `
+    <div class="card">
+      <h3>${a.title}</h3>
+      <p>${a.description}</p>
+      <div class="meta">${a.publishDate || ''} · ${a.author} ${(a.tags || []).map((t: string) => `<span class="tag">${t}</span>`).join('')}</div>
+    </div>`).join('')}
+  </div>
+
+  <div class="section">
+    <h2>❓ 帮助中心</h2>
+    ${helpItems.map(h => `
+    <div class="card">
+      <h3>${h.title} <span class="tag">${h.category}</span></h3>
+      <p>${h.description}</p>
+    </div>`).join('')}
+  </div>
+
+  <div class="section">
+    <h2>🌟 学员故事</h2>
+    ${storyItems.map(s => `
+    <div class="card">
+      <h3>${s.title}</h3>
+      <p>${s.description}</p>
+      <div style="margin-top:6px">
+        <span class="tag">${s.role}</span>
+        ${s.company ? `<span class="tag green">${s.company}</span>` : ''}
+        ${s.course ? `<span class="tag blue">${s.course}</span>` : ''}
+        ${s.highlight ? `<span class="tag" style="background:#ff914d;color:#fff">${s.highlight}</span>` : ''}
+      </div>
+    </div>`).join('')}
+  </div>
+</div>
+</body>
+</html>`;
+
+writeFileSync(join(previewDir, 'index.html'), previewHtml);
+
+// ─── CORS headers file for nginx ───
+
+writeFileSync(join(DIST, '_headers'), `/*\n  Access-Control-Allow-Origin: *\n`);
+
+// ─── Done ───
+
+console.log(`✅ Built jr-wiki content API`);
+console.log(`   📖 ${books.length} books (${manifest.stats.totalChapters} chapters)`);
+console.log(`   📝 ${articles.length} articles`);
+console.log(`   ❓ ${helpItems.length} help docs`);
+console.log(`   🌟 ${storyItems.length} stories`);
+console.log(`   📄 dist/manifest.json`);
+console.log(`   📂 dist/content/`);
+console.log(`   👀 dist/_preview/index.html`);

@@ -1,4 +1,4 @@
-name: Deploy Wiki
+name: Deploy Wiki Content
 
 on:
   push:
@@ -12,8 +12,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      - run: bun install
-      - run: bun run build
+      - run: bun run build.ts
       - name: Deploy to server
         uses: appleboy/scp-action@v0.1.7
         with:
