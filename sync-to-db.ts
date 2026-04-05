@@ -147,7 +147,7 @@ function prepareArticles() {
 			publishDate: article.publishDate || undefined,
 			tags: article.tags || [],
 			author: article.author || 'JR Academy',
-			contentUrl: article.contentUrl
+			contentUrl: article.contentUrl // e.g. src/content/articles/cursor-tips.md
 		});
 	}
 

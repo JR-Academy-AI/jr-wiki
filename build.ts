@@ -95,7 +95,7 @@ for (const folder of readdirSync(booksDir).filter(f => statSync(join(booksDir, f
 			title: fm.title,
 			description: fm.description || null,
 			order: fm.order || 0,
-			contentUrl: `/learn-wiki/content/books/${folder}/${file}`,
+			contentUrl: `src/content/wiki/${folder}/${file}`,
 		});
 	}
 
@@ -135,7 +135,7 @@ for (const file of readMdFiles(articlesDir)) {
 		publishDate: fm.publishDate || null,
 		tags: fm.tags || [],
 		author: fm.author || 'JR Academy',
-		contentUrl: `/learn-wiki/content/articles/${file}`,
+		contentUrl: `src/content/articles/${file}`,
 	});
 }
 
@@ -164,7 +164,7 @@ for (const file of readMdFiles(helpDir)) {
 		description: fm.description || null,
 		category: fm.category || null,
 		order: fm.order || 0,
-		contentUrl: `/learn-wiki/content/help/${file}`,
+		contentUrl: `src/content/help/${file}`,
 	});
 }
 
@@ -195,7 +195,7 @@ for (const file of readMdFiles(storiesDir)) {
 		highlight: fm.highlight || null,
 		publishDate: fm.publishDate || null,
 		tags: fm.tags || [],
-		contentUrl: `/learn-wiki/content/stories/${file}`,
+		contentUrl: `src/content/stories/${file}`,
 	});
 }
 
@@ -208,7 +208,7 @@ storyItems.sort((a, b) => {
 
 const manifest = {
 	generatedAt: new Date().toISOString(),
-	baseUrl: '/learn-wiki',
+	baseUrl: '',
 	books,
 	articles,
 	help: helpItems,
