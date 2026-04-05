@@ -68,6 +68,23 @@ function preparePosts() {
 	return posts;
 }
 
+// ─── Prepare wikis (books with chapters) ───
+
+function prepareWikis() {
+	return (manifest.books || []).map((book: any) => ({
+		slug: book.slug,
+		title: book.title,
+		description: book.description || '',
+		tags: book.tags || [],
+		chapters: (book.chapters || []).map((ch: any) => ({
+			slug: ch.slug,
+			title: ch.title,
+			order: ch.order || 0,
+			contentUrl: ch.contentUrl
+		}))
+	}));
+}
+
 // ─── Prepare stories ───
 
 function prepareStories() {
@@ -114,10 +131,12 @@ async function syncEndpoint(endpoint: string, body: Record<string, any>, label: 
 // ─── Run ───
 
 const posts = preparePosts();
+const wikis = prepareWikis();
 const stories = prepareStories();
 
 const tasks: Promise<any>[] = [];
 if (posts.length > 0) tasks.push(syncEndpoint('posts/sync/jr-wiki', { articles: posts }, `${posts.length} posts`));
+if (wikis.length > 0) tasks.push(syncEndpoint('wikis/sync/jr-wiki', { wikis }, `${wikis.length} wikis`));
 if (stories.length > 0) tasks.push(syncEndpoint('testimonials/sync/jr-wiki', { stories }, `${stories.length} stories`));
 
 await Promise.all(tasks);
