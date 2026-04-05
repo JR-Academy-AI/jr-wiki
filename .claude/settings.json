@@ -32,7 +32,9 @@
       "Bash(git diff*)",
       "Bash(ls *)",
       "Bash(cat *)",
-      "Bash(gh *)"
+      "Bash(gh *)",
+      "WebSearch(*)",
+      "WebFetch(*)"
     ],
     "deny": [
       "Bash(rm -rf *)",

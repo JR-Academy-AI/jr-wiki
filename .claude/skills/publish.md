@@ -1,6 +1,6 @@
 # /publish — 发布内容到线上
 
-把当前修改提交并推送到线上。Push 到 main 后 GitHub Actions 自动构建部署。
+把当前修改提交并推送到线上。Push 到 main 后 GitHub Actions 自动构建部署到 nginx。
 
 ## 使用方法
 ```
@@ -17,11 +17,37 @@
 1. 运行 `bun run build` 确认构建没有错误
 2. 运行 `git status` 查看有哪些修改
 3. 用 `git add` 只添加 `src/content/` 和 `public/images/` 下的文件变更
-4. 生成提交信息（如果用户提供了说明就用用户的，否则自动生成）
+4. 生成提交信息
 5. `git commit` 提交
 6. `git push origin main` 推送
-7. 告诉用户：已推送，GitHub Actions 会自动部署，2-3分钟后线上更新
-8. 提供线上地址供检查
+7. **判断是否需要同步元数据到数据库**（见下方规则）
+8. 告诉用户结果
+
+## 是否需要 sync？
+
+### 不需要 sync（只改了内容）
+
+修改已有 .md 文件的正文 → push 后 nginx 部署 → 官网自动读到新内容。
+
+告诉用户：
+> ✅ 已推送。nginx 部署后（2-3 分钟）官网自动显示新内容，不需要额外操作。
+
+### 需要 sync（新增/删除/改元数据）
+
+以下情况需要运行 sync 把元数据更新到 MongoDB：
+- **新增**了 .md 文件（新文章、新章节、新故事）
+- **删除**了 .md 文件
+- **修改**了 frontmatter 中的 title、description、tags（元数据变了）
+
+告诉用户：
+> ✅ 已推送。因为新增/删除了内容，需要同步元数据到数据库：
+> ```bash
+> ADMIN_TOKEN=xxx bun run sync
+> ```
+> 如果是生产环境：
+> ```bash
+> ADMIN_TOKEN=xxx API_URL=https://api.jiangren.com.au bun run sync
+> ```
 
 ## 提交信息格式
 

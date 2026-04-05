@@ -6,7 +6,8 @@
   "scripts": {
     "build": "bun run build.ts",
     "dev": "bun run build.ts && bun run serve",
-    "serve": "bunx serve dist -l 4321"
+    "serve": "bunx serve dist -l 4321",
+    "sync": "bun run build.ts && bun run sync-to-db.ts"
   },
   "devDependencies": {
     "serve": "^14.2.0"

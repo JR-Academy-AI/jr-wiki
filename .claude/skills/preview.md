@@ -1,6 +1,6 @@
-# /preview — 本地预览网站
+# /preview — 本地预览
 
-启动本地开发服务器预览当前内容。
+构建内容并启动本地预览服务器。
 
 ## 使用方法
 ```
@@ -10,11 +10,17 @@
 ## 执行步骤
 
 1. 确认在 jr-wiki 目录下
-2. 确认依赖已安装（`node_modules` 存在），没有则运行 `bun install`
-3. 运行 `bun run dev`
-4. 告诉用户：浏览器打开 http://localhost:4321/learn-wiki/ 即可预览
+2. 运行 `bun run dev`（会先 build 再启动 serve）
+3. 告诉用户预览地址
+
+## 预览地址
+
+- 内部管理预览页: http://localhost:4321/_preview/
+- manifest.json: http://localhost:4321/manifest.json
+- 原始 Markdown: http://localhost:4321/content/articles/xxx.md
 
 ## 注意事项
 
-- 如果端口 4321 被占用，Astro 会自动换端口，注意终端输出
+- 这是 jr-wiki 的内容预览，不是官网页面预览
+- 要看官网渲染效果，需要同时启动后端 (`jr-academy`) 和前端 (`jr-academy-web-zh`)
 - Ctrl+C 停止预览

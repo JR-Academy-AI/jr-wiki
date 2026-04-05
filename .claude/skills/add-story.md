@@ -1,6 +1,6 @@
 # /add-story — 添加学员故事
 
-发布一篇学员成功故事 / 学习心得。
+发布一篇学员成功故事。故事会同步到官网首页 testimonials 区。
 
 ## 使用方法
 ```
@@ -17,7 +17,7 @@
 2. 在 `src/content/stories/` 下创建 `.md` 文件
 3. 填入 frontmatter：title、description、name、role、company、course、tags、publishDate、highlight
 4. 根据用户提供的信息生成故事内容
-5. 展示结果，提醒用 `/preview` 预览或 `/publish` 发布
+5. 展示结果
 
 ## frontmatter 模板
 
@@ -32,7 +32,7 @@ course: "Web全栈开发"
 tags:
   - 转行
   - 前端
-publishDate: "2024-01-15"
+publishDate: 2026-04-01
 highlight: "6个月从零到offer"
 ---
 ```
@@ -40,5 +40,15 @@ highlight: "6个月从零到offer"
 ## 规则
 
 - publishDate 用当天日期
-- highlight 是一句话亮点，会显示在卡片上
+- highlight 是一句话亮点，会显示在首页卡片上
 - 故事要真实自然，避免过度夸张
+
+## 发布流程
+
+创建完成后告诉用户：
+> 学员故事已创建：`src/content/stories/{slug}.md`
+> 发布后会出现在官网首页学员故事区。
+>
+> 下一步：
+> 1. `/publish` 推送到线上
+> 2. `ADMIN_TOKEN=xxx bun run sync` 同步到 testimonials 集合（新增内容必须）

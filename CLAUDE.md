@@ -1,6 +1,31 @@
 # CLAUDE.md — jr-wiki
 
-JR Academy Headless 内容仓库。不生成前端页面，只输出 manifest.json + 原始 Markdown 供官网 Next.js 消费。零 canonical 冲突。
+JR Academy Headless 内容仓库。Markdown 部署为静态文件，后端 API 实时读取渲染。官网前端零改动。
+
+---
+
+## 架构
+
+```
+员工/AI 写 Markdown → push → CI 构建 → nginx 部署静态文件
+                                              ↓
+后端 API ← source=jr-wiki 时从 nginx 实时读取 .md → 转 HTML → 返回
+                                              ↓
+官网 /blog/xxx ← 前端正常查 API，不知道内容来自 jr-wiki
+```
+
+### DB 只存元数据，正文从文件读
+
+- `posts` 集合: `{ slug, title, source: "jr-wiki", contentUrl: "/content/articles/xxx.md" }`
+- `testimonials` 集合: `{ slug, name, source: "jr-wiki", description, ... }`
+- **正文不进 DB** — 后端实时 fetch contentUrl 的 .md 文件
+
+### 两种操作
+
+| 操作 | 场景 | 步骤 |
+|------|------|------|
+| 改内容 | 修改已有文章 | 改 md → push → 部署 → 自动生效 |
+| 加内容 | 新增文章/书/故事 | 改 md → push → 部署 → `bun run sync` |
 
 ---
 
@@ -8,7 +33,7 @@ JR Academy Headless 内容仓库。不生成前端页面，只输出 manifest.js
 
 你不需要懂代码！直接用中文告诉 Claude 你想做什么就行。
 
-### 常用命令（输入后回车即可）
+### 常用命令
 
 | 命令 | 作用 | 例子 |
 |------|------|------|
@@ -22,55 +47,40 @@ JR Academy Headless 内容仓库。不生成前端页面，只输出 manifest.js
 | `/publish` | 发布到线上 | `/publish 新增了AWS电子书` |
 | `/preview` | 本地预览 | 直接输入即可 |
 
-### 用自然语言也行
-
-你也可以直接用中文描述需求，不用记命令：
+### 自然语言也行
 
 - "帮我看一下现在有哪些内容"
 - "创建一本新的 React 面试宝典"
-- "给 Prompt Engineering 那本书加一章，讲 ChatGPT 的使用技巧"
-- "把第2章标题改成xxx"
+- "给 Prompt Engineering 那本书加一章"
 - "发一篇文章，讲如何用 AI 写简历"
-- "加一个学员故事，小王从零基础到拿到 offer"
 - "帮我发布到线上"
-- "我想预览一下当前效果"
 
 ### 注意事项
 
-- 改完内容后记得用 `/publish` 发布，否则线上看不到
-- 发布后等 2-3 分钟线上才会更新（GitHub Actions 自动部署）
-- 如果不确定改对没有，先用 `/preview` 本地看看
-- 每次打开 Claude Code 会自动拉取最新代码，不用管 git
+- **改已有内容**: push 后等 nginx 部署完就自动生效，不用跑 sync
+- **新增内容**: push 后还需要跑 `bun run sync` 把元数据注册到 DB
+- 发布后等 2-3 分钟线上更新（GitHub Actions 自动部署）
+- 先用 `/preview` 本地看看再发布
 
 ---
 
-## 架构
-
-```
-员工 Claude App 写 Markdown → push → build.ts → 部署到 nginx
-                                                      ↓
-官网 Next.js ← fetch /learn-wiki/manifest.json (发现内容)
-             ← fetch /learn-wiki/content/xxx.md (获取正文)
-             → SSR 渲染在官网 URL 下 (唯一 canonical)
-```
-
 ## 内容类型
 
-| 类型 | Markdown 位置 | 必填 frontmatter |
-|------|---------------|-----------------|
-| 电子书 | `src/content/wiki/{book}/` | title, wiki, order + `_meta.yaml` |
-| 文章 | `src/content/articles/` | title, description, publishDate, tags |
-| 帮助中心 | `src/content/help/` | title, description, category |
-| 学员故事 | `src/content/stories/` | title, description, name, role, publishDate |
+| 类型 | Markdown 位置 | 必填 frontmatter | 同步目标 |
+|------|---------------|-----------------|---------|
+| 电子书 | `src/content/wiki/{book}/` | title, wiki, order + `_meta.yaml` | posts 集合（每章一篇） |
+| 文章 | `src/content/articles/` | title, description, publishDate, tags | posts 集合 |
+| 帮助中心 | `src/content/help/` | title, description, category | 不进 DB，静态部署 |
+| 学员故事 | `src/content/stories/` | title, description, name, role, publishDate | testimonials 集合 |
 
 ## 构建输出
 
 ```
 dist/
-├── manifest.json           # 元数据（官网 fetch）
-├── content/                # 原始 Markdown（官网 fetch 渲染）
+├── manifest.json           # 元数据索引
+├── content/                # 原始 Markdown（nginx 静态服务，后端实时读取）
 ├── _preview/index.html     # 内部管理预览页（不对外）
-└── robots.txt              # 禁止爬虫
+└── robots.txt
 ```
 
 ## 命令
@@ -78,11 +88,17 @@ dist/
 ```bash
 bun run build     # 构建到 dist/
 bun run dev       # 构建 + 本地预览 http://localhost:4321
+bun run sync      # 构建 + 同步元数据到 MongoDB（需要 ADMIN_TOKEN）
 ```
 
-## 主站集成
+## 后端集成（jr-academy）
 
-```typescript
-const { books, articles, help, stories } = await fetch('/learn-wiki/manifest.json').then(r => r.json());
-const md = await fetch(article.contentUrl).then(r => r.text());
-```
+后端 PostService.getPostBySlug 的逻辑：
+1. 查 DB 拿到 post 记录
+2. 如果 `source === 'jr-wiki'` 且有 `contentUrl`
+3. fetch `JR_WIKI_BASE_URL + contentUrl` 获取 .md 文件
+4. 去掉 frontmatter，Markdown → HTML
+5. 作为 `content` 返回（和普通文章一样的格式）
+
+环境变量：
+- `JR_WIKI_BASE_URL` — 默认 dev: `http://localhost:4321`，prod: `https://jiangren.com.au/learn-wiki`

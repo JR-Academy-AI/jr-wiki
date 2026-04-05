@@ -1,6 +1,6 @@
 # /add-book — 创建一本新电子书
 
-创建一本新的电子书/系列教程。你只需要提供书名和主题，Claude 帮你搭好结构。
+创建一本新的电子书/系列教程。每个章节会作为独立 blog post 出现在官网 `/blog/{book-slug}-{chapter-slug}`。
 
 ## 使用方法
 ```
@@ -10,7 +10,6 @@
 例子：
 - `/add-book AWS入门指南 零基础学AWS云服务`
 - `/add-book React面试宝典`
-- `/add-book 数据分析实战`
 
 ## 执行步骤
 
@@ -18,7 +17,7 @@
 2. 在 `src/content/wiki/` 下创建文件夹
 3. 创建 `_meta.yaml`，包含 title、description、tags、order
 4. 创建第一章 `01-introduction.md` 作为占位
-5. 显示创建结果和本地预览地址
+5. 显示创建结果和官网地址
 
 ## 规则
 
@@ -26,7 +25,6 @@
 - 中文书名放在 `_meta.yaml` 的 title 字段
 - order 根据现有书籍数量自动递增
 - 章节文件必须有 frontmatter：title、wiki（= 文件夹名）、order
-- 创建完成后提醒用户可以用 `/add-chapter` 添加更多章节
 
 ## _meta.yaml 模板
 
@@ -49,3 +47,20 @@ order: 1
 description: "章节描述"
 ---
 ```
+
+## URL 规则
+
+每章是一篇独立 blog post：
+- slug: `{book-slug}-{chapter-slug}` (如 `aws-guide-01-introduction`)
+- 官网: `/blog/aws-guide-01-introduction`
+
+## 发布流程
+
+创建完成后告诉用户：
+> 电子书已创建：`src/content/wiki/{slug}/`
+>
+> 下一步：
+> 1. `/add-chapter {slug} 章节标题` 添加更多章节
+> 2. `/preview` 本地预览
+> 3. `/publish` 推送到线上
+> 4. `ADMIN_TOKEN=xxx bun run sync` 同步元数据到数据库（新增内容必须）

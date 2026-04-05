@@ -1,6 +1,6 @@
 # /add-help — 添加帮助文档
 
-添加一篇帮助中心文档（FAQ、操作指南等）。
+添加一篇帮助中心文档（FAQ、操作指南等）。帮助文档不进数据库，仅部署为静态文件。
 
 ## 使用方法
 ```
@@ -18,7 +18,7 @@
 2. 在 `src/content/help/` 下创建 `.md` 文件
 3. 填入 frontmatter：title、description、category、order
 4. 根据用户提供的信息生成帮助内容
-5. 展示结果，提醒用 `/publish` 发布
+5. 展示结果
 
 ## frontmatter 模板
 
@@ -36,3 +36,14 @@ order: 1
 - category 用中文，常见分类：账号、支付、课程、社区、技术
 - order 决定在同分类内的排序
 - 内容要简洁明了，用步骤式写法
+- 帮助文档**不进数据库**，只部署为静态文件在 nginx 上
+
+## 发布流程
+
+创建完成后告诉用户：
+> 帮助文档已创建：`src/content/help/{slug}.md`
+> 部署后可通过 `/learn-wiki/content/help/{slug}.md` 访问。
+>
+> 下一步：
+> 1. `/publish` 推送到线上
+> 2. 不需要 sync（帮助文档不进数据库）
