@@ -5,6 +5,8 @@ order: 4
 description: "用 Hooks 在 Claude Code 执行动作前后自动触发脚本，实现代码格式化、测试、安全检查全自动化"
 ---
 
+![Hooks 生命周期：PreToolUse 和 PostToolUse](https://code.claude.com/images/hooks-lifecycle.png)
+
 ## 什么是 Hooks
 
 Hooks 是 2026 年初发布的功能，让你在 Claude Code 执行特定动作**前后**自动触发自定义脚本。

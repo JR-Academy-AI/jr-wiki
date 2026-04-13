@@ -5,6 +5,8 @@ order: 5
 description: "用 Model Context Protocol 把数据库、GitHub、Slack、浏览器等外部工具接入 Claude Code，让 AI 直接操作你的真实系统"
 ---
 
+![MCP 架构：Claude Code 通过 MCP Server 连接外部系统](https://code.claude.com/images/mcp-architecture.png)
+
 ## MCP 是什么
 
 Model Context Protocol（MCP）是 Anthropic 在 2024 年 11 月发布的开源标准，让 AI 能连接外部工具和数据源。
