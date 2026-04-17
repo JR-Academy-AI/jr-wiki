@@ -16,6 +16,7 @@ import { join } from 'path';
 
 const SRC = './src/content';
 const DIST = './dist';
+const STATIC = './src/static';
 
 // Clean
 if (existsSync(DIST)) rmSync(DIST, { recursive: true });
@@ -227,6 +228,12 @@ writeFileSync(join(DIST, 'manifest.json'), JSON.stringify(manifest, null, 2));
 // ─── Write robots.txt ───
 
 writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nDisallow: /_preview/\nDisallow: /content/\n`);
+
+// ─── Copy static site assets ───
+
+if (existsSync(STATIC)) {
+	cpSync(STATIC, DIST, { recursive: true });
+}
 
 // ─── Generate preview page ───
 
