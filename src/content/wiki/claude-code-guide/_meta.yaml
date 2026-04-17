@@ -1,5 +1,5 @@
 title: "Claude Code 从入门到实战"
-description: "用 Claude Code 做真实项目：终端操作、多文件编辑、Git 工作流、调试技巧"
+description: "用 Claude Code 做真实项目：终端操作、多文件编辑、Git 工作流、Hooks 自动化、MCP 插件、调试技巧、项目规范、并行开发"
 tags:
   - claude-code
   - ai-coding
