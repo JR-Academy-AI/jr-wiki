@@ -33,18 +33,39 @@ if (!existsSync(manifestPath)) {
 
 const manifest = JSON.parse(readFileSync(manifestPath, 'utf-8'));
 
-// ─── Prepare posts (articles only — book chapters live in wikis collection) ───
+// ─── Prepare posts (articles + book chapters) ───
 
 function preparePosts() {
-	return (manifest.articles || []).map((article: any) => ({
-		slug: article.slug,
-		title: article.title,
-		description: article.description || '',
-		publishDate: article.publishDate || undefined,
-		tags: article.tags || [],
-		author: article.author || 'JR Academy',
-		contentUrl: article.contentUrl
-	}));
+	const posts: any[] = [];
+
+	// Articles
+	for (const article of manifest.articles || []) {
+		posts.push({
+			slug: article.slug,
+			title: article.title,
+			description: article.description || '',
+			publishDate: article.publishDate || undefined,
+			tags: article.tags || [],
+			author: article.author || 'JR Academy',
+			contentUrl: article.contentUrl
+		});
+	}
+
+	// Book chapters — each chapter is a post
+	for (const book of manifest.books || []) {
+		for (const chapter of book.chapters || []) {
+			posts.push({
+				slug: `${book.slug}-${chapter.slug}`,
+				title: `${book.title} — ${chapter.title}`,
+				description: chapter.description || book.description || '',
+				tags: book.tags || [],
+				author: 'JR Academy',
+				contentUrl: chapter.contentUrl
+			});
+		}
+	}
+
+	return posts;
 }
 
 // ─── Prepare wikis (books with chapters) ───
