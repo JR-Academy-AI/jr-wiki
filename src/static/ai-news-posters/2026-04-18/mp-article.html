@@ -519,7 +519,11 @@ function mpCopyHtml() {
       'text/plain': new Blob([plain], { type: 'text/plain' }),
     });
     navigator.clipboard.write([item]).then(() => {
-      log('✅ 富文本已复制，图片 URL 已转成绝对路径');
+      const bgHits = (html.match(/background-color:/g) || []).length;
+      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
+      const sectionHits = (html.match(/<section /g) || []).length;
+      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
+      log(`   若公众号粘贴后颜色丢失，先贴到 Notion/Gmail 对比——那里也无色=前端 bug，那里有色=WeChat 剥掉了`);
       setStatus('✅ 富文本已复制，粘到公众号编辑器（图片会自动抓取）', 'done');
     });
   } catch {
