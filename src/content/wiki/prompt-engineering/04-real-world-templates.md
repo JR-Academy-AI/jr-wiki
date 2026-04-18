@@ -5,6 +5,8 @@ order: 4
 description: "覆盖代码审查、内容创作、结构化数据提取的可直接复用 Prompt 模板，包含 Claude XML 结构化技巧"
 ---
 
+![Prompt 模板工程](https://docs.anthropic.com/images/prompt-templates.png)
+
 ## 为什么需要模板？
 
 前三章讲了原理，这章讲"拿来就用"。好的 Prompt 模板有三个特征：

@@ -5,6 +5,8 @@ order: 5
 description: "真实项目中最常见的 Prompt 失败模式，每个坑都附上根因分析和修复方案"
 ---
 
+![Prompt 常见错误与修复](https://docs.anthropic.com/images/prompt-debugging.png)
+
 ## 为什么好人写出烂 Prompt？
 
 Prompt 写得差，不是因为笨，是因为有几个反直觉的地方：**AI 不会补全你的意图，不会忽略你的格式错误，也不会告诉你它猜错了**。它只会用你给的输入生成看起来合理的输出，而"看起来合理"不等于"你想要的"。

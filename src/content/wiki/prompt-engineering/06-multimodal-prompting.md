@@ -5,6 +5,8 @@ order: 6
 description: "2026 年主流模型已全面支持图像输入，本章覆盖图像/截图/PDF/图表的 Prompt 写法、Claude Vision API 实战代码，以及多模态场景的常见坑"
 ---
 
+![多模态 Prompt 架构](https://docs.anthropic.com/images/vision-api-overview.png)
+
 ## 为什么多模态 Prompting 是 2026 年的必备技能
 
 2024 年底之前，AI 主要处理文字。2025 年开始，Claude、GPT-4o、Gemini 全面支持图像输入，现在这已经是日常工作流的标准能力：

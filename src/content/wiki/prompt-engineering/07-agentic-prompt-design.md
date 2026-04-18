@@ -5,6 +5,8 @@ order: 7
 description: "2026 年 AI Agent 已经是主流开发范式。本章讲如何用 ReAct、Reflection、工具调用等模式设计 Prompt，让 AI 像真正的自动化 Agent 一样工作"
 ---
 
+![Agentic AI 架构](https://docs.anthropic.com/images/agentic-architecture.png)
+
 ## 单次 Prompt 和 Agentic Prompt 的区别
 
 之前几章讲的都是"单次 Prompt"：你问一个问题，AI 给一个答案，结束。

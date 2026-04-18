@@ -1,7 +1,9 @@
 title: "Prompt Engineering 实战指南"
-description: "从基础到高级的 Prompt 工程技巧，覆盖 ChatGPT、Claude、Gemini 等主流模型"
+description: "从基础到高级的 Prompt 工程技巧，覆盖 ChatGPT、Claude、Gemini 等主流模型，含调试评估、安全防注入、CLAUDE.md 实战"
 tags:
   - prompt
   - ai
   - chatgpt
+  - claude
+  - security
 order: 1
