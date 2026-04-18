@@ -331,7 +331,30 @@ cd curriculum && python3 -m http.server 8090
 
 **为什么 PNG 必须是真实文件**：公众号编辑器粘贴 HTML 时，`<img src="data:image/png;base64,...">` 会被丢弃；`<img src="https://...poster-0.png">` 会被自动抓取 re-host 到它自己 CDN → 实现真正的"一次 Ctrl+V 完成发稿"。
 
-参考实现：`src/static/ai-news-posters/2026-04-18/mp-article.html`（骨架直接复制改数据）。
+### 🚨 硬性要求：每天新建 mp-article.html 时，复制函数必须把 class 样式展开成 inline style
+
+> **适用范围**：这节要求对**每一天**跑 `/ai-news-poster` 新产出的 `ai-news-posters/{YYYY-MM-DD}/mp-article.html` 都生效——不是一次性改老文件，是每天新建文件必带的能力。以下四条限制 + 校验清单每次都要过。
+
+公众号编辑器（mp.weixin.qq.com）在粘贴 HTML 时会：
+
+1. **剥掉 `<style>` 标签** — 所有 class-based CSS 规则全部失效
+2. **剥掉 class 属性的视觉效果** — 保留 class 字符串但不应用任何样式
+3. **不解析 CSS 变量** — `var(--brand-red)` 之类的写法直接按文字处理、不上色
+4. **只认 inline `style=""`** — 且每个属性必须是具体值（hex / rgb / 像素数字）
+
+所以 `mp-article.html` 的 `mpCopyHtml()` 必须在序列化之前做这件事：
+遍历 article 副本，按 class 名查表把颜色/背景/边框/内外边距/字体大小等写回到 `style=""`。这套逻辑固定叫 `MP_INLINE_STYLES`（class → 样式字符串的映射）+ `applyInlineStyles(root)`（遍历 + 注入 + 处理嵌套选择器 `.mp-meta .author` `.mp-oneline strong` `.mp-source a` `.mp-quickview h3/ul/li` `.mp-cta .big/.sub`、正文 `<p>`、`<code>`）。
+
+**新建 mp-article.html 时必须整段从 `src/static/ai-news-posters/2026-04-18/mp-article.html` 照搬这两个常量 + 函数**，只改日期、标题、正文数据。**不要自作主张精简或重写**——漏了任何一条，粘贴到公众号就退化成黑白纯文本，要背景色、红色左边框、黄色 oneline、深色 hook 标签全部丢失。
+
+校验清单（mp-article.html 生成完、push 前必须 ✅）：
+- [ ] `<script>` 里有 `const MP_INLINE_STYLES = { ... }` 常量，至少覆盖 `mp-title / mp-meta / mp-lead / mp-hook / mp-h2 / mp-img / mp-alt-img / mp-oneline / mp-source / mp-divider / mp-quickview / mp-cta` 这 12 个 class
+- [ ] `MP_INLINE_STYLES` 每条样式值都用 hex / rgb / 具体像素，**没有** `var(--*)`
+- [ ] 有 `function applyInlineStyles(root)`，里面处理了所有嵌套选择器（见上）+ `<p>` + `<code>`
+- [ ] `mpCopyHtml()` 里在拼 `html` 字符串之前调用了 `applyInlineStyles(article)`
+- [ ] 本地打开 html → 点 📋 复制富文本 → 在任何 rich-text 输入框粘贴，应能看到背景色/边框/红色 h2 左条——若丢失说明哪条没展开
+
+参考实现：`src/static/ai-news-posters/2026-04-18/mp-article.html` 第 411–498 行。
 
 mp-article.html 生成时替换：
 - `<title>`、`.mp-title`、`.mp-meta` 里的日期

@@ -409,6 +409,61 @@ function setStatus(text, state) {
 })();
 
 // ===== 复制富文本 =====
+// 公众号编辑器会剥掉 <style> 和 class，只保留 inline style=""，也不支持 var(--*)。
+// 把 CSS 里所有 .mp-* 规则显式翻成行内样式，粘贴后颜色/背景/边框才会生效。
+const MP_INLINE_STYLES = {
+  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000;margin-bottom:10px;',
+  'mp-meta': 'display:flex;gap:8px;align-items:center;color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eee;',
+  'mp-lead': 'background:#f1f5f9;border-radius:8px;padding:13px 15px;font-size:14px;color:#334155;line-height:1.75;margin-bottom:22px;',
+  'mp-hook': 'display:inline-block;background:#10162f;color:#fff;font-family:monospace;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
+  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000;margin:12px 0;padding-left:10px;border-left:4px solid #ff5757;',
+  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background:#fff;',
+  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
+  'mp-oneline': 'background:#fff4d1;border-left:3px solid #ffce44;padding:10px 14px;font-size:14px;font-weight:500;color:#3a3a3a;margin:12px 0 14px;line-height:1.7;',
+  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
+  'mp-divider': 'border:0;border-top:1px solid #e5e7eb;margin:22px 0;height:1px;',
+  'mp-quickview': 'background:#fff8ee;padding:16px;border-radius:8px;margin:22px 0;',
+  'mp-cta': 'background:#10162f;color:#fff;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
+};
+
+function applyInlineStyles(root) {
+  // 按 class 映射注入
+  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      el.setAttribute('style', style + (el.getAttribute('style') || ''));
+    });
+  });
+  // 嵌套选择器（原 CSS 里靠后代选择器实现的样式）
+  root.querySelectorAll('.mp-meta .author').forEach(el =>
+    el.setAttribute('style', 'color:#ff5757;font-weight:600;'));
+  root.querySelectorAll('.mp-oneline strong').forEach(el =>
+    el.setAttribute('style', 'color:#000;'));
+  root.querySelectorAll('.mp-source a').forEach(el =>
+    el.setAttribute('style', 'color:#3b82f6;text-decoration:none;'));
+  root.querySelectorAll('.mp-quickview h3').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000;font-weight:700;'));
+  root.querySelectorAll('.mp-quickview ul').forEach(el =>
+    el.setAttribute('style', 'padding-left:18px;margin:0;'));
+  root.querySelectorAll('.mp-quickview li').forEach(el =>
+    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
+  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
+    el.setAttribute('style', 'color:#10162f;'));
+  root.querySelectorAll('.mp-cta .big').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#fff;'));
+  root.querySelectorAll('.mp-cta .sub').forEach(el =>
+    el.setAttribute('style', 'font-size:12px;color:rgba(255,255,255,0.7);line-height:1.7;'));
+  // 正文段落（原 CSS: .mp p）
+  root.querySelectorAll('p').forEach(el => {
+    const existing = el.getAttribute('style') || '';
+    if (!existing.includes('margin-bottom')) {
+      el.setAttribute('style', 'margin:0 0 12px;color:#333;font-size:15px;line-height:1.85;' + existing);
+    }
+  });
+  // <code> 简单背景
+  root.querySelectorAll('code').forEach(el =>
+    el.setAttribute('style', 'background:#f1f5f9;padding:1px 6px;border-radius:3px;font-family:monospace;font-size:0.92em;color:#10162f;'));
+}
+
 function mpCopyHtml() {
   const article = document.getElementById('mp-article').cloneNode(true);
   // 把相对路径图片改成当前页面所在的绝对 URL，WeChat 编辑器粘贴时才抓得到
@@ -421,6 +476,8 @@ function mpCopyHtml() {
   });
   // 去掉内部 caption（公众号不需要）
   article.querySelectorAll('.mp-caption, .mp-alt-caption').forEach(n => n.remove());
+  // 把 class 样式全部展开成行内 style，公众号编辑器才认
+  applyInlineStyles(article);
   const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
   const plain = article.innerText;
   try {
