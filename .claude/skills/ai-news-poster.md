@@ -319,19 +319,45 @@ cd curriculum && python3 -m http.server 8090
 3. 不一致的地方立刻回头查 box-shadow / linear-gradient / 固定高度 / z-index 这 4 个坑
 4. 合规检查：无二维码 / 无绝对化用语 / 无联系方式
 
+## 📰 公众号文章版（同目录独立页 mp-article.html + CI 预渲染 PNG）
+
+海报页和公众号文章**拆成两个独立 HTML + 6 张真实 PNG**：
+
+| 文件 | 作用 | 产出方式 |
+|------|------|----------|
+| `index.html` | 海报库：6 张大海报 + 下载按钮 | 手写（skill 主产出） |
+| `mp-article.html` | 公众号发稿页：左手机预览文章 + 右操作面板 | 手写（skill 主产出） |
+| `poster-0.png` … `poster-5.png` | 真实 PNG 文件，1242×1660 | **CI 自动** —— `scripts/render-ai-news-posters.mjs` 用 puppeteer-core + `page.screenshot` 把 6 个 `.poster` 元素从 `dist/ai-news-posters/{date}/index.html` 拍照产出到同目录 |
+
+**为什么 PNG 必须是真实文件**：公众号编辑器粘贴 HTML 时，`<img src="data:image/png;base64,...">` 会被丢弃；`<img src="https://...poster-0.png">` 会被自动抓取 re-host 到它自己 CDN → 实现真正的"一次 Ctrl+V 完成发稿"。
+
+参考实现：`src/static/ai-news-posters/2026-04-18/mp-article.html`（骨架直接复制改数据）。
+
+mp-article.html 生成时替换：
+- `<title>`、`.mp-title`、`.mp-meta` 里的日期
+- `.mp-lead`（引言，从 md 首段抄）
+- 5 个 section：`.mp-hook`（分类）+ `.mp-h2`（标题）+ `<img class="mp-img" src="./poster-N.png" data-poster="poster-N" data-file="mp-0N-semantic.png">`（**真实 PNG 图片**，CI 会生成对应文件）+ `.mp-alt-img`（md 里的 Unsplash 图 URL）+ `.mp-oneline` + 3 段正文 + `.mp-source`
+- `.mp-quickview` + `.mp-cta`
+- `MP_POSTER_SLUGS` 映射：6 个 poster-id 对应的 `{ n, label, file }`（`file` 是下载时保存的文件名，如 `mp-02-opus47.png`；`src` 始终是 `./poster-N.png` 不变）
+
+**字数目标**: 3000-4000 字（引言 + 5 条各 2-3 段 + 速览 + CTA）。低于 2500 退回重写。
+
+**index.html 里必须有一条**: `.utility-bar` 的副文案末尾加 `想要公众号长文版 → <a href="./mp-article">📰 mp-article</a>` 链接。
+
 ## 🔗 相关 skill
 
-- `/ai-daily-news`（jr-wiki 目录下）— 先跑这个生成 md，再跑本 skill 转海报
+- `/ai-daily-news`（jr-wiki 目录下）— 先跑这个生成 md，再跑本 skill
 - `/xhs-poster` — 课程类小红书海报（结构类似，文案策略不同）
-- `/mp-article` — 公众号文章（可直接嵌入本 skill 产出的海报 PNG）
 
 ## 自动化 schedule 建议
 
-在 `https://claude.ai/code/scheduled` 串联：
+在 `https://claude.ai/code/scheduled` 串联每日 3 步：
 ```
-每天 9:00  cd jr-wiki && /ai-daily-news
-每天 9:10  cd curriculum && /ai-news-poster
-每天 9:15  /deploy
+每天 9:00 AEST  cd jr-wiki && /ai-daily-news        # 产日报 md
+每天 9:10 AEST  cd jr-wiki && /ai-news-poster       # 产 index.html + mp-article.html 双页
+每天 9:15 AEST  cd jr-wiki && /publish              # push + 部署
 ```
 
-产出当天由 GitHub Actions 自动部署到 `https://jr-academy-ai.github.io/jr-wiki/ai-news-posters/{YYYY-MM-DD}/`，运营直接拿图。
+产出当天由 GitHub Actions 自动部署到 `https://jr-academy-ai.github.io/jr-wiki/ai-news-posters/{YYYY-MM-DD}/`：
+- `index.html` — 海报库（小红书 / 朋友圈 / 公众号素材）
+- `mp-article.html` — 公众号发稿页（等渲染进度 100% 后复制/下载）

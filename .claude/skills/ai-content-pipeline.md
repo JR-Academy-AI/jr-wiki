@@ -1,12 +1,22 @@
 # /ai-content-pipeline — AI 内容自动化管道
 
-每日自动执行：搜索 AI 热点 → 生成日报 → 挑选话题 → 生成原创文章 → 发布。
+每日自动执行：搜索 AI 热点 → 日报 → 原创 → **6 张海报 + 公众号文章同页** → 发布。
 
 ## 使用方法
 ```
 /ai-content-pipeline
 /ai-content-pipeline 2026-04-03
 ```
+
+## 管道串联（每天 3 个 skill）
+
+```
+1. /ai-daily-news   → src/content/articles/ai-daily-{DATE}.md （日报 + 原创）
+2. /ai-news-poster  → src/static/ai-news-posters/{DATE}/index.html （6 张海报 + 公众号文章同页）
+3. /publish         → git push → GH Pages 部署 + MongoDB sync
+```
+
+**本 skill 只负责 Phase 1-2（日报 + 原创文章）。** 海报和公众号文章在同一个 index.html 里产出，见 `/ai-news-poster` 文档。
 
 ## 完整管道流程
 

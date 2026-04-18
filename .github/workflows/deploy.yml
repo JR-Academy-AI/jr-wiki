@@ -21,8 +21,23 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Install dependencies
+        run: bun install
+
       - name: Build
         run: bun run build.ts
+
+      - name: Setup Chrome (for poster PNG rendering)
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+          install-dependencies: true
+
+      - name: Render AI news posters to PNG
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: bun run render:posters
 
       - name: Sync to MongoDB
         env:

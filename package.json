@@ -5,11 +5,13 @@
   "private": true,
   "scripts": {
     "build": "bun run build.ts",
-    "dev": "bun run build.ts && bun run serve",
+    "render:posters": "bun run scripts/render-ai-news-posters.mjs",
+    "dev": "bun run build.ts && bun run render:posters && bun run serve",
     "serve": "bunx serve dist -l 4321",
     "sync": "bun run build.ts && bun run sync-to-db.ts"
   },
   "devDependencies": {
+    "puppeteer-core": "^23.0.0",
     "serve": "^14.2.0"
   }
 }

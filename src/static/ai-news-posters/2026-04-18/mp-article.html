@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 日报 2026-04-18 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-red: #ff5757;
+    --brand-dark: #10162f;
+    --brand-yellow: #ffce44;
+    --brand-blue: #3b82f6;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #eef0f4;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
+    padding: 22px 26px; margin-bottom: 24px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--brand-red); }
+  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; line-height: 1.65; max-width: 680px; }
+  .topbar .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; padding: 10px 16px;
+    border: 2px solid var(--brand-dark);
+    background: #fff; color: var(--brand-dark);
+    border-radius: 10px; transition: all 0.12s;
+  }
+  .btn:hover { background: var(--brand-yellow); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .btn.primary { background: var(--brand-red); color: #fff; }
+  .btn.primary:hover { background: #e03e3e; }
+  .btn:disabled { opacity: 0.55; cursor: wait; }
+
+  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  /* Phone preview */
+  .phone-wrap { position: sticky; top: 20px; }
+  .phone {
+    width: 100%; max-width: 420px; margin: 0 auto;
+    background: #f5f6f9;
+    border: 2px solid var(--brand-dark);
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .phone-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .phone-bar .dot { width: 8px; height: 8px; background: var(--brand-red); border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .mp {
+    background: #fff; border-radius: 18px;
+    padding: 26px 20px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+    font-size: 15px; line-height: 1.85; color: #222;
+    max-height: 78vh; overflow-y: auto;
+  }
+  .mp::-webkit-scrollbar { width: 6px; }
+  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
+
+  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
+  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
+    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
+  .mp-meta .author { color: var(--brand-red); font-weight: 600; }
+  .mp-lead {
+    background: #f1f5f9; border-radius: 8px; padding: 13px 15px;
+    font-size: 14px; color: #334155; line-height: 1.75; margin-bottom: 22px;
+  }
+  .mp-hook {
+    display: inline-block; background: var(--brand-dark); color: #fff;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .mp-h2 {
+    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
+    margin: 12px 0 12px; padding-left: 10px;
+    border-left: 4px solid var(--brand-red);
+  }
+  .mp-img {
+    width: 100%; display: block; margin: 12px 0 6px;
+    border: 2px solid var(--brand-dark); border-radius: 10px;
+    background: #fff; box-shadow: 4px 4px 0 rgba(16,22,47,0.15);
+  }
+  .mp-img.broken {
+    aspect-ratio: 1242/1660;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg,#fee2e2,#fff1e7);
+    color: #991b1b; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    text-align: center; padding: 20px;
+  }
+  .mp-caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #8a8a8a; text-align: center;
+    margin: 2px 0 12px;
+  }
+  .mp-alt-img {
+    width: 100%; aspect-ratio: 16/9; object-fit: cover;
+    border-radius: 8px; display: block; margin: 10px 0 4px;
+  }
+  .mp-alt-caption { font-size: 11px; color: #8a8a8a; text-align: center; margin-bottom: 10px; }
+  .mp-oneline {
+    background: #fff4d1; border-left: 3px solid var(--brand-yellow);
+    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #3a3a3a;
+    margin: 12px 0 14px; line-height: 1.7;
+  }
+  .mp-oneline strong { color: #000; }
+  .mp p { margin-bottom: 12px; color: #333; }
+  .mp-source {
+    font-size: 12px; color: #8a8a8a;
+    padding-top: 8px; margin-top: 8px;
+    border-top: 1px dashed #e5e7eb; word-break: break-all;
+  }
+  .mp-source a { color: var(--brand-blue); text-decoration: none; }
+  .mp-divider { border: 0; border-top: 1px solid #e5e7eb; margin: 22px 0; }
+  .mp-quickview { background: #fff8ee; padding: 16px; border-radius: 8px; margin: 22px 0; }
+  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; }
+  .mp-quickview ul { padding-left: 18px; }
+  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; }
+  .mp-cta {
+    background: var(--brand-dark); color: #fff;
+    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
+  }
+  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; }
+  .mp-cta .sub { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+  /* Side panel */
+  .panel { display: flex; flex-direction: column; gap: 18px; }
+  .card {
+    background: #fff; border: 2px solid var(--brand-dark);
+    border-radius: 14px; padding: 20px; box-shadow: 4px 4px 0 var(--brand-dark);
+  }
+  .card h2 {
+    font-size: 15px; font-weight: 900; margin-bottom: 12px;
+    padding-bottom: 10px; border-bottom: 2px dashed var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card h2 .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; background: var(--brand-yellow);
+    padding: 2px 6px; border-radius: 3px;
+  }
+  .card p, .card li { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
+  .card ol { padding-left: 20px; }
+  .card ol li { margin-bottom: 6px; }
+  .card ol li strong { color: var(--text-main); }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+  .stat-item { background: #f1f5f9; padding: 10px; border-radius: 6px; text-align: center; font-family: 'JetBrains Mono', monospace; }
+  .stat-item .v { font-size: 18px; font-weight: 700; color: var(--brand-red); }
+  .stat-item .k { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .render-status {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px;
+    background: #fef3c7; border-left: 4px solid var(--brand-yellow);
+    border-radius: 6px; font-size: 13px; color: #713f12;
+    margin-bottom: 10px;
+  }
+  .render-status.done { background: #d1fae5; border-left-color: #10b981; color: #064e3b; }
+  .render-status.error { background: #fee2e2; border-left-color: #ef4444; color: #7f1d1d; }
+  #log {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    padding: 10px 12px;
+    background: #0f172a; color: #a7f3d0;
+    border-radius: 6px; min-height: 40px;
+    white-space: pre-wrap; word-break: break-all;
+    max-height: 180px; overflow-y: auto;
+  }
+  #log:empty { display: none; }
+
+  /* 不再需要 html2canvas iframe，海报已经是真实 PNG 文件 */
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1>📰 AI 日报 · <span>公众号文章</span> · 2026-04-18</h1>
+      <div class="sub">左侧 375px 手机预览 · 右侧进度 + 操作。页面加载后自动把 6 张海报渲染成 PNG 绑进文章（绑完再点复制/下载）。</div>
+    </div>
+    <div class="acts">
+      <a class="btn" href="./">← 回海报库</a>
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn" id="btn-copy-md">📝 复制 MD</button>
+      <button class="btn primary" id="btn-download-all">⬇ 下载 6 张 PNG</button>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+          <div class="mp-title">Claude Opus 4.7 编码登顶，Stanford AI Index 揭中美差距 2.7%｜AI 日报 04-18</div>
+          <div class="mp-meta">
+            <span class="author">JR Academy AI 日报</span>
+            <span>·</span><span>2026-04-18</span>
+            <span>·</span><span>阅读约 8 分钟</span>
+          </div>
+
+          <div class="mp-lead">这周 AI 圈的节奏又被拉到满格。周四 Anthropic 把 Claude Opus 4.7 扔进生产环境，Agentic 编码基准反超 GPT-5.4 和 Gemini 3.1 Pro；Stanford 的年度 AI Index 同时出炉，一句话结论是"中国追上来了，只差 2.7%"。上游模型端更热闹：Google 的 Gemma 4 把 Apache 2.0 开源一路推到手机端，DeepSeek V4 在华为 Ascend 上已经跑起来等公开发布，Meta 的 Muse Spark 第一次让 Alexandr Wang 带队的超级智能实验室拿出能打的东西。</div>
+
+          <img class="mp-img" src="./poster-0.png" alt="图 1 · 合集海报 · 今天 5 条 AI 大新闻一图看完" data-poster="poster-0" data-file="mp-01-summary.png">
+          <div class="mp-caption">图 1 · 合集海报</div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">01 · 模型发布</div>
+          <div class="mp-h2">Anthropic 发布 Claude Opus 4.7：Agentic 编码一口气反超 GPT-5.4</div>
+          <img class="mp-img" src="./poster-1.png" alt="图 2 · Claude Opus 4.7 agentic 编码登顶" data-poster="poster-1" data-file="mp-02-opus47.png">
+          <div class="mp-caption">图 2 · 海报 01</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80" alt="Claude Opus 4.7 Anthropic agentic 编码模型发布">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：周四 Anthropic 把 Opus 4.7 推上生产，代码、视觉、工具调用三项基准全部重新夺回榜首，价格跟 4.6 一样都是 $5/$25 per MTok。</div>
+          <p>Opus 4.7 最直接的变化有三个：一是新加的 <code>xhigh</code> effort 档位介于 high 和 max 之间，给你多一档"多烧钱换精度"的选项；二是视觉支持长边 2576 像素，比之前直接翻 3 倍多，以前要手动切图的架构图、高清截图现在一次能喂完；三是内置了自我复查机制，Anthropic 说模型会在给最终答案前自己过一遍逻辑。SWE-Bench Verified、Terminal-Bench 2.0、Tau-Bench 这几个 agentic 硬骨头，Opus 4.7 都拿回了第一，直接盖过 GPT-5.4 和 Gemini 3.1 Pro。</p>
+          <p>商业层面这次落地速度超过以往。AWS Bedrock 同一天开放所有客户自助接入，覆盖 27 个区域；Vertex AI 和 Microsoft Foundry 也同步上架。更关键的是 Anthropic 在同一份 release notes 里承认：Claude Mythos 还在小范围内测（Project Glasswing 联盟），比 Opus 4.7 强但太危险，公开版本暂时不会有。</p>
+          <p><strong>对开发者的影响</strong>：已经在用 Opus 4.6 的团队今天就可以切版本——价格没变、tokenizer 有更新，Anthropic 说有 breaking change，升级前看一眼 migration guide 就行。Claude Code 和 Cursor 的用户会第一批吃到 agentic 提升的红利，尤其是长跑的编码 agent。个人开发者关心的是配额：4.7 发布当天限流会涨一波，过两天缓过来再跑大任务比较稳。</p>
+          <div class="mp-source">来源：<a href="https://platform.claude.com/docs/en/release-notes/overview">Anthropic Release Notes</a> · <a href="https://venturebeat.com/technology/anthropic-releases-claude-opus-4-7-narrowly-retaking-lead-for-most-powerful-generally-available-llm">VentureBeat</a> · <a href="https://aws.amazon.com/blogs/aws/introducing-anthropics-claude-opus-4-7-model-in-amazon-bedrock/">AWS Blog</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">02 · 行业报告</div>
+          <div class="mp-h2">Stanford 2026 AI Index：中美模型差距只剩 2.7%，美国 AI 人才流失 80%</div>
+          <img class="mp-img" src="./poster-2.png" alt="图 3 · Stanford 2026 AI Index 中美差距 2.7%" data-poster="poster-2" data-file="mp-03-aiindex.png">
+          <div class="mp-caption">图 3 · 海报 02</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Stanford 2026 AI Index 中美差距数据图表">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：Stanford HAI 本周发布 2026 AI Index 年报，SWE-Bench 一年从 60 飙到接近 100，生成式 AI 三年覆盖 53% 人口，中国的顶尖模型离美国只剩 2.7%。</div>
+          <p>报告里最刺眼的一组数字是人才流动。2017 到 2026 年，选择去美国工作的 AI 研究员下降了 89%，其中 80% 的降幅发生在过去这一年。对照的是私营投资：美国 2025 年私人 AI 投资 2859 亿美元，中国只有 124 亿，差了 23 倍——但中国靠政府牵引的算力 + 开源生态把差距硬是拉回到了个位数百分点。Anthropic 的 Claude Opus 4.6 目前领先，中国 Dola-Seed 2.0 紧追，Arena 分差 39 分，对应 2.7% 的能力差。</p>
+          <p>另外几个让人眼前一亮的点：AI 数据中心全球峰值功率 29.6 GW，够整个纽约州用电高峰；GPT-4o 一年的水资源消耗超过 120 万人的饮用水需求；生成式 AI 给美国消费者创造的每年价值约 1720 亿美元，人均价值一年翻了 3 倍。负面信号也有——AI 事故数据库记录的事件从 2024 年 233 起涨到 362 起，透明度指数平均分从 58 掉到 40。</p>
+          <p><strong>对开发者的影响</strong>：这份报告的实用价值在于它给你一个"世界地图"。如果你在挑技术栈，现在押注国产开源模型（GLM、Qwen、DeepSeek）已经不是性价比问题，而是性能第一梯队的选择；如果你在找工作，AI 基建岗位（算力调度、推理优化、数据中心）薪资曲线比应用层更陡；如果你在做产品，53% 的人口渗透率意味着用户已经默认 AI 存在，产品没有 AI 反而要解释。</p>
+          <div class="mp-source">来源：<a href="https://hai.stanford.edu/ai-index/2026-ai-index-report">Stanford HAI</a> · <a href="https://spectrum.ieee.org/state-of-ai-index-2026">IEEE Spectrum</a> · <a href="https://the-decoder.com/stanfords-ai-index-2026-shows-rapid-progress-growing-safety-concerns-and-declining-public-trust/">The Decoder</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">03 · 开源工具</div>
+          <div class="mp-h2">Google Gemma 4 开源发布：Apache 2.0 + 256K 上下文，能跑在 Raspberry Pi 上</div>
+          <img class="mp-img" src="./poster-3.png" alt="图 4 · Google Gemma 4 开源 Apache 2.0 + 256K 上下文" data-poster="poster-3" data-file="mp-04-gemma.png">
+          <div class="mp-caption">图 4 · 海报 03</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="Google Gemma 4 开源大模型 Apache 2.0 边缘部署">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：Google DeepMind 4 月 2 日正式发布 Gemma 4 开源模型家族，E2B / E4B / 26B MoE / 31B Dense 四个版本，全系 Apache 2.0 商用许可，256K 上下文，支持 140+ 语言，并且能完全离线跑在手机、Raspberry Pi、Jetson Orin Nano 上。</div>
+          <p>Gemma 4 把"能开源就开源"的路线推到了新高度。E2B 和 E4B 这两个小版本推理时只激活 20 亿和 40 亿参数，其它权重在需要时再加载，目的就是在移动端和边缘设备上省内存省电。31B Dense 在一些硬基准上据说已经能打 Llama 4 的 400B 版本——官方没有直接说，但 HuggingFace 上已经有几家第三方的对比数据支持这个结论。原生多模态，吃文本、图像、音频，输出文本。</p>
+          <p>商业意义比性能本身更重要。Apache 2.0 意味着你可以把模型权重塞进商业产品里不用交授权费，改都没问题。上一代 Gemma 全球下载超 4 亿次，Gemmaverse 里衍生了 10 万多个变体；这一代的下载曲线大概率会更陡。Google Cloud 同步上架了 Gemma 4 的 Vertex AI 托管推理，想一键切换、自己不想管算力的可以直接走 Google Cloud。</p>
+          <p><strong>对开发者的影响</strong>：如果你在做端侧 AI（手机 App、IoT、本地 Copilot），Gemma 4 E2B/E4B 值得马上测一轮。比 Llama 的在端侧表现更稳、许可证更干净。如果你做 SaaS 但算力预算紧，31B Dense 是目前性价比最高的自部署选项之一，一张 80GB A100 / H100 能舒服跑起来。Raspberry Pi + Gemma 4 E2B 做家庭 AI 助手的 demo 估计会在 GitHub trending 霸榜好几周。</p>
+          <div class="mp-source">来源：<a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/">Google Blog</a> · <a href="https://deepmind.google/models/gemma/gemma-4/">Google DeepMind</a> · <a href="https://huggingface.co/blog/gemma4">HuggingFace</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">04 · 算力硬件</div>
+          <div class="mp-h2">DeepSeek V4 在华为芯片上跑起来了：1T 参数 MoE，1M 上下文</div>
+          <img class="mp-img" src="./poster-4.png" alt="图 5 · DeepSeek V4 跑在华为 Ascend 芯片" data-poster="poster-4" data-file="mp-05-deepseek.png">
+          <div class="mp-caption">图 5 · 海报 04</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="DeepSeek V4 华为昇腾芯片 MoE 大模型训练">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：Reuters 引 The Information 消息，DeepSeek V4 将在 4 月底前发布，1T 总参数但每次只激活约 37B，1M token 原生上下文，训练和推理都跑在华为 Ascend 上，故意没给 Nvidia 早期访问权。</div>
+          <p>这条新闻硬核的地方不是参数而是芯片。DeepSeek 团队和华为、寒武纪一起重写了模型 stack 的底层，让 V4 既能在华为 Ascend 910C 上训练，也能在同一套硬件上推理。MoE 架构只激活 3.7% 的参数，实际计算量跟 37B 密集模型差不多，这样国产硬件的算力瓶颈被绕过去。泄漏的基准跑出 90% HumanEval 和 80%+ SWE-bench Verified，大致跟 Claude Opus 4.6 一个水平。</p>
+          <p>战略层面这件事比模型本身更值得关注。美国对 Nvidia H100/H200 的出口管制假设就是"没高端 GPU 你中国就做不了前沿模型"；DeepSeek V4 如果跑通了，这个假设被直接掀翻。加上 V4 是开源权重（V3 也是），相当于把"国产芯片 + 开源模型"的组合推到所有国家面前——对要不要买美国 GPU 犹豫中的中东、东南亚国家，这是一个真实的替代方案。</p>
+          <p><strong>对开发者的影响</strong>：短期内你能用上的是 API 和权重。V3 已经在 OpenRouter 上能跑，V4 大概率一周内跟进，且价格会比 Claude / GPT 便宜一大截。中期如果你在做 coding agent、长文档 RAG，可以把 DeepSeek V4 纳入 evaluation；1M 原生上下文 + 代码能力接近 SOTA，是一个不错的成本 baseline。长期要考虑的是供应链——云厂商如果转向 Ascend 推理卡，部署生态会跟 CUDA 体系分叉。</p>
+          <div class="mp-source">来源：<a href="https://technode.com/2026/04/08/deepseek-v4-may-launch-this-month-test-interface-suggests-vision-and-expert-modes/">TechNode</a> · <a href="https://findskill.ai/blog/deepseek-v4-release-date-specs/">FindSkill</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">05 · 模型发布</div>
+          <div class="mp-h2">Meta Muse Spark 首秀：Alexandr Wang 带队后第一张牌</div>
+          <img class="mp-img" src="./poster-5.png" alt="图 6 · Meta Muse Spark 首秀 Alexandr Wang 带队" data-poster="poster-5" data-file="mp-06-musespark.png">
+          <div class="mp-caption">图 6 · 海报 05</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80" alt="Meta Muse Spark AI 模型 Superintelligence Labs">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：4 月 8 日 Meta 发布 Muse Spark，这是 Alexandr Wang 去年加入后 Meta Superintelligence Labs 的首个旗舰模型，小体量 + 多模态推理 + 多 agent 并行思考，目前已上线 Meta AI、未来几周进 WhatsApp / Instagram / Facebook / 雷朋智能眼镜。</div>
+          <p>Muse Spark 的定位很有意思——Meta 没有往大参数方向堆，而是做了一个"小而快但能深度推理"的模型。输入吃语音、文本、图片，输出文本。最亮眼的是 Contemplating 模式：它会派多个 agent 并行推理同一个问题，再汇总答案。按 Meta 官方公布的数字，Humanity's Last Exam 拿 58%，FrontierScience Research 拿 38%，已经能跟 Gemini Deep Think、GPT Pro 的极限推理模式掰手腕。</p>
+          <p>战略意义在于 Meta 想重新拿回声誉。之前 Llama 4 在 Maverick 和 Behemoth 上踩了几个坑，Zuckerberg 花 143 亿美金把 Scale AI 的 Alexandr Wang 挖过来主导 MSL（Meta Superintelligence Labs），结果就是 Muse Spark。这次 Muse Spark 是闭源的 API 访问——Meta 之前一直在"开源旗手"和"商业闭源"之间摇摆，这次明确选了后者，未来版本"希望开源"说明短期内不开。</p>
+          <p><strong>对开发者的影响</strong>：Muse Spark 目前只在 Meta 产品和合作伙伴 API 里能用，不是 developer-first 的模型。真正值得关注的是 Meta 2026 AI capex 砸到了 1150–1350 亿美元，这笔钱会落到 Llama 后续版本、自研芯片、数据中心。如果你在做多 agent 系统，Contemplating 模式的架构（并行 agent + 聚合）是一个值得抄的设计——不用等 Meta，Claude + OpenAI + LangGraph 已经能拼出类似效果。</p>
+          <div class="mp-source">来源：<a href="https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/">TechCrunch</a> · <a href="https://ai.meta.com/blog/introducing-muse-spark-msl/">Meta AI Blog</a> · <a href="https://simonwillison.net/2026/Apr/8/muse-spark/">Simon Willison</a></div>
+
+          <div class="mp-quickview">
+            <h3>📌 今日速览</h3>
+            <ul>
+              <li><strong>Claude Mythos</strong> 仍锁在 Project Glasswing 联盟内测；Sonnet 4 / Opus 4 老版本 6 月 15 日退役，建议迁 Sonnet 4.6 / Opus 4.7。</li>
+              <li><strong>Advisor Tool</strong> 4 月 9 日公测，把慢 advisor + 快 executor 配对，agentic 长任务少烧 token。</li>
+              <li><strong>OpenAI</strong> 融资轮从 1100 亿涨到 1220 亿美元，估值 8520 亿，年化营收破 250 亿。</li>
+              <li><strong>Microsoft Foundry</strong> 支持 Azure 账单付 Claude 全家桶调用，统一 <code>/anthropic/v1/messages</code> 端点。</li>
+              <li><strong>Cerebras</strong> 递交 IPO 申请，目标 350 亿估值、募 30 亿美金。</li>
+            </ul>
+          </div>
+
+          <div class="mp-cta">
+            <div class="big">🎯 想每天 9 点收到 AI 日报？</div>
+            <div class="sub">关注 JR Academy 公众号 · 回复"AI 日报" 自动订阅<br>官网 jiangren.com.au/blog · 历史日报全开放</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>🎯 发稿就绪 <span class="tag">READY</span></h2>
+        <div class="render-status done" id="render-status">✅ 6 张海报已预渲染为 PNG，文章可直接复制粘贴</div>
+        <p style="margin-top:10px">海报是同目录 <code>./poster-0.png</code> ~ <code>./poster-5.png</code>（CI 部署时 puppeteer 产出，WeChat 粘贴时自动抓取 re-host）。本地 <code>bun run render:posters</code> 手动生成。</p>
+      </div>
+
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">3568</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">6</div><div class="k">海报</div></div>
+          <div class="stat-item"><div class="v">5</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">8</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步（部署后） <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：图片 URL 会自动转成 <code>https://jr-academy-ai.github.io/...</code> 的绝对地址。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → 文字 + 11 张图自动抓取 re-host → 预览 → 发布。</li>
+        </ol>
+        <p style="margin-top:10px">本地开发/预览走相对路径（<code>./poster-N.png</code>）图片能显示；复制到公众号时会转成当前页面所在的绝对 URL。</p>
+      </div>
+
+      <div class="card">
+        <h2>⬇ 备选：手动下载 <span class="tag">FALLBACK</span></h2>
+        <p>如果公众号抓取失败（极少见），点右上「⬇ 下载 6 张 PNG」拿到本地，再去素材库上传。</p>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <pre id="log"></pre>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const MP_POSTER_SLUGS = {
+  'poster-0': { n: 1, label: '合集', file: 'mp-01-summary.png' },
+  'poster-1': { n: 2, label: '01 Opus 4.7', file: 'mp-02-opus47.png' },
+  'poster-2': { n: 3, label: '02 AI Index', file: 'mp-03-aiindex.png' },
+  'poster-3': { n: 4, label: '03 Gemma 4', file: 'mp-04-gemma.png' },
+  'poster-4': { n: 5, label: '04 DeepSeek V4', file: 'mp-05-deepseek.png' },
+  'poster-5': { n: 6, label: '05 Muse Spark', file: 'mp-06-musespark.png' },
+};
+
+const logEl = document.getElementById('log');
+const statusEl = document.getElementById('render-status');
+const btnCopyHtml = document.getElementById('btn-copy-html');
+const btnCopyMd = document.getElementById('btn-copy-md');
+const btnDownload = document.getElementById('btn-download-all');
+
+function log(msg) {
+  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  logEl.textContent += `[${t}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+function setStatus(text, state) {
+  statusEl.textContent = text;
+  statusEl.classList.remove('done', 'error');
+  if (state) statusEl.classList.add(state);
+}
+
+// 检查 6 张 PNG 是否都能加载（本地没跑 render:posters 时会 broken）
+(function checkPosters() {
+  const imgs = document.querySelectorAll('.mp-img');
+  let loaded = 0;
+  let broken = 0;
+  imgs.forEach(img => {
+    const done = () => {
+      if (img.complete && img.naturalWidth > 0) loaded++;
+      else { broken++; img.classList.add('broken'); img.alt = '❌ ' + (img.dataset.file || '') + ' 未生成 · 本地跑 bun run render:posters'; }
+      if (loaded + broken === imgs.length) {
+        if (broken === 0) {
+          setStatus(`✅ ${loaded}/${imgs.length} 张海报已就绪 · 可直接复制粘贴到公众号`, 'done');
+          log(`✅ 所有海报 PNG 文件可访问`);
+        } else {
+          setStatus(`⚠️ ${broken}/${imgs.length} 张海报缺失 · 本地跑 bun run render:posters 或等 CI 部署`, 'error');
+          log(`⚠️ ${broken} 张 PNG 加载失败（本地通常是因为还没跑渲染脚本）`);
+        }
+      }
+    };
+    if (img.complete) done();
+    else { img.addEventListener('load', done); img.addEventListener('error', done); }
+  });
+})();
+
+// ===== 复制富文本 =====
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  // 把相对路径图片改成当前页面所在的绝对 URL，WeChat 编辑器粘贴时才抓得到
+  const base = new URL('.', location.href).href;
+  article.querySelectorAll('img').forEach(img => {
+    const src = img.getAttribute('src');
+    if (src && src.startsWith('./')) {
+      img.src = new URL(src, base).href;
+    }
+  });
+  // 去掉内部 caption（公众号不需要）
+  article.querySelectorAll('.mp-caption, .mp-alt-caption').forEach(n => n.remove());
+  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+  const plain = article.innerText;
+  try {
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([plain], { type: 'text/plain' }),
+    });
+    navigator.clipboard.write([item]).then(() => {
+      log('✅ 富文本已复制，图片 URL 已转成绝对路径');
+      setStatus('✅ 富文本已复制，粘到公众号编辑器（图片会自动抓取）', 'done');
+    });
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = html; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    log('✅ 富文本已复制（fallback）');
+  }
+}
+
+function mpCopyMarkdown() {
+  const article = document.getElementById('mp-article');
+  const base = new URL('.', location.href).href;
+  let md = '# ' + article.querySelector('.mp-title').textContent.trim() + '\n\n';
+  md += '> JR Academy AI 日报 · 2026-04-18\n\n';
+  md += article.querySelector('.mp-lead').textContent.trim() + '\n\n';
+
+  for (const node of article.children) {
+    if (!node.classList) continue;
+    if (node.classList.contains('mp-title') || node.classList.contains('mp-meta') || node.classList.contains('mp-lead')) continue;
+    if (node.tagName === 'HR') { md += '---\n\n'; continue; }
+    if (node.classList.contains('mp-hook')) { md += '### ' + node.textContent.trim() + '\n\n'; continue; }
+    if (node.classList.contains('mp-h2')) { md += '## ' + node.textContent.trim() + '\n\n'; continue; }
+    if (node.tagName === 'IMG' && node.classList.contains('mp-img')) {
+      const id = node.dataset.poster;
+      const info = MP_POSTER_SLUGS[id] || {};
+      const src = node.getAttribute('src');
+      const absUrl = src && src.startsWith('./') ? new URL(src, base).href : src;
+      md += `![图 ${info.n || ''} ${info.label || ''}](${absUrl})\n\n`;
+      continue;
+    }
+    if (node.classList.contains('mp-caption') || node.classList.contains('mp-alt-caption')) continue;
+    if (node.tagName === 'IMG' && node.classList.contains('mp-alt-img')) {
+      md += `![${node.alt}](${node.src})\n\n`;
+      continue;
+    }
+    if (node.classList.contains('mp-oneline')) { md += '> ' + node.textContent.trim() + '\n\n'; continue; }
+    if (node.tagName === 'P') { md += node.textContent.trim() + '\n\n'; continue; }
+    if (node.classList.contains('mp-source')) { md += node.textContent.trim().replace(/\s+/g,' ') + '\n\n'; continue; }
+    if (node.classList.contains('mp-quickview')) {
+      md += '## ' + node.querySelector('h3').textContent.trim() + '\n\n';
+      node.querySelectorAll('li').forEach(li => { md += '- ' + li.textContent.trim() + '\n'; });
+      md += '\n';
+      continue;
+    }
+    if (node.classList.contains('mp-cta')) {
+      md += '---\n\n🎯 **' + node.querySelector('.big').textContent.trim() + '**\n\n';
+      md += node.querySelector('.sub').innerText.trim() + '\n';
+      continue;
+    }
+  }
+  navigator.clipboard.writeText(md).then(() => {
+    log('✅ Markdown 已复制 ' + md.length + ' 字符');
+    setStatus('✅ Markdown 已复制', 'done');
+  });
+}
+
+async function downloadAll() {
+  btnDownload.disabled = true;
+  const old = btnDownload.textContent;
+  btnDownload.textContent = '下载中...';
+  log('开始下载 6 张 PNG...');
+  const imgs = document.querySelectorAll('.mp-img');
+  for (const img of imgs) {
+    const info = MP_POSTER_SLUGS[img.dataset.poster] || {};
+    const file = img.dataset.file || (img.dataset.poster + '.png');
+    try {
+      const resp = await fetch(img.src);
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.download = file;
+      a.href = url;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      log(`  ⬇ ${file}`);
+      await new Promise(r => setTimeout(r, 220));
+    } catch (e) {
+      log(`  ❌ ${file}: ${e.message}`);
+    }
+  }
+  btnDownload.textContent = old;
+  btnDownload.disabled = false;
+  setStatus('✅ 6 张已下载', 'done');
+}
+
+btnCopyHtml.addEventListener('click', mpCopyHtml);
+btnCopyMd.addEventListener('click', mpCopyMarkdown);
+btnDownload.addEventListener('click', downloadAll);
+</script>
+
+</body>
+</html>
