@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>公众号文章 · AI 日报 2026-04-20</title>
+  <style>
+    /* === Page chrome styles (toolbar, preview container) — NOT for WeChat === */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f0f0f0;
+      font-family: system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #10162f;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .toolbar button {
+      background: #ff5757;
+      color: #ffffff;
+      border: none;
+      padding: 10px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .toolbar button:hover {
+      background: #e04444;
+    }
+
+    .toolbar button:active {
+      transform: scale(0.97);
+    }
+
+    .preview {
+      max-width: 780px;
+      margin: 32px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      padding: 40px 48px;
+    }
+
+    @media (max-width: 600px) {
+      .preview { padding: 16px 8px; margin: 16px 8px; }
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #10162f;
+      color: #ffffff;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.35s ease;
+      pointer-events: none;
+      z-index: 200;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toolbar with copy button -->
+  <div class="toolbar">
+    <button onclick="mpCopyHtml()">&#128203; 复制公众号文章 HTML</button>
+  </div>
+
+  <!-- Article preview -->
+  <div class="preview">
+    <div id="mp-article" class="mp-article">
+
+      <!-- Header -->
+      <div class="mp-header">
+        <div class="mp-date">2026-04-20 · 星期一</div>
+        <h1 class="mp-title">AI 日报 2026-04-20</h1>
+        <div class="mp-subtitle">DeepSeek V4 本周发布，万亿参数跑华为芯片</div>
+        <div class="mp-divider"></div>
+      </div>
+
+      <!-- News 1 -->
+      <div class="mp-item">
+        <div class="mp-item-number">01</div>
+        <h2 class="mp-item-title">DeepSeek V4 本周发布：万亿参数，跑在华为昇腾芯片上</h2>
+        <div class="mp-highlight">
+          <div class="mp-highlight-bar"></div>
+          <div class="mp-highlight-text">第一个跑在国产芯片上的万亿参数前沿模型，4 月下旬正式上线。</div>
+        </div>
+        <p class="mp-body">DeepSeek V4 快来了。创始人梁文锋确认将在 4 月下旬发布，总参数量达到 1 万亿，但实际每次推理只激活约 370 亿参数。最关键的变化是芯片——V4 将跑在华为最新的昇腾 950PR 芯片上，这是第一个针对国产半导体基础设施优化的前沿 AI 模型。上下文窗口 1M token，Apache 2.0 开源。</p>
+        <div class="mp-source">来源: GizChina / Reuters</div>
+      </div>
+
+      <!-- News 2 -->
+      <div class="mp-item">
+        <div class="mp-item-number">02</div>
+        <h2 class="mp-item-title">App Store 爆发：全球 app 发布量暴增 104%</h2>
+        <div class="mp-highlight">
+          <div class="mp-highlight-bar"></div>
+          <div class="mp-highlight-text">2026 年 Q1 全球 app 发布同比涨 60%，4 月翻倍，AI 编程工具功不可没。</div>
+        </div>
+        <p class="mp-body">Appfigures 数据显示，Claude Code、Replit、Cursor 这类 AI 编程工具让一个人几天就能做出一个 app。Productivity 类 app 今年首次进入 Top 5 品类。但低质量 app 泛滥也成了问题。</p>
+        <div class="mp-source">来源: TechCrunch</div>
+      </div>
+
+      <!-- News 3 -->
+      <div class="mp-item">
+        <div class="mp-item-number">03</div>
+        <h2 class="mp-item-title">Perplexity 推出 Personal Computer</h2>
+        <div class="mp-highlight">
+          <div class="mp-highlight-bar"></div>
+          <div class="mp-highlight-text">Mac 上的 24/7 AI 助手，能读文件、发邮件、操作所有 app。</div>
+        </div>
+        <p class="mp-body">4 月 16 号推给所有 Max 订阅用户（$200/月）。能读本地文件、操作 iMessage、Apple Mail、日历。插一台 Mac mini，让它 24 小时后台跑。AI 助手从"问答式"转向"驻场式"。</p>
+        <div class="mp-source">来源: MacRumors / 9to5Mac</div>
+      </div>
+
+      <!-- News 4 -->
+      <div class="mp-item">
+        <div class="mp-item-number">04</div>
+        <h2 class="mp-item-title">智谱 GLM-5.1 开源：SWE-bench Pro 全球第一</h2>
+        <div class="mp-highlight">
+          <div class="mp-highlight-bar"></div>
+          <div class="mp-highlight-text">744B 参数 MoE 模型，编程能力碾压 GPT-5.4 和 Claude Opus 4.6。</div>
+        </div>
+        <p class="mp-body">SWE-bench Pro 58.4%，超过 GPT-5.4 (57.7%) 和 Claude Opus 4.6 (57.3%)。MIT 协议发布，可下载、魔改、商用。全球开源 Top 10 里中国模型占 8 席。</p>
+        <div class="mp-source">来源: MindStudio / 21经济网</div>
+      </div>
+
+      <!-- News 5 -->
+      <div class="mp-item">
+        <div class="mp-item-number">05</div>
+        <h2 class="mp-item-title">GPT-6 预训练完成</h2>
+        <div class="mp-highlight">
+          <div class="mp-highlight-bar"></div>
+          <div class="mp-highlight-text">代号 Spud，Sam Altman 说"几周内发布"。</div>
+        </div>
+        <p class="mp-body">3 月 24 号在 Stargate 数据中心完成预训练。4 月 14 号的爆料日期未兑现。按 4-6 周安全评估周期，5 月到 6 月初发布最靠谱。能力提升 40%+ 但价格不变。</p>
+        <div class="mp-source">来源: FindSkill.ai</div>
+      </div>
+
+      <!-- Footer -->
+      <div class="mp-footer">
+        <div class="mp-footer-divider"></div>
+        <div class="mp-footer-brand">&#128240; JR Academy AI 日报 · jiangren.com.au/blog</div>
+        <div class="mp-footer-note">每日精选 AI 领域最值得关注的 5 条新闻</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast">已复制到剪贴板 &#10003;</div>
+
+  <script>
+    /**
+     * MP_INLINE_STYLES — maps mp-* CSS class selectors to inline style strings.
+     * WeChat editor strips <style> tags and class-based CSS, so these must be
+     * applied as inline style="" attributes before copying.
+     * NO CSS custom properties — all colors are resolved hex values.
+     */
+    const MP_INLINE_STYLES = {
+      '.mp-article': 'max-width:680px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;color:#10162f;line-height:1.8;font-size:16px;',
+
+      '.mp-header': 'text-align:center;margin-bottom:32px;',
+      '.mp-date': 'font-size:13px;color:#888888;letter-spacing:1px;margin-bottom:8px;',
+      '.mp-title': 'font-size:26px;font-weight:800;color:#10162f;line-height:1.4;margin:0 0 10px 0;',
+      '.mp-subtitle': 'font-size:16px;color:#ff5757;font-weight:600;margin-bottom:16px;line-height:1.5;',
+      '.mp-divider': 'width:64px;height:4px;background:#ff5757;margin:0 auto;border-radius:2px;',
+
+      '.mp-item': 'margin-bottom:36px;padding-bottom:32px;border-bottom:1px solid #eaeaea;',
+      '.mp-item-number': 'display:inline-block;background:#ff5757;color:#ffffff;font-size:14px;font-weight:800;padding:2px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:1px;',
+      '.mp-item-title': 'font-size:20px;font-weight:700;color:#10162f;margin:0 0 14px 0;line-height:1.5;',
+
+      '.mp-highlight': 'display:flex;align-items:stretch;margin-bottom:14px;background:#fff8e6;border-radius:6px;padding:12px 16px;',
+      '.mp-highlight-bar': 'width:4px;min-height:100%;background:#ffce44;border-radius:2px;margin-right:12px;flex-shrink:0;',
+      '.mp-highlight-text': 'font-size:15px;color:#10162f;font-weight:600;line-height:1.7;',
+
+      '.mp-body': 'font-size:15px;color:#333333;line-height:1.9;margin:0 0 10px 0;',
+      '.mp-source': 'font-size:13px;color:#999999;',
+
+      '.mp-footer': 'text-align:center;margin-top:12px;padding-top:20px;',
+      '.mp-footer-divider': 'width:100%;height:2px;background:linear-gradient(90deg,#ffffff,#ff5757,#ffce44,#3b82f6,#ffffff);margin-bottom:20px;border-radius:1px;',
+      '.mp-footer-brand': 'font-size:15px;font-weight:700;color:#10162f;margin-bottom:6px;',
+      '.mp-footer-note': 'font-size:13px;color:#999999;',
+    };
+
+    /**
+     * applyInlineStyles — loops through MP_INLINE_STYLES and applies each
+     * style string to all matching elements inside the given container.
+     */
+    function applyInlineStyles(container) {
+      for (const [selector, style] of Object.entries(MP_INLINE_STYLES)) {
+        container.querySelectorAll(selector).forEach(function (el) {
+          el.style.cssText = style;
+        });
+        // Also check if the container itself matches
+        if (container.matches && container.matches(selector)) {
+          container.style.cssText = style;
+        }
+      }
+    }
+
+    /**
+     * mpCopyHtml — clones the article, injects inline styles, copies HTML
+     * to clipboard, and shows a toast notification.
+     */
+    function mpCopyHtml() {
+      var article = document.getElementById('mp-article');
+      var clone = article.cloneNode(true);
+
+      // Apply inline styles to the clone so WeChat preserves them
+      applyInlineStyles(clone);
+
+      // Remove all class attributes since WeChat ignores them anyway
+      clone.querySelectorAll('*').forEach(function (el) {
+        el.removeAttribute('class');
+      });
+      clone.removeAttribute('class');
+      clone.removeAttribute('id');
+
+      var html = clone.innerHTML;
+
+      // Use the modern clipboard API with fallback
+      if (navigator.clipboard && navigator.clipboard.write) {
+        var blob = new Blob([html], { type: 'text/html' });
+        var textBlob = new Blob([html], { type: 'text/plain' });
+        navigator.clipboard.write([
+          new ClipboardItem({
+            'text/html': blob,
+            'text/plain': textBlob,
+          }),
+        ]).then(showToast).catch(function () {
+          fallbackCopy(html);
+        });
+      } else {
+        fallbackCopy(html);
+      }
+    }
+
+    function fallbackCopy(html) {
+      var textarea = document.createElement('textarea');
+      textarea.value = html;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast();
+      } catch (e) {
+        alert('复制失败，请手动选中文章内容并复制。');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showToast() {
+      var toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(function () {
+        toast.classList.remove('show');
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
