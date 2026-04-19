@@ -92,6 +92,17 @@ bun run sync      # 构建 + 同步元数据到 MongoDB（需要 ADMIN_TOKEN）
 
 管理: https://claude.ai/code/scheduled
 
+### 🚨 schedule 的日期必须用 AEST（Australia/Sydney）
+
+调度器跑在 UTC / 美国时区，直接 `date +%Y-%m-%d` 会拿到比澳洲慢一天的日期 → 管道看到"昨天的文件"就当"今天已跑"直接退出，当天内容漏产（血泪：2026-04-19 就因为这个没产出）。
+
+所有 skill 里取日期必须写：
+```bash
+DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
+```
+
+`ai-daily-news.md` / `ai-news-poster.md` / `ai-content-pipeline.md` 都已强制。新增 skill 只要涉及日期都照办。
+
 ### 🚨 schedule 跑 `/ai-news-poster` 的强制要求
 
 `mp-article.html` 必须带**完整 inline style CSS**（公众号编辑器会剥光 `<style>` 和 class，只认 `style=""`）。定时任务没人盯，漏一次当天推文就变黑白纯文本。

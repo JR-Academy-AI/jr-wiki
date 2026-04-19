@@ -10,6 +10,17 @@
 
 ## 执行步骤
 
+### Step 0: 确定日期（AEST 时区，强制）
+
+```bash
+# ⚠️ 必须用 Australia/Sydney 时区，不要用系统默认
+# Claude Code 调度器通常跑在 UTC / 美国时区
+# 裸用 date +%Y-%m-%d 会比澳洲慢一天 → schedule 误判"昨天的内容就是今天"
+DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
+```
+
+下文所有 `{date}` / `{YYYY-MM-DD}` 占位符都指这个 `$DATE`（AEST 当天）。
+
 ### Step 1: 全网搜索当天 AI 新闻
 
 用 WebSearch 搜索以下关键词（至少搜 5 轮，覆盖不同角度）：

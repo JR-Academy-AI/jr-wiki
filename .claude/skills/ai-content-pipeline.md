@@ -20,6 +20,17 @@
 
 ## 完整管道流程
 
+### Phase 0: 确定日期（AEST 时区，强制）
+
+```bash
+# ⚠️ 必须用 Australia/Sydney 时区
+# 调度器跑在 UTC / 美国时区时，裸用 date +%Y-%m-%d 会比澳洲慢一天
+# → 管道会误判"今天已跑"直接退出，当天日报/海报/公众号稿全部漏产
+DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
+```
+
+下文所有 `{date}` / `{DATE}` / `{YYYY-MM-DD}` 占位符都指这个 `$DATE`（AEST 当天）。传给子 skill（`/ai-daily-news` / `/ai-news-poster`）时显式带上，别依赖它们再算一次。
+
 ### Phase 1: 搜索 AI 新闻 (5 分钟)
 
 用 WebSearch 搜索当天 AI 新闻，覆盖：

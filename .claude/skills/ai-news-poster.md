@@ -145,7 +145,10 @@ category 推荐词：模型发布 / 营收融资 / 算力硬件 / 安全监管 /
 ### Step 1. 确认日期 + 拉原始新闻
 
 ```bash
-DATE=${1:-$(date +%Y-%m-%d)}
+# ⚠️ 必须用 Australia/Sydney 时区取日期
+# Claude Code 调度器通常跑在 UTC / 美国时区，直接 date +%Y-%m-%d 会拿到昨天的日期
+# → schedule 会误判"今天已生成"直接退出，当天内容漏产
+DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
 ```
 
 读 `jr-wiki/src/content/articles/ai-daily-{DATE}.md`。读不到 → 报错提示先跑 `/ai-daily-news`。
