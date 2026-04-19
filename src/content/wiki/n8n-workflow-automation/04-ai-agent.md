@@ -5,6 +5,8 @@ order: 4
 description: "接入 OpenAI 和 Claude，用 n8n AI Agent 节点构建有记忆、能推理、会调用工具的智能自动化"
 ---
 
+![n8n AI Agent 工作流](https://img.youtube.com/vi/ZbIVOy_GPyQ/maxresdefault.jpg)
+
 n8n 2.0 内置了 LangChain 集成，提供 70+ AI 专属节点。你可以在不写任何框架代码的情况下，构建有记忆、能调用工具、会推理决策的 AI Agent。
 
 ## AI Agent 节点的架构

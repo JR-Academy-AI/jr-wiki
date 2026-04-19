@@ -5,6 +5,8 @@ order: 5
 description: "Code Node 深度使用、错误处理、生产部署要点，以及 FAQ"
 ---
 
+![n8n 进阶配置与部署](https://img.youtube.com/vi/bKX8t3QA04s/maxresdefault.jpg)
+
 掌握了基础节点之后，这些技巧能让你的工作流更健壮、更高效。
 
 ## Code Node：写真实代码
