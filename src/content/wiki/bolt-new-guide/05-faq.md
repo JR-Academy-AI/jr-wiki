@@ -7,7 +7,7 @@ description: "Bolt.new 定价详解、token 机制、常见问题解答、与 Lo
 
 用 Bolt.new 过程中最常遇到的问题都在这里了，包括定价、token 怎么算、什么时候该用别的工具。
 
-![Bolt.new pricing plans](https://cdn.prod.website-files.com/64b6f3636f598299028c7405/670e38ca8c58947b89ebf868_bolt-new-stackblitz.png)
+![Bolt.new pricing plans](https://img.youtube.com/vi/0_Ij8FEvY4U/maxresdefault.jpg)
 
 ## 定价和计划
 

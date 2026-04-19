@@ -7,7 +7,7 @@ description: "深入掌握 Bolt.new 六大核心功能：多框架支持、Supab
 
 Bolt.new 不只是一个"帮你生成前端页面"的玩具，它能搞定从数据库到部署的整条链路。搞懂这些核心功能，才能真正把它用起来。
 
-![Bolt.new V2 features](https://cdn.prod.website-files.com/64b6f3636f598299028c7405/6711a29bc68a7af061cf0d81_OG.png)
+![Bolt.new V2 features](https://a.fsdn.com/con/app/proj/bolt-new.mirror/screenshots/1-4d894ca8.PNG)
 
 ## 多框架支持
 

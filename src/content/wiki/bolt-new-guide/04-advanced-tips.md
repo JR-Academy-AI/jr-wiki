@@ -7,7 +7,7 @@ description: "掌握 Bolt.new 高级 prompt 技巧、token 节约策略、三阶
 
 用 Bolt.new 一段时间后你会发现，同样的需求，会写 prompt 的人可能 3 条消息就搞定，不会写的人 20 条消息还在绕圈子——而且每条消息都在烧 token。这一章讲的就是怎么更高效地用 Bolt.new。
 
-![Bolt.new prompting tips](https://bolt.new/social_card_v2.jpg)
+![Bolt.new prompting tips](https://a.fsdn.com/con/app/proj/bolt-diy.mirror/screenshots/bolt-diy-6f92341a.jpg)
 
 ## Prompt 写法的核心原则
 
