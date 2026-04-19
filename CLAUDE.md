@@ -91,3 +91,9 @@ bun run sync      # 构建 + 同步元数据到 MongoDB（需要 ADMIN_TOKEN）
 | 电子书扩章 | 每周四 | 现有书加 1-2 章 → /wiki/ |
 
 管理: https://claude.ai/code/scheduled
+
+### 🚨 schedule 跑 `/ai-news-poster` 的强制要求
+
+`mp-article.html` 必须带**完整 inline style CSS**（公众号编辑器会剥光 `<style>` 和 class，只认 `style=""`）。定时任务没人盯，漏一次当天推文就变黑白纯文本。
+
+每次产出必须满足：`MP_INLINE_STYLES` 映射全 + `applyInlineStyles()` 完整 + `mpCopyHtml()` 调用了它 + 所有颜色用 hex 不用 `var(--*)`。详见 `.claude/skills/ai-news-poster.md`「schedule 跑 /ai-news-poster 的硬性要求」章节，照搬 `2026-04-18/mp-article.html` 的第 411–498 行逻辑即可。

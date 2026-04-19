@@ -333,28 +333,40 @@ cd curriculum && python3 -m http.server 8090
 
 ### 🚨 硬性要求：每天新建 mp-article.html 时，复制函数必须把 class 样式展开成 inline style
 
-> **适用范围**：这节要求对**每一天**跑 `/ai-news-poster` 新产出的 `ai-news-posters/{YYYY-MM-DD}/mp-article.html` 都生效——不是一次性改老文件，是每天新建文件必带的能力。以下四条限制 + 校验清单每次都要过。
+> **适用范围**：这节要求对**每一天**跑 `/ai-news-poster` 新产出的 `ai-news-posters/{YYYY-MM-DD}/mp-article.html` 都生效——不是一次性改老文件，是每天新建文件必带的能力。以下限制 + 校验清单每次都要过。
+
+**2026-04-18 实测（已验证粘贴到 mp.weixin.qq.com 能保留背景色/颜色/边框）**
 
 公众号编辑器（mp.weixin.qq.com）在粘贴 HTML 时会：
 
 1. **剥掉 `<style>` 标签** — 所有 class-based CSS 规则全部失效
 2. **剥掉 class 属性的视觉效果** — 保留 class 字符串但不应用任何样式
-3. **不解析 CSS 变量** — `var(--brand-red)` 之类的写法直接按文字处理、不上色
-4. **只认 inline `style=""`** — 且每个属性必须是具体值（hex / rgb / 像素数字）
+3. **不解析 CSS 变量** — `var(--brand-red)` 直接按文字处理
+4. **剥掉 `background:` shorthand** — **必须改用 `background-color:`**
+5. **不认短 hex** — `#000` 不灵，要 `#000000`
+6. **丢弃 `rgba()` 的 alpha** — 必须改成纯 hex（如 `rgba(255,255,255,0.7)` → `#d1d5db`）
+7. **裸 `<div>` 的 background 有时失效** — 需要额外包一层 `<section>`
+8. **`<span style="display:inline-block;background-color:...">` 比 `<div>` 稳** — 小标签（如 `.mp-hook`）要用 span，不要 div
 
-所以 `mp-article.html` 的 `mpCopyHtml()` 必须在序列化之前做这件事：
-遍历 article 副本，按 class 名查表把颜色/背景/边框/内外边距/字体大小等写回到 `style=""`。这套逻辑固定叫 `MP_INLINE_STYLES`（class → 样式字符串的映射）+ `applyInlineStyles(root)`（遍历 + 注入 + 处理嵌套选择器 `.mp-meta .author` `.mp-oneline strong` `.mp-source a` `.mp-quickview h3/ul/li` `.mp-cta .big/.sub`、正文 `<p>`、`<code>`）。
+所以 `mp-article.html` 的 `mpCopyHtml()` 必须在序列化之前跑 `applyInlineStyles(article)`，做四件事：
 
-**新建 mp-article.html 时必须整段从 `src/static/ai-news-posters/2026-04-18/mp-article.html` 照搬这两个常量 + 函数**，只改日期、标题、正文数据。**不要自作主张精简或重写**——漏了任何一条，粘贴到公众号就退化成黑白纯文本，要背景色、红色左边框、黄色 oneline、深色 hook 标签全部丢失。
+1. 按 class 名查 `MP_INLINE_STYLES` 表把样式写回 `style=""`
+2. 处理嵌套选择器：`.mp-meta .author` `.mp-oneline strong` `.mp-source a` `.mp-quickview h3/ul/li` `.mp-cta .big/.sub` + 正文 `<p>` + `<code>`
+3. **把 `.mp-lead / .mp-oneline / .mp-quickview / .mp-cta` 外面再包一层 `<section style="background-color:...;padding:...">`**（双保险）
+4. **把 `.mp-hook` 从 `<div>` 换成 `<span style="display:inline-block;background-color:...">`**
+
+**新建 mp-article.html 时必须整段从 `src/static/ai-news-posters/2026-04-18/mp-article.html` 照搬 `MP_INLINE_STYLES` + `applyInlineStyles()` + `mpCopyHtml()` 三段**（第 411–498 行），只改日期、标题、正文数据。**不要自作主张精简或重写、不要把 `background-color` 还原成 `background` 简写**——漏了任何一条，粘贴到公众号就退化成黑白纯文本。
 
 校验清单（mp-article.html 生成完、push 前必须 ✅）：
-- [ ] `<script>` 里有 `const MP_INLINE_STYLES = { ... }` 常量，至少覆盖 `mp-title / mp-meta / mp-lead / mp-hook / mp-h2 / mp-img / mp-alt-img / mp-oneline / mp-source / mp-divider / mp-quickview / mp-cta` 这 12 个 class
-- [ ] `MP_INLINE_STYLES` 每条样式值都用 hex / rgb / 具体像素，**没有** `var(--*)`
-- [ ] 有 `function applyInlineStyles(root)`，里面处理了所有嵌套选择器（见上）+ `<p>` + `<code>`
-- [ ] `mpCopyHtml()` 里在拼 `html` 字符串之前调用了 `applyInlineStyles(article)`
-- [ ] 本地打开 html → 点 📋 复制富文本 → 在任何 rich-text 输入框粘贴，应能看到背景色/边框/红色 h2 左条——若丢失说明哪条没展开
+- [ ] `MP_INLINE_STYLES` 至少覆盖 12 个 class：`mp-title / mp-meta / mp-lead / mp-hook / mp-h2 / mp-img / mp-alt-img / mp-oneline / mp-source / mp-divider / mp-quickview / mp-cta`
+- [ ] 全程用 `background-color:` 不用 `background:` 简写
+- [ ] 全程用 6 位 hex（`#000000` 不是 `#000`）、不用 `rgba()`、不用 `var(--*)`
+- [ ] `applyInlineStyles()` 里有 4 步：class 注入 / 嵌套选择器 / 彩块 section 外包 / mp-hook 转 span
+- [ ] `mpCopyHtml()` 里拼 html 前调用了 `applyInlineStyles(article)`
+- [ ] 复制后的 log 面板显示 `NN 处 background-color · NN 处 hex color`，数字不为 0
+- [ ] 本地打开 html → 点 📋 复制 → 贴到 Notion 或 Gmail 草稿，能看到深色 hook 胶囊 / 红色左边框 / 黄色 oneline / 深色 CTA 块
 
-参考实现：`src/static/ai-news-posters/2026-04-18/mp-article.html` 第 411–498 行。
+若以上 ✅ 全过，粘贴到 mp.weixin.qq.com 图文编辑器（非 Safari，用 Chrome）即可保留全部视觉。
 
 mp-article.html 生成时替换：
 - `<title>`、`.mp-title`、`.mp-meta` 里的日期
@@ -381,6 +393,29 @@ mp-article.html 生成时替换：
 每天 9:15 AEST  cd jr-wiki && /publish              # push + 部署
 ```
 
+### 🚨 schedule 跑 `/ai-news-poster` 的硬性要求：mp-article.html 必须带完整 inline style CSS
+
+**为什么在 schedule 里再提一次**：定时任务每天自动跑、没人盯着。一旦某天生成的 mp-article.html 漏了 `MP_INLINE_STYLES` 或 `applyInlineStyles()`，运营早上 Ctrl+V 到公众号草稿 → 整篇文章直接变黑白纯文本（红色左边框、黄色 oneline、深蓝 CTA 全丢）→ 当天推文报废。
+
+schedule 每次跑这个 skill，产出 mp-article.html 都必须满足：
+
+1. **`MP_INLINE_STYLES` 常量完整** — 覆盖 `mp-title / mp-meta / mp-lead / mp-hook / mp-h2 / mp-img / mp-alt-img / mp-oneline / mp-source / mp-divider / mp-quickview / mp-cta` 至少 12 条；新增 `.mp-*` class 必须同步新增映射
+2. **`applyInlineStyles(root)` 函数完整** — 含嵌套选择器（`.mp-meta .author / .mp-oneline strong / .mp-source a / .mp-quickview h3/ul/li / .mp-cta .big/.sub`）+ `<p>` + `<code>` 注入
+3. **`mpCopyHtml()` 拼 html 字符串前必须调 `applyInlineStyles(article)`**
+4. **所有颜色/背景/边框值必须是具体 hex**，禁止 `var(--*)`（公众号不解析 CSS 变量）
+5. **外层 `<section>` wrapper 自带 inline style**（`max-width / font-family / font-size / line-height / color` 直写在 `style=""`）
+
+**schedule 完成自检（产出后、`/publish` 前必跑）**：
+```bash
+MP=src/static/ai-news-posters/{DATE}/mp-article.html
+grep -q "const MP_INLINE_STYLES" $MP       || echo "❌ 缺 MP_INLINE_STYLES"
+grep -q "function applyInlineStyles" $MP   || echo "❌ 缺 applyInlineStyles"
+grep -q "applyInlineStyles(article)" $MP   || echo "❌ mpCopyHtml 没调 applyInlineStyles"
+! grep -q "var(--" $MP                     || echo "⚠️ 还有 var(--*)，公众号不认"
+```
+
+任何一条不通过都**禁止进入 `/publish`**，必须先修 mp-article.html。
+
 产出当天由 GitHub Actions 自动部署到 `https://jr-academy-ai.github.io/jr-wiki/ai-news-posters/{YYYY-MM-DD}/`：
 - `index.html` — 海报库（小红书 / 朋友圈 / 公众号素材）
-- `mp-article.html` — 公众号发稿页（等渲染进度 100% 后复制/下载）
+- `mp-article.html` — 公众号发稿页（等渲染进度 100% 后复制/下载，复制出来的富文本必须带全部 inline style）
