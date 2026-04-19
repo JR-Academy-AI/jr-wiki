@@ -203,6 +203,7 @@
       <a class="btn" href="./">← 回海报库</a>
       <button class="btn" id="btn-copy-html">📋 复制富文本</button>
       <button class="btn" id="btn-copy-md">📝 复制 MD</button>
+      <button class="btn" id="btn-push-mp" title="推送到 JR Social Publisher 插件，切到 mp.weixin.qq.com 一键导入">📤 推送公众号</button>
       <button class="btn primary" id="btn-download-all">⬇ 下载 6 张 PNG</button>
     </div>
   </div>
@@ -613,6 +614,68 @@ async function downloadAll() {
 btnCopyHtml.addEventListener('click', mpCopyHtml);
 btnCopyMd.addEventListener('click', mpCopyMarkdown);
 btnDownload.addEventListener('click', downloadAll);
+
+// ---- JR Social Publisher Chrome Extension 推送钩子 ----
+// 插件没装：postMessage 无人接听，不会报错；装了：插件 content script 接住 payload 存 storage，用户切到公众号 tab 一键导入
+async function pushMpToExtension() {
+  const btnPush = document.getElementById('btn-push-mp');
+  const oldText = btnPush.textContent;
+  btnPush.disabled = true;
+  btnPush.textContent = '准备中...';
+  try {
+    const article = document.getElementById('mp-article').cloneNode(true);
+    const base = new URL('.', location.href).href;
+    article.querySelectorAll('img').forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && src.startsWith('./')) img.src = new URL(src, base).href;
+    });
+    article.querySelectorAll('.mp-caption, .mp-alt-caption').forEach(n => n.remove());
+    applyInlineStyles(article);
+    const bodyHtml = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+
+    btnPush.textContent = '抓封面...';
+    const coverResp = await fetch(new URL('./poster-0.png', base).href);
+    const coverBlob = await coverResp.blob();
+    const coverImageBase64 = await new Promise((resolve, reject) => {
+      const fr = new FileReader();
+      fr.onload = () => resolve(fr.result);
+      fr.onerror = () => reject(new Error('封面图读取失败'));
+      fr.readAsDataURL(coverBlob);
+    });
+
+    const articleEl = document.getElementById('mp-article');
+    const title = articleEl.querySelector('.mp-title')?.textContent?.trim() || '';
+    const metaSpans = articleEl.querySelectorAll('.mp-meta span');
+    const date = Array.from(metaSpans).map(s => s.textContent.trim()).find(t => /^\d{4}-\d{2}-\d{2}$/.test(t)) || '';
+    const lead = articleEl.querySelector('.mp-lead')?.textContent?.trim() || '';
+    const summary = lead.length > 120 ? lead.slice(0, 117) + '...' : lead;
+
+    const payload = {
+      source: 'ai-news-poster',
+      date,
+      title,
+      summary,
+      wechat: {
+        author: 'JR Academy AI 日报',
+        bodyHtml,
+        coverImageBase64,
+      },
+    };
+
+    window.postMessage({ type: 'JR_PUBLISH_PAYLOAD', version: 1, target: 'wechat', payload }, '*');
+    const sizeKB = Math.round(JSON.stringify(payload).length / 1024);
+    log(`📤 已推送 payload ${sizeKB} KB 到 Chrome 插件（插件未装时无反应）`);
+    setStatus('📤 已推送，切到 mp.weixin.qq.com → 新建图文 → 顶栏点「📥 导入」', 'done');
+    btnPush.textContent = '✅ 已推送';
+    setTimeout(() => { btnPush.textContent = oldText; btnPush.disabled = false; }, 2500);
+  } catch (e) {
+    log('❌ 推送失败: ' + e.message);
+    btnPush.textContent = '❌ ' + (e.message || '失败');
+    setTimeout(() => { btnPush.textContent = oldText; btnPush.disabled = false; }, 3000);
+  }
+}
+
+document.getElementById('btn-push-mp').addEventListener('click', pushMpToExtension);
 </script>
 
 </body>

@@ -328,8 +328,9 @@ cd curriculum && python3 -m http.server 8090
 
 | 文件 | 作用 | 产出方式 |
 |------|------|----------|
-| `index.html` | 海报库：6 张大海报 + 下载按钮 | 手写（skill 主产出） |
-| `mp-article.html` | 公众号发稿页：左手机预览文章 + 右操作面板 | 手写（skill 主产出） |
+| `index.html` | 海报库：6 张大海报 + 下载按钮 + 📤 推送小红书按钮 | 手写（skill 主产出） |
+| `mp-article.html` | 公众号发稿页：左手机预览文章 + 右操作面板 + 📤 推送公众号按钮 | 手写（skill 主产出） |
+| `xhs-caption.json` | 小红书短文案（标题 ≤20 字 / 正文 ≤1000 字 / tags 数组 / headlines 元数据） | 手写（skill 主产出，见下文 schema） |
 | `poster-0.png` … `poster-5.png` | 真实 PNG 文件，1242×1660 | **CI 自动** —— `scripts/render-ai-news-posters.mjs` 用 puppeteer-core + `page.screenshot` 把 6 个 `.poster` 元素从 `dist/ai-news-posters/{date}/index.html` 拍照产出到同目录 |
 
 **为什么 PNG 必须是真实文件**：公众号编辑器粘贴 HTML 时，`<img src="data:image/png;base64,...">` 会被丢弃；`<img src="https://...poster-0.png">` 会被自动抓取 re-host 到它自己 CDN → 实现真正的"一次 Ctrl+V 完成发稿"。
@@ -381,6 +382,166 @@ mp-article.html 生成时替换：
 **字数目标**: 3000-4000 字（引言 + 5 条各 2-3 段 + 速览 + CTA）。低于 2500 退回重写。
 
 **index.html 里必须有一条**: `.utility-bar` 的副文案末尾加 `想要公众号长文版 → <a href="./mp-article">📰 mp-article</a>` 链接。
+
+## 📤 Chrome 插件推送钩子（MP_XHS_PUBLISHER_EXTENSION）
+
+> 背景：`docs/MP_XHS_PUBLISHER_EXTENSION_PRD.md` 定义了一个 Chrome 插件，把本 skill 的产物一键填入公众号草稿 / 小红书草稿。Phase 0 的任务就是让本 skill 的产物自带插件约定的"推送按钮 + payload"——插件装没装都不影响页面本身功能；装了就能用。
+
+### xhs-caption.json schema（每天必产）
+
+```json
+{
+  "date": "2026-04-19",
+  "shortTitle": "今日 AI 5 条大新闻｜一图看完",
+  "shortBody": "小红书口语化的 ≤1000 字正文，分段 + emoji + 结尾引导关注。",
+  "tags": ["AI每日新闻", "AIGC", "AI资讯", "Claude", "OpenAI"],
+  "headlines": [
+    { "index": 1, "category": "模型发布", "title": "Claude Opus 4.7 编码登顶" },
+    { "index": 2, "category": "行业报告", "title": "Stanford AI Index 中美差距 2.7%" }
+  ]
+}
+```
+
+约束：
+- `shortTitle` **≤20 字**（小红书硬限）
+- `shortBody` **≤1000 字**（小红书硬限），**和 mp-article.html 的长文不一样**：口语化、短段、带 1-2 个 emoji、结尾写"关注 JR Academy 每天看"
+- `tags` 固定 3 个（`AI每日新闻`/`AIGC`/`AI资讯`）+ 2 个按当天内容选（模型名/公司名）
+- `headlines` 给插件做 UI 预览用，5 条 index + category + title 即可
+
+### mp-article.html 必须新增「📤 推送公众号」按钮
+
+在 `.topbar .acts` 的按钮行，紧跟现有「复制 MD」按钮后面加一个：
+
+```html
+<button class="btn" id="btn-push-mp" title="推送到 Chrome 插件，在公众号编辑页一键导入">📤 推送公众号</button>
+```
+
+JS 端新增 `pushMpToExtension()` 函数（放在 `mpCopyHtml` 同一 script 块）：
+
+```js
+async function pushMpToExtension() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  const base = new URL('.', location.href).href;
+  article.querySelectorAll('img').forEach(img => {
+    const src = img.getAttribute('src');
+    if (src && src.startsWith('./')) img.src = new URL(src, base).href;
+  });
+  article.querySelectorAll('.mp-caption, .mp-alt-caption').forEach(n => n.remove());
+  applyInlineStyles(article);
+  const bodyHtml = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+
+  // 封面图：poster-0.png → base64（压缩到 JPEG 85% 控制 payload 体积）
+  const coverResp = await fetch(new URL('./poster-0.png', base).href);
+  const coverBlob = await coverResp.blob();
+  const coverImageBase64 = await new Promise(resolve => {
+    const fr = new FileReader();
+    fr.onload = () => resolve(fr.result);
+    fr.readAsDataURL(coverBlob);
+  });
+
+  const DATE = document.getElementById('mp-article').querySelector('.mp-meta span:nth-of-type(3)')?.textContent?.trim() || '';
+  const TITLE = document.getElementById('mp-article').querySelector('.mp-title')?.textContent?.trim() || '';
+  const SUMMARY = (document.getElementById('mp-article').querySelector('.mp-lead')?.textContent?.trim() || '').slice(0, 120);
+
+  const payload = {
+    source: 'ai-news-poster',
+    date: DATE,
+    title: TITLE,
+    summary: SUMMARY,
+    wechat: {
+      author: 'JR Academy AI 日报',
+      bodyHtml,
+      coverImageBase64,
+    },
+  };
+
+  window.postMessage({ type: 'JR_PUBLISH_PAYLOAD', version: 1, target: 'wechat', payload }, '*');
+  setStatus('📤 已推送到 Chrome 插件，切到 mp.weixin.qq.com → 新建图文 → 点顶栏「📥 导入」', 'done');
+  log('📤 推送 payload ' + Math.round(JSON.stringify(payload).length / 1024) + ' KB，等插件接收');
+}
+
+// 事件绑定（和 btnCopyHtml 等其它按钮放一起）
+document.getElementById('btn-push-mp').addEventListener('click', pushMpToExtension);
+```
+
+**注意**：插件**没装**时，`postMessage` 只是在页面自己的 window 里发一条消息没人听，不会报错——按钮行为安全，不影响现有复制/下载流程。
+
+### posters/index.html 必须新增「📤 推送小红书」按钮
+
+在 `.utility-bar .utility-actions` 的按钮组加一个：
+
+```html
+<button class="utility-btn secondary" id="push-xhs" type="button" title="推送到 Chrome 插件，在小红书创作页一键导入 6 图 + 文案">📤 推送小红书</button>
+```
+
+JS（放在现有下载脚本同一块）：
+
+```js
+async function pushXhsToExtension() {
+  const btn = document.getElementById('push-xhs');
+  btn.disabled = true;
+  const oldText = btn.textContent;
+  btn.textContent = '准备中...';
+
+  try {
+    // 1. 读 xhs-caption.json
+    const captionResp = await fetch('./xhs-caption.json');
+    if (!captionResp.ok) throw new Error('xhs-caption.json 缺失（skill 应生成）');
+    const caption = await captionResp.json();
+
+    // 2. 6 张海报 → base64（顺序：合集 + 5 单图）
+    const images = [];
+    for (let i = 0; i < 6; i++) {
+      btn.textContent = `传图 ${i + 1}/6`;
+      const resp = await fetch(`./poster-${i}.png`);
+      const blob = await resp.blob();
+      const b64 = await new Promise(resolve => {
+        const fr = new FileReader();
+        fr.onload = () => resolve(fr.result);
+        fr.readAsDataURL(blob);
+      });
+      images.push(b64);
+    }
+
+    const payload = {
+      source: 'ai-news-poster',
+      date: caption.date,
+      title: caption.shortTitle,
+      summary: caption.shortBody.slice(0, 120),
+      xiaohongshu: {
+        shortTitle: caption.shortTitle,
+        shortBody: caption.shortBody,
+        images,
+        tags: caption.tags || [],
+      },
+    };
+
+    window.postMessage({ type: 'JR_PUBLISH_PAYLOAD', version: 1, target: 'xiaohongshu', payload }, '*');
+    btn.textContent = '✅ 已推送';
+    setTimeout(() => { btn.textContent = oldText; btn.disabled = false; }, 2000);
+  } catch (e) {
+    btn.textContent = '❌ ' + e.message;
+    setTimeout(() => { btn.textContent = oldText; btn.disabled = false; }, 3000);
+  }
+}
+
+document.getElementById('push-xhs').addEventListener('click', pushXhsToExtension);
+```
+
+### schedule 自检补充
+
+产出后 `/publish` 前，除了原有的 mp-article.html 自检，**还要**确认：
+
+```bash
+DIR=src/static/ai-news-posters/{DATE}
+test -f $DIR/xhs-caption.json                            || echo "❌ 缺 xhs-caption.json"
+grep -q "btn-push-mp" $DIR/mp-article.html               || echo "❌ mp-article.html 缺推送公众号按钮"
+grep -q "push-xhs" $DIR/index.html                       || echo "❌ index.html 缺推送小红书按钮"
+grep -q "JR_PUBLISH_PAYLOAD" $DIR/mp-article.html        || echo "❌ mp-article.html 缺 postMessage 信封"
+grep -q "JR_PUBLISH_PAYLOAD" $DIR/index.html             || echo "❌ index.html 缺 postMessage 信封"
+# xhs-caption.json 基本形状
+node -e "const c=require('./$DIR/xhs-caption.json'); if(!c.shortTitle||c.shortTitle.length>20) throw Error('shortTitle 缺失或超 20 字'); if(!c.shortBody||c.shortBody.length>1000) throw Error('shortBody 缺失或超 1000 字'); if(!Array.isArray(c.tags)||c.tags.length<3) throw Error('tags 至少 3 个');"
+```
 
 ## 🔗 相关 skill
 

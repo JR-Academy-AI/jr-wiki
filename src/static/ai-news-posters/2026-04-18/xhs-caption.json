@@ -1,0 +1,13 @@
+{
+  "date": "2026-04-18",
+  "shortTitle": "今日 AI 5 条｜Claude 反超",
+  "shortBody": "今天 AI 圈的五条大事 👇\n\n1️⃣ Claude Opus 4.7 编码登顶，反超 GPT-5.4\n编码、视觉、工具三项基准全拿回第一，价格没涨还是 $5/$25 per MTok。\n\n2️⃣ Stanford 2026 AI Index：中美差距 2.7%\nArena 分差只有 39 分，美国 AI 研究员外流已超 89%。中国靠开源 + 国产算力硬是追上来了。\n\n3️⃣ Google Gemma 4 开源 Apache 2.0\n256K 上下文，支持 140+ 语言，能跑在 Raspberry Pi 上。端侧 AI 可以动真的了。\n\n4️⃣ DeepSeek V4 在华为芯片跑起来了\n1T 参数 MoE，1M 上下文，训练推理都在 Ascend 910C 上。Nvidia 出口管制假设被打破。\n\n5️⃣ Meta Muse Spark：Alexandr Wang 的第一张牌\n小体量 + 多 agent 并行推理，Humanity's Last Exam 拿 58%。Meta 想重新拿回声誉。\n\n想看完整长文版？关注 JR Academy，每天一份 AI 日报～\n\n哪条最炸？评论区告诉我 💬",
+  "tags": ["AI每日新闻", "AIGC", "AI资讯", "Claude", "DeepSeek"],
+  "headlines": [
+    { "index": 1, "category": "模型发布", "title": "Claude Opus 4.7 编码登顶，反超 GPT-5.4" },
+    { "index": 2, "category": "行业报告", "title": "Stanford 2026 AI Index：中美差距 2.7%" },
+    { "index": 3, "category": "开源工具", "title": "Google Gemma 4 开源 Apache 2.0" },
+    { "index": 4, "category": "算力硬件", "title": "DeepSeek V4 在华为 Ascend 芯片跑起来了" },
+    { "index": 5, "category": "模型发布", "title": "Meta Muse Spark 首秀" }
+  ]
+}
