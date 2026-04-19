@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 日报 2026-04-19 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-red: #ff5757;
+    --brand-dark: #10162f;
+    --brand-yellow: #ffce44;
+    --brand-blue: #3b82f6;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #eef0f4;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
+    padding: 22px 26px; margin-bottom: 24px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--brand-red); }
+  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; line-height: 1.65; max-width: 680px; }
+  .topbar .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; padding: 10px 16px;
+    border: 2px solid var(--brand-dark);
+    background: #fff; color: var(--brand-dark);
+    border-radius: 10px; transition: all 0.12s;
+  }
+  .btn:hover { background: var(--brand-yellow); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .btn.primary { background: var(--brand-red); color: #fff; }
+  .btn.primary:hover { background: #e03e3e; }
+  .btn:disabled { opacity: 0.55; cursor: wait; }
+
+  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  /* Phone preview */
+  .phone-wrap { position: sticky; top: 20px; }
+  .phone {
+    width: 100%; max-width: 420px; margin: 0 auto;
+    background: #f5f6f9;
+    border: 2px solid var(--brand-dark);
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .phone-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .phone-bar .dot { width: 8px; height: 8px; background: var(--brand-red); border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .mp {
+    background: #fff; border-radius: 18px;
+    padding: 26px 20px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+    font-size: 15px; line-height: 1.85; color: #222;
+    max-height: 78vh; overflow-y: auto;
+  }
+  .mp::-webkit-scrollbar { width: 6px; }
+  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
+
+  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
+  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
+    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
+  .mp-meta .author { color: var(--brand-red); font-weight: 600; }
+  .mp-lead {
+    background: #f1f5f9; border-radius: 8px; padding: 13px 15px;
+    font-size: 14px; color: #334155; line-height: 1.75; margin-bottom: 22px;
+  }
+  .mp-hook {
+    display: inline-block; background: var(--brand-dark); color: #fff;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .mp-h2 {
+    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
+    margin: 12px 0 12px; padding-left: 10px;
+    border-left: 4px solid var(--brand-red);
+  }
+  .mp-img {
+    width: 100%; display: block; margin: 12px 0 6px;
+    border: 2px solid var(--brand-dark); border-radius: 10px;
+    background: #fff; box-shadow: 4px 4px 0 rgba(16,22,47,0.15);
+  }
+  .mp-img.broken {
+    aspect-ratio: 1242/1660;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg,#fee2e2,#fff1e7);
+    color: #991b1b; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    text-align: center; padding: 20px;
+  }
+  .mp-caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #8a8a8a; text-align: center;
+    margin: 2px 0 12px;
+  }
+  .mp-alt-img {
+    width: 100%; aspect-ratio: 16/9; object-fit: cover;
+    border-radius: 8px; display: block; margin: 10px 0 4px;
+  }
+  .mp-alt-caption { font-size: 11px; color: #8a8a8a; text-align: center; margin-bottom: 10px; }
+  .mp-oneline {
+    background: #fff4d1; border-left: 3px solid var(--brand-yellow);
+    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #3a3a3a;
+    margin: 12px 0 14px; line-height: 1.7;
+  }
+  .mp-oneline strong { color: #000; }
+  .mp p { margin-bottom: 12px; color: #333; }
+  .mp-source {
+    font-size: 12px; color: #8a8a8a;
+    padding-top: 8px; margin-top: 8px;
+    border-top: 1px dashed #e5e7eb; word-break: break-all;
+  }
+  .mp-source a { color: var(--brand-blue); text-decoration: none; }
+  .mp-divider { border: 0; border-top: 1px solid #e5e7eb; margin: 22px 0; }
+  .mp-quickview { background: #fff8ee; padding: 16px; border-radius: 8px; margin: 22px 0; }
+  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; }
+  .mp-quickview ul { padding-left: 18px; }
+  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; }
+  .mp-cta {
+    background: var(--brand-dark); color: #fff;
+    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
+  }
+  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; }
+  .mp-cta .sub { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+  /* Side panel */
+  .panel { display: flex; flex-direction: column; gap: 18px; }
+  .card {
+    background: #fff; border: 2px solid var(--brand-dark);
+    border-radius: 14px; padding: 20px; box-shadow: 4px 4px 0 var(--brand-dark);
+  }
+  .card h2 {
+    font-size: 15px; font-weight: 900; margin-bottom: 12px;
+    padding-bottom: 10px; border-bottom: 2px dashed var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card h2 .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; background: var(--brand-yellow);
+    padding: 2px 6px; border-radius: 3px;
+  }
+  .card p, .card li { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
+  .card ol { padding-left: 20px; }
+  .card ol li { margin-bottom: 6px; }
+  .card ol li strong { color: var(--text-main); }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+  .stat-item { background: #f1f5f9; padding: 10px; border-radius: 6px; text-align: center; font-family: 'JetBrains Mono', monospace; }
+  .stat-item .v { font-size: 18px; font-weight: 700; color: var(--brand-red); }
+  .stat-item .k { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .render-status {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px;
+    background: #fef3c7; border-left: 4px solid var(--brand-yellow);
+    border-radius: 6px; font-size: 13px; color: #713f12;
+    margin-bottom: 10px;
+  }
+  .render-status.done { background: #d1fae5; border-left-color: #10b981; color: #064e3b; }
+  .render-status.error { background: #fee2e2; border-left-color: #ef4444; color: #7f1d1d; }
+  #log {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    padding: 10px 12px;
+    background: #0f172a; color: #a7f3d0;
+    border-radius: 6px; min-height: 40px;
+    white-space: pre-wrap; word-break: break-all;
+    max-height: 180px; overflow-y: auto;
+  }
+  #log:empty { display: none; }
+
+  /* 不再需要 html2canvas iframe，海报已经是真实 PNG 文件 */
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1>📰 AI 日报 · <span>公众号文章</span> · 2026-04-19</h1>
+      <div class="sub">左侧 375px 手机预览 · 右侧进度 + 操作。页面加载后自动把 6 张海报渲染成 PNG 绑进文章（绑完再点复制/下载）。</div>
+    </div>
+    <div class="acts">
+      <a class="btn" href="./">← 回海报库</a>
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn" id="btn-copy-md">📝 复制 MD</button>
+      <button class="btn primary" id="btn-download-all">⬇ 下载 6 张 PNG</button>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+          <div class="mp-title">Cerebras 冲刺 IPO，MCP 协议爆出致命漏洞｜AI 日报 04-19</div>
+          <div class="mp-meta">
+            <span class="author">JR Academy AI 日报</span>
+            <span>·</span><span>2026-04-19</span>
+            <span>·</span><span>阅读约 8 分钟</span>
+          </div>
+
+          <div class="mp-lead">本周 AI 圈最炸的两条：Cerebras 递了 IPO 申请，350 亿估值、手握 OpenAI 百亿大单，直接挑战 Nvidia 的垄断地位；OX Security 曝光 MCP 协议的架构级 RCE 漏洞，1.5 亿下载量的工具链全部裸奔，Anthropic 说"设计如此"。另外 Anthropic 在伦敦签了 800 人的大办公室、GPT-6 "Spud"跑完预训练但就是不发、PwC 数据说 74% 的 AI 价值被 20% 的公司吃了。</div>
+
+          <img class="mp-img" src="./poster-0.png" alt="图 1 · 合集海报 · 今天 5 条 AI 大新闻一图看完" data-poster="poster-0" data-file="mp-01-summary.png">
+          <div class="mp-caption">图 1 · 合集海报</div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">01 · 算力硬件</div>
+          <div class="mp-h2">Cerebras 冲刺 IPO：350 亿估值，手握 OpenAI 百亿大单</div>
+          <img class="mp-img" src="./poster-1.png" alt="图 2 · Cerebras AI 芯片 IPO" data-poster="poster-1" data-file="mp-02-opus47.png">
+          <div class="mp-caption">图 2 · 海报 01</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="Cerebras AI 芯片 IPO 上市">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：AI 芯片新贵 Cerebras 4 月 17 日正式递交 IPO 申请，目标 350 亿估值，手里攥着 OpenAI 的 100 亿美元算力合同。</div>
+          <p>Cerebras 做的是"整晶圆计算"——把整个晶圆做成一块芯片（WSE-3），面积比 Nvidia H100 大 56 倍。2025 年营收 5.1 亿美元，同比涨 76%，净利润 8790 万，从上一年亏 4.85 亿直接翻正。拿到了和 OpenAI 的 100 亿美元多年期算力合同——非 Nvidia 阵营里最大的 AI 基建订单。</p>
+          <p>为什么这个 IPO 值得关注？它代表一个信号：AI 算力市场不再是 Nvidia 一家独大。如果 Cerebras 上市后股价站得住，会有更多资本涌入非 Nvidia 芯片赛道。OpenAI 拿这个合同就是在对冲 Nvidia 的定价权。Polymarket 给定价窗口放在 5 月中旬，Morgan Stanley 领投。</p>
+          <p><strong>对开发者的影响</strong>：短期影响不大——你还是用 CUDA 写代码。但中期如果云厂商开始大规模部署 Cerebras 推理集群，API 价格可能被进一步压下来。目标募资 20-30 亿美元，估值 350 亿。</p>
+          <div class="mp-source">来源：<a href="https://techcrunch.com/2026/04/18/ai-chip-startup-cerebras-files-for-ipo/">TechCrunch</a> · <a href="https://www.bloomberg.com/news/articles/2026-04-17/ai-chipmaker-cerebras-systems-files-publicly-again-for-us-ipo">Bloomberg</a> · <a href="https://www.cnbc.com/2026/04/17/cerebras-new-ipo-ai-chips.html">CNBC</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">02 · 安全监管</div>
+          <div class="mp-h2">MCP 协议爆出 RCE 漏洞：1.5 亿下载量的工具链全在裸奔</div>
+          <img class="mp-img" src="./poster-2.png" alt="图 3 · MCP 协议安全漏洞" data-poster="poster-2" data-file="mp-03-aiindex.png">
+          <div class="mp-caption">图 3 · 海报 02</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80" alt="MCP 协议安全漏洞 AI 供应链">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：OX Security 发现 Anthropic MCP 协议存在架构级 RCE 漏洞，Cursor、VS Code、Claude Code、Gemini-CLI 全部中招。</div>
+          <p>这个漏洞不是某个库的 bug，是 MCP 协议本身的设计问题。STDIO 传输层在 Python、TypeScript、Java、Rust 所有 SDK 版本里都可被 prompt injection 利用，攻击者能在宿主机上执行任意命令。OX Security 在 6 个线上生产环境里跑通了攻击链，能拿到 API 密钥、数据库凭证、聊天记录。</p>
+          <p>LiteLLM、LangChain、IBM LangFlow 都中招了。7000+ 公开可达的服务器、20 万实例受影响。Anthropic 的回应让社区最不满——确认行为存在但拒绝修改协议，说"清洗输入是开发者的责任"。技术上没毛病，但在 AI agent 上下文里，"开发者负责清洗"等于"没人负责清洗"。</p>
+          <p><strong>对开发者的影响</strong>：跑 MCP server 必须加 Docker 隔离 + 文件白名单 + 网络限制。<code>docker run --rm -it --network none</code> 是最起码的防线。长期来看，MCP 协议大概率要加一层权限沙箱，不然企业客户不敢在生产环境用。</p>
+          <div class="mp-source">来源：<a href="https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/">The Register</a> · <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/">OX Security</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">03 · 营收融资</div>
+          <div class="mp-h2">Anthropic 伦敦办公室扩到 800 人，AI 人才战打到欧洲</div>
+          <img class="mp-img" src="./poster-3.png" alt="图 4 · Anthropic 伦敦扩张" data-poster="poster-3" data-file="mp-04-gemma.png">
+          <div class="mp-caption">图 4 · 海报 03</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Anthropic 伦敦办公室扩张">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：Anthropic 在伦敦 King's Cross 签下 800 人容量的办公室，14700 平米，现有英国团队的 4 倍。和 OpenAI 在同一条街抢人。</div>
+          <p>前一周 OpenAI 刚宣布了伦敦永久办公室，两家在 Knowledge Quarter 同一个区域抢人，隔壁是 Google DeepMind、Meta、Wayve 和 Synthesia。Anthropic 现在英国有 200 多人，其中 60 个是 AI 安全研究员。扩到 800 人意味着不只是安全团队，产品和工程也要大规模本地化。</p>
+          <p>背后有两个推力：一是英国政府在积极拉拢——脱欧后英国需要一个"AI 强国"的标签来提振经济；二是 Anthropic 和英国 AI Safety Institute 的合作在加深，后者本周刚发布了 Claude Mythos Preview 的技术风险评估。Anthropic 2 月以 3800 亿估值融了 300 亿美元，据说已有 VC 按 8000 亿估值递 term sheet。</p>
+          <p><strong>对你的影响</strong>：如果你在英国或者欧洲找 AI 相关工作，Anthropic 和 OpenAI 同时招人意味着薪资竞争会上去。安全研究、infra、product 都在招。</p>
+          <div class="mp-source">来源：<a href="https://www.cnbc.com/2026/04/16/anthropic-london-office-800-staff-openai-expansion.html">CNBC</a> · <a href="https://www.benzinga.com/markets/tech/26/04/51855816/anthropic-amplifies-london-presence-days-after-openais-uk-expansion">Benzinga</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">04 · 模型发布</div>
+          <div class="mp-h2">GPT-6 "Spud" 预训练完成，但迟迟不发——OpenAI 在等什么？</div>
+          <img class="mp-img" src="./poster-4.png" alt="图 5 · GPT-6 OpenAI 延期" data-poster="poster-4" data-file="mp-05-deepseek.png">
+          <div class="mp-caption">图 5 · 海报 04</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="GPT-6 OpenAI Spud 延期">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：GPT-6 代号"Spud"，3 月 24 日在 Abilene Stargate 数据中心跑完预训练，4 月 14 日传言的发布日过了 5 天还没动静。</div>
+          <p>Sam Altman 3 月底说"还要几周"，Polymarket 标 78% 概率 4 月底前发布，95% 在 6 月底前。之前有未经证实的消息说 4 月 14 日会连带"超级 App"（ChatGPT + Codex + Atlas 浏览器）一起发，但那天什么也没发生。</p>
+          <p>拖延的原因可能有几个：一是安全评估还没过——GPT-6 的能力边界如果真跳了一档，红队测试要更长；二是产品整合没做完——Codex 和浏览器功能要和 ChatGPT 融合成一个入口；三是商业节奏——OpenAI 刚关了 1220 亿美元融资估值 8520 亿，不急。上周先推了 GPT-5 Turbo 和 o3-pro "垫场"。</p>
+          <p><strong>对开发者的影响</strong>：别干等 GPT-6，先把工作流调到 Claude Opus 4.7 或 GPT-5 Turbo 上。GPT-6 来了再切不迟，API 接口大概率向后兼容。最可能的窗口是 4 月 21 到 5 月 25 号之间。</p>
+          <div class="mp-source">来源：<a href="https://findskill.ai/blog/gpt-6-release-date/">FindSkill.ai</a> · <a href="https://lumichats.com/blog/gpt-5-5-spud-openai-release-date-features-april-2026-complete-guide">LumiChats</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">05 · 行业报告</div>
+          <div class="mp-h2">PwC 报告：74% 的 AI 经济价值被 20% 的公司吃掉了</div>
+          <img class="mp-img" src="./poster-5.png" alt="图 6 · PwC AI 价值报告" data-poster="poster-5" data-file="mp-06-musespark.png">
+          <div class="mp-caption">图 6 · 海报 05</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="PwC AI 经济价值分配报告">
+          <div class="mp-alt-caption">Unsplash 配图 · 和海报二选一</div>
+          <div class="mp-oneline"><strong>一句话</strong>：PwC 调研 1217 位高管，头部 20% 公司的 AI 驱动收益是平均水平的 7.2 倍，56% 的公司看不到显著回报。</div>
+          <p>报告核心发现：AI 的回报分布极度不均匀。差距不在于"用了多少 AI"，而在于"把 AI 指向了什么"。落后的公司把 AI 当降本工具——替代客服、自动化表格；领先的公司把 AI 当增长引擎——开新收入线、重构商业模式。说白了，前者省钱，后者赚钱。</p>
+          <p>33% 的公司报告了成本或收入改善，但只有不到 10% 说这个改善"显著影响了财务报表"。大部分公司的 AI 投入是在烧钱阶段，回报还在路上。有意思的是，头部 20% 公司和其他公司的差距在过去一年拉大了——AI 的马太效应越来越明显。</p>
+          <p><strong>对你的影响</strong>：会用 AI 是基本功，能把 AI 产品化才是硬通货。如果你是开发者，这份报告的信号是——技术能力之外，还要懂商业逻辑和产品思维，才能在 AI 时代站稳。</p>
+          <div class="mp-source">来源：<a href="https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-ai-performance-study.html">PwC</a> · <a href="https://www.itpro.com/business/business-strategy/just-20-percent-of-companies-are-lapping-up-three-quarters-of-ais-financial-gains">IT Pro</a></div>
+
+          <div class="mp-quickview">
+            <h3>📌 今日速览</h3>
+            <ul>
+              <li><strong>Cerebras</strong> 目标 5 月中旬上市，Morgan Stanley 领投，目标募 20-30 亿美元。</li>
+              <li><strong>MCP 漏洞</strong>：Anthropic 拒绝修改协议，社区正在推 sandbox PR，建议所有 MCP server 加 Docker 隔离。</li>
+              <li><strong>GPT-6 "Spud"</strong>：Polymarket 给 4 月底前发布 78% 概率，6 月底前 95%。</li>
+              <li><strong>智谱 GLM-5.1</strong>：开源模型首次超 Claude Opus 4.6，SWE-bench Pro 刷新全球最佳。</li>
+              <li><strong>OpenAI</strong> 融资 1220 亿美元，估值 8520 亿，月营收 20 亿美元。</li>
+            </ul>
+          </div>
+
+          <div class="mp-cta">
+            <div class="big">🎯 想每天 9 点收到 AI 日报？</div>
+            <div class="sub">关注 JR Academy 公众号 · 回复"AI 日报" 自动订阅<br>官网 jiangren.com.au/blog · 历史日报全开放</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>🎯 发稿就绪 <span class="tag">READY</span></h2>
+        <div class="render-status done" id="render-status">✅ 6 张海报已预渲染为 PNG，文章可直接复制粘贴</div>
+        <p style="margin-top:10px">海报是同目录 <code>./poster-0.png</code> ~ <code>./poster-5.png</code>（CI 部署时 puppeteer 产出，WeChat 粘贴时自动抓取 re-host）。本地 <code>bun run render:posters</code> 手动生成。</p>
+      </div>
+
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">3420</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">6</div><div class="k">海报</div></div>
+          <div class="stat-item"><div class="v">5</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">8</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步（部署后） <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：图片 URL 会自动转成 <code>https://jr-academy-ai.github.io/...</code> 的绝对地址。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → 文字 + 11 张图自动抓取 re-host → 预览 → 发布。</li>
+        </ol>
+        <p style="margin-top:10px">本地开发/预览走相对路径（<code>./poster-N.png</code>）图片能显示；复制到公众号时会转成当前页面所在的绝对 URL。</p>
+      </div>
+
+      <div class="card">
+        <h2>⬇ 备选：手动下载 <span class="tag">FALLBACK</span></h2>
+        <p>如果公众号抓取失败（极少见），点右上「⬇ 下载 6 张 PNG」拿到本地，再去素材库上传。</p>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <pre id="log"></pre>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const MP_POSTER_SLUGS = {
+  'poster-0': { n: 1, label: '合集', file: 'mp-01-summary.png' },
+  'poster-1': { n: 2, label: '01 Cerebras', file: 'mp-02-cerebras.png' },
+  'poster-2': { n: 3, label: '02 MCP漏洞', file: 'mp-03-mcp.png' },
+  'poster-3': { n: 4, label: '03 Anthropic', file: 'mp-04-anthropic.png' },
+  'poster-4': { n: 5, label: '04 GPT-6', file: 'mp-05-gpt6.png' },
+  'poster-5': { n: 6, label: '05 PwC', file: 'mp-06-pwc.png' },
+};
+
+const logEl = document.getElementById('log');
+const statusEl = document.getElementById('render-status');
+const btnCopyHtml = document.getElementById('btn-copy-html');
+const btnCopyMd = document.getElementById('btn-copy-md');
+const btnDownload = document.getElementById('btn-download-all');
+
+function log(msg) {
+  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  logEl.textContent += `[${t}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+function setStatus(text, state) {
+  statusEl.textContent = text;
+  statusEl.classList.remove('done', 'error');
+  if (state) statusEl.classList.add(state);
+}
+
+// 检查 6 张 PNG 是否都能加载（本地没跑 render:posters 时会 broken）
+(function checkPosters() {
+  const imgs = document.querySelectorAll('.mp-img');
+  let loaded = 0;
+  let broken = 0;
+  imgs.forEach(img => {
+    const done = () => {
+      if (img.complete && img.naturalWidth > 0) loaded++;
+      else { broken++; img.classList.add('broken'); img.alt = '❌ ' + (img.dataset.file || '') + ' 未生成 · 本地跑 bun run render:posters'; }
+      if (loaded + broken === imgs.length) {
+        if (broken === 0) {
+          setStatus(`✅ ${loaded}/${imgs.length} 张海报已就绪 · 可直接复制粘贴到公众号`, 'done');
+          log(`✅ 所有海报 PNG 文件可访问`);
+        } else {
+          setStatus(`⚠️ ${broken}/${imgs.length} 张海报缺失 · 本地跑 bun run render:posters 或等 CI 部署`, 'error');
+          log(`⚠️ ${broken} 张 PNG 加载失败（本地通常是因为还没跑渲染脚本）`);
+        }
+      }
+    };
+    if (img.complete) done();
+    else { img.addEventListener('load', done); img.addEventListener('error', done); }
+  });
+})();
+
+// ===== 复制富文本 =====
+// 公众号编辑器会剥掉 <style> 和 class，只保留 inline style=""，也不支持 var(--*)。
+// 把 CSS 里所有 .mp-* 规则显式翻成行内样式，粘贴后颜色/背景/边框才会生效。
+// 微信编辑器对粘贴的 inline style 有严苛处理：
+//   - `background:` 和 `background:linear-gradient(...)` shorthand 会被剥
+//     → 必须用 `background-color:` 才会保留
+//   - `padding:` / `margin:` / `border:` shorthand 基本 OK
+//   - display:flex 会变成 block，所以 .mp-meta 改成纯文本排版
+//   - 不支持 CSS var / calc() / rgba() 里的 alpha (有时会被转成 rgb)
+//   - 不支持 aspect-ratio
+//
+// 踩坑过的都写进来。包装每块时都把 background/color 显式、避免 shorthand。
+
+const MP_INLINE_STYLES = {
+  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000000;margin-bottom:10px;',
+  'mp-meta': 'color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eeeeee;',
+  'mp-lead': 'background-color:#f1f5f9;border-radius:8px;padding:13px 15px;font-size:14px;color:#334155;line-height:1.75;margin-bottom:22px;',
+  'mp-hook': 'display:inline-block;background-color:#10162f;color:#ffffff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
+  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000000;margin-top:12px;margin-bottom:12px;padding-left:10px;border-left:4px solid #ff5757;',
+  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background-color:#ffffff;',
+  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
+  'mp-oneline': 'background-color:#fff4d1;border-left:3px solid #ffce44;padding:10px 14px;font-size:14px;font-weight:500;color:#3a3a3a;margin:12px 0 14px;line-height:1.7;',
+  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
+  'mp-divider': 'border:0;border-top:1px solid #e5e7eb;margin:22px 0;height:1px;',
+  'mp-quickview': 'background-color:#fff8ee;padding:16px;border-radius:8px;margin:22px 0;',
+  'mp-cta': 'background-color:#10162f;color:#ffffff;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
+};
+
+function applyInlineStyles(root) {
+  // 按 class 映射注入（prepend，让用户原有 inline style 能覆盖）
+  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      el.setAttribute('style', style + (el.getAttribute('style') || ''));
+    });
+  });
+  // 嵌套选择器（原 CSS 里靠后代选择器实现的样式）
+  root.querySelectorAll('.mp-meta .author').forEach(el =>
+    el.setAttribute('style', 'color:#ff5757;font-weight:600;'));
+  root.querySelectorAll('.mp-oneline strong').forEach(el =>
+    el.setAttribute('style', 'color:#000000;'));
+  root.querySelectorAll('.mp-source a').forEach(el =>
+    el.setAttribute('style', 'color:#3b82f6;text-decoration:none;'));
+  root.querySelectorAll('.mp-quickview h3').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000000;font-weight:700;'));
+  root.querySelectorAll('.mp-quickview ul').forEach(el =>
+    el.setAttribute('style', 'padding-left:18px;margin:0;'));
+  root.querySelectorAll('.mp-quickview li').forEach(el =>
+    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
+  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
+    el.setAttribute('style', 'color:#10162f;font-weight:700;'));
+  root.querySelectorAll('.mp-cta .big').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#ffffff;'));
+  root.querySelectorAll('.mp-cta .sub').forEach(el =>
+    el.setAttribute('style', 'font-size:12px;color:#d1d5db;line-height:1.7;'));
+  // 正文段落（原 CSS: .mp p）
+  root.querySelectorAll('p').forEach(el => {
+    const existing = el.getAttribute('style') || '';
+    if (!existing.includes('margin-bottom') && !existing.includes('margin:')) {
+      el.setAttribute('style', 'margin:0 0 12px;color:#333333;font-size:15px;line-height:1.85;' + existing);
+    }
+  });
+  // <code> 简单背景（不用 shorthand）
+  root.querySelectorAll('code').forEach(el =>
+    el.setAttribute('style', 'background-color:#f1f5f9;padding:1px 6px;border-radius:3px;font-size:13px;color:#10162f;'));
+  // 💡 关键：把每个需要颜色背景的块再包一层 <section>，
+  // 因为微信有时对"裸"的 <div> 背景不认，但对 <section style="background-color:..."> 可靠
+  ['mp-lead', 'mp-oneline', 'mp-quickview', 'mp-cta'].forEach(cls => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      // 已经是 section 就不包了
+      if (el.tagName.toLowerCase() === 'section') return;
+      const wrapper = document.createElement('section');
+      wrapper.setAttribute('style', MP_INLINE_STYLES[cls] || '');
+      // 原 el 里不再需要 background/padding 重复，改为 inner
+      el.removeAttribute('style');
+      el.setAttribute('style', 'background-color:transparent;padding:0;margin:0;');
+      wrapper.appendChild(el.cloneNode(true));
+      el.replaceWith(wrapper);
+    });
+  });
+  // .mp-hook 单独处理：它是 inline-block 小标签
+  root.querySelectorAll('.mp-hook').forEach(el => {
+    if (el.tagName.toLowerCase() === 'span') return;
+    const span = document.createElement('span');
+    span.setAttribute('style', MP_INLINE_STYLES['mp-hook'] || '');
+    span.textContent = el.textContent;
+    el.replaceWith(span);
+  });
+}
+
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  // 把相对路径图片改成当前页面所在的绝对 URL，WeChat 编辑器粘贴时才抓得到
+  const base = new URL('.', location.href).href;
+  article.querySelectorAll('img').forEach(img => {
+    const src = img.getAttribute('src');
+    if (src && src.startsWith('./')) {
+      img.src = new URL(src, base).href;
+    }
+  });
+  // 去掉内部 caption（公众号不需要）
+  article.querySelectorAll('.mp-caption, .mp-alt-caption').forEach(n => n.remove());
+  // 把 class 样式全部展开成行内 style，公众号编辑器才认
+  applyInlineStyles(article);
+  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+  const plain = article.innerText;
+  try {
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([plain], { type: 'text/plain' }),
+    });
+    navigator.clipboard.write([item]).then(() => {
+      const bgHits = (html.match(/background-color:/g) || []).length;
+      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
+      const sectionHits = (html.match(/<section /g) || []).length;
+      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
+      log(`   若公众号粘贴后颜色丢失，先贴到 Notion/Gmail 对比——那里也无色=前端 bug，那里有色=WeChat 剥掉了`);
+      setStatus('✅ 富文本已复制，粘到公众号编辑器（图片会自动抓取）', 'done');
+    });
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = html; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    log('✅ 富文本已复制（fallback）');
+  }
+}
+
+function mpCopyMarkdown() {
+  const article = document.getElementById('mp-article');
+  const base = new URL('.', location.href).href;
+  let md = '# ' + article.querySelector('.mp-title').textContent.trim() + '\n\n';
+  md += '> JR Academy AI 日报 · 2026-04-19\n\n';
+  md += article.querySelector('.mp-lead').textContent.trim() + '\n\n';
+
+  for (const node of article.children) {
+    if (!node.classList) continue;
+    if (node.classList.contains('mp-title') || node.classList.contains('mp-meta') || node.classList.contains('mp-lead')) continue;
+    if (node.tagName === 'HR') { md += '---\n\n'; continue; }
+    if (node.classList.contains('mp-hook')) { md += '### ' + node.textContent.trim() + '\n\n'; continue; }
+    if (node.classList.contains('mp-h2')) { md += '## ' + node.textContent.trim() + '\n\n'; continue; }
+    if (node.tagName === 'IMG' && node.classList.contains('mp-img')) {
+      const id = node.dataset.poster;
+      const info = MP_POSTER_SLUGS[id] || {};
+      const src = node.getAttribute('src');
+      const absUrl = src && src.startsWith('./') ? new URL(src, base).href : src;
+      md += `![图 ${info.n || ''} ${info.label || ''}](${absUrl})\n\n`;
+      continue;
+    }
+    if (node.classList.contains('mp-caption') || node.classList.contains('mp-alt-caption')) continue;
+    if (node.tagName === 'IMG' && node.classList.contains('mp-alt-img')) {
+      md += `![${node.alt}](${node.src})\n\n`;
+      continue;
+    }
+    if (node.classList.contains('mp-oneline')) { md += '> ' + node.textContent.trim() + '\n\n'; continue; }
+    if (node.tagName === 'P') { md += node.textContent.trim() + '\n\n'; continue; }
+    if (node.classList.contains('mp-source')) { md += node.textContent.trim().replace(/\s+/g,' ') + '\n\n'; continue; }
+    if (node.classList.contains('mp-quickview')) {
+      md += '## ' + node.querySelector('h3').textContent.trim() + '\n\n';
+      node.querySelectorAll('li').forEach(li => { md += '- ' + li.textContent.trim() + '\n'; });
+      md += '\n';
+      continue;
+    }
+    if (node.classList.contains('mp-cta')) {
+      md += '---\n\n🎯 **' + node.querySelector('.big').textContent.trim() + '**\n\n';
+      md += node.querySelector('.sub').innerText.trim() + '\n';
+      continue;
+    }
+  }
+  navigator.clipboard.writeText(md).then(() => {
+    log('✅ Markdown 已复制 ' + md.length + ' 字符');
+    setStatus('✅ Markdown 已复制', 'done');
+  });
+}
+
+async function downloadAll() {
+  btnDownload.disabled = true;
+  const old = btnDownload.textContent;
+  btnDownload.textContent = '下载中...';
+  log('开始下载 6 张 PNG...');
+  const imgs = document.querySelectorAll('.mp-img');
+  for (const img of imgs) {
+    const info = MP_POSTER_SLUGS[img.dataset.poster] || {};
+    const file = img.dataset.file || (img.dataset.poster + '.png');
+    try {
+      const resp = await fetch(img.src);
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.download = file;
+      a.href = url;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      log(`  ⬇ ${file}`);
+      await new Promise(r => setTimeout(r, 220));
+    } catch (e) {
+      log(`  ❌ ${file}: ${e.message}`);
+    }
+  }
+  btnDownload.textContent = old;
+  btnDownload.disabled = false;
+  setStatus('✅ 6 张已下载', 'done');
+}
+
+btnCopyHtml.addEventListener('click', mpCopyHtml);
+btnCopyMd.addEventListener('click', mpCopyMarkdown);
+btnDownload.addEventListener('click', downloadAll);
+</script>
+
+</body>
+</html>
