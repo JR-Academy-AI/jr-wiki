@@ -740,16 +740,23 @@ footer a { color: var(--brand-red); text-decoration: none; font-weight: 700; }
   background: rgba(255,255,255,0.12);
   box-shadow: 0 24px 80px rgba(0,0,0,0.35);
   overflow: auto;
+  display: flex; flex-direction: column;
 }
-.lightbox-panel .poster {
+/* 等比缩放宿主：宽度撑满 panel，高度由 JS 根据 poster 自然高度 × scale 写死 */
+.lightbox-stage {
   position: relative;
-  transform: none;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1242 / 1660;
+  margin: 0 auto;
+  overflow: hidden;
 }
-.lightbox-panel .poster .p-inner {
-  padding: clamp(36px, 5vw, 72px);
+.lightbox-stage .poster {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1242px;
+  height: auto;
+  transform-origin: top left;
+  user-select: text;
+  -webkit-user-select: text;
 }
 .lightbox-head {
   display: flex;
@@ -1190,9 +1197,12 @@ footer a { color: var(--brand-red); text-decoration: none; font-weight: 700; }
     <div class="lightbox-panel">
       <div class="lightbox-head">
         <strong id="lightbox-title">海报预览</strong>
-        <button class="lightbox-close" id="lightbox-close" type="button">关闭</button>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <button class="lightbox-close" id="lightbox-copy" type="button" title="把海报里全部文字复制到剪贴板">📋 复制海报文字</button>
+          <button class="lightbox-close" id="lightbox-close" type="button">关闭</button>
+        </div>
       </div>
-      <div id="lightbox-content"></div>
+      <div class="lightbox-stage" id="lightbox-content"></div>
     </div>
   </div>
 </div>
@@ -1224,26 +1234,52 @@ function showToast(title, text) {
   }, 2200);
 }
 
+let lightboxClone = null;
+function layoutLightboxPoster() {
+  if (!lightboxClone) return;
+  const stageW = lightboxContent.clientWidth;
+  if (!stageW) return;
+  const scale = stageW / 1242;
+  lightboxClone.style.transform = `scale(${scale})`;
+  const naturalH = lightboxClone.offsetHeight;
+  lightboxContent.style.height = (naturalH * scale) + 'px';
+}
 function openLightbox(targetId, title) {
   const poster = document.getElementById(targetId);
   if (!poster) return;
   lightboxTitle.textContent = title || '海报预览';
   lightboxContent.innerHTML = '';
   const clone = poster.cloneNode(true);
-  clone.style.position = 'relative';
-  clone.style.top = '0';
-  clone.style.left = '0';
-  clone.style.transform = 'none';
+  clone.style.cssText = '';
   lightboxContent.appendChild(clone);
+  lightboxClone = clone;
   lightbox.classList.add('is-open');
   lightbox.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  requestAnimationFrame(layoutLightboxPoster);
 }
+window.addEventListener('resize', layoutLightboxPoster);
+async function copyLightboxText() {
+  if (!lightboxClone) return;
+  const text = lightboxClone.innerText.replace(/\n{3,}/g, '\n\n').trim();
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast('已复制', text.length + ' 字已进剪贴板');
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    showToast('已复制', text.length + ' 字（fallback）');
+  }
+}
+document.getElementById('lightbox-copy').addEventListener('click', copyLightboxText);
 
 function closeLightbox() {
   lightbox.classList.remove('is-open');
   lightbox.setAttribute('aria-hidden', 'true');
   lightboxContent.innerHTML = '';
+  lightboxContent.style.height = '';
+  lightboxClone = null;
   document.body.style.overflow = '';
 }
 
