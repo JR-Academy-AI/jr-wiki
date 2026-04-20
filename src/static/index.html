@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>JR Academy · 社交素材中心</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #10162f;
+    --bg: #fef8f1;
+    --muted: #71628a;
+    --brand-red: #ff5757;
+    --brand-purple: #4c1d95;
+    --brand-gold: #ffd44d;
+    --border-soft: rgba(16, 22, 47, 0.1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(255, 87, 87, 0.08), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.1), transparent 30%),
+      var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 40px 20px 80px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .page { max-width: 1100px; margin: 0 auto; }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 20px 0;
+  }
+  .hero .eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.25em; color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
+    font-size: 56px; font-weight: 900;
+    letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 18px;
+  }
+  .hero h1 em {
+    color: var(--brand-red);
+    font-style: italic;
+  }
+  .hero .sub {
+    font-size: 16px; color: var(--muted);
+    max-width: 620px; margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* Channels */
+  .channels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .channel {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: 24px;
+    padding: 0;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 10px 40px rgba(16, 22, 47, 0.06);
+    transition: all 0.25s ease;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  .channel:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(16, 22, 47, 0.15);
+  }
+
+  .channel-cover {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    padding: 28px 32px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .channel-cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.14) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    opacity: 0.5;
+  }
+  .channel-cover::after {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255, 212, 77, 0.4), transparent 60%);
+  }
+  .channel-cover > * { position: relative; z-index: 1; }
+
+  .channel-cover.ai {
+    background: linear-gradient(145deg, #10162f 0%, #1e2a5e 50%, #ff5757 110%);
+  }
+  .channel-cover.uni {
+    background: linear-gradient(145deg, #2a0f57 0%, #4c1d95 50%, #7c3aed 100%);
+  }
+
+  .channel-code {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.25em;
+    opacity: 0.85;
+  }
+  .channel-title {
+    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
+    font-size: 38px; font-weight: 900;
+    line-height: 1.05; letter-spacing: -0.02em;
+  }
+  .channel-title em {
+    font-style: italic;
+    color: var(--brand-gold);
+  }
+
+  .channel-body {
+    padding: 22px 28px 24px;
+    display: flex; flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+  .channel-desc {
+    font-size: 14px; line-height: 1.75;
+    color: #475569;
+  }
+  .channel-meta {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .meta-pill {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 700;
+    padding: 5px 12px; border-radius: 999px;
+    background: rgba(16, 22, 47, 0.06);
+    color: var(--ink);
+    letter-spacing: 0.03em;
+  }
+  .meta-pill.primary {
+    background: rgba(255, 87, 87, 0.12);
+    color: var(--brand-red);
+  }
+  .channel.uni .meta-pill.primary {
+    background: rgba(124, 58, 237, 0.12);
+    color: var(--brand-purple);
+  }
+
+  .channel-cta {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border-soft);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px; font-weight: 700;
+  }
+  .channel.ai .channel-cta { color: var(--brand-red); }
+  .channel.uni .channel-cta { color: var(--brand-purple); }
+  .channel-cta .arrow {
+    font-size: 20px;
+    transition: transform 0.2s;
+  }
+  .channel:hover .channel-cta .arrow { transform: translateX(6px); }
+
+  /* Secondary row */
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 700;
+    color: var(--muted); letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .secondary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .sec-link {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 14px 18px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 13px;
+    display: flex; align-items: center; gap: 10px;
+    transition: all 0.15s;
+  }
+  .sec-link:hover {
+    background: #fff;
+    border-color: var(--ink);
+    transform: translateY(-1px);
+  }
+  .sec-link .emj { font-size: 18px; }
+  .sec-link .title { font-weight: 700; font-size: 13px; }
+  .sec-link .sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 60px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border-soft);
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .footer code {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 11px;
+  }
+  .footer a { color: var(--brand-red); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    body { padding: 28px 16px 60px; }
+    .hero h1 { font-size: 38px; }
+    .hero .sub { font-size: 14px; }
+    .channels { grid-template-columns: 1fr; gap: 16px; }
+    .channel-cover { height: 170px; padding: 22px 24px; }
+    .channel-title { font-size: 30px; }
+    .channel-body { padding: 18px 22px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="eyebrow">JR ACADEMY · CONTENT HUB</div>
+    <h1>社交素材<br><em>导航中心</em></h1>
+    <div class="sub">
+      公众号发稿页 + 小红书封面与文案 · 每日自动产出。选一个频道进入 ↓
+    </div>
+  </div>
+
+  <div class="channels">
+
+    <a href="./ai-news-posters/" class="channel ai">
+      <div class="channel-cover ai">
+        <div class="channel-code">AI NEWS · 每日</div>
+        <div class="channel-title">AI <em>日报</em><br>热点 5 条</div>
+      </div>
+      <div class="channel-body">
+        <div class="channel-desc">
+          每天 AEST 9:00 自动抓当日全网 AI 最热 5 条，产出公众号长文 + 小红书海报（1 合集 + 5 单图）。
+        </div>
+        <div class="channel-meta">
+          <span class="meta-pill primary">🤖 AI 科技</span>
+          <span class="meta-pill">公众号</span>
+          <span class="meta-pill">小红书</span>
+          <span class="meta-pill">日更</span>
+        </div>
+        <div class="channel-cta">
+          <span>进入 AI 日报</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="./uni-news-social/" class="channel uni">
+      <div class="channel-cover uni">
+        <div class="channel-code">UNI NEWS · 每日 3 校</div>
+        <div class="channel-title">大学<em>新闻</em><br>澳洲 10 校</div>
+      </div>
+      <div class="channel-body">
+        <div class="channel-desc">
+          澳洲 10 所大学（UQ/UMelb/UNSW/USYD/Monash/ANU/Adelaide/RMIT/UTS/UWA）的奖学金 / 招生 / 科研 / 签证动态。每校独立 brand color。
+        </div>
+        <div class="channel-meta">
+          <span class="meta-pill primary">🎓 留学生</span>
+          <span class="meta-pill">公众号</span>
+          <span class="meta-pill">小红书</span>
+          <span class="meta-pill">10 校</span>
+        </div>
+        <div class="channel-cta">
+          <span>进入大学新闻</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="section-label">其他入口</div>
+  <div class="secondary">
+    <a href="https://jiangren.com.au/blog" class="sec-link">
+      <span class="emj">📝</span>
+      <div>
+        <div class="title">官网博客</div>
+        <div class="sub">jiangren.com.au/blog</div>
+      </div>
+    </a>
+    <a href="https://jiangren.com.au/wiki" class="sec-link">
+      <span class="emj">📚</span>
+      <div>
+        <div class="title">Wiki 知识库</div>
+        <div class="sub">jiangren.com.au/wiki</div>
+      </div>
+    </a>
+    <a href="./_preview/" class="sec-link">
+      <span class="emj">🔧</span>
+      <div>
+        <div class="title">内容管理预览</div>
+        <div class="sub">_preview （内部）</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="footer">
+    内部素材中心 · 由 <code>jr-wiki</code> 自动构建部署<br>
+    PRDs: <code>docs/UNI_NEWS_AUTOMATION_PRD.md</code> · <code>.claude/skills/ai-news-poster.md</code> · <code>.claude/skills/uni-news-poster.md</code><br>
+    <a href="https://github.com/JR-Academy-AI/jr-wiki">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
