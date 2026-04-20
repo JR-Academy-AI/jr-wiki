@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AI 日报 2026-04-21 · 公众号长文版 · 匠人 AI 日报</title>
+<meta name="description" content="2026-04-21 AI 五大热点公众号排版：Vercel 被黑 / DeepSeek 首融 / GPT-5.5 即将发布 / ChatGPT 宕机 / Meta 电商 AI。一键复制到微信公众号编辑器。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Noto Sans SC", system-ui, sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  padding: 40px 20px;
+  line-height: 1.8;
+}
+.page-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: #fff;
+  border: 2px solid #10162f;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #10162f;
+}
+.page-header h1 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.page-header p {
+  font-size: 14px;
+  color: #666;
+}
+.copy-bar {
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding: 14px 20px;
+  background: #fff;
+  border: 2px solid #10162f;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #10162f;
+}
+.copy-bar button {
+  appearance: none;
+  border: 2px solid #10162f;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .12s;
+}
+.copy-bar .btn-primary {
+  background: #ff5757;
+  color: #fff;
+}
+.copy-bar .btn-primary:hover {
+  transform: translate(1px, 1px);
+}
+.copy-bar .btn-secondary {
+  background: #fff;
+  color: #10162f;
+}
+.copy-bar span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* 预览区域 */
+.mp-preview {
+  background: #fff;
+  border: 2px solid #10162f;
+  border-radius: 12px;
+  padding: 32px 24px;
+  box-shadow: 4px 4px 0 #10162f;
+}
+
+/* 公众号文章样式 — 预览用 class 形式，复制时转 inline */
+.mp-article {
+  max-width: 100%;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #1a1a1a;
+}
+.mp-title {
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #10162f;
+}
+.mp-date {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+.mp-intro {
+  font-size: 15px;
+  color: #444;
+  background: #fff7f0;
+  border-left: 4px solid #ff5757;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  border-radius: 0 8px 8px 0;
+}
+.mp-section {
+  margin-bottom: 32px;
+}
+.mp-section-num {
+  display: inline-block;
+  background: #ff5757;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.mp-section-num.c2 { background: #7c3aed; }
+.mp-section-num.c3 { background: #10b981; }
+.mp-section-num.c4 { background: #3b82f6; }
+.mp-section-num.c5 { background: #ff8a3d; }
+.mp-h2 {
+  font-size: 18px;
+  font-weight: 900;
+  color: #10162f;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.mp-oneline {
+  background: #fffbeb;
+  border: 1px solid #ffce44;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #10162f;
+  margin-bottom: 14px;
+}
+.mp-oneline b {
+  color: #ff5757;
+}
+.mp-body {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+.mp-source {
+  font-size: 13px;
+  color: #888;
+  padding-top: 8px;
+  border-top: 1px dashed #eee;
+}
+.mp-source a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+.mp-footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 2px solid #10162f;
+  font-size: 14px;
+  color: #666;
+}
+.mp-footer strong {
+  color: #ff5757;
+}
+.mp-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ddd, transparent);
+  margin: 24px 0;
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>AI 日报 2026-04-21 · 公众号长文版</h1>
+    <p>点击下方按钮一键复制带格式的 HTML，直接粘贴到微信公众号编辑器。所有样式已内联处理，不依赖外部 CSS。</p>
+  </div>
+
+  <div class="copy-bar">
+    <button class="btn-primary" onclick="mpCopyHtml()">📋 一键复制公众号文章</button>
+    <span id="copy-status"></span>
+  </div>
+
+  <div class="mp-preview">
+    <div class="mp-article" id="mp-article">
+
+      <div class="mp-title">AI 日报 2026-04-21：Vercel 被黑暴露供应链风险，DeepSeek 百亿估值首融</div>
+      <div class="mp-date">2026 年 4 月 21 日 · 匠人 AI 日报 · JR Academy</div>
+
+      <div class="mp-intro">今日 5 大 AI 热点：Vercel 供应链攻击波及数万开发者 / DeepSeek 100 亿美元估值首轮融资 / GPT-5.5 "Spud" 本周发布概率 75% / ChatGPT 全球宕机 90 分钟 / Meta Muse Spark 落地电商购物</div>
+
+      <!-- Story 1 -->
+      <div class="mp-section">
+        <div class="mp-section-num">01 · 安全监管</div>
+        <div class="mp-h2">Vercel 被黑：一个 AI 工具的 OAuth 权限搞垮了整条供应链</div>
+        <div class="mp-oneline">Context AI 被攻破后黑客横向渗透，<b>部分客户凭证泄露</b></div>
+        <div class="mp-body">4 月 19 日 Vercel CEO 确认公司内部系统遭未授权访问。攻击链：员工装了 Context AI 插件并授权 Google OAuth → 黑客先打下 Context AI → 通过 OAuth token 拿到员工 Google 账户 → 进入 Vercel 内部系统。</div>
+        <div class="mp-body">最关键的问题是 Vercel 的环境变量模型里，没标 sensitive 的凭证默认明文可读。ShinyHunters 团伙已在暗网以 200 万美元叫卖数据。如果你用 Vercel 部署项目，现在就该 rotate 所有环境变量里的密钥。</div>
+        <div class="mp-source">来源：<a href="https://techcrunch.com/2026/04/20/app-host-vercel-confirms-security-incident-says-customer-data-was-stolen-via-breach-at-context-ai/">TechCrunch</a> · <a href="https://www.securityweek.com/next-js-creator-vercel-hacked/">SecurityWeek</a></div>
+      </div>
+
+      <div class="mp-divider"></div>
+
+      <!-- Story 2 -->
+      <div class="mp-section">
+        <div class="mp-section-num c2">02 · 营收融资</div>
+        <div class="mp-h2">DeepSeek 首轮融资：100 亿美元估值，为 V4 和留人做准备</div>
+        <div class="mp-oneline">梁文锋打破不融资传统，目标融 <b>3 亿美元</b>，估值超 <b>100 亿</b></div>
+        <div class="mp-body">DeepSeek 一直靠母公司幻方量化输血，从来不接外部资本。但多家媒体确认他们终于要融资了。两个原因：V4 旗舰模型月底发布需要算力弹药；核心技术骨干被大厂挖角严重，没市场化估值期权就是白条。</div>
+        <div class="mp-body">对开发者来说，V4 若延续开源路线又是一波免费 base model 可以拿来 fine-tune。但融资意味着商业化压力来了，API 定价和开源策略可能调整。</div>
+        <div class="mp-source">来源：<a href="https://cntechpost.com/2026/04/18/deepseek-launches-first-funding-round-report/">CnTechPost</a> · <a href="https://36kr.com/p/3771654550405638">36氪</a></div>
+      </div>
+
+      <div class="mp-divider"></div>
+
+      <!-- Story 3 -->
+      <div class="mp-section">
+        <div class="mp-section-num c3">03 · 模型发布</div>
+        <div class="mp-h2">GPT-5.5 "Spud" 预测市场押注本周发布</div>
+        <div class="mp-oneline">预训练 3 月 24 日完成，Polymarket 给 4 月 23 日 <b>75%</b> 概率</div>
+        <div class="mp-body">OpenAI 代号 Spud 的模型训练完了快一个月。到底叫 GPT-5.5 还是 GPT-6 官方还没定。Greg Brockman 说"这不是渐进式改进，是我们思考模型开发方式的根本变化"。</div>
+        <div class="mp-body">泄露的测试截图显示 Spud 能实时生成可交互 3D 世界，原生支持文本+图像+音频+视频统一多模态。OpenAI 的策略是把 ChatGPT、Codex、Agent 合成一个超级应用。做 AI 产品的这周密切关注。</div>
+        <div class="mp-source">来源：<a href="https://polymarket.com/event/gpt-5pt5-released-on">Polymarket</a> · <a href="https://findskill.ai/blog/gpt-6-release-date/">FindSkill.ai</a></div>
+      </div>
+
+      <div class="mp-divider"></div>
+
+      <!-- Story 4 -->
+      <div class="mp-section">
+        <div class="mp-section-num c4">04 · 产品更新</div>
+        <div class="mp-h2">ChatGPT 全球宕机 90 分钟，数千万用户受影响</div>
+        <div class="mp-oneline">对话、登录、语音、图片生成<b>全挂</b>，OpenAI 未解释原因</div>
+        <div class="mp-body">4 月 20 日美东 10:05 开始 ChatGPT 大面积故障，DownDetector 上报告数几分钟内飙到数万。基本所有功能不可用，约 90 分钟后恢复。OpenAI 没给故障原因说明。</div>
+        <div class="mp-body">这种规模宕机对重度依赖 ChatGPT 的开发者是警钟。工作流里要有 fallback——Claude、Gemini、或本地开源模型至少备一个。</div>
+        <div class="mp-source">来源：<a href="https://www.tomsguide.com/news/live/chatgpt-down-live-updates-outage-4-20-2026">Tom's Guide</a> · <a href="https://www.techradar.com/news/live/chatgpt-down-april-2026">TechRadar</a></div>
+      </div>
+
+      <div class="mp-divider"></div>
+
+      <!-- Story 5 -->
+      <div class="mp-section">
+        <div class="mp-section-num c5">05 · 产品更新</div>
+        <div class="mp-h2">Meta Muse Spark 落地电商：AI 购物助手上线 Facebook 和 Instagram</div>
+        <div class="mp-oneline">自然语言找商品、上传图片找同款、<b>虚拟试穿</b>——对话式购物</div>
+        <div class="mp-body">Muse Spark 发布两周后 Meta 把它接入购物场景：用自然语言描述想要的东西 AI 帮你找，上传一张图找同款或搭配，还有虚拟试穿。电商搜索从关键词匹配升级到对话式购物助手。</div>
+        <div class="mp-body">Meta 有 30 亿月活用户，Muse Spark 电商整合一旦铺开，消费者会习惯跟 AI 对话买东西。做电商或学全栈的同学可以开始研究 conversational commerce 技术栈了。</div>
+        <div class="mp-source">来源：<a href="https://www.retailbrew.com/stories/2026/04/16/meta-introduces-new-shopping-upgrades-under-ai-model-muse-spark">Retail Brew</a> · <a href="https://fortune.com/2026/04/08/meta-unveils-muse-spark-mark-zuckerberg-ai-push/">Fortune</a></div>
+      </div>
+
+      <div class="mp-footer">
+        <strong>匠人 AI 日报</strong> · 每天 9 点更新<br>
+        更多内容：jiangren.com.au/blog<br>
+        JR Academy · 让技术学习更高效
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const MP_INLINE_STYLES = {
+  '.mp-title': 'font-size:22px;font-weight:900;text-align:center;margin-bottom:8px;color:#10162f;line-height:1.4;',
+  '.mp-date': 'text-align:center;font-size:13px;color:#888888;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #eeeeee;',
+  '.mp-intro': 'font-size:15px;color:#444444;background-color:#fff7f0;border-left:4px solid #ff5757;padding:16px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;line-height:1.8;',
+  '.mp-section': 'margin-bottom:32px;',
+  '.mp-section-num': 'display:inline-block;background-color:#ff5757;color:#ffffff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;',
+  '.mp-section-num.c2': 'display:inline-block;background-color:#7c3aed;color:#ffffff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;',
+  '.mp-section-num.c3': 'display:inline-block;background-color:#10b981;color:#ffffff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;',
+  '.mp-section-num.c4': 'display:inline-block;background-color:#3b82f6;color:#ffffff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;',
+  '.mp-section-num.c5': 'display:inline-block;background-color:#ff8a3d;color:#ffffff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;',
+  '.mp-h2': 'font-size:18px;font-weight:900;color:#10162f;margin-bottom:10px;line-height:1.4;',
+  '.mp-oneline': 'background-color:#fffbeb;border:1px solid #ffce44;border-radius:8px;padding:12px 16px;font-size:15px;font-weight:700;color:#10162f;margin-bottom:14px;line-height:1.6;',
+  '.mp-oneline b': 'color:#ff5757;font-weight:900;',
+  '.mp-body': 'font-size:15px;color:#333333;line-height:1.9;margin-bottom:12px;',
+  '.mp-source': 'font-size:13px;color:#888888;padding-top:8px;border-top:1px dashed #eeeeee;',
+  '.mp-source a': 'color:#3b82f6;text-decoration:none;',
+  '.mp-footer': 'text-align:center;margin-top:32px;padding-top:20px;border-top:2px solid #10162f;font-size:14px;color:#666666;line-height:1.8;',
+  '.mp-footer strong': 'color:#ff5757;',
+  '.mp-divider': 'height:1px;background:linear-gradient(90deg,transparent,#dddddd,transparent);margin:24px 0;',
+  '.mp-article': 'max-width:100%;font-size:16px;line-height:1.9;color:#1a1a1a;'
+};
+
+function applyInlineStyles(article) {
+  const clone = article.cloneNode(true);
+
+  Object.keys(MP_INLINE_STYLES).forEach(selector => {
+    const style = MP_INLINE_STYLES[selector];
+    const parts = selector.split(' ');
+
+    if (parts.length === 1) {
+      const sel = parts[0];
+      let elements;
+      if (sel.includes('.') && sel.indexOf('.') !== sel.lastIndexOf('.')) {
+        const classes = sel.replace(/^\./, '').split('.');
+        elements = clone.querySelectorAll('.' + classes[0]);
+        elements = Array.from(elements).filter(el =>
+          classes.every(c => el.classList.contains(c))
+        );
+      } else {
+        elements = clone.querySelectorAll(sel);
+      }
+
+      if (elements.forEach) {
+        elements.forEach(el => {
+          el.setAttribute('style', (el.getAttribute('style') || '') + style);
+        });
+      } else {
+        Array.from(elements).forEach(el => {
+          el.setAttribute('style', (el.getAttribute('style') || '') + style);
+        });
+      }
+    } else {
+      const parentSel = parts[0];
+      const childSel = parts.slice(1).join(' ');
+      const parents = clone.querySelectorAll(parentSel);
+      parents.forEach(parent => {
+        const children = parent.querySelectorAll(childSel);
+        children.forEach(el => {
+          el.setAttribute('style', (el.getAttribute('style') || '') + style);
+        });
+      });
+    }
+  });
+
+  clone.querySelectorAll('[class]').forEach(el => {
+    el.removeAttribute('class');
+  });
+
+  return clone;
+}
+
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article');
+  const styledArticle = applyInlineStyles(article);
+  const html = styledArticle.innerHTML;
+
+  const blob = new Blob([html], { type: 'text/html' });
+  const clipItem = new ClipboardItem({
+    'text/html': blob,
+    'text/plain': new Blob([html], { type: 'text/plain' })
+  });
+
+  navigator.clipboard.write([clipItem]).then(() => {
+    const status = document.getElementById('copy-status');
+    status.textContent = '已复制！直接粘贴到公众号编辑器';
+    status.style.color = '#10b981';
+    setTimeout(() => { status.textContent = ''; }, 3000);
+  }).catch(err => {
+    const ta = document.createElement('textarea');
+    ta.value = html;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const status = document.getElementById('copy-status');
+    status.textContent = '已复制（fallback）';
+    status.style.color = '#ff8a3d';
+    setTimeout(() => { status.textContent = ''; }, 3000);
+  });
+}
+</script>
+</body>
+</html>
