@@ -21,9 +21,9 @@ DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
 
 下文所有 `{date}` / `{YYYY-MM-DD}` 占位符都指这个 `$DATE`（AEST 当天）。
 
-### Step 1: 全网搜索当天 AI 新闻
+### Step 1: 全网搜索当天 AI 新闻 + IT 资讯
 
-用 WebSearch 搜索以下关键词（至少搜 5 轮，覆盖不同角度）：
+用 WebSearch 搜索以下关键词（至少搜 6 轮，覆盖不同角度）：
 
 ```
 1. "AI news today {date}"
@@ -34,6 +34,15 @@ DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
 6. "AI regulation policy {date}"
 ```
 
+**另外每次必搜 2 类 IT 学习相关（原"每日 IT 资讯"trigger 合并进来的覆盖）**：
+
+```
+7. "AWS OR Azure OR GCP OR Kubernetes certification {date}"
+   — 认证新消息 / 折扣 / 考试变动 / Databricks / Snowflake / Anthropic CCA-F / Tableau / Salesforce
+8. "free IT course OR free AI course Coursera OR edX {date}"
+   — 全球免费 IT/AI 课程（AWS Training / Microsoft Learn / Google Cloud Skills Boost 等新上线或限免）
+```
+
 ### Step 2: 信息源优先级
 
 优先从这些源头抓取：
@@ -41,6 +50,7 @@ DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
 - **中文**: 36氪, 机器之心, 量子位, InfoQ, 极客公园
 - **社交**: X/Twitter AI 圈热门讨论, Hacker News, Reddit r/MachineLearning
 - **官方**: OpenAI Blog, Anthropic Blog, Google AI Blog, Meta AI
+- **IT 认证/课程**: AWS Training Blog, Microsoft Learn, Google Cloud Skills Boost, Coursera/edX/Udemy 限免推送, Linux Foundation (CKA/CKS)
 
 ### Step 3: 筛选 Top 5
 
@@ -49,6 +59,8 @@ DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
 2. **新鲜度** — 当天或前一天发生的
 3. **话题性** — 是否引发广泛讨论
 4. **实用性** — 对 JR Academy 学员是否有价值
+
+**组合原则**：5 条里留 **1-2 条**位子给 IT 认证 / 免费课程类（如 "AWS 限免 AI Practitioner 考券" / "Coursera 上线 Claude Code 官方课程 / 现在免费"）。剩下 3-4 条仍是 AI 主线大事件。如果当天确实没有 IT 认证或课程级别值得报的新闻，可以全给 AI，不硬凑。
 
 去重：同一件事不同媒体报道的算一条。
 
