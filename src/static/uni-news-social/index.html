@@ -9,300 +9,67 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #160a2c;
-    --bg: #f6f1ff;
-    --muted: #71628a;
-    --border-soft: rgba(106, 72, 170, 0.12);
-    --panel-shadow: 0 20px 60px rgba(53, 18, 102, 0.1);
-  }
+  :root { --ink: #160a2c; --bg: #f6f1ff; --muted: #71628a; --border-soft: rgba(106,72,170,0.12); --panel-shadow: 0 20px 60px rgba(53,18,102,0.1); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background:
-      radial-gradient(circle at top left, rgba(124, 58, 237, 0.1), transparent 30%),
-      radial-gradient(circle at top right, rgba(255, 93, 177, 0.08), transparent 25%),
-      var(--bg);
-    color: var(--ink);
-    font-family: 'Noto Sans SC', system-ui, sans-serif;
-    padding: 40px 20px 80px;
-    line-height: 1.65;
-  }
+  body { background: radial-gradient(circle at top left, rgba(124,58,237,0.1), transparent 30%), radial-gradient(circle at top right, rgba(255,93,177,0.08), transparent 25%), var(--bg); color: var(--ink); font-family: 'Noto Sans SC', system-ui, sans-serif; padding: 40px 20px 80px; line-height: 1.65; }
   .page { max-width: 1280px; margin: 0 auto; }
-
-  /* ===== HERO ===== */
-  .hero {
-    background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 60%, #ff5db1 140%);
-    border-radius: 28px;
-    padding: 48px 44px;
-    margin-bottom: 40px;
-    color: #fff;
-    box-shadow: var(--panel-shadow);
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; top: -120px; right: -80px;
-    width: 420px; height: 420px;
-    background: radial-gradient(circle, rgba(255,212,77,0.3), transparent 60%);
-  }
+  .hero { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 60%, #ff5db1 140%); border-radius: 28px; padding: 48px 44px; margin-bottom: 40px; color: #fff; box-shadow: var(--panel-shadow); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -120px; right: -80px; width: 420px; height: 420px; background: radial-gradient(circle, rgba(255,212,77,0.3), transparent 60%); }
   .hero > * { position: relative; }
-  .hero h1 {
-    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
-    font-size: 40px; font-weight: 900;
-    letter-spacing: -0.03em; margin-bottom: 12px;
-  }
+  .hero h1 { font-family: 'Playfair Display', 'Noto Sans SC', sans-serif; font-size: 40px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 12px; }
   .hero h1 em { color: #ffd44d; font-style: italic; }
-  .hero .sub {
-    font-size: 15px; color: rgba(255,255,255,0.88);
-    max-width: 780px; line-height: 1.75;
-  }
-  .hero .sub code {
-    background: rgba(255,255,255,0.18);
-    padding: 3px 9px; border-radius: 5px;
-    font-family: 'Space Grotesk', monospace; font-size: 13px;
-  }
-  .hero .stats {
-    display: flex; gap: 32px; margin-top: 28px;
-    padding-top: 26px;
-    border-top: 1px solid rgba(255,255,255,0.25);
-    flex-wrap: wrap;
-  }
-  .hero .stat .n {
-    font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
-    font-size: 40px; font-weight: 700;
-    color: #ffd44d; line-height: 1;
-    letter-spacing: -0.04em;
-  }
-  .hero .stat .l {
-    font-size: 11px; color: rgba(255,255,255,0.72);
-    margin-top: 6px; letter-spacing: 0.15em;
-    font-family: 'Space Grotesk', sans-serif; font-weight: 600;
-  }
-
-  /* ===== Events banner ===== */
-  .events-banner {
-    display: flex; align-items: center; justify-content: space-between; gap: 20px;
-    background: linear-gradient(135deg, #ff5757, #ff8a3d 50%, #ffd44d);
-    border-radius: 22px;
-    padding: 28px 32px;
-    margin-bottom: 36px;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 12px 40px rgba(255,87,87,0.22);
-    transition: all 0.2s ease;
-    position: relative; overflow: hidden;
-  }
-  .events-banner::before {
-    content: ''; position: absolute; top: -80px; right: -60px;
-    width: 280px; height: 280px;
-    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 60%);
-  }
+  .hero .sub { font-size: 15px; color: rgba(255,255,255,0.88); max-width: 780px; line-height: 1.75; }
+  .hero .sub code { background: rgba(255,255,255,0.18); padding: 3px 9px; border-radius: 5px; font-family: 'Space Grotesk', monospace; font-size: 13px; }
+  .hero .stats { display: flex; gap: 32px; margin-top: 28px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,0.25); flex-wrap: wrap; }
+  .hero .stat .n { font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif; font-size: 40px; font-weight: 700; color: #ffd44d; line-height: 1; letter-spacing: -0.04em; }
+  .hero .stat .l { font-size: 11px; color: rgba(255,255,255,0.72); margin-top: 6px; letter-spacing: 0.15em; font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
+  .events-banner { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: linear-gradient(135deg, #ff5757, #ff8a3d 50%, #ffd44d); border-radius: 22px; padding: 28px 32px; margin-bottom: 36px; color: #fff; text-decoration: none; box-shadow: 0 12px 40px rgba(255,87,87,0.22); transition: all 0.2s ease; position: relative; overflow: hidden; }
+  .events-banner::before { content: ''; position: absolute; top: -80px; right: -60px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 60%); }
   .events-banner > * { position: relative; }
-  .events-banner:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 50px rgba(255,87,87,0.32);
-  }
-  .events-banner-left { flex: 1; min-width: 0; }
-  .eb-tag {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.2em;
-    opacity: 0.92;
-    margin-bottom: 8px;
-  }
-  .eb-title {
-    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
-    font-size: 26px; font-weight: 900;
-    letter-spacing: -0.02em;
-    margin-bottom: 6px;
-  }
-  .eb-desc {
-    font-size: 13px; line-height: 1.7;
-    color: rgba(255,255,255,0.92);
-  }
-  .events-banner-right {
-    flex-shrink: 0;
-  }
-  .eb-cta {
-    display: inline-block;
-    padding: 12px 22px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 999px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px; font-weight: 700;
-    backdrop-filter: blur(4px);
-    letter-spacing: 0.05em;
-    transition: all 0.2s;
-  }
-  .events-banner:hover .eb-cta { background: rgba(255,255,255,0.32); transform: translateX(4px); }
-
-  /* ===== School grid ===== */
-  .section-label {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px; font-weight: 700;
-    color: var(--muted); letter-spacing: 0.2em;
-    margin-bottom: 16px;
-  }
-
-  .school-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 18px;
-  }
-
-  .school-card {
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(14px);
-    border: 1px solid var(--border-soft);
-    border-radius: 22px;
-    padding: 0;
-    text-decoration: none; color: inherit;
-    box-shadow: 0 8px 28px rgba(76,29,149,0.08);
-    overflow: hidden;
-    transition: all 0.2s ease;
-    display: flex; flex-direction: column;
-  }
-  .school-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(76,29,149,0.2);
-  }
-
-  .school-cover {
-    height: 140px;
-    position: relative; overflow: hidden;
-    color: #fff;
-    padding: 20px 24px;
-    display: flex; flex-direction: column; justify-content: space-between;
-  }
-  .school-cover::before {
-    content: ''; position: absolute; inset: 0;
-    background-image: radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px);
-    background-size: 18px 18px;
-    opacity: 0.35;
-  }
-  .school-cover::after {
-    content: ''; position: absolute; top: -50px; right: -50px;
-    width: 180px; height: 180px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,212,77,0.3), transparent 60%);
-  }
+  .events-banner:hover { transform: translateY(-2px); box-shadow: 0 16px 50px rgba(255,87,87,0.32); }
+  .eb-tag { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; opacity: 0.92; margin-bottom: 6px; }
+  .eb-title { font-family: 'Playfair Display', 'Noto Sans SC', sans-serif; font-size: 24px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 4px; }
+  .eb-desc { font-size: 13px; opacity: 0.92; }
+  .eb-cta { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 10px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); }
+  .section-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.2em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border-soft); }
+  .school-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+  .school-card { background: #fff; border-radius: 22px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 8px 28px rgba(76,29,149,0.08); transition: all 0.2s ease; border: 1px solid var(--border-soft); }
+  .school-card:hover { transform: translateY(-4px); box-shadow: 0 16px 46px rgba(76,29,149,0.16); }
+  .school-cover { padding: 24px; min-height: 140px; color: #fff; position: relative; overflow: hidden; }
+  .school-cover::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 18px 18px; opacity: 0.4; pointer-events: none; }
   .school-cover > * { position: relative; z-index: 1; }
-
-  .school-cover[data-school="uq"]       { background: linear-gradient(145deg, #2a0f57, #4c1d95, #7c3aed); }
-  .school-cover[data-school="umelb"]    { background: linear-gradient(145deg, #05244a, #094183, #2e6ec4); }
-  .school-cover[data-school="unsw"]     { background: linear-gradient(145deg, #b39700, #ffd100, #fff0a1); color: #10162f; }
-  .school-cover[data-school="usyd"]     { background: linear-gradient(145deg, #661a00, #e64626, #ff7f50); }
-  .school-cover[data-school="monash"]   { background: linear-gradient(145deg, #002a47, #006dae, #4fb3e6); }
-  .school-cover[data-school="anu"]      { background: linear-gradient(145deg, #5c4a1f, #c7a85c, #e8d9a8); color: #10162f; }
-  .school-cover[data-school="adelaide"] { background: linear-gradient(145deg, #001a38, #002f5f, #1a4d8a); }
-  .school-cover[data-school="rmit"]     { background: linear-gradient(145deg, #000000, #e60028, #ff4d6d); }
-  .school-cover[data-school="uts"]      { background: linear-gradient(145deg, #02264a, #0f4c81, #3a7cb8); }
-  .school-cover[data-school="uwa"]      { background: linear-gradient(145deg, #111a4a, #27348b, #5a68c8); }
-
-  .school-code {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px; font-weight: 700;
-    letter-spacing: 0.12em;
-    opacity: 0.85;
-  }
-  .school-emblem-big {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 56px; font-weight: 900;
-    line-height: 1; letter-spacing: -0.04em;
-  }
-
-  .school-body {
-    padding: 18px 22px 22px;
-    display: flex; flex-direction: column; gap: 10px;
-    flex: 1;
-  }
-  .school-name {
-    font-size: 17px; font-weight: 900;
-    line-height: 1.25;
-  }
-  .school-name-en {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px; color: var(--muted);
-    font-weight: 600;
-  }
-
-  .school-count {
-    margin-top: auto;
-    padding-top: 12px;
-    border-top: 1px dashed var(--border-soft);
-    display: flex; align-items: center; justify-content: space-between;
-    font-family: 'Space Grotesk', sans-serif;
-  }
-  .school-count .n {
-    font-size: 22px; font-weight: 700; color: #4c1d95;
-    letter-spacing: -0.03em;
-  }
+  .school-latest { position: absolute; top: 14px; right: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.35); letter-spacing: 0.1em; }
+  .school-code { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.25em; opacity: 0.8; margin-bottom: 6px; }
+  .school-emblem-big { font-family: 'Playfair Display', sans-serif; font-size: 60px; font-weight: 900; line-height: 1; letter-spacing: -0.03em; }
+  .school-body { padding: 18px 22px 22px; }
+  .school-name { font-family: 'Playfair Display', 'Noto Sans SC', sans-serif; font-size: 19px; font-weight: 900; line-height: 1.2; }
+  .school-name-en { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--muted); margin-top: 4px; margin-bottom: 16px; }
+  .school-count { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border-soft); }
+  .school-count .n { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--ink); }
   .school-count .n.zero { color: var(--muted); }
-  .school-count .l {
-    font-size: 10px; color: var(--muted); letter-spacing: 0.15em;
-    font-weight: 700;
-  }
-  .school-count .arrow {
-    color: #4c1d95; font-size: 18px;
-    transition: transform 0.2s;
-  }
+  .school-count .l { font-size: 10px; color: var(--muted); letter-spacing: 0.15em; font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
+  .school-count .arrow { font-size: 18px; color: var(--muted); transition: transform 0.2s; }
   .school-card:hover .school-count .arrow { transform: translateX(4px); }
-
-  /* Latest chip (top right of cover) */
-  .school-latest {
-    position: absolute;
-    top: 12px; right: 12px;
-    padding: 4px 10px;
-    background: rgba(255,212,77,0.95);
-    color: #10162f;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 10px; font-weight: 700;
-    border-radius: 999px;
-    letter-spacing: 0.05em;
-    z-index: 2;
-  }
-  .school-cover[data-school="unsw"] .school-latest,
-  .school-cover[data-school="anu"] .school-latest { background: #10162f; color: #fff; }
-
-  /* Footer */
-  .footer {
-    margin-top: 60px; padding-top: 28px;
-    border-top: 1px solid var(--border-soft);
-    font-size: 12px; color: var(--muted);
-    text-align: center;
-  }
-  .footer code {
-    background: rgba(255,255,255,0.8);
-    padding: 2px 8px; border-radius: 4px;
-    font-family: 'Space Grotesk', monospace;
-  }
-
-  @media (max-width: 600px) {
-    body { padding: 24px 16px 60px; }
-    .hero { padding: 32px 24px; }
-    .hero h1 { font-size: 28px; }
-    .school-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .school-cover { height: 120px; padding: 16px 18px; }
-    .school-emblem-big { font-size: 42px; }
-    .school-body { padding: 14px 16px 18px; }
-    .school-name { font-size: 15px; }
-  }
+  .footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border-soft); font-size: 12px; color: var(--muted); text-align: center; }
+  .footer code { background: rgba(255,255,255,0.8); padding: 2px 8px; border-radius: 4px; font-family: 'Space Grotesk', monospace; }
+  @media (max-width: 700px) { body { padding: 24px 14px 60px; } .hero { padding: 32px 24px; } .hero h1 { font-size: 28px; } .school-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; } .school-emblem-big { font-size: 42px; } }
 </style>
 </head>
 <body>
 <div class="page">
-
   <div class="hero">
-    <h1>大学新闻 · <em>社交素材库</em></h1>
+    <h1>大学新闻 <em>社交素材库</em></h1>
     <div class="sub">
       澳洲 10 所大学的小红书 + 公众号素材包。选一所学校进入查看该校所有日期的内容。<br>
-      上游新闻 md 在 <code>src/content/universities/{school}/news-{date}.md</code>，<code>/uni-news-poster</code> 自动产出每校的 xhs-posters / mp-article / xhs-covers。
+      上游新闻 md 在 <code>src/content/universities/{school}/news-{date}.md</code>，<code>/uni-news-poster</code> 自动产出每校的 mp-article / xhs-drafts / xhs-covers。
     </div>
     <div class="stats">
-      <div class="stat"><div class="n" id="stat-items">1</div><div class="l">ITEMS</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">ITEMS</div></div>
       <div class="stat"><div class="n">10</div><div class="l">SCHOOLS</div></div>
       <div class="stat"><div class="n">2</div><div class="l">CHANNELS</div></div>
     </div>
   </div>
-
   <a class="events-banner" href="./events/">
     <div class="events-banner-left">
       <div class="eb-tag">📅 EVENTS · 每日自动更新</div>
@@ -313,14 +80,10 @@
       <span class="eb-cta">进入 →</span>
     </div>
   </a>
-
   <div class="section-label">按学校浏览 · 大学新闻</div>
-
   <div class="school-grid">
-
-    <!-- UQ -->
     <a class="school-card" href="./schools/uq.html">
-      <div class="school-cover" data-school="uq">
+      <div class="school-cover" data-school="uq" style="background: linear-gradient(145deg, #2a0f57, #51247a, #7c3aed);">
         <div class="school-latest">04-14 · 最新</div>
         <div class="school-code">UQ</div>
         <div class="school-emblem-big">UQ</div>
@@ -335,9 +98,9 @@
       </div>
     </a>
 
-    <!-- UMelb -->
     <a class="school-card" href="./schools/umelb.html">
-      <div class="school-cover" data-school="umelb">
+      <div class="school-cover" data-school="umelb" style="background: linear-gradient(145deg, #062b56, #094183, #1565c0);">
+        
         <div class="school-code">UMELB</div>
         <div class="school-emblem-big">UM</div>
       </div>
@@ -351,9 +114,9 @@
       </div>
     </a>
 
-    <!-- UNSW -->
     <a class="school-card" href="./schools/unsw.html">
-      <div class="school-cover" data-school="unsw">
+      <div class="school-cover" data-school="unsw" style="background: linear-gradient(145deg, #b89500, #ffd100, #fff176);">
+        
         <div class="school-code">UNSW</div>
         <div class="school-emblem-big">UN</div>
       </div>
@@ -367,9 +130,9 @@
       </div>
     </a>
 
-    <!-- USYD -->
     <a class="school-card" href="./schools/usyd.html">
-      <div class="school-cover" data-school="usyd">
+      <div class="school-cover" data-school="usyd" style="background: linear-gradient(145deg, #9d2613, #e64626, #ff7b59);">
+        
         <div class="school-code">USYD</div>
         <div class="school-emblem-big">US</div>
       </div>
@@ -383,9 +146,9 @@
       </div>
     </a>
 
-    <!-- Monash -->
     <a class="school-card" href="./schools/monash.html">
-      <div class="school-cover" data-school="monash">
+      <div class="school-cover" data-school="monash" style="background: linear-gradient(145deg, #003f6b, #006dae, #1e88e5);">
+        
         <div class="school-code">MONASH</div>
         <div class="school-emblem-big">MN</div>
       </div>
@@ -399,9 +162,9 @@
       </div>
     </a>
 
-    <!-- ANU -->
     <a class="school-card" href="./schools/anu.html">
-      <div class="school-cover" data-school="anu">
+      <div class="school-cover" data-school="anu" style="background: linear-gradient(145deg, #8a7136, #c7a85c, #e8d9a8);">
+        
         <div class="school-code">ANU</div>
         <div class="school-emblem-big">AN</div>
       </div>
@@ -415,9 +178,9 @@
       </div>
     </a>
 
-    <!-- Adelaide -->
     <a class="school-card" href="./schools/adelaide.html">
-      <div class="school-cover" data-school="adelaide">
+      <div class="school-cover" data-school="adelaide" style="background: linear-gradient(145deg, #001838, #002f5f, #1565c0);">
+        
         <div class="school-code">ADELAIDE</div>
         <div class="school-emblem-big">AD</div>
       </div>
@@ -431,9 +194,9 @@
       </div>
     </a>
 
-    <!-- RMIT -->
     <a class="school-card" href="./schools/rmit.html">
-      <div class="school-cover" data-school="rmit">
+      <div class="school-cover" data-school="rmit" style="background: linear-gradient(145deg, #9c0019, #e60028, #ff5252);">
+        
         <div class="school-code">RMIT</div>
         <div class="school-emblem-big">RM</div>
       </div>
@@ -447,9 +210,9 @@
       </div>
     </a>
 
-    <!-- UTS -->
     <a class="school-card" href="./schools/uts.html">
-      <div class="school-cover" data-school="uts">
+      <div class="school-cover" data-school="uts" style="background: linear-gradient(145deg, #072f54, #0f4c81, #2196f3);">
+        
         <div class="school-code">UTS</div>
         <div class="school-emblem-big">UT</div>
       </div>
@@ -463,9 +226,9 @@
       </div>
     </a>
 
-    <!-- UWA -->
     <a class="school-card" href="./schools/uwa.html">
-      <div class="school-cover" data-school="uwa">
+      <div class="school-cover" data-school="uwa" style="background: linear-gradient(145deg, #161e57, #27348b, #5c6bc0);">
+        
         <div class="school-code">UWA</div>
         <div class="school-emblem-big">UW</div>
       </div>
@@ -478,13 +241,10 @@
         </div>
       </div>
     </a>
-
   </div>
-
   <div class="footer">
-    由 <code>/uni-news-poster [date] [school]</code> 自动产出 · 详见 <code>jr-wiki/docs/UNI_NEWS_AUTOMATION_PRD.md</code>
+    由 <code>/uni-news-poster [date] [school]</code> 自动产出 · hub 由 <code>scripts/rebuild-uni-hub.mjs</code> 重建 · 详见 <code>jr-wiki/docs/UNI_NEWS_AUTOMATION_PRD.md</code>
   </div>
-
 </div>
 </body>
 </html>
