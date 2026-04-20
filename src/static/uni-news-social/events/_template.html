@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  ╔═══════════════════════════════════════════════════════════════════╗
+  ║  校园活动 · 每日 4 校 template                                      ║
+  ║  用法：trigger 每天复制本文件 → 命名为 events/{YYYY-MM-DD}.html    ║
+  ║        把 {{DATE}} / {{SCHOOL}}-* 占位符替换为真实数据              ║
+  ║  ❗ 不直接改这个 template（它是给 trigger 的参考样板）              ║
+  ╚═══════════════════════════════════════════════════════════════════╝
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>校园活动 · {{DATE}} · 4 校</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #160a2c;
+    --bg: #fef8f1;
+    --muted: #71628a;
+    --border-soft: rgba(106, 72, 170, 0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 80px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1400px; margin: 0 auto; }
+
+  .breadcrumb {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .breadcrumb a { color: var(--muted); text-decoration: none; }
+  .breadcrumb a:hover { color: #ff5757; }
+  .breadcrumb .sep { opacity: 0.5; }
+  .breadcrumb .current { color: #ff5757; font-weight: 700; }
+
+  .page-head {
+    background: linear-gradient(135deg, #ff5757, #ff8a3d, #ffd44d);
+    border-radius: 24px;
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    color: #fff;
+    box-shadow: 0 20px 60px rgba(255,87,87,0.2);
+  }
+  .page-head h1 {
+    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
+    font-size: 36px; font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+  .page-head h1 em { font-style: italic; }
+  .page-head .meta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px; color: rgba(255,255,255,0.85);
+    letter-spacing: 0.08em;
+  }
+
+  /* 4 schools side-by-side grid */
+  .schools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 1100px) { .schools { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px)  { .schools { grid-template-columns: 1fr; } }
+
+  .school {
+    background: rgba(255,255,255,0.95);
+    border: 1px solid var(--border-soft);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(16, 22, 47, 0.06);
+    display: flex; flex-direction: column;
+  }
+  .school-cover {
+    padding: 24px 22px 20px;
+    color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .school-cover::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px);
+    background-size: 16px 16px;
+    opacity: 0.35;
+  }
+  .school-cover > * { position: relative; }
+  .school-cover.umelb { background: linear-gradient(145deg, #05244a, #094183, #2e6ec4); }
+  .school-cover.unsw  { background: linear-gradient(145deg, #b39700, #ffd100, #fff0a1); color: #10162f; }
+  .school-cover.uq    { background: linear-gradient(145deg, #2a0f57, #4c1d95, #7c3aed); }
+  .school-cover.usyd  { background: linear-gradient(145deg, #661a00, #e64626, #ff7f50); }
+
+  .school-code {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.2em;
+    opacity: 0.85;
+    margin-bottom: 6px;
+  }
+  .school-name {
+    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
+    font-size: 22px; font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .school-name-en {
+    font-size: 11px;
+    font-family: 'Space Grotesk', sans-serif;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+
+  .school-body {
+    padding: 20px 22px 22px;
+    display: flex; flex-direction: column; gap: 18px;
+    flex: 1;
+  }
+
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700;
+    color: var(--muted); letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  /* Events list */
+  .events-list {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .event-card {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #fafaff;
+    border: 1px solid var(--border-soft);
+  }
+  .event-card .et {
+    font-size: 13px; font-weight: 700; line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .event-card .em {
+    font-size: 11px; color: var(--muted);
+    display: flex; gap: 8px; flex-wrap: wrap;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .event-card .em .free {
+    padding: 1px 7px; border-radius: 999px;
+    background: rgba(16,185,129,0.12); color: #065f46;
+    font-weight: 700;
+  }
+  .event-card a {
+    font-size: 11px; color: #4c1d95; text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .event-card a:hover { text-decoration: underline; }
+
+  /* XHS draft block */
+  .xhs-block {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .xhs-title {
+    font-size: 14px; font-weight: 700; color: var(--ink);
+    background: rgba(255,87,87,0.06);
+    padding: 8px 10px; border-radius: 8px;
+    border-left: 3px solid #ff5757;
+    line-height: 1.45;
+  }
+  .xhs-body {
+    font-size: 12.5px; line-height: 1.75; color: #334155;
+    background: #fafaff;
+    padding: 10px 12px; border-radius: 8px;
+    white-space: pre-wrap;
+  }
+  .xhs-tags {
+    font-size: 11px; color: #3b82f6;
+    font-weight: 600; line-height: 1.6;
+    padding: 6px 10px; border-radius: 8px;
+    background: #eff6ff;
+  }
+  .copy-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    background: #4c1d95; color: #fff; border: none;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 10px; font-weight: 700;
+    cursor: pointer; align-self: flex-start;
+    transition: all 0.15s;
+  }
+  .copy-btn:hover { background: #7c3aed; }
+  .copy-btn.copied { background: #10b981; }
+
+  .footer {
+    margin-top: 50px; padding-top: 24px;
+    border-top: 1px solid var(--border-soft);
+    font-size: 12px; color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="breadcrumb">
+    <a href="../../">← 素材库</a>
+    <span class="sep">/</span>
+    <a href="./">校园活动</a>
+    <span class="sep">/</span>
+    <span class="current">{{DATE}}</span>
+  </div>
+
+  <div class="page-head">
+    <h1>校园<em>活动</em> · {{DATE}}</h1>
+    <div class="meta">4 所澳洲大学 · XHS 草稿 · 敏感词扫描通过</div>
+  </div>
+
+  <div class="schools">
+
+    <!-- ========== UMelb ========== -->
+    <div class="school">
+      <div class="school-cover umelb">
+        <div class="school-code">UMELB · 墨大课代表</div>
+        <div class="school-name">墨尔本大学</div>
+        <div class="school-name-en">University of Melbourne</div>
+      </div>
+      <div class="school-body">
+        <div class="section-label">本周活动</div>
+        <div class="events-list">
+          <!-- UMELB-EVENTS-START -->
+          <div class="event-card">
+            <div class="et">{{UMELB-EVENT-1-TITLE}}</div>
+            <div class="em"><span>📅 {{UMELB-EVENT-1-WHEN}}</span><span>📍 {{UMELB-EVENT-1-WHERE}}</span><span class="free">{{UMELB-EVENT-1-PRICE}}</span></div>
+          </div>
+          <!-- UMELB-EVENTS-END -->
+        </div>
+
+        <div class="section-label">小红书草稿</div>
+        <div class="xhs-block">
+          <div class="xhs-title" id="umelb-title">{{UMELB-XHS-TITLE}}</div>
+          <div class="xhs-body" id="umelb-body">{{UMELB-XHS-BODY}}</div>
+          <div class="xhs-tags" id="umelb-tags">{{UMELB-XHS-TAGS}}</div>
+          <button class="copy-btn" data-target="umelb">📋 复制全部</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== UNSW ========== -->
+    <div class="school">
+      <div class="school-cover unsw">
+        <div class="school-code">UNSW · UNSW 课代表</div>
+        <div class="school-name">新南威尔士大学</div>
+        <div class="school-name-en">UNSW Sydney</div>
+      </div>
+      <div class="school-body">
+        <div class="section-label">本周活动</div>
+        <div class="events-list">
+          <!-- UNSW-EVENTS-START -->
+          <div class="event-card">
+            <div class="et">{{UNSW-EVENT-1-TITLE}}</div>
+            <div class="em"><span>📅 {{UNSW-EVENT-1-WHEN}}</span><span>📍 {{UNSW-EVENT-1-WHERE}}</span><span class="free">{{UNSW-EVENT-1-PRICE}}</span></div>
+          </div>
+          <!-- UNSW-EVENTS-END -->
+        </div>
+
+        <div class="section-label">小红书草稿</div>
+        <div class="xhs-block">
+          <div class="xhs-title" id="unsw-title">{{UNSW-XHS-TITLE}}</div>
+          <div class="xhs-body" id="unsw-body">{{UNSW-XHS-BODY}}</div>
+          <div class="xhs-tags" id="unsw-tags">{{UNSW-XHS-TAGS}}</div>
+          <button class="copy-btn" data-target="unsw">📋 复制全部</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== UQ ========== -->
+    <div class="school">
+      <div class="school-cover uq">
+        <div class="school-code">UQ · UQ 课代表</div>
+        <div class="school-name">昆士兰大学</div>
+        <div class="school-name-en">University of Queensland</div>
+      </div>
+      <div class="school-body">
+        <div class="section-label">本周活动</div>
+        <div class="events-list">
+          <!-- UQ-EVENTS-START -->
+          <div class="event-card">
+            <div class="et">{{UQ-EVENT-1-TITLE}}</div>
+            <div class="em"><span>📅 {{UQ-EVENT-1-WHEN}}</span><span>📍 {{UQ-EVENT-1-WHERE}}</span><span class="free">{{UQ-EVENT-1-PRICE}}</span></div>
+          </div>
+          <!-- UQ-EVENTS-END -->
+        </div>
+
+        <div class="section-label">小红书草稿</div>
+        <div class="xhs-block">
+          <div class="xhs-title" id="uq-title">{{UQ-XHS-TITLE}}</div>
+          <div class="xhs-body" id="uq-body">{{UQ-XHS-BODY}}</div>
+          <div class="xhs-tags" id="uq-tags">{{UQ-XHS-TAGS}}</div>
+          <button class="copy-btn" data-target="uq">📋 复制全部</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== USYD ========== -->
+    <div class="school">
+      <div class="school-cover usyd">
+        <div class="school-code">USYD · USYD 课代表</div>
+        <div class="school-name">悉尼大学</div>
+        <div class="school-name-en">University of Sydney</div>
+      </div>
+      <div class="school-body">
+        <div class="section-label">本周活动</div>
+        <div class="events-list">
+          <!-- USYD-EVENTS-START -->
+          <div class="event-card">
+            <div class="et">{{USYD-EVENT-1-TITLE}}</div>
+            <div class="em"><span>📅 {{USYD-EVENT-1-WHEN}}</span><span>📍 {{USYD-EVENT-1-WHERE}}</span><span class="free">{{USYD-EVENT-1-PRICE}}</span></div>
+          </div>
+          <!-- USYD-EVENTS-END -->
+        </div>
+
+        <div class="section-label">小红书草稿</div>
+        <div class="xhs-block">
+          <div class="xhs-title" id="usyd-title">{{USYD-XHS-TITLE}}</div>
+          <div class="xhs-body" id="usyd-body">{{USYD-XHS-BODY}}</div>
+          <div class="xhs-tags" id="usyd-tags">{{USYD-XHS-TAGS}}</div>
+          <button class="copy-btn" data-target="usyd">📋 复制全部</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    由 <code>澳洲大学每日活动</code> schedule 每天 AEST 05:00 自动产出到本页
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const t = btn.dataset.target;
+    const title = document.getElementById(t + '-title').innerText;
+    const body = document.getElementById(t + '-body').innerText;
+    const tags = document.getElementById(t + '-tags').innerText;
+    const full = `${title}\n\n${body}\n\n${tags}`;
+    try {
+      await navigator.clipboard.writeText(full);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = full; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    }
+    const orig = btn.textContent;
+    btn.textContent = '✅ 已复制';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+  });
+});
+</script>
+</body>
+</html>

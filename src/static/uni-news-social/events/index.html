@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>校园活动 · 每日 4 校 · Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #160a2c;
+    --bg: #f6f1ff;
+    --muted: #71628a;
+    --border-soft: rgba(106, 72, 170, 0.12);
+    --panel-shadow: 0 20px 60px rgba(53, 18, 102, 0.1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.1), transparent 30%), var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 40px 20px 80px;
+    line-height: 1.65;
+  }
+  .page { max-width: 1100px; margin: 0 auto; }
+
+  .breadcrumb {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .breadcrumb a { color: var(--muted); text-decoration: none; }
+  .breadcrumb a:hover { color: #4c1d95; }
+  .breadcrumb .sep { opacity: 0.5; }
+  .breadcrumb .current { color: #4c1d95; font-weight: 700; }
+
+  .hero {
+    background: linear-gradient(135deg, #ff5757 0%, #ff8a3d 50%, #ffd44d 100%);
+    border-radius: 28px;
+    padding: 48px 44px;
+    margin-bottom: 36px;
+    color: #fff;
+    box-shadow: var(--panel-shadow);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -100px; right: -80px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 60%);
+  }
+  .hero > * { position: relative; }
+  .hero h1 {
+    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
+    font-size: 42px; font-weight: 900;
+    letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .hero h1 em { color: #fff; font-style: italic; text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 8px; }
+  .hero .sub { font-size: 15px; color: rgba(255,255,255,0.92); max-width: 780px; line-height: 1.7; }
+  .hero code { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 5px; font-family: 'Space Grotesk', monospace; font-size: 13px; }
+
+  .hero .schools {
+    display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap;
+  }
+  .hero .school-chip {
+    padding: 8px 16px; border-radius: 999px;
+    background: rgba(255,255,255,0.2);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(4px);
+  }
+
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; font-weight: 700;
+    color: var(--muted); letter-spacing: 0.2em;
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border-soft); }
+
+  .timeline {
+    display: flex; flex-direction: column; gap: 14px;
+  }
+
+  .entry {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-soft);
+    border-radius: 18px;
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 22px;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(76,29,149,0.06);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .entry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(76,29,149,0.14);
+    border-color: rgba(124,58,237,0.35);
+  }
+  .entry .date-block {
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #ff5757, #ff8a3d);
+    color: #fff;
+    text-align: center;
+    min-width: 82px;
+  }
+  .entry .date-block .m { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #ffd44d; }
+  .entry .date-block .d { font-size: 28px; font-weight: 700; line-height: 1; margin: 2px 0; }
+  .entry .date-block .y { font-size: 10px; color: rgba(255,255,255,0.8); font-weight: 600; }
+  .entry .content {
+    min-width: 0;
+  }
+  .entry .title {
+    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
+    font-size: 18px; font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .entry .brief {
+    font-size: 13px; color: var(--muted);
+    line-height: 1.7;
+  }
+  .entry .schools-row {
+    display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;
+  }
+  .entry .schools-row span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700;
+    padding: 3px 9px; border-radius: 999px;
+    background: rgba(255,87,87,0.08); color: #c73e3e;
+    letter-spacing: 0.05em;
+  }
+  .entry .arrow {
+    color: #ff5757; font-size: 20px;
+    transition: transform 0.2s;
+  }
+  .entry:hover .arrow { transform: translateX(4px); }
+
+  .empty {
+    padding: 50px 30px;
+    text-align: center;
+    background: rgba(255,255,255,0.6);
+    border: 1px dashed var(--border-soft);
+    border-radius: 18px;
+    color: var(--muted);
+  }
+  .empty .emj { font-size: 36px; margin-bottom: 10px; }
+
+  .footer {
+    margin-top: 60px; padding-top: 24px;
+    border-top: 1px solid var(--border-soft);
+    font-size: 12px; color: var(--muted);
+    text-align: center;
+  }
+  .footer code {
+    background: rgba(255,255,255,0.8);
+    padding: 2px 8px; border-radius: 4px;
+    font-family: 'Space Grotesk', monospace;
+  }
+
+  @media (max-width: 700px) {
+    body { padding: 24px 14px 60px; }
+    .hero { padding: 32px 24px; }
+    .hero h1 { font-size: 30px; }
+    .entry { grid-template-columns: auto 1fr; gap: 14px; padding: 16px 18px; }
+    .entry .date-block { display: inline-flex; gap: 8px; align-items: baseline; padding: 8px 12px; min-width: 0; }
+    .entry .date-block .m { font-size: 10px; }
+    .entry .date-block .d { font-size: 18px; margin: 0; }
+    .entry .arrow { grid-column: 1 / -1; text-align: right; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="breadcrumb">
+    <a href="../">← 素材库</a>
+    <span class="sep">/</span>
+    <span class="current">校园活动</span>
+  </div>
+
+  <div class="hero">
+    <h1>校园<em>活动</em></h1>
+    <div class="sub">
+      每天自动抓取 4 所澳洲大学的学生活动（讲座 / networking / O-Week / 免费活动），筛选适合留学生参与的整理成小红书草稿。每天一页，4 校并排。
+    </div>
+    <div class="schools">
+      <span class="school-chip">🟦 UMelb</span>
+      <span class="school-chip">🟨 UNSW</span>
+      <span class="school-chip">🟪 UQ</span>
+      <span class="school-chip">🟥 USYD</span>
+    </div>
+  </div>
+
+  <div class="section-label">每日活动草稿（日期倒序）</div>
+
+  <div class="timeline" id="timeline">
+
+    <!-- NEWEST-ENTRIES-ABOVE -->
+    <!-- Trigger 每天跑完把新条目插到这个注释下方 -->
+
+    <div class="empty">
+      <div class="emj">⏳</div>
+      <div>今天的活动草稿将由自动化 schedule 产出 · 每天 AEST 05:00 执行</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    产出来源：<code>澳洲大学每日活动</code> 定时任务（claude.ai/code/scheduled）·
+    每天扫 4 校 activity 页面 → XHS 草稿 → push 到本目录<br>
+    <a href="../" style="color: #ff5757; text-decoration: none;">回素材库</a>
+  </div>
+
+</div>
+</body>
+</html>
