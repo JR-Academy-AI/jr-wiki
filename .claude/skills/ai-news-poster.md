@@ -10,33 +10,116 @@ argument-hint: "[YYYY-MM-DD 可选，默认今天]"
 
 ## 🚨🚨🚨 硬性要求（无任何例外，schedule 也必须遵守）
 
-**整张海报必须用原生 Canvas 2D API 绘制。严禁 HTML/CSS + html2canvas 路线。** schedule 跑 `/ai-news-poster` 时也按这条来，不允许偷懒回去用 html2canvas。
+**整张海报必须用 `_lib/poster-renderer.v1.js` 共享库渲染。** daily `index.html` 只是数据 + 一次 `PosterRenderer.renderAll()` 调用，**不要重写画法、不要抄画法、不要引 html2canvas**。
 
 ### 为什么——踩过的坑
-html2canvas 1.4.1 对 `em` padding + 大字号（≥80px）+ `text-wrap: balance` 组合会**直接吞掉整行文字**，表现是：页面上标题能看见，下载下来的 PNG 里标题那一行完全消失（2026-04-21 事故就是这个，用户手动找出来的）。后续还踩过字号溢出、字宽测不准、三层跳转失真、字体加载时序等问题。
+html2canvas 1.4.1 对 `em` padding + 大字号（≥80px）+ `text-wrap: balance` 组合会**直接吞掉整行文字**，下载下来的 PNG 里标题那一行完全消失（2026-04-21 事故就是这个，用户手动找出来的）。还踩过字号溢出、字宽测不准、字体加载时序等问题。
 
-Canvas 2D 的 `ctx.measureText()` 能精确预量字宽，`fitText()` 能二分缩字号适配容器，完全不依赖 DOM 布局，是这类"字放在固定框里"场景的唯一稳健方案。
+Canvas 2D 的 `ctx.measureText()` 能精确预量字宽、`fitText()` 二分缩字号，完全不依赖 DOM 布局——这是"字放在固定框里"场景的唯一稳健方案。
 
-### 参考实现（必读）
-- **6 张一套的 AI 日报海报**：`src/static/ai-news-posters/2026-04-21/index.html` — 含 `layoutTokens()` 按 hl/bold token 自动换行 + QR 注入 + 单图/合集两种布局
-- **单张课程封面**：`jr-academy-ai/curriculum/ai-engineer-bootcamp/public/mp-article/cover.html` — 含 `fitText()` / `drawDotPattern()` / `roundRect()` 模板 + `document.fonts.ready` 等字体加载
+### 架构：画法在库，daily 只填数据
+```
+src/static/ai-news-posters/
+├── _lib/
+│   └── poster-renderer.v1.js     ← 画法 / UI 脚手架 / 事件 / QR（长期稳定，不要随便改）
+├── 2026-04-21/
+│   └── index.html                ← 瘦壳：只有 NEWS / SUMMARY 数据 + renderAll()
+├── 2026-04-22/
+│   └── index.html                ← 同上，150 行以内
+└── ...
+```
 
-### 🔒 产出校验清单（每天生成完必须每条打钩，没打钩就重做）
-- [ ] 每张海报是独立 `<canvas width="1242" height="1660">`，**页面里不存在任何 `.p-title` / `.p-inner` DOM 海报节点**
-- [ ] `grep html2canvas src/static/ai-news-posters/{date}/index.html` **返回空**（既不能 `<script>` 引，也不能调用）
-- [ ] 下载按钮的实现是 `canvas.toDataURL('image/png')`
-- [ ] `await document.fonts.ready` 在首次 `drawAll()` 之前
-- [ ] 每张海报**右下角都有二维码**，二维码内容 = `https://jiangren.com.au/blog/ai-daily-{YYYY-MM-DD}`（见下节）
-- [ ] 有 `fitText()` 二分缩字号工具用于标题行
-- [ ] 有 `layoutTokens()` 或等价函数做 `{text, hl, bold}` token 换行（纯 `fillText` 撑不住带高亮的标题）
+**版本化**：库是 `poster-renderer.v1.js`，以后设计有突破性变化才做 `v2.js`，老页面的 `v1.js` 永不动。
 
-### 🚨 二维码（新增硬性要求）
-- CDN：`https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js`
-- 位置：每张海报右下角，底栏内部，≥160×160 像素
+### 📋 daily index.html 唯一正确模板（照抄即可）
+
+```html
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 每日头条海报 · {DATE}（Canvas 版）</title>
+<meta name="description" content="{DATE} AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v1.js"></script>
+</head>
+<body>
+<script>
+const SUMMARY = {
+  slug: 'digest',
+  frameLabel: 'P0 · 合集 <em>· Top 5 一图看完</em>',
+  tags: ['合集封面', '适合首图', '今日 5 条一图扫完'],
+  hook: [
+    { text: '今天 ' },
+    { text: '5 条', hl: true },   // hl=true 的 token 在合集大字上会带黄色荧光笔下划线
+    { text: '\nAI 大新闻' },       // \n 显式换行
+  ],
+  sub: '一图看完 · 匠人 AI 日报',
+  items: [
+    { num: '01', numColor: '#ff5757', cat: '类别', t: '完整标题（用 fitText 自动缩字号）' },
+    // ... 5 条
+  ],
+};
+
+const NEWS = [
+  {
+    slug: '01-slug',                          // 文件名 slug（下载 PNG 用）
+    frameLabel: 'P1 · 单图 <em>· 简短标题</em>',
+    tags: ['类别', '关键词', '关键词'],
+    idx: '01', catText: '安全监管', accent: '#ff5757',   // accent = 点 / 左色边 / b-key 颜色
+    bg: { topRight: 'rgba(255,87,87,0.14)', top: '#fff7f5', mid: '#ffffff', bot: '#fff7ef' },
+    title: [
+      { text: '前半段，' },
+      { text: '黄色高亮段', hl: true },       // em 效果：黄色背景 + 圆角
+      { text: ' 后半段' },
+    ],
+    titleSize: 82,                            // 82 是默认；字多就 76、78
+    oneline: [
+      { text: '引言前半' },
+      { text: '红色加粗段', bold: true },     // b 效果：红色 900 字重
+      { text: '，引言后半' },
+    ],
+    bullets: [
+      { k: '发生了什么', v: '1-2 句话说清楚事件本身。' },
+      { k: '为什么重要', v: '说清楚这事为什么值得关注。' },
+      { k: '对你的影响', v: '给读者具体可操作的建议。' },
+    ],
+    src: '📎 source1.com · source2.com',
+  },
+  // ... 5 条（accent / bg 参照下方"配色对照表"）
+];
+
+PosterRenderer.renderAll({ DATE: '{DATE}', SUMMARY, NEWS });
+</script>
+</body>
+</html>
+```
+
+### 5 张单图推荐配色（已在 2026-04-21 验证）
+| 位置 | accent | bg.topRight | bg.top → bot |
+|------|--------|-------------|--------------|
+| P1 | `#ff5757` 红 | `rgba(255,87,87,0.14)` | `#fff7f5` → `#fff7ef` |
+| P2 | `#7c3aed` 紫 | `rgba(124,58,237,0.16)` | `#faf7ff` → `#f7f4ff` |
+| P3 | `#10b981` 绿 | `rgba(16,185,129,0.16)` | `#f2fff8` → `#effff6` |
+| P4 | `#3b82f6` 蓝 | `rgba(59,130,246,0.16)` | `#f4f9ff` → `#eff5ff` |
+| P5 | `#ff8a3d` 橙 | `rgba(255,138,61,0.16)` | `#fff7f1` → `#fff4eb` |
+
+### 库里已经帮你做好的事（所以你不用再管）
+- 1242×1660 黑框 + offset 阴影 + 右上角点阵装饰
+- 标题 em 黄色高亮块（`layoutTokens` 按 token 换行 + `fillRect` 画背景）
+- 一句话黄底 + 红色加粗
+- 3 条 bullets（左色边 + b-key 大写 mono + b-val 正文）
+- 底栏分隔线 + 左侧 src/brand 文字 + **右下角 168×168 二维码**（自动指向 `https://jiangren.com.au/blog/ai-daily-{DATE}`）
+- 页面外壳（header / 全部下载按钮 / grid / lightbox / toast / 复制链接）
+- `await document.fonts.ready` 之后才画
+- 下载按钮 = `canvas.toDataURL('image/png')`
+
+### 🚨 二维码（硬规）
+- 每张海报右下角，168×168 像素，内容 = `https://jiangren.com.au/blog/ai-daily-{YYYY-MM-DD}`
+- 6 张海报指向同一篇当天文章（不做 per-item anchor）
 - 白底黑块、3px 黑描边、16px quiet zone
-- URL：**永远是当天的文章页** `https://jiangren.com.au/blog/ai-daily-{YYYY-MM-DD}`，所有 6 张海报指向同一篇文章
-- 小字说明："扫码看完整报道 →" 放在二维码左侧
-- 底栏里 JR 品牌文字用纯文字 "JR ACADEMY · AI 日报"（不嵌 SVG logo，避免 `<img>` 跨域污染 canvas）
+- **由库自动画**，你只需要保证 `<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>` 加在库 `<script>` 之前
 
 ---
 
@@ -608,6 +691,7 @@ DATE={YYYY-MM-DD}
 DIR=src/static/ai-news-posters/$DATE
 MP=$DIR/mp-article.html
 IDX=$DIR/index.html
+LIB=src/static/ai-news-posters/_lib/poster-renderer.v1.js
 
 # -------- mp-article.html（inline style） --------
 grep -q "const MP_INLINE_STYLES" $MP       || echo "❌ 缺 MP_INLINE_STYLES"
@@ -615,17 +699,26 @@ grep -q "function applyInlineStyles" $MP   || echo "❌ 缺 applyInlineStyles"
 grep -q "applyInlineStyles(article)" $MP   || echo "❌ mpCopyHtml 没调 applyInlineStyles"
 ! grep -q "var(--" $MP                     || echo "⚠️ 还有 var(--*)，公众号不认"
 
-# -------- index.html（Canvas 2D + QR） --------
-! grep -q "html2canvas" $IDX                                        || echo "❌ index.html 还在引 html2canvas，必须改成 Canvas 2D 原生绘制"
-grep -q "canvas.toDataURL" $IDX                                     || echo "❌ index.html 下载按钮不是 canvas.toDataURL（没走 Canvas 2D）"
-grep -q "qrcode-generator" $IDX                                     || echo "❌ index.html 没引 qrcode-generator，右下角二维码缺失"
-grep -q "blog/ai-daily-$DATE" $IDX                                  || echo "❌ 二维码 URL 不是当天文章页 (https://jiangren.com.au/blog/ai-daily-$DATE)"
-grep -q "document.fonts.ready" $IDX                                 || echo "❌ 没等字体就绪就画 canvas，会出 fallback 字体撑爆布局"
+# -------- index.html（瘦壳：必须走共享库）--------
+! grep -q "html2canvas" $IDX                        || echo "❌ index.html 还在引 html2canvas，必须去掉"
+grep -q "_lib/poster-renderer.v1.js" $IDX           || echo "❌ index.html 没引 _lib/poster-renderer.v1.js（画法必须走 lib）"
+grep -q "qrcode-generator" $IDX                     || echo "❌ index.html 没引 qrcode-generator，QR 画不出来"
+grep -q "PosterRenderer.renderAll" $IDX             || echo "❌ index.html 没调 PosterRenderer.renderAll"
+grep -q "DATE: '$DATE'" $IDX                        || echo "❌ index.html 的 DATE 参数不是 $DATE"
+LINES=$(wc -l < $IDX)
+[ "$LINES" -le 250 ]                                || echo "⚠️ index.html 超过 250 行（瘦壳应该 ~150 行），可能又在重写画法"
+
+# -------- 库本身必须存在 + 仍然是 Canvas 2D --------
+[ -f "$LIB" ]                                       || echo "❌ 缺 $LIB"
+grep -q "document.fonts.ready" $LIB                 || echo "❌ $LIB 没等字体就绪"
+grep -q "toDataURL" $LIB                            || echo "❌ $LIB 下载不是 toDataURL"
+! grep -q "html2canvas" $LIB                        || echo "❌ $LIB 混入 html2canvas，必须拿掉"
 ```
 
 **任何一条不通过都禁止进入 `/publish`**：
 - mp-article 类失败 → 修 mp-article.html
-- index.html 的 html2canvas / 缺 QR / 缺 toDataURL → **直接重新生成 index.html**，不允许 hotfix 绕过（html2canvas 会吞字，这事故已出过）
+- index.html 不走 lib / 超 250 行 → **重写成"数据 + renderAll() 一行"瘦壳**，不允许在 daily html 里塞画法代码
+- lib 被改坏 → `git checkout $LIB` 回滚（画法稳定，不随便动）
 
 产出当天由 GitHub Actions 自动部署到 `https://jr-academy-ai.github.io/jr-wiki/ai-news-posters/{YYYY-MM-DD}/`：
 - `index.html` — 海报库（小红书 / 朋友圈 / 公众号素材）
