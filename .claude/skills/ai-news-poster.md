@@ -8,23 +8,35 @@ argument-hint: "[YYYY-MM-DD 可选，默认今天]"
 
 把 jr-wiki `/ai-daily-news` 产出的 Top 5 新闻，转成一套可直接投放的海报素材：1 张合集大图 + 5 张单图。全部 1242×1660 竖版（小红书聚光 / 朋友圈主图标准），Neo-Brutalism 风格对齐整个 curriculum 矩阵。
 
-## 🚨 硬性要求（2026-04-21 后新生成的都按这个做）
+## 🚨🚨🚨 硬性要求（无任何例外，schedule 也必须遵守）
 
-**设计类生成器必须用原生 Canvas 2D API 绘制，禁止 HTML/CSS + html2canvas**。
+**整张海报必须用原生 Canvas 2D API 绘制。严禁 HTML/CSS + html2canvas 路线。** schedule 跑 `/ai-news-poster` 时也按这条来，不允许偷懒回去用 html2canvas。
 
-原因：html2canvas 方案字号溢出 + 字宽测不准 + 三层跳转失真 + 字体加载时序问题（用户多次踩坑）。Canvas 2D 的 `ctx.measureText()` 可以精确预量字宽 + `fitText()` 自动缩字号适配容器。
+### 为什么——踩过的坑
+html2canvas 1.4.1 对 `em` padding + 大字号（≥80px）+ `text-wrap: balance` 组合会**直接吞掉整行文字**，表现是：页面上标题能看见，下载下来的 PNG 里标题那一行完全消失（2026-04-21 事故就是这个，用户手动找出来的）。后续还踩过字号溢出、字宽测不准、三层跳转失真、字体加载时序等问题。
 
-**参考实现**：`jr-academy-ai/curriculum/ai-engineer-bootcamp/public/mp-article/cover.html`（curriculum repo commit dd26b8d）—— 含 `fitText()` / `drawDotPattern()` / `roundRect()` 模板 + `document.fonts.ready` 字体加载等。
+Canvas 2D 的 `ctx.measureText()` 能精确预量字宽，`fitText()` 能二分缩字号适配容器，完全不依赖 DOM 布局，是这类"字放在固定框里"场景的唯一稳健方案。
 
-**校验清单**：
-- [ ] 用 `<canvas width="1242" height="1660">` 不用 CSS 定位布局
-- [ ] 有 `fitText()` 二分缩字号工具
-- [ ] 有 `await document.fonts.ready` 等字体加载
-- [ ] 下载按钮直接 `canvas.toDataURL('image/png')`（**不引 html2canvas**）
-- [ ] 每个可改文案有 `<input>` 实时重绘
-- [ ] 右侧有手机缩略 canvas 同步（判断手机端可读性）
+### 参考实现（必读）
+- **6 张一套的 AI 日报海报**：`src/static/ai-news-posters/2026-04-21/index.html` — 含 `layoutTokens()` 按 hl/bold token 自动换行 + QR 注入 + 单图/合集两种布局
+- **单张课程封面**：`jr-academy-ai/curriculum/ai-engineer-bootcamp/public/mp-article/cover.html` — 含 `fitText()` / `drawDotPattern()` / `roundRect()` 模板 + `document.fonts.ready` 等字体加载
 
-**已有的海报（2026-04-20 之前用 html2canvas 做的）暂时不动，继续能用；新生成的必须走 Canvas 2D。**
+### 🔒 产出校验清单（每天生成完必须每条打钩，没打钩就重做）
+- [ ] 每张海报是独立 `<canvas width="1242" height="1660">`，**页面里不存在任何 `.p-title` / `.p-inner` DOM 海报节点**
+- [ ] `grep html2canvas src/static/ai-news-posters/{date}/index.html` **返回空**（既不能 `<script>` 引，也不能调用）
+- [ ] 下载按钮的实现是 `canvas.toDataURL('image/png')`
+- [ ] `await document.fonts.ready` 在首次 `drawAll()` 之前
+- [ ] 每张海报**右下角都有二维码**，二维码内容 = `https://jiangren.com.au/blog/ai-daily-{YYYY-MM-DD}`（见下节）
+- [ ] 有 `fitText()` 二分缩字号工具用于标题行
+- [ ] 有 `layoutTokens()` 或等价函数做 `{text, hl, bold}` token 换行（纯 `fillText` 撑不住带高亮的标题）
+
+### 🚨 二维码（新增硬性要求）
+- CDN：`https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js`
+- 位置：每张海报右下角，底栏内部，≥160×160 像素
+- 白底黑块、3px 黑描边、16px quiet zone
+- URL：**永远是当天的文章页** `https://jiangren.com.au/blog/ai-daily-{YYYY-MM-DD}`，所有 6 张海报指向同一篇文章
+- 小字说明："扫码看完整报道 →" 放在二维码左侧
+- 底栏里 JR 品牌文字用纯文字 "JR ACADEMY · AI 日报"（不嵌 SVG logo，避免 `<img>` 跨域污染 canvas）
 
 ---
 
@@ -34,7 +46,8 @@ argument-hint: "[YYYY-MM-DD 可选，默认今天]"
 |------|------|
 | 尺寸 | **1242 × 1660**（3:4 竖版）锁死，不给备选 |
 | 产出数量 | **1 合集（summary）+ 5 单图 = 6 张 / 天** |
-| 下载 | 每张图下方 html2canvas「⬇ 下载 PNG」，固定 1374×1792（含边框 + 投影） |
+| 下载 | 每张图下方「⬇ 下载 PNG」= `canvas.toDataURL('image/png')`（**严禁 html2canvas**） |
+| 二维码 | 每张海报**右下角 ≥160×160**，内容固定 = `https://jiangren.com.au/blog/ai-daily-{YYYY-MM-DD}` |
 | 输出目录 | `src/static/ai-news-posters/{YYYY-MM-DD}/index.html` |
 | 汇总 hub | `src/static/ai-news-posters/index.html`（仿 `posters.html` 的卡片列表） |
 
@@ -591,14 +604,28 @@ schedule 每次跑这个 skill，产出 mp-article.html 都必须满足：
 
 **schedule 完成自检（产出后、`/publish` 前必跑）**：
 ```bash
-MP=src/static/ai-news-posters/{DATE}/mp-article.html
+DATE={YYYY-MM-DD}
+DIR=src/static/ai-news-posters/$DATE
+MP=$DIR/mp-article.html
+IDX=$DIR/index.html
+
+# -------- mp-article.html（inline style） --------
 grep -q "const MP_INLINE_STYLES" $MP       || echo "❌ 缺 MP_INLINE_STYLES"
 grep -q "function applyInlineStyles" $MP   || echo "❌ 缺 applyInlineStyles"
 grep -q "applyInlineStyles(article)" $MP   || echo "❌ mpCopyHtml 没调 applyInlineStyles"
 ! grep -q "var(--" $MP                     || echo "⚠️ 还有 var(--*)，公众号不认"
+
+# -------- index.html（Canvas 2D + QR） --------
+! grep -q "html2canvas" $IDX                                        || echo "❌ index.html 还在引 html2canvas，必须改成 Canvas 2D 原生绘制"
+grep -q "canvas.toDataURL" $IDX                                     || echo "❌ index.html 下载按钮不是 canvas.toDataURL（没走 Canvas 2D）"
+grep -q "qrcode-generator" $IDX                                     || echo "❌ index.html 没引 qrcode-generator，右下角二维码缺失"
+grep -q "blog/ai-daily-$DATE" $IDX                                  || echo "❌ 二维码 URL 不是当天文章页 (https://jiangren.com.au/blog/ai-daily-$DATE)"
+grep -q "document.fonts.ready" $IDX                                 || echo "❌ 没等字体就绪就画 canvas，会出 fallback 字体撑爆布局"
 ```
 
-任何一条不通过都**禁止进入 `/publish`**，必须先修 mp-article.html。
+**任何一条不通过都禁止进入 `/publish`**：
+- mp-article 类失败 → 修 mp-article.html
+- index.html 的 html2canvas / 缺 QR / 缺 toDataURL → **直接重新生成 index.html**，不允许 hotfix 绕过（html2canvas 会吞字，这事故已出过）
 
 产出当天由 GitHub Actions 自动部署到 `https://jr-academy-ai.github.io/jr-wiki/ai-news-posters/{YYYY-MM-DD}/`：
 - `index.html` — 海报库（小红书 / 朋友圈 / 公众号素材）
