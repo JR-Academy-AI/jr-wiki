@@ -63,9 +63,13 @@
 
   /**
    * 把 [{text, hl?, bold?, color?}] tokens 按 maxW 自动换行
-   * 支持 '\n' 显式换行，按字符级切分（中文逐字、英文按字符）
+   * 支持 '\n' 显式换行
+   * 换行策略：**原子级**——ASCII 词（字母/数字/连字符）保持整块，CJK 逐字，标点逐字
+   *   这样 "OAuth"、"GPT-5.5"、"75%" 不会被拆断，中文仍能逐字折行
    * 返回 { lines: [[run...]], size, lineH }
    */
+  const ATOM_RE = /[A-Za-z0-9]+(?:[-'’·.][A-Za-z0-9]+)*%?|\s+|[^A-Za-z0-9\s]/g;
+
   function layoutTokens(ctx, tokens, fontSpec, size, lineHeight, maxW) {
     ctx.font = fontSpec(size);
     const lines = [];
@@ -85,33 +89,41 @@
         const piece = pieces[pi];
         if (!piece) continue;
 
-        let i = 0;
-        while (i < piece.length) {
-          let j = i + 1;
-          let fit = j;
-          while (j <= piece.length) {
-            const sub = piece.slice(i, j);
-            const w = ctx.measureText(sub).width;
-            if (curX + w > maxW) break;
-            fit = j;
-            j++;
+        const atoms = piece.match(ATOM_RE) || [];
+        for (const atom of atoms) {
+          const atomW = ctx.measureText(atom).width;
+          const isWs = /^\s+$/.test(atom);
+
+          // 开头空白：如果刚换行就吃掉（避免行首空格）
+          if (isWs && curLine.length === 0) continue;
+
+          // 原子太大超过一整行 → fallback 逐字切（罕见，超长英文单词）
+          if (atomW > maxW) {
+            for (const ch of atom) {
+              const cw = ctx.measureText(ch).width;
+              if (curX + cw > maxW && curLine.length) pushLine();
+              const run = { text: ch, hl: !!tok.hl, bold: !!tok.bold, color: tok.color, x: curX, width: cw };
+              curLine.push(run);
+              curX += cw;
+            }
+            continue;
           }
-          if (fit === i) {
-            if (curLine.length) { pushLine(); continue; }
-            fit = i + 1;
+
+          if (curX + atomW > maxW) {
+            pushLine();
+            if (isWs) continue;  // 换行后的空白也吃掉
           }
+
           const run = {
-            text: piece.slice(i, fit),
+            text: atom,
             hl: !!tok.hl,
             bold: !!tok.bold,
             color: tok.color,
             x: curX,
+            width: atomW,
           };
-          run.width = ctx.measureText(run.text).width;
           curLine.push(run);
-          curX += run.width;
-          i = fit;
-          if (i < piece.length) { pushLine(); }
+          curX += atomW;
         }
       }
     }

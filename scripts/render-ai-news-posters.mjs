@@ -204,32 +204,67 @@ try {
 			};
 		});
 
-		// 6 张 poster：id 是 poster-0 到 poster-5
-		const POSTER_IDS = ['poster-0', 'poster-1', 'poster-2', 'poster-3', 'poster-4', 'poster-5'];
+		// Canvas 2D 版（2026-04-21 起）：canvas[data-id] 直接 toDataURL 导出
+		// 老 DOM 版（2026-04-20 之前）：id="poster-0" ~ "poster-5"，走 screenshot + frame 包装
+		const posterMode = await page.evaluate(() => {
+			const canvases = document.querySelectorAll('canvas[data-id]');
+			if (canvases.length === 6) {
+				return { kind: 'canvas', slugs: Array.from(canvases).map((c) => c.dataset.id) };
+			}
+			return { kind: 'dom', ids: ['poster-0', 'poster-1', 'poster-2', 'poster-3', 'poster-4', 'poster-5'] };
+		});
+
 		const OUT_DIR = resolve(HUB, date);
 		const startDay = Date.now();
 
-		for (const [i, posterId] of POSTER_IDS.entries()) {
-			const outFile = resolve(OUT_DIR, `${posterId}.png`);
-			const t0 = Date.now();
-			process.stdout.write(`  ${String(i + 1).padStart(2, '0')}/6  ${posterId.padEnd(12)} … `);
-			try {
-				const dims = await page.evaluate((id) => window.__setupForCapture(id), posterId);
-				const png = await page.screenshot({
-					type: 'png',
-					omitBackground: false,
-					clip: { x: 0, y: 0, width: dims.totalW, height: dims.totalH },
-				});
-				writeFileSync(outFile, png);
-				console.log(
-					`✓ ${(png.length / 1024).toFixed(0)}KB · ${dims.totalW}×${dims.totalH} · ${((Date.now() - t0) / 1000).toFixed(2)}s`,
-				);
-				totalOk++;
-			} catch (e) {
-				console.log(`❌ ${e.message}`);
-				totalFail++;
-			} finally {
-				await page.evaluate(() => window.__restoreAfterCapture());
+		if (posterMode.kind === 'canvas') {
+			// 让 PosterRenderer.renderAll() 跑完 + 字体就绪 + canvas 实际画完
+			// renderAll 是 async 的，上面的 fonts.ready + 800ms 延迟加起来基本够了，保险再给 400ms
+			await new Promise((r) => setTimeout(r, 400));
+			const dataUrls = await page.evaluate(() =>
+				Array.from(document.querySelectorAll('canvas[data-id]')).map((c) => c.toDataURL('image/png')),
+			);
+			for (let i = 0; i < dataUrls.length; i++) {
+				const outFile = resolve(OUT_DIR, `poster-${i}.png`);
+				const t0 = Date.now();
+				const label = `poster-${i}`;
+				process.stdout.write(`  ${String(i + 1).padStart(2, '0')}/6  ${label.padEnd(12)} … `);
+				try {
+					const buf = Buffer.from(dataUrls[i].split(',')[1], 'base64');
+					writeFileSync(outFile, buf);
+					console.log(
+						`✓ ${(buf.length / 1024).toFixed(0)}KB · canvas[data-id="${posterMode.slugs[i]}"] · ${((Date.now() - t0) / 1000).toFixed(2)}s`,
+					);
+					totalOk++;
+				} catch (e) {
+					console.log(`❌ ${e.message}`);
+					totalFail++;
+				}
+			}
+		} else {
+			// 老路径
+			for (const [i, posterId] of posterMode.ids.entries()) {
+				const outFile = resolve(OUT_DIR, `${posterId}.png`);
+				const t0 = Date.now();
+				process.stdout.write(`  ${String(i + 1).padStart(2, '0')}/6  ${posterId.padEnd(12)} … `);
+				try {
+					const dims = await page.evaluate((id) => window.__setupForCapture(id), posterId);
+					const png = await page.screenshot({
+						type: 'png',
+						omitBackground: false,
+						clip: { x: 0, y: 0, width: dims.totalW, height: dims.totalH },
+					});
+					writeFileSync(outFile, png);
+					console.log(
+						`✓ ${(png.length / 1024).toFixed(0)}KB · ${dims.totalW}×${dims.totalH} · ${((Date.now() - t0) / 1000).toFixed(2)}s`,
+					);
+					totalOk++;
+				} catch (e) {
+					console.log(`❌ ${e.message}`);
+					totalFail++;
+				} finally {
+					await page.evaluate(() => window.__restoreAfterCapture());
+				}
 			}
 		}
 		console.log(`  ⏱ ${date} 用时 ${((Date.now() - startDay) / 1000).toFixed(1)}s`);
