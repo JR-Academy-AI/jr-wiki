@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ANU 澳洲国立大学 2026-04-21 · 小红书素材（封面 + 3 条新闻 + 速览）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-dark: #10162f;
+    --brand-yellow: #ffce44;
+    --brand-green: #10b981;
+    --uni-primary: #c7a85c;
+    --uni-deep: #8a7136;
+    --uni-light: #e8d9a8;
+    --uni-accent: #c7a85c;
+    --bg-light: #f8f7ee;
+    --bg-cream: #f9f3e0;
+    --text-main: #10162f;
+    --text-gray: #64748b;
+    --border-color: #e5dbbf;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #eee9dc;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 40px 20px 120px 120px;
+    line-height: 1.55;
+  }
+  .page-wrap { max-width: 1500px; margin: 0 auto; }
+
+  .page-head {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 20px;
+    padding: 30px 34px; margin-bottom: 32px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .page-head h1 { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; }
+  .page-head h1 span { color: var(--uni-deep); }
+  .page-head .sub { margin-top: 10px; color: var(--text-gray); font-size: 14px; line-height: 1.65; max-width: 900px; }
+  .page-head .stats { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+  .stat-pill {
+    padding: 6px 14px; border-radius: 999px; border: 1.5px solid var(--brand-dark);
+    background: var(--bg-light); color: var(--brand-dark);
+    font-size: 12px; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .stat-pill.ok { background: #ecfdf5; color: var(--brand-green); }
+
+  .thumb-nav {
+    display: flex; flex-direction: column; gap: 10px;
+    background: #fff; border: 1.5px solid var(--brand-dark);
+    border-radius: 14px; padding: 12px;
+    position: fixed; top: 20px; left: 16px;
+    width: 88px; max-height: calc(100vh - 40px); overflow-y: auto;
+    z-index: 100; box-shadow: 4px 4px 0 rgba(16,22,47,0.12);
+  }
+  .thumb-nav::before {
+    content: 'NAV'; display: block;
+    font-size: 10px; font-weight: 900; letter-spacing: 2px;
+    color: var(--uni-deep); text-align: center;
+    padding: 2px 0 8px; border-bottom: 1.5px dashed #e2e8f0;
+    font-family: 'JetBrains Mono', monospace; margin-bottom: 2px;
+  }
+  .thumb {
+    aspect-ratio: 3/4; background: var(--bg-light);
+    border: 1.5px solid var(--brand-dark); border-radius: 8px;
+    font-weight: 900; color: var(--brand-dark);
+    text-align: center; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-decoration: none; transition: all 0.15s;
+    gap: 2px; padding: 4px;
+  }
+  .thumb .num { font-size: 18px; line-height: 1; }
+  .thumb .lbl { font-size: 9px; color: var(--text-gray); font-weight: 700; }
+  .thumb:hover { background: var(--uni-primary); transform: translate(-2px,-2px); box-shadow: 3px 3px 0 var(--brand-dark); }
+
+  .poster-frame {
+    display: flex; flex-direction: column; align-items: center;
+    margin-bottom: 60px; position: relative;
+  }
+  .poster-frame .label {
+    font-size: 13px; font-weight: 900;
+    color: var(--brand-dark); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px; align-self: flex-start;
+  }
+  .poster-frame .label::before {
+    content: ''; width: 28px; height: 4px;
+    background: var(--uni-primary); border-radius: 2px;
+  }
+  .poster-frame .label em { font-style: normal; color: var(--text-gray); font-weight: 600; font-size: 12px; margin-left: 12px; }
+
+  .poster-scaler {
+    width: 435px; height: 581px; position: relative;
+    border: 2px solid var(--brand-dark); border-radius: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark); overflow: hidden;
+  }
+  .poster {
+    width: 1242px; height: 1660px;
+    transform: scale(0.35); transform-origin: top left;
+    position: absolute; top: 0; left: 0;
+    background: var(--bg-light);
+    overflow: hidden; font-family: 'Noto Sans SC', sans-serif;
+    padding: 32px;
+  }
+  .p-inner {
+    position: relative; width: 100%; height: 100%;
+    padding: 76px 72px; display: flex; flex-direction: column;
+    background: #fff;
+    border: 5px solid var(--brand-dark);
+    border-radius: 36px; overflow: hidden;
+  }
+  .p-dots {
+    position: absolute; top: 0; right: 0;
+    width: 400px; height: 400px;
+    background-image: radial-gradient(#64748b 1.5px, transparent 1.5px);
+    background-size: 28px 28px; opacity: 0.1; pointer-events: none;
+  }
+
+  .p-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 28px; font-weight: 800; letter-spacing: 1px;
+    color: var(--uni-deep); text-transform: uppercase;
+    background: #f5efd9; border: 1.5px solid var(--uni-deep);
+    padding: 12px 24px; border-radius: 100px;
+    width: fit-content;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .p-tag .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--uni-deep); }
+
+  .hl { position: relative; display: inline-block; z-index: 1; }
+  .hl::after {
+    content: ''; position: absolute;
+    bottom: 10px; left: -4px; right: -4px; height: 24px;
+    background: var(--uni-primary); z-index: -1; opacity: 0.55;
+  }
+
+  /* P1 封面 */
+  .p1 .p-inner { justify-content: space-between; }
+  .p1 .hook {
+    font-size: 150px; font-weight: 900; line-height: 0.98;
+    letter-spacing: -5px; color: var(--brand-dark); margin-top: 40px;
+  }
+  .p1 .hook em { color: var(--uni-deep); font-style: normal; }
+  .p1 .sub { font-size: 42px; font-weight: 500; color: var(--text-gray); margin-top: 32px; line-height: 1.5; }
+  .p1 .date-chip {
+    margin-top: 48px; background: var(--brand-dark); color: var(--uni-primary);
+    padding: 22px 30px; border-radius: 18px;
+    display: inline-flex; flex-direction: column; gap: 6px;
+    width: fit-content; box-shadow: 10px 10px 0 var(--uni-primary);
+  }
+  .p1 .date-chip .big { font-size: 52px; font-weight: 900; line-height: 1; font-family: 'JetBrains Mono', monospace; letter-spacing: -2px; }
+  .p1 .date-chip .small { font-size: 20px; color: var(--uni-light); font-family: 'JetBrains Mono', monospace; letter-spacing: 2px; }
+  .p1 .preview-grid {
+    margin-top: auto; display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px; padding-top: 32px;
+  }
+  .p1 .preview-card {
+    background: var(--bg-light); border: 2px solid var(--brand-dark);
+    border-radius: 14px; padding: 18px 20px;
+    display: flex; flex-direction: column; gap: 8px;
+    box-shadow: 6px 6px 0 var(--brand-dark);
+  }
+  .p1 .preview-card .num { font-size: 32px; font-weight: 900; color: var(--uni-deep); font-family: 'JetBrains Mono', monospace; }
+  .p1 .preview-card .title { font-size: 22px; font-weight: 900; line-height: 1.3; }
+  .p1 .preview-card .data { font-size: 18px; color: var(--text-gray); font-weight: 600; }
+
+  /* P2-P4 新闻 */
+  .p-news h2 {
+    font-size: 68px; font-weight: 900; line-height: 1.08;
+    margin-top: 30px; letter-spacing: -2px;
+    color: var(--brand-dark);
+  }
+  .p-news h2 em { color: var(--uni-deep); font-style: normal; }
+  .p-news .lead {
+    font-size: 30px; color: var(--text-main); line-height: 1.55;
+    margin-top: 28px; background: var(--bg-cream);
+    padding: 22px 26px; border-radius: 16px;
+    border-left: 6px solid var(--uni-primary);
+  }
+  .p-news .bullets { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
+  .p-news .b-item {
+    display: grid; grid-template-columns: 170px 1fr;
+    gap: 22px; align-items: start;
+    background: var(--bg-light);
+    border: 2px solid var(--brand-dark); border-radius: 14px;
+    padding: 20px 24px;
+  }
+  .p-news .b-key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px; font-weight: 700;
+    color: var(--uni-deep); letter-spacing: 1.5px;
+    text-transform: uppercase; padding-top: 4px;
+  }
+  .p-news .b-val { font-size: 24px; line-height: 1.45; color: var(--text-main); font-weight: 500; }
+  .p-news .b-val b { color: var(--brand-dark); font-weight: 900; }
+  .p-news .source {
+    margin-top: auto; padding-top: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px; color: var(--text-gray);
+    border-top: 1.5px dashed var(--border-color);
+    letter-spacing: 0.3px; line-height: 1.6;
+  }
+  .p-news .source b { color: var(--uni-deep); font-weight: 700; }
+
+  /* P5 速览 */
+  .p5 .p-inner { background: var(--brand-dark); color: #fff; }
+  .p5 .p-tag { background: rgba(199,168,92,0.15); color: var(--uni-primary); border-color: var(--uni-primary); }
+  .p5 .p-tag .dot { background: var(--uni-primary); }
+  .p5 h2 {
+    font-size: 104px; font-weight: 900; line-height: 1;
+    letter-spacing: -4px; margin-top: 36px;
+  }
+  .p5 h2 em { color: var(--uni-primary); font-style: italic; }
+  .p5 .sub { font-size: 32px; color: rgba(255,255,255,0.78); margin-top: 24px; line-height: 1.55; }
+  .p5 .quick-row { margin-top: 40px; display: flex; flex-direction: column; gap: 18px; }
+  .p5 .quick-item {
+    display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: center;
+    background: rgba(255,255,255,0.05); border: 1.5px solid rgba(199,168,92,0.2);
+    border-radius: 16px; padding: 20px 26px;
+  }
+  .p5 .quick-item .n {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 52px; font-weight: 900; color: var(--uni-primary);
+    text-align: center; line-height: 1;
+  }
+  .p5 .quick-item .body h4 { font-size: 30px; font-weight: 900; color: #fff; margin-bottom: 6px; }
+  .p5 .quick-item .body p { font-size: 22px; color: rgba(255,255,255,0.72); line-height: 1.45; }
+  .p5 .cta-row {
+    margin-top: auto; padding-top: 32px;
+    border-top: 1.5px solid rgba(199,168,92,0.22);
+    display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+  }
+  .p5 .cta-row .big { font-size: 44px; font-weight: 900; color: #fff; letter-spacing: -1.5px; }
+  .p5 .cta-row .sub-cta { font-size: 22px; color: rgba(255,255,255,0.72); margin-top: 8px; }
+  .p5 .cta-row .badge {
+    background: var(--uni-primary); color: var(--brand-dark);
+    font-family: 'JetBrains Mono', monospace;
+    padding: 20px 28px; font-size: 28px; font-weight: 900;
+    border-radius: 14px; letter-spacing: 2px;
+  }
+
+  .dl-btn {
+    display: block; margin: 20px auto 0;
+    background: var(--uni-deep); color: #fff;
+    border: 3px solid var(--brand-dark);
+    box-shadow: 6px 6px 0 var(--brand-dark);
+    padding: 14px 32px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px; font-weight: 900;
+    letter-spacing: 1.5px;
+    cursor: pointer; border-radius: 10px;
+    transition: all 0.15s;
+  }
+  .dl-btn:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--brand-dark); }
+  .dl-btn:active { transform: translate(3px,3px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .dl-btn.all { background: var(--uni-primary); color: var(--brand-dark); display: inline-block; margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="thumb-nav">
+  <a class="thumb" href="#p1"><div class="num">1</div><div class="lbl">封面</div></a>
+  <a class="thumb" href="#p2"><div class="num">2</div><div class="lbl">AI</div></a>
+  <a class="thumb" href="#p3"><div class="num">3</div><div class="lbl">月球</div></a>
+  <a class="thumb" href="#p4"><div class="num">4</div><div class="lbl">奖学金</div></a>
+  <a class="thumb" href="#p5"><div class="num">5</div><div class="lbl">速览</div></a>
+</nav>
+
+<div class="page-wrap">
+
+<div class="page-head">
+  <h1><span>ANU 澳洲国立大学</span> · 2026-04-21 · 小红书素材（5 图 carousel）</h1>
+  <div class="sub">封面 + 3 条新闻详情页 + 速览 CTA。每张 1242×1660。点每张下方「⬇ 下载 PNG」单独导出，或点上方「⬇ 全部下载」批量导。<br>配文在同目录 <code>xhs-drafts.md</code>。封面严格无品牌名 / 无域名 / 无微信号 / 无二维码（小红书封号红线）。</div>
+  <div class="stats">
+    <div class="stat-pill">📐 1242 × 1660</div>
+    <div class="stat-pill">🎨 ANU #c7a85c</div>
+    <div class="stat-pill ok">✅ 封号红线清</div>
+    <button class="dl-btn all" id="dl-all">⬇ 一键全部下载 5 张</button>
+  </div>
+</div>
+
+<!-- ============ P1 封面 ============ -->
+<div class="poster-frame" id="p1">
+  <div class="label">P1 封面 <em>· 3 条新闻集合</em></div>
+  <div class="poster-scaler">
+    <div class="poster p1" id="poster-1">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>ANU · 04-21 日报</div>
+
+        <div>
+          <div class="hook">
+            ANU<br>
+            一天三件 <em>大事</em>
+          </div>
+          <div class="sub">
+            Anthropic AI 注资 50 万澳元<br>
+            Artemis II 月球激光通信地面站<br>
+            Chancellor 奖学金 25-50% 减免
+          </div>
+        </div>
+
+        <div class="date-chip">
+          <div class="big">04 / 21</div>
+          <div class="small">2026 · 澳洲大学日报</div>
+        </div>
+
+        <div class="preview-grid">
+          <div class="preview-card">
+            <div class="num">01</div>
+            <div class="title">AI 合作</div>
+            <div class="data">AUD 500,000</div>
+          </div>
+          <div class="preview-card">
+            <div class="num">02</div>
+            <div class="title">深空科研</div>
+            <div class="data">AUD 450 万</div>
+          </div>
+          <div class="preview-card">
+            <div class="num">03</div>
+            <div class="title">学费减免</div>
+            <div class="data">25% / 50%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-1" data-slug="p1-cover">⬇ 下载 PNG</button>
+</div>
+
+<!-- ============ P2 Anthropic ============ -->
+<div class="poster-frame" id="p2">
+  <div class="label">P2 新闻 1 <em>· ANU × Anthropic 科研合作</em></div>
+  <div class="poster-scaler">
+    <div class="poster p-news p2" id="poster-2">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>01 · AI 合作</div>
+
+        <h2>CS 学生<br><em class="hl">全员用 Claude</em></h2>
+
+        <div class="lead">
+          Anthropic 与 ANU 建立正式科研合作，向 ANU 捐赠 <b>AUD 500,000</b>。ANU 是全澳四所获选机构之一（另三所：Murdoch Children's / Garvan Institute / Curtin）。
+        </div>
+
+        <div class="bullets">
+          <div class="b-item">
+            <div class="b-key">直接影响</div>
+            <div class="b-val">TechLauncher 团队已开始用 <b>Claude + Claude Code</b> 做项目 · 后续铺到计算学院 <b>全部课程</b> · 学生不用自费开 ChatGPT Plus</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">研究应用</div>
+            <div class="b-val">副教授 Dan Andrews 带队用 Claude 分析 <b>基因测序数据</b> · 目标编码数十年临床知识 · 用于罕见病诊断</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">整个池子</div>
+            <div class="b-val">Anthropic 在澳洲一共投 <b>AUD 300 万</b> · ANU 是唯一拿到此类合作的老牌八大</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">对你的影响</div>
+            <div class="b-val">想申 ANU CS 的同学注意：<b>TechLauncher</b> 项目是雇主最认可的学院经历，现在内嵌商业级 AI 工具 · S2 入学的同学关注 TechLauncher 报名窗口（学期前 2-3 周开放）</div>
+          </div>
+        </div>
+
+        <div class="source">
+          <b>Source</b>: ANU Newsroom · 2026-04<br>
+          anu.edu.au/news/all-news/anu-partners-with-ai-safety-company-anthropic
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-2" data-slug="p2-anthropic">⬇ 下载 PNG</button>
+</div>
+
+<!-- ============ P3 Artemis II ============ -->
+<div class="poster-frame" id="p3">
+  <div class="label">P3 新闻 2 <em>· Artemis II 月球激光通信</em></div>
+  <div class="poster-scaler">
+    <div class="poster p-news p3" id="poster-3">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>02 · 深空科研</div>
+
+        <h2>Mount Stromlo 天文台<br><em class="hl">成 Artemis II 地面站</em></h2>
+
+        <div class="lead">
+          NASA Artemis II 任务 4 月 2 日堪培拉时间发射，是 <b>50 多年来首次</b>重返月球轨道的载人飞行。ANU 在 Mount Stromlo 的 Quantum Optical Ground Station（QOGS）负责追踪 Orion 飞船的激光通信信号。
+        </div>
+
+        <div class="bullets">
+          <div class="b-item">
+            <div class="b-key">技术优势</div>
+            <div class="b-val">激光通信数据速率比传统无线电 <b>快 10-100 倍</b> · 能更短时间内传回高清视频、图像、科学数据 · Artemis II 是有史以来 <b>首次</b>在载人深空任务实测</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">澳洲投入</div>
+            <div class="b-val">澳洲空间局通过 <b>Moon to Mars Demonstrator Mission Grant</b> 投资 <b>AUD 450 万</b> 建设 QOGS · Mount Stromlo 本身有 100+ 年历史</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">对你的影响</div>
+            <div class="b-val">物理 / 工程 / 天文方向的同学有机会接触 <b>真实的太空任务基础设施</b> · <b>Physics Honours Program</b> 和 <b>Research School of Astronomy and Astrophysics</b> 每年有少量名额接受本科毕业生直升做研究</div>
+          </div>
+        </div>
+
+        <div class="source">
+          <b>Source</b>: ANU Newsroom · Artemis II · 2026-04<br>
+          anu.edu.au/news/all-news/anu-provides-laser-communications-support-artemis-ii
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-3" data-slug="p3-artemis">⬇ 下载 PNG</button>
+</div>
+
+<!-- ============ P4 Chancellor Scholarship ============ -->
+<div class="poster-frame" id="p4">
+  <div class="label">P4 新闻 3 <em>· Chancellor's International Scholarship</em></div>
+  <div class="poster-scaler">
+    <div class="poster p-news p4" id="poster-4">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>03 · 奖学金</div>
+
+        <h2>学费减免 <em class="hl">25% / 50%</em><br>1,000+ 名额自动评估</h2>
+
+        <div class="lead">
+          Chancellor's International Scholarship 是 ANU 面向全球国际生 <b>规模最大的</b> 单一奖学金项目，覆盖整个学位周期。每年发放 <b>1,000+ 个名额</b>。
+        </div>
+
+        <div class="bullets">
+          <div class="b-item">
+            <div class="b-key">金额</div>
+            <div class="b-val"><b>25% 或 50%</b> 学费减免 · 覆盖整个学位周期（本科 / 硕士 / 博士）· 非一次性发放</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">9 个类别</div>
+            <div class="b-val">按 <b>来源地区</b> + <b>学术背景</b> 分成 9 类 · 几乎所有国家的申请者都能至少进入 1 个类别评估池</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">申请方式</div>
+            <div class="b-val"><b>不需要单独申请</b> · 拿 ANU offer 后自动入评 · 按学历材料换算统一评分后排名分发</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">重要提醒</div>
+            <div class="b-val"><b>2026 S2 入学</b>：7 月 31 日截止 · 越早交入学申请越早进评估队列 · 材料重点：成绩单英文翻译 + 课程对照说明</div>
+          </div>
+        </div>
+
+        <div class="source">
+          <b>Source</b>: ANU Chancellor's International Scholarship<br>
+          study.anu.edu.au/scholarships/find-scholarship/anu-chancellors-international-scholarship
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-4" data-slug="p4-scholarship">⬇ 下载 PNG</button>
+</div>
+
+<!-- ============ P5 速览 ============ -->
+<div class="poster-frame" id="p5">
+  <div class="label">P5 速览 <em>· 今日 3 条 + 下一步</em></div>
+  <div class="poster-scaler">
+    <div class="poster p5" id="poster-5">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>ANU · 04-21 速览</div>
+
+        <h2>今日 3 条<br><em>一眼看完</em></h2>
+
+        <div class="sub">
+          Anthropic AI 合作、Artemis II 深空科研、Chancellor 奖学金。三条硬料核心数据 + 时间线汇总。截图这一张就够。
+        </div>
+
+        <div class="quick-row">
+          <div class="quick-item">
+            <div class="n">01</div>
+            <div class="body">
+              <h4>Anthropic 注资 AUD 500,000</h4>
+              <p>TechLauncher 用 Claude + Claude Code · 全澳 4 所获选机构之一</p>
+            </div>
+          </div>
+          <div class="quick-item">
+            <div class="n">02</div>
+            <div class="body">
+              <h4>Mount Stromlo 成月球通信地面站</h4>
+              <p>Artemis II · 澳空间局 AUD 450 万 · 激光通信比无线电快 10-100 倍</p>
+            </div>
+          </div>
+          <div class="quick-item">
+            <div class="n">03</div>
+            <div class="body">
+              <h4>Chancellor 奖学金 25-50%</h4>
+              <p>1,000+ 名额 · 全学位覆盖 · 拿 offer 自动评 · S2 入学 7 月 31 日截止</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <div>
+            <div class="big">关注每日大学日报</div>
+            <div class="sub-cta">10 所澳洲大学 · 每天 3 校 · 奖学金 + 科研 + 招生一手同步</div>
+          </div>
+          <div class="badge">04 / 21</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-5" data-slug="p5-quickview">⬇ 下载 PNG</button>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+async function dlOne(target, slug) {
+  const el = document.getElementById(target);
+  if (!el) return;
+  const stage = document.createElement('div');
+  stage.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:1242px;height:1660px;overflow:hidden;background:transparent;z-index:-1;';
+  const clone = el.cloneNode(true);
+  clone.id = '';
+  clone.style.transform = 'none';
+  clone.style.position = 'relative';
+  clone.style.left = '0';
+  clone.style.top = '0';
+  stage.appendChild(clone);
+  document.body.appendChild(stage);
+  try {
+    const canvas = await html2canvas(clone, {
+      backgroundColor: null, scale: 2, width: 1242, height: 1660,
+      windowWidth: 1242, windowHeight: 1660, useCORS: true, allowTaint: true, logging: false,
+    });
+    const link = document.createElement('a');
+    link.download = slug + '.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } finally {
+    if (stage.parentNode) stage.parentNode.removeChild(stage);
+  }
+}
+
+document.querySelectorAll('.dl-btn[data-target]').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const orig = btn.textContent;
+    btn.disabled = true; btn.textContent = '渲染中…';
+    try { await dlOne(btn.dataset.target, btn.dataset.slug); btn.textContent = '✅ 已下载'; }
+    catch (e) { console.error(e); btn.textContent = '❌ 失败'; }
+    finally { setTimeout(() => { btn.disabled = false; btn.textContent = orig; }, 1200); }
+  });
+});
+
+document.getElementById('dl-all').addEventListener('click', async () => {
+  const btn = document.getElementById('dl-all');
+  const orig = btn.textContent;
+  btn.disabled = true;
+  const items = [
+    ['poster-1', 'xhs-anu-2026-04-21-01-cover'],
+    ['poster-2', 'xhs-anu-2026-04-21-02-anthropic'],
+    ['poster-3', 'xhs-anu-2026-04-21-03-artemis'],
+    ['poster-4', 'xhs-anu-2026-04-21-04-scholarship'],
+    ['poster-5', 'xhs-anu-2026-04-21-05-quickview'],
+  ];
+  for (let i = 0; i < items.length; i++) {
+    btn.textContent = `渲染 ${i+1} / ${items.length}…`;
+    try { await dlOne(items[i][0], items[i][1]); } catch (e) { console.error(e); }
+    await new Promise(r => setTimeout(r, 250));
+  }
+  btn.textContent = '✅ 已全部下载';
+  setTimeout(() => { btn.disabled = false; btn.textContent = orig; }, 1500);
+});
+</script>
+</body>
+</html>

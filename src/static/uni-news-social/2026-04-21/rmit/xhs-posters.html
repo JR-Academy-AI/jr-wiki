@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>RMIT 皇家墨尔本理工 2026-04-21 · 小红书素材（封面 + 3 条新闻 + 速览）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-dark: #10162f;
+    --brand-yellow: #ffce44;
+    --brand-green: #10b981;
+    --uni-primary: #e60028;
+    --uni-deep: #9c0019;
+    --uni-light: #ff5252;
+    --uni-accent: #000000;
+    --bg-light: #fbf6f7;
+    --bg-cream: #fff4f5;
+    --text-main: #10162f;
+    --text-gray: #64748b;
+    --border-color: #f3d5da;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #efe8ea;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 40px 20px 120px 120px;
+    line-height: 1.55;
+  }
+  .page-wrap { max-width: 1500px; margin: 0 auto; }
+
+  .page-head {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 20px;
+    padding: 30px 34px; margin-bottom: 32px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .page-head h1 { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; }
+  .page-head h1 span { color: var(--uni-primary); }
+  .page-head .sub { margin-top: 10px; color: var(--text-gray); font-size: 14px; line-height: 1.65; max-width: 900px; }
+  .page-head .stats { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+  .stat-pill {
+    padding: 6px 14px; border-radius: 999px; border: 1.5px solid var(--brand-dark);
+    background: var(--bg-light); color: var(--brand-dark);
+    font-size: 12px; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .stat-pill.ok { background: #ecfdf5; color: var(--brand-green); }
+
+  .thumb-nav {
+    display: flex; flex-direction: column; gap: 10px;
+    background: #fff; border: 1.5px solid var(--brand-dark);
+    border-radius: 14px; padding: 12px;
+    position: fixed; top: 20px; left: 16px;
+    width: 88px; max-height: calc(100vh - 40px); overflow-y: auto;
+    z-index: 100; box-shadow: 4px 4px 0 rgba(16,22,47,0.12);
+  }
+  .thumb-nav::before {
+    content: 'NAV'; display: block;
+    font-size: 10px; font-weight: 900; letter-spacing: 2px;
+    color: var(--uni-primary); text-align: center;
+    padding: 2px 0 8px; border-bottom: 1.5px dashed #e2e8f0;
+    font-family: 'JetBrains Mono', monospace; margin-bottom: 2px;
+  }
+  .thumb {
+    aspect-ratio: 3/4; background: var(--bg-light);
+    border: 1.5px solid var(--brand-dark); border-radius: 8px;
+    font-weight: 900; color: var(--brand-dark);
+    text-align: center; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-decoration: none; transition: all 0.15s;
+    gap: 2px; padding: 4px;
+  }
+  .thumb .num { font-size: 18px; line-height: 1; }
+  .thumb .lbl { font-size: 9px; color: var(--text-gray); font-weight: 700; }
+  .thumb:hover { background: var(--uni-primary); color: #fff; transform: translate(-2px,-2px); box-shadow: 3px 3px 0 var(--brand-dark); }
+
+  .poster-frame {
+    display: flex; flex-direction: column; align-items: center;
+    margin-bottom: 60px; position: relative;
+  }
+  .poster-frame .label {
+    font-size: 13px; font-weight: 900;
+    color: var(--brand-dark); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px; align-self: flex-start;
+  }
+  .poster-frame .label::before {
+    content: ''; width: 28px; height: 4px;
+    background: var(--uni-primary); border-radius: 2px;
+  }
+  .poster-frame .label em { font-style: normal; color: var(--text-gray); font-weight: 600; font-size: 12px; margin-left: 12px; }
+
+  .poster-scaler {
+    width: 435px; height: 581px; position: relative;
+    border: 2px solid var(--brand-dark); border-radius: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark); overflow: hidden;
+  }
+  .poster {
+    width: 1242px; height: 1660px;
+    transform: scale(0.35); transform-origin: top left;
+    position: absolute; top: 0; left: 0;
+    background: var(--bg-light);
+    overflow: hidden; font-family: 'Noto Sans SC', sans-serif;
+    padding: 32px;
+  }
+  .p-inner {
+    position: relative; width: 100%; height: 100%;
+    padding: 76px 72px; display: flex; flex-direction: column;
+    background: #fff;
+    border: 5px solid var(--brand-dark);
+    border-radius: 36px; overflow: hidden;
+  }
+  .p-dots {
+    position: absolute; top: 0; right: 0;
+    width: 400px; height: 400px;
+    background-image: radial-gradient(#64748b 1.5px, transparent 1.5px);
+    background-size: 28px 28px; opacity: 0.1; pointer-events: none;
+  }
+
+  .p-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 28px; font-weight: 800; letter-spacing: 1px;
+    color: var(--uni-primary); text-transform: uppercase;
+    background: #ffeef0; border: 1.5px solid var(--uni-primary);
+    padding: 12px 24px; border-radius: 100px;
+    width: fit-content;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .p-tag .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--uni-primary); }
+
+  .hl { position: relative; display: inline-block; z-index: 1; }
+  .hl::after {
+    content: ''; position: absolute;
+    bottom: 10px; left: -4px; right: -4px; height: 24px;
+    background: var(--brand-yellow); z-index: -1; opacity: 0.8;
+  }
+
+  /* P1 */
+  .p1 .p-inner { justify-content: space-between; }
+  .p1 .hook {
+    font-size: 150px; font-weight: 900; line-height: 0.98;
+    letter-spacing: -5px; color: var(--brand-dark); margin-top: 40px;
+  }
+  .p1 .hook em { color: var(--uni-primary); font-style: normal; }
+  .p1 .sub { font-size: 42px; font-weight: 500; color: var(--text-gray); margin-top: 32px; line-height: 1.5; }
+  .p1 .date-chip {
+    margin-top: 48px; background: var(--brand-dark); color: #fff;
+    padding: 22px 30px; border-radius: 18px;
+    display: inline-flex; flex-direction: column; gap: 6px;
+    width: fit-content; box-shadow: 10px 10px 0 var(--uni-primary);
+  }
+  .p1 .date-chip .big { font-size: 52px; font-weight: 900; line-height: 1; font-family: 'JetBrains Mono', monospace; letter-spacing: -2px; }
+  .p1 .date-chip .small { font-size: 20px; color: var(--uni-light); font-family: 'JetBrains Mono', monospace; letter-spacing: 2px; }
+  .p1 .preview-grid {
+    margin-top: auto; display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px; padding-top: 32px;
+  }
+  .p1 .preview-card {
+    background: var(--bg-light); border: 2px solid var(--brand-dark);
+    border-radius: 14px; padding: 18px 20px;
+    display: flex; flex-direction: column; gap: 8px;
+    box-shadow: 6px 6px 0 var(--brand-dark);
+  }
+  .p1 .preview-card .num { font-size: 32px; font-weight: 900; color: var(--uni-primary); font-family: 'JetBrains Mono', monospace; }
+  .p1 .preview-card .title { font-size: 22px; font-weight: 900; line-height: 1.3; }
+  .p1 .preview-card .data { font-size: 18px; color: var(--text-gray); font-weight: 600; }
+
+  /* P2-P4 */
+  .p-news h2 {
+    font-size: 68px; font-weight: 900; line-height: 1.08;
+    margin-top: 30px; letter-spacing: -2px;
+    color: var(--brand-dark);
+  }
+  .p-news h2 em { color: var(--uni-primary); font-style: normal; }
+  .p-news .lead {
+    font-size: 30px; color: var(--text-main); line-height: 1.55;
+    margin-top: 28px; background: var(--bg-cream);
+    padding: 22px 26px; border-radius: 16px;
+    border-left: 6px solid var(--uni-primary);
+  }
+  .p-news .bullets { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
+  .p-news .b-item {
+    display: grid; grid-template-columns: 170px 1fr;
+    gap: 22px; align-items: start;
+    background: var(--bg-light);
+    border: 2px solid var(--brand-dark); border-radius: 14px;
+    padding: 20px 24px;
+  }
+  .p-news .b-key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px; font-weight: 700;
+    color: var(--uni-primary); letter-spacing: 1.5px;
+    text-transform: uppercase; padding-top: 4px;
+  }
+  .p-news .b-val { font-size: 24px; line-height: 1.45; color: var(--text-main); font-weight: 500; }
+  .p-news .b-val b { color: var(--brand-dark); font-weight: 900; }
+  .p-news .source {
+    margin-top: auto; padding-top: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px; color: var(--text-gray);
+    border-top: 1.5px dashed var(--border-color);
+    letter-spacing: 0.3px; line-height: 1.6;
+  }
+  .p-news .source b { color: var(--uni-primary); font-weight: 700; }
+
+  /* P5 */
+  .p5 .p-inner { background: var(--brand-dark); color: #fff; }
+  .p5 .p-tag { background: rgba(230,0,40,0.15); color: var(--uni-light); border-color: var(--uni-light); }
+  .p5 .p-tag .dot { background: var(--uni-light); }
+  .p5 h2 {
+    font-size: 104px; font-weight: 900; line-height: 1;
+    letter-spacing: -4px; margin-top: 36px;
+  }
+  .p5 h2 em { color: var(--uni-light); font-style: italic; }
+  .p5 .sub { font-size: 32px; color: rgba(255,255,255,0.78); margin-top: 24px; line-height: 1.55; }
+  .p5 .quick-row { margin-top: 40px; display: flex; flex-direction: column; gap: 18px; }
+  .p5 .quick-item {
+    display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: center;
+    background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.16);
+    border-radius: 16px; padding: 20px 26px;
+  }
+  .p5 .quick-item .n {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 52px; font-weight: 900; color: var(--uni-light);
+    text-align: center; line-height: 1;
+  }
+  .p5 .quick-item .body h4 { font-size: 30px; font-weight: 900; color: #fff; margin-bottom: 6px; }
+  .p5 .quick-item .body p { font-size: 22px; color: rgba(255,255,255,0.72); line-height: 1.45; }
+  .p5 .cta-row {
+    margin-top: auto; padding-top: 32px;
+    border-top: 1.5px solid rgba(255,255,255,0.16);
+    display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+  }
+  .p5 .cta-row .big { font-size: 44px; font-weight: 900; color: #fff; letter-spacing: -1.5px; }
+  .p5 .cta-row .sub-cta { font-size: 22px; color: rgba(255,255,255,0.72); margin-top: 8px; }
+  .p5 .cta-row .badge {
+    background: var(--uni-light); color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 20px 28px; font-size: 28px; font-weight: 900;
+    border-radius: 14px; letter-spacing: 2px;
+  }
+
+  .dl-btn {
+    display: block; margin: 20px auto 0;
+    background: var(--uni-primary); color: #fff;
+    border: 3px solid var(--brand-dark);
+    box-shadow: 6px 6px 0 var(--brand-dark);
+    padding: 14px 32px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px; font-weight: 900;
+    letter-spacing: 1.5px;
+    cursor: pointer; border-radius: 10px;
+    transition: all 0.15s;
+  }
+  .dl-btn:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--brand-dark); }
+  .dl-btn:active { transform: translate(3px,3px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .dl-btn.all { background: var(--brand-yellow); color: var(--brand-dark); display: inline-block; margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="thumb-nav">
+  <a class="thumb" href="#p1"><div class="num">1</div><div class="lbl">封面</div></a>
+  <a class="thumb" href="#p2"><div class="num">2</div><div class="lbl">QS</div></a>
+  <a class="thumb" href="#p3"><div class="num">3</div><div class="lbl">印尼</div></a>
+  <a class="thumb" href="#p4"><div class="num">4</div><div class="lbl">湿地</div></a>
+  <a class="thumb" href="#p5"><div class="num">5</div><div class="lbl">速览</div></a>
+</nav>
+
+<div class="page-wrap">
+
+<div class="page-head">
+  <h1><span>RMIT 皇家墨尔本理工</span> · 2026-04-21 · 小红书素材（5 图 carousel）</h1>
+  <div class="sub">封面 + 3 条新闻详情页 + 速览 CTA。每张 1242×1660。点每张下方「⬇ 下载 PNG」单独导出，或点上方「⬇ 全部下载」批量导。<br>配文在同目录 <code>xhs-drafts.md</code>。封面严格无品牌名 / 无域名 / 无微信号 / 无二维码（小红书封号红线）。</div>
+  <div class="stats">
+    <div class="stat-pill">📐 1242 × 1660</div>
+    <div class="stat-pill">🎨 RMIT #e60028</div>
+    <div class="stat-pill ok">✅ 封号红线清</div>
+    <button class="dl-btn all" id="dl-all">⬇ 一键全部下载 5 张</button>
+  </div>
+</div>
+
+<!-- ============ P1 封面 ============ -->
+<div class="poster-frame" id="p1">
+  <div class="label">P1 封面 <em>· 3 条新闻集合</em></div>
+  <div class="poster-scaler">
+    <div class="poster p1" id="poster-1">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>RMIT · 04-21 日报</div>
+
+        <div>
+          <div class="hook">
+            RMIT<br>
+            一天三件 <em>大事</em>
+          </div>
+          <div class="sub">
+            QS 2026 建筑 / 艺设全澳第一<br>
+            印尼创意产业 MoU 落地<br>
+            浮动湿地改善农场大坝水质
+          </div>
+        </div>
+
+        <div class="date-chip">
+          <div class="big">04 / 21</div>
+          <div class="small">2026 · 澳洲大学日报</div>
+        </div>
+
+        <div class="preview-grid">
+          <div class="preview-card">
+            <div class="num">01</div>
+            <div class="title">QS 学科排名</div>
+            <div class="data">全球 15 / 19</div>
+          </div>
+          <div class="preview-card">
+            <div class="num">02</div>
+            <div class="title">东南亚合作</div>
+            <div class="data">7 大领域</div>
+          </div>
+          <div class="preview-card">
+            <div class="num">03</div>
+            <div class="title">应用科研</div>
+            <div class="data">180 万农场</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-1" data-slug="p1-cover">⬇ 下载 PNG</button>
+</div>
+
+<!-- ============ P2 QS Rankings ============ -->
+<div class="poster-frame" id="p2">
+  <div class="label">P2 新闻 1 <em>· QS 2026 学科排名</em></div>
+  <div class="poster-scaler">
+    <div class="poster p-news p2" id="poster-2">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>01 · 学科排名</div>
+
+        <h2>建筑 <em class="hl">全球 15</em><br>艺设 <em class="hl">全球 19</em></h2>
+
+        <div class="lead">
+          QS 2026 World University Rankings by Subject 刚出炉，RMIT 的 Architecture/Built Environment 和 Art & Design 双双拿下全澳第一，这是 <b>连续第三年</b> 在这两个学科同时领跑。
+        </div>
+
+        <div class="bullets">
+          <div class="b-item">
+            <div class="b-key">双料冠军</div>
+            <div class="b-val">Architecture/Built Environment <b>全球第 15 位</b> · Art & Design <b>并列第 19 位</b> · 连续 3 年全澳第一</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">整体表现</div>
+            <div class="b-val"><b>8 个学科</b>进全球 Top 100 · <b>19 个学科</b>进 Top 200 · 综合排名 QS 全球第 125、澳洲第 10</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">CS 暴涨</div>
+            <div class="b-val">Computer Science & Information Systems 上涨 <b>50 个位次</b> · Engineering（Mechanical/Aerospace/Manufacturing）接近全球 Top 100 边缘</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">对你的影响</div>
+            <div class="b-val">建筑 / 室内 / 工业设计 / 视觉传播 / 时尚设计候选，RMIT 在澳洲同档次学校里 <b>性价比极高</b>，签证通过率稳定 · CS 候选也可以把 RMIT 加进选校清单</div>
+          </div>
+        </div>
+
+        <div class="source">
+          <b>Source</b>: RMIT News · QS Rankings 2026<br>
+          rmit.edu.au/news/all-news/2026/mar/global-rankings-rmit
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-2" data-slug="p2-qs-rankings">⬇ 下载 PNG</button>
+</div>
+
+<!-- ============ P3 Indonesia MoU ============ -->
+<div class="poster-frame" id="p3">
+  <div class="label">P3 新闻 2 <em>· 印尼创意产业 MoU</em></div>
+  <div class="poster-scaler">
+    <div class="poster p-news p3" id="poster-3">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>02 · 国际合作</div>
+
+        <h2>游戏 / 动画 / 数字技术<br><em class="hl">东南亚路径落地</em></h2>
+
+        <div class="lead">
+          RMIT 副校长 Layton Pike 在雅加达与印度尼西亚创意经济部（EKRAF）正式签署 MoU，在 <b>7 大领域</b> 推进课程合作、联合培训和产业项目。
+        </div>
+
+        <div class="bullets">
+          <div class="b-item">
+            <div class="b-key">7 大领域</div>
+            <div class="b-val">游戏 / 电影 / 动画 / 音乐 / 数字技术 / 文化艺术 / 设计 · 覆盖 <b>RMIT 的核心优势学科</b></div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">既有基础</div>
+            <div class="b-val">已通过印尼 <b>Kampus Merdeka</b> 项目开发「游戏设计入门（2D）」课程 · 与 <b>Infinite Learning</b> 合作东南亚游戏人才培训</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">5 月里程碑</div>
+            <div class="b-val">RMIT 印尼校友章会 <b>2026 年 5 月</b> 正式成立 · 维多利亚州政府提供 TNE 专项资金支持</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">对你的影响</div>
+            <div class="b-val">3 个实际影响：东南亚 <b>企业实习通道</b> 扩展 · 亚太 <b>校友网络</b> 系统化建设 · 走"创意产业 + 亚太工作"路径比去欧美成本低得多</div>
+          </div>
+        </div>
+
+        <div class="source">
+          <b>Source</b>: RMIT News · Indonesia Partnership · 2026-04<br>
+          rmit.edu.au/news/all-news/2026/apr/indo-visit
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-3" data-slug="p3-indo-mou">⬇ 下载 PNG</button>
+</div>
+
+<!-- ============ P4 Floating Wetlands ============ -->
+<div class="poster-frame" id="p4">
+  <div class="label">P4 新闻 3 <em>· Floating Wetlands 应用科研</em></div>
+  <div class="poster-scaler">
+    <div class="poster p-news p4" id="poster-4">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>03 · 应用科研</div>
+
+        <h2>浮动湿地改善水质<br><em class="hl">180 万农场大坝</em> 受益</h2>
+
+        <div class="lead">
+          RMIT School of Science 高级讲师 Dr. Martino Malerba 主导的浮动湿地（floating wetlands）试验在 <b>Bass Coast</b> 发布阶段性成果，与 Melbourne Water 和 Bass Coast Landcare 合作推进。
+        </div>
+
+        <div class="bullets">
+          <div class="b-item">
+            <div class="b-key">原理</div>
+            <div class="b-val">湿地植物根系在水面以下形成 <b>立体根矩</b> · 吸引微生物分解多余营养盐 · 物理捕捉悬浮颗粒 · 通过蒸腾作用降温</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">早期数据</div>
+            <div class="b-val">参与试验的农场大坝在 <b>浊度（turbidity）</b>、<b>生物多样性指数</b>、排放指标上均有可量化改善</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">规模潜力</div>
+            <div class="b-val">澳洲全境约 <b>180 万个农场大坝</b> · 如果这套系统规模化推广，影响面极大</div>
+          </div>
+          <div class="b-item">
+            <div class="b-key">对你的影响</div>
+            <div class="b-val">环境科学 / 水文工程 / 生态学方向同学：这种"有实际应用场景的应用科学"课题适合申 <b>ARC Linkage Projects</b> 工业奖学金 · Melbourne Water 每年面向应届毕业生有工程师和水务管理 <b>实习项目</b></div>
+          </div>
+        </div>
+
+        <div class="source">
+          <b>Source</b>: RMIT News · Floating Wetlands Bass Coast · 2026-04<br>
+          rmit.edu.au/news/all-news/2026/apr/floating-wetlands-bass-coast
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-4" data-slug="p4-wetlands">⬇ 下载 PNG</button>
+</div>
+
+<!-- ============ P5 速览 ============ -->
+<div class="poster-frame" id="p5">
+  <div class="label">P5 速览 <em>· 今日 3 条 + 下一步</em></div>
+  <div class="poster-scaler">
+    <div class="poster p5" id="poster-5">
+      <div class="p-inner">
+        <div class="p-dots"></div>
+        <div class="p-tag"><span class="dot"></span>RMIT · 04-21 速览</div>
+
+        <h2>今日 3 条<br><em>一眼看完</em></h2>
+
+        <div class="sub">
+          QS 学科排名、印尼 MoU、浮动湿地应用科研。三条硬料核心数据 + 时间线汇总。截图这一张就够。
+        </div>
+
+        <div class="quick-row">
+          <div class="quick-item">
+            <div class="n">01</div>
+            <div class="body">
+              <h4>QS 建筑 15 · 艺设 19</h4>
+              <p>连续 3 年全澳第一 · 8 个学科全球 Top 100 · CS 上涨 50 位</p>
+            </div>
+          </div>
+          <div class="quick-item">
+            <div class="n">02</div>
+            <div class="body">
+              <h4>印尼创意经济部 MoU</h4>
+              <p>7 大领域合作 · 5 月启动印尼校友会 · 游戏 / 动画 / 数字技术方向直接受益</p>
+            </div>
+          </div>
+          <div class="quick-item">
+            <div class="n">03</div>
+            <div class="body">
+              <h4>Bass Coast 浮动湿地</h4>
+              <p>180 万农场大坝潜在受益 · PhD + ARC Linkage 工业奖学金路径</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <div>
+            <div class="big">关注每日大学日报</div>
+            <div class="sub-cta">10 所澳洲大学 · 每天 3 校 · 奖学金 + 科研 + 招生一手同步</div>
+          </div>
+          <div class="badge">04 / 21</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="dl-btn" data-target="poster-5" data-slug="p5-quickview">⬇ 下载 PNG</button>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+async function dlOne(target, slug) {
+  const el = document.getElementById(target);
+  if (!el) return;
+  const stage = document.createElement('div');
+  stage.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:1242px;height:1660px;overflow:hidden;background:transparent;z-index:-1;';
+  const clone = el.cloneNode(true);
+  clone.id = '';
+  clone.style.transform = 'none';
+  clone.style.position = 'relative';
+  clone.style.left = '0';
+  clone.style.top = '0';
+  stage.appendChild(clone);
+  document.body.appendChild(stage);
+  try {
+    const canvas = await html2canvas(clone, {
+      backgroundColor: null, scale: 2, width: 1242, height: 1660,
+      windowWidth: 1242, windowHeight: 1660, useCORS: true, allowTaint: true, logging: false,
+    });
+    const link = document.createElement('a');
+    link.download = slug + '.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } finally {
+    if (stage.parentNode) stage.parentNode.removeChild(stage);
+  }
+}
+
+document.querySelectorAll('.dl-btn[data-target]').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const orig = btn.textContent;
+    btn.disabled = true; btn.textContent = '渲染中…';
+    try { await dlOne(btn.dataset.target, btn.dataset.slug); btn.textContent = '✅ 已下载'; }
+    catch (e) { console.error(e); btn.textContent = '❌ 失败'; }
+    finally { setTimeout(() => { btn.disabled = false; btn.textContent = orig; }, 1200); }
+  });
+});
+
+document.getElementById('dl-all').addEventListener('click', async () => {
+  const btn = document.getElementById('dl-all');
+  const orig = btn.textContent;
+  btn.disabled = true;
+  const items = [
+    ['poster-1', 'xhs-rmit-2026-04-21-01-cover'],
+    ['poster-2', 'xhs-rmit-2026-04-21-02-qs'],
+    ['poster-3', 'xhs-rmit-2026-04-21-03-indo'],
+    ['poster-4', 'xhs-rmit-2026-04-21-04-wetlands'],
+    ['poster-5', 'xhs-rmit-2026-04-21-05-quickview'],
+  ];
+  for (let i = 0; i < items.length; i++) {
+    btn.textContent = `渲染 ${i+1} / ${items.length}…`;
+    try { await dlOne(items[i][0], items[i][1]); } catch (e) { console.error(e); }
+    await new Promise(r => setTimeout(r, 250));
+  }
+  btn.textContent = '✅ 已全部下载';
+  setTimeout(() => { btn.disabled = false; btn.textContent = orig; }, 1500);
+});
+</script>
+</body>
+</html>
