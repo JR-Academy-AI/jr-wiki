@@ -98,9 +98,9 @@ fi
         <div class="y">{YYYY}</div>
       </div>
       <div class="content">
-        <div class="title">4 校活动 · {DATE}</div>
-        <div class="brief">{一句话汇总 4 校主打活动，≤80 字}</div>
-        <div class="schools-row"><span>UMelb</span><span>UNSW</span><span>UQ</span><span>USYD</span></div>
+        <div class="title">6 校活动 · {DATE}</div>
+        <div class="brief">{一句话汇总 6 校主打活动，≤80 字}</div>
+        <div class="schools-row"><span>UMelb</span><span>UNSW</span><span>UQ</span><span>USYD</span><span>Adelaide</span><span>Monash</span></div>
       </div>
       <div class="arrow">→</div>
     </a>
@@ -108,7 +108,7 @@ fi
 
 ### Step 5. 敏感词扫描 + 人性化检查
 
-4 份 xhs-body 全部过这 6 类敏感词（见 `.claude/skills/uni-news-poster.md` 章节 7），命中任一替换或删除：
+6 份 xhs-body 全部过这 6 类敏感词（见 `.claude/skills/uni-news-poster.md` 章节 7），命中任一替换或删除：
 
 1. 绝对化用语（"最"、"第一"、"唯一"...）
 2. 教育承诺（"包过"、"保录取"...）
@@ -125,17 +125,17 @@ fi
 ### Step 6. 输出说明
 
 ```
-✅ 4 校校园活动 {DATE} 生成完成
+✅ 6 校校园活动 {DATE} 生成完成
 
 文件：
-- src/static/uni-news-social/events/{DATE}.html（4 校并排）
-- src/static/uni-news-social/events/{DATE}-covers.html（4 张小红书封面）
+- src/static/uni-news-social/events/{DATE}.html（6 校并排）
+- src/static/uni-news-social/events/{DATE}-covers.html（6 张小红书封面）
 - src/static/uni-news-social/events/index.html（timeline 插入新条目）
 
 运营操作：
-- 4 校 × 1 张封面（-covers.html 下载 PNG）
-- 4 校 × 1 篇草稿（.html 点「📋 复制全部」）
-- 配对发布到小红书 4 个账号（UMelb 课代表 / UNSW 课代表 / UQ 课代表 / USYD 课代表）
+- 6 校 × 1 张封面（-covers.html 下载 PNG）
+- 6 校 × 1 篇草稿（.html 点「📋 复制全部」）
+- 配对发布到小红书 6 个账号（UMelb / UNSW / UQ / USYD / Adelaide / Monash 课代表）
 
 下一步：
   /publish
@@ -143,7 +143,7 @@ fi
 
 ## 🚨 绝对禁止
 
-1. 抓非 UMelb / UNSW / UQ / USYD 4 校的活动——scope 固定
+1. 抓非 UMelb / UNSW / UQ / USYD / Adelaide / Monash 6 校的活动——scope 固定
 2. 产公众号发稿页（活动只做小红书）
 3. 活动时间超过 `{DATE} + 7 天`
 4. 编造活动（没真实 URL 或没官方入口验证 → 丢弃）
@@ -165,8 +165,8 @@ grep -q "./${DATE}.html" $D/index.html                  || echo "❌ index.html 
 ! grep -q "{{" $D/${DATE}.html                          || echo "❌ ${DATE}.html 还有 {{占位符}} 没替换"
 ! grep -q "{{" $D/${DATE}-covers.html                   || echo "❌ covers.html 还有 {{占位符}}"
 
-# 4 校 XHS body 都有内容
-for s in umelb unsw uq usyd; do
+# 6 校 XHS body 都有内容
+for s in umelb unsw uq usyd adelaide monash; do
   grep -q "id=\"${s}-body\"" $D/${DATE}.html            || echo "❌ $s body 缺"
 done
 
@@ -180,6 +180,6 @@ done
 ## 📚 参考实现
 
 - `.claude/skills/uni-news-poster.md`（敏感词扫描规则 / 人性化改写要求）
-- `src/static/uni-news-social/events/_template.html`（HTML 骨架）
-- `src/static/uni-news-social/events/2026-04-20.html`（完整示例 · 4 校 × 3-4 活动）
-- `src/static/uni-news-social/events/2026-04-20-covers.html`（4 张小红书封面示例）
+- `src/static/uni-news-social/events/_template.html`（HTML 骨架 · 6 校版）
+- `src/static/uni-news-social/events/2026-04-20.html`（完整示例 · 原 4 校版，扩展时补 Adelaide / Monash 两块）
+- `src/static/uni-news-social/events/2026-04-20-covers.html`（原 4 张小红书封面示例，扩展时补 Adelaide / Monash）
