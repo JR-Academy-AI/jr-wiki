@@ -6,15 +6,18 @@
  * 下载仍走各自 xhs-posters.html 内联脚本，但内联脚本会复用这里暴露的 auto-fit。
  */
 (function () {
+  // Min 值对齐 20 字/行硬规则：body 不允许小于 50px，h2 不允许小于 96px
   var FIT_RULES = [
-    { selector: '.p1 .hook', min: 112, step: 4 },
-    { selector: '.p-news h2', min: 54, step: 3 },
-    { selector: '.p-news .lead', min: 24, step: 2 },
-    { selector: '.p-news .b-val', min: 18, step: 1 },
-    { selector: '.p5 h2', min: 84, step: 4 },
-    { selector: '.p5 .sub', min: 24, step: 2 },
-    { selector: '.p5 .quick-item .body h4', min: 20, step: 1 },
-    { selector: '.p5 .quick-item .body p', min: 17, step: 1 }
+    { selector: '.p1 .hook', min: 180, step: 4 },
+    { selector: '.p1 .sub', min: 60, step: 2 },
+    { selector: '.p-news h2', min: 96, step: 3 },
+    { selector: '.p-news .lead', min: 56, step: 2 },
+    { selector: '.p-news .b-val', min: 44, step: 2 },
+    { selector: '.p-news .b-key', min: 30, step: 1 },
+    { selector: '.p5 h2', min: 144, step: 4 },
+    { selector: '.p5 .sub', min: 50, step: 2 },
+    { selector: '.p5 .quick-item .body h4', min: 50, step: 2 },
+    { selector: '.p5 .quick-item .body p', min: 40, step: 1 }
   ];
 
   function collectPosters(scope) {
