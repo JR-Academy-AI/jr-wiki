@@ -4,68 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>RMIT 2026-04-21 · 小红书封面图</title>
+<title>RMIT 2026-04-21 · 小红书封面图（Magazine Editorial）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;800;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,900;1,900&family=Noto+Serif+SC:wght@900&family=Noto+Sans+SC:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --uni-primary: #e60028;
-    --uni-deep: #9c0019;
-    --uni-light: #ff5252;
-    --uni-accent: #000000;
-    --bg: #fbecef;
-    --ink: #1a0a0e;
+    --wash: #e60028;
+    --white: #ffffff;
+    --black: #000000;
   }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
   body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Noto Sans SC', system-ui, sans-serif;
-    padding: 32px 20px 120px;
+    background: #0a0a0a;
+    color: var(--white);
+    font-family: 'Noto Sans SC', sans-serif;
+    padding: 40px 20px 120px;
   }
+  .page { max-width: 1340px; margin: 0 auto; }
 
-  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #111; border: 1px solid #222; border-radius: 20px;
+    padding: 24px 28px; margin-bottom: 32px;
+  }
+  .topbar h1 { font-size: 22px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--wash); }
+  .topbar .sub { margin-top: 8px; font-size: 13px; color: #888; line-height: 1.6; }
 
-  .topbar,
   .poster-frame {
-    background: #fff;
-    border-radius: 24px;
-    box-shadow: 0 14px 40px rgba(230, 0, 40, 0.12);
+    background: #111; border: 1px solid #222; border-radius: 20px;
+    padding: 24px; margin-bottom: 32px;
   }
-
-  .topbar { padding: 28px 30px; margin-bottom: 28px; }
-  .topbar h1 { font-size: 24px; font-weight: 900; }
-  .topbar h1 span { color: var(--uni-primary); }
-  .topbar .sub { margin-top: 8px; color: #705258; font-size: 14px; line-height: 1.6; }
-
-  .poster-frame { padding: 26px; margin-bottom: 32px; }
   .poster-frame-head {
     display: flex; justify-content: space-between; align-items: center;
     gap: 18px; margin-bottom: 20px;
   }
-  .poster-frame-head h2 {
-    display: flex; align-items: center; gap: 12px;
-    font-size: 17px; font-weight: 800;
-  }
+  .poster-frame-head h2 { font-size: 15px; font-weight: 800; color: #eee; display: flex; gap: 12px; align-items: center; }
   .poster-frame-head .n {
     min-width: 38px; padding: 7px 10px; border-radius: 999px;
-    background: var(--uni-primary); color: #fff;
-    font-family: 'Space Grotesk', sans-serif; font-size: 12px; text-align: center;
+    background: var(--wash); color: #fff;
+    font-family: 'Space Mono', monospace; font-size: 12px; text-align: center;
   }
 
   .dl-btn {
-    border: none; border-radius: 999px; padding: 12px 20px;
-    font-size: 13px; font-weight: 700; color: #fff; cursor: pointer;
-    background: linear-gradient(135deg, var(--uni-primary), var(--uni-light));
-    box-shadow: 0 10px 24px rgba(230, 0, 40, 0.24);
+    border: none; border-radius: 12px; padding: 12px 22px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fff; cursor: pointer;
+    background: var(--wash);
+    box-shadow: 0 8px 24px rgba(230,0,40,0.3);
   }
+  .dl-btn:hover { transform: translateY(-1px); }
 
   .poster-scaler {
     width: 100%; overflow: hidden;
     display: flex; justify-content: center;
+    background: #000; border-radius: 12px; padding: 40px 0;
   }
   .poster-scaler > div {
     transform: scale(0.36); transform-origin: top center;
@@ -73,121 +68,130 @@
 
   .poster {
     width: 1242px; height: 1660px;
-    overflow: hidden; position: relative;
-    background:
-      radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.16), transparent 22%),
-      linear-gradient(160deg, #000000 0%, #9c0019 45%, #e60028 100%);
-    color: #fff;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
   }
-
-  .poster::after {
-    content: ''; position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.4; pointer-events: none;
+  .p-image {
+    position: absolute; inset: 0; z-index: 0;
+    background-size: cover; background-position: center;
+    filter: contrast(1.1) brightness(0.6) grayscale(1);
   }
-
-  .poster.p2 {
-    background:
-      radial-gradient(circle at 18% 16%, rgba(255,255,255,0.18), transparent 20%),
-      linear-gradient(160deg, #2a0008 0%, #8a001a 48%, #e60028 100%);
+  .p-wash {
+    position: absolute; inset: 0; z-index: 1;
+    background: var(--wash);
+    mix-blend-mode: multiply;
+    opacity: 0.78;
   }
-
-  .p-inner {
-    position: relative; z-index: 1; height: 100%;
-    margin: 34px; padding: 72px 72px 64px;
-    border: 5px solid rgba(255,255,255,0.18);
-    border-radius: 36px;
-    display: flex; flex-direction: column;
+  .p-content {
+    position: relative; z-index: 10; height: 100%;
+    padding: 90px 90px 110px;
+    display: flex; flex-direction: column; justify-content: flex-end;
   }
-
-  .p-tag {
-    display: inline-flex; align-items: center; align-self: flex-start;
-    gap: 12px; padding: 16px 24px; border-radius: 999px;
-    background: rgba(255,255,255,0.1);
-    font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
-    font-size: 34px; font-weight: 700; letter-spacing: 0.08em;
+  .p-header {
+    position: absolute; top: 90px; left: 90px; right: 90px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 28px;
   }
-
-  .p-tag .dot {
-    width: 14px; height: 14px; border-radius: 50%;
-    background: #fff;
+  .p-header .issue {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase;
   }
-
-  .corner-mark {
-    position: absolute; top: 70px; right: 72px;
-    padding: 16px 22px; border-radius: 18px;
-    background: rgba(0,0,0,0.28);
-    color: #fff; font-size: 32px; font-weight: 800;
-  }
-
-  .hook {
-    margin-top: 84px; font-size: 148px;
-    line-height: 1.02; letter-spacing: -0.06em;
+  .p-title-wrap { margin-bottom: 90px; }
+  .p-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 240px; line-height: 0.88;
     font-weight: 900;
+    letter-spacing: -12px;
+    color: var(--white);
   }
-
-  .hook .hl { display: inline-block; color: #ffffff; background: rgba(0,0,0,0.4); padding: 0 22px; }
-
-  .sub {
-    margin-top: 42px; font-size: 52px;
-    line-height: 1.42; font-weight: 700;
-    color: rgba(255,255,255,0.92);
+  .p-title .hl {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 0 18px;
+    margin-top: 18px;
   }
-
-  .course-chip {
-    margin-top: auto; display: inline-flex; align-items: center;
-    align-self: flex-start; padding: 20px 26px;
-    border-radius: 22px; background: #fff;
-    color: #2a0008;
-    box-shadow: 12px 12px 0 rgba(0,0,0,0.18);
+  .p-subtitle {
+    display: inline-block;
+    margin-top: 42px;
+    padding: 14px 28px;
+    background: var(--white);
+    color: var(--black);
+    font-size: 46px; font-weight: 900;
+    transform: rotate(-1deg);
+    font-family: 'Noto Sans SC', sans-serif;
   }
-
-  .course-chip .name { font-size: 44px; font-weight: 900; line-height: 1.2; }
-
-  .course-chip .meta {
-    margin-top: 8px;
-    font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
-    font-size: 26px; font-weight: 700;
-    color: #705258; letter-spacing: 0.08em;
+  .p-footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 48px;
+    gap: 32px;
+  }
+  .p-info { max-width: 70%; }
+  .p-info h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 64px; font-weight: 900;
+    line-height: 1.08;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+  }
+  .p-info p {
+    font-size: 28px; color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+  }
+  .p-tag-stack { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+  .p-date-big {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 96px; font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -3px;
+  }
+  .p-date-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
   }
 </style>
 </head>
 <body>
 <div class="page">
   <div class="topbar">
-    <h1><span>RMIT 皇家墨尔本理工</span> 小红书封面图 · 2026-04-21</h1>
-    <div class="sub">RMIT 红黑渐变 + 网格纹样 + 白色 hook。两张封面配两篇草稿，点下方按钮导 PNG。</div>
+    <h1><span>RMIT 皇家墨尔本理工</span> 小红书封面图 · 2026-04-21 · Magazine Editorial</h1>
+    <div class="sub">参考 curriculum poster-v6 magazine editorial 风格：全幅背景图 + RMIT 红 wash + 大衬线标题 + 白色倾斜副标 + 黑色高亮块。封面无品牌名、无域名、无二维码。</div>
   </div>
 
   <div class="poster-frame">
     <div class="poster-frame-head">
-      <h2><span class="n">01</span>RMIT 建筑全球第 15 / 艺设第 19</h2>
+      <h2><span class="n">01</span>RMIT 建筑 / 艺设全澳第一</h2>
       <button class="dl-btn" data-poster="cover-1" data-file="xhs-cover-rmit-1.png">⬇ 下载 PNG</button>
     </div>
     <div class="poster-scaler">
       <div>
         <div class="poster" id="poster-cover-1">
-          <div class="p-inner">
-            <div class="corner-mark">QS 2026</div>
-            <div class="p-tag"><span class="dot"></span>RMIT RANKINGS</div>
-
-            <div class="hook">
-              建筑<br>
-              <span class="hl">全球 15</span>
+          <div class="p-image" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1600')"></div>
+          <div class="p-wash"></div>
+          <div class="p-header">
+            <div class="issue">ISSUE 04·21 / 2026</div>
+            <div class="issue">RMIT RANKINGS</div>
+          </div>
+          <div class="p-content">
+            <div class="p-title-wrap">
+              <div class="p-title">建筑<br><span class="hl">全球 15</span></div>
+              <div class="p-subtitle">艺术设计全球 19 · 连续三年全澳第一</div>
             </div>
-
-            <div class="sub">
-              艺术设计全球 19<br>
-              连续三年全澳第一
-            </div>
-
-            <div class="course-chip">
-              <div>
-                <div class="name">Architecture + Art & Design</div>
-                <div class="meta">RMIT · QS 2026</div>
+            <div class="p-footer">
+              <div class="p-info">
+                <h3>QS 2026 学科排名</h3>
+                <p>8 学科全球 Top 100 · 19 学科全球 Top 200 · CS 上涨 50 位</p>
+              </div>
+              <div class="p-tag-stack">
+                <div class="p-date-big">04<br>21</div>
+                <div class="p-date-sub">QS 2026</div>
               </div>
             </div>
           </div>
@@ -203,25 +207,26 @@
     </div>
     <div class="poster-scaler">
       <div>
-        <div class="poster p2" id="poster-cover-2">
-          <div class="p-inner">
-            <div class="corner-mark">7 大领域</div>
-            <div class="p-tag"><span class="dot"></span>RMIT × INDONESIA</div>
-
-            <div class="hook">
-              游戏 / 动画<br>
-              <span class="hl">东南亚内推</span>
+        <div class="poster" id="poster-cover-2">
+          <div class="p-image" style="background-image:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1600')"></div>
+          <div class="p-wash"></div>
+          <div class="p-header">
+            <div class="issue">ISSUE 04·21 / 2026</div>
+            <div class="issue">RMIT × ASEAN</div>
+          </div>
+          <div class="p-content">
+            <div class="p-title-wrap">
+              <div class="p-title">游戏动画<br><span class="hl">东南亚路径</span></div>
+              <div class="p-subtitle">7 大领域 MoU · 5 月启动印尼校友会</div>
             </div>
-
-            <div class="sub">
-              RMIT × EKRAF MoU<br>
-              5 月启动印尼校友会
-            </div>
-
-            <div class="course-chip">
-              <div>
-                <div class="name">Games · Animation · Digital</div>
-                <div class="meta">RMIT · ASEAN 2026</div>
+            <div class="p-footer">
+              <div class="p-info">
+                <h3>RMIT × EKRAF</h3>
+                <p>游戏 · 动画 · 数字技术 · 文化艺术 · 设计 · 东南亚实习内推通道</p>
+              </div>
+              <div class="p-tag-stack">
+                <div class="p-date-big">04<br>21</div>
+                <div class="p-date-sub">MOU · 2026</div>
               </div>
             </div>
           </div>
@@ -238,50 +243,34 @@ document.querySelectorAll('.dl-btn').forEach((btn) => {
     const posterId = btn.dataset.poster;
     const file = btn.dataset.file;
     const poster = document.getElementById('poster-' + posterId);
-
     if (!poster) return;
 
     const stage = document.createElement('div');
-    stage.style.cssText = [
-      'position: fixed','left: -10000px','top: -10000px',
-      'width: 1242px','height: 1660px','overflow: hidden',
-      'background: transparent','z-index: -1'
-    ].join(';');
-
+    stage.style.cssText = ['position:fixed','left:-10000px','top:-10000px','width:1242px','height:1660px','overflow:hidden','background:transparent','z-index:-1'].join(';');
     const clone = poster.cloneNode(true);
     clone.id = '';
     clone.style.transform = 'none';
     clone.style.position = 'relative';
     clone.style.left = '0';
     clone.style.top = '0';
-
     stage.appendChild(clone);
     document.body.appendChild(stage);
 
     btn.disabled = true;
     btn.textContent = '渲染中...';
-
     try {
       const canvas = await html2canvas(clone, {
-        backgroundColor: null,
-        scale: 2,
-        width: 1242,
-        height: 1660,
-        windowWidth: 1242,
-        windowHeight: 1660,
-        useCORS: true
+        backgroundColor: null, scale: 2,
+        width: 1242, height: 1660,
+        windowWidth: 1242, windowHeight: 1660,
+        useCORS: true, allowTaint: true,
       });
-
       const link = document.createElement('a');
       link.download = file;
       link.href = canvas.toDataURL('image/png');
       link.click();
-
       btn.textContent = '✅ 已下载';
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = '⬇ 下载 PNG';
-      }, 1200);
+      setTimeout(() => { btn.disabled = false; btn.textContent = '⬇ 下载 PNG'; }, 1200);
     } catch (error) {
       console.error(error);
       btn.disabled = false;
