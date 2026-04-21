@@ -58,34 +58,58 @@ function deriveTags(md) {
 }
 
 function scanSchool(school) {
-	const items = [];
-	if (!fs.existsSync(HUB_DIR)) return items;
-	for (const dateDir of fs.readdirSync(HUB_DIR)) {
-		if (!/^\d{4}-\d{2}-\d{2}$/.test(dateDir)) continue;
-		const dir = path.join(HUB_DIR, dateDir, school);
-		if (!fs.statSync(dir, { throwIfNoEntry: false })?.isDirectory()) continue;
-		const files = new Set(fs.readdirSync(dir));
-		const item = {
-			date: dateDir,
-			hasMp: files.has('mp-article.html'),
-			hasXhsCovers: files.has('xhs-covers.html'),
-			hasXhsDrafts: files.has('xhs-drafts.md'),
-			hasXhsPosters: files.has('xhs-posters.html'),
-			title: '',
-			brief: '',
-			tags: [],
-		};
-		const mdPath = path.join(CONTENT_DIR, school, `news-${dateDir}.md`);
-		if (fs.existsSync(mdPath)) {
-			const md = fs.readFileSync(mdPath, 'utf8');
-			const fm = parseFrontmatter(md);
-			item.title = (fm.title || '').replace(/^[^·]+·\s*/, '').trim() || fm.title || '';
-			item.brief = fm.description || '';
-			item.tags = deriveTags(md);
+	const byDate = new Map();
+
+	// Source 1: static poster directories
+	if (fs.existsSync(HUB_DIR)) {
+		for (const dateDir of fs.readdirSync(HUB_DIR)) {
+			if (!/^\d{4}-\d{2}-\d{2}$/.test(dateDir)) continue;
+			const dir = path.join(HUB_DIR, dateDir, school);
+			if (!fs.statSync(dir, { throwIfNoEntry: false })?.isDirectory()) continue;
+			const files = new Set(fs.readdirSync(dir));
+			byDate.set(dateDir, {
+				date: dateDir,
+				hasMp: files.has('mp-article.html'),
+				hasXhsCovers: files.has('xhs-covers.html'),
+				hasXhsDrafts: files.has('xhs-drafts.md'),
+				hasXhsPosters: files.has('xhs-posters.html'),
+				hasMd: false,
+				title: '',
+				brief: '',
+				tags: [],
+			});
 		}
-		items.push(item);
 	}
-	return items.sort((a, b) => b.date.localeCompare(a.date));
+
+	// Source 2: upstream news markdown (may exist without posters)
+	const schoolContentDir = path.join(CONTENT_DIR, school);
+	if (fs.existsSync(schoolContentDir)) {
+		for (const file of fs.readdirSync(schoolContentDir)) {
+			const m = file.match(/^news-(\d{4}-\d{2}-\d{2})\.md$/);
+			if (!m) continue;
+			const date = m[1];
+			const md = fs.readFileSync(path.join(schoolContentDir, file), 'utf8');
+			const fm = parseFrontmatter(md);
+			const entry = byDate.get(date) || {
+				date,
+				hasMp: false,
+				hasXhsCovers: false,
+				hasXhsDrafts: false,
+				hasXhsPosters: false,
+				hasMd: false,
+				title: '',
+				brief: '',
+				tags: [],
+			};
+			entry.hasMd = true;
+			entry.title = (fm.title || '').trim() || entry.title;
+			entry.brief = (fm.description || '').trim() || entry.brief;
+			entry.tags = deriveTags(md);
+			byDate.set(date, entry);
+		}
+	}
+
+	return [...byDate.values()].sort((a, b) => b.date.localeCompare(a.date));
 }
 
 function escapeHtml(s) {
@@ -101,6 +125,10 @@ function renderTimelineItem(school, brand, item) {
 	if (item.hasMp) links.push(`<a href="../${item.date}/${school}/mp-article.html">📰 公众号</a>`);
 	if (item.hasXhsCovers && item.hasXhsPosters) links.push(`<a href="../${item.date}/${school}/xhs-covers.html">🖼️ 封面图</a>`);
 	if (item.hasXhsDrafts) links.push(`<a href="../${item.date}/${school}/xhs-drafts.md">📝 草稿</a>`);
+	if (links.length === 0 && item.hasMd) {
+		links.push(`<a href="https://github.com/JR-Academy-AI/jr-wiki/blob/main/src/content/universities/${school}/news-${item.date}.md" target="_blank" rel="noopener" class="primary">📄 新闻 md</a>`);
+		links.push(`<span style="font-size:10px;color:#a89bc2;text-align:center;font-family:'Space Grotesk',sans-serif;letter-spacing:0.08em;padding:4px 0;">素材待产出</span>`);
+	}
 	const title = escapeHtml(item.title || `${brand.nameCn} ${mo}/${d} 新闻日报`);
 	const brief = escapeHtml(item.brief || '点进查看公众号发稿页 + 小红书素材');
 	const tags = item.tags.map(t => `<span>${escapeHtml(t)}</span>`).join('');
