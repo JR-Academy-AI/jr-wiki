@@ -1,22 +1,22 @@
 ---
 name: uni-events
-description: "为 UMelb / UNSW / UQ / USYD 4 所澳洲大学抓当周学生活动（讲座/networking/O-Week/免费活动），筛选适合中国留学生参与的整理成小红书草稿 + 敏感词扫描，产 events/{DATE}.html（4 校并排）+ events/{DATE}-covers.html（小红书封面集）+ 更新 events/index.html timeline。Use when user wants to produce daily University events materials for Xiaohongshu — the 4 schools are fixed (墨大/UNSW/UQ/USYD)."
+description: "为 UMelb / UNSW / UQ / USYD / Adelaide / Monash 6 所澳洲大学抓当周学生活动（讲座/networking/O-Week/免费活动），筛选适合中国留学生参与的整理成小红书草稿 + 敏感词扫描，产 events/{DATE}.html（6 校并排）+ events/{DATE}-covers.html（小红书封面集）+ 更新 events/index.html timeline。Use when user wants to produce daily University events materials for Xiaohongshu — the 6 schools are fixed (墨大/UNSW/UQ/USYD/Adelaide/Monash)."
 argument-hint: "[YYYY-MM-DD 可选，默认今天 AEST]"
 sync-source: "xhs-review@1.0 / uni-news-poster (jr-wiki)"
 ---
 
-# /uni-events — 4 校每日校园活动 · 小红书草稿生成器
+# /uni-events — 6 校每日校园活动 · 小红书草稿生成器
 
-把当周 4 所澳洲大学（**墨大 UMelb / UNSW / UQ / USYD** 固定这 4 所）的学生活动抓出来，产出到：
+把当周 6 所澳洲大学（**墨大 UMelb / UNSW / UQ / USYD / Adelaide / Monash** 固定这 6 所）的学生活动抓出来，产出到：
 
 ```
 src/static/uni-news-social/events/
-├── {YYYY-MM-DD}.html          # 4 校并排（events-list + xhs-draft + 敏感词过检）
-├── {YYYY-MM-DD}-covers.html   # 4 张小红书封面 PNG（html2canvas 下载）
+├── {YYYY-MM-DD}.html          # 6 校并排（events-list + xhs-draft + 敏感词过检）
+├── {YYYY-MM-DD}-covers.html   # 6 张小红书封面 PNG（html2canvas 下载）
 └── index.html                 # 首页 timeline 插入新条目
 ```
 
-**为什么只做 4 所**：这 4 所在学生活动密度和小红书有效受众上压倒性领先。其他 6 所大学新闻走 `/uni-news-poster`，活动不走。
+**为什么只做 6 所**：这 6 所是运营指定的优先校（QLD/VIC/NSW/SA 主力），其他 4 所（ANU/RMIT/UTS/UWA）活动密度低、小红书受众稀，活动线不跑，只走 `/uni-news-poster` 的新闻轮换（周日）。Adelaide / Monash 当周活动条数可能比 UMelb/UNSW 少，允许某校 1-2 条或写 placeholder "本周无公开活动"。
 
 **scope 底线**：活动只做小红书一个渠道，不做公众号发稿页。
 
@@ -35,9 +35,9 @@ if [ -f "src/static/uni-news-social/events/${DATE}.html" ]; then
 fi
 ```
 
-### Step 1. 抓 4 校当周活动
+### Step 1. 抓 6 校当周活动
 
-对 UMelb / UNSW / UQ / USYD **每校跑 2-3 轮 WebSearch + WebFetch**，目标是抓当周（DATE + 未来 7 天内）的 **3-4 条硬活动**。
+对 UMelb / UNSW / UQ / USYD / Adelaide / Monash **每校跑 2-3 轮 WebSearch + WebFetch**，目标是抓当周（DATE + 未来 7 天内）的 **3-4 条硬活动**（Adelaide / Monash 允许 1-2 条）。
 
 每校优先搜索的入口：
 
@@ -47,6 +47,8 @@ fi
 | UNSW | `roundhouse.org.au/whats-on`, `student.unsw.edu.au/events`, `arc.unsw.edu.au/whats-on` |
 | UQ | `uq.edu.au/events`, `uqu.com.au/events`, `uqunion.com.au` |
 | USYD | `whatson.sydney.edu.au`, `mannings.com.au`, `vergegallery.com` |
+| Adelaide | `set.adelaide.edu.au/events`, `auu.org.au/events`, `adelaide.edu.au/events` |
+| Monash | `monash.edu/events`, `monsu.org/whats-on`, `musa.monash.edu/events` |
 
 **筛选标准（全部满足才选）**:
 - ✅ 日期在 `{DATE}` ~ `{DATE + 7 天}` 内
@@ -62,7 +64,7 @@ fi
 | 占位符 | 说明 |
 |---|---|
 | `{{DATE}}` | 当天日期，如 `2026-04-21` |
-| `{{UMELB-EVENT-N-TITLE}}` | 每校 3 条活动（UMELB / UNSW / UQ / USYD × N=1,2,3,4），活动标题 |
+| `{{UMELB-EVENT-N-TITLE}}` | 每校 3 条活动（UMELB / UNSW / UQ / USYD / ADELAIDE / MONASH × N=1,2,3,4），活动标题 |
 | `{{UMELB-EVENT-N-WHEN}}` | 时间，格式 `Tue 21 Apr 12-3pm` 或 `Wed 22 Apr` |
 | `{{UMELB-EVENT-N-WHERE}}` | 地点，简短（`Roundhouse`, `Campbell Place`） |
 | `{{UMELB-EVENT-N-PRICE}}` | 价格：`Free` / `$10` 等（`Free` 会加绿色 pill） |
@@ -74,9 +76,9 @@ fi
 
 ### Step 3. 产 `events/{DATE}-covers.html`
 
-**参考实现**：`src/static/uni-news-social/events/2026-04-20-covers.html`（4 张封面 PNG，1242×1660 竖版）。
+**参考实现**：`src/static/uni-news-social/events/2026-04-20-covers.html`（原 4 张封面 PNG，1242×1660 竖版；按同结构扩到 6 张）。
 
-4 张封面，每校一张，格式：
+6 张封面，每校一张（Adelaide 底色 `#002f5f` 深蓝 + 浅蓝渐变；Monash 底色 `#006dae` 中蓝 + 浅蓝渐变），格式：
 - 顶部：学校 brand 色 cover 块（含学校 code + 中文名 + 英文名）
 - 中间：2-3 个当周活动"hook"（大字，例如 "Halfway Day 免费派对"）
 - 底部：日期 chip + "留学生周历" slogan
