@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>RMIT 皇家墨尔本理工 2026-04-21 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uni-primary: #e60028;  /* RMIT 红 */
+    --uni-accent: #000000;   /* RMIT 黑 */
+    --uni-text: #ffffff;
+    --brand-dark: #10162f;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #f4ebed;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
+    padding: 22px 26px; margin-bottom: 24px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--uni-primary); }
+  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; padding: 10px 16px;
+    border: 2px solid var(--brand-dark);
+    background: #fff; color: var(--brand-dark);
+    border-radius: 10px; transition: all 0.12s;
+  }
+  .btn:hover { background: var(--uni-primary); color: #fff; transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .btn.primary { background: var(--uni-primary); color: #fff; }
+
+  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  .phone-wrap { position: sticky; top: 20px; }
+  .phone {
+    width: 100%; max-width: 420px; margin: 0 auto;
+    background: #f7eef0;
+    border: 2px solid var(--brand-dark);
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .phone-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .phone-bar .dot { width: 8px; height: 8px; background: var(--uni-primary); border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .mp {
+    background: #fff; border-radius: 18px;
+    padding: 26px 20px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+    font-size: 15px; line-height: 1.85; color: #222;
+    max-height: 78vh; overflow-y: auto;
+  }
+  .mp::-webkit-scrollbar { width: 6px; }
+  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
+
+  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
+  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
+    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
+  .mp-meta .author { color: var(--uni-primary); font-weight: 600; }
+  .mp-lead {
+    background: #fbeff1; border-radius: 8px; padding: 13px 15px;
+    font-size: 14px; color: #3a1f23; line-height: 1.75; margin-bottom: 22px;
+  }
+  .mp-hook {
+    display: inline-block; background: var(--uni-primary); color: #fff;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .mp-h2 {
+    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
+    margin: 12px 0 12px; padding-left: 10px;
+    border-left: 4px solid var(--uni-primary);
+  }
+  .mp-alt-img {
+    width: 100%; display: block; margin: 10px 0 4px;
+    border-radius: 8px;
+  }
+  .mp-oneline {
+    background: #fff4f5; border-left: 3px solid var(--uni-accent);
+    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #3a3a3a;
+    margin: 12px 0 14px; line-height: 1.7;
+  }
+  .mp-oneline strong { color: #000; }
+  .mp p { margin: 0 0 12px; color: #333; font-size: 15px; line-height: 1.85; }
+  .mp-source { font-size: 12px; color: #8a8a8a; padding-top: 8px; margin-top: 8px;
+    border-top: 1px dashed #e5e7eb; word-break: break-all; }
+  .mp-source a { color: #e60028; text-decoration: none; }
+  .mp-divider { border: 0; border-top: 1px solid var(--uni-primary); margin: 22px 0; height: 1px; }
+  .mp-quickview {
+    background: #fff4f5; padding: 16px; border-radius: 8px; margin: 22px 0;
+    border-left: 3px solid var(--uni-primary);
+  }
+  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; font-weight: 700; }
+  .mp-quickview ul { padding-left: 18px; margin: 0; }
+  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; line-height: 1.7; }
+  .mp-quickview li strong { color: var(--uni-primary); font-weight: 700; }
+  .mp-cta {
+    background: var(--uni-primary); color: #fff;
+    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
+  }
+  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; color: #fff; }
+  .mp-cta .sub { font-size: 12px; color: #ffd6dc; line-height: 1.7; }
+
+  .panel .card {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 14px;
+    padding: 18px 20px; margin-bottom: 16px;
+    box-shadow: 4px 4px 0 var(--brand-dark);
+  }
+  .panel h2 { font-size: 15px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .panel .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--uni-primary); color: #fff; padding: 2px 7px; border-radius: 4px; }
+  .panel .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .panel .stat-item { text-align: center; }
+  .panel .stat-item .v { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--uni-primary); }
+  .panel .stat-item .k { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .panel ol { padding-left: 20px; font-size: 13px; line-height: 1.8; color: #334155; }
+  .panel code { background: #fbeff1; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--brand-dark); }
+  #log { background: #0f172a; color: #cbd5e1; padding: 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; max-height: 140px; overflow-y: auto; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1><span>RMIT 皇家墨尔本理工</span> 公众号文章 · 2026-04-21</h1>
+      <div class="sub">左侧 375px 手机预览 · 粘到 mp.weixin.qq.com 前点「📋 复制富文本」即可保留颜色。</div>
+    </div>
+    <div class="acts">
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn primary" id="btn-copy-md">📝 复制 MD</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+          <div class="mp-title">RMIT 建筑全球第 15、艺术设计第 19 连续三年全澳第一 + 印尼创意产业 MoU + 浮动湿地科研｜RMIT 日报 04-21</div>
+          <div class="mp-meta">
+            <span class="author">JR Academy 澳洲留学</span>
+            <span>·</span><span>2026-04-21</span>
+            <span>·</span><span>阅读约 7 分钟</span>
+          </div>
+
+          <div class="mp-lead">今天 RMIT 的三条硬料都很"RMIT"：建筑和艺术设计在 QS 2026 学科排名双双拿下全澳第一，同时 Computer Science 上涨 50 名；和印尼创意经济部签 MoU，游戏、动画、数字技术方向的产业合作推进到东南亚；School of Science 浮动湿地试验改善农场大坝水质。想走创意或环境方向的同学值得多看两眼。</div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">01 · 招生政策</div>
+          <div class="mp-h2">QS 2026 学科排名：RMIT 建筑全球第 15、艺术设计第 19，连续三年全澳第一</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80" alt="RMIT Architecture Design Rankings">
+          <div class="mp-oneline"><strong>一句话</strong>：QS 2026 World University Rankings by Subject 出炉，RMIT 的 Architecture/Built Environment 全球排名第 15，Art & Design 并列第 19，这是连续第三年同时在这两个学科拿下全澳冠军。</div>
+          <p>整体看，RMIT 这次有 8 个学科进全球 Top 100，19 个学科进 Top 200。其中 Computer Science & Information Systems 上涨了 50 个位次，Engineering（Mechanical, Aerospace and Manufacturing）也接近全球 Top 100 边缘。总体排名上，RMIT 在 QS 全球综合排名是第 125 位，澳洲第 10 位。</p>
+          <p>为什么 RMIT 建筑和艺术设计能稳住全球 Top 20？核心原因是 RMIT 这两个学院跟墨尔本整个创意产业深度绑定——墨尔本本来就是澳洲创意产业中心，RMIT 的 studio 体系、与本地事务所的联合项目、毕业展的产业对接频次都是澳洲其他高校很难复制的。</p>
+          <p><strong>对你的影响</strong>：想在澳洲读建筑、室内设计、工业设计、视觉传播、时尚设计，RMIT 的性价比在同档次澳洲学校里相当高，签证通过率也稳定。CS 上涨 50 名也说明 RMIT 的 IT 方向在快速追赶，不再只是"备胎选项"——CS 候选可以把 RMIT 加进选校清单。</p>
+          <div class="mp-source">来源：<a href="https://www.rmit.edu.au/news/all-news/2026/mar/global-rankings-rmit">RMIT News · QS Rankings 2026</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">02 · 科研合作</div>
+          <div class="mp-h2">RMIT 与印尼创意经济部签 MoU：游戏、动画、数字技术合作落地，5 月启动东南亚校友会</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80" alt="RMIT Indonesia Partnership">
+          <div class="mp-oneline"><strong>一句话</strong>：RMIT 副校长（国际）Layton Pike 近日在雅加达与印度尼西亚创意经济部（EKRAF）签 MoU，双方在游戏、电影、动画、音乐、数字技术、文化艺术、设计七大领域推动课程合作、联合培训和产业项目。</div>
+          <p>访问期间，RMIT 职业教育学院（College of Vocational Education）副校长 Mish Eastman 还联合主持了一场游戏与动画劳动力圆桌会议，参与方包括印尼政策制定者、产业代表和教育合作伙伴。RMIT 此前已通过印尼教育部的 Kampus Merdeka 项目开发了《游戏设计入门（2D）》课程，与 Infinite Learning 合作推进东南亚游戏人才培训。RMIT 印尼校友章会将于 2026 年 5 月正式成立。</p>
+          <p>对 RMIT 在读学生和潜在申请者，这个 MoU 有三个比较实际的影响：游戏设计、动画、数字媒体方向的学生未来会有更多东南亚企业实习对接通道；RMIT 在印尼和东南亚的校友网络在系统化建设，对毕业后想留在亚太区工作的同学是一笔潜在人脉；RMIT 在东南亚的 TNE（Transnational Education）有维多利亚州政府专项资金支持，说明这个方向不是一次性公关。</p>
+          <p><strong>对你的影响</strong>：走创意产业+亚太工作路径的同学，RMIT 在地理和产业链上都比大多数澳洲学校更贴近东南亚。有兴趣的同学可以关注 College of Vocational Education 和 Games Design 专业的最新产业合作项目。</p>
+          <div class="mp-source">来源：<a href="https://www.rmit.edu.au/news/all-news/2026/apr/indo-visit">RMIT News · Indonesia Partnership</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">03 · 科研合作</div>
+          <div class="mp-h2">RMIT 领衔浮动湿地试验：改善 Bass Coast 农场大坝水质，澳洲 180 万个农场大坝有望受益</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80" alt="RMIT Floating Wetlands Research">
+          <div class="mp-oneline"><strong>一句话</strong>：RMIT School of Science 高级讲师 Dr. Martino Malerba 主导的浮动湿地（floating wetlands）试验在 Bass Coast 发布阶段性成果，与 Melbourne Water 和 Bass Coast Landcare 合作。</div>
+          <p>系统的运作原理不复杂：湿地植物根系在水面以下形成立体根矩，吸引微生物群落定植分解多余营养盐；根系物理捕捉悬浮颗粒物；同时通过蒸腾作用为水体降温，形成改善水质的连锁反应。早期数据显示参与试验的农场大坝在浊度（turbidity）、生物多样性指数和排放指标上都有可量化改善。澳洲全境约有 180 万个农场大坝，规模化推广的影响面极大。</p>
+          <p>这种"有实际应用场景的应用科学"课题在澳洲非常适合申请工业合作类 PhD 奖学金——比如 ARC Linkage Projects。Melbourne Water 作为维多利亚州的水务公司，每年也有面向应届毕业生的工程师和水务管理实习项目。</p>
+          <p><strong>对你的影响</strong>：环境科学、水文工程、生态学方向的同学，Dr. Malerba 的研究课题值得关注——PhD 申请 + 工业奖学金的组合胜算相对高。做过这类相关方向研究的 RMIT 学生，在 Melbourne Water 内推上也有优势，提前接触产业方是一个可行的规划路径。</p>
+          <div class="mp-source">来源：<a href="https://www.rmit.edu.au/news/all-news/2026/apr/floating-wetlands-bass-coast">RMIT News · Floating Wetlands</a></div>
+
+          <div class="mp-quickview">
+            <h3>📌 今日速览</h3>
+            <ul>
+              <li><strong>QS 2026 学科</strong>：建筑全球第 15、艺术设计第 19、连续三年全澳双料第一；CS 上涨 50 位。</li>
+              <li><strong>东南亚合作</strong>：印尼创意经济部 MoU 覆盖游戏/动画/数字技术七大领域，5 月成立印尼校友会。</li>
+              <li><strong>应用科研</strong>：浮动湿地 Bass Coast 试验改善水质，180 万个农场大坝受益，PhD + ARC 奖学金路径。</li>
+            </ul>
+          </div>
+
+          <div class="mp-cta">
+            <div class="big">🎓 计划申请 RMIT 的同学？</div>
+            <div class="sub">关注 JR Academy 澳洲留学公众号 · 获取 RMIT 申请时间线 + 专业对照清单<br>官网 jiangren.com.au · 10 所澳洲院校实时动态</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">3020</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">图片</div></div>
+          <div class="stat-item"><div class="v">7</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步 <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：Unsplash 图 URL 保持绝对路径，WeChat 自动抓取 re-host。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → RMIT 红色 hook / 红色 CTA / 浅红 lead 保留 → 预览 → 发布。</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <pre id="log"></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// RMIT brand: primary #e60028 (red), accent #000000 (black)
+const MP_INLINE_STYLES = {
+  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000000;margin-bottom:10px;',
+  'mp-meta': 'color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eeeeee;',
+  'mp-lead': 'background-color:#fbeff1;border-radius:8px;padding:13px 15px;font-size:14px;color:#3a1f23;line-height:1.75;margin-bottom:22px;',
+  'mp-hook': 'display:inline-block;background-color:#e60028;color:#ffffff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
+  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000000;margin-top:12px;margin-bottom:12px;padding-left:10px;border-left:4px solid #e60028;',
+  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background-color:#ffffff;',
+  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
+  'mp-oneline': 'background-color:#fff4f5;border-left:3px solid #000000;padding:10px 14px;font-size:14px;font-weight:500;color:#3a3a3a;margin:12px 0 14px;line-height:1.7;',
+  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
+  'mp-divider': 'border:0;border-top:1px solid #e60028;margin:22px 0;height:1px;',
+  'mp-quickview': 'background-color:#fff4f5;padding:16px;border-radius:8px;margin:22px 0;border-left:3px solid #e60028;',
+  'mp-cta': 'background-color:#e60028;color:#ffffff;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
+};
+
+function applyInlineStyles(root) {
+  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      el.setAttribute('style', style + (el.getAttribute('style') || ''));
+    });
+  });
+  root.querySelectorAll('.mp-meta .author').forEach(el =>
+    el.setAttribute('style', 'color:#e60028;font-weight:600;'));
+  root.querySelectorAll('.mp-oneline strong').forEach(el =>
+    el.setAttribute('style', 'color:#000000;'));
+  root.querySelectorAll('.mp-source a').forEach(el =>
+    el.setAttribute('style', 'color:#e60028;text-decoration:none;'));
+  root.querySelectorAll('.mp-quickview h3').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000000;font-weight:700;'));
+  root.querySelectorAll('.mp-quickview ul').forEach(el =>
+    el.setAttribute('style', 'padding-left:18px;margin:0;'));
+  root.querySelectorAll('.mp-quickview li').forEach(el =>
+    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
+  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
+    el.setAttribute('style', 'color:#e60028;font-weight:700;'));
+  root.querySelectorAll('.mp-cta .big').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#ffffff;'));
+  root.querySelectorAll('.mp-cta .sub').forEach(el =>
+    el.setAttribute('style', 'font-size:12px;color:#ffd6dc;line-height:1.7;'));
+  root.querySelectorAll('p').forEach(el => {
+    const existing = el.getAttribute('style') || '';
+    if (!existing.includes('margin-bottom') && !existing.includes('margin:')) {
+      el.setAttribute('style', 'margin:0 0 12px;color:#333333;font-size:15px;line-height:1.85;' + existing);
+    }
+  });
+  root.querySelectorAll('code').forEach(el =>
+    el.setAttribute('style', 'background-color:#fbeff1;padding:1px 6px;border-radius:3px;font-size:13px;color:#10162f;'));
+  ['mp-lead', 'mp-oneline', 'mp-quickview', 'mp-cta'].forEach(cls => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      if (el.tagName.toLowerCase() === 'section') return;
+      const wrapper = document.createElement('section');
+      wrapper.setAttribute('style', MP_INLINE_STYLES[cls] || '');
+      el.removeAttribute('style');
+      el.setAttribute('style', 'background-color:transparent;padding:0;margin:0;');
+      wrapper.appendChild(el.cloneNode(true));
+      el.replaceWith(wrapper);
+    });
+  });
+  root.querySelectorAll('.mp-hook').forEach(el => {
+    if (el.tagName.toLowerCase() === 'span') return;
+    const span = document.createElement('span');
+    span.setAttribute('style', MP_INLINE_STYLES['mp-hook'] || '');
+    span.textContent = el.textContent;
+    el.replaceWith(span);
+  });
+}
+
+const logEl = document.getElementById('log');
+function log(msg) {
+  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  logEl.textContent += `[${t}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  applyInlineStyles(article);
+  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+  const plain = article.innerText;
+  try {
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([plain], { type: 'text/plain' }),
+    });
+    navigator.clipboard.write([item]).then(() => {
+      const bgHits = (html.match(/background-color:/g) || []).length;
+      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
+      const sectionHits = (html.match(/<section /g) || []).length;
+      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
+    });
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = html; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    log('✅ 富文本已复制（fallback）');
+  }
+}
+
+function mpCopyMarkdown() {
+  const article = document.getElementById('mp-article');
+  const md = article.innerText;
+  navigator.clipboard.writeText(md).then(() => log('✅ MD 已复制'));
+}
+
+document.getElementById('btn-copy-html').addEventListener('click', mpCopyHtml);
+document.getElementById('btn-copy-md').addEventListener('click', mpCopyMarkdown);
+log('📦 RMIT 2026-04-21 mp-article 已加载');
+</script>
+</body>
+</html>

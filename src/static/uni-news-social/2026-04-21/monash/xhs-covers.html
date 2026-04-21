@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Monash 2026-04-21 · 小红书封面图</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;800;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uni-primary: #006dae;
+    --uni-deep: #003f6b;
+    --uni-light: #1e88e5;
+    --uni-gold: #ffce44;
+    --bg: #eff6fb;
+    --ink: #0b1f33;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+  }
+
+  .page { max-width: 1280px; margin: 0 auto; }
+
+  .topbar,
+  .poster-frame {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 14px 40px rgba(0, 109, 174, 0.1);
+  }
+
+  .topbar { padding: 28px 30px; margin-bottom: 28px; }
+  .topbar h1 { font-size: 24px; font-weight: 900; }
+  .topbar h1 span { color: var(--uni-primary); }
+  .topbar .sub { margin-top: 8px; color: #506580; font-size: 14px; line-height: 1.6; }
+
+  .poster-frame { padding: 26px; margin-bottom: 32px; }
+  .poster-frame-head {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 18px; margin-bottom: 20px;
+  }
+  .poster-frame-head h2 {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 17px; font-weight: 800;
+  }
+  .poster-frame-head .n {
+    min-width: 38px; padding: 7px 10px; border-radius: 999px;
+    background: var(--uni-primary); color: #fff;
+    font-family: 'Space Grotesk', sans-serif; font-size: 12px; text-align: center;
+  }
+
+  .dl-btn {
+    border: none; border-radius: 999px; padding: 12px 20px;
+    font-size: 13px; font-weight: 700; color: #fff; cursor: pointer;
+    background: linear-gradient(135deg, var(--uni-primary), var(--uni-light));
+    box-shadow: 0 10px 24px rgba(0, 109, 174, 0.24);
+  }
+
+  .poster-scaler {
+    width: 100%; overflow: hidden;
+    display: flex; justify-content: center;
+  }
+  .poster-scaler > div {
+    transform: scale(0.36); transform-origin: top center;
+  }
+
+  .poster {
+    width: 1242px; height: 1660px;
+    overflow: hidden; position: relative;
+    background:
+      radial-gradient(circle at 82% 18%, rgba(255, 206, 68, 0.22), transparent 22%),
+      linear-gradient(160deg, #003f6b 0%, #006dae 55%, #1e88e5 100%);
+    color: #fff;
+  }
+
+  .poster::after {
+    content: ''; position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='40' viewBox='0 0 80 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 Q 20 0, 40 20 T 80 20' stroke='%23ffffff' stroke-width='2' fill='none' opacity='0.18'/%3E%3C/svg%3E");
+    background-size: 80px 40px;
+    opacity: 0.5; pointer-events: none;
+  }
+
+  .poster.p2 {
+    background:
+      radial-gradient(circle at 18% 16%, rgba(255, 206, 68, 0.2), transparent 20%),
+      linear-gradient(160deg, #062133 0%, #0b3a5e 48%, #1565c0 100%);
+  }
+
+  .p-inner {
+    position: relative; z-index: 1; height: 100%;
+    margin: 34px; padding: 72px 72px 64px;
+    border: 5px solid rgba(255,255,255,0.18);
+    border-radius: 36px;
+    display: flex; flex-direction: column;
+  }
+
+  .p-tag {
+    display: inline-flex; align-items: center; align-self: flex-start;
+    gap: 12px; padding: 16px 24px; border-radius: 999px;
+    background: rgba(255,255,255,0.1);
+    font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+    font-size: 34px; font-weight: 700; letter-spacing: 0.08em;
+  }
+
+  .p-tag .dot {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--uni-gold);
+  }
+
+  .corner-mark {
+    position: absolute; top: 70px; right: 72px;
+    padding: 16px 22px; border-radius: 18px;
+    background: rgba(255, 206, 68, 0.16);
+    color: #ffeaa6; font-size: 32px; font-weight: 800;
+  }
+
+  .hook {
+    margin-top: 84px; font-size: 148px;
+    line-height: 1.02; letter-spacing: -0.06em;
+    font-weight: 900;
+  }
+
+  .hook .hl { display: inline-block; color: var(--uni-gold); }
+
+  .sub {
+    margin-top: 42px; font-size: 52px;
+    line-height: 1.42; font-weight: 700;
+    color: rgba(255,255,255,0.92);
+  }
+
+  .course-chip {
+    margin-top: auto; display: inline-flex; align-items: center;
+    align-self: flex-start; padding: 20px 26px;
+    border-radius: 22px; background: #fff;
+    color: #062133;
+    box-shadow: 12px 12px 0 rgba(0,0,0,0.12);
+  }
+
+  .course-chip .name { font-size: 44px; font-weight: 900; line-height: 1.2; }
+
+  .course-chip .meta {
+    margin-top: 8px;
+    font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+    font-size: 26px; font-weight: 700;
+    color: #5a6d82; letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <h1><span>Monash 莫纳什大学</span> 小红书封面图 · 2026-04-21</h1>
+    <div class="sub">Monash 蓝 + 金色 hook，wave 纹样压底。两张封面配两篇草稿，点下方按钮导 PNG。</div>
+  </div>
+
+  <div class="poster-frame">
+    <div class="poster-frame-head">
+      <h2><span class="n">01</span>Monash 博士全奖 3.7 万/年</h2>
+      <button class="dl-btn" data-poster="cover-1" data-file="xhs-cover-monash-1.png">⬇ 下载 PNG</button>
+    </div>
+    <div class="poster-scaler">
+      <div>
+        <div class="poster" id="poster-cover-1">
+          <div class="p-inner">
+            <div class="corner-mark">全额学费免</div>
+            <div class="p-tag"><span class="dot"></span>MONASH PHD</div>
+
+            <div class="hook">
+              博士全奖<br>
+              <span class="hl">$37,145/年</span>
+            </div>
+
+            <div class="sub">
+              + 2,000 搬家补贴<br>
+              8 月 31 日截止
+            </div>
+
+            <div class="course-chip">
+              <div>
+                <div class="name">Co-funded Graduate Scholarship</div>
+                <div class="meta">MONASH · 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="poster-frame">
+    <div class="poster-frame-head">
+      <h2><span class="n">02</span>Monash 光学登上 Nature Communications</h2>
+      <button class="dl-btn" data-poster="cover-2" data-file="xhs-cover-monash-2.png">⬇ 下载 PNG</button>
+    </div>
+    <div class="poster-scaler">
+      <div>
+        <div class="poster p2" id="poster-cover-2">
+          <div class="p-inner">
+            <div class="corner-mark">Nature 子刊</div>
+            <div class="p-tag"><span class="dot"></span>MONASH RESEARCH</div>
+
+            <div class="hook">
+              一片透镜<br>
+              <span class="hl">11 项功能</span>
+            </div>
+
+            <div class="sub">
+              把"乱"变成突破<br>
+              纳米光子 · 跨洲合作
+            </div>
+
+            <div class="course-chip">
+              <div>
+                <div class="name">Nanophotonics Laboratory</div>
+                <div class="meta">PHYSICS · 2026-04-10</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+document.querySelectorAll('.dl-btn').forEach((btn) => {
+  btn.addEventListener('click', async () => {
+    const posterId = btn.dataset.poster;
+    const file = btn.dataset.file;
+    const poster = document.getElementById('poster-' + posterId);
+
+    if (!poster) return;
+
+    const stage = document.createElement('div');
+    stage.style.cssText = [
+      'position: fixed','left: -10000px','top: -10000px',
+      'width: 1242px','height: 1660px','overflow: hidden',
+      'background: transparent','z-index: -1'
+    ].join(';');
+
+    const clone = poster.cloneNode(true);
+    clone.id = '';
+    clone.style.transform = 'none';
+    clone.style.position = 'relative';
+    clone.style.left = '0';
+    clone.style.top = '0';
+
+    stage.appendChild(clone);
+    document.body.appendChild(stage);
+
+    btn.disabled = true;
+    btn.textContent = '渲染中...';
+
+    try {
+      const canvas = await html2canvas(clone, {
+        backgroundColor: null,
+        scale: 2,
+        width: 1242,
+        height: 1660,
+        windowWidth: 1242,
+        windowHeight: 1660,
+        useCORS: true
+      });
+
+      const link = document.createElement('a');
+      link.download = file;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+
+      btn.textContent = '✅ 已下载';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = '⬇ 下载 PNG';
+      }, 1200);
+    } catch (error) {
+      console.error(error);
+      btn.disabled = false;
+      btn.textContent = '❌ 导出失败';
+    } finally {
+      if (stage.parentNode) stage.parentNode.removeChild(stage);
+    }
+  });
+});
+</script>
+</body>
+</html>

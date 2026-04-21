@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ANU 澳洲国立大学 2026-04-21 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uni-primary: #c7a85c;  /* ANU 金 */
+    --uni-accent: #10162f;   /* ANU 深蓝 */
+    --uni-text: #10162f;
+    --brand-dark: #10162f;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #f3f1e8;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
+    padding: 22px 26px; margin-bottom: 24px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--uni-primary); }
+  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; padding: 10px 16px;
+    border: 2px solid var(--brand-dark);
+    background: #fff; color: var(--brand-dark);
+    border-radius: 10px; transition: all 0.12s;
+  }
+  .btn:hover { background: var(--uni-primary); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .btn.primary { background: var(--brand-dark); color: var(--uni-primary); }
+
+  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  .phone-wrap { position: sticky; top: 20px; }
+  .phone {
+    width: 100%; max-width: 420px; margin: 0 auto;
+    background: #f5f4ec;
+    border: 2px solid var(--brand-dark);
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .phone-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .phone-bar .dot { width: 8px; height: 8px; background: var(--uni-primary); border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .mp {
+    background: #fff; border-radius: 18px;
+    padding: 26px 20px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+    font-size: 15px; line-height: 1.85; color: #222;
+    max-height: 78vh; overflow-y: auto;
+  }
+  .mp::-webkit-scrollbar { width: 6px; }
+  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
+
+  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
+  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
+    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
+  .mp-meta .author { color: #8a7136; font-weight: 600; }
+  .mp-lead {
+    background: #f5f4ec; border-radius: 8px; padding: 13px 15px;
+    font-size: 14px; color: #3a3322; line-height: 1.75; margin-bottom: 22px;
+  }
+  .mp-hook {
+    display: inline-block; background: var(--uni-primary); color: var(--brand-dark);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .mp-h2 {
+    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
+    margin: 12px 0 12px; padding-left: 10px;
+    border-left: 4px solid var(--uni-primary);
+  }
+  .mp-alt-img {
+    width: 100%; display: block; margin: 10px 0 4px;
+    border-radius: 8px;
+  }
+  .mp-oneline {
+    background: #f5f4ec; border-left: 3px solid var(--uni-primary);
+    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #3a3a3a;
+    margin: 12px 0 14px; line-height: 1.7;
+  }
+  .mp-oneline strong { color: #000; }
+  .mp p { margin: 0 0 12px; color: #333; font-size: 15px; line-height: 1.85; }
+  .mp-source { font-size: 12px; color: #8a8a8a; padding-top: 8px; margin-top: 8px;
+    border-top: 1px dashed #e5e7eb; word-break: break-all; }
+  .mp-source a { color: #c7a85c; text-decoration: none; }
+  .mp-divider { border: 0; border-top: 1px solid var(--uni-primary); margin: 22px 0; height: 1px; }
+  .mp-quickview {
+    background: #f9f6ea; padding: 16px; border-radius: 8px; margin: 22px 0;
+    border-left: 3px solid var(--uni-primary);
+  }
+  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; font-weight: 700; }
+  .mp-quickview ul { padding-left: 18px; margin: 0; }
+  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; line-height: 1.7; }
+  .mp-quickview li strong { color: #8a7136; font-weight: 700; }
+  .mp-cta {
+    background: var(--brand-dark); color: var(--uni-primary);
+    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
+  }
+  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; color: var(--uni-primary); }
+  .mp-cta .sub { font-size: 12px; color: rgba(199,168,92,0.78); line-height: 1.7; }
+
+  .panel .card {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 14px;
+    padding: 18px 20px; margin-bottom: 16px;
+    box-shadow: 4px 4px 0 var(--brand-dark);
+  }
+  .panel h2 { font-size: 15px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .panel .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--uni-primary); color: var(--brand-dark); padding: 2px 7px; border-radius: 4px; }
+  .panel .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .panel .stat-item { text-align: center; }
+  .panel .stat-item .v { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: #8a7136; }
+  .panel .stat-item .k { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .panel ol { padding-left: 20px; font-size: 13px; line-height: 1.8; color: #334155; }
+  .panel code { background: #f5f4ec; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--brand-dark); }
+  #log { background: #0f172a; color: #cbd5e1; padding: 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; max-height: 140px; overflow-y: auto; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1><span>ANU 澳洲国立大学</span> 公众号文章 · 2026-04-21</h1>
+      <div class="sub">左侧 375px 手机预览 · 粘到 mp.weixin.qq.com 前点「📋 复制富文本」即可保留颜色。</div>
+    </div>
+    <div class="acts">
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn primary" id="btn-copy-md">📝 复制 MD</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+          <div class="mp-title">ANU 牵手 Anthropic 注资 50 万 + Artemis II 月球激光通信 + Chancellor 25-50% 奖学金｜ANU 日报 04-21</div>
+          <div class="mp-meta">
+            <span class="author">JR Academy 澳洲留学</span>
+            <span>·</span><span>2026-04-21</span>
+            <span>·</span><span>阅读约 7 分钟</span>
+          </div>
+
+          <div class="mp-lead">今天 ANU 一次性给出三条硬料：与 AI 安全公司 Anthropic 签科研合作拿 50 万澳元注资、计算学院学生全员用上 Claude；Mount Stromlo 天文台的 QOGS 担任 NASA Artemis II 月球激光通信地面站；Chancellor's International Scholarship 自动评估 25-50% 学费减免。想冲 ANU CS、物理方向的同学今天值得多看一眼。</div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">01 · AI 合作</div>
+          <div class="mp-h2">ANU 牵手 Anthropic：50 万澳元注资，计算学院学生全员用上 Claude</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80" alt="ANU AI Research Partnership">
+          <div class="mp-oneline"><strong>一句话</strong>：ANU 与 Anthropic 建立正式科研合作，拿到 AUD 500,000 资助。计算学院的 TechLauncher 团队已开始用 Claude 和 Claude Code，后续铺到全学院课程。</div>
+          <p>Anthropic 这次在澳洲一共给四所研究机构注入 AUD 300 万，ANU 是其中之一，另外三所是 Murdoch Children's Research Institute、Garvan Institute of Medical Research 和 Curtin University。ANU 拿到 AUD 500,000，明确用于推动计算机教学和 AI 研究。</p>
+          <p>对学生最直接的变化在课程侧：TechLauncher 团队已经在用 Claude 和 Claude Code 做项目，后面会分批推到全学院。相当于学校层面把商业级 AI 工具嵌进课程，不再需要学生自掏腰包开 ChatGPT Plus。研究侧，ANU 副教授 Dan Andrews 带队在用 Claude 分析基因测序数据，目标是把数十年的临床与科学知识编码成可复现的 AI 系统用于罕见病诊断。</p>
+          <p><strong>对你的影响</strong>：想申请 ANU CS 相关方向的同学，TechLauncher 一直是学院最受雇主认可的项目之一。现在项目里直接内嵌商业级 AI 工具，等于在校期间就完成了很多企业还在摸索的工具迁移。S2 入学的同学可以关注 TechLauncher 报名时间——通常在学期开始前 2-3 周开放。</p>
+          <div class="mp-source">来源：<a href="https://www.anu.edu.au/news/all-news/anu-partners-with-ai-safety-company-anthropic-to-strengthen-its-ai-research-and-teaching">ANU Newsroom</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">02 · 科研合作</div>
+          <div class="mp-h2">ANU 参与 NASA Artemis II 月球激光通信：Mount Stromlo 成地面站，澳空间局投 450 万澳元</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200&q=80" alt="Mount Stromlo Observatory ANU">
+          <div class="mp-oneline"><strong>一句话</strong>：NASA Artemis II 任务 4 月 2 日堪培拉时间发射，是 50 多年来首次重返月球轨道的载人飞行。ANU 在 Mount Stromlo 的 Quantum Optical Ground Station 负责追踪 Orion 飞船的激光通信信号。</div>
+          <p>和传统无线电通信相比，激光（光学）通信的数据传输速率快 10 到 100 倍，能在更短时间内传回高清视频、图像和科学数据。Artemis II 是有史以来第一次在载人深空任务里实际验证激光通信技术——ANU 的 QOGS 作为地面站直接参与。</p>
+          <p>整套系统由澳洲空间局通过 Moon to Mars Demonstrator Mission Grant 投资 AUD 450 万建设。Mount Stromlo 天文台本身有 100 多年的历史，这次成为人类重返月球任务的基础设施之一，在澳洲空间工程史里是一个有分量的节点。</p>
+          <p><strong>对你的影响</strong>：ANU 的研究不是停在论文里——物理、工程、天文方向的学生有机会接触到真实的太空任务基础设施。Physics Honours Program 和 Research School of Astronomy and Astrophysics 每年有少量名额接受本科毕业生直升，对想做深空通信或量子光学方向的同学，现在是主动联系相关导师的时机。</p>
+          <div class="mp-source">来源：<a href="https://www.anu.edu.au/news/all-news/anu-provides-laser-communications-support-for-nasas-artemis-ii-crewed-moon-mission">ANU Newsroom · Artemis II</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">03 · 奖学金</div>
+          <div class="mp-h2">ANU Chancellor's International Scholarship：25% / 50% 学费减免，1000+ 名额自动评估</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80" alt="ANU International Scholarship">
+          <div class="mp-oneline"><strong>一句话</strong>：ANU 面向国际生规模最大的单一奖学金，分 9 个类别覆盖不同地区和学术背景，学费减免 25% 或 50% 覆盖整个学位，每年超过 1,000 个名额。</div>
+          <p>Chancellor's International Scholarship 的选拔标准只看学术成绩：所有申请 ANU 入学的国际生会被自动纳入评估，不需要单独递交申请材料。ANU 会把学历材料换算成统一评分标准，然后按成绩排名分发奖学金。如果你同时递交多份学历，系统会用作为入学依据的那份来排名。</p>
+          <p>不少同学因为没看到单独的申请入口就误以为 ANU 没有学费减免项目，然后错过了评估。正确的操作是：先递交入学申请，奖学金评估会随后自动启动。</p>
+          <p><strong>对你的影响</strong>：2026 S2 入学的同学建议在 7 月 31 日截止前完成申请，越早提交越早进评估队列。材料上重点打磨成绩单英文翻译和课程对照说明——ANU 评估阶段最依赖这两份文件。有任何流程问题可以直接联系 ANU International Admissions Office，他们对中国学生的申请流程很熟悉。</p>
+          <div class="mp-source">来源：<a href="https://study.anu.edu.au/scholarships/find-scholarship/anu-chancellors-international-scholarship">ANU Chancellor's International Scholarship</a></div>
+
+          <div class="mp-quickview">
+            <h3>📌 今日速览</h3>
+            <ul>
+              <li><strong>AI 合作</strong>：Anthropic 捐赠 50 万澳元，TechLauncher 已经用上 Claude + Claude Code，后续铺全学院。</li>
+              <li><strong>深空科研</strong>：Mount Stromlo QOGS 担任 Artemis II 月球激光通信地面站，澳空间局 450 万澳元建设，物理/天文方向值得关注。</li>
+              <li><strong>学费减免</strong>：Chancellor's International Scholarship 25-50%，全学位覆盖，1,000+ 名额自动评估，7 月 31 日截止。</li>
+            </ul>
+          </div>
+
+          <div class="mp-cta">
+            <div class="big">🎓 计划申请 ANU 的同学？</div>
+            <div class="sub">关注 JR Academy 澳洲留学公众号 · 获取 ANU 申请时间线 + 奖学金材料清单<br>官网 jiangren.com.au · 10 所澳洲院校实时动态</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">2980</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">图片</div></div>
+          <div class="stat-item"><div class="v">7</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步 <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：Unsplash 图 URL 保持绝对路径，WeChat 自动抓取 re-host。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → ANU 金色 hook / 深蓝 CTA / 米白 lead 保留 → 预览 → 发布。</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <pre id="log"></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ANU brand: primary #c7a85c (gold), accent #10162f (dark)
+const MP_INLINE_STYLES = {
+  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000000;margin-bottom:10px;',
+  'mp-meta': 'color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eeeeee;',
+  'mp-lead': 'background-color:#f5f4ec;border-radius:8px;padding:13px 15px;font-size:14px;color:#3a3322;line-height:1.75;margin-bottom:22px;',
+  'mp-hook': 'display:inline-block;background-color:#c7a85c;color:#10162f;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
+  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000000;margin-top:12px;margin-bottom:12px;padding-left:10px;border-left:4px solid #c7a85c;',
+  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background-color:#ffffff;',
+  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
+  'mp-oneline': 'background-color:#f5f4ec;border-left:3px solid #c7a85c;padding:10px 14px;font-size:14px;font-weight:500;color:#3a3a3a;margin:12px 0 14px;line-height:1.7;',
+  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
+  'mp-divider': 'border:0;border-top:1px solid #c7a85c;margin:22px 0;height:1px;',
+  'mp-quickview': 'background-color:#f9f6ea;padding:16px;border-radius:8px;margin:22px 0;border-left:3px solid #c7a85c;',
+  'mp-cta': 'background-color:#10162f;color:#c7a85c;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
+};
+
+function applyInlineStyles(root) {
+  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      el.setAttribute('style', style + (el.getAttribute('style') || ''));
+    });
+  });
+  root.querySelectorAll('.mp-meta .author').forEach(el =>
+    el.setAttribute('style', 'color:#8a7136;font-weight:600;'));
+  root.querySelectorAll('.mp-oneline strong').forEach(el =>
+    el.setAttribute('style', 'color:#000000;'));
+  root.querySelectorAll('.mp-source a').forEach(el =>
+    el.setAttribute('style', 'color:#c7a85c;text-decoration:none;'));
+  root.querySelectorAll('.mp-quickview h3').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000000;font-weight:700;'));
+  root.querySelectorAll('.mp-quickview ul').forEach(el =>
+    el.setAttribute('style', 'padding-left:18px;margin:0;'));
+  root.querySelectorAll('.mp-quickview li').forEach(el =>
+    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
+  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
+    el.setAttribute('style', 'color:#8a7136;font-weight:700;'));
+  root.querySelectorAll('.mp-cta .big').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#c7a85c;'));
+  root.querySelectorAll('.mp-cta .sub').forEach(el =>
+    el.setAttribute('style', 'font-size:12px;color:#a28f54;line-height:1.7;'));
+  root.querySelectorAll('p').forEach(el => {
+    const existing = el.getAttribute('style') || '';
+    if (!existing.includes('margin-bottom') && !existing.includes('margin:')) {
+      el.setAttribute('style', 'margin:0 0 12px;color:#333333;font-size:15px;line-height:1.85;' + existing);
+    }
+  });
+  root.querySelectorAll('code').forEach(el =>
+    el.setAttribute('style', 'background-color:#f5f4ec;padding:1px 6px;border-radius:3px;font-size:13px;color:#10162f;'));
+  ['mp-lead', 'mp-oneline', 'mp-quickview', 'mp-cta'].forEach(cls => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      if (el.tagName.toLowerCase() === 'section') return;
+      const wrapper = document.createElement('section');
+      wrapper.setAttribute('style', MP_INLINE_STYLES[cls] || '');
+      el.removeAttribute('style');
+      el.setAttribute('style', 'background-color:transparent;padding:0;margin:0;');
+      wrapper.appendChild(el.cloneNode(true));
+      el.replaceWith(wrapper);
+    });
+  });
+  root.querySelectorAll('.mp-hook').forEach(el => {
+    if (el.tagName.toLowerCase() === 'span') return;
+    const span = document.createElement('span');
+    span.setAttribute('style', MP_INLINE_STYLES['mp-hook'] || '');
+    span.textContent = el.textContent;
+    el.replaceWith(span);
+  });
+}
+
+const logEl = document.getElementById('log');
+function log(msg) {
+  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  logEl.textContent += `[${t}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  applyInlineStyles(article);
+  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+  const plain = article.innerText;
+  try {
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([plain], { type: 'text/plain' }),
+    });
+    navigator.clipboard.write([item]).then(() => {
+      const bgHits = (html.match(/background-color:/g) || []).length;
+      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
+      const sectionHits = (html.match(/<section /g) || []).length;
+      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
+    });
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = html; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    log('✅ 富文本已复制（fallback）');
+  }
+}
+
+function mpCopyMarkdown() {
+  const article = document.getElementById('mp-article');
+  const md = article.innerText;
+  navigator.clipboard.writeText(md).then(() => log('✅ MD 已复制'));
+}
+
+document.getElementById('btn-copy-html').addEventListener('click', mpCopyHtml);
+document.getElementById('btn-copy-md').addEventListener('click', mpCopyMarkdown);
+log('📦 ANU 2026-04-21 mp-article 已加载');
+</script>
+</body>
+</html>
