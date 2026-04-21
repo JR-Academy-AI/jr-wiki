@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>USYD 悉尼大学 2026-04-09 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uni-primary: #e64626;  /* USYD 红橙 */
+    --uni-accent: #ffce44;   /* USYD 金 */
+    --uni-text: #ffffff;
+    --brand-dark: #10162f;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #eef0f4;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
+    padding: 22px 26px; margin-bottom: 24px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--uni-primary); }
+  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; padding: 10px 16px;
+    border: 2px solid var(--brand-dark);
+    background: #fff; color: var(--brand-dark);
+    border-radius: 10px; transition: all 0.12s;
+  }
+  .btn:hover { background: var(--uni-accent); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .btn.primary { background: var(--uni-primary); color: #fff; }
+
+  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  .phone-wrap { position: sticky; top: 20px; }
+  .phone {
+    width: 100%; max-width: 420px; margin: 0 auto;
+    background: #f5f6f9;
+    border: 2px solid var(--brand-dark);
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .phone-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .phone-bar .dot { width: 8px; height: 8px; background: var(--uni-primary); border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .mp {
+    background: #fff; border-radius: 18px;
+    padding: 26px 20px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+    font-size: 15px; line-height: 1.85; color: #222;
+    max-height: 78vh; overflow-y: auto;
+  }
+  .mp::-webkit-scrollbar { width: 6px; }
+  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
+
+  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
+  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
+    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
+  .mp-meta .author { color: var(--uni-primary); font-weight: 600; }
+  .mp-lead {
+    background: #f1f5f9; border-radius: 8px; padding: 13px 15px;
+    font-size: 14px; color: #334155; line-height: 1.75; margin-bottom: 22px;
+  }
+  .mp-hook {
+    display: inline-block; background: var(--uni-primary); color: #fff;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .mp-h2 {
+    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
+    margin: 12px 0 12px; padding-left: 10px;
+    border-left: 4px solid var(--uni-primary);
+  }
+  .mp-alt-img {
+    width: 100%; display: block; margin: 10px 0 4px;
+    border-radius: 8px;
+  }
+  .mp-oneline {
+    background: #fff4d1; border-left: 3px solid var(--uni-accent);
+    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #3a3a3a;
+    margin: 12px 0 14px; line-height: 1.7;
+  }
+  .mp-oneline strong { color: #000; }
+  .mp p { margin: 0 0 12px; color: #333; font-size: 15px; line-height: 1.85; }
+  .mp-source { font-size: 12px; color: #8a8a8a; padding-top: 8px; margin-top: 8px;
+    border-top: 1px dashed #e5e7eb; word-break: break-all; }
+  .mp-source a { color: #3b82f6; text-decoration: none; }
+  .mp-divider { border: 0; border-top: 1px solid #e5e7eb; margin: 22px 0; height: 1px; }
+  .mp-quickview {
+    background: #fff8ee; padding: 16px; border-radius: 8px; margin: 22px 0;
+    border-left: 3px solid var(--uni-primary);
+  }
+  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; font-weight: 700; }
+  .mp-quickview ul { padding-left: 18px; margin: 0; }
+  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; line-height: 1.7; }
+  .mp-quickview li strong { color: var(--uni-primary); font-weight: 700; }
+  .mp-cta {
+    background: var(--uni-primary); color: #fff;
+    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
+  }
+  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; color: #fff; }
+  .mp-cta .sub { font-size: 12px; color: #d1d5db; line-height: 1.7; }
+
+  .panel .card {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 14px;
+    padding: 18px 20px; margin-bottom: 16px;
+    box-shadow: 4px 4px 0 var(--brand-dark);
+  }
+  .panel h2 { font-size: 15px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .panel .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--uni-accent); color: var(--brand-dark); padding: 2px 7px; border-radius: 4px; }
+  .panel .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .panel .stat-item { text-align: center; }
+  .panel .stat-item .v { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--uni-primary); }
+  .panel .stat-item .k { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .panel ol { padding-left: 20px; font-size: 13px; line-height: 1.8; color: #334155; }
+  .panel code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--brand-dark); }
+  #log { background: #0f172a; color: #cbd5e1; padding: 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; max-height: 140px; overflow-y: auto; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1><span>USYD 悉尼大学</span> 公众号文章 · 2026-04-09</h1>
+      <div class="sub">左侧 375px 手机预览 · 粘到 mp.weixin.qq.com 前点「📋 复制富文本」即可保留颜色。</div>
+    </div>
+    <div class="acts">
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn primary" id="btn-copy-md">📝 复制 MD</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+          <div class="mp-title">USYD Google 注资 AI 研究 + QS 计算机全球第38 + 副校长奖学金加码到 6 万澳元｜USYD 日报 04-09</div>
+          <div class="mp-meta">
+            <span class="author">JR Academy 澳洲留学</span>
+            <span>·</span><span>2026-04-09</span>
+            <span>·</span><span>阅读约 7 分钟</span>
+          </div>
+
+          <div class="mp-lead">今天悉大给 2026 入学的国际生甩了三颗硬货：Google Australia 正式注资 Digital Frontiers AI 研究计划、QS 2026 计算机与数据科学双双拿下全球第 38、Vice-Chancellor's International Scholarships Scheme 新增 60,000 澳元档位。对 CS / Data Science 方向的同学，这三条刚好覆盖"科研机会 + 学科排名 + 学费减免"，值得花 5 分钟看完。</div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">01 · 科研合作</div>
+          <div class="mp-h2">Google 注资悉大 Digital Frontiers：AI 效率、对话对齐、治理三线开火</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80" alt="Sydney University AI research">
+          <div class="mp-oneline"><strong>一句话</strong>：Google Australia 出资支持悉大 Digital Frontiers 研究计划，覆盖大模型推理效率、对话 AI 对齐人类语言习惯、AI 治理与信任三个方向，RA / PhD 名额会随之扩容。</div>
+          <p>3 月 31 日，悉尼大学宣布 Google Australia 将出资支持学校的 Digital Frontiers 研究计划。这次资助有三条明确的课题线，都是产业界最头疼的问题：大模型跑得动但烧钱、对话 Agent 不够"通人情"、AI 治理落不了地。</p>
+          <p>课题一由 Liu 副教授领衔，要为大模型画出一条"推理效率前沿"曲线，训练模型根据任务难度动态分配算力，而不是一股脑把 GPU 堆满。课题二是 Enfield 教授的团队做对话 AI 的 user alignment，目标是让 Agent 真的"听懂人话"而不是机械回复。第三条资助流向人文社科学院的 CAITG 中心（AI, Trust and Governance），专门从社会技术角度研究新兴 AI 技术的复杂性。</p>
+          <p><strong>对你的影响</strong>：对悉大 CS 和 Data Science 的在读生来说，接下来一年内会有更多顶会级项目可以挂名参与，PhD 名额和 RA 职位会比往年多。想走学术路线或在 industry lab 里做 research 的同学，现在就该去关注 Liu / Enfield 两位老师的招募信息。</p>
+          <div class="mp-source">来源：<a href="https://www.sydney.edu.au/news-opinion/news/2026/03/31/google-backs-digital-frontiers-research-at-university-of-sydney.html">The University of Sydney News</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">02 · 学科排名</div>
+          <div class="mp-h2">QS 2026 学科排名：计算机 + 数据科学与 AI 双双全球第 38</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80" alt="QS Rankings 2026">
+          <div class="mp-oneline"><strong>一句话</strong>：QS 2026 学科榜出炉，悉大 Computer Science and Information Systems 全球第 38、Data Science & AI 同样第 38，工程学科整体第 60，全校综合排名稳在 QS 全球第 25。</div>
+          <p>QS 2026 学科排名公布。悉大在技术方向的两个核心学科——Computer Science and Information Systems、Data Science & Artificial Intelligence——都拿到了全球第 38 名，澳洲前三。工程方向整体位列全球第 60，对想读 Software Engineering、Electrical Engineering 的同学来说依然是很靠前的档位。</p>
+          <p>从本科专业选择来说，Bachelor of Advanced Computing 是近几年申请量涨得最快的项目，里面两个细分方向——Computational Data Science 和 Cybersecurity——尤其热门。这两个方向走的是"CS 基础 + 行业直接对接"的路径，毕业生进四大 consulting 和 big tech 的比例明显高于其他 stream。</p>
+          <p><strong>对你的影响</strong>：这里有一个时间节点要记一下——悉大目前正在走 ACS（澳洲计算机学会）2027 年的重新认证流程，结果会在 2026 年 5 月公布。对准备走 PR 和技术移民路线的国际生，这个认证级别会直接影响将来的职业评估。等 5 月结果出来再决定 2027 年录取 offer 也不晚。</p>
+          <div class="mp-source">来源：<a href="https://ia.acs.org.au/article/2026/these-australian-unis-now-rank-in-global-top-100.html">Information Age / ACS</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">03 · 奖学金</div>
+          <div class="mp-h2">副校长国际奖学金加码：新增 60,000 澳元档 + 本科全额学费约 20 个名额</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?w=1200&q=80" alt="Sydney Scholarships">
+          <div class="mp-oneline"><strong>一句话</strong>：Vice-Chancellor's International Scholarships Scheme 2026 新增 60,000 澳元档位，分两学期发；本科端 Sydney International Undergraduate Academic Excellence Scholarship 全额学费减免约 20 名；研究型还有 USYDIS 每年 42,754 澳元。</div>
+          <p>2026 年入学季，悉大的 Vice-Chancellor's International Scholarships Scheme（VCIS）新增了一档 60,000 澳元的奖励等级，分两个学期发放。原本的 40,000 档位同步保留，两档都根据学术背景和选拔标准综合排名，不用单独申请。</p>
+          <p>本科端真正值得单独拎出来说的是 Sydney International Undergraduate Academic Excellence Scholarship。这个奖学金每年全球发放大约 20 个名额，覆盖 100% 学费加 Student Services Amenities Fee。评选时会特别考虑专业多样性和国别多样性——意思是相同分数下不同国家 / 不同专业的申请人反而更有机会被选中。</p>
+          <p>研究生方面，USYDIS（University of Sydney International Stipend Scholarship）仍然是读 Research Master 和 PhD 的首选，2025 年度的额度是每年 42,754 澳元。学校每年发放的奖学金总额超过 1.35 亿澳元，覆盖面比很多同学以为的要广。</p>
+          <p><strong>对你的影响</strong>：Research 方向的同学在申 Master 或 PhD 时记得直接在申请表里勾选 USYDIS 选项，不需要另开一份申请。本科想冲全额学费奖的同学，建议在递材料时主动补交研究 / 竞赛 / 社区服务的证明，专业多样性维度是个实打实的加分点。</p>
+          <div class="mp-source">来源：<a href="https://www.sydney.edu.au/scholarships/e/vice-chancellor-international-scholarships-scheme.html">University of Sydney Scholarships</a></div>
+
+          <div class="mp-quickview">
+            <h3>📌 今日速览</h3>
+            <ul>
+              <li><strong>Google × 悉大</strong>：Digital Frontiers 三条 AI 课题线落地，RA / PhD 名额随 funding 扩容。CS / DS 在读生直接受益。</li>
+              <li><strong>QS 2026</strong>：悉大 CS + Data Science & AI 双双全球第 38，澳洲前三；ACS 2027 重新认证 5 月出结果。</li>
+              <li><strong>奖学金组合</strong>：VCIS 新增 60k 澳元档 + 本科全额学费约 20 名 + 研究生 USYDIS 每年 42,754 澳元。</li>
+            </ul>
+          </div>
+
+          <div class="mp-cta">
+            <div class="big">🎓 计划申请 USYD 的同学？</div>
+            <div class="sub">关注 JR Academy 澳洲留学公众号 · 获取 USYD 奖学金材料清单 + ACS 认证时间线<br>官网 jiangren.com.au · 10 所澳洲院校实时动态</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">2900</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">图片</div></div>
+          <div class="stat-item"><div class="v">7</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步 <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：Unsplash 图 URL 保持绝对路径，WeChat 自动抓取 re-host。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → USYD 红橙 section 底 / 黄色 oneline / CTA 保留 → 预览 → 发布。</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <pre id="log"></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// USYD brand: primary #e64626, accent #ffce44
+const MP_INLINE_STYLES = {
+  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000000;margin-bottom:10px;',
+  'mp-meta': 'color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eeeeee;',
+  'mp-lead': 'background-color:#f1f5f9;border-radius:8px;padding:13px 15px;font-size:14px;color:#334155;line-height:1.75;margin-bottom:22px;',
+  'mp-hook': 'display:inline-block;background-color:#e64626;color:#ffffff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
+  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000000;margin-top:12px;margin-bottom:12px;padding-left:10px;border-left:4px solid #e64626;',
+  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background-color:#ffffff;',
+  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
+  'mp-oneline': 'background-color:#fff4d1;border-left:3px solid #ffce44;padding:10px 14px;font-size:14px;font-weight:500;color:#3a3a3a;margin:12px 0 14px;line-height:1.7;',
+  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
+  'mp-divider': 'border:0;border-top:1px solid #e64626;margin:22px 0;height:1px;',
+  'mp-quickview': 'background-color:#fff8ee;padding:16px;border-radius:8px;margin:22px 0;border-left:3px solid #e64626;',
+  'mp-cta': 'background-color:#e64626;color:#ffffff;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
+};
+
+function applyInlineStyles(root) {
+  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      el.setAttribute('style', style + (el.getAttribute('style') || ''));
+    });
+  });
+  root.querySelectorAll('.mp-meta .author').forEach(el =>
+    el.setAttribute('style', 'color:#e64626;font-weight:600;'));
+  root.querySelectorAll('.mp-oneline strong').forEach(el =>
+    el.setAttribute('style', 'color:#000000;'));
+  root.querySelectorAll('.mp-source a').forEach(el =>
+    el.setAttribute('style', 'color:#3b82f6;text-decoration:none;'));
+  root.querySelectorAll('.mp-quickview h3').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000000;font-weight:700;'));
+  root.querySelectorAll('.mp-quickview ul').forEach(el =>
+    el.setAttribute('style', 'padding-left:18px;margin:0;'));
+  root.querySelectorAll('.mp-quickview li').forEach(el =>
+    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
+  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
+    el.setAttribute('style', 'color:#e64626;font-weight:700;'));
+  root.querySelectorAll('.mp-cta .big').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#ffffff;'));
+  root.querySelectorAll('.mp-cta .sub').forEach(el =>
+    el.setAttribute('style', 'font-size:12px;color:#d1d5db;line-height:1.7;'));
+  root.querySelectorAll('p').forEach(el => {
+    const existing = el.getAttribute('style') || '';
+    if (!existing.includes('margin-bottom') && !existing.includes('margin:')) {
+      el.setAttribute('style', 'margin:0 0 12px;color:#333333;font-size:15px;line-height:1.85;' + existing);
+    }
+  });
+  root.querySelectorAll('code').forEach(el =>
+    el.setAttribute('style', 'background-color:#f1f5f9;padding:1px 6px;border-radius:3px;font-size:13px;color:#10162f;'));
+  ['mp-lead', 'mp-oneline', 'mp-quickview', 'mp-cta'].forEach(cls => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      if (el.tagName.toLowerCase() === 'section') return;
+      const wrapper = document.createElement('section');
+      wrapper.setAttribute('style', MP_INLINE_STYLES[cls] || '');
+      el.removeAttribute('style');
+      el.setAttribute('style', 'background-color:transparent;padding:0;margin:0;');
+      wrapper.appendChild(el.cloneNode(true));
+      el.replaceWith(wrapper);
+    });
+  });
+  root.querySelectorAll('.mp-hook').forEach(el => {
+    if (el.tagName.toLowerCase() === 'span') return;
+    const span = document.createElement('span');
+    span.setAttribute('style', MP_INLINE_STYLES['mp-hook'] || '');
+    span.textContent = el.textContent;
+    el.replaceWith(span);
+  });
+}
+
+const logEl = document.getElementById('log');
+function log(msg) {
+  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  logEl.textContent += `[${t}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  applyInlineStyles(article);
+  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+  const plain = article.innerText;
+  try {
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([plain], { type: 'text/plain' }),
+    });
+    navigator.clipboard.write([item]).then(() => {
+      const bgHits = (html.match(/background-color:/g) || []).length;
+      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
+      const sectionHits = (html.match(/<section /g) || []).length;
+      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
+      log(`   粘到公众号后若颜色丢失，先贴 Notion 对比——那里有色=WeChat 剥掉了，那里无色=前端 bug`);
+    });
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = html; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    log('✅ 富文本已复制（fallback）');
+  }
+}
+
+function mpCopyMarkdown() {
+  const article = document.getElementById('mp-article');
+  const md = article.innerText;
+  navigator.clipboard.writeText(md).then(() => log('✅ MD 已复制'));
+}
+
+document.getElementById('btn-copy-html').addEventListener('click', mpCopyHtml);
+document.getElementById('btn-copy-md').addEventListener('click', mpCopyMarkdown);
+log('📦 USYD 2026-04-09 mp-article 已加载');
+</script>
+</body>
+</html>

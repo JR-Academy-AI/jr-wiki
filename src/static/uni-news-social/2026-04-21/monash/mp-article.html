@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Monash 莫纳什大学 2026-04-21 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uni-primary: #006dae;  /* Monash 蓝 */
+    --uni-accent: #ffce44;   /* Monash 金 */
+    --uni-text: #ffffff;
+    --brand-dark: #10162f;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #eef0f4;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
+    padding: 22px 26px; margin-bottom: 24px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--uni-primary); }
+  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; padding: 10px 16px;
+    border: 2px solid var(--brand-dark);
+    background: #fff; color: var(--brand-dark);
+    border-radius: 10px; transition: all 0.12s;
+  }
+  .btn:hover { background: var(--uni-accent); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .btn.primary { background: var(--uni-primary); color: #fff; }
+
+  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  .phone-wrap { position: sticky; top: 20px; }
+  .phone {
+    width: 100%; max-width: 420px; margin: 0 auto;
+    background: #f5f6f9;
+    border: 2px solid var(--brand-dark);
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .phone-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .phone-bar .dot { width: 8px; height: 8px; background: var(--uni-primary); border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .mp {
+    background: #fff; border-radius: 18px;
+    padding: 26px 20px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+    font-size: 15px; line-height: 1.85; color: #222;
+    max-height: 78vh; overflow-y: auto;
+  }
+  .mp::-webkit-scrollbar { width: 6px; }
+  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
+
+  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
+  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
+    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
+  .mp-meta .author { color: var(--uni-primary); font-weight: 600; }
+  .mp-lead {
+    background: #f1f5f9; border-radius: 8px; padding: 13px 15px;
+    font-size: 14px; color: #334155; line-height: 1.75; margin-bottom: 22px;
+  }
+  .mp-hook {
+    display: inline-block; background: var(--uni-primary); color: #fff;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .mp-h2 {
+    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
+    margin: 12px 0 12px; padding-left: 10px;
+    border-left: 4px solid var(--uni-primary);
+  }
+  .mp-alt-img {
+    width: 100%; display: block; margin: 10px 0 4px;
+    border-radius: 8px;
+  }
+  .mp-oneline {
+    background: #fff4d1; border-left: 3px solid var(--uni-accent);
+    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #3a3a3a;
+    margin: 12px 0 14px; line-height: 1.7;
+  }
+  .mp-oneline strong { color: #000; }
+  .mp p { margin: 0 0 12px; color: #333; font-size: 15px; line-height: 1.85; }
+  .mp-source { font-size: 12px; color: #8a8a8a; padding-top: 8px; margin-top: 8px;
+    border-top: 1px dashed #e5e7eb; word-break: break-all; }
+  .mp-source a { color: #3b82f6; text-decoration: none; }
+  .mp-divider { border: 0; border-top: 1px solid #e5e7eb; margin: 22px 0; height: 1px; }
+  .mp-quickview {
+    background: #fff8ee; padding: 16px; border-radius: 8px; margin: 22px 0;
+    border-left: 3px solid var(--uni-primary);
+  }
+  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; font-weight: 700; }
+  .mp-quickview ul { padding-left: 18px; margin: 0; }
+  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; line-height: 1.7; }
+  .mp-quickview li strong { color: var(--uni-primary); font-weight: 700; }
+  .mp-cta {
+    background: var(--uni-primary); color: #fff;
+    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
+  }
+  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; color: #fff; }
+  .mp-cta .sub { font-size: 12px; color: #d1d5db; line-height: 1.7; }
+
+  .panel .card {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 14px;
+    padding: 18px 20px; margin-bottom: 16px;
+    box-shadow: 4px 4px 0 var(--brand-dark);
+  }
+  .panel h2 { font-size: 15px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .panel .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--uni-accent); color: var(--brand-dark); padding: 2px 7px; border-radius: 4px; }
+  .panel .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .panel .stat-item { text-align: center; }
+  .panel .stat-item .v { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--uni-primary); }
+  .panel .stat-item .k { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .panel ol { padding-left: 20px; font-size: 13px; line-height: 1.8; color: #334155; }
+  .panel code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--brand-dark); }
+  #log { background: #0f172a; color: #cbd5e1; padding: 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; max-height: 140px; overflow-y: auto; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1><span>Monash 莫纳什大学</span> 公众号文章 · 2026-04-21</h1>
+      <div class="sub">左侧 375px 手机预览 · 粘到 mp.weixin.qq.com 前点「📋 复制富文本」即可保留颜色。</div>
+    </div>
+    <div class="acts">
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn primary" id="btn-copy-md">📝 复制 MD</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+          <div class="mp-title">Monash 光学登 Nature Communications + 博士奖学金 3.7 万/年 + 本科 Merit 1.5 万/年｜Monash 日报 04-21</div>
+          <div class="mp-meta">
+            <span class="author">JR Academy 澳洲留学</span>
+            <span>·</span><span>2026-04-21</span>
+            <span>·</span><span>阅读约 7 分钟</span>
+          </div>
+
+          <div class="mp-lead">今天 Monash 的三条新闻走的是"硬科研 + 硬奖学金"路线：纳米光子实验室在 Nature Communications 发表单片集成 11 项光学功能的突破、Co-funded Monash Graduate Scholarship 给研究型硕博开全额学费 + 每年 3.7 万澳元生活费、本科 International Merit Scholarship 维持 1.5 万澳元一年自动评估。想冲 PhD、想拿本科奖学金、想看 Monash 科研分量的同学，今天这三条基本够用了。</div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">01 · 科研合作</div>
+          <div class="mp-h2">Monash 纳米光子登 Nature Communications：单片集成 11 项光学功能</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=1200&q=80" alt="Monash Nanophotonics Research">
+          <div class="mp-oneline"><strong>一句话</strong>：Monash 纳米光子实验室 4 月 10 日在 Nature Communications 发文，做出一类"无序马赛克超表面"，用受控的混乱结构让一片比指甲盖还小的透镜同时承担 11 项光学任务。</div>
+          <p>传统超表面研究追求纳米结构的精密排列——像在显微镜下排积木。Monash 团队反着来，把纳米结构按受控的马赛克图案散布上去，结果性能没降，功能密度反而明显上升。在验证实验里，他们做出了一片能同时实现成像、传感、通信等 11 项光学功能的单片透镜。</p>
+          <p>这次研究联合了英国艾克赛特大学（University of Exeter）和南非威特沃特斯兰德大学（University of the Witwatersrand），属于跨国联合实验室性质。Nature Communications 本身就是 Nature 系列里方向最综合的一本刊物，能上刊意味着研究的创新性和数据完整度都过得去。</p>
+          <p><strong>对你的影响</strong>：Monash 物理、材料、工程方向的同学可以把这个实验室作为 PhD 方向的备选。对做光学器件、光子芯片的同学尤其直接——能在 Nature 级别期刊有发表记录的导师，名额不会太多，现在主动联系 supervisor 聊 PhD 计划是正确的时机。</p>
+          <div class="mp-source">来源：<a href="https://www.monash.edu/science/news-events/news/2026/scientists-turn-mess-into-breakthrough-chaotic-design-unlocks-next-generation-optical-devices">Monash Science News</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">02 · 奖学金</div>
+          <div class="mp-h2">Co-funded Monash Graduate Scholarship：全免学费 + 3.7 万澳元/年 + 2000 搬家补贴</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&q=80" alt="Monash Graduate Research">
+          <div class="mp-oneline"><strong>一句话</strong>：Monash 最主要的研究学位全额资助项目，面向全球所有国籍开放，支持 Master by Research 和 PhD。2026 年 8 月 31 日截止，申请研究项目时系统自动评估奖学金资格。</div>
+          <p>Co-funded Monash Graduate Scholarship 的 2026 年度资助标准是：全额学费豁免 + AUD 37,145 一年生活费 + AUD 2,000 一次性搬家补贴。名额由大学和录取学院/系共同出资，所以能拿到的研究课题都会有学院背书。申请流程上不需要另外填奖学金表，递交研究项目申请的时候系统会自动同步评估。</p>
+          <p>评审主要看三项：学术记录、研究产出（发表过的论文或报告）、前期研究经历（有没有真正做过实验室工作或独立课题）。这也意味着本科阶段没有研究经历的同学，直接冲 PhD + 全额奖学金成功率偏低。现实一点的路径是先读一年 Master by Research 攒一篇发表或 working paper，再转 PhD。</p>
+          <p><strong>对你的影响</strong>：AUD 37,145 一年的生活费，按墨尔本的消费水平基本能覆盖房租加日常开支，不需要额外兼职。2026 年 8 月 31 日截止，离现在还有约 4 个月，刚好是准备套磁邮件和整理研究材料的窗口期。选导师的时候记得看实验室最新发表记录和在读 PhD 人数，别选已经 over-subscribed 的课题组。</p>
+          <div class="mp-source">来源：<a href="https://al-fanarmedia.org/2026/04/co-funded-monash-graduate-scholarships-in-australia-fully-funded-opportunities-for-research-degrees/">Al-Fanar Media</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">03 · 奖学金</div>
+          <div class="mp-h2">Monash International Merit Scholarship：本科 1.5 万澳元/年，自动评估</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1200&q=80" alt="Monash International Students">
+          <div class="mp-oneline"><strong>一句话</strong>：面向国际本科生的主力奖学金，2026 年起调整为 AUD 15,000/年（按 48 credit points 计），覆盖整个学位读完为止，拿到本科 offer 就自动纳入评估、不需要另外申请。</div>
+          <p>Monash International Merit Scholarship 的选拔方式是所有拿到 Monash 本科录取通知的国际学生都会被自动放进评估池。选拔标准以学术成绩为主，高中成绩越好获奖概率越高。换算成中国学生比较熟悉的参照系：985/211 高考段、IB 38+ 或者 A-Level AAB 以上的分数段能进入有效竞争。</p>
+          <p>AUD 15,000 对应的是大约三门 unit 的学费，能覆盖约 30-40% 的年度学费（按专业不同有差）。和其他学校比，Monash 这种"自动评估"的方式更省心——不少学校要求单独填奖学金申请，学生容易漏掉窗口期。</p>
+          <p><strong>对你的影响</strong>：Monash 的学位课里部分 unit 可以选 online 修，拿到 Merit Scholarship 的同学在时间安排上有一些灵活性。前两年集中修必修，后期在奖学金兜底的情况下有更多空间选修跨学院 elective 或参与研究项目。2026 年的截止时间按各轮录取节点算，S1（二月开学）一般前一年 10 月底截止，建议早点准备材料。</p>
+          <div class="mp-source">来源：<a href="https://www.monash.edu/study/fees-scholarships/scholarships/find-a-scholarship/international-merit-5770">Monash International Merit Scholarship</a></div>
+
+          <div class="mp-quickview">
+            <h3>📌 今日速览</h3>
+            <ul>
+              <li><strong>Nature 级科研</strong>：纳米光子实验室单片透镜集成 11 项光学功能，Nature Communications 发文，想走光子芯片方向的 PhD 候选实验室。</li>
+              <li><strong>博士全额奖</strong>：Co-funded Monash Graduate Scholarship 全免学费 + 3.7 万/年 + 2000 搬家补贴，8 月 31 日截止。</li>
+              <li><strong>本科自动评</strong>：International Merit 1.5 万澳元/年，覆盖整个学位，拿到 offer 就自动评估，985/IB 38+ 进入有效竞争。</li>
+            </ul>
+          </div>
+
+          <div class="mp-cta">
+            <div class="big">🎓 计划申请 Monash 的同学？</div>
+            <div class="sub">关注 JR Academy 澳洲留学公众号 · 获取 Monash 申请时间线 + 奖学金材料清单<br>官网 jiangren.com.au · 10 所澳洲院校实时动态</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">2950</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">图片</div></div>
+          <div class="stat-item"><div class="v">7</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步 <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：Unsplash 图 URL 保持绝对路径，WeChat 自动抓取 re-host。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → Monash 蓝色 section 底 / 黄色 oneline / 深蓝 CTA 保留 → 预览 → 发布。</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <pre id="log"></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Monash brand: primary #006dae, accent #ffce44
+const MP_INLINE_STYLES = {
+  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000000;margin-bottom:10px;',
+  'mp-meta': 'color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eeeeee;',
+  'mp-lead': 'background-color:#f1f5f9;border-radius:8px;padding:13px 15px;font-size:14px;color:#334155;line-height:1.75;margin-bottom:22px;',
+  'mp-hook': 'display:inline-block;background-color:#006dae;color:#ffffff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
+  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000000;margin-top:12px;margin-bottom:12px;padding-left:10px;border-left:4px solid #006dae;',
+  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background-color:#ffffff;',
+  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
+  'mp-oneline': 'background-color:#fff4d1;border-left:3px solid #ffce44;padding:10px 14px;font-size:14px;font-weight:500;color:#3a3a3a;margin:12px 0 14px;line-height:1.7;',
+  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
+  'mp-divider': 'border:0;border-top:1px solid #006dae;margin:22px 0;height:1px;',
+  'mp-quickview': 'background-color:#fff8ee;padding:16px;border-radius:8px;margin:22px 0;border-left:3px solid #006dae;',
+  'mp-cta': 'background-color:#006dae;color:#ffffff;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
+};
+
+function applyInlineStyles(root) {
+  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      el.setAttribute('style', style + (el.getAttribute('style') || ''));
+    });
+  });
+  root.querySelectorAll('.mp-meta .author').forEach(el =>
+    el.setAttribute('style', 'color:#006dae;font-weight:600;'));
+  root.querySelectorAll('.mp-oneline strong').forEach(el =>
+    el.setAttribute('style', 'color:#000000;'));
+  root.querySelectorAll('.mp-source a').forEach(el =>
+    el.setAttribute('style', 'color:#3b82f6;text-decoration:none;'));
+  root.querySelectorAll('.mp-quickview h3').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000000;font-weight:700;'));
+  root.querySelectorAll('.mp-quickview ul').forEach(el =>
+    el.setAttribute('style', 'padding-left:18px;margin:0;'));
+  root.querySelectorAll('.mp-quickview li').forEach(el =>
+    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
+  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
+    el.setAttribute('style', 'color:#006dae;font-weight:700;'));
+  root.querySelectorAll('.mp-cta .big').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#ffffff;'));
+  root.querySelectorAll('.mp-cta .sub').forEach(el =>
+    el.setAttribute('style', 'font-size:12px;color:#d1d5db;line-height:1.7;'));
+  root.querySelectorAll('p').forEach(el => {
+    const existing = el.getAttribute('style') || '';
+    if (!existing.includes('margin-bottom') && !existing.includes('margin:')) {
+      el.setAttribute('style', 'margin:0 0 12px;color:#333333;font-size:15px;line-height:1.85;' + existing);
+    }
+  });
+  root.querySelectorAll('code').forEach(el =>
+    el.setAttribute('style', 'background-color:#f1f5f9;padding:1px 6px;border-radius:3px;font-size:13px;color:#10162f;'));
+  ['mp-lead', 'mp-oneline', 'mp-quickview', 'mp-cta'].forEach(cls => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      if (el.tagName.toLowerCase() === 'section') return;
+      const wrapper = document.createElement('section');
+      wrapper.setAttribute('style', MP_INLINE_STYLES[cls] || '');
+      el.removeAttribute('style');
+      el.setAttribute('style', 'background-color:transparent;padding:0;margin:0;');
+      wrapper.appendChild(el.cloneNode(true));
+      el.replaceWith(wrapper);
+    });
+  });
+  root.querySelectorAll('.mp-hook').forEach(el => {
+    if (el.tagName.toLowerCase() === 'span') return;
+    const span = document.createElement('span');
+    span.setAttribute('style', MP_INLINE_STYLES['mp-hook'] || '');
+    span.textContent = el.textContent;
+    el.replaceWith(span);
+  });
+}
+
+const logEl = document.getElementById('log');
+function log(msg) {
+  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  logEl.textContent += `[${t}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  applyInlineStyles(article);
+  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+  const plain = article.innerText;
+  try {
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([plain], { type: 'text/plain' }),
+    });
+    navigator.clipboard.write([item]).then(() => {
+      const bgHits = (html.match(/background-color:/g) || []).length;
+      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
+      const sectionHits = (html.match(/<section /g) || []).length;
+      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
+      log(`   粘到公众号后若颜色丢失，先贴 Notion 对比——那里有色=WeChat 剥掉了，那里无色=前端 bug`);
+    });
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = html; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    log('✅ 富文本已复制（fallback）');
+  }
+}
+
+function mpCopyMarkdown() {
+  const article = document.getElementById('mp-article');
+  const md = article.innerText;
+  navigator.clipboard.writeText(md).then(() => log('✅ MD 已复制'));
+}
+
+document.getElementById('btn-copy-html').addEventListener('click', mpCopyHtml);
+document.getElementById('btn-copy-md').addEventListener('click', mpCopyMarkdown);
+log('📦 Monash 2026-04-21 mp-article 已加载');
+</script>
+</body>
+</html>

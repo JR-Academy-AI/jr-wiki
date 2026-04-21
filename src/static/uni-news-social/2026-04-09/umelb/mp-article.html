@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>UMelb 墨尔本大学 2026-04-09 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uni-primary: #094183;  /* UMelb 深蓝 */
+    --uni-accent: #ffce44;   /* 金色高亮 */
+    --uni-text: #ffffff;
+    --brand-dark: #10162f;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #eef0f4;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
+    padding: 22px 26px; margin-bottom: 24px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--uni-primary); }
+  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; padding: 10px 16px;
+    border: 2px solid var(--brand-dark);
+    background: #fff; color: var(--brand-dark);
+    border-radius: 10px; transition: all 0.12s;
+  }
+  .btn:hover { background: var(--uni-accent); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .btn.primary { background: var(--uni-primary); color: #fff; }
+
+  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  .phone-wrap { position: sticky; top: 20px; }
+  .phone {
+    width: 100%; max-width: 420px; margin: 0 auto;
+    background: #f5f6f9;
+    border: 2px solid var(--brand-dark);
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .phone-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .phone-bar .dot { width: 8px; height: 8px; background: var(--uni-primary); border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .mp {
+    background: #fff; border-radius: 18px;
+    padding: 26px 20px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+    font-size: 15px; line-height: 1.85; color: #222;
+    max-height: 78vh; overflow-y: auto;
+  }
+  .mp::-webkit-scrollbar { width: 6px; }
+  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
+
+  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
+  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
+    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
+  .mp-meta .author { color: var(--uni-primary); font-weight: 600; }
+  .mp-lead {
+    background: #f1f5f9; border-radius: 8px; padding: 13px 15px;
+    font-size: 14px; color: #334155; line-height: 1.75; margin-bottom: 22px;
+  }
+  .mp-hook {
+    display: inline-block; background: var(--uni-primary); color: #fff;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .mp-h2 {
+    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
+    margin: 12px 0 12px; padding-left: 10px;
+    border-left: 4px solid var(--uni-primary);
+  }
+  .mp-alt-img {
+    width: 100%; display: block; margin: 10px 0 4px;
+    border-radius: 8px;
+  }
+  .mp-oneline {
+    background: #fff4d1; border-left: 3px solid var(--uni-accent);
+    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #3a3a3a;
+    margin: 12px 0 14px; line-height: 1.7;
+  }
+  .mp-oneline strong { color: #000; }
+  .mp p { margin: 0 0 12px; color: #333; font-size: 15px; line-height: 1.85; }
+  .mp-source { font-size: 12px; color: #8a8a8a; padding-top: 8px; margin-top: 8px;
+    border-top: 1px dashed #e5e7eb; word-break: break-all; }
+  .mp-source a { color: #3b82f6; text-decoration: none; }
+  .mp-divider { border: 0; border-top: 1px solid #e5e7eb; margin: 22px 0; height: 1px; }
+  .mp-quickview {
+    background: #fff8ee; padding: 16px; border-radius: 8px; margin: 22px 0;
+    border-left: 3px solid var(--uni-primary);
+  }
+  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; font-weight: 700; }
+  .mp-quickview ul { padding-left: 18px; margin: 0; }
+  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; line-height: 1.7; }
+  .mp-quickview li strong { color: var(--uni-primary); font-weight: 700; }
+  .mp-cta {
+    background: var(--uni-primary); color: #fff;
+    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
+  }
+  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; color: #fff; }
+  .mp-cta .sub { font-size: 12px; color: #d1d5db; line-height: 1.7; }
+
+  .panel .card {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 14px;
+    padding: 18px 20px; margin-bottom: 16px;
+    box-shadow: 4px 4px 0 var(--brand-dark);
+  }
+  .panel h2 { font-size: 15px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .panel .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--uni-accent); color: var(--brand-dark); padding: 2px 7px; border-radius: 4px; }
+  .panel .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .panel .stat-item { text-align: center; }
+  .panel .stat-item .v { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--uni-primary); }
+  .panel .stat-item .k { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .panel ol { padding-left: 20px; font-size: 13px; line-height: 1.8; color: #334155; }
+  .panel code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--brand-dark); }
+  #log { background: #0f172a; color: #cbd5e1; padding: 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; max-height: 140px; overflow-y: auto; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1><span>UMelb 墨尔本大学</span> 公众号文章 · 2026-04-09</h1>
+      <div class="sub">左侧 375px 手机预览 · 粘到 mp.weixin.qq.com 前点「📋 复制富文本」即可保留颜色。</div>
+    </div>
+    <div class="acts">
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn primary" id="btn-copy-md">📝 复制 MD</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+          <div class="mp-title">墨大 AI 仿生手拿 1080 万基金 + 研究生年津贴 39,500 澳元 + Mid-year 申请开放｜UMelb 日报 04-09</div>
+          <div class="mp-meta">
+            <span class="author">JR Academy 澳洲留学</span>
+            <span>·</span><span>2026-04-09</span>
+            <span>·</span><span>阅读约 7 分钟</span>
+          </div>
+
+          <div class="mp-lead">墨大今天一次性丢了三件事：工程学院的 AI 驱动儿童仿生手项目拿下 1,080 万澳元商业化基金、Melbourne Research Scholarship 2026 年津贴定在 39,500 澳元/年、Semester 2 Mid-year 申请仍然开放到 5 月 31 日。三件事把"做科研的入口、读研的钱袋、错过主申请的补救通道"这三件最影响留学决策的节点都覆盖了——尤其是 CS / 工程 / 教育方向的同学，值得花 5 分钟看完。</div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">01 · 科研合作</div>
+          <div class="mp-h2">AI 驱动仿生手项目落地：1,080 万澳元联邦基金 + 儿童医院 + Capgemini</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=80" alt="UMelb AI Bionic Arm">
+          <div class="mp-oneline"><strong>一句话</strong>：墨大工程学院 Alireza Mohammadi 博士团队拿下 Australia's Economic Accelerator (AEA) Ignite Round 2 商业化基金，代号 X-Limb 的 AI 驱动儿童仿生手进入临床化阶段，合作方包括皇家儿童医院、Aussie Hands、Meablex、Capgemini Australia。</div>
+          <p>这次拿到的是 AEA Ignite Round 2 的一笔重要商业化资金，目标是做下一代 AI 驱动的儿童仿生手臂。技术细节里有三点比较硬核：AI 系统实时感知残肢肌肉信号、自适应插槽可以随孩子成长自动调整、整个仿生手用轻量化 3D 打印材料制造（代号 X-Limb）。</p>
+          <p>合作阵容比钱还值得关注——皇家儿童医院负责临床、Aussie Hands Foundation 对接使用者社区、Meablex 做硬件制造、Capgemini Australia 提供产业化支持。等于是从研究到临床到量产的一整条链路，在一笔基金里被打通了。</p>
+          <p><strong>对你的影响</strong>：FEIT（工程与信息技术学院）目前有 50+ 名 AI 相关教职、120+ 名 PhD 学生，规模是南半球最大的 AI 研究机构之一。对申请 Master of Computer Science 或 Master of Engineering (Mechatronics) 的同学来说，这类跨学科项目是实习和论文选题的稀缺入口，进到组里就能接真实产业化课题。</p>
+          <div class="mp-source">来源：<a href="https://www.unimelb.edu.au/newsroom/news/2026/january/federal-funding-supports-commercialisation-of-research-innovations-across-key-sectors">University of Melbourne Newsroom</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">02 · 奖学金</div>
+          <div class="mp-h2">研究生奖学金更新：年津贴 39,500 澳元 + 全额学费豁免</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=1200&q=80" alt="UMelb Graduate Research Scholarship">
+          <div class="mp-oneline"><strong>一句话</strong>：Melbourne Research Scholarship (MRS) + Research Training Program (RTP) 2026 额度：每年 39,500 澳元生活津贴，Research Master 2 年全免学费、PhD 最长 3.5 年全免；2026 入学结果 12 月 21 日前通知。</div>
+          <p>这笔奖学金走的是自动评估制——不用单独填奖学金表，在截止日前提交 Research Master 或 PhD 的学位申请，系统就会把材料推进奖学金评审池。津贴按全日制比例发放，Research Master 最长拿 2 年、PhD 最长 3.5 年。学费部分 Research Master 两年全免、PhD 四年全免。</p>
+          <p>计算机方向还有一个专门通道：Computing and Information Systems PhD Scholarship，面向墨大 Master of Computer Science 的优秀毕业生，可以直接衔接读 PhD in Engineering and IT。对本来就在墨大读 MCS 的同学是一条比较顺的升学路径——不需要重新找导师冷启动，系里的教授就是你未来的 supervisor 池。</p>
+          <p><strong>对你的影响</strong>：墨大目前累计有 1,200+ 种奖学金和助学金，体量在澳洲高校里排第一。想走科研路线的同学尽量在递交 Research 学位申请时同步准备研究提案 + 导师 EOI（Expression of Interest），很多基金是自动评估制，没联系导师也能参加评审，但拿到 funded position 的概率会明显低于已经有教授承接的申请人。</p>
+          <div class="mp-source">来源：<a href="https://scholarships.unimelb.edu.au/awards/graduate-research-scholarships">University of Melbourne Scholarships</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">03 · 招生政策</div>
+          <div class="mp-h2">Mid-year 申请开放到 5 月 31 日 + 教育硕士语言要求下调</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&q=80" alt="UMelb Admissions">
+          <div class="mp-oneline"><strong>一句话</strong>：Semester 2（7 月开学）的 Mid-year 入学申请仍开放，截止 2026 年 5 月 31 日；Master of Education、Master of TESOL、Master of Teaching 从 2026 年起英语入学要求下调，其他专业保持不变；申请费 154 澳元。</div>
+          <p>S1（2 月）的国际本科申请已经截止，但 S2（7 月开学）的 Mid-year 入学通道还在开放。对错过主申请周期的同学来说，这是一次真实存在的补救机会——热门 IT 硕士里的 Master of Information Technology、Master of Data Science 都接受 Mid-year 入学。</p>
+          <p>教育学院这次调整了英语入学要求，受益的是 Master of Education、Master of TESOL 和 Master of Teaching 三个项目，新标准比之前更友好，比较适合语言分数卡在边缘的同学。要注意：调整只覆盖这三个项目，其他专业英语要求没变。</p>
+          <p><strong>对你的影响</strong>：墨大没有 Early Offer 系统，申请完全走综合评估路线——文书、GPA、先修科目（本科需要满足 VCE 或等效学历、ATAR 或同等成绩）都会被整体打分。申请费 154 澳元不退，建议在交申请前先过一遍 course entry requirements 页面，避免递完发现硬指标没达到。</p>
+          <div class="mp-source">来源：<a href="https://study.unimelb.edu.au/how-to-apply/undergraduate-study/international-applications/applications">Study Melbourne International Applications</a></div>
+
+          <div class="mp-quickview">
+            <h3>📌 今日速览</h3>
+            <ul>
+              <li><strong>AI 仿生手</strong>：1,080 万澳元基金，儿童医院 + Capgemini 合作链路打通，FEIT 科研组 MCS / Mechatronics 学生有新选题入口。</li>
+              <li><strong>研究生奖学金</strong>：MRS + RTP 年津贴 39,500 澳元，Research Master / PhD 学费全免，自动评估制，2026 入学 12 月 21 日前通知。</li>
+              <li><strong>Mid-year 申请</strong>：S2（7 月开学）5 月 31 日截止，MIT / Data Science 接收；教育学硕士英语要求下调；申请费 154 澳元。</li>
+            </ul>
+          </div>
+
+          <div class="mp-cta">
+            <div class="big">🎓 计划申请 UMelb 的同学？</div>
+            <div class="sub">关注 JR Academy 澳洲留学公众号 · 获取 UMelb 申请时间线 + Research Scholarship 材料清单<br>官网 jiangren.com.au · 10 所澳洲院校实时动态</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">2850</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">图片</div></div>
+          <div class="stat-item"><div class="v">7</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步 <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：Unsplash 图 URL 保持绝对路径，WeChat 自动抓取 re-host。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → UMelb 深蓝 section 底 / 黄色 oneline / 深蓝 CTA 保留 → 预览 → 发布。</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <pre id="log"></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// UMelb brand: primary #094183, accent #ffce44
+const MP_INLINE_STYLES = {
+  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000000;margin-bottom:10px;',
+  'mp-meta': 'color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eeeeee;',
+  'mp-lead': 'background-color:#f1f5f9;border-radius:8px;padding:13px 15px;font-size:14px;color:#334155;line-height:1.75;margin-bottom:22px;',
+  'mp-hook': 'display:inline-block;background-color:#094183;color:#ffffff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
+  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000000;margin-top:12px;margin-bottom:12px;padding-left:10px;border-left:4px solid #094183;',
+  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background-color:#ffffff;',
+  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
+  'mp-oneline': 'background-color:#ffce44;border-left:3px solid #ffce44;padding:10px 14px;font-size:14px;font-weight:500;color:#3a3a3a;margin:12px 0 14px;line-height:1.7;',
+  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
+  'mp-divider': 'border:0;border-top:1px solid #094183;margin:22px 0;height:1px;',
+  'mp-quickview': 'background-color:#fff8ee;padding:16px;border-radius:8px;margin:22px 0;border-left:3px solid #094183;',
+  'mp-cta': 'background-color:#094183;color:#ffffff;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
+};
+
+function applyInlineStyles(root) {
+  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      el.setAttribute('style', style + (el.getAttribute('style') || ''));
+    });
+  });
+  root.querySelectorAll('.mp-meta .author').forEach(el =>
+    el.setAttribute('style', 'color:#094183;font-weight:600;'));
+  root.querySelectorAll('.mp-oneline strong').forEach(el =>
+    el.setAttribute('style', 'color:#000000;'));
+  root.querySelectorAll('.mp-source a').forEach(el =>
+    el.setAttribute('style', 'color:#3b82f6;text-decoration:none;'));
+  root.querySelectorAll('.mp-quickview h3').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000000;font-weight:700;'));
+  root.querySelectorAll('.mp-quickview ul').forEach(el =>
+    el.setAttribute('style', 'padding-left:18px;margin:0;'));
+  root.querySelectorAll('.mp-quickview li').forEach(el =>
+    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
+  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
+    el.setAttribute('style', 'color:#094183;font-weight:700;'));
+  root.querySelectorAll('.mp-cta .big').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#ffffff;'));
+  root.querySelectorAll('.mp-cta .sub').forEach(el =>
+    el.setAttribute('style', 'font-size:12px;color:#d1d5db;line-height:1.7;'));
+  root.querySelectorAll('p').forEach(el => {
+    const existing = el.getAttribute('style') || '';
+    if (!existing.includes('margin-bottom') && !existing.includes('margin:')) {
+      el.setAttribute('style', 'margin:0 0 12px;color:#333333;font-size:15px;line-height:1.85;' + existing);
+    }
+  });
+  root.querySelectorAll('code').forEach(el =>
+    el.setAttribute('style', 'background-color:#f1f5f9;padding:1px 6px;border-radius:3px;font-size:13px;color:#10162f;'));
+  ['mp-lead', 'mp-oneline', 'mp-quickview', 'mp-cta'].forEach(cls => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      if (el.tagName.toLowerCase() === 'section') return;
+      const wrapper = document.createElement('section');
+      wrapper.setAttribute('style', MP_INLINE_STYLES[cls] || '');
+      el.removeAttribute('style');
+      el.setAttribute('style', 'background-color:transparent;padding:0;margin:0;');
+      wrapper.appendChild(el.cloneNode(true));
+      el.replaceWith(wrapper);
+    });
+  });
+  root.querySelectorAll('.mp-hook').forEach(el => {
+    if (el.tagName.toLowerCase() === 'span') return;
+    const span = document.createElement('span');
+    span.setAttribute('style', MP_INLINE_STYLES['mp-hook'] || '');
+    span.textContent = el.textContent;
+    el.replaceWith(span);
+  });
+}
+
+const logEl = document.getElementById('log');
+function log(msg) {
+  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  logEl.textContent += `[${t}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  applyInlineStyles(article);
+  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+  const plain = article.innerText;
+  try {
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([plain], { type: 'text/plain' }),
+    });
+    navigator.clipboard.write([item]).then(() => {
+      const bgHits = (html.match(/background-color:/g) || []).length;
+      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
+      const sectionHits = (html.match(/<section /g) || []).length;
+      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
+      log(`   粘到公众号后若颜色丢失，先贴 Notion 对比——那里有色=WeChat 剥掉了，那里无色=前端 bug`);
+    });
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = html; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    log('✅ 富文本已复制（fallback）');
+  }
+}
+
+function mpCopyMarkdown() {
+  const article = document.getElementById('mp-article');
+  const md = article.innerText;
+  navigator.clipboard.writeText(md).then(() => log('✅ MD 已复制'));
+}
+
+document.getElementById('btn-copy-html').addEventListener('click', mpCopyHtml);
+document.getElementById('btn-copy-md').addEventListener('click', mpCopyMarkdown);
+log('📦 UMelb 2026-04-09 mp-article 已加载');
+</script>
+</body>
+</html>

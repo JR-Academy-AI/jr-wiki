@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>UNSW 新南威尔士大学 2026-04-09 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uni-primary: #ffd100;  /* UNSW 黄 */
+    --uni-accent: #10162f;   /* UNSW 深蓝 */
+    --uni-text: #10162f;
+    --brand-dark: #10162f;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #eef0f4;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
+    padding: 22px 26px; margin-bottom: 24px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--brand-dark); background: var(--uni-primary); padding: 2px 8px; border-radius: 4px; }
+  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; padding: 10px 16px;
+    border: 2px solid var(--brand-dark);
+    background: #fff; color: var(--brand-dark);
+    border-radius: 10px; transition: all 0.12s;
+  }
+  .btn:hover { background: var(--uni-primary); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .btn.primary { background: var(--uni-primary); color: var(--brand-dark); }
+
+  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  .phone-wrap { position: sticky; top: 20px; }
+  .phone {
+    width: 100%; max-width: 420px; margin: 0 auto;
+    background: #f5f6f9;
+    border: 2px solid var(--brand-dark);
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .phone-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .phone-bar .dot { width: 8px; height: 8px; background: var(--uni-primary); border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .mp {
+    background: #fff; border-radius: 18px;
+    padding: 26px 20px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+    font-size: 15px; line-height: 1.85; color: #222;
+    max-height: 78vh; overflow-y: auto;
+  }
+  .mp::-webkit-scrollbar { width: 6px; }
+  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
+
+  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
+  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
+    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
+  .mp-meta .author { color: var(--brand-dark); font-weight: 600; }
+  .mp-lead {
+    background: #f1f5f9; border-radius: 8px; padding: 13px 15px;
+    font-size: 14px; color: #334155; line-height: 1.75; margin-bottom: 22px;
+  }
+  .mp-hook {
+    display: inline-block; background: var(--uni-primary); color: var(--brand-dark);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .mp-h2 {
+    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
+    margin: 12px 0 12px; padding-left: 10px;
+    border-left: 4px solid var(--uni-primary);
+  }
+  .mp-alt-img {
+    width: 100%; display: block; margin: 10px 0 4px;
+    border-radius: 8px;
+  }
+  .mp-oneline {
+    background: #10162f; border-left: 3px solid #ffd100;
+    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #ffffff;
+    margin: 12px 0 14px; line-height: 1.7;
+  }
+  .mp-oneline strong { color: #ffd100; }
+  .mp p { margin: 0 0 12px; color: #333; font-size: 15px; line-height: 1.85; }
+  .mp-source { font-size: 12px; color: #8a8a8a; padding-top: 8px; margin-top: 8px;
+    border-top: 1px dashed #e5e7eb; word-break: break-all; }
+  .mp-source a { color: #3b82f6; text-decoration: none; }
+  .mp-divider { border: 0; border-top: 1px solid #ffd100; margin: 22px 0; height: 1px; }
+  .mp-quickview {
+    background: #fffbe6; padding: 16px; border-radius: 8px; margin: 22px 0;
+    border-left: 3px solid var(--uni-primary);
+  }
+  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; font-weight: 700; }
+  .mp-quickview ul { padding-left: 18px; margin: 0; }
+  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; line-height: 1.7; }
+  .mp-quickview li strong { color: #10162f; font-weight: 700; }
+  .mp-cta {
+    background: #10162f; color: #ffd100;
+    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
+  }
+  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; color: #ffd100; }
+  .mp-cta .sub { font-size: 12px; color: #e5e7eb; line-height: 1.7; }
+
+  .panel .card {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 14px;
+    padding: 18px 20px; margin-bottom: 16px;
+    box-shadow: 4px 4px 0 var(--brand-dark);
+  }
+  .panel h2 { font-size: 15px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .panel .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--uni-primary); color: var(--brand-dark); padding: 2px 7px; border-radius: 4px; }
+  .panel .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .panel .stat-item { text-align: center; }
+  .panel .stat-item .v { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--brand-dark); }
+  .panel .stat-item .k { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .panel ol { padding-left: 20px; font-size: 13px; line-height: 1.8; color: #334155; }
+  .panel code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--brand-dark); }
+  #log { background: #0f172a; color: #cbd5e1; padding: 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; max-height: 140px; overflow-y: auto; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1><span>UNSW 新南威尔士大学</span> 公众号文章 · 2026-04-09</h1>
+      <div class="sub">左侧 375px 手机预览 · 粘到 mp.weixin.qq.com 前点「📋 复制富文本」即可保留颜色。</div>
+    </div>
+    <div class="acts">
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn primary" id="btn-copy-md">📝 复制 MD</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+          <div class="mp-title">UNSW 322 万澳币国防 AI 项目 + CS Rankings 澳洲第一 + flex-semester 新学制｜UNSW 日报 04-09</div>
+          <div class="mp-meta">
+            <span class="author">JR Academy 澳洲留学</span>
+            <span>·</span><span>2026-04-09</span>
+            <span>·</span><span>阅读约 7 分钟</span>
+          </div>
+
+          <div class="mp-lead">UNSW 今天一次放了三条硬核消息：Flora Salim 教授带队从澳洲国防军 ASCA 通道拿下 $3,220,633 澳币资助做 ROSITA 多模态 AI 项目；CS Rankings 2026 里 AI、数据库、嵌入式系统三个方向全澳第一；2026 正式启用 flex-semester 学制取代争议不断的三学期制。对在读或准备申 UNSW CS / AI / Cybersecurity 的同学，这三条都能直接影响你的选导师、选项目和时间规划。</div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">01 · 科研合作</div>
+          <div class="mp-h2">ROSITA 国防 AI 项目：322 万澳币造自我进化的多模态基础模型</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80" alt="UNSW AI Defence Research">
+          <div class="mp-oneline"><strong>一句话</strong>：UNSW CSE 的 Flora Salim 教授从澳洲国防军 ASCA「Emerging and Disruptive Technologies」通道拿下 $3,220,633 澳币，做能持续自我学习、在对抗下仍然鲁棒的多模态基础模型。</div>
+          <p>项目代号 ROSITA，全称 Robust Multi-sensor Multimodal Foundation Model(s) for Continual Situational Understanding。核心团队来自 School of Computer Science and Engineering——Flora Salim（同时是 UNSW AI Institute 的 Deputy Director (Engagement)）、Salil Kanhere、Rahat Masood、Aditya Joshi。</p>
+          <p>技术上这是把三个当下最硬的研究方向拼在一起：多模态大模型（同时吃视觉 / 音频 / 雷达等不同传感器数据流）、持续学习（模型不停机、边跑边更新）、对抗鲁棒性（面对干扰攻击不崩）。团队还要开发目前市面上还没有的输入输出过滤机制，加上对抗训练，让模型学会识别恶意输入和复杂环境。</p>
+          <p><strong>对你的影响</strong>：这笔钱明显会开放 PhD 和 RA 名额。对 UNSW CSE 想走科研方向的同学、尤其是 AI / Cybersecurity 交叉的 PhD 候选人，这是黄金课题——国防项目发文点多、导师组经费充足、就业路径清晰。平时就关注 Flora Salim 和她几位合作者的 Google Scholar，有课题开放第一时间能看到。</p>
+          <div class="mp-source">来源：<a href="https://www.unsw.edu.au/newsroom/news/2026/01/unsw-sydney-lands-3m-defence-project-to-build-next-gen-ai">UNSW Newsroom</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">02 · 排名</div>
+          <div class="mp-h2">CS Rankings 2026：AI、数据库、嵌入式系统全澳第一</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80" alt="UNSW Computer Science">
+          <div class="mp-oneline"><strong>一句话</strong>：按 CS Rankings 2026（只看顶会论文数量的硬指标排名），UNSW CSE 在 AI、Databases、Embedded and Real-Time Systems 三个方向全部拿下澳洲第一，整个工程学院在 Engineering and Technology 大类全澳第一、全球第 25。</div>
+          <p>CS Rankings 和 QS 走的是完全不同的逻辑。QS 看声誉调查和引用数，容易被"历史包袱"拖；CS Rankings 只统计过去 N 年发表在顶级会议的论文——AI 看 NeurIPS / ICML / CVPR，数据库看 SIGMOD / VLDB，嵌入式看 RTSS / RTAS——所以结果基本反映当下真实的科研产出。</p>
+          <p>UNSW CSE 能在 AI 和 Systems 两个本来不太兼容的方向同时做到澳洲第一，说明学院基建（计算资源）+ 人才梯队（年轻 tenure-track + 资深大牛）都很扎实。这也解释了为什么 UNSW CSE 近几年的 PhD 申请竞争越来越激烈。</p>
+          <p><strong>对你的影响</strong>：如果你的目标是做 AI 研究 / 读 PhD / 走学术路径，UNSW CSE 的导师池和研究项目密度在澳洲是最顶的一档。本科想走科研路线，首选 Bachelor of Advanced Computer Science (Honours)——荣誉学年会让你深度介入一个真实研究项目，对后续申 PhD 是实打实的加分。</p>
+          <div class="mp-source">来源：<a href="https://www.unsw.edu.au/engineering/our-schools/computer-science-and-engineering/news-events">UNSW CSE News & Events</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">03 · 学制 + 奖学金</div>
+          <div class="mp-h2">flex-semester 新学制正式启用 + International Student Award 20% 学费减免</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=80" alt="UNSW International Students">
+          <div class="mp-oneline"><strong>一句话</strong>：UNSW 2026 用 flex-semester 取代了争议不断的三学期制（Trimester），本科和大部分授课型硕士都适用；同时 International Student Award 给 2026 年新入学的国际生开放 20% 学费减免，覆盖整个学位。</div>
+          <p>先说学制。之前的三学期制让很多同学吐槽课业节奏太赶、实习窗口被切碎、假期不对齐 F-1/Schengen 签证续签时间。flex-semester 回归更传统的 Semester 结构，但保留了一部分灵活选课的特性——简单说是放慢了主节奏，但没把所有灵活性扔掉。</p>
+          <p>对国际生最直接的改变有两点：签证规划更干净（学期起止对齐主流签证窗口）；Summer / Winter 空档拉长之后，更容易去一些大厂做 12 周的暑期 intern。</p>
+          <p>再说奖学金。International Student Award 覆盖整个学位每年 20% 学费减免，申请材料只要一份不超过 500 字的 Personal Statement，说明为什么选 UNSW、方向是什么；拿到 Offer 后两天内会收到奖学金结果邮件。另一个 Australia's Global University Award 是按 Merit 评的一次性 10,000 澳币，面向本科和授课型硕士的高分申请人。</p>
+          <p><strong>对你的影响</strong>：2026 年一部分热门专业（包括 Software Engineering 热度最高的几个方向）的 NOSC（New Overseas Student Commencement）名额已经满额，但 2027 年所有专业的申请通道已经开了——想冲 Software Engineering / Data Science 的同学提前一年开规划是值得的。</p>
+          <div class="mp-source">来源：<a href="https://www.scholarships.unsw.edu.au/international-student-award">UNSW International Scholarships</a></div>
+
+          <div class="mp-quickview">
+            <h3>📌 今日速览</h3>
+            <ul>
+              <li><strong>ROSITA</strong>：Flora Salim 组拿下 $3.22M 国防 AI 项目，做多模态 + 持续学习 + 对抗鲁棒的基础模型，PhD / RA 名额即将开放。</li>
+              <li><strong>CS Rankings</strong>：UNSW CSE 在 AI、Databases、Embedded 三个方向全澳第一，工程学院全澳第一、全球第 25。</li>
+              <li><strong>flex-semester</strong>：2026 替代三学期制；International Student Award 20% 学费减免覆盖全学位；2026 部分专业 NOSC 满额，2027 申请通道已开。</li>
+            </ul>
+          </div>
+
+          <div class="mp-cta">
+            <div class="big">🎓 计划申请 UNSW 的同学？</div>
+            <div class="sub">关注 JR Academy 澳洲留学公众号 · 获取 UNSW CSE 申请时间线 + 奖学金材料清单<br>10 所澳洲院校实时动态 · 选校选专业不踩坑</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">3100</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">图片</div></div>
+          <div class="stat-item"><div class="v">7</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步 <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：Unsplash 图 URL 保持绝对路径，WeChat 自动抓取 re-host。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → UNSW 黄色 hook / 深蓝色 oneline / 深蓝 CTA + 黄字保留 → 预览 → 发布。</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <pre id="log"></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// UNSW brand: primary #ffd100 (yellow), accent #10162f (dark navy), text #10162f
+const MP_INLINE_STYLES = {
+  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000000;margin-bottom:10px;',
+  'mp-meta': 'color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eeeeee;',
+  'mp-lead': 'background-color:#f1f5f9;border-radius:8px;padding:13px 15px;font-size:14px;color:#334155;line-height:1.75;margin-bottom:22px;',
+  'mp-hook': 'display:inline-block;background-color:#ffd100;color:#10162f;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
+  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000000;margin-top:12px;margin-bottom:12px;padding-left:10px;border-left:4px solid #ffd100;',
+  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background-color:#ffffff;',
+  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
+  'mp-oneline': 'background-color:#10162f;border-left:3px solid #ffd100;padding:10px 14px;font-size:14px;font-weight:500;color:#ffffff;margin:12px 0 14px;line-height:1.7;',
+  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
+  'mp-divider': 'border:0;border-top:1px solid #ffd100;margin:22px 0;height:1px;',
+  'mp-quickview': 'background-color:#fffbe6;padding:16px;border-radius:8px;margin:22px 0;border-left:3px solid #ffd100;',
+  'mp-cta': 'background-color:#10162f;color:#ffd100;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
+};
+
+function applyInlineStyles(root) {
+  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      el.setAttribute('style', style + (el.getAttribute('style') || ''));
+    });
+  });
+  root.querySelectorAll('.mp-meta .author').forEach(el =>
+    el.setAttribute('style', 'color:#10162f;font-weight:600;'));
+  root.querySelectorAll('.mp-oneline strong').forEach(el =>
+    el.setAttribute('style', 'color:#ffd100;'));
+  root.querySelectorAll('.mp-source a').forEach(el =>
+    el.setAttribute('style', 'color:#3b82f6;text-decoration:none;'));
+  root.querySelectorAll('.mp-quickview h3').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000000;font-weight:700;'));
+  root.querySelectorAll('.mp-quickview ul').forEach(el =>
+    el.setAttribute('style', 'padding-left:18px;margin:0;'));
+  root.querySelectorAll('.mp-quickview li').forEach(el =>
+    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
+  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
+    el.setAttribute('style', 'color:#10162f;font-weight:700;'));
+  root.querySelectorAll('.mp-cta .big').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#ffd100;'));
+  root.querySelectorAll('.mp-cta .sub').forEach(el =>
+    el.setAttribute('style', 'font-size:12px;color:#e5e7eb;line-height:1.7;'));
+  root.querySelectorAll('p').forEach(el => {
+    const existing = el.getAttribute('style') || '';
+    if (!existing.includes('margin-bottom') && !existing.includes('margin:')) {
+      el.setAttribute('style', 'margin:0 0 12px;color:#333333;font-size:15px;line-height:1.85;' + existing);
+    }
+  });
+  root.querySelectorAll('code').forEach(el =>
+    el.setAttribute('style', 'background-color:#f1f5f9;padding:1px 6px;border-radius:3px;font-size:13px;color:#10162f;'));
+  ['mp-lead', 'mp-oneline', 'mp-quickview', 'mp-cta'].forEach(cls => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      if (el.tagName.toLowerCase() === 'section') return;
+      const wrapper = document.createElement('section');
+      wrapper.setAttribute('style', MP_INLINE_STYLES[cls] || '');
+      el.removeAttribute('style');
+      el.setAttribute('style', 'background-color:transparent;padding:0;margin:0;');
+      wrapper.appendChild(el.cloneNode(true));
+      el.replaceWith(wrapper);
+    });
+  });
+  root.querySelectorAll('.mp-hook').forEach(el => {
+    if (el.tagName.toLowerCase() === 'span') return;
+    const span = document.createElement('span');
+    span.setAttribute('style', MP_INLINE_STYLES['mp-hook'] || '');
+    span.textContent = el.textContent;
+    el.replaceWith(span);
+  });
+}
+
+const logEl = document.getElementById('log');
+function log(msg) {
+  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  logEl.textContent += `[${t}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  applyInlineStyles(article);
+  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+  const plain = article.innerText;
+  try {
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([plain], { type: 'text/plain' }),
+    });
+    navigator.clipboard.write([item]).then(() => {
+      const bgHits = (html.match(/background-color:/g) || []).length;
+      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
+      const sectionHits = (html.match(/<section /g) || []).length;
+      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
+      log(`   粘到公众号后若颜色丢失，先贴 Notion 对比——那里有色=WeChat 剥掉了，那里无色=前端 bug`);
+    });
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = html; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    log('✅ 富文本已复制（fallback）');
+  }
+}
+
+function mpCopyMarkdown() {
+  const article = document.getElementById('mp-article');
+  const md = article.innerText;
+  navigator.clipboard.writeText(md).then(() => log('✅ MD 已复制'));
+}
+
+document.getElementById('btn-copy-html').addEventListener('click', mpCopyHtml);
+document.getElementById('btn-copy-md').addEventListener('click', mpCopyMarkdown);
+log('📦 UNSW 2026-04-09 mp-article 已加载');
+</script>
+</body>
+</html>
