@@ -1,0 +1,134 @@
+/* 大学新闻 xhs-posters 共享样式：copy 面板 + poster-frame 网格布局 + 字号规范 override
+ * skill 规定字号（1242 画布，手机端可读 · 20 字 / 行）:
+ *   - 主 hook:           130-160px
+ *   - 焦点大数字:         220-280px
+ *   - 正文 body (20字行): 48-56px
+ *   - 次要文字:           36-42px
+ *   - 顶部 tag / 底栏:    28-36px
+ */
+
+/* ===== 字号规范 override（覆盖旧的小字号） ===== */
+.poster .p-news h2 { font-size: 82px !important; letter-spacing: -2px; line-height: 1.08; }
+.poster .p-news .lead { font-size: 44px !important; line-height: 1.5; padding: 30px 34px !important; }
+.poster .p-news .b-key { font-size: 26px !important; letter-spacing: 1.5px; }
+.poster .p-news .b-val { font-size: 40px !important; line-height: 1.4; }
+.poster .p-news .b-item { padding: 28px 32px !important; gap: 26px; grid-template-columns: 220px 1fr !important; }
+.poster .p-news .bullets { gap: 20px !important; margin-top: 38px !important; }
+.poster .p-news .source { font-size: 24px !important; padding-top: 28px !important; line-height: 1.55; }
+
+.poster .p1 .hook { font-size: 168px; letter-spacing: -6px; line-height: 1; }
+.poster .p1 .sub { font-size: 52px !important; line-height: 1.45; margin-top: 36px !important; }
+.poster .p1 .preview-card .num { font-size: 40px !important; }
+.poster .p1 .preview-card .title { font-size: 36px !important; line-height: 1.2; }
+.poster .p1 .preview-card .data { font-size: 28px !important; }
+.poster .p1 .preview-card { padding: 24px 26px !important; gap: 10px; }
+.poster .p1 .date-chip .big { font-size: 68px !important; }
+.poster .p1 .date-chip .small { font-size: 26px !important; }
+
+.poster .p5 h2 { font-size: 128px !important; letter-spacing: -4px; }
+.poster .p5 .sub { font-size: 42px !important; line-height: 1.5; margin-top: 28px !important; }
+.poster .p5 .quick-item { padding: 28px 32px !important; gap: 28px; grid-template-columns: 100px 1fr !important; }
+.poster .p5 .quick-item .n { font-size: 72px !important; }
+.poster .p5 .quick-item .body h4 { font-size: 42px !important; margin-bottom: 10px; line-height: 1.2; }
+.poster .p5 .quick-item .body p { font-size: 32px !important; line-height: 1.5; }
+.poster .p5 .cta-row .big { font-size: 56px !important; letter-spacing: -1.5px; }
+.poster .p5 .cta-row .sub-cta { font-size: 30px !important; margin-top: 10px; }
+.poster .p5 .cta-row .badge { font-size: 36px !important; padding: 22px 30px !important; }
+
+.poster .p-tag { font-size: 34px !important; padding: 14px 28px !important; }
+
+/* ===== poster-frame 网格布局：海报在左，copy 面板在右 ===== */
+.poster-frame {
+  display: grid !important;
+  grid-template-columns: auto 460px;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+.poster-frame .label { grid-column: 1 / -1; }
+.poster-main { display: flex; flex-direction: column; align-items: flex-start; }
+
+@media (max-width: 1100px) {
+  .poster-frame { grid-template-columns: 1fr; }
+}
+
+/* ===== 右侧小红书文案面板 ===== */
+.copy-panel {
+  background: #fff;
+  border: 2px solid var(--brand-dark, #10162f);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 6px 6px 0 rgba(16,22,47,0.08);
+  font-family: 'Noto Sans SC', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: 20px;
+}
+.copy-panel .cp-title {
+  font-size: 13px; font-weight: 900;
+  color: var(--cp-accent, var(--uni-primary, #ff2442));
+  letter-spacing: 1px;
+  font-family: 'JetBrains Mono', monospace;
+  padding-bottom: 10px;
+  border-bottom: 1.5px dashed #e2e8f0;
+}
+.cp-section { display: flex; flex-direction: column; gap: 6px; }
+.cp-section .cp-label {
+  font-size: 11px; font-weight: 900;
+  color: #64748b;
+  letter-spacing: 1.5px;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+}
+.cp-section .cp-box {
+  background: #fafbfc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #10162f;
+  white-space: pre-wrap;
+  word-break: break-word;
+  position: relative;
+}
+.cp-section .cp-btn {
+  align-self: flex-end;
+  background: var(--brand-dark, #10162f); color: #fff;
+  border: none;
+  padding: 5px 14px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Noto Sans SC', sans-serif;
+  transition: all 0.15s;
+}
+.cp-section .cp-btn:hover { background: var(--cp-accent, #ff2442); }
+.cp-section .cp-btn.copied { background: #10b981; }
+.cp-section .cp-box.hashtags { color: #3b82f6; font-weight: 600; font-size: 12.5px; }
+.cp-section .cp-box.wechat { background: #f0fdf4; border-color: #86efac; font-size: 13px; }
+.cp-section .cp-box.community { background: #eff6ff; border-color: #93c5fd; font-size: 13px; }
+
+.cp-tabs { display: flex; gap: 4px; background: #f3f4f6; padding: 4px; border-radius: 10px; }
+.cp-tab {
+  flex: 1; background: transparent; border: none;
+  padding: 8px 6px; font-size: 12px; font-weight: 700;
+  color: #64748b; cursor: pointer; border-radius: 8px;
+  font-family: 'Noto Sans SC', sans-serif;
+  transition: all 0.15s; letter-spacing: 0.3px;
+}
+.cp-tab:hover { color: #10162f; }
+.cp-tab.active {
+  background: #fff; color: var(--tab-color, #10162f);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-weight: 900;
+}
+.cp-pane { display: flex; flex-direction: column; gap: 14px; }
+.cp-pane.hidden { display: none; }
+.cp-tip {
+  background: #fffbeb; border: 1px dashed #f59e0b;
+  border-radius: 8px; padding: 8px 12px;
+  font-size: 11.5px; color: #92400e; line-height: 1.5;
+}

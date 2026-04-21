@@ -8,7 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../xhs-shared.css">
 <style>
+  :root { --cp-accent: #8a7136; }
   :root {
     --brand-dark: #10162f;
     --brand-yellow: #ffce44;
@@ -515,10 +517,13 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="../../xhs-shared.js"></script>
 <script>
 async function dlOne(target, slug) {
   const el = document.getElementById(target);
   if (!el) return;
+  if (document.fonts && document.fonts.ready) await document.fonts.ready;
+  if (window.__applyUniPosterAutoFit) window.__applyUniPosterAutoFit(el);
   const stage = document.createElement('div');
   stage.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:1242px;height:1660px;overflow:hidden;background:transparent;z-index:-1;';
   const clone = el.cloneNode(true);
@@ -530,6 +535,8 @@ async function dlOne(target, slug) {
   stage.appendChild(clone);
   document.body.appendChild(stage);
   try {
+    if (window.__applyUniPosterAutoFit) window.__applyUniPosterAutoFit(stage);
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     const canvas = await html2canvas(clone, {
       backgroundColor: null, scale: 2, width: 1242, height: 1660,
       windowWidth: 1242, windowHeight: 1660, useCORS: true, allowTaint: true, logging: false,
@@ -553,6 +560,77 @@ document.querySelectorAll('.dl-btn[data-target]').forEach(btn => {
   });
 });
 
+window.XHS_COPY = {
+  p1: {
+    title: 'ANU 一天三件大事｜Anthropic + 月球 + Chancellor 奖学金',
+    body: '今天 ANU 这三条放一起看很炸：\n\n🤖 Anthropic 注资 AUD 50 万——CS 学生全员用 Claude\n🚀 Mount Stromlo 担任 Artemis II 月球激光通信地面站\n🎓 Chancellor 国际奖学金 25-50% 学费减免（1,000+ 名额）\n\n从技术、科研到钱，一次性交代清楚 🌱\n\n想冲 ANU CS / Physics / Astronomy 或者关心学费的姐妹建议收藏这篇',
+    tags: '#ANU #澳洲留学 #澳洲国立大学 #CS留学 #AI #奖学金 #大学新闻',
+    wechat: [
+      'ANU 04-21 一天三件硬料：Anthropic 注资 50 万 + Artemis II 月球地面站 + Chancellor 奖学金 25-50% 🌱',
+      'ANU 今天三条新闻含金量爆表 — Anthropic、NASA、国际奖学金一起来 👀',
+      '澳洲国立大学今日日报：AI 合作 + 深空科研 + 学费减免，3 件值得了解的事'
+    ],
+    community: [
+      '【ANU 04-21 日报】\n🤖 Anthropic × ANU: AUD 500,000 注资，计算学院全面铺 Claude\n🚀 Mount Stromlo QOGS 成 Artemis II 月球激光通信地面站\n🎓 Chancellor International Scholarship 25-50% · 1,000+ 名额 · 自动评估（S2 7/31 截止）\n详情翻主页图文 🌱',
+      'ANU 这三条都值得留学生关注：AI 工具嵌入课程、物理学生接触真太空任务、国际奖学金覆盖全学位。建议截图存档 💬'
+    ]
+  },
+  p2: {
+    title: 'ANU × Anthropic｜CS 学生全员用 Claude + Claude Code',
+    body: '一觉醒来看到 ANU 和 Anthropic 官宣科研合作——Anthropic 向 ANU 捐 AUD 500,000。\n\nANU 是全澳四所获选机构之一，另外三所：Murdoch Children\'s / Garvan Institute / Curtin。Anthropic 这次在澳洲一共砸了 AUD 300 万。\n\n直接变化：\n✅ TechLauncher 团队已经用 Claude + Claude Code 做项目\n✅ 后续会铺到计算学院全部课程\n✅ 学生不用再自费开 ChatGPT Plus\n\n研究侧：副教授 Dan Andrews 带队用 Claude 分析基因测序数据，目标把数十年临床知识编码进 AI 系统，用于罕见病诊断。\n\nTechLauncher 是 ANU 学院里最受雇主认可的项目之一。现在内嵌商业级 AI 工具——相当于在校期间就完成了很多企业还在摸索的工具迁移 🤖',
+    tags: '#ANU #澳洲留学 #CS留学 #Anthropic #Claude #AI #TechLauncher',
+    wechat: [
+      'ANU × Anthropic 科研合作 · AUD 50 万注资 · CS 学生全员 Claude 🤖',
+      'TechLauncher 用上 Claude Code，等于在校就做完企业正在摸索的工具迁移 ✅',
+      '想申 ANU CS 的现在是时候关注 TechLauncher 报名（学期前 2-3 周开放）。'
+    ],
+    community: [
+      '【ANU × Anthropic】\n💰 捐赠：AUD 500,000\n🛠️ 工具：Claude + Claude Code 铺进 TechLauncher → 全院课程\n🧬 研究：Dan Andrews 团队用 Claude 做基因测序 / 罕见病诊断\n📅 S2 入学：关注 TechLauncher 报名（学期前 2-3 周）'
+    ]
+  },
+  p3: {
+    title: 'Mount Stromlo 成 Artemis II 月球激光通信地面站',
+    body: '这条新闻让我看到就头皮发麻——NASA Artemis II 任务 4 月 2 日堪培拉时间发射，是 50 多年来人类首次重返月球轨道的载人飞行。\n\nANU 在 Mount Stromlo 天文台的 Quantum Optical Ground Station（QOGS）直接担任地面站，负责追踪、发射和接收 Orion 飞船的激光通信信号。\n\n技术底子硬：\n🚀 激光通信比传统无线电快 10-100 倍\n🚀 Artemis II 是首次在载人深空任务实测\n🚀 澳空间局 Moon to Mars Demonstrator Mission Grant 投入 AUD 450 万\n\n对物理 / 工程 / 天文方向的同学，这不是论文里的故事——是真实的太空任务基础设施。\n\nPhysics Honours Program + Research School of Astronomy and Astrophysics 每年有少量名额接本科毕业生直升做研究 🌌',
+    tags: '#ANU #澳洲留学 #物理留学 #天文 #ArtemisII #NASA #Honours',
+    wechat: [
+      'ANU Mount Stromlo 成 Artemis II 月球激光通信地面站 🚀',
+      '50 多年来人类首次载人重返月球轨道 · ANU 做地面追踪 · 澳空间局 450 万建设',
+      '想做深空通信或量子光学方向 PhD？ANU Physics Honours 是一条现实路径。'
+    ],
+    community: [
+      '【ANU × Artemis II】\n🚀 NASA 任务 4/2 堪培拉发射（50+ 年首次载人月球）\n📡 ANU QOGS（Mount Stromlo）担任地面站\n💡 激光通信 vs 无线电：速率快 10-100 倍\n💰 澳空间局 Moon to Mars Grant 投资 AUD 450 万\n🎓 物理 / 天文本科可走 Honours Program 直升研究 🌌'
+    ]
+  },
+  p4: {
+    title: 'ANU Chancellor 奖学金 25-50%｜1000+ 名额自动评估',
+    body: '之前跟姐妹聊天，她说"ANU 好像没什么国际生奖学金"。\n\n大错特错——ANU 的 Chancellor\'s International Scholarship 是面向全球国际生规模最大的单一项目：\n\n✅ 学费减免 25% 或 50%\n✅ 覆盖整个学位周期\n✅ 每年 1,000+ 名额\n✅ 分 9 个类别（按地区 + 学术背景）\n✅ 拿 offer 自动入评，不用另外填表\n\n很多同学没看到单独入口就以为没有减免，结果错过评估。正确姿势：先递交入学申请 → 奖学金评估自动启动。\n\n2026 S2 入学 7 月 31 日截止——越早交越早进评估队列。材料重点：成绩单英文翻译 + 课程对照说明 💰',
+    tags: '#ANU #澳洲留学 #奖学金 #Chancellor #留学干货 #澳洲国立大学',
+    wechat: [
+      'ANU Chancellor 奖学金 25-50% · 1,000+ 名额 · 自动评估 💰',
+      '别再说 ANU 没减免 — 规模最大的奖学金隐藏在 offer 评估流程里 ✅',
+      'S2 7/31 截止 · 越早递交越早进评估队列。材料准备看主页清单。'
+    ],
+    community: [
+      '【ANU Chancellor 奖学金】\n🎯 学费减免 25% / 50% · 覆盖整个学位\n📊 每年 1,000+ 名额 · 9 个类别\n✅ 拿 offer 自动入评，不用填奖学金申请\n📅 2026 S2：7/31 截止\n📄 材料重点：成绩单英译 + 课程对照说明 💰'
+    ]
+  },
+  p5: {
+    title: 'ANU 04-21 · 一眼看完 3 条硬料｜截图这张就够',
+    body: '今天 ANU 的三条整理到一张里，方便截图：\n\n01 · Anthropic 注资 AUD 500,000（CS 全员 Claude）\n02 · Mount Stromlo 成 Artemis II 月球地面站\n03 · Chancellor 奖学金 25-50%（1,000+ 名额自动评）\n\n想申 ANU 的截图保存就完事了 🌱',
+    tags: '#ANU #澳洲留学 #澳洲国立大学 #大学新闻 #AI #奖学金 #月球',
+    wechat: [
+      'ANU 04-21 速览图：Anthropic + Artemis II + Chancellor 奖学金 🌱',
+      '懒得翻长图？这张把 ANU 今日三件事整合完 📌',
+      '澳洲大学每日日报 — ANU 版本，截图留档 💾'
+    ],
+    community: [
+      '【ANU 04-21 速览】\n01 · Anthropic × ANU AUD 500,000 · TechLauncher 用 Claude\n02 · Mount Stromlo QOGS 担任 Artemis II 月球地面站\n03 · Chancellor 奖学金 25-50% · 1,000+ 名额自动评\n截图这张就够 🌱'
+    ]
+  }
+};
+</script>
+<script src="../../xhs-shared.js"></script>
+<script>
 document.getElementById('dl-all').addEventListener('click', async () => {
   const btn = document.getElementById('dl-all');
   const orig = btn.textContent;

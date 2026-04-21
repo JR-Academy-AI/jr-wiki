@@ -8,7 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../xhs-shared.css">
 <style>
+  :root { --cp-accent: #e60028; }
   :root {
     --brand-dark: #10162f;
     --brand-yellow: #ffce44;
@@ -519,10 +521,13 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="../../xhs-shared.js"></script>
 <script>
 async function dlOne(target, slug) {
   const el = document.getElementById(target);
   if (!el) return;
+  if (document.fonts && document.fonts.ready) await document.fonts.ready;
+  if (window.__applyUniPosterAutoFit) window.__applyUniPosterAutoFit(el);
   const stage = document.createElement('div');
   stage.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:1242px;height:1660px;overflow:hidden;background:transparent;z-index:-1;';
   const clone = el.cloneNode(true);
@@ -534,6 +539,8 @@ async function dlOne(target, slug) {
   stage.appendChild(clone);
   document.body.appendChild(stage);
   try {
+    if (window.__applyUniPosterAutoFit) window.__applyUniPosterAutoFit(stage);
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     const canvas = await html2canvas(clone, {
       backgroundColor: null, scale: 2, width: 1242, height: 1660,
       windowWidth: 1242, windowHeight: 1660, useCORS: true, allowTaint: true, logging: false,
@@ -557,6 +564,79 @@ document.querySelectorAll('.dl-btn[data-target]').forEach(btn => {
   });
 });
 
+window.XHS_COPY = {
+  p1: {
+    title: 'RMIT 一天三件大事｜QS 建筑全澳第一 + 印尼 MoU + 浮动湿地',
+    body: '今天 RMIT 三条料都很"RMIT" — 创意学科领跑 + 亚太布局 + 应用科研：\n\n🏛️ QS 2026：Architecture 全球第 15、Art & Design 全球第 19，连续三年全澳第一\n🇮🇩 与印尼创意经济部签 MoU，7 大领域产业合作落地\n🌿 School of Science 浮动湿地试验改善 Bass Coast 农场大坝水质\n\n三条交代清 RMIT 核心优势在哪里 · 想走创意产业 / 环境方向的同学建议收藏 🎨',
+    tags: '#RMIT #澳洲留学 #建筑设计 #艺术设计 #游戏设计 #大学新闻',
+    wechat: [
+      'RMIT 04-21 一天三件硬料：QS 建筑全球 15 + 印尼 MoU + Bass Coast 浮动湿地 🎨',
+      'RMIT 今天这三条都挺 RMIT — 创意学科排名 + 东南亚布局 + 应用科研 👀',
+      'RMIT 皇家墨尔本理工今日日报：学科排名 + 国际合作 + 科研，一张帖看完'
+    ],
+    community: [
+      '【RMIT 04-21 日报】\n🏛️ QS 2026 Architecture 全球 15 · Art & Design 全球 19（连续 3 年全澳第一）· CS 上涨 50 位\n🇮🇩 印尼创意经济部 MoU：游戏 / 动画 / 数字技术 7 大领域 · 5 月成立印尼校友会\n🌿 Bass Coast 浮动湿地：改善农场大坝水质 · 180 万个农场潜在受益\n详情翻主页图文 🎨',
+      'RMIT 这波硬货不少：QS 学科双料第一、东南亚产业 MoU、应用科研 Bass Coast。\n想走创意 / 环境方向的截图保存 💬'
+    ]
+  },
+  p2: {
+    title: 'QS 2026：RMIT 建筑全球 15 / 艺设全球 19｜连续三年全澳第一',
+    body: '很多同学对 RMIT 的印象还停在"排名一般的澳洲学校"。但 QS 2026 学科排名一出来就打脸了：\n\n🏛️ Architecture / Built Environment：全球第 15 位\n🎨 Art & Design：全球并列第 19 位\n\n这是 RMIT 连续第三年同时在这两个学科拿下全澳第一。\n\n整体数据也不差：\n📊 8 个学科进全球 Top 100\n📊 19 个学科进全球 Top 200\n📊 CS & IS 上涨 50 位\n📊 综合 QS 第 125 · 澳洲第 10\n\n为什么 RMIT 创意学科能稳住？核心原因是和墨尔本整个创意产业深度绑定——studio 体系 + 本地事务所联合项目 + 毕业展产业对接频次，都是澳洲其他学校很难复制的结构优势 🏛️',
+    tags: '#RMIT #澳洲留学 #建筑设计 #艺术设计 #QS排名 #留学干货 #墨尔本',
+    wechat: [
+      'QS 2026：RMIT 建筑全球 15、艺设全球 19 · 连续 3 年全澳第一 🏛️',
+      '学科排名 vs 综合排名是两回事 — RMIT 创意学科稳稳 Top 20 🎨',
+      'CS 候选也可以把 RMIT 加进选校清单了 — 这次上涨 50 位不是玩虚的。'
+    ],
+    community: [
+      '【RMIT · QS 2026】\n🏛️ Architecture/Built Environment 全球第 15\n🎨 Art & Design 全球第 19（并列）\n连续 3 年全澳第一\n\n📊 8 学科全球 Top 100 · 19 学科 Top 200\n💻 CS & IS 上涨 50 位\n🇦🇺 综合 QS 第 125 · 澳洲第 10',
+      '"学科排名"和"综合排名"不一样。\nRMIT 综合一般，但建筑 / 艺设全球 Top 20 稳如老狗，跟墨尔本创意产业深度绑定。\n选校要看自己专业的学科排名，不是综合 🎯'
+    ]
+  },
+  p3: {
+    title: 'RMIT × 印尼创意经济部｜游戏 / 动画 / 数字技术东南亚路径',
+    body: '上周 RMIT 副校长 Layton Pike 在雅加达和印度尼西亚创意经济部（EKRAF）正式签 MoU，在 7 大领域推进课程合作：\n\n🎮 游戏\n🎬 电影\n🎨 动画\n🎵 音乐\n💻 数字技术\n🖼️ 文化艺术\n✏️ 设计\n\nRMIT 已经通过印尼 Kampus Merdeka 项目开发了《游戏设计入门（2D）》课程，和 Infinite Learning 合作推进东南亚游戏人才培训。\n\n📅 RMIT 印尼校友章会 2026 年 5 月正式成立\n💰 维多利亚州政府提供 TNE 专项资金支持\n\n对 RMIT 在读 / 潜在申请者，这 MoU 影响具体在三块：东南亚企业实习通道、亚太校友网络、TNE 布局。想走"创意产业 + 亚太工作"路径的同学，RMIT 比大多数澳洲学校更贴近东南亚 🌏',
+    tags: '#RMIT #澳洲留学 #游戏设计 #动画设计 #东南亚 #亚太工作 #留学就业',
+    wechat: [
+      'RMIT × 印尼创意经济部 MoU · 7 大领域 · 5 月成立印尼校友会 🌏',
+      '想走"创意产业 + 亚太"路径，RMIT 比大多数澳洲学校更贴近东南亚。',
+      '游戏 / 动画 / 数字媒体方向的同学，这个 MoU 直接影响你的实习 / 就业通道。'
+    ],
+    community: [
+      '【RMIT × EKRAF MoU】\n🤝 对方：印度尼西亚创意经济部\n📚 领域：游戏 / 电影 / 动画 / 音乐 / 数字技术 / 文化艺术 / 设计\n📜 已有：Kampus Merdeka 项目 · 《游戏设计入门（2D）》\n📅 2026 年 5 月：印尼校友章会成立\n💰 维多利亚州政府 TNE 专项资金支持 🌏',
+      '申 RMIT 游戏 / 动画方向的值得留意 — 这不是一次性公关活动。\n东南亚企业实习对接 + 校友网络两块都会系统化建起来 🎮'
+    ]
+  },
+  p4: {
+    title: 'Bass Coast 浮动湿地｜改善水质，180 万个农场大坝有望受益',
+    body: 'RMIT School of Science 高级讲师 Dr. Martino Malerba 主导的浮动湿地（floating wetlands）在 Bass Coast 发布阶段性成果。\n\n和 Melbourne Water + Bass Coast Landcare 合作推进。\n\n🌱 原理：湿地植物根系在水面以下形成立体根矩 → 吸引微生物分解营养盐 → 物理捕捉悬浮颗粒 → 蒸腾作用降温\n📊 早期数据：浊度（turbidity）/ 生物多样性 / 排放指标均有可量化改善\n🌾 澳洲全境约 180 万个农场大坝 · 规模化推广影响面极大\n\n这种"有实际应用场景的应用科学"课题有两个吃香点：\n✅ PhD 申 ARC Linkage Projects 工业合作奖学金概率高\n✅ Melbourne Water 每年有工程师 / 水务管理实习项目，做过相关研究的 RMIT 学生有内推优势 🌿',
+    tags: '#RMIT #澳洲留学 #环境科学 #水文工程 #生态学 #PhD #科研项目',
+    wechat: [
+      'RMIT School of Science 浮动湿地改善农场大坝水质 · 180 万个农场潜在受益 🌾',
+      '环境 / 水文 / 生态方向的同学 — 这个课题适合走 ARC Linkage Projects 工业奖学金路径。',
+      'Melbourne Water 实习 + RMIT 研究背景 — 内推是现实路径。'
+    ],
+    community: [
+      '【RMIT · Bass Coast 浮动湿地】\n🧪 主导：Dr. Martino Malerba（RMIT School of Science）\n🤝 合作：Melbourne Water + Bass Coast Landcare\n📊 早期数据：浊度 / 生物多样性 / 排放全部可量化改善\n🌾 规模：澳洲约 180 万个农场大坝\n💰 PhD 申 ARC Linkage 工业合作奖学金 🌿'
+    ]
+  },
+  p5: {
+    title: 'RMIT 04-21 · 一眼看完 3 条硬料｜截图这张就够',
+    body: '今天 RMIT 的三条整合到一张里，方便截图：\n\n01 · QS 2026 建筑 15 / 艺设 19（全澳第一 × 3 年）\n02 · 印尼创意经济部 MoU · 5 月印尼校友会\n03 · Bass Coast 浮动湿地 · 180 万农场大坝\n\n想申 RMIT 的截图保存 🎨',
+    tags: '#RMIT #澳洲留学 #大学新闻 #QS排名 #艺术设计 #建筑设计 #东南亚',
+    wechat: [
+      'RMIT 04-21 速览图：QS 双料第一 + 印尼 MoU + Bass Coast 浮动湿地 🎨',
+      '懒得翻长图？这张整合 RMIT 今日三件事 📌',
+      '澳洲大学每日日报 — RMIT 版本，截图留档 💾'
+    ],
+    community: [
+      '【RMIT 04-21 速览】\n01 · QS 2026 建筑 15 / 艺设 19（连续 3 年全澳第一）\n02 · 印尼创意经济部 MoU · 5 月印尼校友会\n03 · Bass Coast 浮动湿地科研\n截图这张就够 🎨'
+    ]
+  }
+};
+</script>
+<script src="../../xhs-shared.js"></script>
+<script>
 document.getElementById('dl-all').addEventListener('click', async () => {
   const btn = document.getElementById('dl-all');
   const orig = btn.textContent;
