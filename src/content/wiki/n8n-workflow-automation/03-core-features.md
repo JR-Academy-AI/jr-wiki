@@ -5,6 +5,8 @@ order: 3
 description: "深入理解 n8n 的工作原理：常用节点类型、数据流动机制和 5 个实战工作流"
 ---
 
+![n8n 编辑器界面：节点与数据流](https://raw.githubusercontent.com/n8n-io/n8n-docs/main/docs/_images/editor-ui/editor_ui.png)
+
 n8n 的核心是**节点（Node）之间的数据流动**。每个节点接收上游数据、处理后输出给下游。理解这一点，你就能设计任意复杂的工作流。
 
 ## 节点的三大类型

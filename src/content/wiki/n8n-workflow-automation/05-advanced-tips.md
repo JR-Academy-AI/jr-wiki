@@ -5,6 +5,8 @@ order: 5
 description: "Code Node 深度使用、错误处理、生产部署要点，以及 FAQ"
 ---
 
+![n8n 管理面板](https://raw.githubusercontent.com/n8n-io/n8n-docs/main/docs/_images/editor-ui/admin_panel.png)
+
 掌握了基础节点之后，这些技巧能让你的工作流更健壮、更高效。
 
 ## Code Node：写真实代码
