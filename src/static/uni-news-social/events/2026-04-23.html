@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- 校园活动 · 2026-04-23 · 4 校 -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>校园活动 · 2026-04-23 · 4 校</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800;900&family=Space+Grotesk:wght@500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #160a2c;
+    --bg: #fef8f1;
+    --muted: #71628a;
+    --border-soft: rgba(106, 72, 170, 0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 80px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1400px; margin: 0 auto; }
+
+  .breadcrumb {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .breadcrumb a { color: var(--muted); text-decoration: none; }
+  .breadcrumb a:hover { color: #ff5757; }
+  .breadcrumb .sep { opacity: 0.5; }
+  .breadcrumb .current { color: #ff5757; font-weight: 700; }
+
+  .page-head {
+    background: linear-gradient(135deg, #ff5757, #ff8a3d, #ffd44d);
+    border-radius: 24px;
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    color: #fff;
+    box-shadow: 0 20px 60px rgba(255,87,87,0.2);
+  }
+  .page-head h1 {
+    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
+    font-size: 36px; font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+  .page-head h1 em { font-style: italic; }
+  .page-head .meta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px; color: rgba(255,255,255,0.85);
+    letter-spacing: 0.08em;
+  }
+
+  /* 4 schools side-by-side grid */
+  .schools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 1100px) { .schools { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px)  { .schools { grid-template-columns: 1fr; } }
+
+  .school {
+    background: rgba(255,255,255,0.95);
+    border: 1px solid var(--border-soft);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(16, 22, 47, 0.06);
+    display: flex; flex-direction: column;
+  }
+  .school-cover {
+    padding: 24px 22px 20px;
+    color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .school-cover::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px);
+    background-size: 16px 16px;
+    opacity: 0.35;
+  }
+  .school-cover > * { position: relative; }
+  .school-cover.umelb { background: linear-gradient(145deg, #05244a, #094183, #2e6ec4); }
+  .school-cover.unsw  { background: linear-gradient(145deg, #b39700, #ffd100, #fff0a1); color: #10162f; }
+  .school-cover.uq    { background: linear-gradient(145deg, #2a0f57, #4c1d95, #7c3aed); }
+  .school-cover.usyd  { background: linear-gradient(145deg, #661a00, #e64626, #ff7f50); }
+
+  .school-code {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.2em;
+    opacity: 0.85;
+    margin-bottom: 6px;
+  }
+  .school-name {
+    font-family: 'Playfair Display', 'Noto Sans SC', sans-serif;
+    font-size: 22px; font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .school-name-en {
+    font-size: 11px;
+    font-family: 'Space Grotesk', sans-serif;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+
+  .school-body {
+    padding: 20px 22px 22px;
+    display: flex; flex-direction: column; gap: 18px;
+    flex: 1;
+  }
+
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700;
+    color: var(--muted); letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  /* Events list */
+  .events-list {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .event-card {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #fafaff;
+    border: 1px solid var(--border-soft);
+  }
+  .event-card .et {
+    font-size: 13px; font-weight: 700; line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .event-card .em {
+    font-size: 11px; color: var(--muted);
+    display: flex; gap: 8px; flex-wrap: wrap;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .event-card .em .free {
+    padding: 1px 7px; border-radius: 999px;
+    background: rgba(16,185,129,0.12); color: #065f46;
+    font-weight: 700;
+  }
+  .event-card a {
+    font-size: 11px; color: #4c1d95; text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .event-card a:hover { text-decoration: underline; }
+
+  /* XHS draft block */
+  .xhs-block {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .xhs-title {
+    font-size: 14px; font-weight: 700; color: var(--ink);
+    background: rgba(255,87,87,0.06);
+    padding: 8px 10px; border-radius: 8px;
+    border-left: 3px solid #ff5757;
+    line-height: 1.45;
+  }
+  .xhs-body {
+    font-size: 12.5px; line-height: 1.75; color: #334155;
+    background: #fafaff;
+    padding: 10px 12px; border-radius: 8px;
+    white-space: pre-wrap;
+  }
+  .xhs-tags {
+    font-size: 11px; color: #3b82f6;
+    font-weight: 600; line-height: 1.6;
+    padding: 6px 10px; border-radius: 8px;
+    background: #eff6ff;
+  }
+  .copy-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    background: #4c1d95; color: #fff; border: none;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 10px; font-weight: 700;
+    cursor: pointer; align-self: flex-start;
+    transition: all 0.15s;
+  }
+  .copy-btn:hover { background: #7c3aed; }
+  .copy-btn.copied { background: #10b981; }
+
+  .footer {
+    margin-top: 50px; padding-top: 24px;
+    border-top: 1px solid var(--border-soft);
+    font-size: 12px; color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="breadcrumb">
+    <a href="../../">← 素材库</a>
+    <span class="sep">/</span>
+    <a href="./">校园活动</a>
+    <span class="sep">/</span>
+    <span class="current">2026-04-23</span>
+  </div>
+
+  <div class="page-head">
+    <h1>校园<em>活动</em> · 2026-04-23</h1>
+    <div class="meta">4 所澳洲大学 · XHS 草稿 · 敏感词扫描通过</div>
+  </div>
+
+  <div class="schools">
+
+    <!-- ========== UMelb ========== -->
+    <div class="school">
+      <div class="school-cover umelb">
+        <div class="school-code">UMELB · 墨大课代表</div>
+        <div class="school-name">墨尔本大学</div>
+        <div class="school-name-en">University of Melbourne</div>
+      </div>
+      <div class="school-body">
+        <div class="section-label">本周活动</div>
+        <div class="events-list">
+          <!-- UMELB-EVENTS-START -->
+          <div class="event-card">
+            <div class="et">Graduate Study Interactive Session</div>
+            <div class="em"><span>📅 Thu 23 Apr</span><span>📍 Campus</span><span class="free">Free</span></div>
+          </div>
+          <div class="event-card">
+            <div class="et">Masters & Honours Mini-Expo (Last Day)</div>
+            <div class="em"><span>📅 Fri 24 Apr</span><span>📍 Campus</span><span class="free">Free</span></div>
+          </div>
+          <div class="event-card">
+            <div class="et">GSA Transition to Employment Workshop</div>
+            <div class="em"><span>📅 Ongoing series</span><span>📍 Campus</span><span class="free">Free</span></div>
+          </div>
+          <!-- UMELB-EVENTS-END -->
+        </div>
+
+        <div class="section-label">小红书草稿</div>
+        <div class="xhs-block">
+          <div class="xhs-title" id="umelb-title">墨大这周读研规划直接面谈coordinator👩‍🎓</div>
+          <div class="xhs-body" id="umelb-body">学姐坐标墨大，这周有两个对未来规划超实用的免费活动。今天周四Graduate Study Interactive Session，可以直接跟course coordinator面对面聊研究生方向，不用自己翻网站猜了，有什么疑问当场就能问清楚。
+
+明天周五是Masters & Honours Mini-Expo收官日，几个学院的coordinator都在，honours和研究生的申请时间线、学费、奖学金这些细节都能一次搞定。学姐去年就是在这种场合下定决心申honours的，效率比自己查高很多。
+
+另外GSA一直在开Transition to Employment的求职工作坊，international同学想在澳洲找工作的话挺推荐去听一场。评论区扣1我整理详细时间给你们～</div>
+          <div class="xhs-tags" id="umelb-tags">#墨尔本大学 #UniMelb #澳洲留学 #墨大生活 #读研规划 #校园活动 #留学日常</div>
+          <button class="copy-btn" data-target="umelb">📋 复制全部</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== UNSW ========== -->
+    <div class="school">
+      <div class="school-cover unsw">
+        <div class="school-code">UNSW · UNSW 课代表</div>
+        <div class="school-name">新南威尔士大学</div>
+        <div class="school-name-en">UNSW Sydney</div>
+      </div>
+      <div class="school-body">
+        <div class="section-label">本周活动</div>
+        <div class="events-list">
+          <!-- UNSW-EVENTS-START -->
+          <div class="event-card">
+            <div class="et">Orchestra & Wind Symphony: Stage to Screen</div>
+            <div class="em"><span>📅 Thu 23 Apr 7-9pm</span><span>📍 Sir John Clancy Auditorium</span><span class="free">Free</span></div>
+          </div>
+          <div class="event-card">
+            <div class="et">Live Bands Night</div>
+            <div class="em"><span>📅 Thu 23 Apr evening</span><span>📍 Roundhouse Beer Garden</span><span class="free">Free</span></div>
+          </div>
+          <div class="event-card">
+            <div class="et">She Can Run Club</div>
+            <div class="em"><span>📅 Weekly</span><span>📍 Campus</span><span class="free">Free</span></div>
+          </div>
+          <div class="event-card">
+            <div class="et">ANZAC Day Dawn Service</div>
+            <div class="em"><span>📅 Sat 25 Apr 5-6am</span><span>📍 Campus</span><span class="free">Free</span></div>
+          </div>
+          <!-- UNSW-EVENTS-END -->
+        </div>
+
+        <div class="section-label">小红书草稿</div>
+        <div class="xhs-block">
+          <div class="xhs-title" id="unsw-title">今晚UNSW管弦乐团免费音乐会 宫崎骏配乐绝了🎵</div>
+          <div class="xhs-body" id="unsw-body">学长坐标UNSW，今晚有个很赞的活动——Orchestra & Wind Symphony的Stage to Screen音乐会，晚上7点到9点在Sir John Clancy Auditorium。曲目包括千与千寻、最终幻想的游戏原声，还有悲惨世界和西区故事的经典选段，免费入场！
+
+学校管弦乐团水平其实挺在线的，上次去听过一场氛围很好，全场鼓掌那种。不想坐音乐厅的话，今晚Roundhouse Beer Garden也有Live Bands Night，户外喝杯酒听现场也很chill。
+
+周六早上5点还有ANZAC Day Dawn Service，虽然要早起但仪式感很足，了解一下澳洲文化也挺值。She Can Run Club每周免费跑步也在继续，女生可以去试试。
+
+今晚一起去听音乐会的评论区约～</div>
+          <div class="xhs-tags" id="unsw-tags">#UNSW #新南威尔士大学 #澳洲留学 #悉尼留学 #校园音乐会 #免费活动 #留学生活 #StageToScreen</div>
+          <button class="copy-btn" data-target="unsw">📋 复制全部</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== UQ ========== -->
+    <div class="school">
+      <div class="school-cover uq">
+        <div class="school-code">UQ · UQ 课代表</div>
+        <div class="school-name">昆士兰大学</div>
+        <div class="school-name-en">University of Queensland</div>
+      </div>
+      <div class="school-body">
+        <div class="section-label">本周活动</div>
+        <div class="events-list">
+          <!-- UQ-EVENTS-START -->
+          <div class="event-card">
+            <div class="et">Employability Award Drop-in Session</div>
+            <div class="em"><span>📅 This week</span><span>📍 St Lucia Campus</span><span class="free">Free</span></div>
+          </div>
+          <div class="event-card">
+            <div class="et">Student Academic Skills Workshop</div>
+            <div class="em"><span>📅 Ongoing drop-in</span><span>📍 Student Centre</span><span class="free">Free</span></div>
+          </div>
+          <div class="event-card">
+            <div class="et">UQU Wednesday Markets</div>
+            <div class="em"><span>📅 Wed 29 Apr 8am-3pm</span><span>📍 Campbell Place</span><span class="free">Free</span></div>
+          </div>
+          <!-- UQ-EVENTS-END -->
+        </div>
+
+        <div class="section-label">小红书草稿</div>
+        <div class="xhs-block">
+          <div class="xhs-title" id="uq-title">UQ找实习求职不知道从哪开始？来这里就对了🎯</div>
+          <div class="xhs-body" id="uq-body">坐标UQ St Lucia，学期过半了还没开始想实习的姐妹该动起来了。这周校内有Employability Award Drop-in，不需要预约直接去就行，career advisor会帮你看简历、讲清楚Employability Award怎么攒够时长拿证书，找工作的时候真的管用。
+
+学姐自己也是大二下才开始关注这些，去了才发现学校给的资源挺全的就是很多人不知道。Academic Skills Workshop也在跑，论文写作、time management这些实用技能都有免费workshop。
+
+下周三照常还有Campbell Place的UQU Wednesday Markets，早8到下午3点，逛逛手作小摊买杯咖啡坐Great Court草坪上晒太阳，布村生活就是这么松弛。
+
+有问题评论区问我，UQ的坑我踩过不少哈哈～</div>
+          <div class="xhs-tags" id="uq-tags">#昆士兰大学 #UQ #澳洲留学 #布里斯班留学 #校园生活 #求职准备 #留学日常 #免费活动</div>
+          <button class="copy-btn" data-target="uq">📋 复制全部</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== USYD ========== -->
+    <div class="school">
+      <div class="school-cover usyd">
+        <div class="school-code">USYD · USYD 课代表</div>
+        <div class="school-name">悉尼大学</div>
+        <div class="school-name-en">University of Sydney</div>
+      </div>
+      <div class="school-body">
+        <div class="section-label">本周活动</div>
+        <div class="events-list">
+          <!-- USYD-EVENTS-START -->
+          <div class="event-card">
+            <div class="et">Verge Gallery: Dismantle / Assemble</div>
+            <div class="em"><span>📅 Now - 22 May</span><span>📍 Verge Gallery, City Rd</span><span class="free">Free</span></div>
+          </div>
+          <div class="event-card">
+            <div class="et">Courtyard Cafe Live Music</div>
+            <div class="em"><span>📅 Fri 24 Apr 4-6pm</span><span>📍 Courtyard Cafe</span><span class="free">Free</span></div>
+          </div>
+          <div class="event-card">
+            <div class="et">Echoes: Art Talk Session</div>
+            <div class="em"><span>📅 Wed 29 Apr 12:15-1pm</span><span>📍 Verge Gallery</span><span class="free">Free</span></div>
+          </div>
+          <!-- USYD-EVENTS-END -->
+        </div>
+
+        <div class="section-label">小红书草稿</div>
+        <div class="xhs-block">
+          <div class="xhs-title" id="usyd-title">悉大Verge新展免费 周五Courtyard还有live🎨</div>
+          <div class="xhs-body" id="usyd-body">学姐在悉大随便逛gallery是日常。Verge Gallery现在展的是Cindy Yuen-Zhe Chen的Dismantle / Assemble，探讨解构和重组，展品蛮有巧思的，光影效果拍照也出片。展期到5月22号，不赶时间挑个课间溜过去就好，就在City Road上很好找。
+
+明天周五下午4-6点Courtyard Cafe有live music，买杯coffee坐户外听歌，周五下午放空太适合了。下周三中午12:15还有Echoes Art Talk Session，策展人讲创作背后的思路，之前去过一次觉得比光看展有意思多了，提问环节也很开放。
+
+悉大的arts资源真的被低估了，gallery crawl也很适合约朋友一起逛。想去的评论区留言组团～</div>
+          <div class="xhs-tags" id="usyd-tags">#悉尼大学 #USYD #澳洲留学 #悉尼留学 #VergeGallery #校园活动 #艺术展览 #留学日常</div>
+          <button class="copy-btn" data-target="usyd">📋 复制全部</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    由 <code>澳洲大学每日活动</code> schedule 每天 AEST 05:00 自动产出到本页
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const t = btn.dataset.target;
+    const title = document.getElementById(t + '-title').innerText;
+    const body = document.getElementById(t + '-body').innerText;
+    const tags = document.getElementById(t + '-tags').innerText;
+    const full = `${title}\n\n${body}\n\n${tags}`;
+    try {
+      await navigator.clipboard.writeText(full);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = full; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    }
+    const orig = btn.textContent;
+    btn.textContent = '✅ 已复制';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+  });
+});
+</script>
+</body>
+</html>
