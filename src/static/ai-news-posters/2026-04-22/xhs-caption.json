@@ -1,0 +1,13 @@
+{
+  "date": "2026-04-22",
+  "shortTitle": "今天 AI 5 条大新闻｜一图看完",
+  "shortBody": "📰 4/22 AI 圈炸了三件大事\n\n1️⃣ Amazon 再砸 250 亿美元给 Anthropic\n50 亿立即到账，200 亿跟投。Anthropic 承诺未来十年花 1000 亿买 AWS 算力，锁定 5GW Trainium 芯片。这是 Claude 反复宕机的救命钱。\n\n2️⃣ GPT-5.5 Spud 可能明天就发\nPolymarket 给 4/23 发布 75% 概率。OpenAI 想把 ChatGPT/Codex/Agent/Memory 全部统一成一个超级入口。做 AI wrapper 的团队要慌了。\n\n3️⃣ DeepSeek V4 月底发布\n1T 参数 MoE 跑在华为 Ascend 芯片上，整个 stack 零 NVIDIA CUDA 依赖。直接挑战美国芯片出口管制的核心假设。\n\n4️⃣ Claude 四月三次宕机\n4/6、4/8、4/15 连续三波大面积故障。Anthropic 罕见承认基础设施'不可避免地承压'。生产环境务必加 fallback 🫠\n\n5️⃣ AWS AI 认证免费备考\nAI & ML Scholars 2026 申请开放到 6/24，完成 Challenge 白拿三个月 Skill Builder 订阅（$87 价值）。准备找 AI 工作的速冲。\n\n关注 JR Academy 每天看 AI 日报 💼",
+  "tags": ["AI每日新闻", "AIGC", "AI资讯", "Anthropic", "OpenAI"],
+  "headlines": [
+    { "index": 1, "category": "营收融资", "title": "Amazon 250 亿加注 Anthropic 换 5GW 算力" },
+    { "index": 2, "category": "模型发布", "title": "GPT-5.5 Spud 明天或发布，赌盘 75%" },
+    { "index": 3, "category": "算力硬件", "title": "DeepSeek V4 月底发布脱离 NVIDIA" },
+    { "index": 4, "category": "产品更新", "title": "Claude 四月三次宕机，基础设施承压" },
+    { "index": 5, "category": "免费课程", "title": "AWS AI 认证免费备考开放至 6/24" }
+  ]
+}

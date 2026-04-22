@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 每日头条海报 · 2026-04-22（Canvas 版）</title>
+<meta name="description" content="2026-04-22 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v1.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 这个页面只是数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v1.js 里。
+ * 改海报 → 只改下面的 NEWS / SUMMARY 数组。
+ * ------------------------------------------------------------------ */
+
+const SUMMARY = {
+  slug: 'digest',
+  frameLabel: 'P0 · 合集 <em>· Top 5 一图看完</em>',
+  tags: ['合集封面', '适合首图', '今日 5 条一图扫完'],
+  hook: [
+    { text: '今天 ' },
+    { text: '5 条', hl: true },
+    { text: '\nAI 大新闻' },
+  ],
+  sub: '一图看完 · 匠人 AI 日报',
+  items: [
+    { num: '01', numColor: '#ff5757', cat: '营收融资', t: 'Amazon 250 亿加注 Anthropic，锁定 5GW 算力' },
+    { num: '02', numColor: '#7c3aed', cat: '模型发布', t: 'GPT-5.5 Spud 预测市场押注明天发布' },
+    { num: '03', numColor: '#10b981', cat: '算力硬件', t: 'DeepSeek V4 月底发布，完全脱离 NVIDIA' },
+    { num: '04', numColor: '#3b82f6', cat: '产品更新', t: 'Claude 四月三次宕机，基础设施承压' },
+    { num: '05', numColor: '#10162f', cat: '免费课程', t: 'AWS AI 免费认证备考开放至 6 月' },
+  ],
+};
+
+const NEWS = [
+  {
+    slug: '01-amazon-anthropic',
+    frameLabel: 'P1 · 单图 <em>· Amazon 250 亿加注</em>',
+    tags: ['营收融资', '基础设施', 'Trainium'],
+    idx: '01', catText: '营收融资', accent: '#ff5757',
+    bg: { topRight: 'rgba(255,87,87,0.14)', top: '#fff7f5', mid: '#ffffff', bot: '#fff7ef' },
+    title: [
+      { text: 'Amazon ' },
+      { text: '250 亿', hl: true },
+      { text: '加注 Anthropic' },
+    ],
+    titleSize: 82,
+    oneline: [
+      { text: '50 亿立即到账 + 200 亿跟投，换 Anthropic 十年 ' },
+      { text: '1000 亿 AWS 消费', bold: true },
+    ],
+    bullets: [
+      { k: '发生了什么', v: 'Amazon 追加最高 250 亿美元，总投资超 330 亿；Anthropic 锁定 5GW Trainium 芯片容量。' },
+      { k: '为什么重要', v: 'Claude 四月反复宕机，根因是算力不够。这笔钱直指基础设施瓶颈，年底上 1GW 容量。' },
+      { k: '对你的影响', v: 'Bedrock 上 Claude 稳定性将改善；短期仍要做 fallback，关注 Trainium 推理降价。' },
+    ],
+    src: '📎 cnbc.com · investing.com',
+  },
+  {
+    slug: '02-gpt55-spud',
+    frameLabel: 'P2 · 单图 <em>· GPT-5.5 Spud</em>',
+    tags: ['模型发布', '预测市场', '超级应用'],
+    idx: '02', catText: '模型发布', accent: '#7c3aed',
+    bg: { topRight: 'rgba(124,58,237,0.16)', top: '#faf7ff', mid: '#ffffff', bot: '#f7f4ff' },
+    title: [
+      { text: 'GPT-5.5 Spud 押注' },
+      { text: '明天发布', hl: true },
+    ],
+    titleSize: 82,
+    oneline: [
+      { text: '3 月 24 日训练完毕，Polymarket 给 4/23 ' },
+      { text: '75% 概率', bold: true },
+    ],
+    bullets: [
+      { k: '发生了什么', v: 'OpenAI 代号 Spud 模型完成预训练近一个月，Altman 称其"能真正加速经济"。' },
+      { k: '为什么重要', v: '要把 ChatGPT / Codex / Agent / Memory 统一成一个超级入口，AI wrapper 产品危险了。' },
+      { k: '对你的影响', v: '新模型如果能力跳跃，做 AI 应用的这周密切关注；准备好测试新 API。' },
+    ],
+    src: '📎 polymarket.com · lumichats.com',
+  },
+  {
+    slug: '03-deepseek-v4',
+    frameLabel: 'P3 · 单图 <em>· DeepSeek V4</em>',
+    tags: ['算力硬件', '开源模型', '华为芯片'],
+    idx: '03', catText: '算力硬件', accent: '#10b981',
+    bg: { topRight: 'rgba(16,185,129,0.16)', top: '#f2fff8', mid: '#ffffff', bot: '#effff6' },
+    title: [
+      { text: 'DeepSeek V4 ' },
+      { text: '脱离 NVIDIA', hl: true },
+      { text: '，月底发布' },
+    ],
+    titleSize: 78,
+    oneline: [
+      { text: '1T 参数 MoE 只激活 37B，全跑在 ' },
+      { text: '华为 Ascend', bold: true },
+      { text: ' 上' },
+    ],
+    bullets: [
+      { k: '发生了什么', v: '延期三次后终于临近，整个 stack 零 CUDA 依赖，训练推理全在华为芯片上完成。' },
+      { k: '为什么重要', v: '直接挑战美国芯片出口管制的核心假设，开源 Apache 2.0 给全球提供替代方案。' },
+      { k: '对你的影响', v: 'API 价格将远低于 Claude/GPT；1M 上下文适合长文档 RAG 和 coding agent。' },
+    ],
+    src: '📎 findskill.ai · reuters.com',
+  },
+  {
+    slug: '04-claude-outages',
+    frameLabel: 'P4 · 单图 <em>· Claude 反复宕机</em>',
+    tags: ['产品更新', '基础设施', '稳定性'],
+    idx: '04', catText: '产品更新', accent: '#3b82f6',
+    bg: { topRight: 'rgba(59,130,246,0.16)', top: '#f4f9ff', mid: '#ffffff', bot: '#eff5ff' },
+    title: [
+      { text: 'Claude 四月 ' },
+      { text: '三次宕机', hl: true },
+      { text: '，算力瓶颈' },
+    ],
+    titleSize: 78,
+    oneline: [
+      { text: '4/6 十小时、4/8 半天、4/15 又来，' },
+      { text: '用户太多机器不够', bold: true },
+    ],
+    bullets: [
+      { k: '发生了什么', v: '负载均衡配置更新触发 GPU 集群级联故障，API、网页、Claude Code 全挂。' },
+      { k: '为什么重要', v: '越来越多工作流重度依赖 Claude，单点故障影响面指数级扩大。' },
+      { k: '对你的影响', v: '生产环境必须有 fallback 方案——备一个 Gemini/GPT 或本地开源模型。' },
+    ],
+    src: '📎 ibtimes.com.au · webpronews.com',
+  },
+  {
+    slug: '05-aws-ai-scholars',
+    frameLabel: 'P5 · 单图 <em>· AWS 免费 AI 认证</em>',
+    tags: ['免费课程', 'AWS 认证', '求职加分'],
+    idx: '05', catText: '免费课程', accent: '#ff8a3d',
+    bg: { topRight: 'rgba(255,138,61,0.16)', top: '#fff7f1', mid: '#ffffff', bot: '#fff4eb' },
+    title: [
+      { text: 'AWS AI 认证 ' },
+      { text: '免费备考', hl: true },
+      { text: '开放' },
+    ],
+    titleSize: 82,
+    oneline: [
+      { text: '6/24 前申请 AI & ML Scholars，' },
+      { text: '白拿 3 个月 Skill Builder', bold: true },
+    ],
+    bullets: [
+      { k: '发生了什么', v: 'AWS AI & ML Scholars 2026 项目开放，完成 Challenge 免费拿 Skill Builder 订阅。' },
+      { k: '为什么重要', v: 'AI Practitioner 证在澳洲招聘市场认知度很高，零成本拿证机会难得。' },
+      { k: '对你的影响', v: '准备找工作或转 AI 方向的同学，现在申请 → 6 月考证 → 简历加分。' },
+    ],
+    src: '📎 aws.amazon.com · techrepublic.com',
+  },
+];
+
+PosterRenderer.renderAll({
+  DATE: '2026-04-22',
+  SUMMARY,
+  NEWS,
+});
+</script>
+</body>
+</html>
