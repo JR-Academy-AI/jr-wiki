@@ -49,3 +49,51 @@ v0 不是套壳 GPT-4 或 Claude。它用的是自己训练的复合模型系列
 - **v0-1.5-lg**：512K 上下文，处理复杂多步任务更强，但偶尔出错率稍高
 
 加上专门优化的 RAG 检索、Quick Edit 管线和自动修复模型，整体效果比直接用基础模型好不少。
+
+## 生成的项目结构
+
+v0 生成的代码遵循标准 Next.js App Router 目录结构，拉到本地后跟手写项目没有区别：
+
+```
+my-v0-project/
+├── app/
+│   ├── layout.tsx          # 根布局，全局样式和字体
+│   ├── page.tsx            # 首页
+│   └── api/
+│       └── route.ts        # API 路由（如果有后端逻辑）
+├── components/
+│   ├── ui/                 # shadcn/ui 基础组件（Button, Card, Dialog...）
+│   └── custom-widget.tsx   # 业务组件
+├── lib/
+│   └── utils.ts            # cn() 等工具函数
+├── public/                 # 静态资源
+├── tailwind.config.ts
+├── next.config.mjs
+└── package.json
+```
+
+通过 Git 集成把代码拉到本地后，标准的 Next.js 命令直接可用：
+
+```bash
+npm install          # 安装依赖
+npm run dev          # 本地启动 http://localhost:3000
+npm run build        # 生产构建
+npm run lint         # ESLint 检查
+```
+
+## v0 CLI 快速入门
+
+除了浏览器里用，v0 还提供 CLI 工具，可以在终端里直接跑：
+
+```bash
+# 安装
+npm i -g @vercel/v0
+
+# 用 Prompt 生成新项目
+v0 generate "一个带暗色模式的 Todo 应用"
+
+# 把 v0 生成的组件拉到现有 Next.js 项目
+npx v0 add https://v0.app/chat/xxx
+```
+
+CLI 适合已经有本地项目的开发者——在浏览器里调好 UI，一条命令同步到本地 codebase。
