@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>UQ 昆士兰大学 2026-04-22 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uni-primary: #51247a;  /* UQ 紫 */
+    --uni-accent: #ffce44;   /* UQ 金 */
+    --uni-text: #ffffff;
+    --brand-dark: #10162f;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #eef0f4;
+    color: var(--text-main);
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    padding: 32px 20px 120px;
+    line-height: 1.6;
+  }
+  .page { max-width: 1280px; margin: 0 auto; }
+  .topbar {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
+    padding: 22px 26px; margin-bottom: 24px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
+  .topbar h1 span { color: var(--uni-primary); }
+  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; padding: 10px 16px;
+    border: 2px solid var(--brand-dark);
+    background: #fff; color: var(--brand-dark);
+    border-radius: 10px; transition: all 0.12s;
+  }
+  .btn:hover { background: var(--uni-accent); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
+  .btn.primary { background: var(--uni-primary); color: #fff; }
+
+  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  .phone-wrap { position: sticky; top: 20px; }
+  .phone {
+    width: 100%; max-width: 420px; margin: 0 auto;
+    background: #f5f6f9;
+    border: 2px solid var(--brand-dark);
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 var(--brand-dark);
+  }
+  .phone-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .phone-bar .dot { width: 8px; height: 8px; background: var(--uni-primary); border-radius: 50%; display: inline-block; margin-right: 6px; }
+  .mp {
+    background: #fff; border-radius: 18px;
+    padding: 26px 20px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+    font-size: 15px; line-height: 1.85; color: #222;
+    max-height: 78vh; overflow-y: auto;
+  }
+  .mp::-webkit-scrollbar { width: 6px; }
+  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
+
+  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
+  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
+    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
+  .mp-meta .author { color: var(--uni-primary); font-weight: 600; }
+  .mp-lead {
+    background: #f1f5f9; border-radius: 8px; padding: 13px 15px;
+    font-size: 14px; color: #334155; line-height: 1.75; margin-bottom: 22px;
+  }
+  .mp-hook {
+    display: inline-block; background: var(--uni-primary); color: #fff;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+  }
+  .mp-h2 {
+    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
+    margin: 12px 0 12px; padding-left: 10px;
+    border-left: 4px solid var(--uni-primary);
+  }
+  .mp-alt-img {
+    width: 100%; display: block; margin: 10px 0 4px;
+    border-radius: 8px;
+  }
+  .mp-oneline {
+    background: #fff4d1; border-left: 3px solid var(--uni-accent);
+    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #3a3a3a;
+    margin: 12px 0 14px; line-height: 1.7;
+  }
+  .mp-oneline strong { color: #000; }
+  .mp p { margin: 0 0 12px; color: #333; font-size: 15px; line-height: 1.85; }
+  .mp-source { font-size: 12px; color: #8a8a8a; padding-top: 8px; margin-top: 8px;
+    border-top: 1px dashed #e5e7eb; word-break: break-all; }
+  .mp-source a { color: #3b82f6; text-decoration: none; }
+  .mp-divider { border: 0; border-top: 1px solid #e5e7eb; margin: 22px 0; height: 1px; }
+  .mp-quickview {
+    background: #fff8ee; padding: 16px; border-radius: 8px; margin: 22px 0;
+    border-left: 3px solid var(--uni-primary);
+  }
+  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; font-weight: 700; }
+  .mp-quickview ul { padding-left: 18px; margin: 0; }
+  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; line-height: 1.7; }
+  .mp-quickview li strong { color: var(--uni-primary); font-weight: 700; }
+  .mp-cta {
+    background: var(--uni-primary); color: #fff;
+    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
+  }
+  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; color: #fff; }
+  .mp-cta .sub { font-size: 12px; color: #d1d5db; line-height: 1.7; }
+
+  .panel .card {
+    background: #fff; border: 2px solid var(--brand-dark); border-radius: 14px;
+    padding: 18px 20px; margin-bottom: 16px;
+    box-shadow: 4px 4px 0 var(--brand-dark);
+  }
+  .panel h2 { font-size: 15px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .panel .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--uni-accent); color: var(--brand-dark); padding: 2px 7px; border-radius: 4px; }
+  .panel .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .panel .stat-item { text-align: center; }
+  .panel .stat-item .v { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--uni-primary); }
+  .panel .stat-item .k { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .panel ol { padding-left: 20px; font-size: 13px; line-height: 1.8; color: #334155; }
+  .panel code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--brand-dark); }
+  #log { background: #0f172a; color: #cbd5e1; padding: 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; max-height: 140px; overflow-y: auto; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1><span>UQ 昆士兰大学</span> 公众号文章 · 2026-04-22</h1>
+      <div class="sub">左侧 375px 手机预览 · 粘到 mp.weixin.qq.com 前点「📋 复制富文本」即可保留颜色。</div>
+    </div>
+    <div class="acts">
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn primary" id="btn-copy-md">📝 复制 MD</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+          <div class="mp-title">UQ 体育科学 QS 2026 全澳 #1 全球 #2 + AI 安全专家解读 Claude Mythos + 首开斯瓦希里语｜UQ 日报 04-22</div>
+          <div class="mp-meta">
+            <span class="author">JR Academy 澳洲留学</span>
+            <span>·</span><span>2026-04-22</span>
+            <span>·</span><span>阅读约 7 分钟</span>
+          </div>
+
+          <div class="mp-lead">今天 UQ 的三条新闻覆盖"学科排名 + 科研洞察 + 课程更新"三条线：体育相关学科 QS 2026 连续第 6 年拿下全澳第 1、全球第 2（仅次 Loughborough），同期成为全球第 2 个 ITA 反兴奋剂学术中心；UQ 商学院 Dr. Stan Karanasios 解读 Anthropic Claude Mythos / Project Glasswing 的企业网络安全冲击；UQ 现代语言学院（IML）4 月 17 日首次开设斯瓦希里语（Kiswahili）课程，是 UQ 历史上首个非洲语言。想了解 UQ 运动科学、AI 安全、语言文化方向动态的同学，这三条基本够用了。</div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">01 · 科研合作</div>
+          <div class="mp-h2">UQ 体育科学 QS 2026 全澳第 1、全球第 2：连续 6 年 + 新增 ITA 反兴奋剂学术中心</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1461896836934-bd45ba8aa120?w=1200&q=80" alt="UQ Sports Science">
+          <div class="mp-oneline"><strong>一句话</strong>：QS 2026 学科排名出炉，UQ 体育相关学科再次拿下全澳第 1、全球第 2，仅次于英国 Loughborough University。这已经是 UQ 连续第 6 年守住这个位置。同期 UQ 还成为全球第二个 ITA Academic Centre，将开设专业反兴奋剂课程。</div>
+          <p>这个排名对想走运动科学、体育管理、康复治疗方向的同学很实在：UQ 的 Human Movement Sciences 和 Exercise & Sports Science 项目是全球头部认可的，毕业后回国做运动医学、体育产业管理的认可度非常高。加上 ITA 反兴奋剂中心的资源，后续可能会新增专项 Certificate 或 Micro-credential 课程。</p>
+          <p>UQ 在 2032 布里斯班奥运会的学术支撑角色也越来越明确——运动科学、运动营养、高性能训练方法的研究团队都在为奥运选手提供技术服务。国际 Testing Agency（ITA）选择 UQ 作为全球第二个学术中心，其实也是看中了 UQ 在这个领域的研究密度和产业链接能力。</p>
+          <p><strong>对你的影响</strong>：6 年后奥运会就在家门口，这个方向的就业和研究机会密度只会继续上升。对本科或硕士想选运动科学相关方向的同学，UQ 是非常稳的选择。对已经在 UQ 读体育方向的同学，后续留意 ITA 合作项目带来的 Certificate 类短期课程——这类产业背书的证书在回国就业市场上有明确加分。</p>
+          <div class="mp-source">来源：<a href="https://news.uq.edu.au/2026-04-building-team-behind-our-olympic-champions">UQ News</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">02 · 科研合作</div>
+          <div class="mp-h2">UQ AI 安全专家解读 Claude Mythos：当 AI 能自动发现操作系统漏洞</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80" alt="UQ AI Security Research">
+          <div class="mp-oneline"><strong>一句话</strong>：UQ 商学院信息系统教授 Dr. Stan Karanasios 4 月在 UQ News 发表了一篇针对 Anthropic 旗下 AI 模型 Claude Mythos（代号 Project Glasswing）的深度评论。Claude Mythos 被报道能自动发现主流操作系统和主流浏览器中的软件漏洞——这对网络安全行业的意义是颠覆性的。</div>
+          <p>Karanasios 的分析重点不在技术细节，而在组织层面的冲击：当 AI 能以接近零成本批量发现漏洞时，企业的"修补窗口"会被急剧压缩，传统的"发现 → 报告 → 排期修复"流程可能跟不上 AI 的发现速度。他同时指出，UQ 网络安全研究中心（UQ Cyber Research Centre）此前与 AusCERT 合作的"AI 自动修补"项目正是在应对这个场景——让系统自己发现漏洞并自动打补丁。</p>
+          <p>AI + 安全的交叉领域正在快速膨胀。一方面攻击面变得更宽：AI 工具让漏洞发现成本降低，意味着即便是中小企业也可能成为定向攻击目标；另一方面防御工具链也在跟进——UQ Cyber Research Centre 和 AusCERT 合作的自动修补项目、基于机器学习的异常检测等方向都有明确投入。</p>
+          <p><strong>对你的影响</strong>：对 CS 和信息安全方向的同学来说，这篇文章值得细读。UQ 的 Master of Cyber Security 在这个方向有明确的教学投入。如果你在考虑 Honours 或 PhD 方向，"AI-driven vulnerability discovery"、"自动补丁生成"、"AI 驱动的威胁情报" 都是非常前沿的课题方向。对已经在 UQ 读 CS 或网络安全的同学，主动关注 Cyber Research Centre 的项目招募信息——实验室经验是后续读 PhD 或进头部安全公司最有说服力的背书。</p>
+          <div class="mp-source">来源：<a href="https://news.uq.edu.au/2026-04-claude-mythos-and-project-glasswing-why-ai-superhacker-has-tech-world-alert">UQ News</a></div>
+
+          <hr class="mp-divider">
+
+          <div class="mp-hook">03 · 课程更新</div>
+          <div class="mp-h2">UQ 首次开设非洲语言斯瓦希里语：10 周入门课，覆盖外交、国际发展、NGO 方向</div>
+          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=1200&q=80" alt="UQ Language Learning">
+          <div class="mp-oneline"><strong>一句话</strong>：UQ 现代语言学院（Institute of Modern Languages, IML）4 月 17 日宣布首次开设斯瓦希里语（Swahili / Kiswahili）课程，这是 UQ 历史上首个非洲语言课程。首期为 10 周初级班，由 IML 导师 Wesley Ngetich 授课，覆盖基础语法和日常会话。</div>
+          <p>斯瓦希里语是非洲使用人数排名前三的语言，也是非洲联盟的官方工作语言之一，在东非（肯尼亚、坦桑尼亚、乌干达、刚果等）约有 2 亿使用者。对想进外交部、联合国机构、国际 NGO 或做非洲市场业务的同学，这门语言的实用性正在快速上升。</p>
+          <p>语言实用性的外部驱动力之一是中国在非洲的投资和贸易增长。近几年中国企业在东非的基建、矿业、电信领域投入持续增加，本地团队的需求量也随之上升。会英语的中国候选人很多，但能同时用斯瓦希里语做客户沟通的差异化价值明显。</p>
+          <p><strong>对你的影响</strong>：IML 的课程面向所有人开放，不限 UQ 在读学生，没有前置要求也没有考试压力。IML 目前提供超过 30 种语言的教学，斯瓦希里语是最新加入的一种。对 UQ 在读的同学，这是一个低成本高回报的通识选择；对不是 UQ 在读的同学，也可以作为职业转型期的一项硬技能补充。10 周入门课的门槛很低，用一个学期左右的课余时间投入，可能打开意想不到的职业通道——尤其是对商科、国际关系、社会学、发展研究方向的同学。</p>
+          <div class="mp-source">来源：<a href="https://news.uq.edu.au/2026-04-speaking-swahili-african-language-joins-uq-course-offerings">UQ News</a></div>
+
+          <div class="mp-quickview">
+            <h3>📌 今日速览</h3>
+            <ul>
+              <li><strong>体育科学 QS 2026 全澳 #1、全球 #2</strong>：连续 6 年稳居，仅次 Loughborough；同期成为全球第 2 个 ITA 反兴奋剂学术中心，2032 布里斯班奥运前机会密度持续上升。</li>
+              <li><strong>AI 安全专家解读 Claude Mythos</strong>：UQ 商学院 Dr. Stan Karanasios 分析 Anthropic 模型的企业冲击——AI 自动发现漏洞把修补窗口急剧压缩，UQ Cyber Research Centre 与 AusCERT 的"AI 自动修补"项目应对。</li>
+              <li><strong>首次开设斯瓦希里语</strong>：UQ 历史上首个非洲语言课程，10 周入门班由 Wesley Ngetich 授课，面向外交、联合国、国际 NGO、非洲市场业务方向。</li>
+            </ul>
+          </div>
+
+          <div class="mp-cta">
+            <div class="big">🎓 计划申请 UQ 的同学？</div>
+            <div class="sub">关注 JR Academy 澳洲留学公众号 · 获取 UQ 申请时间线 + 奖学金材料清单<br>官网 jiangren.com.au · 10 所澳洲院校实时动态</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">2950</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">3</div><div class="k">图片</div></div>
+          <div class="stat-item"><div class="v">7</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步 <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：Unsplash 图 URL 保持绝对路径，WeChat 自动抓取 re-host。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → UQ 紫色 section 底 / 黄色 oneline / 紫色 CTA 保留 → 预览 → 发布。</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <pre id="log"></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// UQ brand: primary #51247a, accent #ffce44
+const MP_INLINE_STYLES = {
+  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000000;margin-bottom:10px;',
+  'mp-meta': 'color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eeeeee;',
+  'mp-lead': 'background-color:#f1f5f9;border-radius:8px;padding:13px 15px;font-size:14px;color:#334155;line-height:1.75;margin-bottom:22px;',
+  'mp-hook': 'display:inline-block;background-color:#51247a;color:#ffffff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
+  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000000;margin-top:12px;margin-bottom:12px;padding-left:10px;border-left:4px solid #51247a;',
+  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background-color:#ffffff;',
+  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
+  'mp-oneline': 'background-color:#fff4d1;border-left:3px solid #ffce44;padding:10px 14px;font-size:14px;font-weight:500;color:#3a3a3a;margin:12px 0 14px;line-height:1.7;',
+  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
+  'mp-divider': 'border:0;border-top:1px solid #51247a;margin:22px 0;height:1px;',
+  'mp-quickview': 'background-color:#fff8ee;padding:16px;border-radius:8px;margin:22px 0;border-left:3px solid #51247a;',
+  'mp-cta': 'background-color:#51247a;color:#ffffff;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
+};
+
+function applyInlineStyles(root) {
+  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      el.setAttribute('style', style + (el.getAttribute('style') || ''));
+    });
+  });
+  root.querySelectorAll('.mp-meta .author').forEach(el =>
+    el.setAttribute('style', 'color:#51247a;font-weight:600;'));
+  root.querySelectorAll('.mp-oneline strong').forEach(el =>
+    el.setAttribute('style', 'color:#000000;'));
+  root.querySelectorAll('.mp-source a').forEach(el =>
+    el.setAttribute('style', 'color:#3b82f6;text-decoration:none;'));
+  root.querySelectorAll('.mp-quickview h3').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000000;font-weight:700;'));
+  root.querySelectorAll('.mp-quickview ul').forEach(el =>
+    el.setAttribute('style', 'padding-left:18px;margin:0;'));
+  root.querySelectorAll('.mp-quickview li').forEach(el =>
+    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
+  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
+    el.setAttribute('style', 'color:#51247a;font-weight:700;'));
+  root.querySelectorAll('.mp-cta .big').forEach(el =>
+    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#ffffff;'));
+  root.querySelectorAll('.mp-cta .sub').forEach(el =>
+    el.setAttribute('style', 'font-size:12px;color:#d1d5db;line-height:1.7;'));
+  root.querySelectorAll('p').forEach(el => {
+    const existing = el.getAttribute('style') || '';
+    if (!existing.includes('margin-bottom') && !existing.includes('margin:')) {
+      el.setAttribute('style', 'margin:0 0 12px;color:#333333;font-size:15px;line-height:1.85;' + existing);
+    }
+  });
+  root.querySelectorAll('code').forEach(el =>
+    el.setAttribute('style', 'background-color:#f1f5f9;padding:1px 6px;border-radius:3px;font-size:13px;color:#10162f;'));
+  ['mp-lead', 'mp-oneline', 'mp-quickview', 'mp-cta'].forEach(cls => {
+    root.querySelectorAll('.' + cls).forEach(el => {
+      if (el.tagName.toLowerCase() === 'section') return;
+      const wrapper = document.createElement('section');
+      wrapper.setAttribute('style', MP_INLINE_STYLES[cls] || '');
+      el.removeAttribute('style');
+      el.setAttribute('style', 'background-color:transparent;padding:0;margin:0;');
+      wrapper.appendChild(el.cloneNode(true));
+      el.replaceWith(wrapper);
+    });
+  });
+  root.querySelectorAll('.mp-hook').forEach(el => {
+    if (el.tagName.toLowerCase() === 'span') return;
+    const span = document.createElement('span');
+    span.setAttribute('style', MP_INLINE_STYLES['mp-hook'] || '');
+    span.textContent = el.textContent;
+    el.replaceWith(span);
+  });
+}
+
+const logEl = document.getElementById('log');
+function log(msg) {
+  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  logEl.textContent += `[${t}] ${msg}\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+function mpCopyHtml() {
+  const article = document.getElementById('mp-article').cloneNode(true);
+  applyInlineStyles(article);
+  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
+  const plain = article.innerText;
+  try {
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([plain], { type: 'text/plain' }),
+    });
+    navigator.clipboard.write([item]).then(() => {
+      const bgHits = (html.match(/background-color:/g) || []).length;
+      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
+      const sectionHits = (html.match(/<section /g) || []).length;
+      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
+      log(`   粘到公众号后若颜色丢失，先贴 Notion 对比——那里有色=WeChat 剥掉了，那里无色=前端 bug`);
+    });
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = html; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+    log('✅ 富文本已复制（fallback）');
+  }
+}
+
+function mpCopyMarkdown() {
+  const article = document.getElementById('mp-article');
+  const md = article.innerText;
+  navigator.clipboard.writeText(md).then(() => log('✅ MD 已复制'));
+}
+
+document.getElementById('btn-copy-html').addEventListener('click', mpCopyHtml);
+document.getElementById('btn-copy-md').addEventListener('click', mpCopyMarkdown);
+log('📦 UQ 2026-04-22 mp-article 已加载');
+</script>
+</body>
+</html>
