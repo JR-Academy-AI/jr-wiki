@@ -4,6 +4,43 @@ JR Academy Headless 内容仓库。Markdown 存 GitHub，元数据存 MongoDB，
 
 ---
 
+## 🚨 SEO 政策（2026-04-23 运营决议）
+
+**jr-wiki 的 GitHub Pages 链接（`jr-academy-ai.github.io/jr-wiki/*`）是纯运营内部工具，全站 `noindex, nofollow`。不做 SEO、不做 sitemap、不做 RSS。**
+
+### 为什么不做
+
+jr-wiki 的 GitHub Pages 服务的是 **运营工具页**，不是对外产品：
+- `/ai-news-posters/{DATE}/index.html` — 海报下载工具（运营下载 PNG 发小红书）
+- `/ai-news-posters/{DATE}/mp-article.html` — 公众号发稿页（运营复制富文本粘到微信编辑器）
+- `/uni-news-social/{DATE}/{school}/xhs-posters.html` — 大学新闻海报下载
+- `/uni-news-social/events/{DATE}.html` + `{DATE}-covers.html` — 校园活动预览
+- `/_preview/` — 内容管理内部预览
+
+**真正对外的公开内容**（对应的 markdown 正文）走 **jiangren.com.au**：
+- `jiangren.com.au/blog/{slug}` ← posts 集合（由 Next.js 主站做 SEO）
+- `jiangren.com.au/wiki/{slug}` ← wikis 集合（由主站做 SEO）
+
+换言之：**SEO 归 jiangren.com.au Next.js 主站负责，GitHub Pages 链接不参与索引。**
+
+### 如何兑现
+
+1. **`dist/robots.txt`**（由 `build.ts` 生成）: `User-agent: *\nDisallow: /`
+2. **`public/robots.txt`**: 同样 `Disallow: /`（保底）
+3. **所有静态 HTML** 必须带 `<meta name="robots" content="noindex, nofollow">`（模板已默认带；新 HTML 必须延续）
+4. **禁止**在 jr-wiki 里加 sitemap.xml / RSS / JSON-LD / OpenGraph（那些留给 jiangren.com.au）
+5. **禁止**把 GitHub Pages 链接放进对外对用户可见的页面（只在运营工具 / 内部 dashboard 里引用）
+
+### 新功能检查清单
+
+加新静态 HTML 前必须过：
+- [ ] 模板/输出 `<head>` 里有 `<meta name="robots" content="noindex, nofollow">`
+- [ ] 没有加任何 SEO schema（FAQPage / Article / BreadcrumbList 等 JSON-LD）
+- [ ] 没有加 canonical link 指向对外 URL
+- [ ] 没有引入 sitemap 或 feed.xml
+
+---
+
 ## 架构
 
 ```

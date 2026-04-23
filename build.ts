@@ -226,8 +226,11 @@ const manifest = {
 writeFileSync(join(DIST, 'manifest.json'), JSON.stringify(manifest, null, 2));
 
 // ─── Write robots.txt ───
+// jr-wiki GitHub Pages (jr-academy-ai.github.io/jr-wiki/*) 全站禁止爬虫。
+// 所有链接都是**运营内部**使用（海报下载 / 公众号发稿 / 校园活动审阅）。
+// 真正对外的公开内容（博客 / wiki / 故事）走 jiangren.com.au/*，由主站 Next.js 提供 SEO。
 
-writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nDisallow: /_preview/\nDisallow: /content/\n`);
+writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nDisallow: /\n`);
 
 // ─── Copy static site assets ───
 

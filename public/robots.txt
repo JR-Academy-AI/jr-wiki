@@ -1,4 +1,4 @@
+# jr-wiki GitHub Pages 是运营内部工具（海报 / 公众号发稿 / 校园活动）。
+# 不对外公开，不做 SEO。真正的公开内容走 jiangren.com.au（由主站 Next.js 提供 SEO）。
 User-agent: *
-Allow: /
-
-Sitemap: https://jiangren.com.au/learn-wiki/sitemap-index.xml
+Disallow: /
