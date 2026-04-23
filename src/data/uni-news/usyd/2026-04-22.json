@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-04-22",
+  "school": "usyd",
+  "summary": {
+    "hookMain": "USYD",
+    "hookSub": "一天三条 硬料",
+    "hookSubHighlight": "硬料",
+    "subLines": [
+      "印尼大学工程 2+2 双学位",
+      "USYDIS 博士全奖 $42,754 / 年",
+      "VCIS 本科奖加码 $60,000"
+    ],
+    "previewCards": [
+      { "num": "01", "title": "2+2 双学位", "data": "两张学位证" },
+      { "num": "02", "title": "博士全奖", "data": "$42,754 / 年" },
+      { "num": "03", "title": "本科奖学金", "data": "$60,000" }
+    ]
+  },
+  "news": [
+    {
+      "idx": "01",
+      "category": "招生政策",
+      "h2Main": "USYD × 印尼大学签约工程",
+      "h2Sub": "2+2 双学位：两张学位证一起拿",
+      "h2Highlight": "2+2 双学位",
+      "lead": "悉尼大学与印度尼西亚大学 4 月 13 日在雅加达 Depok 校区签署新一轮战略合作协议，核心交付物是工程学院的 <b>2+2 双学位项目</b>：前 2 年在印尼大学、后 2 年在 USYD，毕业同时拿两所学校的官方学位证书。",
+      "bullets": [
+        { "k": "合作内容", "v": "<b>前 2 年印尼大学 + 后 2 年 USYD</b> · 毕业拿两份独立学位证，不是联合学位" },
+        { "k": "合作延伸", "v": "联合科研 + 教授互访 + FTUI 学生长期留学通道 · 东南亚头部理工生源直接接入 USYD" },
+        { "k": "对你的影响", "v": "USYD 工程方向的国际化密度还会继续上升，做 <b>Honours / Capstone 跨国合作项目</b> 的机会会更实际" }
+      ],
+      "source": "ANTARA News · 2026-04-13",
+      "sourceUrl": "https://en.antaranews.com/news/412083/ui-university-of-sydney-renew-pact-to-boost-research-mobility"
+    },
+    {
+      "idx": "02",
+      "category": "奖学金",
+      "h2Main": "USYDIS 博士全奖",
+      "h2Sub": "学费全免 + 4.2 万澳元 / 年",
+      "h2Highlight": "$42,754 / 年",
+      "lead": "University of Sydney International Stipend Scholarship（USYDIS）是 USYD 面向国际生的旗舰博士 / 研究型硕士全额资助项目，2026 年度生活费标准提到 <b>AUD 42,754 / 年</b>，并附带学费豁免、搬家补贴和论文补贴。",
+      "bullets": [
+        { "k": "金额", "v": "<b>AUD 42,754 / 年</b> 生活费 + 全额学费豁免 + 搬家补贴 + Thesis Allowance" },
+        { "k": "申请方式", "v": "<b>滚动评审</b> · 找到导师并递交研究项目时自动同步评估，不需要额外奖学金表" },
+        { "k": "适合谁", "v": "想冲 <b>Master by Research / PhD</b> 的国际生最值得看；零科研背景直接冲 PhD 难度高，更现实的路径是先读 MRes 再转" }
+      ],
+      "source": "Scholars4Dev · 2026-04",
+      "sourceUrl": "https://www.scholars4dev.com/2053/international-scholarships-at-university-of-sydney/"
+    },
+    {
+      "idx": "03",
+      "category": "本科奖学金",
+      "h2Main": "VCIS 本科 + 授课硕士奖学金",
+      "h2Sub": "加码 AUD 60,000",
+      "h2Highlight": "AUD 60,000",
+      "lead": "Vice-Chancellor's International Scholarships Scheme（VCIS）是 USYD 面向国际本科和授课型硕士学生的综合奖学金体系，2026 年度新增 <b>AUD 60,000</b> 的额外奖学金价值；叠加 Sydney International Student Award（SISA）后单人上限可到 AUD 40,000。",
+      "bullets": [
+        { "k": "金额覆盖", "v": "<b>AUD 60,000</b> 新增额度进入奖池 · 单人叠加 SISA 上限 <b>AUD 40,000</b>" },
+        { "k": "评估方式", "v": "拿到 USYD offer 后 <b>系统自动评估</b>，不需要另填表，重点看学术成绩和基本背景" },
+        { "k": "适合谁", "v": "面向本科和授课型硕士申请人；<b>985/211 高考一本 +80 / IB 40+ / A-Level AAA</b> 属于有效竞争区间" }
+      ],
+      "source": "USYD International Scholarships",
+      "sourceUrl": "https://www.sydney.edu.au/scholarships/international.html"
+    }
+  ],
+  "quickview": {
+    "titleMain": "今日 3 条",
+    "titleHighlight": "一眼看完",
+    "sub": "双学位新通道、博士全奖、本科奖学金三条都是申请动作会立刻受影响的信息，截图这一张就够。",
+    "items": [
+      { "n": "01", "title": "印尼 × USYD 2+2 工程双学位", "body": "前 2 年印尼大学 + 后 2 年 USYD · 毕业拿两张学位证" },
+      { "n": "02", "title": "USYDIS 博士全奖", "body": "AUD 42,754 / 年 + 学费全免 + 搬家 / 论文补贴 · 滚动评审全年可申" },
+      { "n": "03", "title": "VCIS 本科 / 授课硕士奖学金", "body": "2026 新增 AUD 60,000 · 自动评估 · 叠加 SISA 上限 AUD 40,000" }
+    ],
+    "cta": {
+      "big": "关注每日大学日报",
+      "sub": "10 所澳洲大学 · 每天 3 校 · 奖学金 + 科研 + 招生一手同步",
+      "badge": "04 / 22"
+    }
+  },
+  "xhsCopy": {
+    "p1": {
+      "title": "USYD 今天 3 条硬料｜双学位 + 博士全奖 + 本科奖",
+      "body": "今天 USYD 这三条都很实用：\n\n🎓 工程 2+2 双学位签了\n💰 博士全奖 $42,754 / 年\n📚 VCIS 本科奖加码 $60,000\n\n想申 USYD 的直接往下看。",
+      "tags": "#USYD #悉尼大学 #澳洲留学 #奖学金 #PhD申请",
+      "wechat": [
+        "USYD 04-22 三条硬料：双学位 + 博士全奖 + 本科奖学金"
+      ],
+      "community": [
+        "【USYD 04-22】工程 2+2 双学位、USYDIS 全奖、VCIS 本科奖三连"
+      ]
+    },
+    "p2": {
+      "title": "USYD 工程 2+2 双学位签了",
+      "body": "前 2 年印尼大学，后 2 年 USYD，毕业拿两张学位证。工程方向国际合作直接升级。",
+      "tags": "#USYD #工程留学 #双学位 #澳洲留学",
+      "wechat": [
+        "USYD 工程 2+2 双学位来了：两张学位证"
+      ],
+      "community": [
+        "【USYD 招生】工程 2+2 双学位签约，毕业拿两张学位证"
+      ]
+    },
+    "p3": {
+      "title": "USYDIS 博士全奖 $42,754 / 年",
+      "body": "学费全免 + 生活费 + 搬家补贴 + 论文补贴。滚动评审，全年可申，想冲 USYD PhD 的先收藏。",
+      "tags": "#USYD #博士奖学金 #PhD申请 #澳洲留学",
+      "wechat": [
+        "USYD 博士全奖：$42,754 / 年，滚动评审全年可申"
+      ],
+      "community": [
+        "【USYD PhD】全奖 $42,754/年 + 学费全免，全年可申"
+      ]
+    },
+    "p4": {
+      "title": "USYD VCIS 本科奖加码 $60,000",
+      "body": "本科和授课硕士都能看。拿到 offer 自动评估，叠加 SISA 上限可到 $40,000。",
+      "tags": "#USYD #本科奖学金 #硕士申请 #澳洲留学",
+      "wechat": [
+        "USYD VCIS 奖学金加码 $60,000，拿 offer 自动评"
+      ],
+      "community": [
+        "【USYD 奖学金】VCIS 2026 加码，自动评估"
+      ]
+    },
+    "p5": {
+      "title": "USYD 04-22 一眼看完 3 条",
+      "body": "今天 USYD 的 3 条重点：\n01 · 工程 2+2 双学位\n02 · 博士全奖 $42,754 / 年\n03 · VCIS 本科奖加码 $60,000\n想申 USYD 的这张直接保存。",
+      "tags": "#USYD #悉尼大学 #大学新闻 #奖学金",
+      "wechat": [
+        "USYD 04-22 三条重点一图看完"
+      ],
+      "community": [
+        "【USYD 04-22 速览】双学位 + 博士全奖 + 本科奖"
+      ]
+    }
+  },
+  "mp": {
+    "title": "USYD 与印尼大学工程 2+2 双学位签约 + USYDIS 博士全奖 $42,754/年 + VCIS 本科奖加码 $60,000",
+    "lead": "今天悉尼大学的三条新闻走的是\"招生新通道 + 博士全奖 + 本科奖学金\"路线：4 月 13 日雅加达签约印尼大学工程 2+2 双学位打开东南亚生源管道、USYDIS 博士奖学金 2026 年生活费标准提到 AUD 42,754/年（滚动评审全年可申）、Vice-Chancellor's International Scholarships 新增 AUD 60,000 额度叠加 SISA 上限 AUD 40,000。想冲 USYD PhD、想拿本科奖学金、想考虑跨国双学位的同学，今天这三条基本够用了。",
+    "meta": {
+      "readTime": "7 分钟"
+    },
+    "newsBodies": [
+      {
+        "h2": "USYD × 印尼大学签约工程 2+2 双学位：两张学位证一起拿",
+        "paragraphs": [
+          "这份协议覆盖的不只是工程方向。两校在签约仪式上还讨论了联合科研项目、教授互访、以及将 USYD 纳入印尼大学工程学院（FTUI）学生的长期留学目的地。印尼大学在 QS 2026 东南亚排名中位列前 3，工程学院是其招牌学科之一，对 USYD 来说，这次合作等于在东南亚头部理工生源里直接建了一条管道。",
+          "工程 2+2 模式的操作细节是：学生前 2 年在印尼大学完成基础课程，后 2 年转入 USYD 工程学院完成专业课和 Thesis / Capstone。毕业时拿到的是两份独立学位证书，不是联合学位，这意味着回国做学历认证时两份都可以单独用。",
+          "对在 USYD 读工程或相关方向的同学来说，最直接的变化是校园国际化密度会继续上升，联合课题机会也会增加；对还在选校的准留学生，这也是 USYD 工程体系继续扩张的明确信号。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://en.antaranews.com/news/412083/ui-university-of-sydney-renew-pact-to-boost-research-mobility\">ANTARA News</a>"
+      },
+      {
+        "h2": "USYDIS 博士全奖：学费全免 + 4.2 万澳元/年 + 搬家 / 论文补贴",
+        "paragraphs": [
+          "USYDIS 的 2026 年度资助标准是 AUD 42,754 / 年生活费 + 全额学费豁免 + 一次性搬家补贴（Relocation Allowance）+ 论文写作期补贴（Thesis Allowance）。覆盖范围是 Master by Research 和 PhD，面向所有国籍的国际生开放。",
+          "和很多学校一年两次截止不同，USYDIS 采用滚动评审。只要你找到愿意接收的导师并提交研究计划，任何时候都可以递交申请，评审委员会按季度集中处理。申请不需要另外填奖学金表，递交研究项目申请时系统自动同步评估。",
+          "对申请人来说，这类奖学金最关键的还是研究背景。USYD 每年发放的各类奖学金和奖励总额超过 AUD 1.35 亿，但零科研背景直接冲 PhD + 全额奖学金成功率并不高，更现实的路径是先读一年 Master by Research 再转。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://www.scholars4dev.com/2053/international-scholarships-at-university-of-sydney/\">Scholars4Dev</a>"
+      },
+      {
+        "h2": "VCIS 本科 + 授课硕士奖学金：加码 AUD 60,000，叠加 SISA 上限 AUD 40,000",
+        "paragraphs": [
+          "VCIS 涵盖多个子项目，包括学术卓越奖、领导力奖和特定专业方向奖。申请方式和大多数澳洲大学类似：拿到 USYD 的录取通知后系统自动评估，不需要另外填表，评选标准以学术成绩为主，辅以课外活动和领导力经历。",
+          "如果拿到 VCIS 里的学术卓越类奖学金，叠加 SISA 后一年最多减免 AUD 40,000 学费。按 USYD 商科或工程本科约 AUD 55,000 / 年的学费计算，能覆盖 70% 以上，这对高分申请人来说很有吸引力。",
+          "这类自动评估 + 可叠加的奖学金设计，对准留学生最大的好处是省时间：不用担心错过单独的奖学金窗口，也不用额外准备一套文书，核心还是把学术成绩和语言分数做到位。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://www.sydney.edu.au/scholarships/international.html\">USYD International Scholarships</a>"
+      }
+    ],
+    "quickview": {
+      "title": "📌 今日速览",
+      "items": [
+        "<strong>印尼 × USYD 2+2 工程双学位</strong>：4 月 13 日雅加达签约，前 2 年印尼大学 + 后 2 年 USYD，毕业拿两张学位证。",
+        "<strong>USYDIS 博士全奖</strong>：AUD 42,754 / 年生活费 + 学费全免 + 搬家补贴 + 论文补贴，滚动评审全年可申。",
+        "<strong>VCIS 本科 / 授课硕士奖学金</strong>：2026 新增 AUD 60,000，叠加 SISA 上限 AUD 40,000，拿 offer 自动评。"
+      ]
+    },
+    "cta": {
+      "big": "计划申请 USYD 的同学？",
+      "sub": "关注 JR Academy 澳洲留学公众号 · 获取 USYD 申请时间线 + 奖学金材料清单"
+    }
+  },
+  "drafts": {
+    "sections": [
+      {
+        "heading": "USYD 今天 3 条都挺硬",
+        "body": "今天 USYD 这 3 条，基本把申请、奖学金和通道都讲明白了：\n\n🎓 工程 2+2 双学位签了，前 2 年印尼大学 + 后 2 年 USYD，毕业拿两张学位证。\n💰 USYDIS 博士全奖 2026 提到 $42,754 / 年，学费全免，滚动评审全年可申。\n📚 VCIS 本科 / 授课硕士奖学金 2026 奖池继续加码到 $60,000，拿到 offer 自动评估。\n\n如果你正在看 USYD，今天这三条不是资讯类八卦，是会直接影响申请动作的硬信息。双学位那条是通道变宽；PhD 那条是奖学金门槛和节奏；本科奖那条是预算和申请策略。截图保存就够用了。",
+        "tags": ["#USYD", "#悉尼大学", "#澳洲留学", "#奖学金", "#PhD申请", "#本科申请", "#大学新闻"]
+      }
+    ],
+    "sensitivityScan": [
+      { "category": "绝对化", "rule": "最 / 第一 / 唯一 / 绝对", "result": "未检出" },
+      { "category": "教育承诺", "rule": "包过 / 保录", "result": "未检出" },
+      { "category": "引流", "rule": "加 V / 微信号 / 私信 / 关注公众号", "result": "未检出" },
+      { "category": "AI 味", "rule": "首先其次 / 值得注意 / 综上所述", "result": "未检出" }
+    ]
+  }
+}

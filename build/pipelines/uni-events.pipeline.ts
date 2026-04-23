@@ -35,9 +35,13 @@ const OUTPUT_BASE = join(REPO_ROOT, 'src/static/uni-news-social/events');
 interface BrandEntry {
 	primary: string;
 	deep: string;
+	light?: string;
+	accent?: string;
+	text?: string;
 	nameCn: string;
 	nameEn: string;
 	code: string;
+	city?: string;
 }
 interface BrandFile { brands: Record<string, BrandEntry>; }
 
@@ -105,6 +109,29 @@ function renderSchoolCard(school: SchoolEvents, brand: BrandEntry): string {
       </div>` : '';
 
 	const coverBg = `background: linear-gradient(135deg, ${brand.primary}, ${brand.deep});`;
+	const slug = `cover-${brand.code.toLowerCase()}`;
+	const previewId = `card-cover-${brand.code.toLowerCase()}-render`;
+	const accent = brand.accent || '#ffce44';
+	const text = brand.text || '#ffffff';
+	const city = brand.city || 'Australia';
+
+	let coverEventsBlock: string;
+	if (school.events.length === 0) {
+		coverEventsBlock = `<div class="inline-placeholder">
+        <div class="inline-placeholder-kicker">THIS WEEK</div>
+        <div class="inline-placeholder-title">本周无公开活动</div>
+        <div class="inline-placeholder-meta">这所学校本周适合先收藏，等下轮更新。</div>
+      </div>`;
+	} else {
+		coverEventsBlock = school.events.slice(0, 3).map((e, index) => `
+        <div class="inline-event-hook">
+          <div class="inline-event-index">${String(index + 1).padStart(2, '0')}</div>
+          <div class="inline-event-copy">
+            <div class="inline-event-title">${htmlEscape(e.title)}</div>
+            <div class="inline-event-meta">${htmlEscape(e.time)}<br>${htmlEscape(e.location)}</div>
+          </div>
+        </div>`).join('');
+	}
 
 	return `
     <article class="school">
@@ -114,9 +141,45 @@ function renderSchoolCard(school: SchoolEvents, brand: BrandEntry): string {
         <div class="name-cn">${htmlEscape(brand.nameCn)}</div>
       </header>
       <div class="school-body">
-        <h3>This Week's Events</h3>
-        ${eventsHtml}
-        ${draftHtml}
+        <div class="school-layout">
+          <div class="school-main">
+            <h3>This Week's Events</h3>
+            ${eventsHtml}
+            ${draftHtml}
+          </div>
+          <aside class="school-side">
+            <div class="poster-box">
+              <div class="poster-box-head">
+                <span>封面预览</span>
+                <em>${htmlEscape(city)}</em>
+              </div>
+              <div class="mini-cover-stage">
+                <div class="mini-cover" id="${previewId}" style="--cover-primary:${brand.primary};--cover-deep:${brand.deep};--cover-light:${brand.light || brand.primary};--cover-accent:${accent};--cover-text:${text};background:linear-gradient(145deg, ${brand.deep} 0%, ${brand.primary} 54%, ${brand.light || brand.primary} 100%);">
+                  <div class="mini-cover-orb mini-cover-orb-a"></div>
+                  <div class="mini-cover-orb mini-cover-orb-b"></div>
+                  <div class="mini-cover-grid"></div>
+                  <div class="mini-cover-inner">
+                    <div class="mini-cover-topline">
+                      <div class="mini-chip">CAMPUS PULSE</div>
+                      <div class="mini-chip">${htmlEscape(city)}</div>
+                    </div>
+                    <div class="mini-cover-code">${htmlEscape(brand.code)}</div>
+                    <div class="mini-cover-cn">${htmlEscape(brand.nameCn)}</div>
+                    <div class="mini-cover-en">${htmlEscape(brand.nameEn)}</div>
+                    <div class="mini-events-shell">
+                      ${coverEventsBlock}
+                    </div>
+                    <div class="mini-cover-foot">
+                      <span>Weekly Edit</span>
+                      <span>${htmlEscape(brand.code)}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="poster-dl-btn" data-target="${previewId}" data-slug="${slug}">⬇ 下载这张 PNG</button>
+            </div>
+          </aside>
+        </div>
       </div>
     </article>`;
 }
@@ -125,19 +188,30 @@ function renderCoverFrame(school: SchoolEvents, brand: BrandEntry, date: string)
 	const slug = `cover-${brand.code.toLowerCase()}`;
 	const coverId = `cover-${brand.code.toLowerCase()}-render`;
 	// 日期显示：2026-04-23 → "4 月 23 日"
-	const [y, m, d] = date.split('-');
+	const [, m, d] = date.split('-');
 	const dateCn = `${parseInt(m, 10)} 月 ${parseInt(d, 10)} 日`;
-	const gradient = `linear-gradient(145deg, ${brand.deep}, ${brand.primary})`;
+	const gradient = `linear-gradient(145deg, ${brand.deep} 0%, ${brand.primary} 54%, ${brand.light || brand.primary} 100%)`;
+	const accent = brand.accent || '#ffce44';
+	const text = brand.text || '#ffffff';
+	const city = brand.city || 'Australia';
+	const dateShort = `${m}.${d}`;
 
 	let eventsBlock: string;
 	if (school.events.length === 0) {
-		eventsBlock = `<div class="placeholder">本周无公开活动<br>下周见 🌱</div>`;
+		eventsBlock = `<div class="placeholder">
+          <div class="placeholder-kicker">THIS WEEK</div>
+          <div class="placeholder-title">本周无公开活动</div>
+          <div class="placeholder-meta">先把这所学校加入观察名单，下周继续更新。</div>
+        </div>`;
 	} else {
 		const topEvents = school.events.slice(0, Math.min(3, school.events.length));
-		eventsBlock = topEvents.map(e => `
+		eventsBlock = topEvents.map((e, index) => `
           <div class="event-hook">
-            <div class="title">${htmlEscape(e.title)}</div>
-            <div class="meta">${htmlEscape(e.time)}<br>${htmlEscape(e.location)}</div>
+            <div class="event-index">${String(index + 1).padStart(2, '0')}</div>
+            <div class="event-copy">
+              <div class="title">${htmlEscape(e.title)}</div>
+              <div class="meta">${htmlEscape(e.time)}<br>${htmlEscape(e.location)}</div>
+            </div>
           </div>`).join('');
 	}
 
@@ -145,17 +219,35 @@ function renderCoverFrame(school: SchoolEvents, brand: BrandEntry, date: string)
     <div class="cover-frame">
       <div class="label">${htmlEscape(brand.code)} <em>· ${htmlEscape(brand.nameCn)}</em></div>
       <div class="cover-scaler">
-        <div class="cover" id="${coverId}" style="background: ${gradient};">
+        <div class="cover" id="${coverId}" style="--cover-primary:${brand.primary};--cover-deep:${brand.deep};--cover-light:${brand.light || brand.primary};--cover-accent:${accent};--cover-text:${text};background:${gradient};">
+          <div class="cover-orb cover-orb-a"></div>
+          <div class="cover-orb cover-orb-b"></div>
+          <div class="cover-grid"></div>
           <div class="cover-inner">
-            <div class="code">${htmlEscape(brand.code)}</div>
+            <div class="cover-topline">
+              <div class="edition-chip">CAMPUS PULSE</div>
+              <div class="city-chip">${htmlEscape(city)}</div>
+            </div>
+            <div class="identity-row">
+              <div class="code-badge">${htmlEscape(brand.code)}</div>
+              <div class="date-chip">
+                <span class="date-short">${dateShort}</span>
+                <span class="date-long">${dateCn}</span>
+              </div>
+            </div>
             <div class="name-cn">${htmlEscape(brand.nameCn)}</div>
             <div class="name-en">${htmlEscape(brand.nameEn)}</div>
-            <div class="date-chip">${dateCn} · 本周</div>
-            <div class="events-list">${eventsBlock}
+            <div class="events-shell">
+              <div class="events-head">
+                <div class="events-kicker">THIS WEEK</div>
+                <div class="events-tag">XHS COVER</div>
+              </div>
+              <div class="events-list">${eventsBlock}
+              </div>
             </div>
             <div class="bottom">
-              <div class="label">校园活动 · 每周更新</div>
-              <div class="slogan">6 所澳洲大学</div>
+              <div class="label">校园活动封面 · 每周更新</div>
+              <div class="slogan">6 所澳洲大学 / Weekly Edit</div>
             </div>
           </div>
         </div>

@@ -1,158 +1,39 @@
 <!DOCTYPE html>
+
+<!-- 由 build/pipelines/uni-news.pipeline.ts 自动生成 · 2026-04-23T04:38:46.359Z -->
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>USYD 悉尼大学 2026-04-22 · 公众号文章（内部）</title>
+<title>悉尼大学 日报 2026-04-22 · 公众号文章（内部）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --uni-primary: #e64626;  /* USYD 红 */
-    --uni-accent: #ffce44;   /* USYD 金 */
-    --uni-text: #ffffff;
-    --brand-dark: #10162f;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: #eef0f4;
-    color: var(--text-main);
-    font-family: 'Noto Sans SC', system-ui, sans-serif;
-    padding: 32px 20px 120px;
-    line-height: 1.6;
-  }
-  .page { max-width: 1280px; margin: 0 auto; }
-  .topbar {
-    background: #fff; border: 2px solid var(--brand-dark); border-radius: 18px;
-    padding: 22px 26px; margin-bottom: 24px;
-    box-shadow: 8px 8px 0 var(--brand-dark);
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
-  }
-  .topbar h1 { font-size: 20px; font-weight: 900; letter-spacing: -0.3px; }
-  .topbar h1 span { color: var(--uni-primary); }
-  .topbar .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
-  .btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
-    cursor: pointer; padding: 10px 16px;
-    border: 2px solid var(--brand-dark);
-    background: #fff; color: var(--brand-dark);
-    border-radius: 10px; transition: all 0.12s;
-  }
-  .btn:hover { background: var(--uni-accent); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--brand-dark); }
-  .btn.primary { background: var(--uni-primary); color: #fff; }
-
-  .layout { display: grid; grid-template-columns: 430px 1fr; gap: 22px; align-items: start; }
-  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
-
-  .phone-wrap { position: sticky; top: 20px; }
-  .phone {
-    width: 100%; max-width: 420px; margin: 0 auto;
-    background: #f5f6f9;
-    border: 2px solid var(--brand-dark);
-    border-radius: 28px;
-    padding: 12px;
-    box-shadow: 8px 8px 0 var(--brand-dark);
-  }
-  .phone-bar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 4px 10px 10px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: var(--text-muted);
-  }
-  .phone-bar .dot { width: 8px; height: 8px; background: var(--uni-primary); border-radius: 50%; display: inline-block; margin-right: 6px; }
-  .mp {
-    background: #fff; border-radius: 18px;
-    padding: 26px 20px 36px;
-    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
-    font-size: 15px; line-height: 1.85; color: #222;
-    max-height: 78vh; overflow-y: auto;
-  }
-  .mp::-webkit-scrollbar { width: 6px; }
-  .mp::-webkit-scrollbar-thumb { background: #c0c6d0; border-radius: 3px; }
-
-  .mp-title { font-size: 20px; font-weight: 900; line-height: 1.4; color: #000; margin-bottom: 10px; }
-  .mp-meta { display: flex; gap: 8px; align-items: center; color: #8a8a8a; font-size: 12px;
-    padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; }
-  .mp-meta .author { color: var(--uni-primary); font-weight: 600; }
-  .mp-lead {
-    background: #f1f5f9; border-radius: 8px; padding: 13px 15px;
-    font-size: 14px; color: #334155; line-height: 1.75; margin-bottom: 22px;
-  }
-  .mp-hook {
-    display: inline-block; background: var(--uni-primary); color: #fff;
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
-    padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
-  }
-  .mp-h2 {
-    font-size: 17px; font-weight: 900; line-height: 1.45; color: #000;
-    margin: 12px 0 12px; padding-left: 10px;
-    border-left: 4px solid var(--uni-primary);
-  }
-  .mp-alt-img {
-    width: 100%; display: block; margin: 10px 0 4px;
-    border-radius: 8px;
-  }
-  .mp-oneline {
-    background: #fff4d1; border-left: 3px solid var(--uni-accent);
-    padding: 10px 14px; font-size: 14px; font-weight: 500; color: #3a3a3a;
-    margin: 12px 0 14px; line-height: 1.7;
-  }
-  .mp-oneline strong { color: #000; }
-  .mp p { margin: 0 0 12px; color: #333; font-size: 15px; line-height: 1.85; }
-  .mp-source { font-size: 12px; color: #8a8a8a; padding-top: 8px; margin-top: 8px;
-    border-top: 1px dashed #e5e7eb; word-break: break-all; }
-  .mp-source a { color: #3b82f6; text-decoration: none; }
-  .mp-divider { border: 0; border-top: 1px solid #e5e7eb; margin: 22px 0; height: 1px; }
-  .mp-quickview {
-    background: #fff8ee; padding: 16px; border-radius: 8px; margin: 22px 0;
-    border-left: 3px solid var(--uni-primary);
-  }
-  .mp-quickview h3 { font-size: 15px; margin-bottom: 10px; color: #000; font-weight: 700; }
-  .mp-quickview ul { padding-left: 18px; margin: 0; }
-  .mp-quickview li { font-size: 13px; margin-bottom: 6px; color: #475569; line-height: 1.7; }
-  .mp-quickview li strong { color: var(--uni-primary); font-weight: 700; }
-  .mp-cta {
-    background: var(--uni-primary); color: #fff;
-    padding: 18px; border-radius: 10px; text-align: center; margin-top: 22px;
-  }
-  .mp-cta .big { font-size: 15px; font-weight: 900; margin-bottom: 4px; color: #fff; }
-  .mp-cta .sub { font-size: 12px; color: #d1d5db; line-height: 1.7; }
-
-  .panel .card {
-    background: #fff; border: 2px solid var(--brand-dark); border-radius: 14px;
-    padding: 18px 20px; margin-bottom: 16px;
-    box-shadow: 4px 4px 0 var(--brand-dark);
-  }
-  .panel h2 { font-size: 15px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-  .panel .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--uni-accent); color: var(--brand-dark); padding: 2px 7px; border-radius: 4px; }
-  .panel .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-  .panel .stat-item { text-align: center; }
-  .panel .stat-item .v { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--uni-primary); }
-  .panel .stat-item .k { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-  .panel ol { padding-left: 20px; font-size: 13px; line-height: 1.8; color: #334155; }
-  .panel code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--brand-dark); }
-  #log { background: #0f172a; color: #cbd5e1; padding: 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; max-height: 140px; overflow-y: auto; white-space: pre-wrap; }
+:root {
+  --mp-primary: #e64626;
+  --mp-highlight: #ffce44;
+  --mp-dark: #10162f;
+}
 </style>
+<link rel="stylesheet" href="../../../_lib/mp-page.v1.css">
 </head>
 <body>
 <div class="page">
   <div class="topbar">
     <div>
-      <h1><span>USYD 悉尼大学</span> 公众号文章 · 2026-04-22</h1>
-      <div class="sub">左侧 375px 手机预览 · 粘到 mp.weixin.qq.com 前点「📋 复制富文本」即可保留颜色。</div>
+      <h1>📰 悉尼大学 · <span>公众号文章</span> · 2026-04-22</h1>
+      <div class="sub">左侧手机预览 · 右侧进度 + 操作。点「📋 复制富文本」后粘到公众号编辑器，图片自动抓取 re-host。</div>
     </div>
     <div class="acts">
+      <a class="btn" href="./">← 回 USYD 素材库</a>
       <button class="btn" id="btn-copy-html">📋 复制富文本</button>
-      <button class="btn primary" id="btn-copy-md">📝 复制 MD</button>
     </div>
   </div>
 
   <div class="layout">
+
     <div class="phone-wrap">
       <div class="phone">
         <div class="phone-bar">
@@ -160,202 +41,96 @@
           <span>375px · 预览</span>
         </div>
         <article class="mp" id="mp-article">
-          <div class="mp-title">USYD 与印尼大学工程 2+2 双学位签约 + USYDIS 博士全奖 $42,754/年 + VCIS 本科奖加码 $60,000｜USYD 日报 04-22</div>
-          <div class="mp-meta">
-            <span class="author">JR Academy 澳洲留学</span>
-            <span>·</span><span>2026-04-22</span>
-            <span>·</span><span>阅读约 7 分钟</span>
-          </div>
-
-          <div class="mp-lead">今天悉尼大学的三条新闻走的是"招生新通道 + 博士全奖 + 本科奖学金"路线：4 月 13 日雅加达签约印尼大学工程 2+2 双学位打开东南亚生源管道、USYDIS 博士奖学金 2026 年生活费标准提到 AUD 42,754/年（滚动评审全年可申）、Vice-Chancellor's International Scholarships 新增 AUD 60,000 额度叠加 SISA 上限 AUD 40,000。想冲 USYD PhD、想拿本科奖学金、想考虑跨国双学位的同学，今天这三条基本够用了。</div>
-
-          <hr class="mp-divider">
-
-          <div class="mp-hook">01 · 招生政策</div>
-          <div class="mp-h2">USYD × 印尼大学签约工程 2+2 双学位：两张学位证一起拿</div>
-          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1523050854058-8df90110c476?w=1200&q=80" alt="USYD Indonesia Partnership">
-          <div class="mp-oneline"><strong>一句话</strong>：悉尼大学与印度尼西亚大学 4 月 13 日在雅加达 Depok 校区签署了新一轮战略合作协议，核心交付物是工程学院的 2+2 双学位项目——前 2 年在印尼大学、后 2 年在 USYD，毕业同时拿两所学校的官方学位证书。</div>
-          <p>这份协议覆盖的不只是工程方向。两校在签约仪式上还讨论了联合科研项目、教授互访、以及将 USYD 纳入印尼大学工程学院（FTUI）学生的长期留学目的地。印尼大学在 QS 2026 东南亚排名中位列前 3，工程学院是其招牌学科之一——对 USYD 来说，这次合作等于在东南亚头部理工生源里直接建了一条管道。</p>
-          <p>工程 2+2 模式的操作细节：学生前 2 年在印尼大学完成基础课程（数学、物理、工程制图、专业导论），后 2 年转入 USYD 工程学院完成专业课 + Thesis / Capstone。毕业时拿到的是两份独立的学位证书，不是"联合学位"——这意味着回国做学历认证时两份都可以单独用。</p>
-          <p><strong>对你的影响</strong>：对在 USYD 读工程或相关方向的同学来说，最直接的影响是校园国际化密度会继续上升，联合课题的机会也会增加。如果你在考虑做跨国合作的 Honours 或 Capstone 项目，可以关注后续通知。对正在选校的准留学生，这也是 USYD 工程体系拓宽的信号——可以留意未来是否会与东南亚其他头部高校陆续启动类似通道。</p>
-          <div class="mp-source">来源：<a href="https://en.antaranews.com/news/412083/ui-university-of-sydney-renew-pact-to-boost-research-mobility">ANTARA News</a></div>
-
-          <hr class="mp-divider">
-
-          <div class="mp-hook">02 · 奖学金</div>
-          <div class="mp-h2">USYDIS 博士全奖：学费全免 + 4.2 万澳元/年 + 搬家 / 论文补贴</div>
-          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&q=80" alt="USYD Research Scholarship">
-          <div class="mp-oneline"><strong>一句话</strong>：University of Sydney International Stipend Scholarship（USYDIS）是 USYD 面向国际生的旗舰博士 / 研究型硕士全额资助项目，2026 年度生活费 AUD 42,754 / 年（每年 1 月按通胀调整）+ 全额学费豁免 + 搬家补贴 + 论文补贴。</div>
-          <p>USYDIS 的 2026 年度资助标准是：AUD 42,754 / 年生活费 + 全额学费豁免 + 一次性搬家补贴（Relocation Allowance）+ 论文写作期补贴（Thesis Allowance）。覆盖范围是 Master by Research（研究型硕士）+ PhD，面向所有国籍的国际生开放。</p>
-          <p>和很多学校一年两截止不同，USYDIS 采用滚动评审（Rolling Admission）——只要你找到愿意接收的导师并提交研究计划，任何时候都可以递交申请，评审委员会按季度集中处理。这对还在套磁或者需要等本科成绩单的同学比较友好，不会因为错过一个 deadline 就多等半年。申请不需要另外填奖学金表，递交研究项目申请时系统自动同步评估。</p>
-          <p><strong>对你的影响</strong>：USYD 每年发放的各类奖学金和奖励总额超过 AUD 1.35 亿，覆盖本科、研究型硕士和 PhD。USYDIS 是其中金额和覆盖范围都排前列的项目。按悉尼的生活成本，AUD 42,754 基本能覆盖一个人在内西区（Newtown、Redfern、Glebe）的房租 + 日常开销，PhD 期间不需要靠打工维持生活。评审看三项硬指标：学术记录、研究产出（论文 / report / working paper）、前期研究经历。零科研背景直接冲 PhD + 全额奖学金成功率偏低，现实一点的路径是先读一年 Master by Research 攒一篇发表再转 PhD。</p>
-          <div class="mp-source">来源：<a href="https://www.scholars4dev.com/2053/international-scholarships-at-university-of-sydney/">Scholars4Dev</a></div>
-
-          <hr class="mp-divider">
-
-          <div class="mp-hook">03 · 奖学金</div>
-          <div class="mp-h2">VCIS 本科 + 授课硕士奖学金：加码 AUD 60,000，叠加 SISA 上限 AUD 40,000</div>
-          <img class="mp-alt-img" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80" alt="USYD Campus">
-          <div class="mp-oneline"><strong>一句话</strong>：Vice-Chancellor's International Scholarships Scheme（VCIS）是 USYD 针对国际本科和授课型硕士学生的综合奖学金体系，2026 年度新增 AUD 60,000 的额外奖学金价值。同时持有 Sydney International Student Award（SISA）者单人上限 AUD 40,000。</div>
-          <p>VCIS 涵盖多个子项目，包括学术卓越奖、领导力奖和特定专业方向奖。申请方式和大多数澳洲大学类似：拿到 USYD 的录取通知后系统自动评估，不需要另外填表。评选标准以学术成绩为主，辅以课外活动和领导力经历。</p>
-          <p>换算成具体数字：如果拿到 VCIS 里的学术卓越类奖学金，叠加 SISA 后一年最多减免 AUD 40,000 学费。按 USYD 商科或工程本科约 AUD 55,000 / 年的学费计算，能覆盖 70% 以上。这对那些成绩够 985/211 高考一本线上 80 分以上、或者 IB 40+、A-Level AAA 的同学来说，性价比相当高。</p>
-          <p><strong>对你的影响</strong>：USYD 这种"自动评估 + 可叠加"的奖学金设计对准留学生来说最省心——不用担心错过单独的奖学金申请窗口期，也不用准备额外的文书材料。对已经拿到 USYD 录取的同学，不需要做任何额外操作，只需按时完成本科 / 硕士申请就会被自动纳入 VCIS + SISA 的评估池。对还在准备申请的同学，重点依然是打磨学术成绩和语言分数——VCIS 的硬指标权重最高，不需要面试或文书比赛。</p>
-          <div class="mp-source">来源：<a href="https://www.sydney.edu.au/scholarships/international.html">USYD International Scholarships</a></div>
-
-          <div class="mp-quickview">
-            <h3>📌 今日速览</h3>
-            <ul>
-              <li><strong>印尼 × USYD 2+2 工程双学位</strong>：4 月 13 日雅加达签约，前 2 年印尼大学 + 后 2 年 USYD，毕业拿两张学位证，外加联合科研 + 教授互访。</li>
-              <li><strong>USYDIS 博士全奖</strong>：AUD 42,754 / 年生活费 + 学费全免 + 搬家补贴 + 论文补贴，滚动评审全年可申，覆盖 Master by Research + PhD。</li>
-              <li><strong>VCIS 本科 / 授课硕士奖学金</strong>：2026 新增 AUD 60,000，叠加 SISA 上限 AUD 40,000，拿 offer 自动评，985 高考一本 +80 / IB 40+ / A-Level AAA 有效竞争。</li>
-            </ul>
-          </div>
-
-          <div class="mp-cta">
-            <div class="big">🎓 计划申请 USYD 的同学？</div>
-            <div class="sub">关注 JR Academy 澳洲留学公众号 · 获取 USYD 申请时间线 + 奖学金材料清单<br>官网 jiangren.com.au · 10 所澳洲院校实时动态</div>
-          </div>
+<div class="mp-title">USYD 与印尼大学工程 2+2 双学位签约 + USYDIS 博士全奖 $42,754/年 + VCIS 本科奖加码 $60,000</div>
+<div class="mp-meta">
+  <span class="author">悉尼大学 · USYD 日报</span>
+  <span>·</span><span>2026-04-22</span>
+  <span>·</span><span>阅读约 7 分钟</span>
+</div>
+<div class="mp-lead">今天悉尼大学的三条新闻走的是"招生新通道 + 博士全奖 + 本科奖学金"路线：4 月 13 日雅加达签约印尼大学工程 2+2 双学位打开东南亚生源管道、USYDIS 博士奖学金 2026 年生活费标准提到 AUD 42,754/年（滚动评审全年可申）、Vice-Chancellor's International Scholarships 新增 AUD 60,000 额度叠加 SISA 上限 AUD 40,000。想冲 USYD PhD、想拿本科奖学金、想考虑跨国双学位的同学，今天这三条基本够用了。</div>
+<hr class="mp-divider">
+<div class="mp-hook">01 · 招生政策</div>
+<div class="mp-h2">USYD × 印尼大学签约工程 2+2 双学位：两张学位证一起拿</div>
+<div class="mp-oneline"><strong>一句话</strong>：悉尼大学与印度尼西亚大学 4 月 13 日在雅加达 Depok 校区签署新一轮战略合作协议，核心交付物是工程学院的 <b>2+2 双学位项目</b>：前 2 年在印尼大学、后 2 年在 USYD，毕业同时拿两所学校的官方学位证书。</div>
+<p>这份协议覆盖的不只是工程方向。两校在签约仪式上还讨论了联合科研项目、教授互访、以及将 USYD 纳入印尼大学工程学院（FTUI）学生的长期留学目的地。印尼大学在 QS 2026 东南亚排名中位列前 3，工程学院是其招牌学科之一，对 USYD 来说，这次合作等于在东南亚头部理工生源里直接建了一条管道。</p>
+<p>工程 2+2 模式的操作细节是：学生前 2 年在印尼大学完成基础课程，后 2 年转入 USYD 工程学院完成专业课和 Thesis / Capstone。毕业时拿到的是两份独立学位证书，不是联合学位，这意味着回国做学历认证时两份都可以单独用。</p>
+<p>对在 USYD 读工程或相关方向的同学来说，最直接的变化是校园国际化密度会继续上升，联合课题机会也会增加；对还在选校的准留学生，这也是 USYD 工程体系继续扩张的明确信号。</p>
+<div class="mp-source">来源：<a href="https://en.antaranews.com/news/412083/ui-university-of-sydney-renew-pact-to-boost-research-mobility">ANTARA News</a></div>
+<hr class="mp-divider">
+<div class="mp-hook">02 · 奖学金</div>
+<div class="mp-h2">USYDIS 博士全奖：学费全免 + 4.2 万澳元/年 + 搬家 / 论文补贴</div>
+<div class="mp-oneline"><strong>一句话</strong>：University of Sydney International Stipend Scholarship（USYDIS）是 USYD 面向国际生的旗舰博士 / 研究型硕士全额资助项目，2026 年度生活费标准提到 <b>AUD 42,754 / 年</b>，并附带学费豁免、搬家补贴和论文补贴。</div>
+<p>USYDIS 的 2026 年度资助标准是 AUD 42,754 / 年生活费 + 全额学费豁免 + 一次性搬家补贴（Relocation Allowance）+ 论文写作期补贴（Thesis Allowance）。覆盖范围是 Master by Research 和 PhD，面向所有国籍的国际生开放。</p>
+<p>和很多学校一年两次截止不同，USYDIS 采用滚动评审。只要你找到愿意接收的导师并提交研究计划，任何时候都可以递交申请，评审委员会按季度集中处理。申请不需要另外填奖学金表，递交研究项目申请时系统自动同步评估。</p>
+<p>对申请人来说，这类奖学金最关键的还是研究背景。USYD 每年发放的各类奖学金和奖励总额超过 AUD 1.35 亿，但零科研背景直接冲 PhD + 全额奖学金成功率并不高，更现实的路径是先读一年 Master by Research 再转。</p>
+<div class="mp-source">来源：<a href="https://www.scholars4dev.com/2053/international-scholarships-at-university-of-sydney/">Scholars4Dev</a></div>
+<hr class="mp-divider">
+<div class="mp-hook">03 · 本科奖学金</div>
+<div class="mp-h2">VCIS 本科 + 授课硕士奖学金：加码 AUD 60,000，叠加 SISA 上限 AUD 40,000</div>
+<div class="mp-oneline"><strong>一句话</strong>：Vice-Chancellor's International Scholarships Scheme（VCIS）是 USYD 面向国际本科和授课型硕士学生的综合奖学金体系，2026 年度新增 <b>AUD 60,000</b> 的额外奖学金价值；叠加 Sydney International Student Award（SISA）后单人上限可到 AUD 40,000。</div>
+<p>VCIS 涵盖多个子项目，包括学术卓越奖、领导力奖和特定专业方向奖。申请方式和大多数澳洲大学类似：拿到 USYD 的录取通知后系统自动评估，不需要另外填表，评选标准以学术成绩为主，辅以课外活动和领导力经历。</p>
+<p>如果拿到 VCIS 里的学术卓越类奖学金，叠加 SISA 后一年最多减免 AUD 40,000 学费。按 USYD 商科或工程本科约 AUD 55,000 / 年的学费计算，能覆盖 70% 以上，这对高分申请人来说很有吸引力。</p>
+<p>这类自动评估 + 可叠加的奖学金设计，对准留学生最大的好处是省时间：不用担心错过单独的奖学金窗口，也不用额外准备一套文书，核心还是把学术成绩和语言分数做到位。</p>
+<div class="mp-source">来源：<a href="https://www.sydney.edu.au/scholarships/international.html">USYD International Scholarships</a></div>
+<hr class="mp-divider">
+<div class="mp-quickview">
+  <h3>📌 今日速览</h3>
+  <ul>
+    <li><strong>印尼 × USYD 2+2 工程双学位</strong>：4 月 13 日雅加达签约，前 2 年印尼大学 + 后 2 年 USYD，毕业拿两张学位证。</li>
+    <li><strong>USYDIS 博士全奖</strong>：AUD 42,754 / 年生活费 + 学费全免 + 搬家补贴 + 论文补贴，滚动评审全年可申。</li>
+    <li><strong>VCIS 本科 / 授课硕士奖学金</strong>：2026 新增 AUD 60,000，叠加 SISA 上限 AUD 40,000，拿 offer 自动评。</li>
+  </ul>
+</div>
+<div class="mp-cta">
+  <div class="big">计划申请 USYD 的同学？</div>
+  <div class="sub">关注 JR Academy 澳洲留学公众号 · 获取 USYD 申请时间线 + 奖学金材料清单</div>
+</div>
         </article>
       </div>
     </div>
 
     <div class="panel">
       <div class="card">
+        <h2>🎯 发稿就绪 <span class="tag">READY</span></h2>
+        <div class="render-status done" id="render-status">✅ 文章已就绪，点「📋 复制富文本」粘到公众号</div>
+        <p style="margin-top:10px">品牌色 <code>#e64626</code> / 校名 悉尼大学 / 自动 inline style 适配微信编辑器。</p>
+      </div>
+
+      <div class="card">
         <h2>📊 稿件信息 <span class="tag">META</span></h2>
         <div class="stat-grid">
-          <div class="stat-item"><div class="v">3100</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">2066</div><div class="k">字数</div></div>
           <div class="stat-item"><div class="v">3</div><div class="k">新闻</div></div>
-          <div class="stat-item"><div class="v">3</div><div class="k">图片</div></div>
-          <div class="stat-item"><div class="v">7</div><div class="k">分钟读</div></div>
+          <div class="stat-item"><div class="v">5</div><div class="k">分钟读</div></div>
+          <div class="stat-item"><div class="v">USYD</div><div class="k">学校</div></div>
         </div>
       </div>
 
       <div class="card">
-        <h2>🚀 发稿 2 步 <span class="tag">FLOW</span></h2>
-        <ol>
-          <li><strong>点「📋 复制富文本」</strong>：Unsplash 图 URL 保持绝对路径，WeChat 自动抓取 re-host。</li>
-          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> 打开图文编辑器 → <code>⌘/Ctrl+V</code> → USYD 红色 section 底 / 黄色 oneline / 红色 CTA 保留 → 预览 → 发布。</li>
-        </ol>
-      </div>
-
-      <div class="card">
         <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
-        <pre id="log"></pre>
+        <div id="log"></div>
       </div>
     </div>
+
   </div>
 </div>
 
+<script src="../../../_lib/mp-inline.v1.js"></script>
 <script>
-// USYD brand: primary #e64626, accent #ffce44
-const MP_INLINE_STYLES = {
-  'mp-title': 'font-size:20px;font-weight:900;line-height:1.4;color:#000000;margin-bottom:10px;',
-  'mp-meta': 'color:#8a8a8a;font-size:12px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #eeeeee;',
-  'mp-lead': 'background-color:#f1f5f9;border-radius:8px;padding:13px 15px;font-size:14px;color:#334155;line-height:1.75;margin-bottom:22px;',
-  'mp-hook': 'display:inline-block;background-color:#e64626;color:#ffffff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:10px;letter-spacing:0.5px;',
-  'mp-h2': 'font-size:17px;font-weight:900;line-height:1.45;color:#000000;margin-top:12px;margin-bottom:12px;padding-left:10px;border-left:4px solid #e64626;',
-  'mp-img': 'width:100%;max-width:100%;display:block;margin:12px 0 6px;border:2px solid #10162f;border-radius:10px;background-color:#ffffff;',
-  'mp-alt-img': 'width:100%;max-width:100%;border-radius:8px;display:block;margin:10px 0 4px;',
-  'mp-oneline': 'background-color:#fff4d1;border-left:3px solid #ffce44;padding:10px 14px;font-size:14px;font-weight:500;color:#3a3a3a;margin:12px 0 14px;line-height:1.7;',
-  'mp-source': 'font-size:12px;color:#8a8a8a;padding-top:8px;margin-top:8px;border-top:1px dashed #e5e7eb;word-break:break-all;',
-  'mp-divider': 'border:0;border-top:1px solid #e64626;margin:22px 0;height:1px;',
-  'mp-quickview': 'background-color:#fff8ee;padding:16px;border-radius:8px;margin:22px 0;border-left:3px solid #e64626;',
-  'mp-cta': 'background-color:#e64626;color:#ffffff;padding:18px;border-radius:10px;text-align:center;margin-top:22px;',
-};
-
-function applyInlineStyles(root) {
-  Object.entries(MP_INLINE_STYLES).forEach(([cls, style]) => {
-    root.querySelectorAll('.' + cls).forEach(el => {
-      el.setAttribute('style', style + (el.getAttribute('style') || ''));
-    });
-  });
-  root.querySelectorAll('.mp-meta .author').forEach(el =>
-    el.setAttribute('style', 'color:#e64626;font-weight:600;'));
-  root.querySelectorAll('.mp-oneline strong').forEach(el =>
-    el.setAttribute('style', 'color:#000000;'));
-  root.querySelectorAll('.mp-source a').forEach(el =>
-    el.setAttribute('style', 'color:#3b82f6;text-decoration:none;'));
-  root.querySelectorAll('.mp-quickview h3').forEach(el =>
-    el.setAttribute('style', 'font-size:15px;margin-bottom:10px;color:#000000;font-weight:700;'));
-  root.querySelectorAll('.mp-quickview ul').forEach(el =>
-    el.setAttribute('style', 'padding-left:18px;margin:0;'));
-  root.querySelectorAll('.mp-quickview li').forEach(el =>
-    el.setAttribute('style', 'font-size:13px;margin-bottom:6px;color:#475569;line-height:1.7;'));
-  root.querySelectorAll('.mp-quickview li strong').forEach(el =>
-    el.setAttribute('style', 'color:#e64626;font-weight:700;'));
-  root.querySelectorAll('.mp-cta .big').forEach(el =>
-    el.setAttribute('style', 'font-size:15px;font-weight:900;margin-bottom:4px;color:#ffffff;'));
-  root.querySelectorAll('.mp-cta .sub').forEach(el =>
-    el.setAttribute('style', 'font-size:12px;color:#d1d5db;line-height:1.7;'));
-  root.querySelectorAll('p').forEach(el => {
-    const existing = el.getAttribute('style') || '';
-    if (!existing.includes('margin-bottom') && !existing.includes('margin:')) {
-      el.setAttribute('style', 'margin:0 0 12px;color:#333333;font-size:15px;line-height:1.85;' + existing);
-    }
-  });
-  root.querySelectorAll('code').forEach(el =>
-    el.setAttribute('style', 'background-color:#f1f5f9;padding:1px 6px;border-radius:3px;font-size:13px;color:#10162f;'));
-  ['mp-lead', 'mp-oneline', 'mp-quickview', 'mp-cta'].forEach(cls => {
-    root.querySelectorAll('.' + cls).forEach(el => {
-      if (el.tagName.toLowerCase() === 'section') return;
-      const wrapper = document.createElement('section');
-      wrapper.setAttribute('style', MP_INLINE_STYLES[cls] || '');
-      el.removeAttribute('style');
-      el.setAttribute('style', 'background-color:transparent;padding:0;margin:0;');
-      wrapper.appendChild(el.cloneNode(true));
-      el.replaceWith(wrapper);
-    });
-  });
-  root.querySelectorAll('.mp-hook').forEach(el => {
-    if (el.tagName.toLowerCase() === 'span') return;
-    const span = document.createElement('span');
-    span.setAttribute('style', MP_INLINE_STYLES['mp-hook'] || '');
-    span.textContent = el.textContent;
-    el.replaceWith(span);
-  });
-}
-
-const logEl = document.getElementById('log');
-function log(msg) {
-  const t = new Date().toLocaleTimeString('zh-CN', { hour12: false });
-  logEl.textContent += `[${t}] ${msg}\n`;
-  logEl.scrollTop = logEl.scrollHeight;
-}
-
-function mpCopyHtml() {
-  const article = document.getElementById('mp-article').cloneNode(true);
-  applyInlineStyles(article);
-  const html = '<section style="max-width:677px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,\'PingFang SC\',\'Noto Sans SC\',sans-serif;font-size:15px;line-height:1.85;color:#222">' + article.innerHTML + '</section>';
-  const plain = article.innerText;
-  try {
-    const item = new ClipboardItem({
-      'text/html': new Blob([html], { type: 'text/html' }),
-      'text/plain': new Blob([plain], { type: 'text/plain' }),
-    });
-    navigator.clipboard.write([item]).then(() => {
-      const bgHits = (html.match(/background-color:/g) || []).length;
-      const colorHits = (html.match(/color:#[0-9a-f]{6}/gi) || []).length;
-      const sectionHits = (html.match(/<section /g) || []).length;
-      log(`✅ 复制成功 · ${html.length} 字符 · ${bgHits} 处 background-color · ${colorHits} 处 hex color · ${sectionHits} 个 <section>`);
-      log(`   粘到公众号后若颜色丢失，先贴 Notion 对比——那里有色=WeChat 剥掉了，那里无色=前端 bug`);
-    });
-  } catch {
-    const ta = document.createElement('textarea');
-    ta.value = html; document.body.appendChild(ta); ta.select();
-    document.execCommand('copy'); ta.remove();
-    log('✅ 富文本已复制（fallback）');
-  }
-}
-
-function mpCopyMarkdown() {
-  const article = document.getElementById('mp-article');
-  const md = article.innerText;
-  navigator.clipboard.writeText(md).then(() => log('✅ MD 已复制'));
-}
-
-document.getElementById('btn-copy-html').addEventListener('click', mpCopyHtml);
-document.getElementById('btn-copy-md').addEventListener('click', mpCopyMarkdown);
-log('📦 USYD 2026-04-22 mp-article 已加载');
+/* 薄壳：由 build/pipelines/uni-news.pipeline.ts 生成，请勿手改 */
+MpInline.init({
+  articleSel: '#mp-article',
+  copyBtnSel: '#btn-copy-html',
+  brand: {"primary":"#e64626","highlight":"#ffce44","dark":"#10162f","onDark":"#ffffff"},
+  onStatus: (msg, kind) => {
+    const el = document.getElementById('render-status');
+    if (el) { el.textContent = msg; el.className = 'render-status ' + (kind || ''); }
+  },
+  onLog: (msg) => {
+    const log = document.getElementById('log');
+    if (log) log.textContent += msg + '\n';
+  },
+});
 </script>
 </body>
 </html>

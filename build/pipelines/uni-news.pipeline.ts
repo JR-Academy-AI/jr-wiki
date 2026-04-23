@@ -5,6 +5,7 @@
  *   1. src/static/uni-news-social/{DATE}/{school}/xhs-posters.html  (5-frame carousel)
  *   2. src/static/uni-news-social/{DATE}/{school}/mp-article.html   (公众号薄壳)
  *   3. src/static/uni-news-social/{DATE}/{school}/xhs-drafts.md     (小红书草稿 + 敏感词扫描表)
+ *   4. src/content/articles/uni-news-{school}-{DATE}.md             (官网 blog markdown)
  *
  * Brand 色从 src/data/uni-brand.v1.json 读取（按 school code 匹配）。
  *
@@ -31,6 +32,7 @@ const BRAND_JSON = join(REPO_ROOT, 'src/data/uni-brand.v1.json');
 const TEMPLATE_MP = join(REPO_ROOT, 'src/templates/mp-article/uni-news.template.html');
 const TEMPLATE_DRAFTS = join(REPO_ROOT, 'src/templates/xhs-drafts/uni-news.template.md');
 const OUTPUT_BASE = join(REPO_ROOT, 'src/static/uni-news-social');
+const ARTICLES_BASE = join(REPO_ROOT, 'src/content/articles');
 
 interface BrandEntry {
 	primary: string;
@@ -463,6 +465,102 @@ function renderMpArticleContent(data: UniNewsData, brand: BrandEntry): { html: s
 	return { html, charCount };
 }
 
+/* =========================== blog markdown 生成 =========================== */
+
+function stripHtml(input: string): string {
+	return input
+		.replace(/<br\s*\/?>/gi, ' ')
+		.replace(/<\/p>/gi, '\n')
+		.replace(/<[^>]+>/g, '')
+		.replace(/\s+\n/g, '\n')
+		.trim();
+}
+
+function htmlToMarkdown(input: string): string {
+	return input
+		.replace(/<b>(.*?)<\/b>/gi, '**$1**')
+		.replace(/<strong>(.*?)<\/strong>/gi, '**$1**')
+		.replace(/<em>(.*?)<\/em>/gi, '*$1*')
+		.replace(/<br\s*\/?>/gi, '\n')
+		.replace(/<\/p>/gi, '\n\n')
+		.replace(/<[^>]+>/g, '')
+		.replace(/\n{3,}/g, '\n\n')
+		.trim();
+}
+
+function quoteYaml(value: string): string {
+	return `"${value.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
+}
+
+function sourceToMarkdown(label: string, url?: string): string {
+	if (!url) return label;
+	const normalized = /^https?:\/\//.test(url) ? url : `https://${url}`;
+	return `[${label}](${normalized})`;
+}
+
+function renderBlogMarkdown(data: UniNewsData, brand: BrandEntry): string {
+	const mp = data.mp || {};
+	const title = stripHtml(mp.title || `${brand.nameCn} ${data.date}：${data.summary.subLines.join(' + ')}`);
+	const description = stripHtml(mp.lead || `${brand.nameCn} ${data.date} 校园动态：${data.summary.subLines.join('、')}。`);
+	const qv = mp.quickview || {};
+	const qvItems = qv.items || data.quickview.items.map(it => `**${it.title}**：${it.body}`);
+	const newsBodies = mp.newsBodies || [];
+	const tags = Array.from(new Set(['uni-news', data.school, brand.code.toLowerCase(), brand.nameCn, brand.nameEn]));
+	const keywords = `${brand.nameCn}, ${brand.nameEn}, ${brand.code}, 澳洲留学, 大学新闻, 奖学金, 校园动态`;
+	const articleSlug = `uni-news-${data.school}-${data.date}`;
+	const articleUrl = `https://jiangren.com.au/blog/${articleSlug}`;
+
+	const sections: string[] = [];
+	sections.push('---');
+	sections.push(`title: ${quoteYaml(title)}`);
+	sections.push(`description: ${quoteYaml(description)}`);
+	sections.push(`publishDate: ${data.date}`);
+	sections.push('tags:');
+	for (const tag of tags) sections.push(`  - ${tag}`);
+	sections.push(`author: ${quoteYaml('JR Academy 大学日报')}`);
+	sections.push(`keywords: ${quoteYaml(keywords)}`);
+	sections.push('---');
+	sections.push('');
+	sections.push(`> 学校：**${brand.nameCn} / ${brand.nameEn}**`);
+	sections.push(`> 日期：**${data.date}**`);
+	sections.push(`> 同步素材：公众号发稿页见 \`${articleUrl}\` 对应运营链路，官网 blog 为这篇 markdown 正文。`);
+	sections.push('');
+	sections.push(htmlToMarkdown(mp.lead || `${brand.nameCn} ${data.date} 的重点消息是：${data.summary.subLines.join('、')}。`));
+	sections.push('');
+
+	data.news.forEach((news, index) => {
+		const body = newsBodies[index] || {};
+		const h2 = stripHtml(body.h2 || `${news.h2Main}${news.h2Sub ? '：' + news.h2Sub : ''}`);
+		const paragraphs = body.paragraphs || [
+			`**${news.bullets[0]?.k || '关键数据'}**：${news.bullets[0]?.v || ''}`,
+			`**${news.bullets[1]?.k || '背景'}**：${news.bullets[1]?.v || ''}`,
+			`**${news.bullets[2]?.k || '对你的影响'}**：${news.bullets[2]?.v || ''}`,
+		];
+
+		sections.push(`## ${news.idx}. ${h2}`);
+		sections.push('');
+		sections.push(`**一句话**：${htmlToMarkdown(news.lead)}`);
+		sections.push('');
+		for (const p of paragraphs) {
+			sections.push(htmlToMarkdown(p));
+			sections.push('');
+		}
+		sections.push(`> 来源：${sourceToMarkdown(news.source, news.sourceUrl)}`);
+		sections.push('');
+	});
+
+	sections.push(`## ${data.news.length + 1}. 今日速览`);
+	sections.push('');
+	for (const item of qvItems) {
+		sections.push(`- ${htmlToMarkdown(item)}`);
+	}
+	sections.push('');
+	sections.push(`如果你在看 ${brand.code} 的申请、奖学金或研究机会，这篇可以直接当作今天的速查版。`);
+	sections.push('');
+
+	return sections.join('\n');
+}
+
 /* =========================== xhs-drafts.md 生成 =========================== */
 
 function renderXhsDrafts(data: UniNewsData, brand: BrandEntry): string {
@@ -504,6 +602,8 @@ interface BuildResult {
 	mpBytes: number;
 	draftsPath: string;
 	draftsBytes: number;
+	articlePath: string;
+	articleBytes: number;
 }
 
 function buildOne(dataPath: string, brandFile: BrandFile, force: boolean): BuildResult {
@@ -555,6 +655,16 @@ function buildOne(dataPath: string, brandFile: BrandFile, force: boolean): Build
 	if (canWriteOrSkip(draftsPath, force) === 'write') writeWithMarker(draftsPath, draftsMd, 'uni-news');
 	else draftsSkipped = true;
 
+	/* --- 4. blog markdown --- */
+	const articleMd = renderBlogMarkdown(data, brand);
+	const articlePath = join(ARTICLES_BASE, `uni-news-${data.school}-${data.date}.md`);
+	let articleSkipped = false;
+	if (canWriteOrSkip(articlePath, force) === 'write') {
+		const articleOutput = articleMd;
+		writeWithMarker(articlePath, articleOutput, 'uni-news', { markdownMarkerPosition: 'after-frontmatter' });
+	}
+	else articleSkipped = true;
+
 	return {
 		date: data.date,
 		school: data.school,
@@ -564,6 +674,8 @@ function buildOne(dataPath: string, brandFile: BrandFile, force: boolean): Build
 		mpBytes: mpSkipped ? 0 : Buffer.byteLength(mpOutput, 'utf8'),
 		draftsPath: draftsSkipped ? `${draftsPath} (skipped)` : draftsPath,
 		draftsBytes: draftsSkipped ? 0 : Buffer.byteLength(draftsMd, 'utf8'),
+		articlePath: articleSkipped ? `${articlePath} (skipped)` : articlePath,
+		articleBytes: articleSkipped ? 0 : Buffer.byteLength(articleMd, 'utf8'),
 	};
 }
 
@@ -598,6 +710,7 @@ export function buildAll(targetDate?: string, targetSchool?: string, force = fal
 				console.log(`    posters: ${r.postersPath} (${(r.postersBytes / 1024).toFixed(1)} KB)`);
 				console.log(`    mp:      ${r.mpPath} (${(r.mpBytes / 1024).toFixed(1)} KB)`);
 				console.log(`    drafts:  ${r.draftsPath} (${(r.draftsBytes / 1024).toFixed(1)} KB)`);
+				console.log(`    article: ${r.articlePath} (${(r.articleBytes / 1024).toFixed(1)} KB)`);
 			} catch (err) {
 				const msg = err instanceof Error ? err.message : String(err);
 				failures.push({ file: `${school}/${file}`, error: msg });

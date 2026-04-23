@@ -89,7 +89,12 @@ export function canWriteOrSkip(outputPath: string, force = false): 'write' | 'sk
  * Write output with pipeline marker embedded (so future runs can detect this file is safe to overwrite).
  * Marker is placed in an HTML/CSS/JS comment depending on file suffix.
  */
-export function writeWithMarker(outputPath: string, content: string, pipelineName: string): void {
+export function writeWithMarker(
+	outputPath: string,
+	content: string,
+	pipelineName: string,
+	options?: { markdownMarkerPosition?: 'top' | 'after-frontmatter' },
+): void {
 	mkdirSync(dirname(outputPath), { recursive: true });
 	const marker = `${GENERATED_MARKER}${pipelineName}.pipeline.ts 自动生成 · ${new Date().toISOString()}`;
 	let withMarker = content;
@@ -101,7 +106,16 @@ export function writeWithMarker(outputPath: string, content: string, pipelineNam
 			withMarker = `<!-- ${marker} -->\n${content}`;
 		}
 	} else if (outputPath.endsWith('.md')) {
-		withMarker = `<!-- ${marker} -->\n${content}`;
+		if (options?.markdownMarkerPosition === 'after-frontmatter') {
+			const match = content.match(/^(---\n[\s\S]*?\n---\n?)/);
+			if (match) {
+				withMarker = `${match[1]}<!-- ${marker} -->\n${content.slice(match[1].length)}`;
+			} else {
+				withMarker = `<!-- ${marker} -->\n${content}`;
+			}
+		} else {
+			withMarker = `<!-- ${marker} -->\n${content}`;
+		}
 	} else if (outputPath.endsWith('.css') || outputPath.endsWith('.js') || outputPath.endsWith('.ts')) {
 		withMarker = `/* ${marker} */\n${content}`;
 	}

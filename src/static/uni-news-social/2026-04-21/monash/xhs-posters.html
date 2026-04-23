@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
+<!-- 由 build/pipelines/uni-news.pipeline.ts 自动生成 · 2026-04-23T04:38:46.357Z -->
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Monash 莫纳什大学 2026-04-21 · 小红书素材（封面 + 3 条新闻 + 速览）</title>
+<title>莫纳什大学 2026-04-21 · 小红书素材（封面 + 3 条新闻 + 速览）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -20,22 +22,15 @@
     --uni-deep: #003f6b;
     --uni-light: #1e88e5;
     --uni-accent: #ffce44;
-    --bg-light: #f8f9fb;
-    --bg-cream: #fff8ee;
-    --text-main: #10162f;
-    --text-gray: #64748b;
-    --border-color: #e2e8f0;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: #eef0f4;
-    color: var(--text-main);
+    color: #10162f;
     font-family: 'Noto Sans SC', system-ui, sans-serif;
     padding: 40px 20px 120px 120px;
     line-height: 1.55;
   }
   .page-wrap { max-width: 1500px; margin: 0 auto; }
-
   .page-head {
     background: #fff; border: 2px solid var(--brand-dark); border-radius: 20px;
     padding: 30px 34px; margin-bottom: 32px;
@@ -43,269 +38,35 @@
   }
   .page-head h1 { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; }
   .page-head h1 span { color: var(--uni-primary); }
-  .page-head .sub { margin-top: 10px; color: var(--text-gray); font-size: 14px; line-height: 1.65; max-width: 900px; }
+  .page-head .sub { margin-top: 10px; color: #64748b; font-size: 14px; line-height: 1.65; max-width: 900px; }
   .page-head .stats { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
   .stat-pill {
     padding: 6px 14px; border-radius: 999px; border: 1.5px solid var(--brand-dark);
-    background: var(--bg-light); color: var(--brand-dark);
+    background: #f8f9fb; color: var(--brand-dark);
     font-size: 12px; font-weight: 700;
     font-family: 'JetBrains Mono', monospace;
   }
   .stat-pill.ok { background: #ecfdf5; color: var(--brand-green); }
-
-  /* Left thumb nav */
-  .thumb-nav {
-    display: flex; flex-direction: column; gap: 10px;
-    background: #fff; border: 1.5px solid var(--brand-dark);
-    border-radius: 14px; padding: 12px;
-    position: fixed; top: 20px; left: 16px;
-    width: 88px; max-height: calc(100vh - 40px); overflow-y: auto;
-    z-index: 100; box-shadow: 4px 4px 0 rgba(16,22,47,0.12);
-  }
-  .thumb-nav::before {
-    content: 'NAV'; display: block;
-    font-size: 10px; font-weight: 900; letter-spacing: 2px;
-    color: var(--uni-primary); text-align: center;
-    padding: 2px 0 8px; border-bottom: 1.5px dashed #e2e8f0;
-    font-family: 'JetBrains Mono', monospace; margin-bottom: 2px;
-  }
-  .thumb {
-    aspect-ratio: 3/4; background: var(--bg-light);
-    border: 1.5px solid var(--brand-dark); border-radius: 8px;
-    font-weight: 900; color: var(--brand-dark);
-    text-align: center; display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-decoration: none; transition: all 0.15s;
-    gap: 2px; padding: 4px;
-  }
-  .thumb .num { font-size: 18px; line-height: 1; }
-  .thumb .lbl { font-size: 9px; color: var(--text-gray); font-weight: 700; }
-  .thumb:hover { background: var(--uni-accent); transform: translate(-2px,-2px); box-shadow: 3px 3px 0 var(--brand-dark); }
-
-  /* Poster frame (1242 × 1660) */
-  .poster-frame {
-    display: flex; flex-direction: column; align-items: center;
-    margin-bottom: 60px; position: relative;
-  }
-  .poster-frame .label {
-    font-size: 13px; font-weight: 900;
-    color: var(--brand-dark); margin-bottom: 14px;
-    display: flex; align-items: center; gap: 10px; align-self: flex-start;
-  }
-  .poster-frame .label::before {
-    content: ''; width: 28px; height: 4px;
-    background: var(--uni-primary); border-radius: 2px;
-  }
-  .poster-frame .label em { font-style: normal; color: var(--text-gray); font-weight: 600; font-size: 12px; margin-left: 12px; }
-
-  .poster-scaler {
-    width: 435px; height: 581px;
-    position: relative;
-    border: 2px solid var(--brand-dark);
-    border-radius: 12px;
-    box-shadow: 8px 8px 0 var(--brand-dark);
-    overflow: hidden;
-  }
-  .poster {
-    width: 1242px; height: 1660px;
-    transform: scale(0.35); transform-origin: top left;
-    position: absolute; top: 0; left: 0;
-    background: var(--bg-light);
-    overflow: hidden;
-    font-family: 'Noto Sans SC', sans-serif;
-    padding: 32px;
-  }
-  .p-inner {
-    position: relative; width: 100%; height: 100%;
-    padding: 76px 72px; display: flex; flex-direction: column;
-    background: #fff;
-    border: 5px solid var(--brand-dark);
-    border-radius: 36px;
-    overflow: hidden;
-  }
-  .p-dots {
-    position: absolute; top: 0; right: 0;
-    width: 400px; height: 400px;
-    background-image: radial-gradient(#64748b 1.5px, transparent 1.5px);
-    background-size: 28px 28px; opacity: 0.1; pointer-events: none;
-  }
-  .p-dots.bl { top: auto; right: auto; bottom: 0; left: 0; }
-
-  .p-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 28px; font-weight: 800; letter-spacing: 1px;
-    color: var(--uni-primary); text-transform: uppercase;
-    background: #e6f3fc; border: 1.5px solid var(--uni-primary);
-    padding: 12px 24px; border-radius: 100px;
-    width: fit-content;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  .p-tag .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--uni-primary); }
-
-  /* Yellow underline highlight */
-  .hl { position: relative; display: inline-block; z-index: 1; }
-  .hl::after {
-    content: ''; position: absolute;
-    bottom: 10px; left: -4px; right: -4px; height: 24px;
-    background: var(--brand-yellow); z-index: -1; opacity: 0.8;
-  }
-
-  /* ========== P1 封面 ========== */
-  .p1 .p-inner { justify-content: space-between; }
-  .p1 .hook {
-    font-size: 150px; font-weight: 900; line-height: 0.98;
-    letter-spacing: -5px; color: var(--brand-dark); margin-top: 40px;
-  }
-  .p1 .hook em { color: var(--uni-primary); font-style: normal; }
-  .p1 .sub {
-    font-size: 42px; font-weight: 500; color: var(--text-gray);
-    margin-top: 32px; line-height: 1.5;
-  }
-  .p1 .date-chip {
-    margin-top: 48px; background: var(--brand-dark); color: #fff;
-    padding: 22px 30px; border-radius: 18px;
-    display: inline-flex; flex-direction: column; gap: 6px;
-    width: fit-content; box-shadow: 10px 10px 0 var(--uni-primary);
-  }
-  .p1 .date-chip .big { font-size: 52px; font-weight: 900; line-height: 1; font-family: 'JetBrains Mono', monospace; letter-spacing: -2px; }
-  .p1 .date-chip .small { font-size: 20px; color: var(--uni-accent); font-family: 'JetBrains Mono', monospace; letter-spacing: 2px; }
-  .p1 .preview-grid {
-    margin-top: auto; display: grid; grid-template-columns: 1fr 1fr 1fr;
-    gap: 18px; padding-top: 32px;
-  }
-  .p1 .preview-card {
-    background: var(--bg-light); border: 2px solid var(--brand-dark);
-    border-radius: 14px; padding: 18px 20px;
-    display: flex; flex-direction: column; gap: 8px;
-    box-shadow: 6px 6px 0 var(--brand-dark);
-  }
-  .p1 .preview-card .num { font-size: 32px; font-weight: 900; color: var(--uni-primary); font-family: 'JetBrains Mono', monospace; }
-  .p1 .preview-card .title { font-size: 22px; font-weight: 900; line-height: 1.3; }
-  .p1 .preview-card .data { font-size: 18px; color: var(--text-gray); font-weight: 600; }
-
-  /* ========== 内容页通用 P2-P4 ========== */
-  .p-news h2 {
-    font-size: 68px; font-weight: 900; line-height: 1.08;
-    margin-top: 30px; letter-spacing: -2px;
-    color: var(--brand-dark);
-  }
-  .p-news h2 em { color: var(--uni-primary); font-style: normal; }
-  .p-news .lead {
-    font-size: 30px; color: var(--text-main); line-height: 1.55;
-    margin-top: 28px; background: var(--bg-cream);
-    padding: 22px 26px; border-radius: 16px;
-    border-left: 6px solid var(--uni-accent);
-  }
-  .p-news .bullets { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
-  .p-news .b-item {
-    display: grid; grid-template-columns: 170px 1fr;
-    gap: 22px; align-items: start;
-    background: var(--bg-light);
-    border: 2px solid var(--brand-dark); border-radius: 14px;
-    padding: 20px 24px;
-  }
-  .p-news .b-key {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 18px; font-weight: 700;
-    color: var(--uni-primary); letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding-top: 4px;
-  }
-  .p-news .b-val { font-size: 24px; line-height: 1.45; color: var(--text-main); font-weight: 500; }
-  .p-news .b-val b { color: var(--brand-dark); font-weight: 900; }
-  .p-news .source {
-    margin-top: auto; padding-top: 24px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 16px; color: var(--text-gray);
-    border-top: 1.5px dashed var(--border-color);
-    letter-spacing: 0.3px; line-height: 1.6;
-  }
-  .p-news .source b { color: var(--uni-primary); font-weight: 700; }
-
-  /* ========== P5 速览 + CTA ========== */
-  .p5 .p-inner { background: var(--brand-dark); color: #fff; }
-  .p5 .p-tag { background: rgba(255,206,68,0.15); color: var(--uni-accent); border-color: var(--uni-accent); }
-  .p5 .p-tag .dot { background: var(--uni-accent); }
-  .p5 h2 {
-    font-size: 104px; font-weight: 900; line-height: 1;
-    letter-spacing: -4px; margin-top: 36px;
-  }
-  .p5 h2 em { color: var(--uni-accent); font-style: italic; }
-  .p5 .sub { font-size: 32px; color: rgba(255,255,255,0.78); margin-top: 24px; line-height: 1.55; }
-  .p5 .quick-row { margin-top: 40px; display: flex; flex-direction: column; gap: 18px; }
-  .p5 .quick-item {
-    display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: center;
-    background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.16);
-    border-radius: 16px; padding: 20px 26px;
-  }
-  .p5 .quick-item .n {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 52px; font-weight: 900; color: var(--uni-accent);
-    text-align: center; line-height: 1;
-  }
-  .p5 .quick-item .body h4 { font-size: 30px; font-weight: 900; color: #fff; margin-bottom: 6px; }
-  .p5 .quick-item .body p { font-size: 22px; color: rgba(255,255,255,0.72); line-height: 1.45; }
-  .p5 .cta-row {
-    margin-top: auto; padding-top: 32px;
-    border-top: 1.5px solid rgba(255,255,255,0.16);
-    display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
-  }
-  .p5 .cta-row .big { font-size: 44px; font-weight: 900; color: #fff; letter-spacing: -1.5px; }
-  .p5 .cta-row .sub-cta { font-size: 22px; color: rgba(255,255,255,0.72); margin-top: 8px; }
-  .p5 .cta-row .badge {
-    background: var(--uni-accent); color: var(--brand-dark);
-    font-family: 'JetBrains Mono', monospace;
-    padding: 20px 28px; font-size: 28px; font-weight: 900;
-    border-radius: 14px; letter-spacing: 2px;
-  }
-
-  /* 下载按钮 */
-  .dl-btn {
-    display: block; margin: 20px auto 0;
-    background: var(--uni-primary); color: #fff;
-    border: 3px solid var(--brand-dark);
-    box-shadow: 6px 6px 0 var(--brand-dark);
-    padding: 14px 32px;
-    font-family: 'Noto Sans SC', sans-serif;
-    font-size: 14px; font-weight: 900;
-    letter-spacing: 1.5px;
-    cursor: pointer; border-radius: 10px;
-    transition: all 0.15s;
-  }
-  .dl-btn:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--brand-dark); }
-  .dl-btn:active { transform: translate(3px,3px); box-shadow: 3px 3px 0 var(--brand-dark); }
-  .dl-btn.all {
-    background: var(--brand-yellow); color: var(--brand-dark);
-    display: inline-block; margin: 0;
-  }
+  .dl-btn.all { cursor: pointer; }
 </style>
 </head>
 <body>
-
-<nav class="thumb-nav">
-  <a class="thumb" href="#p1"><div class="num">1</div><div class="lbl">封面</div></a>
-  <a class="thumb" href="#p2"><div class="num">2</div><div class="lbl">科研</div></a>
-  <a class="thumb" href="#p3"><div class="num">3</div><div class="lbl">博士奖</div></a>
-  <a class="thumb" href="#p4"><div class="num">4</div><div class="lbl">本科奖</div></a>
-  <a class="thumb" href="#p5"><div class="num">5</div><div class="lbl">速览</div></a>
-</nav>
-
 <div class="page-wrap">
 
 <div class="page-head">
-  <h1><span>Monash 莫纳什大学</span> · 2026-04-21 · 小红书素材（5 图 carousel）</h1>
-  <div class="sub">封面 + 3 条新闻详情页 + 速览 CTA。每张 1242×1660（3:4 竖版），点每张下方「⬇ 下载 PNG」单独导出，或点上方「⬇ 全部下载」批量导。<br>配文在同目录 <code>xhs-drafts.md</code>。封面严格无品牌名 / 无域名 / 无微信号 / 无二维码（小红书封号红线）。</div>
+  <h1>📱 莫纳什大学 <span>Monash University</span> · 2026-04-21</h1>
+  <div class="sub">小红书 5 图 carousel：P1 封面 + P2~P4 新闻 + P5 速览。左侧缩略导航，右侧 copy 面板切换 3 种文案（XHS / 朋友圈 / 群聊）。</div>
   <div class="stats">
-    <div class="stat-pill">📐 1242 × 1660</div>
-    <div class="stat-pill">🎨 Monash #006dae</div>
+    <div class="stat-pill">📸 5 张海报</div>
+    <div class="stat-pill">🎨 MONASH #006dae</div>
     <div class="stat-pill ok">✅ 封号红线清</div>
     <button class="dl-btn all" id="dl-all">⬇ 一键全部下载 5 张</button>
   </div>
 </div>
 
-<!-- ============ P1 封面 ============ -->
+
 <div class="poster-frame" id="p1">
-  <div class="label">P1 封面 <em>· 3 条新闻集合</em></div>
+  <div class="label">P1 封面 <em>· Monash 合集</em></div>
   <div class="poster-scaler">
     <div class="poster p1" id="poster-1">
       <div class="p-inner">
@@ -318,9 +79,7 @@
             一天三件 <em>大事</em>
           </div>
           <div class="sub">
-            Nature Communications 光学突破<br>
-            博士全奖 $37,145 / 年<br>
-            本科 Merit $15,000 / 年
+            Nature Communications 光学突破<br>博士全奖 $37,145 / 年<br>本科 Merit $15,000 / 年
           </div>
         </div>
 
@@ -352,11 +111,10 @@
   <button class="dl-btn" data-target="poster-1" data-slug="p1-cover">⬇ 下载 PNG</button>
 </div>
 
-<!-- ============ P2 科研 ============ -->
 <div class="poster-frame" id="p2">
-  <div class="label">P2 新闻 1 <em>· Nature Communications 光学突破</em></div>
+  <div class="label">P2 新闻 1 <em>· 科研合作</em></div>
   <div class="poster-scaler">
-    <div class="poster p-news p2" id="poster-2">
+    <div class="poster p-news p2" id="poster-3">
       <div class="p-inner">
         <div class="p-dots"></div>
         <div class="p-tag"><span class="dot"></span>01 · 科研合作</div>
@@ -383,20 +141,18 @@
         </div>
 
         <div class="source">
-          <b>Source</b>: Monash Science News · 2026-04-10<br>
-          monash.edu/science/news-events/news/2026/scientists-turn-mess-into-breakthrough
+          <b>Source</b>: Monash Science News · 2026-04-10<br>monash.edu/science/news-events/news/2026/scientists-turn-mess-into-breakthrough
         </div>
       </div>
     </div>
   </div>
-  <button class="dl-btn" data-target="poster-2" data-slug="p2-science">⬇ 下载 PNG</button>
+  <button class="dl-btn" data-target="poster-3" data-slug="p2-01">⬇ 下载 PNG</button>
 </div>
 
-<!-- ============ P3 博士奖 ============ -->
 <div class="poster-frame" id="p3">
-  <div class="label">P3 新闻 2 <em>· Co-funded Graduate Scholarship</em></div>
+  <div class="label">P3 新闻 2 <em>· 奖学金</em></div>
   <div class="poster-scaler">
-    <div class="poster p-news p3" id="poster-3">
+    <div class="poster p-news p3" id="poster-4">
       <div class="p-inner">
         <div class="p-dots"></div>
         <div class="p-tag"><span class="dot"></span>02 · 奖学金</div>
@@ -420,27 +176,21 @@
             <div class="b-key">评审标准</div>
             <div class="b-val">学术记录 + 研究产出（论文 / report / working paper）+ 前期研究经历 · 本科零科研背景冲 PhD 难度大，可以先读 <b>Master by Research</b> 攒一篇再转 PhD</div>
           </div>
-          <div class="b-item">
-            <div class="b-key">对你的影响</div>
-            <div class="b-val">$37,145 按墨尔本房租 + 日常足够覆盖，不用再兼职撑学费 · 选导师时看 <b>实验室近 2 年发表 + 在读 PhD 人数</b>，避免 over-subscribed 课题组</div>
-          </div>
         </div>
 
         <div class="source">
-          <b>Source</b>: Al-Fanar Media · 2026-04<br>
-          al-fanarmedia.org/2026/04/co-funded-monash-graduate-scholarships
+          <b>Source</b>: Al-Fanar Media · 2026-04<br>al-fanarmedia.org/2026/04/co-funded-monash-graduate-scholarships
         </div>
       </div>
     </div>
   </div>
-  <button class="dl-btn" data-target="poster-3" data-slug="p3-phd-scholarship">⬇ 下载 PNG</button>
+  <button class="dl-btn" data-target="poster-4" data-slug="p3-02">⬇ 下载 PNG</button>
 </div>
 
-<!-- ============ P4 本科奖 ============ -->
 <div class="poster-frame" id="p4">
-  <div class="label">P4 新闻 3 <em>· International Merit Scholarship</em></div>
+  <div class="label">P4 新闻 3 <em>· 本科奖学金</em></div>
   <div class="poster-scaler">
-    <div class="poster p-news p4" id="poster-4">
+    <div class="poster p-news p4" id="poster-5">
       <div class="p-inner">
         <div class="p-dots"></div>
         <div class="p-tag"><span class="dot"></span>03 · 本科奖学金</div>
@@ -454,7 +204,7 @@
         <div class="bullets">
           <div class="b-item">
             <div class="b-key">金额覆盖</div>
-            <div class="b-val"><b>AUD 15,000 / 年</b>，持续到完成学位的最低学分要求 · 对应 <b>3 门 unit</b> 的学费 · 能 cover 约 30-40% 的年度学费（按专业）</div>
+            <div class="b-val"><b>AUD 15,000 / 年</b>，持续到完成学位的最低学分要求 · 对应 <b>3 门 unit</b> 的学费 · 能 cover 约 30-40% 的年度学费</div>
           </div>
           <div class="b-item">
             <div class="b-key">选拔标准</div>
@@ -464,36 +214,28 @@
             <div class="b-key">申请方式</div>
             <div class="b-val">拿到 offer 系统自动入评 · <b>S1</b>（2 月开学）一般前一年 10 月底截止 · 建议至少提前 3 个月准备</div>
           </div>
-          <div class="b-item">
-            <div class="b-key">对你的影响</div>
-            <div class="b-val">Monash 部分 unit 可选 <b>online</b> 修，Merit 拿到后时间灵活 · 前两年集中修必修 + 后期在奖学金兜底下选修跨学院 elective 或研究项目</div>
-          </div>
         </div>
 
         <div class="source">
-          <b>Source</b>: Monash International Merit Scholarship<br>
-          monash.edu/study/fees-scholarships/scholarships/find-a-scholarship/international-merit-5770
+          <b>Source</b>: Monash International Merit Scholarship<br>monash.edu/study/fees-scholarships/scholarships/find-a-scholarship/international-merit-5770
         </div>
       </div>
     </div>
   </div>
-  <button class="dl-btn" data-target="poster-4" data-slug="p4-undergrad-scholarship">⬇ 下载 PNG</button>
+  <button class="dl-btn" data-target="poster-5" data-slug="p4-03">⬇ 下载 PNG</button>
 </div>
 
-<!-- ============ P5 速览 + CTA ============ -->
 <div class="poster-frame" id="p5">
   <div class="label">P5 速览 <em>· 今日 3 条 + 下一步</em></div>
   <div class="poster-scaler">
     <div class="poster p5" id="poster-5">
       <div class="p-inner">
         <div class="p-dots"></div>
-        <div class="p-tag"><span class="dot"></span>Monash · 04-21 速览</div>
+        <div class="p-tag"><span class="dot"></span>MONASH · 04-21 速览</div>
 
         <h2>今日 3 条<br><em>一眼看完</em></h2>
 
-        <div class="sub">
-          Nature 级科研、博士全奖、本科 Merit，三条硬料的核心数字和时间线汇总。截图这一张就够。
-        </div>
+        <div class="sub">Nature 级科研、博士全奖、本科 Merit，三条硬料的核心数字和时间线汇总。截图这一张就够。</div>
 
         <div class="quick-row">
           <div class="quick-item">
@@ -541,8 +283,6 @@ async function dlOne(target, slug) {
   if (!el) return;
   if (document.fonts && document.fonts.ready) await document.fonts.ready;
   if (window.__applyUniPosterAutoFit) window.__applyUniPosterAutoFit(el);
-
-  // Clone into offscreen stage at 1:1 scale (avoid transform issues)
   const stage = document.createElement('div');
   stage.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:1242px;height:1660px;overflow:hidden;background:transparent;z-index:-1;';
   const clone = el.cloneNode(true);
@@ -553,20 +293,14 @@ async function dlOne(target, slug) {
   clone.style.top = '0';
   stage.appendChild(clone);
   document.body.appendChild(stage);
-
   try {
     if (window.__applyUniPosterAutoFit) window.__applyUniPosterAutoFit(stage);
-    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
     const canvas = await html2canvas(clone, {
-      backgroundColor: null,
-      scale: 2,
-      width: 1242,
-      height: 1660,
-      windowWidth: 1242,
-      windowHeight: 1660,
-      useCORS: true,
-      allowTaint: true,
-      logging: false,
+      backgroundColor: null, scale: 2,
+      width: 1242, height: 1660,
+      windowWidth: 1242, windowHeight: 1660,
+      useCORS: true, allowTaint: true, logging: false,
     });
     const link = document.createElement('a');
     link.download = slug + '.png';
@@ -576,7 +310,6 @@ async function dlOne(target, slug) {
     if (stage.parentNode) stage.parentNode.removeChild(stage);
   }
 }
-
 document.querySelectorAll('.dl-btn[data-target]').forEach(btn => {
   btn.addEventListener('click', async () => {
     const orig = btn.textContent;
@@ -586,98 +319,72 @@ document.querySelectorAll('.dl-btn[data-target]').forEach(btn => {
     finally { setTimeout(() => { btn.disabled = false; btn.textContent = orig; }, 1200); }
   });
 });
+document.getElementById('dl-all').addEventListener('click', async () => {
+  const btns = document.querySelectorAll('.dl-btn[data-target]');
+  for (const btn of btns) {
+    btn.click();
+    await new Promise(r => setTimeout(r, 1200));
+  }
+});
 
 window.XHS_COPY = {
-  p1: {
-    title: 'Monash 一天三件大事｜科研 + 博士奖 + 本科奖学金',
-    body: '今天 Monash 三条硬料一起来：\n\n🔬 Nature Communications 光学突破——单片透镜集成 11 项功能\n💰 Co-funded Graduate Scholarship 博士全奖 $37,145 / 年\n🎓 International Merit Scholarship 本科 $15,000 / 年\n\n这三条不是"刷存在感"，是真能影响你申请节奏的关键信息。\n\n留学生视角一条条帮你捋清楚 🌱',
-    tags: '#Monash #澳洲留学 #莫纳什大学 #奖学金 #PhD申请 #留学干货 #大学新闻',
-    wechat: [
-      'Monash 04-21 一天三件硬料：Nature 级科研、博士全奖 $37,145/年、本科 Merit $15,000/年 🌱',
-      '今天 Monash 三连：光学上 Nature、博士全奖 8 月截止、本科自动评估。细节在主页。',
-      '莫纳什大学今日日报：科研 + 博士奖 + 本科奖学金，一条帖子全看完 💰'
+  "p1": {
+    "title": "Monash 一天三件大事｜科研 + 博士奖 + 本科奖",
+    "body": "今天 Monash 三条硬料一起来：\n\n🔬 Nature Communications 光学突破\n💰 博士全奖 $37,145 / 年\n🎓 本科 Merit $15,000 / 年\n\n留学生视角一条条帮你捋清楚 🌱",
+    "tags": "#Monash #澳洲留学 #莫纳什大学 #奖学金 #PhD申请",
+    "wechat": [
+      "Monash 04-21 一天三件硬料：Nature 级科研、博士全奖 $37,145/年、本科 Merit $15,000/年 🌱"
     ],
-    community: [
-      '【Monash 04-21 日报】\n🔬 Nature Communications 光学突破（纳米光子实验室）\n💰 博士 Co-funded Scholarship $37,145/年 + $2,000 搬家（8/31 截止）\n🎓 本科 International Merit $15,000/年 自动评估\n详情翻主页图文 🌱',
-      '莫纳什这波不卷包装 — 直接上硬指标。\n博士全奖 8 月截止、本科 Merit 自动评、科研上 Nature。想申 Monash 的建议截图保留 💬'
+    "community": [
+      "【Monash 04-21 日报】\n🔬 Nature Communications 光学突破\n💰 博士 Co-funded Scholarship（8/31 截止）\n🎓 本科 International Merit 自动评估"
     ]
   },
-  p2: {
-    title: 'Monash 纳米光子登 Nature Communications｜一片透镜 11 项功能',
-    body: '上周看到一条让我觉得"反常识"的新闻：Monash 纳米光子实验室在 Nature Communications 发文，做出了一片比指甲盖还小的透镜，同时做 11 项光学功能。\n\n传统超表面研究追求精密排列——像在显微镜下排积木。\nMonash 反过来，把纳米结构按受控的"混乱"马赛克图案散布，结果功能密度不降反升。\n\n跨洲联合：英国 Exeter + 南非 Wits。\n\n对想做 PhD 的同学，导师所在实验室近 3 年的顶刊发表是最直接的含金量信号。现在联系这个实验室聊 PhD，时机很好 🔬',
-    tags: '#Monash #澳洲留学 #科研 #PhD申请 #纳米光子 #NatureCommunications',
-    wechat: [
-      'Monash 纳米光子实验室登 Nature Communications — 一片透镜 11 项功能 🔬',
-      '做 PhD 最硬的"含金量信号"就是导师近 3 年顶刊发表。Monash 这个实验室刚出 Nature。',
-      '"把乱变成突破" — Monash 4 月 10 日 Nature Communications 光学研究，联合 Exeter + Wits。'
+  "p2": {
+    "title": "Monash 纳米光子登 Nature Communications",
+    "body": "单片透镜做 11 项光学功能。跨洲联合 Exeter + Wits。想做 PhD 的可以把这个实验室作为候选 🔬",
+    "tags": "#Monash #科研 #PhD申请 #纳米光子",
+    "wechat": [
+      "Monash 纳米光子实验室登 Nature Communications 🔬"
     ],
-    community: [
-      '【Monash 科研】纳米光子实验室 4/10 登 Nature Communications。\n单片透镜做 11 项光学功能，跨洲联合 Exeter + Wits。\n\n想冲 Monash 物理 / 材料 / 工程 PhD 的同学可以把这个实验室作为候选，现在联系 supervisor 聊课题是正确时机 🔬'
+    "community": [
+      "【Monash 科研】纳米光子实验室 4/10 登 Nature Communications。"
     ]
   },
-  p3: {
-    title: 'Monash 博士全奖 $37,145/年 + $2,000 搬家补贴｜8 月 31 日截止',
-    body: 'Co-funded Monash Graduate Scholarship 可能是澳洲最清爽的博士奖申流程：\n\n💰 全额学费豁免\n💰 AUD 37,145 / 年生活费\n💰 AUD 2,000 一次性搬家补贴\n📅 截止 2026 年 8 月 31 日（还剩 4 个多月）\n\n不需要另填奖学金表——递交 PhD / Master by Research 申请时系统自动评估。\n\n评审主要看三项：学术记录、研究产出、前期研究经历。本科零科研经验直接冲 PhD 成功率偏低，现实路径是先读一年 Master by Research 攒一篇 working paper 再转 PhD 💪',
-    tags: '#Monash #澳洲留学 #PhD #博士奖学金 #研究生 #留学干货 #澳洲PhD',
-    wechat: [
-      'Monash 博士全奖：$37,145 / 年生活费 + 学费全免 + $2,000 搬家。8/31 截止 💰',
-      '墨尔本房租按这个数字够覆盖，不用兼职撑学费。递交研究申请自动入评 — 流程贼清爽。',
-      '想冲 Monash PhD 的现在该干什么？套磁 + 整理研究材料，4 个月窗口期不等人 📧'
+  "p3": {
+    "title": "Monash 博士全奖 $37,145/年｜8 月 31 日截止",
+    "body": "全额学费豁免 + AUD 37,145 / 年 + AUD 2,000 搬家。8/31 截止。递交研究申请自动入评 💰",
+    "tags": "#Monash #PhD #博士奖学金 #澳洲留学",
+    "wechat": [
+      "Monash 博士全奖：$37,145 / 年 + 搬家。8/31 截止 💰"
     ],
-    community: [
-      '【Monash PhD 全奖】\nCo-funded Monash Graduate Scholarship\n💰 学费全免 + AUD 37,145 / 年 + AUD 2,000 搬家\n📅 2026-08-31 截止（剩 ~4 个月）\n📝 递交研究项目申请自动评估\n\n零科研背景直接冲偏难 · 可先读 Master by Research → 攒 paper → 转 PhD 💪',
-      'Monash 博士奖 8 月底截止。\n建议现在开始：① 选导师（看实验室近 2 年发表 + PhD 人数）· ② 写套磁邮件（具体课题 + 你能贡献）· ③ 整理成绩单 / 英文翻译 / working paper 📧'
+    "community": [
+      "【Monash PhD 全奖】学费全免 + 生活费 + 搬家。2026-08-31 截止。"
     ]
   },
-  p4: {
-    title: 'Monash 本科 Merit 奖学金 $15,000/年｜拿 Offer 自动评估',
-    body: '本科版 Merit Scholarship 2026 起调整为 AUD 15,000 / 年（按 48 credit points 计），覆盖整个学位。\n\n这种"拿 offer 自动入评"的模式最爽的地方是不用担心窗口期：拿到本科录取通知的国际生全部自动纳入评估池，不用另填申请。\n\n换算成中国学生的参照系：\n✅ 985 / 211 高考段\n✅ IB 38+\n✅ A-Level AAB 以上\n能进入有效竞争。\n\n$15,000 对应约 3 门 unit 的学费，能覆盖年度学费 30-40%（按专业）。建议 S1（2 月开学）前一年 10 月底前提交申请 🎓',
-    tags: '#Monash #澳洲留学 #本科奖学金 #高考留学 #IB留学 #ALevel #莫纳什',
-    wechat: [
-      'Monash 本科 Merit $15,000/年 · 拿 offer 自动评 · 覆盖整个学位 🎓',
-      '985/211 高考段 / IB 38+ / A-Level AAB 以上进入有效竞争 — 门槛比 Excellence 系列宽。',
-      '申 Monash 本科最省心的一件事：奖学金不用另外申，系统自动评估。'
+  "p4": {
+    "title": "Monash 本科 Merit $15,000/年｜拿 Offer 自动评估",
+    "body": "AUD 15,000 / 年，按 48 credit points 计，覆盖整个学位。拿到 offer 自动入评。985/211 / IB 38+ 能进入有效竞争 🎓",
+    "tags": "#Monash #本科奖学金 #高考留学 #IB留学 #澳洲留学",
+    "wechat": [
+      "Monash 本科 Merit $15,000/年 · 拿 offer 自动评 🎓"
     ],
-    community: [
-      '【Monash 本科 Merit】\nAUD 15,000 / 年（按 48 cp 计）· 覆盖整个学位\n拿 offer 自动入评 · 不需单独填表\n\n中国学生参照系：985/211 高考段 / IB 38+ / A-Level AAB+\n$15,000 ≈ 3 门 unit 学费（cover 年度 30-40%）\nS1 入学前一年 10 月底前提交 🎓'
+    "community": [
+      "【Monash 本科 Merit】AUD 15,000/年 · 拿 offer 自动评 · 覆盖整个学位"
     ]
   },
-  p5: {
-    title: 'Monash 04-21 · 一眼看完 3 条硬料｜截图这张就够',
-    body: '今天 Monash 的 3 条整理到一张里，方便截图保存：\n\n01 · Nature 级科研：纳米光子实验室单片透镜 11 项功能（Nature Communications）\n02 · 博士全奖 $37,145/年 + $2,000 搬家（8/31 截止）\n03 · 本科 Merit $15,000/年（拿 offer 自动评）\n\n想申 Monash 的截图就完事了，细节在之前几张图 🌱',
-    tags: '#Monash #澳洲留学 #莫纳什大学 #大学新闻 #奖学金 #PhD #本科奖学金',
-    wechat: [
-      'Monash 04-21 速览一张图：科研 + 博士 + 本科三件事，截图保存 🌱',
-      '懒得翻长图？这张整合图一眼看完 Monash 今日三件事 📌',
-      '澳洲大学每日日报 — Monash 版本，截图留档 💾'
+  "p5": {
+    "title": "Monash 04-21 · 一眼看完 3 条硬料",
+    "body": "今天 Monash 的 3 条整理到一张：\n01 · Nature 光学突破\n02 · 博士全奖 $37,145/年（8/31 截止）\n03 · 本科 Merit $15,000/年（自动评）\n想申 Monash 的截图保存就完事 🌱",
+    "tags": "#Monash #澳洲留学 #大学新闻 #奖学金",
+    "wechat": [
+      "Monash 04-21 三条硬料一图看完 🌱"
     ],
-    community: [
-      '【Monash 04-21 速览】\n01 · Nature Communications 光学突破\n02 · 博士奖 $37,145/年（8/31 截止）\n03 · 本科 Merit $15,000/年（自动评）\n截图这张就够 🌱'
+    "community": [
+      "【Monash 04-21 速览】科研 + 博士奖 + 本科奖 3 连"
     ]
   }
 };
 </script>
 <script src="../../xhs-shared.js"></script>
-<script>
-document.getElementById('dl-all').addEventListener('click', async () => {
-  const btn = document.getElementById('dl-all');
-  const orig = btn.textContent;
-  btn.disabled = true;
-  const items = [
-    ['poster-1', 'xhs-monash-2026-04-21-01-cover'],
-    ['poster-2', 'xhs-monash-2026-04-21-02-science'],
-    ['poster-3', 'xhs-monash-2026-04-21-03-phd'],
-    ['poster-4', 'xhs-monash-2026-04-21-04-undergrad'],
-    ['poster-5', 'xhs-monash-2026-04-21-05-quickview'],
-  ];
-  for (let i = 0; i < items.length; i++) {
-    btn.textContent = `渲染 ${i+1} / ${items.length}…`;
-    try { await dlOne(items[i][0], items[i][1]); } catch (e) { console.error(e); }
-    await new Promise(r => setTimeout(r, 250));
-  }
-  btn.textContent = '✅ 已全部下载';
-  setTimeout(() => { btn.disabled = false; btn.textContent = orig; }, 1500);
-});
-</script>
 </body>
 </html>
