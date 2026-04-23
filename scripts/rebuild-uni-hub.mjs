@@ -12,18 +12,11 @@ const HUB_DIR = path.join(ROOT, 'src/static/uni-news-social');
 const SCHOOLS_DIR = path.join(HUB_DIR, 'schools');
 const CONTENT_DIR = path.join(ROOT, 'src/content/universities');
 
-const UNI_BRAND = {
-	uq:       { primary: '#51247a', deep: '#2a0f57', light: '#7c3aed', accent: '#ffce44', text: '#ffffff', nameCn: '昆士兰大学',           nameEn: 'University of Queensland',          city: 'Brisbane, QLD',  code: 'UQ',       emblem: 'UQ' },
-	umelb:    { primary: '#094183', deep: '#062b56', light: '#1565c0', accent: '#ffce44', text: '#ffffff', nameCn: '墨尔本大学',           nameEn: 'University of Melbourne',           city: 'Melbourne, VIC', code: 'UMELB',    emblem: 'UM' },
-	unsw:     { primary: '#ffd100', deep: '#b89500', light: '#fff176', accent: '#10162f', text: '#10162f', nameCn: '新南威尔士大学',       nameEn: 'UNSW Sydney',                       city: 'Sydney, NSW',    code: 'UNSW',     emblem: 'UN' },
-	usyd:     { primary: '#e64626', deep: '#9d2613', light: '#ff7b59', accent: '#ffce44', text: '#ffffff', nameCn: '悉尼大学',             nameEn: 'University of Sydney',              city: 'Sydney, NSW',    code: 'USYD',     emblem: 'US' },
-	monash:   { primary: '#006dae', deep: '#003f6b', light: '#1e88e5', accent: '#ffce44', text: '#ffffff', nameCn: '莫纳什大学',           nameEn: 'Monash University',                 city: 'Melbourne, VIC', code: 'MONASH',   emblem: 'MN' },
-	anu:      { primary: '#c7a85c', deep: '#8a7136', light: '#e8d9a8', accent: '#10162f', text: '#10162f', nameCn: '澳洲国立大学',         nameEn: 'Australian National University',    city: 'Canberra, ACT',  code: 'ANU',      emblem: 'AN' },
-	adelaide: { primary: '#002f5f', deep: '#001838', light: '#1565c0', accent: '#ff5757', text: '#ffffff', nameCn: '阿德莱德大学',         nameEn: 'University of Adelaide',            city: 'Adelaide, SA',   code: 'ADELAIDE', emblem: 'AD' },
-	rmit:     { primary: '#e60028', deep: '#9c0019', light: '#ff5252', accent: '#000000', text: '#ffffff', nameCn: 'RMIT 皇家墨尔本理工',  nameEn: 'RMIT University',                   city: 'Melbourne, VIC', code: 'RMIT',     emblem: 'RM' },
-	uts:      { primary: '#0f4c81', deep: '#072f54', light: '#2196f3', accent: '#ff5757', text: '#ffffff', nameCn: '悉尼科技大学',         nameEn: 'University of Technology Sydney',   city: 'Sydney, NSW',    code: 'UTS',      emblem: 'UT' },
-	uwa:      { primary: '#27348b', deep: '#161e57', light: '#5c6bc0', accent: '#ffce44', text: '#ffffff', nameCn: '西澳大学',             nameEn: 'University of Western Australia',   city: 'Perth, WA',      code: 'UWA',      emblem: 'UW' },
-};
+// Single source of truth: src/data/uni-brand.v1.json
+// 改配色 → 改那里，这里自动更新。
+const UNI_BRAND = JSON.parse(
+	fs.readFileSync(path.join(ROOT, 'src/data/uni-brand.v1.json'), 'utf8'),
+).brands;
 
 const SCHOOLS = Object.keys(UNI_BRAND);
 

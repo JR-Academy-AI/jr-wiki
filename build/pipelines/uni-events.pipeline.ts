@@ -29,6 +29,7 @@ const REPO_ROOT = join(dirname(new URL(import.meta.url).pathname), '..', '..');
 const DATA_DIR = join(REPO_ROOT, 'src/data/uni-events');
 const BRAND_JSON = join(REPO_ROOT, 'src/data/uni-brand.v1.json');
 const TEMPLATE_EVENTS = join(REPO_ROOT, 'src/templates/uni-events/events.template.html');
+const TEMPLATE_COVERS = join(REPO_ROOT, 'src/templates/uni-events/covers.template.html');
 const OUTPUT_BASE = join(REPO_ROOT, 'src/static/uni-news-social/events');
 
 interface BrandEntry {
@@ -120,10 +121,54 @@ function renderSchoolCard(school: SchoolEvents, brand: BrandEntry): string {
     </article>`;
 }
 
+function renderCoverFrame(school: SchoolEvents, brand: BrandEntry, date: string): string {
+	const slug = `cover-${brand.code.toLowerCase()}`;
+	const coverId = `cover-${brand.code.toLowerCase()}-render`;
+	const dateShort = date.slice(5).replace('-', ' / ');
+	const gradient = `linear-gradient(145deg, ${brand.deep}, ${brand.primary})`;
+
+	let eventsBlock: string;
+	if (school.events.length === 0) {
+		eventsBlock = `<div class="placeholder">本周无公开活动<br>下周见 🌱</div>`;
+	} else {
+		// Take top 2-3 events (most visually impactful)
+		const topEvents = school.events.slice(0, Math.min(3, school.events.length));
+		eventsBlock = topEvents.map(e => `
+          <div class="event-hook">
+            <div class="title">${htmlEscape(e.title)}</div>
+            <div class="meta">${htmlEscape(e.time)} · ${htmlEscape(e.location)}</div>
+          </div>`).join('');
+	}
+
+	return `
+    <div class="cover-frame">
+      <div class="label">${htmlEscape(brand.code)} <em>· ${htmlEscape(brand.nameCn)}</em></div>
+      <div class="cover-scaler">
+        <div class="cover" id="${coverId}" style="background: ${gradient};">
+          <div class="cover-inner">
+            <div class="code">${htmlEscape(brand.code)}</div>
+            <div class="name-cn">${htmlEscape(brand.nameCn)}</div>
+            <div class="name-en">${htmlEscape(brand.nameEn)}</div>
+            <div class="date-chip">${htmlEscape(dateShort)} · 本周</div>
+            <div class="events-list">${eventsBlock}
+            </div>
+            <div class="bottom">
+              <div class="label">CAMPUS EVENTS · WEEKLY</div>
+              <div class="slogan">6 所澳洲大学 · 每周更新</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="dl-btn" data-target="${coverId}" data-slug="${slug}">⬇ 下载 PNG</button>
+    </div>`;
+}
+
 interface BuildResult {
 	date: string;
 	outputPath: string;
 	bytes: number;
+	coversPath: string;
+	coversBytes: number;
 	eventCount: number;
 	schoolsWithEvents: number;
 }
@@ -159,10 +204,30 @@ function buildOne(dataFile: string, brandFile: BrandFile, force: boolean): Build
 		skipped = true;
 	}
 
+	// Covers.html — 6 XHS 封面图
+	const coverFrames = data.schools.map(s => {
+		const brand = brandFile.brands[s.code];
+		return renderCoverFrame(s, brand, data.date);
+	}).join('\n');
+	const coversTemplate = loadTemplate(TEMPLATE_COVERS);
+	const coversOutput = renderTemplate(coversTemplate, {
+		DATE: data.date,
+		COVER_FRAMES: coverFrames,
+	});
+	const coversPath = join(OUTPUT_BASE, `${data.date}-covers.html`);
+	let coversSkipped = false;
+	if (canWriteOrSkip(coversPath, force) === 'write') {
+		writeWithMarker(coversPath, coversOutput, 'uni-events');
+	} else {
+		coversSkipped = true;
+	}
+
 	return {
 		date: data.date,
 		outputPath: skipped ? `${outputPath} (skipped)` : outputPath,
 		bytes: skipped ? 0 : Buffer.byteLength(output, 'utf8'),
+		coversPath: coversSkipped ? `${coversPath} (skipped)` : coversPath,
+		coversBytes: coversSkipped ? 0 : Buffer.byteLength(coversOutput, 'utf8'),
 		eventCount,
 		schoolsWithEvents,
 	};
@@ -188,7 +253,9 @@ export function buildAll(targetDate?: string, force = false): void {
 		try {
 			const r = buildOne(file, brandFile, force);
 			results.push(r);
-			console.log(`[uni-events] ✓ ${r.date} · ${r.eventCount} events across ${r.schoolsWithEvents}/6 schools (${(r.bytes / 1024).toFixed(1)} KB)`);
+			console.log(`[uni-events] ✓ ${r.date} · ${r.eventCount} events across ${r.schoolsWithEvents}/6 schools`);
+			console.log(`    events: ${r.outputPath} (${(r.bytes / 1024).toFixed(1)} KB)`);
+			console.log(`    covers: ${r.coversPath} (${(r.coversBytes / 1024).toFixed(1)} KB)`);
 		} catch (err) {
 			const msg = err instanceof Error ? err.message : String(err);
 			failures.push({ file, error: msg });
