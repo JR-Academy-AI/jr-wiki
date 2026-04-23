@@ -52,11 +52,11 @@ body {
 .btn:disabled { opacity: 0.55; cursor: wait; }
 .btn.primary { background: #ff5757; color: #fff; border-color: #ff5757; }
 
-/* Scale factor: 0.3 → 1242×1660 渲染为 372.6×498 可视区 */
+/* Scale factor: 0.4 → 1242×1660 渲染为 497×664 可视区 */
 .covers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fill, minmax(510px, 1fr));
+  gap: 32px;
 }
 
 .cover-frame {
@@ -68,10 +68,10 @@ body {
 }
 .cover-frame .label em { font-style: normal; color: var(--muted); font-weight: 600; font-size: 12px; margin-left: 10px; }
 
-/* scaler 是 372.6×498 的固定可视窗口，cover 绝对定位填充它 */
+/* scaler 固定 497×664 视窗（0.4× 原图），cover 绝对定位填满它 */
 .cover-scaler {
   width: 100%;
-  max-width: 372.6px;
+  max-width: 497px;
   aspect-ratio: 1242 / 1660;
   background: #d8dae0;
   border-radius: 12px;
@@ -84,7 +84,7 @@ body {
   position: absolute;
   top: 0; left: 0;
   transform-origin: top left;
-  transform: scale(0.3);
+  transform: scale(0.4);
   display: flex; flex-direction: column;
   color: #fff;
   font-family: 'Noto Sans SC', sans-serif;
@@ -105,48 +105,48 @@ body {
 }
 .cover .code {
   font-family: 'Space Grotesk', monospace;
-  font-size: 52px; font-weight: 700;
+  font-size: 56px; font-weight: 700;
   letter-spacing: 0.15em; opacity: 0.85;
 }
 .cover .name-cn {
   font-family: 'Playfair Display', 'Noto Sans SC', serif;
-  font-size: 90px; font-weight: 900; line-height: 1.1;
+  font-size: 104px; font-weight: 900; line-height: 1.1;
   letter-spacing: -0.02em;
 }
 .cover .name-en {
   font-family: 'Playfair Display', serif;
-  font-size: 46px; font-style: italic; font-weight: 700;
+  font-size: 52px; font-style: italic; font-weight: 700;
   opacity: 0.92; letter-spacing: -0.01em;
-  margin-top: -16px;
+  margin-top: -12px;
 }
 .cover .date-chip {
   display: inline-block;
-  padding: 16px 32px;
+  padding: 18px 36px;
   background: #ffce44; color: #10162f;
   border-radius: 100px; border: 3px solid #10162f;
-  font-family: 'Space Grotesk', monospace;
-  font-size: 44px; font-weight: 800;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 52px; font-weight: 900;
   align-self: flex-start;
 }
 .cover .events-list {
-  display: flex; flex-direction: column; gap: 32px;
+  display: flex; flex-direction: column; gap: 26px;
   margin-top: auto;
   flex: 1; justify-content: flex-end;
 }
 .cover .event-hook {
-  padding: 28px 32px;
-  background: rgba(255, 255, 255, 0.14);
-  border-left: 8px solid rgba(255, 255, 255, 0.9);
+  padding: 30px 36px;
+  background: rgba(255, 255, 255, 0.18);
+  border-left: 10px solid rgba(255, 255, 255, 0.95);
   border-radius: 16px;
-  backdrop-filter: blur(2px);
 }
 .cover .event-hook .title {
-  font-size: 52px; font-weight: 900; line-height: 1.25;
-  margin-bottom: 12px;
+  font-size: 64px; font-weight: 900; line-height: 1.22;
+  margin-bottom: 14px;
 }
 .cover .event-hook .meta {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 30px; opacity: 0.88;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 40px; font-weight: 500; opacity: 0.95;
+  line-height: 1.5;
 }
 .cover .bottom {
   display: flex; justify-content: space-between; align-items: center;
@@ -154,21 +154,22 @@ body {
   border-top: 2px solid rgba(255, 255, 255, 0.3);
 }
 .cover .bottom .label {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 28px; font-weight: 700; letter-spacing: 0.12em;
-  opacity: 0.88;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 36px; font-weight: 700; letter-spacing: 0.05em;
+  opacity: 0.95;
 }
 .cover .bottom .slogan {
-  font-size: 26px; font-weight: 600; opacity: 0.8;
+  font-size: 30px; font-weight: 600; opacity: 0.85;
 }
 .cover .placeholder {
-  padding: 40px 32px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px dashed rgba(255, 255, 255, 0.4);
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px dashed rgba(255, 255, 255, 0.45);
   border-radius: 16px;
   text-align: center;
-  font-size: 44px; font-weight: 700;
-  opacity: 0.85;
+  font-size: 56px; font-weight: 800;
+  line-height: 1.4;
+  opacity: 0.9;
 }
 
 .cover-frame .dl-btn {

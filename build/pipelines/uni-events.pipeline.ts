@@ -124,19 +124,20 @@ function renderSchoolCard(school: SchoolEvents, brand: BrandEntry): string {
 function renderCoverFrame(school: SchoolEvents, brand: BrandEntry, date: string): string {
 	const slug = `cover-${brand.code.toLowerCase()}`;
 	const coverId = `cover-${brand.code.toLowerCase()}-render`;
-	const dateShort = date.slice(5).replace('-', ' / ');
+	// 日期显示：2026-04-23 → "4 月 23 日"
+	const [y, m, d] = date.split('-');
+	const dateCn = `${parseInt(m, 10)} 月 ${parseInt(d, 10)} 日`;
 	const gradient = `linear-gradient(145deg, ${brand.deep}, ${brand.primary})`;
 
 	let eventsBlock: string;
 	if (school.events.length === 0) {
 		eventsBlock = `<div class="placeholder">本周无公开活动<br>下周见 🌱</div>`;
 	} else {
-		// Take top 2-3 events (most visually impactful)
 		const topEvents = school.events.slice(0, Math.min(3, school.events.length));
 		eventsBlock = topEvents.map(e => `
           <div class="event-hook">
             <div class="title">${htmlEscape(e.title)}</div>
-            <div class="meta">${htmlEscape(e.time)} · ${htmlEscape(e.location)}</div>
+            <div class="meta">${htmlEscape(e.time)}<br>${htmlEscape(e.location)}</div>
           </div>`).join('');
 	}
 
@@ -149,12 +150,12 @@ function renderCoverFrame(school: SchoolEvents, brand: BrandEntry, date: string)
             <div class="code">${htmlEscape(brand.code)}</div>
             <div class="name-cn">${htmlEscape(brand.nameCn)}</div>
             <div class="name-en">${htmlEscape(brand.nameEn)}</div>
-            <div class="date-chip">${htmlEscape(dateShort)} · 本周</div>
+            <div class="date-chip">${dateCn} · 本周</div>
             <div class="events-list">${eventsBlock}
             </div>
             <div class="bottom">
-              <div class="label">CAMPUS EVENTS · WEEKLY</div>
-              <div class="slogan">6 所澳洲大学 · 每周更新</div>
+              <div class="label">校园活动 · 每周更新</div>
+              <div class="slogan">6 所澳洲大学</div>
             </div>
           </div>
         </div>

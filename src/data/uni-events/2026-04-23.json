@@ -7,27 +7,27 @@
       "code": "umelb",
       "events": [
         {
-          "title": "Future Energy Forum",
-          "time": "Thu 23 Apr 4:30-6:30pm",
-          "location": "Parkville Campus",
-          "price": "Free",
-          "category": "Academic",
+          "title": "能源未来论坛",
+          "time": "周四 4/23 下午 4:30-6:30",
+          "location": "Parkville 校区",
+          "price": "免费",
+          "category": "学术",
           "url": "https://events.unimelb.edu.au"
         },
         {
-          "title": "Tofu Tuesdays – Free Plant-Based Lunch",
-          "time": "Tue 28 Apr 11:30am-2pm",
-          "location": "Campus Canteen, Parkville / Southbank (alternating)",
-          "price": "Free",
-          "category": "Food & Social",
+          "title": "豆腐星期二 · 免费植物午餐",
+          "time": "周二 4/28 上午 11:30 - 下午 2:00",
+          "location": "Campus Canteen · Parkville / Southbank",
+          "price": "免费",
+          "category": "社交",
           "url": "https://umsu.unimelb.edu.au/things-to-do/events/"
         },
         {
-          "title": "Powering the Future: Solar Power & Energy Transition",
-          "time": "Wed 29 Apr 2-3pm",
-          "location": "Parkville Campus",
-          "price": "Free",
-          "category": "Academic",
+          "title": "太阳能与能源转型讲座",
+          "time": "周三 4/29 下午 2:00-3:00",
+          "location": "Parkville 校区",
+          "price": "免费",
+          "category": "学术",
           "url": "https://events.unimelb.edu.au"
         }
       ],
@@ -41,19 +41,19 @@
       "code": "unsw",
       "events": [
         {
-          "title": "The Beths – Straight Line Was A Lie Tour",
-          "time": "Fri 24 Apr doors 7:30pm",
-          "location": "UNSW Roundhouse, Kensington",
-          "price": "Ticketed",
-          "category": "Live Music",
+          "title": "The Beths 乐队巡演",
+          "time": "周五 4/24 开场 7:30 pm",
+          "location": "UNSW Roundhouse · Kensington",
+          "price": "需购票",
+          "category": "演唱会",
           "url": "https://premier.ticketek.com.au/shows/show.aspx?sh=BESLWLTH26&v=URH"
         },
         {
-          "title": "Baxter Dury – ALLBARONE Tour",
-          "time": "Wed 29 Apr 7:30pm",
-          "location": "UNSW Roundhouse, Kensington",
-          "price": "Ticketed",
-          "category": "Live Music",
+          "title": "Baxter Dury · ALLBARONE 巡演",
+          "time": "周三 4/29 晚上 7:30",
+          "location": "UNSW Roundhouse · Kensington",
+          "price": "需购票",
+          "category": "演唱会",
           "url": "https://www.songkick.com/concerts/43021650-baxter-dury-at-roundhouse-unsw"
         }
       ],
@@ -67,11 +67,11 @@
       "code": "uq",
       "events": [
         {
-          "title": "UQU Wednesday Market",
-          "time": "Wed 29 Apr 8am-3pm",
-          "location": "Campbell Place, St Lucia Campus",
-          "price": "Free entry",
-          "category": "Market",
+          "title": "UQU 周三市集",
+          "time": "周三 4/29 上午 8:00 - 下午 3:00",
+          "location": "Campbell Place · St Lucia 校区",
+          "price": "免费入场",
+          "category": "市集",
           "url": "https://uqu.com.au/whats-on/"
         }
       ],
@@ -85,27 +85,27 @@
       "code": "usyd",
       "events": [
         {
-          "title": "Lunchtime Bingo at Manning Bar",
-          "time": "Thu 24 Apr 12-1pm",
-          "location": "Manning Bar, Camperdown Campus",
-          "price": "Free",
-          "category": "Social",
+          "title": "Manning 午间宾果 · 奖金 $100",
+          "time": "周四 4/24 中午 12:00-1:00",
+          "location": "Manning Bar · Camperdown 校区",
+          "price": "免费",
+          "category": "社交",
           "url": "https://usu.edu.au/events/campus-sessions-at-manning/"
         },
         {
-          "title": "Paddle Battle: Ping Pong Competition",
-          "time": "Thu 24 Apr 1-3pm",
-          "location": "Manning Bar, Camperdown Campus",
-          "price": "Free",
-          "category": "Sport/Social",
+          "title": "Paddle Battle · 乒乓球比赛",
+          "time": "周四 4/24 下午 1:00-3:00",
+          "location": "Manning Bar · Camperdown 校区",
+          "price": "免费",
+          "category": "运动",
           "url": "https://usu.edu.au/events/campus-sessions-at-manning/"
         },
         {
-          "title": "Manning Unplugged – Acoustic Sessions",
-          "time": "Wed 29 Apr 12-1pm",
-          "location": "Manning Bar Balcony, Camperdown",
-          "price": "Free",
-          "category": "Live Music",
+          "title": "Manning 阳台原声现场",
+          "time": "周三 4/29 中午 12:00-1:00",
+          "location": "Manning Bar 阳台 · Camperdown",
+          "price": "免费",
+          "category": "现场演出",
           "url": "https://usu.edu.au/events/campus-sessions-at-manning/"
         }
       ],
@@ -128,27 +128,27 @@
       "code": "monash",
       "events": [
         {
-          "title": "MONSU Pantry Weekly Market Stall",
-          "time": "Wed 29 Apr 12-2pm",
-          "location": "The Deck, Caulfield Campus",
-          "price": "Free",
-          "category": "Market/Social",
+          "title": "MONSU 食物市集",
+          "time": "周三 4/29 中午 12:00 - 下午 2:00",
+          "location": "The Deck · Caulfield 校区",
+          "price": "免费",
+          "category": "市集",
           "url": "https://monsu.org/whatson/"
         },
         {
-          "title": "MONSU Caulfield AGM 2026",
-          "time": "Wed 29 Apr 2:30-3:30pm",
-          "location": "K101, Building K Level 1, Caulfield",
-          "price": "Free",
-          "category": "Community",
+          "title": "MONSU Caulfield 2026 年会",
+          "time": "周三 4/29 下午 2:30-3:30",
+          "location": "Building K · K101 · Caulfield",
+          "price": "免费",
+          "category": "社群",
           "url": "https://monsu.org/whatson/"
         },
         {
-          "title": "Breakfast Club",
-          "time": "Thu 30 Apr 9:30-11am",
-          "location": "The Deck, Caulfield Campus",
-          "price": "Free",
-          "category": "Food & Social",
+          "title": "早餐俱乐部",
+          "time": "周四 4/30 上午 9:30-11:00",
+          "location": "The Deck · Caulfield 校区",
+          "price": "免费",
+          "category": "社交",
           "url": "https://monsu.org/whatson/"
         }
       ],

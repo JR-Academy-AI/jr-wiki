@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- 由 build/pipelines/uni-events.pipeline.ts 自动生成 · 2026-04-23T03:29:23.000Z -->
+<!-- 由 build/pipelines/uni-events.pipeline.ts 自动生成 · 2026-04-23T03:37:31.702Z -->
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -54,11 +54,11 @@ body {
 .btn:disabled { opacity: 0.55; cursor: wait; }
 .btn.primary { background: #ff5757; color: #fff; border-color: #ff5757; }
 
-/* Scale factor: 0.3 → 1242×1660 渲染为 372.6×498 可视区 */
+/* Scale factor: 0.4 → 1242×1660 渲染为 497×664 可视区 */
 .covers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fill, minmax(510px, 1fr));
+  gap: 32px;
 }
 
 .cover-frame {
@@ -70,10 +70,10 @@ body {
 }
 .cover-frame .label em { font-style: normal; color: var(--muted); font-weight: 600; font-size: 12px; margin-left: 10px; }
 
-/* scaler 是 372.6×498 的固定可视窗口，cover 绝对定位填充它 */
+/* scaler 固定 497×664 视窗（0.4× 原图），cover 绝对定位填满它 */
 .cover-scaler {
   width: 100%;
-  max-width: 372.6px;
+  max-width: 497px;
   aspect-ratio: 1242 / 1660;
   background: #d8dae0;
   border-radius: 12px;
@@ -86,7 +86,7 @@ body {
   position: absolute;
   top: 0; left: 0;
   transform-origin: top left;
-  transform: scale(0.3);
+  transform: scale(0.4);
   display: flex; flex-direction: column;
   color: #fff;
   font-family: 'Noto Sans SC', sans-serif;
@@ -107,48 +107,48 @@ body {
 }
 .cover .code {
   font-family: 'Space Grotesk', monospace;
-  font-size: 52px; font-weight: 700;
+  font-size: 56px; font-weight: 700;
   letter-spacing: 0.15em; opacity: 0.85;
 }
 .cover .name-cn {
   font-family: 'Playfair Display', 'Noto Sans SC', serif;
-  font-size: 90px; font-weight: 900; line-height: 1.1;
+  font-size: 104px; font-weight: 900; line-height: 1.1;
   letter-spacing: -0.02em;
 }
 .cover .name-en {
   font-family: 'Playfair Display', serif;
-  font-size: 46px; font-style: italic; font-weight: 700;
+  font-size: 52px; font-style: italic; font-weight: 700;
   opacity: 0.92; letter-spacing: -0.01em;
-  margin-top: -16px;
+  margin-top: -12px;
 }
 .cover .date-chip {
   display: inline-block;
-  padding: 16px 32px;
+  padding: 18px 36px;
   background: #ffce44; color: #10162f;
   border-radius: 100px; border: 3px solid #10162f;
-  font-family: 'Space Grotesk', monospace;
-  font-size: 44px; font-weight: 800;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 52px; font-weight: 900;
   align-self: flex-start;
 }
 .cover .events-list {
-  display: flex; flex-direction: column; gap: 32px;
+  display: flex; flex-direction: column; gap: 26px;
   margin-top: auto;
   flex: 1; justify-content: flex-end;
 }
 .cover .event-hook {
-  padding: 28px 32px;
-  background: rgba(255, 255, 255, 0.14);
-  border-left: 8px solid rgba(255, 255, 255, 0.9);
+  padding: 30px 36px;
+  background: rgba(255, 255, 255, 0.18);
+  border-left: 10px solid rgba(255, 255, 255, 0.95);
   border-radius: 16px;
-  backdrop-filter: blur(2px);
 }
 .cover .event-hook .title {
-  font-size: 52px; font-weight: 900; line-height: 1.25;
-  margin-bottom: 12px;
+  font-size: 64px; font-weight: 900; line-height: 1.22;
+  margin-bottom: 14px;
 }
 .cover .event-hook .meta {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 30px; opacity: 0.88;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 40px; font-weight: 500; opacity: 0.95;
+  line-height: 1.5;
 }
 .cover .bottom {
   display: flex; justify-content: space-between; align-items: center;
@@ -156,21 +156,22 @@ body {
   border-top: 2px solid rgba(255, 255, 255, 0.3);
 }
 .cover .bottom .label {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 28px; font-weight: 700; letter-spacing: 0.12em;
-  opacity: 0.88;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 36px; font-weight: 700; letter-spacing: 0.05em;
+  opacity: 0.95;
 }
 .cover .bottom .slogan {
-  font-size: 26px; font-weight: 600; opacity: 0.8;
+  font-size: 30px; font-weight: 600; opacity: 0.85;
 }
 .cover .placeholder {
-  padding: 40px 32px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px dashed rgba(255, 255, 255, 0.4);
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px dashed rgba(255, 255, 255, 0.45);
   border-radius: 16px;
   text-align: center;
-  font-size: 44px; font-weight: 700;
-  opacity: 0.85;
+  font-size: 56px; font-weight: 800;
+  line-height: 1.4;
+  opacity: 0.9;
 }
 
 .cover-frame .dl-btn {
@@ -208,24 +209,24 @@ body {
             <div class="code">UMELB</div>
             <div class="name-cn">墨尔本大学</div>
             <div class="name-en">University of Melbourne</div>
-            <div class="date-chip">04 / 23 · 本周</div>
+            <div class="date-chip">4 月 23 日 · 本周</div>
             <div class="events-list">
           <div class="event-hook">
-            <div class="title">Future Energy Forum</div>
-            <div class="meta">Thu 23 Apr 4:30-6:30pm · Parkville Campus</div>
+            <div class="title">能源未来论坛</div>
+            <div class="meta">周四 4/23 下午 4:30-6:30<br>Parkville 校区</div>
           </div>
           <div class="event-hook">
-            <div class="title">Tofu Tuesdays – Free Plant-Based Lunch</div>
-            <div class="meta">Tue 28 Apr 11:30am-2pm · Campus Canteen, Parkville / Southbank (alternating)</div>
+            <div class="title">豆腐星期二 · 免费植物午餐</div>
+            <div class="meta">周二 4/28 上午 11:30 - 下午 2:00<br>Campus Canteen · Parkville / Southbank</div>
           </div>
           <div class="event-hook">
-            <div class="title">Powering the Future: Solar Power &amp; Energy Transition</div>
-            <div class="meta">Wed 29 Apr 2-3pm · Parkville Campus</div>
+            <div class="title">太阳能与能源转型讲座</div>
+            <div class="meta">周三 4/29 下午 2:00-3:00<br>Parkville 校区</div>
           </div>
             </div>
             <div class="bottom">
-              <div class="label">CAMPUS EVENTS · WEEKLY</div>
-              <div class="slogan">6 所澳洲大学 · 每周更新</div>
+              <div class="label">校园活动 · 每周更新</div>
+              <div class="slogan">6 所澳洲大学</div>
             </div>
           </div>
         </div>
@@ -241,20 +242,20 @@ body {
             <div class="code">UNSW</div>
             <div class="name-cn">新南威尔士大学</div>
             <div class="name-en">UNSW Sydney</div>
-            <div class="date-chip">04 / 23 · 本周</div>
+            <div class="date-chip">4 月 23 日 · 本周</div>
             <div class="events-list">
           <div class="event-hook">
-            <div class="title">The Beths – Straight Line Was A Lie Tour</div>
-            <div class="meta">Fri 24 Apr doors 7:30pm · UNSW Roundhouse, Kensington</div>
+            <div class="title">The Beths 乐队巡演</div>
+            <div class="meta">周五 4/24 开场 7:30 pm<br>UNSW Roundhouse · Kensington</div>
           </div>
           <div class="event-hook">
-            <div class="title">Baxter Dury – ALLBARONE Tour</div>
-            <div class="meta">Wed 29 Apr 7:30pm · UNSW Roundhouse, Kensington</div>
+            <div class="title">Baxter Dury · ALLBARONE 巡演</div>
+            <div class="meta">周三 4/29 晚上 7:30<br>UNSW Roundhouse · Kensington</div>
           </div>
             </div>
             <div class="bottom">
-              <div class="label">CAMPUS EVENTS · WEEKLY</div>
-              <div class="slogan">6 所澳洲大学 · 每周更新</div>
+              <div class="label">校园活动 · 每周更新</div>
+              <div class="slogan">6 所澳洲大学</div>
             </div>
           </div>
         </div>
@@ -270,16 +271,16 @@ body {
             <div class="code">UQ</div>
             <div class="name-cn">昆士兰大学</div>
             <div class="name-en">University of Queensland</div>
-            <div class="date-chip">04 / 23 · 本周</div>
+            <div class="date-chip">4 月 23 日 · 本周</div>
             <div class="events-list">
           <div class="event-hook">
-            <div class="title">UQU Wednesday Market</div>
-            <div class="meta">Wed 29 Apr 8am-3pm · Campbell Place, St Lucia Campus</div>
+            <div class="title">UQU 周三市集</div>
+            <div class="meta">周三 4/29 上午 8:00 - 下午 3:00<br>Campbell Place · St Lucia 校区</div>
           </div>
             </div>
             <div class="bottom">
-              <div class="label">CAMPUS EVENTS · WEEKLY</div>
-              <div class="slogan">6 所澳洲大学 · 每周更新</div>
+              <div class="label">校园活动 · 每周更新</div>
+              <div class="slogan">6 所澳洲大学</div>
             </div>
           </div>
         </div>
@@ -295,24 +296,24 @@ body {
             <div class="code">USYD</div>
             <div class="name-cn">悉尼大学</div>
             <div class="name-en">University of Sydney</div>
-            <div class="date-chip">04 / 23 · 本周</div>
+            <div class="date-chip">4 月 23 日 · 本周</div>
             <div class="events-list">
           <div class="event-hook">
-            <div class="title">Lunchtime Bingo at Manning Bar</div>
-            <div class="meta">Thu 24 Apr 12-1pm · Manning Bar, Camperdown Campus</div>
+            <div class="title">Manning 午间宾果 · 奖金 $100</div>
+            <div class="meta">周四 4/24 中午 12:00-1:00<br>Manning Bar · Camperdown 校区</div>
           </div>
           <div class="event-hook">
-            <div class="title">Paddle Battle: Ping Pong Competition</div>
-            <div class="meta">Thu 24 Apr 1-3pm · Manning Bar, Camperdown Campus</div>
+            <div class="title">Paddle Battle · 乒乓球比赛</div>
+            <div class="meta">周四 4/24 下午 1:00-3:00<br>Manning Bar · Camperdown 校区</div>
           </div>
           <div class="event-hook">
-            <div class="title">Manning Unplugged – Acoustic Sessions</div>
-            <div class="meta">Wed 29 Apr 12-1pm · Manning Bar Balcony, Camperdown</div>
+            <div class="title">Manning 阳台原声现场</div>
+            <div class="meta">周三 4/29 中午 12:00-1:00<br>Manning Bar 阳台 · Camperdown</div>
           </div>
             </div>
             <div class="bottom">
-              <div class="label">CAMPUS EVENTS · WEEKLY</div>
-              <div class="slogan">6 所澳洲大学 · 每周更新</div>
+              <div class="label">校园活动 · 每周更新</div>
+              <div class="slogan">6 所澳洲大学</div>
             </div>
           </div>
         </div>
@@ -328,12 +329,12 @@ body {
             <div class="code">ADELAIDE</div>
             <div class="name-cn">阿德莱德大学</div>
             <div class="name-en">University of Adelaide</div>
-            <div class="date-chip">04 / 23 · 本周</div>
+            <div class="date-chip">4 月 23 日 · 本周</div>
             <div class="events-list"><div class="placeholder">本周无公开活动<br>下周见 🌱</div>
             </div>
             <div class="bottom">
-              <div class="label">CAMPUS EVENTS · WEEKLY</div>
-              <div class="slogan">6 所澳洲大学 · 每周更新</div>
+              <div class="label">校园活动 · 每周更新</div>
+              <div class="slogan">6 所澳洲大学</div>
             </div>
           </div>
         </div>
@@ -349,24 +350,24 @@ body {
             <div class="code">MONASH</div>
             <div class="name-cn">莫纳什大学</div>
             <div class="name-en">Monash University</div>
-            <div class="date-chip">04 / 23 · 本周</div>
+            <div class="date-chip">4 月 23 日 · 本周</div>
             <div class="events-list">
           <div class="event-hook">
-            <div class="title">MONSU Pantry Weekly Market Stall</div>
-            <div class="meta">Wed 29 Apr 12-2pm · The Deck, Caulfield Campus</div>
+            <div class="title">MONSU 食物市集</div>
+            <div class="meta">周三 4/29 中午 12:00 - 下午 2:00<br>The Deck · Caulfield 校区</div>
           </div>
           <div class="event-hook">
-            <div class="title">MONSU Caulfield AGM 2026</div>
-            <div class="meta">Wed 29 Apr 2:30-3:30pm · K101, Building K Level 1, Caulfield</div>
+            <div class="title">MONSU Caulfield 2026 年会</div>
+            <div class="meta">周三 4/29 下午 2:30-3:30<br>Building K · K101 · Caulfield</div>
           </div>
           <div class="event-hook">
-            <div class="title">Breakfast Club</div>
-            <div class="meta">Thu 30 Apr 9:30-11am · The Deck, Caulfield Campus</div>
+            <div class="title">早餐俱乐部</div>
+            <div class="meta">周四 4/30 上午 9:30-11:00<br>The Deck · Caulfield 校区</div>
           </div>
             </div>
             <div class="bottom">
-              <div class="label">CAMPUS EVENTS · WEEKLY</div>
-              <div class="slogan">6 所澳洲大学 · 每周更新</div>
+              <div class="label">校园活动 · 每周更新</div>
+              <div class="slogan">6 所澳洲大学</div>
             </div>
           </div>
         </div>
