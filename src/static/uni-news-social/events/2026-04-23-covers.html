@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- 由 build/pipelines/uni-events.pipeline.ts 自动生成 · 2026-04-23T03:14:51.184Z -->
+<!-- 由 build/pipelines/uni-events.pipeline.ts 自动生成 · 2026-04-23T03:29:23.000Z -->
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -54,14 +54,15 @@ body {
 .btn:disabled { opacity: 0.55; cursor: wait; }
 .btn.primary { background: #ff5757; color: #fff; border-color: #ff5757; }
 
+/* Scale factor: 0.3 → 1242×1660 渲染为 372.6×498 可视区 */
 .covers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 28px;
 }
 
 .cover-frame {
-  display: flex; flex-direction: column;
+  display: flex; flex-direction: column; align-items: stretch;
 }
 .cover-frame .label {
   font-size: 13px; font-weight: 900; color: var(--ink);
@@ -69,25 +70,27 @@ body {
 }
 .cover-frame .label em { font-style: normal; color: var(--muted); font-weight: 600; font-size: 12px; margin-left: 10px; }
 
+/* scaler 是 372.6×498 的固定可视窗口，cover 绝对定位填充它 */
 .cover-scaler {
   width: 100%;
+  max-width: 372.6px;
+  aspect-ratio: 1242 / 1660;
   background: #d8dae0;
   border-radius: 12px;
-  padding: 14px;
-  display: flex; justify-content: center;
   overflow: hidden;
+  position: relative;
+  margin: 0 auto;
 }
 .cover {
   width: 1242px; height: 1660px;
+  position: absolute;
+  top: 0; left: 0;
+  transform-origin: top left;
   transform: scale(0.3);
-  transform-origin: top center;
-  margin-bottom: -1160px;
-  position: relative;
-  border-radius: 0;
-  overflow: hidden;
   display: flex; flex-direction: column;
   color: #fff;
   font-family: 'Noto Sans SC', sans-serif;
+  overflow: hidden;
 }
 .cover::before {
   content: ''; position: absolute; inset: 0;
