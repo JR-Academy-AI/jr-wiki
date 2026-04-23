@@ -65,3 +65,27 @@ async def get_user(user_id: int):
 最好用的地方：你可以直接**点击预览里的元素**，Cascade 会定位到对应代码。然后说"把这个按钮改成蓝色圆角"，它就能精准修改——因为它知道你点的是哪个 DOM 元素。
 
 这个工作流比"改代码 → 切浏览器 → 刷新 → 切回来"高效太多，特别是调 CSS 的时候。
+
+## 终端集成：Cascade 读得懂你的命令行
+
+Windsurf 的终端不是摆设——Cascade 会主动读取终端输出，Build 失败、测试报错、lint warning 它都能看到并理解。
+
+```bash
+# 你在终端跑 build，报错了：
+$ npm run build
+
+# ERROR in src/components/UserCard.tsx:15:3
+# TS2322: Type 'string' is not assignable to type 'number'.
+#   15 |   const age: number = user.age  // user.age 从 API 返回是 string
+```
+
+不用复制粘贴这段报错。直接跟 Cascade 说"修一下 build 报错"，它已经通过终端追踪拿到了错误信息，会自动定位文件、分析类型不匹配、给出修复：
+
+```typescript
+// Cascade 修复方案：
+const age: number = Number(user.age)
+// 或者更安全的写法：
+const age: number = parseInt(String(user.age), 10) || 0
+```
+
+这种终端感知能力让 debug 流程从"看报错 → 复制 → 粘贴到 AI → 看建议 → 手动改"变成"看报错 → 说一句话 → 自动修"。
