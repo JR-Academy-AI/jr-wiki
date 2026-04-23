@@ -2,7 +2,7 @@
 	"schemaVersion": "1.0",
 	"weekStartDate": "2026-04-27",
 	"weekEndDate": "2026-05-03",
-	"generatedAt": "2026-04-23T10:00:00+10:00",
+	"generatedAt": "2026-04-23T13:54:00+10:00",
 	"countries": [
 		{ "code": "AU", "label": "澳洲", "flag": "🇦🇺" },
 		{ "code": "SG", "label": "新加坡", "flag": "🇸🇬" },
@@ -19,7 +19,7 @@
 			"nameZh": "澳新军团日（WA 州补休）",
 			"type": "Public",
 			"scope": "AU-WA",
-			"marketingNote": "仅西澳补休，其余州正常上班；不适合做全澳营销 push，WA 学员可推线下咖啡会"
+			"marketingNote": "仅西澳 Perth 补休一天，其他州正常上班 · 不适合全澳广告投放，WA 学员推本地线下咖啡会"
 		},
 		{
 			"date": "2026-05-01",
@@ -28,7 +28,7 @@
 			"localName": "Labour Day",
 			"nameZh": "劳动节",
 			"type": "Public",
-			"marketingNote": "新加坡三天连假前奏，华人学员在家刷手机，适合推 IT 职场/面试类长文"
+			"marketingNote": "新加坡周五连假启动 · 学员在家刷手机，适合推 IT 面试备战长文与 bootcamp 试听课"
 		},
 		{
 			"date": "2026-05-01",
@@ -37,7 +37,7 @@
 			"localName": "Hari Pekerja",
 			"nameZh": "劳动节",
 			"type": "Public",
-			"marketingNote": "马来学员连假出游为主，避免强转化内容；发社群互动或留言抽奖"
+			"marketingNote": "马来学员连假出游居多 · 避免强推转化，改发社群话题或留言抽奖"
 		}
 	]
 }
