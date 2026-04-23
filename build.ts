@@ -238,6 +238,106 @@ if (existsSync(STATIC)) {
 	cpSync(STATIC, DIST, { recursive: true });
 }
 
+// ─── Expose src/data/ to GitHub Pages as /data/*.json（供牛小匠等外部 app 消费） ───
+// Copy 所有 data JSON（schemas + samples），生成 per-type index.json 汇总最新 N 条。
+// 外部 app 读 URL：https://jr-academy-ai.github.io/jr-wiki/data/uni-events/2026-04-23.json
+
+const DATA_SRC = './src/data';
+const DATA_DIST = join(DIST, 'data');
+if (existsSync(DATA_SRC)) {
+	cpSync(DATA_SRC, DATA_DIST, { recursive: true });
+
+	// 生成 index.json per content type：列出所有可用日期 + 每天的 one-liner summary
+	for (const contentType of ['ai-daily', 'uni-events']) {
+		const dir = join(DATA_DIST, contentType);
+		if (!existsSync(dir)) continue;
+		const dates: Array<{ date: string; summary: Record<string, unknown> }> = [];
+		for (const file of readdirSync(dir)) {
+			if (!file.endsWith('.json') || file.startsWith('_') || file === 'index.json') continue;
+			const date = file.replace(/\.json$/, '');
+			try {
+				const data = JSON.parse(readFileSync(join(dir, file), 'utf-8'));
+				let summary: Record<string, unknown> = { date };
+				if (contentType === 'ai-daily') {
+					summary = {
+						date,
+						headline: data.summary?.items?.[0]?.t || '',
+						newsCount: Array.isArray(data.news) ? data.news.length : 0,
+					};
+				} else if (contentType === 'uni-events') {
+					summary = {
+						date,
+						intro: data.intro || '',
+						schoolsWithEvents: (data.schools || []).filter((s: any) => (s.events || []).length > 0).length,
+						totalEvents: (data.schools || []).reduce((sum: number, s: any) => sum + (s.events || []).length, 0),
+						schools: (data.schools || []).map((s: any) => ({
+							code: s.code,
+							eventCount: (s.events || []).length,
+						})),
+					};
+				}
+				dates.push({ date, summary });
+			} catch (e) {
+				console.warn(`[data-index] skip ${file}: ${(e as Error).message}`);
+			}
+		}
+		dates.sort((a, b) => b.date.localeCompare(a.date));
+		const index = {
+			type: contentType,
+			latest: dates[0]?.date || null,
+			count: dates.length,
+			entries: dates.map(d => d.summary),
+		};
+		writeFileSync(join(dir, 'index.json'), JSON.stringify(index, null, 2));
+	}
+
+	// Uni News 走 per-school 组织：每校一份 index
+	const uniNewsDir = join(DATA_DIST, 'uni-news');
+	if (existsSync(uniNewsDir)) {
+		const schoolIndices: Record<string, Array<{ date: string; summary: Record<string, unknown> }>> = {};
+		for (const school of readdirSync(uniNewsDir)) {
+			const schoolDir = join(uniNewsDir, school);
+			if (!statSync(schoolDir).isDirectory()) continue;
+			if (school.startsWith('_')) continue;
+			const entries: Array<{ date: string; summary: Record<string, unknown> }> = [];
+			for (const file of readdirSync(schoolDir)) {
+				if (!file.endsWith('.json') || file === 'index.json') continue;
+				const date = file.replace(/\.json$/, '');
+				try {
+					const data = JSON.parse(readFileSync(join(schoolDir, file), 'utf-8'));
+					entries.push({
+						date,
+						summary: {
+							date,
+							newsCount: Array.isArray(data.news) ? data.news.length : 0,
+							firstNewsTitle: data.news?.[0]?.h2Main || '',
+						},
+					});
+				} catch {}
+			}
+			entries.sort((a, b) => b.date.localeCompare(a.date));
+			writeFileSync(join(schoolDir, 'index.json'), JSON.stringify({
+				school,
+				latest: entries[0]?.date || null,
+				count: entries.length,
+				entries: entries.map(e => e.summary),
+			}, null, 2));
+			schoolIndices[school] = entries;
+		}
+		// 顶层 uni-news/index.json: 各校最新日期
+		writeFileSync(join(uniNewsDir, 'index.json'), JSON.stringify({
+			type: 'uni-news',
+			schools: Object.entries(schoolIndices).map(([school, entries]) => ({
+				school,
+				latest: entries[0]?.date || null,
+				count: entries.length,
+			})),
+		}, null, 2));
+	}
+
+	console.log(`   📊 dist/data/ — 外部消费用 JSON endpoints (牛小匠 etc)`);
+}
+
 // ─── Generate preview page ───
 
 const previewDir = join(DIST, '_preview');
