@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-04-24",
+  "intro": "ANZAC 假期后归校首周 · Roundhouse 双场 + Manning Bar 演出季 + 双年展导览 + 市集照常",
+  "schools": [
+    {
+      "code": "umelb",
+      "events": [
+        {
+          "title": "「与大地对话」馆藏展览导览",
+          "time": "周五 4/24 中午 12:00-1:00",
+          "location": "墨大图书馆文化馆藏中心 · Parkville 校区",
+          "price": "免费",
+          "category": "文化",
+          "url": "https://library.unimelb.edu.au/asc/whats-on"
+        },
+        {
+          "title": "豆腐星期二 · 免费植物午餐",
+          "time": "周二 4/28 上午 11:30 - 下午 2:00",
+          "location": "Campus Canteen · Parkville / Southbank（轮流）",
+          "price": "免费",
+          "category": "社交",
+          "url": "https://umsu.unimelb.edu.au/things-to-do/events/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UMelb 本周｜图书馆导览 + 免费素食",
+        "body": "今天中午 12 点墨大图书馆有个 In Conversation with the Ground 展览导览，Cultural Collections 团队带着走，内容围绕原住民土地和自然记录的馆藏文献，一小时，问题可以随便提，不限专业。读 Art 或 Environments 的同学应该感兴趣，免费不用提前报名，直接去图书馆门口集合就行。周二（28号）Tofu Tuesdays 照常，Campus Canteen 的免费植物午餐，11:30 开，Parkville 和 Southbank 轮流办，这周具体哪个 campus 可以提前去 UMSU Enviro Instagram 确认一下，去晚了真的只能站着吃。ANZAC Day 假期刚结束，图书馆位置今天开始又开始抢了，建议吃完饭早点进去占位。你们 UMelb 这周还发现了什么好蹭的吗？",
+        "tags": ["#墨尔本大学", "#UMelb", "#澳洲留学", "#墨尔本", "#校园活动", "#留学日常"]
+      }
+    },
+    {
+      "code": "unsw",
+      "events": [
+        {
+          "title": "The Beths 乐队演出",
+          "time": "周五 4/24 晚上 7:30",
+          "location": "UNSW Roundhouse · Kensington",
+          "price": "需购票",
+          "category": "演唱会",
+          "url": "https://premier.ticketek.com.au/shows/show.aspx?sh=BESLWLTH26&v=URH"
+        },
+        {
+          "title": "Hot Mulligan 乐队巡演",
+          "time": "周日 4/26 晚上 6:30",
+          "location": "UNSW Roundhouse · Kensington",
+          "price": "需购票",
+          "category": "演唱会",
+          "url": "https://www.arc.unsw.edu.au/roundhouse/whats-on"
+        },
+        {
+          "title": "交换项目申请指导专场",
+          "time": "周二 4/28 下午 1:30-4:00",
+          "location": "UNSW Sydney · 校内（线下）",
+          "price": "免费",
+          "category": "学生服务",
+          "url": "https://events.unsw.edu.au"
+        },
+        {
+          "title": "艺术、设计与建筑学院信息晚会",
+          "time": "周三 4/29 下午 6:00-7:00",
+          "location": "UNSW Sydney",
+          "price": "免费",
+          "category": "学术",
+          "url": "https://events.unsw.edu.au"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UNSW 本周｜Roundhouse 连续两场",
+        "body": "今晚（24号）The Beths 在 Roundhouse，新西兰四人乐队，风格偏 indie pop，7:30 开场，Ticketek 还有票但要快。周日（26号）Hot Mulligan 接着进来，美国 pop-punk，这是他们首次澳洲巡演，Roundhouse 圆形场地共鸣很好，摇滚演出在里面听很撑耳朵。ANZAC 假结束后，周二（28号）有交换项目申请 Assistance Session，下午 1:30 到 4 点，有 Global Mobility advisor 现场帮你过材料，比自己摸索快很多，准备 apply exchange 的同学建议把草稿打出来带过去。周三（29号）晚上 6-7 点艺术、设计与建筑学院 Info Evening，想探索研究生方向或者转专业可能性的同学可以去跟 staff 聊聊，人不多，氛围轻松。",
+        "tags": ["#UNSW", "#新南威尔士大学", "#悉尼", "#澳洲留学", "#演唱会", "#留学日常"]
+      }
+    },
+    {
+      "code": "uq",
+      "events": [
+        {
+          "title": "物理系学术报告 · 引力波探测",
+          "time": "周五 4/24 上午 11:00-12:00",
+          "location": "SMP 楼 · St Lucia 校区",
+          "price": "免费",
+          "category": "学术",
+          "url": "https://smp.uq.edu.au/events"
+        },
+        {
+          "title": "实习咨询 Drop-in · 无需预约",
+          "time": "周二 4/28 中午 12:00-1:00",
+          "location": "The Edge · Student Central 楼 42 · St Lucia",
+          "price": "免费",
+          "category": "职业发展",
+          "url": "https://employability.uq.edu.au/event/session/16450"
+        },
+        {
+          "title": "UQU 周三市集",
+          "time": "周三 4/29 上午 8:00 - 下午 3:00",
+          "location": "Campbell Place · St Lucia 校区",
+          "price": "免费入场",
+          "category": "市集",
+          "url": "https://uqu.com.au/food-retail-outlets/wednesday-markets/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UQ 本周｜假期后市集 + 职业 drop-in",
+        "body": "ANZAC 四天长假结束，UQ 节奏这周慢慢回来了。今天（24号）上午 11 点物理系有个 Colloquium，主讲 Dr Jade Powell，讲引力波探测方向，SMP 楼，不限物理专业，感兴趣都可以去，免费。周二（28号）中午 12-1 点 Student Central 楼 42 的 The Edge 有实习咨询 Drop-in，不用预约直接去，国际学生的实习签证问题也可以在这里聊，Employability 的 advisor 一对一帮你看，效率比自己查网站高多了。周三（29号）UQU 市集照常回来——Campbell Place 早八点到下午三点，花、手工艺、小吃都有，假期后这个周三天气应该不错，转一圈再去图书馆整个人状态会好很多。你们 UQ 假期去哪了？或者这周发现了什么好玩的，评论区告诉我。",
+        "tags": ["#昆士兰大学", "#UQ", "#布里斯班", "#澳洲留学", "#校园市集", "#留学日常"]
+      }
+    },
+    {
+      "code": "usyd",
+      "events": [
+        {
+          "title": "Daniel Kitson 文字独角戏",
+          "time": "周五 4/24 晚上 6:30",
+          "location": "Manning Bar · Camperdown 校区",
+          "price": "需购票",
+          "category": "喜剧 / 表演",
+          "url": "https://www.moshtix.com.au/v2/event/daniel-kitson/192475"
+        },
+        {
+          "title": "Hawthorne Heights 20 周年巡演",
+          "time": "周日 4/26 晚上 7:00",
+          "location": "Manning Bar · Camperdown 校区",
+          "price": "票价从 $85 起",
+          "category": "演唱会",
+          "url": "https://www.songkick.com/concerts/42869355-hawthorne-heights-at-manning-bar"
+        },
+        {
+          "title": "第 25 届双年展 · 学生导览",
+          "time": "周三 4/29 中午 12:30-1:30",
+          "location": "Chau Chak Wing Museum · USYD 校区",
+          "price": "免费",
+          "category": "艺术",
+          "url": "https://www.sydney.edu.au/museum/whats-on/talks-and-events/biennale-of-sydney-student-tours-2026.html"
+        },
+        {
+          "title": "USU 庭院现场音乐",
+          "time": "周三 4/29 下午 2:00-5:00",
+          "location": "The Courtyard · USU · Camperdown",
+          "price": "免费",
+          "category": "现场演出",
+          "url": "https://usu.edu.au/events/live-music-at-courtyard/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "USYD 本周｜Manning 演出季 + 双年展",
+        "body": "今晚（24号）Manning Bar 有 Daniel Kitson 的 spoken word 专场，6:30 开场，这位英国创作人全球巡演，风格偏实验性独白，不是纯粹的脱口秀段子，需要一点耐心，但在 Manning 这种小场地演是很难得的体验，票去 Moshtix 买。周日（26号）Hawthorne Heights 20 周年巡演进 Manning，经典 emo 乐队演《If Only You Were Lonely》专辑，票价从 85 刀起。周三（29号）中午 12:30 Chau Chak Wing Museum 有双年展学生导览，USYD 学生带着走，免费一小时，Biennale 今年持续到 6 月，这种有人带着参观比自己乱逛效率高很多。同天下午 2 点 USU Courtyard 还有现场音乐，到 5 点，带个午饭出来坐着听完全没问题。Manning 活动 18+ 要 ID。",
+        "tags": ["#悉尼大学", "#USYD", "#悉尼", "#澳洲留学", "#演唱会", "#留学日常"]
+      }
+    },
+    {
+      "code": "adelaide",
+      "events": [
+        {
+          "title": "USC Formal 2026 · 正装社交晚会",
+          "time": "周五 5/1 晚间",
+          "location": "Adelaide Convention Centre",
+          "price": "需购票",
+          "category": "社交",
+          "url": "https://www.adelaide.edu.au/student/news/events/list"
+        }
+      ],
+      "xhsDraft": {
+        "title": "阿德莱德大学本周｜假期后首周",
+        "body": "ANZAC Day 四天长假结束了，Adelaide 校园节奏这周慢慢恢复。这周有一场正装社交活动——USC Formal 2026，周五（5月1号）在 Adelaide Convention Centre，要买票，有想穿正装出去见见人的同学可以留意一下官方渠道的票务详情。假期后这周 North Terrace 的 Hub Central 人会少一些，图书馆座位相对好找，咖啡队伍也没有平时长。Adelaide 整个城市节奏本来就偏慢，长假过后这种感觉更明显——campus 里的人好像都还没完全回来，能找到一张好的图书馆位置发一个下午的呆，感觉也挺好的。你们 Adelaide 的同学这周有没有发现什么好玩的活动？评论区说一下，一起安利。",
+        "tags": ["#阿德莱德大学", "#Adelaide", "#阿德莱德", "#澳洲留学", "#留学日常", "#校园生活"]
+      }
+    },
+    {
+      "code": "monash",
+      "events": [
+        {
+          "title": "MSA 周五社交之夜",
+          "time": "周五 4/24 下午 5:00-8:00",
+          "location": "Sir John's Bar · Clayton 校区",
+          "price": "免费入场",
+          "category": "社交",
+          "url": "https://msa.monash.edu/events"
+        }
+      ],
+      "xhsDraft": {
+        "title": "Monash 本周｜MSA 周五聚一聚",
+        "body": "ANZAC 假期结束，Monash 这周公开活动节奏慢慢回来。今晚（24号）MSA 在 Clayton 校区的 Sir John's Bar 有个 social，下午 5-8 点，进场免费，MSA 定期在这里搞聚会，氛围比较随意，假期后出来换换状态见见人挺合适的。Clayton 校园假期后图书馆位置开始有人占了，Hargrave-Andrew Library 的安静角落还算好找，但峰值时段要趁早。这周整体活动节奏不高，Caulfield 和 Peninsula 的同学也可以留言说说你们那边这周有什么动静，以前发现很多好蹭的活动都是评论区补充来的。Monash 的学期中段一般就是这样，不用每天都有事情才叫充实，踏实备考也挺好的。",
+        "tags": ["#莫纳什大学", "#Monash", "#墨尔本", "#澳洲留学", "#校园活动", "#留学日常"]
+      }
+    }
+  ]
+}
