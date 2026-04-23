@@ -1,0 +1,43 @@
+{
+	"schemaVersion": "1.0",
+	"weekStartDate": "2026-04-27",
+	"weekEndDate": "2026-05-03",
+	"generatedAt": "2026-04-23T10:00:00+10:00",
+	"countries": [
+		{ "code": "AU", "label": "澳洲", "flag": "🇦🇺" },
+		{ "code": "SG", "label": "新加坡", "flag": "🇸🇬" },
+		{ "code": "MY", "label": "马来西亚", "flag": "🇲🇾" },
+		{ "code": "US", "label": "美国", "flag": "🇺🇸" },
+		{ "code": "GB", "label": "英国", "flag": "🇬🇧" }
+	],
+	"holidays": [
+		{
+			"date": "2026-04-27",
+			"country": "AU",
+			"name": "Anzac Day (observed)",
+			"localName": "Anzac Day",
+			"nameZh": "澳新军团日（WA 州补休）",
+			"type": "Public",
+			"scope": "AU-WA",
+			"marketingNote": "仅西澳补休，其余州正常上班；不适合做全澳营销 push，WA 学员可推线下咖啡会"
+		},
+		{
+			"date": "2026-05-01",
+			"country": "SG",
+			"name": "Labour Day",
+			"localName": "Labour Day",
+			"nameZh": "劳动节",
+			"type": "Public",
+			"marketingNote": "新加坡三天连假前奏，华人学员在家刷手机，适合推 IT 职场/面试类长文"
+		},
+		{
+			"date": "2026-05-01",
+			"country": "MY",
+			"name": "Labour Day",
+			"localName": "Hari Pekerja",
+			"nameZh": "劳动节",
+			"type": "Public",
+			"marketingNote": "马来学员连假出游为主，避免强转化内容；发社群互动或留言抽奖"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"country": "MY",
+	"year": 2026,
+	"source": "https://publicholidays.com.my/2026-dates/",
+	"note": "Malaysia federal public holidays — iterable/lunar holidays shift yearly, re-verify against Kementerian Dalam Negeri official gazette before each January.",
+	"holidays": [
+		{ "date": "2026-01-01", "name": "New Year's Day", "localName": "Hari Tahun Baru", "type": "Public" },
+		{ "date": "2026-02-17", "name": "Chinese New Year", "localName": "Tahun Baru Cina", "type": "Public" },
+		{ "date": "2026-02-18", "name": "Chinese New Year Holiday", "localName": "Cuti Tahun Baru Cina", "type": "Public" },
+		{ "date": "2026-03-20", "name": "Hari Raya Aidilfitri Holiday", "localName": "Cuti Hari Raya Aidilfitri", "type": "Public" },
+		{ "date": "2026-03-21", "name": "Hari Raya Aidilfitri", "localName": "Hari Raya Aidilfitri", "type": "Public" },
+		{ "date": "2026-05-01", "name": "Labour Day", "localName": "Hari Pekerja", "type": "Public" },
+		{ "date": "2026-05-27", "name": "Hari Raya Haji", "localName": "Hari Raya Haji", "type": "Public" },
+		{ "date": "2026-05-31", "name": "Wesak Day", "localName": "Hari Wesak", "type": "Public" },
+		{ "date": "2026-06-01", "name": "Agong's Birthday", "localName": "Hari Jadi Agong", "type": "Public" },
+		{ "date": "2026-06-17", "name": "Awal Muharram", "localName": "Tahun Baru Hijrah", "type": "Public" },
+		{ "date": "2026-08-25", "name": "Prophet Muhammad's Birthday", "localName": "Hari Mawlid Nabi Muhammad", "type": "Public" },
+		{ "date": "2026-08-31", "name": "Merdeka Day", "localName": "Hari Merdeka", "type": "Public" },
+		{ "date": "2026-09-16", "name": "Malaysia Day", "localName": "Hari Malaysia", "type": "Public" },
+		{ "date": "2026-11-08", "name": "Deepavali", "localName": "Deepavali", "type": "Public" },
+		{ "date": "2026-12-25", "name": "Christmas Day", "localName": "Hari Krismas", "type": "Public" }
+	]
+}
