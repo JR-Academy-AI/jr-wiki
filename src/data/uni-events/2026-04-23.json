@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-04-23",
+  "intro": "本周 6 校活动汇总 · 演唱会 + 市集 + 免费小吃 · 大多不用花钱",
+  "schools": [
+    {
+      "code": "umelb",
+      "events": [
+        {
+          "title": "Future Energy Forum",
+          "time": "Thu 23 Apr 4:30-6:30pm",
+          "location": "Parkville Campus",
+          "price": "Free",
+          "category": "Academic",
+          "url": "https://events.unimelb.edu.au"
+        },
+        {
+          "title": "Tofu Tuesdays – Free Plant-Based Lunch",
+          "time": "Tue 28 Apr 11:30am-2pm",
+          "location": "Campus Canteen, Parkville / Southbank (alternating)",
+          "price": "Free",
+          "category": "Food & Social",
+          "url": "https://umsu.unimelb.edu.au/things-to-do/events/"
+        },
+        {
+          "title": "Powering the Future: Solar Power & Energy Transition",
+          "time": "Wed 29 Apr 2-3pm",
+          "location": "Parkville Campus",
+          "price": "Free",
+          "category": "Academic",
+          "url": "https://events.unimelb.edu.au"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UMelb 本周｜免费豆腐餐+能源论坛",
+        "body": "在墨大读 Engineering，这周发现两场挺有意思的论坛都免费——周四 Future Energy Forum，下午 4:30 开，进去聊了两小时太阳能和储能，台上有 PhD 生 present，干货比预期多。周三还有 Powering the Future 系列第二讲，专门讲 Solar Power，就在 Parkville，坐进去听一小时比刷纪录片踏实。周二最期待的是 Tofu Tuesdays，Campus Canteen 的免费植物餐，我已经去了四次了，11:30 准时到才能抢好位子，晚了就只能站着。你们 UMelb 的本周还发现什么周中好蹭的吗？",
+        "tags": ["#墨尔本大学", "#UMelb", "#澳洲留学", "#墨尔本", "#校园活动", "#留学日常"]
+      }
+    },
+    {
+      "code": "unsw",
+      "events": [
+        {
+          "title": "The Beths – Straight Line Was A Lie Tour",
+          "time": "Fri 24 Apr doors 7:30pm",
+          "location": "UNSW Roundhouse, Kensington",
+          "price": "Ticketed",
+          "category": "Live Music",
+          "url": "https://premier.ticketek.com.au/shows/show.aspx?sh=BESLWLTH26&v=URH"
+        },
+        {
+          "title": "Baxter Dury – ALLBARONE Tour",
+          "time": "Wed 29 Apr 7:30pm",
+          "location": "UNSW Roundhouse, Kensington",
+          "price": "Ticketed",
+          "category": "Live Music",
+          "url": "https://www.songkick.com/concerts/43021650-baxter-dury-at-roundhouse-unsw"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UNSW 本周｜Roundhouse 两场",
+        "body": "UNSW Roundhouse 这周连续搞事——周五 The Beths 到场，新西兰四件套，新专辑《Straight Line Was A Lie》刚出，这次澳洲巡演是规模最大的一次，Ticketek 还有票但挑座位要快。周三（29 号）Baxter Dury 的 ALLBARONE 巡演压轴进 Roundhouse，风格完全不同，英伦慵懒感，适合喝点酒晃着听。Roundhouse 那个圆形场地共鸣特别好，站哪里声音都包着你。两场都要实体票，记得提前买站票很快就没的。你们有要去看 The Beths 吗？",
+        "tags": ["#UNSW", "#新南威尔士大学", "#悉尼", "#澳洲留学", "#演唱会", "#留学日常"]
+      }
+    },
+    {
+      "code": "uq",
+      "events": [
+        {
+          "title": "UQU Wednesday Market",
+          "time": "Wed 29 Apr 8am-3pm",
+          "location": "Campbell Place, St Lucia Campus",
+          "price": "Free entry",
+          "category": "Market",
+          "url": "https://uqu.com.au/whats-on/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UQ 本周｜St Lucia 周三市集",
+        "body": "UQ St Lucia 的周三市集照常开——Campbell Place 从早八点开始，鲜花、植物、手工首饰、小吃摊都有，我每周三会来买一把向日葵，5 刀左右，比超市便宜一半。这周 UQ 公开学生活动比较少，期中备考节奏大家都缩图书馆了。市集当天顺便逛一圈再去学习，Great Court 那边坐坐心情也能好一点。UQ 的同学本周发现什么好蹭的活动吗？评论区告诉我，真的需要一个出门透气的理由 😮‍💨",
+        "tags": ["#昆士兰大学", "#UQ", "#布里斯班", "#澳洲留学", "#校园市集", "#留学日常"]
+      }
+    },
+    {
+      "code": "usyd",
+      "events": [
+        {
+          "title": "Lunchtime Bingo at Manning Bar",
+          "time": "Thu 24 Apr 12-1pm",
+          "location": "Manning Bar, Camperdown Campus",
+          "price": "Free",
+          "category": "Social",
+          "url": "https://usu.edu.au/events/campus-sessions-at-manning/"
+        },
+        {
+          "title": "Paddle Battle: Ping Pong Competition",
+          "time": "Thu 24 Apr 1-3pm",
+          "location": "Manning Bar, Camperdown Campus",
+          "price": "Free",
+          "category": "Sport/Social",
+          "url": "https://usu.edu.au/events/campus-sessions-at-manning/"
+        },
+        {
+          "title": "Manning Unplugged – Acoustic Sessions",
+          "time": "Wed 29 Apr 12-1pm",
+          "location": "Manning Bar Balcony, Camperdown",
+          "price": "Free",
+          "category": "Live Music",
+          "url": "https://usu.edu.au/events/campus-sessions-at-manning/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "USYD 本周｜Manning 三场免费活动",
+        "body": "这周 Manning Bar 塞了三件事——周四中午 Lunchtime Bingo，奖品最高 100 澳刀，边吃饭边喊宾果有点荒谬但笑点真的低；同一天下午 1 点 Paddle Battle 乒乓球赛，跨整学期积分记录，赛制比想象认真多了。周三（29 号）Manning 阳台有 Acoustic Unplugged，午饭时间带个三明治在外面坐着听，风从 Camperdown 那边吹来，突然感觉悉尼很好住。Manning Bar 所有活动 18+ 要实体 ID，护照或驾照才认。你们 USYD 还有什么漏网的好活动？",
+        "tags": ["#悉尼大学", "#USYD", "#悉尼", "#澳洲留学", "#校园活动", "#留学日常"]
+      }
+    },
+    {
+      "code": "adelaide",
+      "events": [],
+      "xhsDraft": {
+        "title": "阿德莱德大学本周｜安静备考周",
+        "body": "Adelaide 这周校园公开活动确实少——上周 AUSA 刚在 Morialta 公园带大家徒步，然后就进入了期中备考节奏。North Terrace 的 Hub Central 平时还是有人自发打牌聊天，图书馆外面的草地午休坐着也挺舒服。阿德莱德整个城市节奏本来慢，这种时候反而不焦虑——周围人都不拼命卷，考前一晚能睡着的概率比 Sydney 高多了 😂 你们在 Adelaide 本周有没有发现什么好玩的？留言告诉我 📌",
+        "tags": ["#阿德莱德大学", "#Adelaide", "#阿德莱德", "#澳洲留学", "#留学日常", "#校园生活"]
+      }
+    },
+    {
+      "code": "monash",
+      "events": [
+        {
+          "title": "MONSU Pantry Weekly Market Stall",
+          "time": "Wed 29 Apr 12-2pm",
+          "location": "The Deck, Caulfield Campus",
+          "price": "Free",
+          "category": "Market/Social",
+          "url": "https://monsu.org/whatson/"
+        },
+        {
+          "title": "MONSU Caulfield AGM 2026",
+          "time": "Wed 29 Apr 2:30-3:30pm",
+          "location": "K101, Building K Level 1, Caulfield",
+          "price": "Free",
+          "category": "Community",
+          "url": "https://monsu.org/whatson/"
+        },
+        {
+          "title": "Breakfast Club",
+          "time": "Thu 30 Apr 9:30-11am",
+          "location": "The Deck, Caulfield Campus",
+          "price": "Free",
+          "category": "Food & Social",
+          "url": "https://monsu.org/whatson/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "Monash 本周｜Caulfield 三场",
+        "body": "Monash Caulfield 这周周三聚了好几件事：中午 MONSU Pantry 市集在 The Deck 开，以前买过芒果冰沙，排十五分钟队值回来的。2:30 同一天有 MONSU Caulfield AGM，进去投票表个态然后能拿到免费 scroll（就是那个卷卷奶油芝士包），吃完再走也行。周四（30 号）还有 Breakfast Club，早上 9:30 在 The Deck，免费的，冬天慢慢来了一杯热的在 Caulfield 吃早饭感觉不错。Clayton 的同学本周活动相对少一些，Caulfield 这周反而热闹。你是哪个 campus 的？",
+        "tags": ["#莫纳什大学", "#Monash", "#墨尔本", "#澳洲留学", "#校园活动", "#留学日常"]
+      }
+    }
+  ]
+}
