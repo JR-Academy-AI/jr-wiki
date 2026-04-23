@@ -1,0 +1,256 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jr-academy-ai.github.io/jr-wiki/schemas/ai-daily.schema.json",
+  "title": "AI Daily News Data",
+  "description": "Schema for a single day's AI Daily News data. Feeds the AI Daily pipeline which renders XHS posters + mp-article + blog markdown.",
+  "type": "object",
+  "required": ["date", "summary", "news"],
+  "additionalProperties": false,
+  "properties": {
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "AEST date, YYYY-MM-DD"
+    },
+    "mp": {
+      "type": "object",
+      "description": "Optional WeChat mp-article content. If absent, pipeline auto-derives from summary + news.",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Article title shown at the top of mp-article. e.g. 'Vercel 被黑 / DeepSeek 融资 / GPT-5.5 ｜AI 日报 04-21'"
+        },
+        "lead": {
+          "type": "string",
+          "description": "Lead paragraph (120-300 chars) summarizing the day's news"
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "author": { "type": "string", "default": "JR Academy AI 日报" },
+            "readTime": { "type": "string", "default": "8 分钟" }
+          }
+        },
+        "quickview": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "title": { "type": "string", "default": "📌 今日速览" },
+            "items": {
+              "type": "array",
+              "description": "5-8 quick takeaway bullets as HTML (supports <strong>, <code>, <a>)",
+              "items": { "type": "string" },
+              "minItems": 3,
+              "maxItems": 10
+            }
+          }
+        },
+        "cta": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "big": { "type": "string" },
+            "sub": { "type": "string", "description": "Supports <br>" }
+          }
+        }
+      }
+    },
+    "schemaVersion": {
+      "type": "string",
+      "default": "1.0",
+      "description": "Schema version for forward compatibility"
+    },
+    "theme": {
+      "type": "string",
+      "enum": ["neobrut", "editorial", "minimalist"],
+      "default": "neobrut",
+      "description": "Visual theme applied to posters"
+    },
+    "articleUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL the poster QR code points to. Defaults to https://jiangren.com.au/blog/ai-daily-{date}"
+    },
+    "summary": {
+      "type": "object",
+      "required": ["hook", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string", "default": "digest" },
+        "frameLabel": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "maxItems": 5
+        },
+        "sub": { "type": "string" },
+        "hook": {
+          "type": "array",
+          "description": "Tokens for the main hook text. Supports newline via {text:'\\n'} or '\\n' in text. Use hl:true for highlighted (red + yellow underline) runs.",
+          "items": { "$ref": "#/definitions/textToken" }
+        },
+        "items": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "description": "5 summary items shown on the P0 digest poster",
+          "items": {
+            "type": "object",
+            "required": ["num", "cat", "t"],
+            "additionalProperties": false,
+            "properties": {
+              "num": { "type": "string", "pattern": "^\\d{2}$" },
+              "numColor": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+              "cat": { "type": "string", "maxLength": 10 },
+              "t": { "type": "string", "maxLength": 60 }
+            }
+          }
+        }
+      }
+    },
+    "news": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "description": "5 news stories, rendered as P1-P5 single-image posters",
+      "items": { "$ref": "#/definitions/newsItem" }
+    }
+  },
+  "definitions": {
+    "textToken": {
+      "type": "object",
+      "required": ["text"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string" },
+        "hl": { "type": "boolean", "description": "Highlighted run — yellow background + red text on hook" },
+        "bold": { "type": "boolean", "description": "Bold run — typically uses accent red color" },
+        "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }
+      }
+    },
+    "newsItem": {
+      "type": "object",
+      "required": ["slug", "idx", "catText", "accent", "title", "oneline", "bullets", "src"],
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string",
+          "pattern": "^\\d{2}-[a-z0-9-]+$",
+          "description": "e.g. '01-vercel-breach'. Used as PNG download filename and canvas data-id."
+        },
+        "frameLabel": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "maxItems": 5
+        },
+        "idx": { "type": "string", "pattern": "^\\d{2}$" },
+        "catText": { "type": "string", "maxLength": 10 },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Primary accent color for this story's poster"
+        },
+        "bg": {
+          "type": "object",
+          "required": ["top", "mid", "bot"],
+          "properties": {
+            "top": { "type": "string" },
+            "mid": { "type": "string" },
+            "bot": { "type": "string" },
+            "topRight": { "type": "string" }
+          }
+        },
+        "title": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/textToken" }
+        },
+        "titleSize": {
+          "type": "integer",
+          "minimum": 48,
+          "maximum": 120,
+          "default": 82
+        },
+        "oneline": {
+          "type": "array",
+          "description": "Yellow-box one-liner. Use bold:true for red-highlighted runs.",
+          "items": { "$ref": "#/definitions/textToken" }
+        },
+        "bullets": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "description": "3 bullets: what happened / why it matters / impact on you",
+          "items": {
+            "type": "object",
+            "required": ["k", "v"],
+            "additionalProperties": false,
+            "properties": {
+              "k": {
+                "type": "string",
+                "enum": ["发生了什么", "为什么重要", "对你的影响"]
+              },
+              "v": { "type": "string", "minLength": 20, "maxLength": 200 }
+            }
+          }
+        },
+        "src": {
+          "type": "string",
+          "description": "Source citation line shown in poster footer, e.g. '📎 techcrunch.com · arstechnica.com'"
+        },
+        "sources": {
+          "type": "array",
+          "description": "Raw source URLs, used for fact-check and blog post embedding",
+          "items": {
+            "type": "object",
+            "required": ["url"],
+            "properties": {
+              "url": { "type": "string", "format": "uri" },
+              "title": { "type": "string" },
+              "domain": { "type": "string" }
+            }
+          }
+        },
+        "mp": {
+          "type": "object",
+          "description": "Optional per-news mp-article content. If absent, h2 = title tokens plain-joined, paragraphs derived from bullets, sourceHtml from sources.",
+          "additionalProperties": false,
+          "properties": {
+            "h2": {
+              "type": "string",
+              "description": "Plain-text article section heading. e.g. 'Vercel 被黑，AI 工具 OAuth 成攻击入口'"
+            },
+            "paragraphs": {
+              "type": "array",
+              "description": "3 full paragraphs of analysis per news item (each 150-400 chars)",
+              "items": { "type": "string" },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "sourceHtml": {
+              "type": "string",
+              "description": "HTML for the source line, e.g. '来源：<a href=\"...\">TechCrunch</a> · <a href=\"...\">AWS Blog</a>'"
+            },
+            "posterImage": {
+              "type": "string",
+              "description": "Relative path to poster PNG (e.g. './poster-1.png') for mp-img"
+            },
+            "altImage": {
+              "type": "string",
+              "format": "uri",
+              "description": "Unsplash-style fallback image URL"
+            },
+            "altAlt": {
+              "type": "string",
+              "description": "Alt text for fallback image"
+            }
+          }
+        }
+      }
+    }
+  }
+}

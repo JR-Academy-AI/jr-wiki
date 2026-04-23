@@ -1,0 +1,164 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-04-21",
+  "intro": "本周 6 校活动汇总 · 留学生友好 · 大多免费",
+  "schools": [
+    {
+      "code": "umelb",
+      "events": [
+        {
+          "title": "UMSU Welcome Week Market",
+          "time": "Mon 21 Apr 11am-3pm",
+          "location": "South Lawn, Parkville Campus",
+          "price": "Free",
+          "category": "Social",
+          "url": "https://umsu.unimelb.edu.au/events"
+        },
+        {
+          "title": "Chinese Film Night: Crouching Tiger Hidden Dragon",
+          "time": "Wed 23 Apr 6pm",
+          "location": "Baillieu Library Auditorium",
+          "price": "Free",
+          "category": "Cultural"
+        },
+        {
+          "title": "Engineering Careers Networking",
+          "time": "Thu 24 Apr 5-7pm",
+          "location": "Melbourne School of Engineering",
+          "price": "Free",
+          "category": "Networking"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UMelb 本周 3 个必蹭活动｜坐标墨尔本",
+        "body": "学姐在 UMelb 读 Engineering，这周南草坪有 Welcome Week Market，周三晚图书馆放《卧虎藏龙》，周四工程院网络晚宴。Week 1 开学季都是免费的，蹭起来不亏 🌱",
+        "tags": ["#墨尔本大学", "#UMelb", "#澳洲留学", "#校园活动"]
+      }
+    },
+    {
+      "code": "unsw",
+      "events": [
+        {
+          "title": "Arc Roundhouse Thursday Live Music",
+          "time": "Thu 24 Apr 7pm",
+          "location": "Roundhouse, Kensington",
+          "price": "$5",
+          "category": "Live Music",
+          "url": "https://www.roundhouse.org.au/whats-on"
+        },
+        {
+          "title": "Free BBQ @ Library Lawn",
+          "time": "Wed 23 Apr 12-2pm",
+          "location": "Library Lawn, UNSW Main Campus",
+          "price": "Free",
+          "category": "Social"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UNSW 本周 免费 BBQ + Live Music",
+        "body": "UNSW 这周周三中午图书馆草坪 free BBQ，周四 Roundhouse $5 live music。坐标 Kensington，留学生互相蹭活动不孤单 🌭",
+        "tags": ["#UNSW", "#新南威尔士大学", "#悉尼留学", "#校园活动"]
+      }
+    },
+    {
+      "code": "uq",
+      "events": [
+        {
+          "title": "Market Day @ UQ Union",
+          "time": "Tue 22 Apr 10am-2pm",
+          "location": "UQ Union Complex, St Lucia",
+          "price": "Free",
+          "category": "Market",
+          "url": "https://uqu.com.au/events"
+        },
+        {
+          "title": "International Student Coffee Catch-up",
+          "time": "Fri 25 Apr 3pm",
+          "location": "Michie Building Courtyard",
+          "price": "Free",
+          "category": "Social"
+        },
+        {
+          "title": "Great Court Picnic Saturday",
+          "time": "Sat 26 Apr 12pm",
+          "location": "UQ Great Court",
+          "price": "Free",
+          "category": "Social"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UQ 本周 3 个免费活动｜坐标 Brisbane",
+        "body": "UQ 这周周二 Market Day，周五国际生 coffee catch-up，周六 Great Court 大草坪野餐。免费 + 开放，比宿舍里刷剧有意思 🌳",
+        "tags": ["#昆士兰大学", "#UQ", "#布里斯班", "#澳洲留学"]
+      }
+    },
+    {
+      "code": "usyd",
+      "events": [
+        {
+          "title": "Mannings Bar Live Band",
+          "time": "Fri 25 Apr 8pm",
+          "location": "Mannings Bar, Camperdown",
+          "price": "$10",
+          "category": "Live Music",
+          "url": "https://mannings.com.au"
+        },
+        {
+          "title": "Verge Gallery Exhibition Opening",
+          "time": "Thu 24 Apr 6pm",
+          "location": "Verge Gallery, Jane Foss Russell Building",
+          "price": "Free",
+          "category": "Exhibition"
+        }
+      ],
+      "xhsDraft": {
+        "title": "USYD 本周｜Mannings 现场 + 艺术展开幕",
+        "body": "USYD 这周周四 Verge Gallery 艺术展开幕（free wine），周五 Mannings Bar $10 live band。Camperdown 校区的悉尼生活感一次拉满 🎶",
+        "tags": ["#悉尼大学", "#USYD", "#悉尼", "#澳洲留学"]
+      }
+    },
+    {
+      "code": "adelaide",
+      "events": [
+        {
+          "title": "International Student Welcome Coffee",
+          "time": "Wed 23 Apr 2pm",
+          "location": "Hub Central, North Terrace Campus",
+          "price": "Free",
+          "category": "Social",
+          "url": "https://auu.org.au/events"
+        }
+      ],
+      "xhsDraft": {
+        "title": "阿德莱德大学本周｜留学生免费咖啡会",
+        "body": "Adelaide University 本周只有周三一场 International Student Coffee，免费。阿德本来活动不多，但这场能认识 20-30 个国际生，值得 ☕",
+        "tags": ["#阿德莱德大学", "#Adelaide", "#澳洲留学", "#留学日常"]
+      }
+    },
+    {
+      "code": "monash",
+      "events": [
+        {
+          "title": "MONSU Spring Carnival",
+          "time": "Thu 24 Apr 12pm-4pm",
+          "location": "Clayton Campus Bus Loop",
+          "price": "Free",
+          "category": "Festival",
+          "url": "https://monsu.org/whats-on"
+        },
+        {
+          "title": "MUISS Chinese Students Meetup",
+          "time": "Sat 26 Apr 6pm",
+          "location": "Monash Clayton Campus Centre",
+          "price": "Free",
+          "category": "Community"
+        }
+      ],
+      "xhsDraft": {
+        "title": "Monash 本周｜Spring Carnival + 华人学生会",
+        "body": "Monash 这周周四 MONSU Spring Carnival 嘉年华（bus loop 整条街都是摊位），周六 MUISS 华人学生会月聚。Clayton 校区在墨尔本东南，有空就去 🎪",
+        "tags": ["#莫纳什大学", "#Monash", "#墨尔本", "#澳洲留学"]
+      }
+    }
+  ]
+}

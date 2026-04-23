@@ -1,0 +1,249 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jr-academy-ai.github.io/jr-wiki/schemas/uni-news.schema.json",
+  "title": "Uni News Daily Data",
+  "description": "Per-school per-day uni news data. Drives xhs-posters.html (5-poster carousel) + mp-article.html (公众号) + xhs-drafts.md. Brand colors resolved from uni-brand.v1.json by school code.",
+  "type": "object",
+  "required": ["date", "school", "summary", "news", "quickview", "xhsCopy"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "string", "default": "1.0" },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "AEST date"
+    },
+    "school": {
+      "type": "string",
+      "enum": ["uq", "umelb", "unsw", "usyd", "monash", "anu", "adelaide", "rmit", "uts", "uwa"],
+      "description": "School code, must match uni-brand.v1.json key"
+    },
+
+    "summary": {
+      "type": "object",
+      "description": "P1 cover poster content",
+      "required": ["hookMain", "hookSub", "subLines", "previewCards"],
+      "additionalProperties": false,
+      "properties": {
+        "hookMain": { "type": "string", "description": "Big header on P1, usually school name" },
+        "hookSub": { "type": "string", "description": "Sub-hook line, e.g. '一天三件 大事'" },
+        "hookSubHighlight": { "type": "string", "description": "Phrase inside hookSub to highlight with <em>" },
+        "subLines": {
+          "type": "array",
+          "description": "3 one-liner teasers under hook",
+          "items": { "type": "string" },
+          "minItems": 2,
+          "maxItems": 4
+        },
+        "previewCards": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["num", "title", "data"],
+            "additionalProperties": false,
+            "properties": {
+              "num": { "type": "string", "pattern": "^\\d{2}$" },
+              "title": { "type": "string" },
+              "data": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "news": {
+      "type": "array",
+      "description": "3-4 news stories → P2/P3/P4 (and optional P6)",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["idx", "category", "h2Main", "lead", "bullets", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "idx": { "type": "string", "pattern": "^\\d{2}$" },
+          "category": { "type": "string", "description": "e.g. '科研合作', '奖学金', '招生政策'" },
+          "h2Main": { "type": "string", "description": "H2 main line (first line, before <br>)" },
+          "h2Sub": { "type": "string", "description": "Optional H2 sub line (second line)" },
+          "h2Highlight": { "type": "string", "description": "Phrase to highlight with <em class='hl'>" },
+          "lead": {
+            "type": "string",
+            "description": "Lead paragraph 100-200 chars. Supports <b> tags."
+          },
+          "bullets": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 5,
+            "items": {
+              "type": "object",
+              "required": ["k", "v"],
+              "additionalProperties": false,
+              "properties": {
+                "k": { "type": "string", "maxLength": 12 },
+                "v": { "type": "string", "description": "Supports <b> tags" }
+              }
+            }
+          },
+          "source": { "type": "string", "description": "Source citation, e.g. 'Monash Science News · 2026-04-10'" },
+          "sourceUrl": { "type": "string", "description": "Full or partial URL for source line" }
+        }
+      }
+    },
+
+    "quickview": {
+      "type": "object",
+      "description": "P5 quick view poster content",
+      "required": ["items"],
+      "additionalProperties": false,
+      "properties": {
+        "titleMain": { "type": "string", "default": "今日速览" },
+        "titleHighlight": { "type": "string", "description": "e.g. '一眼看完'" },
+        "sub": { "type": "string", "description": "Intro sub line" },
+        "items": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["n", "title", "body"],
+            "additionalProperties": false,
+            "properties": {
+              "n": { "type": "string", "pattern": "^\\d{2}$" },
+              "title": { "type": "string" },
+              "body": { "type": "string" }
+            }
+          }
+        },
+        "cta": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "big": { "type": "string", "default": "关注每日大学日报" },
+            "sub": { "type": "string", "default": "10 所澳洲大学 · 每天 3 校 · 奖学金 + 科研 + 招生一手同步" },
+            "badge": { "type": "string", "description": "Date badge, e.g. '04 / 21'" }
+          }
+        }
+      }
+    },
+
+    "xhsCopy": {
+      "type": "object",
+      "description": "XHS_COPY object — copy panel content per poster (p1-p5). Loaded into window.XHS_COPY by xhs-shared.js.",
+      "required": ["p1", "p2", "p3", "p4", "p5"],
+      "additionalProperties": false,
+      "properties": {
+        "p1": { "$ref": "#/definitions/xhsCopyItem" },
+        "p2": { "$ref": "#/definitions/xhsCopyItem" },
+        "p3": { "$ref": "#/definitions/xhsCopyItem" },
+        "p4": { "$ref": "#/definitions/xhsCopyItem" },
+        "p5": { "$ref": "#/definitions/xhsCopyItem" }
+      }
+    },
+
+    "mp": {
+      "type": "object",
+      "description": "Optional mp-article content. If absent, derived from news. mpTitle MUST NOT include '｜{school}日报' suffix (per 2026-04-22 user rule).",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Article title (for mp-title). Per 2026-04-22 rule: do NOT add '｜{school}日报' prefix/suffix."
+        },
+        "lead": { "type": "string" },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "readTime": { "type": "string" }
+          }
+        },
+        "newsBodies": {
+          "type": "array",
+          "description": "Per-news full article paragraphs (3 per news)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "h2": { "type": "string" },
+              "paragraphs": { "type": "array", "items": { "type": "string" }, "minItems": 3, "maxItems": 3 },
+              "sourceHtml": { "type": "string" }
+            }
+          }
+        },
+        "quickview": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "items": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "cta": {
+          "type": "object",
+          "properties": { "big": { "type": "string" }, "sub": { "type": "string" } }
+        }
+      }
+    },
+
+    "drafts": {
+      "type": "object",
+      "description": "xhs-drafts.md content — 1-2 ready-to-post drafts with sensitivity scan notes",
+      "additionalProperties": false,
+      "properties": {
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["heading", "body", "tags"],
+            "additionalProperties": false,
+            "properties": {
+              "heading": { "type": "string" },
+              "body": { "type": "string", "description": "Full draft text, 600-800 chars recommended" },
+              "tags": {
+                "type": "array",
+                "items": { "type": "string" },
+                "minItems": 5,
+                "maxItems": 10
+              }
+            }
+          }
+        },
+        "sensitivityScan": {
+          "type": "array",
+          "description": "Sensitivity scan rows. Agent must scan for each keyword category and report '未检出' or the hit.",
+          "items": {
+            "type": "object",
+            "required": ["category", "rule", "result"],
+            "properties": {
+              "category": { "type": "string", "description": "e.g. '绝对化', '教育承诺', '引流'" },
+              "rule": { "type": "string", "description": "e.g. '最 / 第一 / 唯一'" },
+              "result": { "type": "string", "description": "'未检出' or specific hit" }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "definitions": {
+    "xhsCopyItem": {
+      "type": "object",
+      "required": ["title", "body", "tags"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "maxLength": 22, "description": "XHS title ≤22 chars" },
+        "body": { "type": "string", "description": "XHS body, supports \\n for line breaks" },
+        "tags": { "type": "string", "description": "Space-separated hashtags" },
+        "wechat": {
+          "type": "array",
+          "description": "WeChat moments variants (1-3)",
+          "items": { "type": "string" }
+        },
+        "community": {
+          "type": "array",
+          "description": "Community group chat variants (1-3)",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

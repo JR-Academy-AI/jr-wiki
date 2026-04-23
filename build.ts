@@ -347,9 +347,22 @@ writeFileSync(join(previewDir, 'index.html'), previewHtml);
 
 writeFileSync(join(DIST, '_headers'), `/*\n  Access-Control-Allow-Origin: *\n`);
 
+// ─── Scheduled Content Data Pipelines ───
+// Runs data → template renders for AI Daily / Uni News / Uni Events.
+// Outputs land in src/static/, not dist/, because GitHub Pages serves them directly.
+// See docs/SCHEDULED_CONTENT_PLATFORM_PRD.md for full architecture.
+
+console.log('\n─── Data Pipelines ───');
+const { buildAll: buildAiDaily } = await import('./build/pipelines/ai-daily.pipeline');
+const { buildAll: buildUniNews } = await import('./build/pipelines/uni-news.pipeline');
+const { buildAll: buildUniEvents } = await import('./build/pipelines/uni-events.pipeline');
+buildAiDaily();
+buildUniNews();
+buildUniEvents();
+
 // ─── Done ───
 
-console.log(`✅ Built jr-wiki content API`);
+console.log(`\n✅ Built jr-wiki content API`);
 console.log(`   📖 ${books.length} books (${manifest.stats.totalChapters} chapters)`);
 console.log(`   📝 ${articles.length} articles`);
 console.log(`   ❓ ${helpItems.length} help docs`);

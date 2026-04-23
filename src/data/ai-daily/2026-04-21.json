@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-04-21",
+  "theme": "neobrut",
+  "summary": {
+    "slug": "digest",
+    "frameLabel": "P0 · 合集 <em>· Top 5 一图看完</em>",
+    "tags": ["合集封面", "适合首图", "今日 5 条一图扫完"],
+    "hook": [
+      { "text": "今天 " },
+      { "text": "5 条", "hl": true },
+      { "text": "\nAI 大新闻" }
+    ],
+    "sub": "一图看完 · 匠人 AI 日报",
+    "items": [
+      { "num": "01", "numColor": "#ff5757", "cat": "安全监管", "t": "Vercel 被黑，AI 工具 OAuth 成攻击入口" },
+      { "num": "02", "numColor": "#3b82f6", "cat": "营收融资", "t": "DeepSeek 首轮融资，估值 100 亿美元" },
+      { "num": "03", "numColor": "#10b981", "cat": "模型发布", "t": "GPT-5.5 \"Spud\" 预测市场押注本周发布" },
+      { "num": "04", "numColor": "#7c3aed", "cat": "产品更新", "t": "ChatGPT 全球宕机 90 分钟，影响数千万用户" },
+      { "num": "05", "numColor": "#10162f", "cat": "产品更新", "t": "Meta Muse Spark 落地电商，AI 购物助手上线" }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-vercel-breach",
+      "frameLabel": "P1 · 单图 <em>· Vercel 被黑</em>",
+      "tags": ["安全监管", "供应链攻击", "OAuth 风险"],
+      "idx": "01",
+      "catText": "安全监管",
+      "accent": "#ff5757",
+      "bg": {
+        "topRight": "rgba(255,87,87,0.14)",
+        "top": "#fff7f5",
+        "mid": "#ffffff",
+        "bot": "#fff7ef"
+      },
+      "title": [
+        { "text": "Vercel 被黑，" },
+        { "text": "AI 工具 OAuth", "hl": true },
+        { "text": " 成攻击入口" }
+      ],
+      "titleSize": 82,
+      "oneline": [
+        { "text": "Context AI 被攻破后黑客横向渗透，" },
+        { "text": "部分客户凭证泄露", "bold": true }
+      ],
+      "bullets": [
+        { "k": "发生了什么", "v": "员工装的 AI 工具被攻破，OAuth token 被利用进入 Vercel 内部系统，未加密凭证暴露。" },
+        { "k": "为什么重要", "v": "AI 工具链里任何一个 OAuth 授权都可能成为供应链攻击入口，影响平台上所有客户。" },
+        { "k": "对你的影响", "v": "用 Vercel 部署的项目立即 rotate 所有 API key；审计你给过 OAuth 权限的 AI 工具。" }
+      ],
+      "src": "📎 techcrunch.com · securityweek.com"
+    },
+    {
+      "slug": "02-deepseek-funding",
+      "frameLabel": "P2 · 单图 <em>· DeepSeek 融资 100 亿</em>",
+      "tags": ["营收融资", "估值飙升", "V4 模型"],
+      "idx": "02",
+      "catText": "营收融资",
+      "accent": "#7c3aed",
+      "bg": {
+        "topRight": "rgba(124,58,237,0.16)",
+        "top": "#faf7ff",
+        "mid": "#ffffff",
+        "bot": "#f7f4ff"
+      },
+      "title": [
+        { "text": "DeepSeek 首轮融资，估值 " },
+        { "text": "100 亿", "hl": true },
+        { "text": "美元" }
+      ],
+      "titleSize": 76,
+      "oneline": [
+        { "text": "梁文锋打破不融资传统，为 " },
+        { "text": "V4 模型", "bold": true },
+        { "text": "和团队激励筹弹药" }
+      ],
+      "bullets": [
+        { "k": "发生了什么", "v": "DeepSeek 目标融 3 亿美元，估值超 100 亿，打破只靠幻方量化输血的历史。" },
+        { "k": "为什么重要", "v": "V4 旗舰模型月底发布要烧算力，核心骨干被大厂挖角需要市场化估值定期权价。" },
+        { "k": "对你的影响", "v": "V4 若开源又是免费 base model 可 fine-tune；但融资后商业化压力来了，API 定价可能调整。" }
+      ],
+      "src": "📎 cntechpost.com · 36kr.com"
+    },
+    {
+      "slug": "03-gpt55-spud",
+      "frameLabel": "P3 · 单图 <em>· GPT-5.5 Spud</em>",
+      "tags": ["模型发布", "预测市场", "多模态"],
+      "idx": "03",
+      "catText": "模型发布",
+      "accent": "#10b981",
+      "bg": {
+        "topRight": "rgba(16,185,129,0.16)",
+        "top": "#f2fff8",
+        "mid": "#ffffff",
+        "bot": "#effff6"
+      },
+      "title": [
+        { "text": "GPT-5.5 \"Spud\" 预测市场押注" },
+        { "text": "本周发布", "hl": true }
+      ],
+      "titleSize": 82,
+      "oneline": [
+        { "text": "预训练 3 月 24 日完成，Polymarket 给 4 月 23 日 " },
+        { "text": "75% 概率", "bold": true }
+      ],
+      "bullets": [
+        { "k": "发生了什么", "v": "OpenAI 代号 Spud 的模型训练完毕近一个月，正在做安全评估和后训练。" },
+        { "k": "为什么重要", "v": "原生多模态统一入口，ChatGPT/Codex/Agent 合一的超级应用骨干模型。" },
+        { "k": "对你的影响", "v": "新模型能力跳跃可能淘汰一批 AI wrapper 产品；做 AI 应用的这周密切关注。" }
+      ],
+      "src": "📎 polymarket.com · findskill.ai"
+    },
+    {
+      "slug": "04-chatgpt-outage",
+      "frameLabel": "P4 · 单图 <em>· ChatGPT 全球宕机</em>",
+      "tags": ["产品更新", "全球宕机", "单点风险"],
+      "idx": "04",
+      "catText": "产品更新",
+      "accent": "#3b82f6",
+      "bg": {
+        "topRight": "rgba(59,130,246,0.16)",
+        "top": "#f4f9ff",
+        "mid": "#ffffff",
+        "bot": "#eff5ff"
+      },
+      "title": [
+        { "text": "ChatGPT 全球宕机 " },
+        { "text": "90 分钟", "hl": true },
+        { "text": "，影响数千万用户" }
+      ],
+      "titleSize": 78,
+      "oneline": [
+        { "text": "对话、登录、语音、图片生成" },
+        { "text": "全挂", "bold": true },
+        { "text": "，OpenAI 未解释原因" }
+      ],
+      "bullets": [
+        { "k": "发生了什么", "v": "4 月 20 日美东 10:05 起 ChatGPT 大面积故障，DownDetector 报告数飙到数万。" },
+        { "k": "为什么重要", "v": "越来越多工作流强依赖 ChatGPT，单点故障影响面指数级扩大。" },
+        { "k": "对你的影响", "v": "工作流里要有 fallback 方案——Claude、Gemini、或本地开源模型至少备一个。" }
+      ],
+      "src": "📎 tomsguide.com · techradar.com"
+    },
+    {
+      "slug": "05-meta-muse-spark",
+      "frameLabel": "P5 · 单图 <em>· Meta Muse Spark 电商</em>",
+      "tags": ["产品更新", "AI 购物", "对话电商"],
+      "idx": "05",
+      "catText": "产品更新",
+      "accent": "#ff8a3d",
+      "bg": {
+        "topRight": "rgba(255,138,61,0.16)",
+        "top": "#fff7f1",
+        "mid": "#ffffff",
+        "bot": "#fff4eb"
+      },
+      "title": [
+        { "text": "Meta Muse Spark 落地电商，" },
+        { "text": "AI 购物助手", "hl": true },
+        { "text": "上线" }
+      ],
+      "titleSize": 76,
+      "oneline": [
+        { "text": "自然语言找商品、上传图片找同款、" },
+        { "text": "虚拟试穿", "bold": true },
+        { "text": "——对话式购物" }
+      ],
+      "bullets": [
+        { "k": "发生了什么", "v": "发布两周后 Meta 把 Muse Spark 接入 Facebook/Instagram 购物场景。" },
+        { "k": "为什么重要", "v": "30 亿月活用户从关键词搜索升级到对话式购物助手，消费习惯将改变。" },
+        { "k": "对你的影响", "v": "做电商或学全栈的可以开始研究 conversational commerce 技术栈了。" }
+      ],
+      "src": "📎 retailbrew.com · fortune.com"
+    }
+  ]
+}

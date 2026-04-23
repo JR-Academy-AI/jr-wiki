@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jr-academy-ai.github.io/jr-wiki/schemas/uni-events.schema.json",
+  "title": "Uni Events Daily Data",
+  "description": "6-school daily campus events. Drives events/{DATE}.html + xhs drafts per school. School pool fixed: umelb/unsw/uq/usyd/adelaide/monash.",
+  "type": "object",
+  "required": ["date", "schools"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "string", "default": "1.0" },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "intro": {
+      "type": "string",
+      "description": "One-liner summary shown in page header, e.g. '本周 6 校活动汇总'"
+    },
+    "schools": {
+      "type": "array",
+      "description": "Array of 6 schools, in display order. Each school may have empty events (placeholder).",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["code", "events"],
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": ["umelb", "unsw", "uq", "usyd", "adelaide", "monash"]
+          },
+          "events": {
+            "type": "array",
+            "description": "0-4 events per school. Empty array triggers placeholder 'no public events this week'.",
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": ["title", "time", "location"],
+              "additionalProperties": false,
+              "properties": {
+                "title": { "type": "string", "maxLength": 60 },
+                "time": {
+                  "type": "string",
+                  "description": "e.g. 'Tue 21 Apr 12-3pm' or 'Sat 26 Apr all day'"
+                },
+                "location": { "type": "string" },
+                "price": {
+                  "type": "string",
+                  "default": "Free",
+                  "description": "'Free' or '$10' etc"
+                },
+                "category": {
+                  "type": "string",
+                  "description": "e.g. 'Networking', 'Social', 'Market', 'Live Music', 'Info Session'"
+                },
+                "url": { "type": "string", "description": "Event source URL" }
+              }
+            }
+          },
+          "xhsDraft": {
+            "type": "object",
+            "description": "Per-school XHS draft",
+            "additionalProperties": false,
+            "required": ["title", "body", "tags"],
+            "properties": {
+              "title": { "type": "string", "maxLength": 22 },
+              "body": { "type": "string" },
+              "tags": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}
