@@ -1,0 +1,438 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-04-24T00:19:29.344Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-04-24（Canvas 版）</title>
+<meta name="description" content="2026-04-24 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v1.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v1.js 里。
+ * 数据来源：src/data/ai-daily/2026-04-24.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "schemaVersion": "1.0",
+  "date": "2026-04-24",
+  "theme": "neobrut",
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-04-24",
+  "summary": {
+    "slug": "digest",
+    "frameLabel": "P0 · 合集 <em>· Top 5 一图看完</em>",
+    "tags": [
+      "合集封面",
+      "适合首图",
+      "今日 5 条一图扫完"
+    ],
+    "hook": [
+      {
+        "text": "今天 "
+      },
+      {
+        "text": "5 条",
+        "hl": true
+      },
+      {
+        "text": "\nAI 大新闻"
+      }
+    ],
+    "sub": "一图看完 · 匠人 AI 日报",
+    "items": [
+      {
+        "num": "01",
+        "numColor": "#7c3aed",
+        "cat": "营收融资",
+        "t": "Anthropic 年化营收冲 300 亿，Claude Code 单品破 25 亿"
+      },
+      {
+        "num": "02",
+        "numColor": "#3b82f6",
+        "cat": "模型竞争",
+        "t": "Google DeepMind 组 Strike Team 追赶 Claude 编程能力"
+      },
+      {
+        "num": "03",
+        "numColor": "#ff5757",
+        "cat": "算力基建",
+        "t": "Thinking Machines 签 Google Cloud 数十亿 GB300 算力"
+      },
+      {
+        "num": "04",
+        "numColor": "#10b981",
+        "cat": "模型发布",
+        "t": "Kimi K2.6 开源，单次不间断编码 13 小时"
+      },
+      {
+        "num": "05",
+        "numColor": "#ff8a3d",
+        "cat": "营收融资",
+        "t": "国内 AI 融资潮：面壁 10 亿 + 自变量 20 亿"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-anthropic-revenue-30b",
+      "frameLabel": "P1 · 单图 <em>· Anthropic 营收 300 亿</em>",
+      "tags": [
+        "营收融资",
+        "Claude Code",
+        "企业增长"
+      ],
+      "idx": "01",
+      "catText": "营收融资",
+      "accent": "#7c3aed",
+      "bg": {
+        "topRight": "rgba(124,58,237,0.16)",
+        "top": "#faf7ff",
+        "mid": "#ffffff",
+        "bot": "#f7f4ff"
+      },
+      "title": [
+        {
+          "text": "Anthropic 年化营收 "
+        },
+        {
+          "text": "300 亿美元",
+          "hl": true
+        },
+        {
+          "text": "，Claude Code 单破 25 亿"
+        }
+      ],
+      "titleSize": 78,
+      "oneline": [
+        {
+          "text": "估值破 1 万亿反超 OpenAI，"
+        },
+        {
+          "text": "Claude Code",
+          "bold": true
+        },
+        {
+          "text": " 成单兵增长引擎"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Anthropic 年化营收从 2025 年底 90 亿冲到 3 月底 300 亿，Claude Code 单产品线年化 25 亿。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "企业市场把 Claude 当编程团队的第二大脑，不是聊天玩具；营收结构比 OpenAI 更健康。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "学 Claude Code 比学通用 Prompt 更值钱；面试官问 AI 工具，直接讲 Claude Code 实操。"
+        }
+      ],
+      "src": "📎 quantosei.com · businessinsider.com",
+      "sources": [
+        {
+          "url": "https://news.quantosei.com/2026/04/23/anthropic-has-surged-to-a-trillion-dollar-valuation-on-secondary-markets-overtaking-openai/",
+          "title": "Anthropic's $1 Trillion Valuation Surpasses OpenAI",
+          "domain": "quantosei.com"
+        }
+      ]
+    },
+    {
+      "slug": "02-deepmind-strike-team",
+      "frameLabel": "P2 · 单图 <em>· Gemini 追赶队</em>",
+      "tags": [
+        "模型竞争",
+        "编程能力",
+        "Google DeepMind"
+      ],
+      "idx": "02",
+      "catText": "模型竞争",
+      "accent": "#3b82f6",
+      "bg": {
+        "topRight": "rgba(59,130,246,0.16)",
+        "top": "#f4f9ff",
+        "mid": "#ffffff",
+        "bot": "#eff5ff"
+      },
+      "title": [
+        {
+          "text": "Google DeepMind 组 "
+        },
+        {
+          "text": "Strike Team",
+          "hl": true
+        },
+        {
+          "text": " 追赶 Claude 编程"
+        }
+      ],
+      "titleSize": 80,
+      "oneline": [
+        {
+          "text": "Sergey Brin 亲自敲警钟："
+        },
+        {
+          "text": "Claude 编程碾压 Gemini",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Google 内部成立专项组改 Gemini 编程短板，Brin 发内部信承认 Claude 在代码任务上更强。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "编程是 AI 模型 2026 年最能变现的场景，Google 不追上 Gemini API 的企业合同会继续流向 Anthropic。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "选工具还是 Claude Code 优先；但盯 Gemini 下一个大版本，如果它真追上来价格战会来。"
+        }
+      ],
+      "src": "📎 sherwood.news · techcrunch.com",
+      "sources": [
+        {
+          "url": "https://sherwood.news/tech/google-deepmind-builds-strike-team-to-catch-up-to-anthropic-models/",
+          "title": "Google DeepMind builds strike team to catch up to Anthropic",
+          "domain": "sherwood.news"
+        }
+      ]
+    },
+    {
+      "slug": "03-thinking-machines-google",
+      "frameLabel": "P3 · 单图 <em>· TML × Google GB300</em>",
+      "tags": [
+        "算力基建",
+        "GB300",
+        "Mira Murati"
+      ],
+      "idx": "03",
+      "catText": "算力基建",
+      "accent": "#ff5757",
+      "bg": {
+        "topRight": "rgba(255,87,87,0.14)",
+        "top": "#fff7f5",
+        "mid": "#ffffff",
+        "bot": "#fff7ef"
+      },
+      "title": [
+        {
+          "text": "Mira Murati 新公司签 "
+        },
+        {
+          "text": "Google Cloud",
+          "hl": true
+        },
+        {
+          "text": " 数十亿 GB300"
+        }
+      ],
+      "titleSize": 76,
+      "oneline": [
+        {
+          "text": "Thinking Machines Lab 锁 NVIDIA "
+        },
+        {
+          "text": "GB300 新芯片",
+          "bold": true
+        },
+        {
+          "text": "，押 Google 云"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "前 OpenAI CTO Mira Murati 的新 Lab 扩签 Google Cloud 合约，规模单位数十亿美元，用最新 GB300 GPU。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "顶尖 AI Lab 离开 Azure 选 GCP 是路径信号——Google TPU + GB300 混合栈正成为前沿训练新标配。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "学云选 GCP 的机会在变多；简历上 GCP Vertex AI / TPU 经验开始被企业直接点名要。"
+        }
+      ],
+      "src": "📎 techcrunch.com · bloomberg.com",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2026/04/22/exclusive-google-deepens-thinking-machines-lab-ties-with-new-multi-billion-dollar-deal/",
+          "title": "Google deepens Thinking Machines Lab ties with new multi-billion-dollar deal",
+          "domain": "techcrunch.com"
+        }
+      ]
+    },
+    {
+      "slug": "04-kimi-k26-opensource",
+      "frameLabel": "P4 · 单图 <em>· Kimi K2.6 开源</em>",
+      "tags": [
+        "模型发布",
+        "开源模型",
+        "长程编码"
+      ],
+      "idx": "04",
+      "catText": "模型发布",
+      "accent": "#10b981",
+      "bg": {
+        "topRight": "rgba(16,185,129,0.16)",
+        "top": "#f2fff8",
+        "mid": "#ffffff",
+        "bot": "#effff6"
+      },
+      "title": [
+        {
+          "text": "Kimi K2.6 开源，"
+        },
+        {
+          "text": "13 小时",
+          "hl": true
+        },
+        {
+          "text": "不间断编码 4000+ 行"
+        }
+      ],
+      "titleSize": 78,
+      "oneline": [
+        {
+          "text": "月之暗面最强代码模型，"
+        },
+        {
+          "text": "单次写 4000 行",
+          "bold": true
+        },
+        {
+          "text": "、全权重开源"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "月之暗面 4 月 20 日发布并开源 Kimi K2.6，测评中可连续 13 小时编码、生成或修改超过 4000 行代码。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "国产开源模型第一次把 agent 级长程编码能力放到 Apache 风格许可下，私有部署的企业多了一个真能替代 Claude 的选项。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "有 H100 / A100 的团队可以直接拉起来试；学生/独立开发者可以用 OpenRouter 上的免费额度先上手。"
+        }
+      ],
+      "src": "📎 21jingji.com · huggingface.co",
+      "sources": [
+        {
+          "url": "https://www.21jingji.com/article/20260422/herald/5ac0ce6cf7d0c8062db9381f59e8862f.html",
+          "title": "月之暗面新模型 Kimi K2.6 发布并开源",
+          "domain": "21jingji.com"
+        }
+      ]
+    },
+    {
+      "slug": "05-china-ai-funding",
+      "frameLabel": "P5 · 单图 <em>· 国内 AI 融资潮</em>",
+      "tags": [
+        "营收融资",
+        "具身智能",
+        "独角兽"
+      ],
+      "idx": "05",
+      "catText": "营收融资",
+      "accent": "#ff8a3d",
+      "bg": {
+        "topRight": "rgba(255,138,61,0.16)",
+        "top": "#fff7f1",
+        "mid": "#ffffff",
+        "bot": "#fff4eb"
+      },
+      "title": [
+        {
+          "text": "国内 AI 融资潮："
+        },
+        {
+          "text": "面壁 10 亿",
+          "hl": true
+        },
+        {
+          "text": "、自变量 20 亿"
+        }
+      ],
+      "titleSize": 74,
+      "oneline": [
+        {
+          "text": "面壁智能跨独角兽门槛，"
+        },
+        {
+          "text": "具身智能",
+          "bold": true
+        },
+        {
+          "text": "赛道资本疯狂涌入"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "面壁智能一季度累计融资破 10 亿进独角兽；自变量机器人 B 轮近 20 亿，小米战投领投。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "资本从「通用大模型烧钱」转向「能落地的端侧 + 具身智能」，2026 年国内 AI 投资主线换了。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "想进国内 AI 公司，端侧模型 / 机器人 / 具身智能方向的岗位在急招；面通用 LLM 岗的竞争反而更卷。"
+        }
+      ],
+      "src": "📎 sina.com.cn · 21jingji.com",
+      "sources": [
+        {
+          "url": "https://finance.sina.com.cn/stock/t/2026-04-09/doc-inhtwhrc8925749.shtml",
+          "title": "面壁智能完成数亿元融资",
+          "domain": "sina.com.cn"
+        }
+      ]
+    }
+  ],
+  "mp": {
+    "title": "Anthropic 年化 300 亿 / Kimi K2.6 开源 / Gemini 追赶队｜AI 日报 04-24",
+    "lead": "今天 5 条主线：Anthropic 营收冲上年化 300 亿、Claude Code 单品破 25 亿，正式把 OpenAI 的估值天花板踩碎；Google DeepMind 内部组 Strike Team 补编程短板，Sergey Brin 亲自下场；Mira Murati 的 Thinking Machines 和 Google Cloud 再签数十亿 GB300 合约，顶级 AI Lab 的算力路径悄悄从 Azure 漂到 GCP；国产侧月之暗面把 Kimi K2.6 开源，单次不间断编码 13 小时、写 4000 行起步；最后是国内 AI 融资潮，面壁智能进独角兽、自变量机器人 B 轮 20 亿，具身智能接棒成为资本新主线。",
+    "meta": {
+      "author": "JR Academy AI 日报",
+      "readTime": "8 分钟"
+    },
+    "quickview": {
+      "title": "📌 今日速览",
+      "items": [
+        "<strong>营收融资</strong>：Anthropic 年化营收 300 亿，Claude Code 单破 25 亿",
+        "<strong>模型竞争</strong>：Google DeepMind 组 Strike Team 追赶 Claude 编程",
+        "<strong>算力基建</strong>：Thinking Machines 签 Google Cloud 数十亿 GB300 算力",
+        "<strong>模型发布</strong>：Kimi K2.6 开源，单次不间断编码 13 小时写 4000 行",
+        "<strong>营收融资</strong>：国内 AI 融资潮，面壁 10 亿 + 自变量 20 亿"
+      ]
+    },
+    "cta": {
+      "big": "🎯 想每天 9 点收到 AI 日报？",
+      "sub": "关注 JR Academy 公众号 · 回复「AI 日报」自动订阅<br>官网 jiangren.com.au/blog · 历史日报全开放"
+    }
+  }
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+});
+</script>
+</body>
+</html>
