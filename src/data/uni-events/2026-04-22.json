@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-04-22",
+  "intro": "4 月 22 日 6 校活动｜UMelb 花园午餐 + Jazz Jam · USYD Adam Smith 250 · Monash 科研影响论坛",
+  "schools": [
+    {
+      "code": "umelb",
+      "events": [
+        {
+          "title": "Lunch in the Systems Gardens",
+          "time": "Wed 22 Apr 12:00pm",
+          "location": "Systems Gardens · Parkville",
+          "price": "Free",
+          "category": "Social",
+          "url": "https://umsu.unimelb.edu.au/buddy-up/clubs/club-events/"
+        },
+        {
+          "title": "Jazz Jam Session",
+          "time": "Wed 22 Apr 7:00pm",
+          "location": "Lionel's Lounge · Parkville",
+          "price": "Free",
+          "category": "Live Music",
+          "url": "https://finearts-music.unimelb.edu.au/events"
+        },
+        {
+          "title": "Doctor of Optometry Info Session",
+          "time": "Wed 22 Apr",
+          "location": "Parkville · online 混合",
+          "price": "Free",
+          "category": "Info Session",
+          "url": "https://study.unimelb.edu.au/connect-with-us/graduate-study-events"
+        }
+      ],
+      "xhsDraft": {
+        "title": "墨大周三｜花园午餐 + Jazz Jam🎷",
+        "body": "在墨大读 Engineering，周三一天两个地方都挺值得去。中午 12 点 Systems Gardens 有 UMSU 的 lunch in the gardens，自带水杯就行，一般有免费食物和闲聊机会，我去年春天去过一次，天气好的话在花园里晒太阳聊天挺 chill。\n\n晚上 7 点 Lionel's Lounge 有 Jazz Jam Session，墨大 Conservatorium 的学生在主场，外人也可以去坐。Lionel's 那个小吧台环境很密，适合想找非学术类的 vibe 体验一下的同学。我有个同学是那边 regular，说每周三都差不多有。\n\n这一天还有 Doctor of Optometry 的 info session，对医科方向感兴趣的同学可以关注一下。\n\n评论区聊一下你们墨大本周还打算去哪个活动？",
+        "tags": ["#墨尔本大学", "#UMelb", "#澳洲留学", "#墨尔本", "#校园活动", "#JazzJam", "#留学日常"]
+      }
+    },
+    {
+      "code": "unsw",
+      "events": [],
+      "xhsDraft": {
+        "title": "UNSW 周三日常｜Roundhouse 本周静默期",
+        "body": "在 UNSW 读 CS，Roundhouse 这周周三没有 public 的大活动，官方日程上主要是 26 号 Hot Mulligan 乐队巡演（那个要买票的）。\n\n想白天放松一下的话，Main Library Lawn 附近本周在做 Semester 1 Week 6 的 quiet study 布置，有几张大圆桌能坐 6-8 个人一起开黑式学习；Lower Ground 那个 food court 周三中午人最少，是我一周去最多的时间段。\n\n本周没什么硬活动不代表下周没有 —— arc 那边 5 月初会开始 Mid-Sem 后的 networking 一波。follow Arc 的 Instagram 刷不容易漏。\n\n有同样在 UNSW 的同学评论区聊聊你们本周在哪上自习？",
+        "tags": ["#UNSW", "#新南威尔士大学", "#澳洲留学", "#悉尼", "#校园生活", "#留学日常", "#UNSW日常"]
+      }
+    },
+    {
+      "code": "uq",
+      "events": [],
+      "xhsDraft": {
+        "title": "UQ 周三｜St Lucia 河边自习角🌿",
+        "body": "UQ News 4/22 那天主要是三件学术大事 —— 体育科学 QS 全球第 2、AI 安全专家评 Claude Mythos、IML 首开斯瓦希里语（这些在大学日报那边有写）。校园活动这一天本身挺安静的，没有 public 大事件。\n\n但 St Lucia 那几个点值得推：Great Court 旁边的 UQ Arts Forum 周中午一般坐满了在自习的学生，Forgan Smith 那个楼的 level 1 开放学习区本周在放柔光 lamp，氛围比平时好很多。\n\n天气好想 offline 一下的同学，可以沿着 UQ Lakes 那条路走到 Eleanor Schonell Bridge，远处能看到 Brisbane CBD 的 skyline，是我最喜欢的换脑子路线。\n\n你们 UQ 本周最喜欢在哪自习？评论区可以聊聊～",
+        "tags": ["#UQ", "#昆士兰大学", "#澳洲留学", "#布里斯班", "#校园生活", "#留学日常", "#UQ生活"]
+      }
+    },
+    {
+      "code": "usyd",
+      "events": [
+        {
+          "title": "Adam Smith 250 Anniversary Conversation",
+          "time": "Wed 22 Apr 10:00am-10:45am",
+          "location": "Sybil Centre · The Women's College · USYD",
+          "price": "Free",
+          "category": "Info Session",
+          "url": "https://whatson.sydney.edu.au/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "USYD 周三｜Adam Smith 250 年纪念讲座",
+        "body": "悉尼大学这周三 10 点在 Sybil Centre（Women's College 里面那个）有一个 Adam Smith 250 周年的小型 conversation，45 分钟。主题是围绕 Adam Smith 的 Wealth of Nations 出版 250 周年做的思辨型对话。\n\n这种讲座的特点是受众小、交流密、教授肯接问题。去过几次 Sybil Centre 这类小规模活动，比在大讲堂里听 keynote 更容易问到有深度的问题。\n\n经济、商科方向的同学特别建议去。就算不是学经济的，听一场讲 Smith 思想在现代意义的对话，对理解市场和政策底层逻辑也是个不错的切入。\n\n有一起想去的姐妹评论区扣 1，可以一起坐前排🪑",
+        "tags": ["#USYD", "#悉尼大学", "#澳洲留学", "#悉尼", "#学术活动", "#AdamSmith", "#留学干货"]
+      }
+    },
+    {
+      "code": "adelaide",
+      "events": [
+        {
+          "title": "Mock Assessment Centre Experience",
+          "time": "Wed 22 Apr",
+          "location": "Adelaide University · 校园内",
+          "price": "Free",
+          "category": "Career",
+          "url": "https://allevents.in/adelaide/adelaide%20university"
+        }
+      ],
+      "xhsDraft": {
+        "title": "阿德莱德周三｜模拟 Assessment Centre",
+        "body": "阿德莱德大学本周三有一场 Mock Assessment Centre Experience，针对本科和 Master 即将毕业的同学。Assessment Centre 就是大厂 grad program 最后一轮那种 —— 小组讨论、Case Study、individual presentation 几个环节。\n\n做过一次真的 AC 的人都知道，第一次上场心跳都是乱的。Mock 场能让你把流程走一遍，看自己在 group dynamics 里是什么样子，比看再多 YouTube tutorial 都有用。\n\n阿德这种 Career Services 组织的 Mock 活动平时不多，建议想申 grad program 的同学把这个时间标在日历上。\n\n不是阿德的话，你们学校有类似的 Mock AC 吗？评论区聊一下我参考下。",
+        "tags": ["#AdelaideUni", "#阿德莱德大学", "#澳洲留学", "#阿德莱德", "#求职", "#AssessmentCentre", "#留学干货"]
+      }
+    },
+    {
+      "code": "monash",
+      "events": [
+        {
+          "title": "从高质量科研到可测量的影响 · Research Impact Forum",
+          "time": "Wed 22 Apr",
+          "location": "Monash · Clayton Campus",
+          "price": "Free",
+          "category": "Academic",
+          "url": "https://www.monash.edu/news/events"
+        }
+      ],
+      "xhsDraft": {
+        "title": "Monash 周三｜科研影响力论坛",
+        "body": "Monash 周三在 Clayton 校区有一场 Research Impact Forum，主题是怎么把 high-quality research 变成 meaningful, measurable impact。对做 Honours / Master by Research / PhD 的同学是挺实用的一场。\n\n这种主题在 research 方向是一个很容易被忽略的软技能 —— 做研究的同学往往把 peer review 和 paper count 当成终点，但真要出学术圈、做产业合作或者申 grant，怎么说清楚 impact 是硬卡点。\n\nMonash 在可持续、工程、生物医药这几个方向都拿过不少 Category 1 grant，这场论坛讲 impact metric 的落地应该会有具体 case。\n\n想做科研方向或者正在纠结要不要继续读 PhD 的同学建议去现场听一下。评论区可以聊聊你们的 research 方向～",
+        "tags": ["#Monash", "#莫纳什大学", "#澳洲留学", "#墨尔本", "#科研", "#PhD留学", "#留学干货"]
+      }
+    }
+  ]
+}
