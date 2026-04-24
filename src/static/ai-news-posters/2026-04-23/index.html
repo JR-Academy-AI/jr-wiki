@@ -1,0 +1,498 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-04-23T13:54:13.007Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-04-23（Canvas 版）</title>
+<meta name="description" content="2026-04-23 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v1.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v1.js 里。
+ * 数据来源：src/data/ai-daily/2026-04-23.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "schemaVersion": "1.0",
+  "date": "2026-04-23",
+  "theme": "neobrut",
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-04-23",
+  "summary": {
+    "slug": "digest",
+    "frameLabel": "P0 · 合集 <em>· Top 5 一图看完</em>",
+    "tags": [
+      "合集封面",
+      "适合首图",
+      "今日 5 条一图扫完"
+    ],
+    "hook": [
+      {
+        "text": "今天 "
+      },
+      {
+        "text": "5 条",
+        "hl": true
+      },
+      {
+        "text": "\nAI 大新闻"
+      }
+    ],
+    "sub": "一图看完 · 匠人 AI 日报",
+    "items": [
+      {
+        "num": "01",
+        "numColor": "#ff5757",
+        "cat": "估值飙升",
+        "t": "Anthropic 估值破万亿美元，反超 OpenAI"
+      },
+      {
+        "num": "02",
+        "numColor": "#7c3aed",
+        "cat": "收购布局",
+        "t": "SpaceX 押注 Cursor，60 亿美元期权锁定收购"
+      },
+      {
+        "num": "03",
+        "numColor": "#10b981",
+        "cat": "产品发布",
+        "t": "Google 推 AI Agent 收件箱 + 新 AI 芯片"
+      },
+      {
+        "num": "04",
+        "numColor": "#f97316",
+        "cat": "产品争议",
+        "t": "Anthropic 增长阵痛：Opus 4.6 被指降智"
+      },
+      {
+        "num": "05",
+        "numColor": "#0ea5e9",
+        "cat": "基建融资",
+        "t": "Vast Data 融 10 亿美元，估值跳到 300 亿"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-anthropic-trillion",
+      "frameLabel": "P1 · 单图 <em>· Anthropic 破万亿</em>",
+      "tags": [
+        "估值飙升",
+        "二级市场",
+        "Claude Code"
+      ],
+      "idx": "01",
+      "catText": "估值飙升",
+      "accent": "#ff5757",
+      "bg": {
+        "topRight": "rgba(255,87,87,0.14)",
+        "top": "#fff7f5",
+        "mid": "#ffffff",
+        "bot": "#fff7ef"
+      },
+      "title": [
+        {
+          "text": "Anthropic 二级市场估值 "
+        },
+        {
+          "text": "破 1 万亿美元",
+          "hl": true
+        },
+        {
+          "text": "，反超 OpenAI"
+        }
+      ],
+      "titleSize": 76,
+      "oneline": [
+        {
+          "text": "Claude Code 年化 "
+        },
+        {
+          "text": "$2.5B",
+          "bold": true
+        },
+        {
+          "text": "，整体营收从 $9B 飙到 $30B"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Anthropic 二级市场股票定价对应估值超过 1 万亿美元，同期 OpenAI 二级报价对应估值约 8800 亿美元。Anthropic 2025 年末年化营收 $9B，2026 年 3 月已冲到 $30B。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是 AI 第一次有纯 foundation model 公司二级估值超 $1T，标志着市场把 Claude 看作和 OpenAI 对等而不是挑战者；Claude Code 单个产品贡献 $2.5B ARR，几乎追平 Cursor 全公司规模。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "Claude Code 的定价和额度策略会更激进（既要喂估值又要防 OpenAI），订阅用户近期被降智 / 被限流概率升高；学 Claude Code 的人职业红利窗口还在。"
+        }
+      ],
+      "src": "📎 quantosei.com · axios.com · fool.com",
+      "sources": [
+        {
+          "url": "https://news.quantosei.com/2026/04/23/anthropic-has-surged-to-a-trillion-dollar-valuation-on-secondary-markets-overtaking-openai/",
+          "title": "Anthropic Surges to Trillion-Dollar Valuation",
+          "domain": "quantosei.com"
+        },
+        {
+          "url": "https://www.axios.com/2026/04/23/anthropic-openai-showdown",
+          "title": "Anthropic's growing pains mount ahead of OpenAI showdown",
+          "domain": "axios.com"
+        },
+        {
+          "url": "https://www.fool.com/investing/2026/04/22/anthropic-just-announced-huge-news-for-alphabet-an/",
+          "title": "Anthropic Announces Huge News for Alphabet and Broadcom",
+          "domain": "fool.com"
+        }
+      ],
+      "mp": {
+        "h2": "Anthropic 二级估值破 1 万亿，Claude Code 单产品年化 25 亿美元",
+        "paragraphs": [
+          "根据二级市场的股票定价，Anthropic 的估值已经超过 1 万亿美元，同期 OpenAI 的二级报价对应估值约 8800 亿美元。这是 AI 模型公司第一次在二级估值上正面反超 OpenAI。公司年化营收从 2025 年末的 90 亿美元，在三个月内跳到 2026 年 3 月的 300 亿美元，拉动估值的主力是 Claude Code —— Anthropic 披露单个 Claude Code 产品年化营收已到 25 亿美元，这个数字几乎等同于 Cursor 整家公司的业务规模。",
+          "这次估值突破的意义不止于数字。之前很长一段时间，二级市场更愿意给 OpenAI 溢价 —— 因为 OpenAI 有 C 端 ChatGPT 这个现金牛。Anthropic 能反超，说明市场重新定价了「开发者工具 + 企业 API」这条线：coding agent 被认为比 chatbot 有更强的留存和 upsell 曲线。配合 Anthropic 本周还宣布从 2027 年起使用 Google 多 GW 规模的下一代 TPU，算力筹码和资本故事双双到位。",
+          "对正在用 Claude 或靠 Claude Code 吃饭的工程师来说，短期最大的影响是定价和产品稳定性。估值要兑现，Anthropic 会继续压榨单 token 毛利 —— 最近几周 Opus 4.6 被社区反复抱怨降智、被限流，背后就是这个逻辑。长期看，Claude Code 作为面向开发者的主战场，模型、工具链、定价都会继续快速演进，跟得上的工程师岗位红利窗口还在；IDE 玩家（Cursor / Windsurf / Warp）近期会被 Anthropic 自家产品进一步挤压。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://news.quantosei.com/2026/04/23/anthropic-has-surged-to-a-trillion-dollar-valuation-on-secondary-markets-overtaking-openai/\">QuantoSei News</a> · <a href=\"https://www.axios.com/2026/04/23/anthropic-openai-showdown\">Axios</a> · <a href=\"https://www.fool.com/investing/2026/04/22/anthropic-just-announced-huge-news-for-alphabet-an/\">Motley Fool</a>"
+      }
+    },
+    {
+      "slug": "02-spacex-cursor-option",
+      "frameLabel": "P2 · 单图 <em>· SpaceX 锁定 Cursor</em>",
+      "tags": [
+        "收购布局",
+        "AI 编码",
+        "SpaceX"
+      ],
+      "idx": "02",
+      "catText": "收购布局",
+      "accent": "#7c3aed",
+      "bg": {
+        "topRight": "rgba(124,58,237,0.16)",
+        "top": "#faf7ff",
+        "mid": "#ffffff",
+        "bot": "#f7f4ff"
+      },
+      "title": [
+        {
+          "text": "SpaceX 给 Cursor 开 "
+        },
+        {
+          "text": "60 亿美元",
+          "hl": true
+        },
+        {
+          "text": " 期权收购权"
+        }
+      ],
+      "titleSize": 72,
+      "oneline": [
+        {
+          "text": "不走收购就付 "
+        },
+        {
+          "text": "10 亿美元",
+          "bold": true
+        },
+        {
+          "text": "买共同研发成果"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "SpaceX 与 Cursor 签协议：今年晚些时候可以用 60 亿美元收购 Cursor，如果不走收购，SpaceX 要付 10 亿美元买双方联合研发的「coding + knowledge work AI」成果。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "SpaceX 有天量的 C++/嵌入式代码和火箭控制、星舰仿真、Starlink 网络栈代码库 —— 它选择「买 + 合作」Cursor 而不是自研，说明 Cursor 这种 IDE agent 架构已经成为大模型公司之外的下一层竞争壁垒。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "如果你还在用原生 VS Code 写 AI 时代的代码 —— 这条新闻是提醒：未来 2 年「开发者 IDE + agent」会像现在的「编辑器 + LSP」一样成为标配。学 Cursor / Claude Code / Windsurf 不是可选技能。"
+        }
+      ],
+      "src": "📎 techstartups.com",
+      "sources": [
+        {
+          "url": "https://techstartups.com/2026/04/22/spacex-strikes-deal-for-60b-option-to-buy-cursor-later-this-year-or-pay-10b-for-work-together-ai-collaboration/",
+          "title": "SpaceX strikes deal for $60B option to buy Cursor",
+          "domain": "techstartups.com"
+        }
+      ],
+      "mp": {
+        "h2": "SpaceX 60 亿美元期权锁定 Cursor，AI IDE 正式卷到航天级代码库",
+        "paragraphs": [
+          "SpaceX 和 Cursor 宣布了一份相当罕见的结构化协议：SpaceX 获得今年晚些时候以 60 亿美元收购 Cursor 的期权；如果 SpaceX 最终不走收购路线，它要给 Cursor 支付 10 亿美元购买双方联合开发的「编程 + 知识工作 AI」的阶段性成果。两家公司同步宣布已经在「一起做世界上最好的 coding 和 knowledge work AI」。",
+          "这个交易的信号远大于金额本身。SpaceX 维护着业内最复杂的一批代码库之一 —— 火箭控制、星舰仿真、Starlink 网络栈、地面站软件 —— 全部是高可靠性 + 实时性要求极强的 C++/嵌入式。过去几年外界普遍认为 SpaceX 会走「自研 AI coding 工具」的路线（Elon 同时在 xAI 主攻大模型）。现在 SpaceX 反而选择「买 + 合作」Cursor，说明 Cursor 这种「大模型之外的 IDE agent 层」已经构成了独立的护城河，连最偏自研文化的巨头都觉得从头做不划算。",
+          "对普通开发者和工程师来说，这条新闻是一个很明确的生涯信号：AI 时代的 IDE 正在进入「人人用 IDE agent」的阶段，就像十年前从 Vim 集体过渡到 VS Code + LSP。如果你还在原生 VS Code 里人肉写提示词复制粘贴代码，未来 1-2 年会被系统性甩开。Cursor / Claude Code / Windsurf 已经不是「新工具」，是下一代默认工作流。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://techstartups.com/2026/04/22/spacex-strikes-deal-for-60b-option-to-buy-cursor-later-this-year-or-pay-10b-for-work-together-ai-collaboration/\">Tech Startups</a>"
+      }
+    },
+    {
+      "slug": "03-google-agent-inbox",
+      "frameLabel": "P3 · 单图 <em>· Google AI Agent 收件箱</em>",
+      "tags": [
+        "产品发布",
+        "AI Agent",
+        "TPU"
+      ],
+      "idx": "03",
+      "catText": "产品发布",
+      "accent": "#10b981",
+      "bg": {
+        "topRight": "rgba(16,185,129,0.14)",
+        "top": "#f0fdf4",
+        "mid": "#ffffff",
+        "bot": "#ecfdf5"
+      },
+      "title": [
+        {
+          "text": "Google 推 AI Agent "
+        },
+        {
+          "text": "专用收件箱",
+          "hl": true
+        },
+        {
+          "text": "+ 两款新 AI 芯片"
+        }
+      ],
+      "titleSize": 72,
+      "oneline": [
+        {
+          "text": "给 agent 开了个 "
+        },
+        {
+          "text": "数字工位",
+          "bold": true
+        },
+        {
+          "text": "，能独立收邮件交报告"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Google Cloud 发布一套 AI agent 创建 + 监控工具，核心是给 agent 分配一个「专用收件箱」—— 让它可以像公司员工一样独立收发任务、提交进度。同时公布两款新 AI 芯片叫板 Nvidia，瞄准推理成本。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Anthropic Claude 和 OpenAI 的 agent 都还在「对话里塞 tool use」的形态，Google 把 agent 当成独立实体来建制，直接进入企业工作流层 —— 这是第一次有大厂明确把 agent「组织化」。TPU 自研让它敢打价格战。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "如果你在企业或创业项目里搭 agent 系统，Google 的「agent 收件箱」模式值得借鉴 —— 把 agent 当成可审计的独立员工而不是一段脚本。找工作的话，「AI agent 系统集成」是 2026 下半年会爆的新 title。"
+        }
+      ],
+      "src": "📎 bloomberg.com",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-04-22/google-releases-new-ai-agents-to-challenge-openai-and-anthropic",
+          "title": "Google Releases New AI Agents to Challenge OpenAI and Anthropic",
+          "domain": "bloomberg.com"
+        }
+      ],
+      "mp": {
+        "h2": "Google 给 AI Agent 开「数字工位」：专用收件箱 + 自研芯片双线出击",
+        "paragraphs": [
+          "Google Cloud 在 4 月 22 日宣布了一组 agent 相关工具，最有意思的是给每个 AI agent 分配一个「专用收件箱」（dedicated inbox），让 agent 可以像公司员工一样独立收发消息、提交进度报告、接收新的任务委派。同一天 Google 还发布了两款新 AI 芯片（第 7 代 TPU 及配套推理芯片），明确目标就是跟 Nvidia 在推理侧打价格战。",
+          "这个「agent 收件箱」的产品形态是本次发布里真正新的东西。过去一年多 Claude 和 OpenAI 的 agent 都还停在「对话里塞 tool use 循环」的模式 —— agent 本质上是一段函数调用链。Google 这次把 agent「组织化」了：它有一个持久的身份（收件箱地址），可以被多人多系统委派任务，产出可追溯。对企业来说，这意味着 agent 第一次可以像远程员工一样进入工作流 —— 有 audit trail，有责任归属。",
+          "对开发者和找工作的人，这条新闻给了两个很具体的线索。一是技术侧：「agent 作为一等公民」这个抽象模式会被复制，自己搭 agent 系统时值得借鉴 —— 把每个 agent 设计成有 inbox、有 identity、有 trace 的独立单元，而不是把 agent 塞进某个 app 的后台脚本里。二是市场侧：2026 下半年「AI agent 系统集成」、「Agent Ops」这类岗位会密集开放，知道怎么把多 agent 系统跑在企业环境里的人会很紧俏。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://www.bloomberg.com/news/articles/2026-04-22/google-releases-new-ai-agents-to-challenge-openai-and-anthropic\">Bloomberg</a>"
+      }
+    },
+    {
+      "slug": "04-anthropic-growing-pains",
+      "frameLabel": "P4 · 单图 <em>· Opus 4.6 降智争议</em>",
+      "tags": [
+        "产品争议",
+        "Opus 4.6",
+        "IPO 前夜"
+      ],
+      "idx": "04",
+      "catText": "产品争议",
+      "accent": "#f97316",
+      "bg": {
+        "topRight": "rgba(249,115,22,0.14)",
+        "top": "#fff7ed",
+        "mid": "#ffffff",
+        "bot": "#ffedd5"
+      },
+      "title": [
+        {
+          "text": "Anthropic 增长阵痛："
+        },
+        {
+          "text": "Opus 4.6 被指降智",
+          "hl": true
+        }
+      ],
+      "titleSize": 76,
+      "oneline": [
+        {
+          "text": "社区怀疑"
+        },
+        {
+          "text": "偷偷降级旗舰模型",
+          "bold": true
+        },
+        {
+          "text": "以压成本"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Axios 报道 Anthropic 最近两个月在产品质量、定价、安全、容量四条线同时承压。最受瞩目的是 Opus 4.6 被大量开发者报告「性能下滑」，质疑 Anthropic 在 IPO 前为压毛利悄悄降级旗舰模型。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "估值冲上 1 万亿的代价是必须拿出 IPO 级别的财务数据 —— 压 token 成本 + 限流成了最直接的杠杆。这是所有估值冲顶的 foundation model 公司都会遇到的同一个十字路口：短期毛利 vs 长期信任。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "订阅 Claude Pro / Team / Code 的人最近跑 Opus 如果感觉和以前不一样，不是幻觉 —— 多 benchmark 一下，必要时切到 Sonnet 4.6 / 用 API 直连。长期看，foundation model 同质化后「第二家 vendor」准备得越早越稳。"
+        }
+      ],
+      "src": "📎 axios.com",
+      "sources": [
+        {
+          "url": "https://www.axios.com/2026/04/23/anthropic-openai-showdown",
+          "title": "Anthropic's growing pains mount ahead of OpenAI showdown",
+          "domain": "axios.com"
+        }
+      ],
+      "mp": {
+        "h2": "Opus 4.6 降智争议背后：Anthropic IPO 前夜的四条压力线",
+        "paragraphs": [
+          "Axios 4 月 23 日的深度报道里，Anthropic 过去两个月同时在产品质量、定价、安全和容量四条线上承压。最受外部关注的是 Opus 4.6 被开发者社区反复反馈「比发布初期性能下降明显」 —— 复杂 reasoning 任务的正确率和稳定性都比 4 月初表现弱，一批资深用户开始怀疑 Anthropic 在 IPO 冲刺期悄悄做了模型降级以压低推理成本。Anthropic 官方回应称没有主动降级，但未披露底层路由或量化策略的变化。",
+          "这个争议本质不是「Anthropic 一家公司的问题」，而是 foundation model 估值冲顶后的共性十字路口。Anthropic 二级估值刚破 1 万亿（看今日第 01 条），OpenAI 也在为 IPO 铺路。要撑住这个估值，财务数据要对得起 IPO 监管审查 —— 最直接的两个杠杆就是「压 token 推理成本」和「限流大户客户」。2023 年的 OpenAI 也经历过一轮 ChatGPT Plus 用户集体抱怨 GPT-4 「变笨」的事件，后来被证实是 routing 策略调整。同样的剧本可能正在 Anthropic 这边重演。",
+          "对订阅 Claude Pro / Team / Claude Code 的人来说，这条新闻给的实操建议很具体。一是自己 benchmark —— 挑一两个 2-3 月份跑过的复杂任务，现在用相同的 prompt 再跑一次，看正确率 / token 消耗 / 响应时间；二是准备「第二家 vendor」 —— 把 Sonnet 4.6 和 API 直连接入自己的工具链，真遇到限流或降智可以无缝切换；三是关键工作流脱钩单一 vendor —— 把 prompt 做成 vendor-agnostic 的格式（Prompt Router / LLM Gateway），不要把 Anthropic-only 的工具链硬编码进核心业务逻辑。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://www.axios.com/2026/04/23/anthropic-openai-showdown\">Axios</a>"
+      }
+    },
+    {
+      "slug": "05-vast-data-1b",
+      "frameLabel": "P5 · 单图 <em>· Vast Data 估值 $30B</em>",
+      "tags": [
+        "基建融资",
+        "AI 存储",
+        "Nvidia"
+      ],
+      "idx": "05",
+      "catText": "基建融资",
+      "accent": "#0ea5e9",
+      "bg": {
+        "topRight": "rgba(14,165,233,0.14)",
+        "top": "#f0f9ff",
+        "mid": "#ffffff",
+        "bot": "#e0f2fe"
+      },
+      "title": [
+        {
+          "text": "Vast Data 融资 "
+        },
+        {
+          "text": "10 亿美元",
+          "hl": true
+        },
+        {
+          "text": "，估值跳到 300 亿"
+        }
+      ],
+      "titleSize": 76,
+      "oneline": [
+        {
+          "text": "Nvidia 生态 "
+        },
+        {
+          "text": "AI 存储层",
+          "bold": true
+        },
+        {
+          "text": "3 年估值 3 倍跳涨"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "AI 基建 / 存储公司 Vast Data 完成 10 亿美元新一轮融资，估值 300 亿美元，比 2023 年的 91 亿美元翻了 3 倍多。本轮由 Nvidia 参投，延续「Nvidia 领投 + 卖 GPU 给 portfolio」的飞轮打法。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "市场对 AI 基建的热钱没有退 —— 2026 年 Q1 foundation model 融资额已经是 2025 年全年总和的 2 倍。Vast Data 代表的是「存储 + GPU 编排」这一层，是 Nvidia 之外第二层最肥的位置。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做数据工程 / 存储 / MLOps 岗位的人赶上了好时候。Vast / WEKA / DDN 这类 AI-native 存储厂商的需求上来以后，传统 Hadoop / Ceph / NFS 的技能组合要快速补上 NVMe over Fabric + GPUDirect 这类新栈。"
+        }
+      ],
+      "src": "📎 techstartups.com · crunchbase.com",
+      "sources": [
+        {
+          "url": "https://techstartups.com/2026/04/22/nvidia-backed-ai-startup-vast-data-raises-1b-at-30b-valuation-as-ai-infrastructure-boom-accelerates/",
+          "title": "Nvidia-backed AI startup Vast Data raises $1B at $30B valuation",
+          "domain": "techstartups.com"
+        },
+        {
+          "url": "https://news.crunchbase.com/venture/foundational-ai-startup-funding-doubled-openai-anthropic-xai-q1-2026/",
+          "title": "Venture Funding To Foundational AI Startups Q1 2026",
+          "domain": "crunchbase.com"
+        }
+      ],
+      "mp": {
+        "h2": "Vast Data 10 亿美元融资估值 $30B，Nvidia 飞轮把 AI 存储层推到新高",
+        "paragraphs": [
+          "AI 基建公司 Vast Data 完成了 10 亿美元的新一轮融资，估值从 2023 年的 91 亿美元跳到 300 亿美元 —— 不到三年翻了 3 倍多。本轮由 Nvidia 参投，是 Nvidia 继 CoreWeave、Lambda Labs 之后又一笔典型的「战略投资 + 战略客户」组合拳：把资金打进 portfolio，然后卖 GPU 和网络给 portfolio，再把 portfolio 的增长兑现成 Nvidia 自己的营收。",
+          "这笔融资的意义不止是 Vast Data 一家公司。Crunchbase 数据显示，2026 年 Q1 foundation model 公司的融资额已经是 2025 年全年总和的两倍，投资人在 AI 各层都在密集下注。Vast Data 代表的是「存储 + GPU 编排」这一层 —— 在 GPU 和大模型之间，需要一个能跟上 H100/B200/GB200 吞吐量的存储架构，传统 NFS / object storage 跟不上。Vast、WEKA、DDN 是这一层最热门的三家，其中 Vast 是估值爬得最快的。",
+          "对做数据工程、存储工程、MLOps 岗位的人来说，这条新闻值得认真读。AI-native 存储不是「更大的 S3」，它要求工程师懂 NVMe over Fabric（NVMe-oF）、GPUDirect Storage、RDMA 这些原来只有 HPC 圈在用的栈。如果你现在的技能还停在 Hadoop / Ceph / 经典 NFS 上，往这个方向补课会在未来 1-2 年见到很明显的岗位溢价 —— Vast / WEKA 自己的招聘页面就是最好的参考。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://techstartups.com/2026/04/22/nvidia-backed-ai-startup-vast-data-raises-1b-at-30b-valuation-as-ai-infrastructure-boom-accelerates/\">Tech Startups</a> · <a href=\"https://news.crunchbase.com/venture/foundational-ai-startup-funding-doubled-openai-anthropic-xai-q1-2026/\">Crunchbase News</a>"
+      }
+    }
+  ],
+  "mp": {
+    "title": "Anthropic 破万亿 / SpaceX 押 Cursor / Google Agent 收件箱 ｜AI 日报 04-23",
+    "lead": "今天一天 AI 圈跑出三条估值/收购级别的信号：Anthropic 二级估值破 1 万亿美元反超 OpenAI；SpaceX 签了 60 亿美元期权锁定 Cursor 未来收购权；Google 发布 AI Agent 专用收件箱 + 两款新 AI 芯片叫板 Nvidia。与此同时 Opus 4.6 被社区指「偷偷降智」、Vast Data 10 亿美元融资把 AI 存储估值推到 300 亿。5 条里 4 条和订阅 Claude、跑 agent、选 IDE 的工程师直接相关，截图存一张就够用。",
+    "meta": {
+      "author": "JR Academy AI 日报",
+      "readTime": "9 分钟"
+    },
+    "quickview": {
+      "title": "📌 今日速览",
+      "items": [
+        "<strong>估值飙升</strong>：Anthropic 二级市场估值破 $1T，反超 OpenAI（$880B）；Claude Code 单产品年化 $2.5B",
+        "<strong>收购布局</strong>：SpaceX 给 Cursor 开 $60B 期权收购权，走不成收购也要付 $10B 买合作成果",
+        "<strong>产品发布</strong>：Google Cloud 发布 AI Agent 专用收件箱 + 2 款新 AI 芯片，把 agent 当数字员工建制",
+        "<strong>产品争议</strong>：Opus 4.6 被开发者指「偷偷降智」，Anthropic IPO 前四条压力线同时加码",
+        "<strong>基建融资</strong>：Vast Data 融 $1B 估值 $30B（比 2023 翻 3 倍），Nvidia 飞轮把 AI 存储层推到新高"
+      ]
+    },
+    "cta": {
+      "big": "🎯 想每天 9 点收到 AI 日报？",
+      "sub": "关注 JR Academy 公众号 · 回复「AI 日报」自动订阅<br>官网 jiangren.com.au/blog · 历史日报全开放"
+    }
+  }
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+});
+</script>
+</body>
+</html>
