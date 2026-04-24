@@ -68,13 +68,30 @@ Cascade 会开始规划任务，你能看到它的执行步骤：
 | `Ctrl/Cmd + L` | 打开 Cascade 面板 |
 | `Ctrl/Cmd + I` | Inline Edit（选中代码后原地修改） |
 | `Tab` | 接受 Supercomplete 补全建议 |
+| `Esc` | 拒绝当前补全建议 |
 | `Ctrl/Cmd + Shift + P` | 命令面板（和 VS Code 一样） |
+| `Ctrl/Cmd + .` | 快速修复（Quick Fix） |
 
-## 一个容易踩的坑
+## Turbo 模式
+
+Cascade 默认每一步都要你点 Accept。开启 Turbo 模式后，Cascade 可以自动执行终端命令，不再逐步确认。适合你信任 AI 输出、想让它一口气跑完的场景。
+
+在 Cascade 面板顶部找到 Turbo 开关，或者在设置里搜索 `turbo`：
+
+```json
+// settings.json
+{
+  "windsurf.cascade.turboMode": true
+}
+```
+
+刚上手的时候建议关着 Turbo，等你熟悉 Cascade 的行为模式后再打开。跑 `rm`、`DROP TABLE` 这类危险命令时 Cascade 仍然会弹确认，不会盲执行。
+
+## 索引与 .windsurfignore
 
 第一次打开大项目时，Windsurf 会做代码库索引（Indexing）。这个过程会吃 CPU 和内存，大项目可能要等几分钟。**别急着开始问 Cascade 问题**，等右下角的索引进度条跑完再操作，否则 AI 回答的上下文会不完整。
 
-索引优化建议：在项目根目录创建 `.windsurfignore` 文件，排除不需要索引的目录：
+在项目根目录创建 `.windsurfignore` 文件，排除不需要索引的目录：
 
 ```
 node_modules/
@@ -82,6 +99,16 @@ dist/
 build/
 .git/
 *.lock
+coverage/
+.next/
 ```
 
 这样能把索引文件数量减少 90% 以上，Cascade 响应也会更快。
+
+一个实测数据：10 万行代码的 Next.js monorepo，不加 `.windsurfignore` 索引要 4 分钟，排除 `node_modules` 和 `dist` 后 40 秒内完成。
+
+## Memories：让 AI 记住你的习惯
+
+Windsurf 的 Memories 功能会在使用过程中学习你的编码偏好——比如你总是用 `const` 不用 `let`、API 错误处理总是返回 `{ success: false, error }` 格式。大约用两天后 Memories 开始生效，之后 Cascade 生成的代码会自动符合你的风格，不用每次在 prompt 里重复说明。
+
+Memories 在设置里可以查看和清除：命令面板搜 `Windsurf: Manage Memories`。
