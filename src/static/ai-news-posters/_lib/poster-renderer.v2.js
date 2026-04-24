@@ -473,10 +473,9 @@
     // 顶部胶囊 + DIGEST label 行
     y += 72 + 40;
 
-    // Hero DATE + 主标题 + sub 预留高度
-    y += 180 + 20;     // date hero 最大 180 + 间隙
-    y += 96 + 28 + 30; // headline 96 + padY*2 ~28 + 间隙
-    y += 44 + 56;      // sub 44 + 间隙
+    // Hero 行：日期 + "AI 五件大事"（单行 flex） + sub 预留高度
+    y += 120 + 24 + 36; // hero 行 ~120 + padY*2 + 间隙
+    y += 44 + 56;       // sub 44 + 间隙
 
     // 5 个 items（动态）
     for (const it of s.items) {
@@ -525,35 +524,51 @@
 
     y += 64 + 48;
 
-    // Hero DATE: "4月24日" 去年份
+    // Hero 行：日期 + "AI 五件大事" 同行（左：黑字日期，右：黄底高亮块）
     const m = DATE.match(/^(\d{4})-(\d{2})-(\d{2})$/);
     const mm = m ? parseInt(m[2], 10) : 0;
     const dd = m ? parseInt(m[3], 10) : 0;
-    const dateHeroText = `${mm} 月 ${dd} 日`;
-    const dateSpec = size => `900 ${size}px ${FF_DISPLAY}`;
-    const dateSize = fitText(ctx, dateHeroText, dateSpec, CW - 8, 180, 130);
-    ctx.font = dateSpec(dateSize);
-    ctx.textBaseline = 'alphabetic';
-    ctx.fillStyle = '#10162f';
-    ctx.fillText(dateHeroText, CX, y + dateSize * 0.82);
-    y += dateSize + 20;
-
-    // 主标题: "AI 五件大事"（黄底高亮块）
+    const dateHeroText = `${mm}月${dd}日`;
     const headlineText = 'AI 五件大事';
-    const headlineSize = 96;
+    const rowGap = 28;
     const headlinePadX = 22;
     const headlinePadY = 14;
-    ctx.font = `900 ${headlineSize}px ${FF_CN}`;
-    const hW = ctx.measureText(headlineText).width;
-    // 黄底
-    ctx.fillStyle = '#ffce44';
-    roundRectPath(ctx, CX, y, hW + headlinePadX * 2, headlineSize + headlinePadY * 2, 12);
-    ctx.fill();
-    // 黑字
-    ctx.fillStyle = '#10162f';
+    const dateSpec = sz => `900 ${sz}px ${FF_DISPLAY}`;
+    const headlineSpec = sz => `900 ${sz}px ${FF_CN}`;
+
+    // 自适应字号：同时塞下 date + gap + padX + headline + padX
+    const measureRow = (size) => {
+      ctx.font = dateSpec(size);
+      const dw = ctx.measureText(dateHeroText).width;
+      ctx.font = headlineSpec(size);
+      const hw = ctx.measureText(headlineText).width;
+      return { dw, hw, total: dw + rowGap + hw + headlinePadX * 2 };
+    };
+    let heroSize = 120;
+    let row = measureRow(heroSize);
+    while (row.total > CW - 8 && heroSize > 72) {
+      heroSize -= 4;
+      row = measureRow(heroSize);
+    }
+
+    const textY = y + headlinePadY + heroSize * 0.82;
     ctx.textBaseline = 'alphabetic';
-    ctx.fillText(headlineText, CX + headlinePadX, y + headlinePadY + headlineSize * 0.82);
-    y += headlineSize + headlinePadY * 2 + 30;
+
+    // 日期（黑字，左侧）
+    ctx.font = dateSpec(heroSize);
+    ctx.fillStyle = '#10162f';
+    ctx.fillText(dateHeroText, CX, textY);
+
+    // 黄底高亮块 + "AI 五件大事"（右侧）
+    const boxX = CX + row.dw + rowGap;
+    ctx.fillStyle = '#ffce44';
+    roundRectPath(ctx, boxX, y, row.hw + headlinePadX * 2, heroSize + headlinePadY * 2, 12);
+    ctx.fill();
+    ctx.fillStyle = '#10162f';
+    ctx.font = headlineSpec(heroSize);
+    ctx.fillText(headlineText, boxX + headlinePadX, textY);
+
+    y += heroSize + headlinePadY * 2 + 36;
 
     // Sub line
     ctx.font = `700 44px ${FF_CN}`;
