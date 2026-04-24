@@ -59,23 +59,25 @@ echo "✅ ai-daily-news ${DATE} 已上线 commit=$LOCAL"
 
 ---
 
-## Routine 2 · Uni News（每天 08:00 AEST = 22:00 UTC，3 校轮换）
+## Routine 2 · Uni News（每天 08:00 AEST = 22:00 UTC，**核心 6 校**轮换 3 所）
 
 **name**: `uni-news-3-schools`
 **cron**: `0 22 * * *` (UTC) = 每天 08:00 AEST
 **timeout**: 25 minutes
 
+🚨 **池子规则铁律**（2026-04-24 立）：scheduled 只跑核心 6 校（UQ / UMelb / UNSW / USYD / Monash / Adelaide），**永不跑** ANU / RMIT / UTS / UWA —— 用户明确没有那 4 校的发布渠道，跑了就是浪费 API。
+
 ```
 cd /workspace/jr-wiki
 
 DATE=$(TZ='Australia/Sydney' date +%Y-%m-%d)
-echo "▶ Running /uni-news-poster for $DATE (AEST) — 自动轮换 3 校"
+echo "▶ Running /uni-news-poster for $DATE (AEST) — 核心 6 校挑 3 所"
 
-# 选 3 校：扫每校最新 md，挑最久没更新的 3 所
+# 选 3 校：只在核心 6 校池里挑最久没更新的 3 所
 SCHOOLS=$(node -e "
   const fs = require('fs'); const path = require('path');
-  const schools = ['uq','umelb','unsw','usyd','monash','anu','adelaide','rmit','uts','uwa'];
-  const latest = schools.map(s => {
+  const CORE_SIX = ['uq','umelb','unsw','usyd','monash','adelaide'];
+  const latest = CORE_SIX.map(s => {
     const dir = 'src/content/universities/' + s;
     if (!fs.existsSync(dir)) return [s, ''];
     const mds = fs.readdirSync(dir).filter(f => f.startsWith('news-'));
@@ -85,7 +87,14 @@ SCHOOLS=$(node -e "
   latest.sort((a,b) => a[1].localeCompare(b[1]));
   console.log(latest.slice(0,3).map(x=>x[0]).join(' '));
 ")
-echo "▶ 选中今天 3 校: $SCHOOLS"
+echo "▶ 选中今天 3 校 (来自核心 6): $SCHOOLS"
+
+# 防御性断言：池子永远不应该选出 ANU/RMIT/UTS/UWA
+for s in $SCHOOLS; do
+  case "$s" in
+    anu|rmit|uts|uwa) echo "❌ BUG: 池子选出禁用学校 $s，立刻退出"; exit 1 ;;
+  esac
+done
 
 # 跑 skill 3 次（每校一次），由 skill 内部产 md + JSON
 for SCHOOL in $SCHOOLS; do

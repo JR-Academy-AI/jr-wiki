@@ -23,15 +23,16 @@ argument-hint: "[YYYY-MM-DD 可选] [school slug 可选 · 不传则当天轮换
 
 ```bash
 DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
-SCHOOL=$2   # 可空 → 自动选轮换 3 校
+SCHOOL=$2   # 可空 → 自动选轮换 3 校（仅核心 6 校池）
 
 if [ -z "$SCHOOL" ]; then
-  # 自动选最久没更新的 3 校（扫 src/content/universities/*/news-*.md 最新日期）
-  # 10 校池：uq / umelb / unsw / usyd / monash / anu / adelaide / rmit / uts / uwa
+  # 🚨 自动选校只走「核心 6 校」池 —— 用户明确要求，UTS/UWA/ANU/RMIT 没有发布渠道，scheduled 永不跑这 4 校
+  # 核心 6 校：uq / umelb / unsw / usyd / monash / adelaide
+  # 选最久没更新的 3 校
   SCHOOLS=$(node -e "
     const fs = require('fs'); const path = require('path');
-    const schools = ['uq','umelb','unsw','usyd','monash','anu','adelaide','rmit','uts','uwa'];
-    const latest = schools.map(s => {
+    const CORE_SIX = ['uq','umelb','unsw','usyd','monash','adelaide'];
+    const latest = CORE_SIX.map(s => {
       const dir = 'src/content/universities/' + s;
       if (!fs.existsSync(dir)) return [s, ''];
       const mds = fs.readdirSync(dir).filter(f => f.startsWith('news-'));
@@ -42,9 +43,24 @@ if [ -z "$SCHOOL" ]; then
     console.log(latest.slice(0,3).map(x=>x[0]).join(' '));
   ")
 else
+  # 手动指定时不限制（10 校文件结构都在，运营手动跑 ANU/RMIT/UTS/UWA 仍然能跑）
   SCHOOLS=$SCHOOL
 fi
 ```
+
+**🚨 池子规则铁律**（2026-04-24 用户怒了之后立的）：
+
+| 池子 | 学校 | scheduled | 手动 `/uni-news-poster $DATE $SCHOOL` |
+|---|---|---|---|
+| 核心 6 | UQ / UMelb / UNSW / USYD / Monash / Adelaide | ✅ 每天 3 校轮换 | ✅ |
+| 边缘 4 | ANU / RMIT / UTS / UWA | ❌ **永远不跑** | ✅（运营手动） |
+
+**Why**：用户的发布渠道（小红书 6 个学校账号 + 公众号 6 个）只覆盖核心 6 校。跑边缘 4 校 = 内容做出来没地方发 = 浪费 API + 浪费 token。
+
+任何修改这个 skill 时，**禁止**：
+- 把池子写成 10 校 / "全部学校"
+- 在 schedule 路径里加 ANU/RMIT/UTS/UWA 选项
+- 在自动逻辑里"轮换"/"周日跑边缘校" —— 这条规则之前在 memory 里是错的，2026-04-24 已纠正
 
 ### Step 1. 为每校搜 2-3 轮真实新闻（并发）
 
