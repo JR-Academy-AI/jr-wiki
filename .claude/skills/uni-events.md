@@ -1,185 +1,144 @@
 ---
 name: uni-events
-description: "为 UMelb / UNSW / UQ / USYD / Adelaide / Monash 6 所澳洲大学抓当周学生活动（讲座/networking/O-Week/免费活动），筛选适合中国留学生参与的整理成小红书草稿 + 敏感词扫描，产 events/{DATE}.html（6 校并排）+ events/{DATE}-covers.html（小红书封面集）+ 更新 events/index.html timeline。Use when user wants to produce daily University events materials for Xiaohongshu — the 6 schools are fixed (墨大/UNSW/UQ/USYD/Adelaide/Monash)."
-argument-hint: "[YYYY-MM-DD 可选，默认今天 AEST]"
-sync-source: "xhs-review@1.0 / uni-news-poster (jr-wiki)"
+description: "6 校下周活动预告。**新架构（2026-04-24 起）**：周度频率（每周日跑一次，覆盖下周 Mon-Sun），agent 只写 src/data/uni-events/{下周一 DATE}.json，HTML 由 `bun run build:uni-events` pipeline 渲染。6 校固定：墨大 UMelb / UNSW / UQ / USYD / Adelaide / Monash。设计目标：活动发布频率低，每天跑空耗 API，改为周度预告更有价值。"
+argument-hint: "[YYYY-MM-DD 可选 · 下周一的日期 · 默认本周日算出的下周一 AEST]"
 ---
 
-# /uni-events — 6 校每日校园活动 · 小红书草稿生成器
+# /uni-events — 6 校下周活动预告（2026-04-24 重构）
 
-把当周 6 所澳洲大学（**墨大 UMelb / UNSW / UQ / USYD / Adelaide / Monash** 固定这 6 所）的学生活动抓出来，产出到：
+## 🚨 为什么改周度
 
-```
-src/static/uni-news-social/events/
-├── {YYYY-MM-DD}.html          # 6 校并排（events-list + xhs-draft + 敏感词过检）
-├── {YYYY-MM-DD}-covers.html   # 6 张小红书封面 PNG（html2canvas 下载）
-└── index.html                 # 首页 timeline 插入新条目
-```
+- 校园活动发布频率**远低于每天**，每天跑 6 校搜索常常返回"本周无公开活动"或重复同一批事件
+- 老版本 daily 跑下来 agent 写 ~80KB HTML，既耗 API 又没产出价值
+- 改成**每周日跑一次**（AEST 周日 09:00 左右），产出**下周 Mon-Sun** 的活动预告
+- 内容角度从"今天有什么"改成"下周要准备什么"，更符合运营节奏
 
-**为什么只做 6 所**：这 6 所是运营指定的优先校（QLD/VIC/NSW/SA 主力），其他 4 所（ANU/RMIT/UTS/UWA）活动密度低、小红书受众稀，活动线不跑，只走 `/uni-news-poster` 的新闻轮换（周日）。Adelaide / Monash 当周活动条数可能比 UMelb/UNSW 少，允许某校 1-2 条或写 placeholder "本周无公开活动"。
+## 🏗 架构
 
-**scope 底线**：活动只做小红书一个渠道，不做公众号发稿页。
+**agent 只写**：`src/data/uni-events/{下周一 DATE}.json`（~8-10 KB，按 `_schemas/uni-events.schema.json`）
+
+**pipeline 产**（`bun run build:uni-events {下周一 DATE}`）:
+- `src/static/uni-news-social/events/{下周一 DATE}.html`（6 校并排预告 + xhsDraft）
+- `src/static/uni-news-social/events/{下周一 DATE}-covers.html`（6 张小红书封面）
+
+**禁止 agent 碰**：HTML / CSS / html2canvas —— 全部 pipeline 处理。
 
 ## 🛠 执行步骤
 
-### Step 0. 日期 + 去重
+### Step 0. 算下周一日期 + 去重（AEST 强制）
 
 ```bash
-# ⚠️ 必须 AEST，不是 UTC
-DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
+# 当前日期（AEST）
+TODAY=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
 
-# 去重：当日已产 → 退出
-if [ -f "src/static/uni-news-social/events/${DATE}.html" ]; then
-  echo "✅ ${DATE} events 已产，退出"
+# 算下周一：TODAY 起最近的下周一
+# 例：今天周日 04-26 → 下周一 04-27；今天周三 04-22 → 下周一 04-27
+DATE=$(TZ='Australia/Sydney' node -e "
+  const today = new Date('$TODAY');
+  const dow = today.getDay();  // 0=Sun, 1=Mon, ..., 6=Sat
+  const daysToNextMon = (8 - dow) % 7 || 7;
+  today.setDate(today.getDate() + daysToNextMon);
+  console.log(today.toISOString().slice(0,10));
+")
+
+# 去重
+if [ -f "src/data/uni-events/${DATE}.json" ] && [[ ! "$*" =~ --force ]]; then
+  echo "✅ ${DATE}（下周一）JSON 已产，跳过"
   exit 0
 fi
 ```
 
-### Step 1. 抓 6 校当周活动
+### Step 1. 6 校下周活动搜索（并发 6-12 次 WebSearch）
 
-对 UMelb / UNSW / UQ / USYD / Adelaide / Monash **每校跑 2-3 轮 WebSearch + WebFetch**，目标是抓当周（DATE + 未来 7 天内）的 **3-4 条硬活动**（Adelaide / Monash 允许 1-2 条）。
+对 **UMelb / UNSW / UQ / USYD / Adelaide / Monash** 6 校，每校搜下周（DATE ~ DATE+6）的**硬活动**（讲座 / networking / market / live music / info session / exhibition）：
 
-每校优先搜索的入口：
-
-| 学校 | 官方活动入口 |
+| 校 | 官方入口 |
 |---|---|
 | UMelb | `events.unimelb.edu.au/events`, `umsu.unimelb.edu.au/events` |
-| UNSW | `roundhouse.org.au/whats-on`, `student.unsw.edu.au/events`, `arc.unsw.edu.au/whats-on` |
-| UQ | `uq.edu.au/events`, `uqu.com.au/events`, `uqunion.com.au` |
-| USYD | `whatson.sydney.edu.au`, `mannings.com.au`, `vergegallery.com` |
-| Adelaide | `set.adelaide.edu.au/events`, `auu.org.au/events`, `adelaide.edu.au/events` |
-| Monash | `monash.edu/events`, `monsu.org/whats-on`, `musa.monash.edu/events` |
+| UNSW | `arc.unsw.edu.au/roundhouse/whats-on`, `student.unsw.edu.au/events` |
+| UQ | `uqu.com.au/events`, `life.uq.edu.au/events` |
+| USYD | `whatson.sydney.edu.au`, `usu.edu.au/events` |
+| Adelaide | `adelaide.edu.au/student/news/events`, `auu.org.au/events` |
+| Monash | `monash.edu/news/events`, `monashclubs.org/Events/Weekly-Calendar` |
 
-**筛选标准（全部满足才选）**:
-- ✅ 日期在 `{DATE}` ~ `{DATE + 7 天}` 内
-- ✅ 对留学生友好：免费 / 开放 / 无 member 限制（或会员可现场加入）
-- ✅ 有明确时间（Week 几 / HH:mm）和地点
-- ✅ 类型偏好：networking / social / market / live music / info session / exhibition / free food
-- ❌ 不选：内部考试、博士答辩、仅限教职工、收费 >AUD 30
+**筛选标准**：
+- ✅ 日期在下周 `DATE ~ DATE+6` 内
+- ✅ 对留学生友好（免费 / 公开 / 无 member 限制）
+- ✅ 有明确时间 + 地点
+- ❌ 不选：员工内部活动、博士答辩、收费 >AUD 30
 
-### Step 2. 产 `events/{DATE}.html`
+**容忍度**：每校 1-4 条活动。真没活动 → `events: []` + xhsDraft 写"本周校园比较静音 + 推荐自学 / 长周末安排"等 context 型草稿。
 
-从 `events/_template.html` 复制，替换所有 `{{...}}` 占位符：
+### Step 2. 写 `src/data/uni-events/{下周一 DATE}.json`（**唯一产出**）
 
-| 占位符 | 说明 |
-|---|---|
-| `{{DATE}}` | 当天日期，如 `2026-04-21` |
-| `{{UMELB-EVENT-N-TITLE}}` | 每校 3 条活动（UMELB / UNSW / UQ / USYD / ADELAIDE / MONASH × N=1,2,3,4），活动标题 |
-| `{{UMELB-EVENT-N-WHEN}}` | 时间，格式 `Tue 21 Apr 12-3pm` 或 `Wed 22 Apr` |
-| `{{UMELB-EVENT-N-WHERE}}` | 地点，简短（`Roundhouse`, `Campbell Place`） |
-| `{{UMELB-EVENT-N-PRICE}}` | 价格：`Free` / `$10` 等（`Free` 会加绿色 pill） |
-| `{{UMELB-XHS-TITLE}}` | 小红书草稿标题，≤22 字，带 emoji 或 hook |
-| `{{UMELB-XHS-BODY}}` | 正文 250-400 字，第一人称，学姐/学长口吻 |
-| `{{UMELB-XHS-TAGS}}` | 7-8 个 tag：`#学校中文 #学校英文 #澳洲留学 #城市 #活动类型 #留学日常 #免费活动` |
+**严格按 `src/data/_schemas/uni-events.schema.json`**。参考示例：`src/data/uni-events/2026-04-22.json`。
 
-**每校可以少于 3 条活动**（挑到哪些就写哪些），但 XHS 草稿是必须的（即使只有 1 条活动也要写一段草稿）。如果某校当周真的没有活动，这个 school 的 events-list 放一条 placeholder "本周无公开活动，下周见"，xhs-body 不产。
+关键字段：
+- `date` = 下周一 YYYY-MM-DD
+- `schools` **必须 6 项**，code 顺序 **固定**：`umelb → unsw → uq → usyd → adelaide → monash`
+- 每校 `events` 0-4 条，`xhsDraft` 必填（即便 events 为空）
+- `intro`: 一句话周汇总（≤60 字，带重点活动或节假日提示）
 
-### Step 3. 产 `events/{DATE}-covers.html`
+**🚨 JSON 字符串里禁止嵌入 ASCII 双引号 `"`**（会破坏 JSON 结构）。需要中文引号用 `「」`，ASCII 引号用 `\"`。
 
-**参考实现**：`src/static/uni-news-social/events/2026-04-20-covers.html`（原 4 张封面 PNG，1242×1660 竖版；按同结构扩到 6 张）。
+### Step 3. 敏感词扫描 xhsDraft.body（封号红线）
 
-6 张封面，每校一张（Adelaide 底色 `#002f5f` 深蓝 + 浅蓝渐变；Monash 底色 `#006dae` 中蓝 + 浅蓝渐变），格式：
-- 顶部：学校 brand 色 cover 块（含学校 code + 中文名 + 英文名）
-- 中间：2-3 个当周活动"hook"（大字，例如 "Halfway Day 免费派对"）
-- 底部：日期 chip + "留学生周历" slogan
-- **封号红线**：不放 JR Academy / 域名 / 微信号 / 二维码
+每校 xhsDraft.body 全部过一遍，禁止出现：
+- 品牌 / 域名：`JR Academy` / `匠人学院` / `jiangren.com.au` / 任何域名 / 二维码描述
+- 引流：`加V` / `VX` / `薇信` / `关注公众号` / `私信领取`
+- 绝对化：`最` / `第一` / `唯一` / `100%`
+- 教育承诺：`包过` / `保录取` / `稳上`
+- AI 味：`首先其次最后` / `值得注意的是` / `综上所述`
 
-每张带「⬇ 下载 PNG」按钮（html2canvas 1.4.1）。
-
-### Step 4. 更新 `events/index.html` timeline
-
-在 `<!-- NEWEST-ENTRIES-ABOVE -->` 注释**下面**（也就是 timeline 最上面）插入新条目：
-
-```html
-    <a class="entry" href="./{DATE}.html">
-      <div class="date-block">
-        <div class="m">{MONTH_EN}</div>  <!-- APR, MAY, ... -->
-        <div class="d">{DD}</div>
-        <div class="y">{YYYY}</div>
-      </div>
-      <div class="content">
-        <div class="title">6 校活动 · {DATE}</div>
-        <div class="brief">{一句话汇总 6 校主打活动，≤80 字}</div>
-        <div class="schools-row"><span>UMelb</span><span>UNSW</span><span>UQ</span><span>USYD</span><span>Adelaide</span><span>Monash</span></div>
-      </div>
-      <div class="arrow">→</div>
-    </a>
-```
-
-### Step 5. 敏感词扫描 + 人性化检查
-
-6 份 xhs-body 全部过这 6 类敏感词（见 `.claude/skills/uni-news-poster.md` 章节 7），命中任一替换或删除：
-
-1. 绝对化用语（"最"、"第一"、"唯一"...）
-2. 教育承诺（"包过"、"保录取"...）
-3. 引流词（"加V"、"微信"、"私信领取"、"关注公众号"...）
-4. AI 味（"首先其次最后"、"值得注意的是"、"综上所述"...）
-5. 医疗/化妆品（本场景极少用到）
-6. 政治/金融（不碰）
-
-**人性化要求**：
-- 第一人称 + 有时间线 + 有情绪（"挺 chill"、"我发现"、"去年我在那"）
-- 段落长短参差 / emoji 1-2 个 / 结尾互动句（"评论区告诉我"）
-- 标题 ≤22 字含 emoji
-
-### Step 6. 输出说明
-
-```
-✅ 6 校校园活动 {DATE} 生成完成
-
-文件：
-- src/static/uni-news-social/events/{DATE}.html（6 校并排）
-- src/static/uni-news-social/events/{DATE}-covers.html（6 张小红书封面）
-- src/static/uni-news-social/events/index.html（timeline 插入新条目）
-
-运营操作：
-- 6 校 × 1 张封面（-covers.html 下载 PNG）
-- 6 校 × 1 篇草稿（.html 点「📋 复制全部」）
-- 配对发布到小红书 6 个账号（UMelb / UNSW / UQ / USYD / Adelaide / Monash 课代表）
-
-下一步：
-  /publish
-```
-
-## 🚨 绝对禁止
-
-1. 抓非 UMelb / UNSW / UQ / USYD / Adelaide / Monash 6 校的活动——scope 固定
-2. 产公众号发稿页（活动只做小红书）
-3. 活动时间超过 `{DATE} + 7 天`
-4. 编造活动（没真实 URL 或没官方入口验证 → 丢弃）
-5. 封面 / 文案出现 JR Academy / 域名 / 微信号 / 二维码（小红书封号）
-6. 草稿绕过敏感词扫描
-7. 改动 `src/static/uni-news-social/events/` 以外的文件
-
-## ✅ 自检 grep（每次跑完必过）
+### Step 4. 跑 pipeline + 自检
 
 ```bash
-D=src/static/uni-news-social/events
-DATE={YYYY-MM-DD}
+F=src/data/uni-events/${DATE}.json
 
-[ -f $D/${DATE}.html ]                                  || echo "❌ 缺 ${DATE}.html"
-[ -f $D/${DATE}-covers.html ]                           || echo "❌ 缺 ${DATE}-covers.html"
-grep -q "./${DATE}.html" $D/index.html                  || echo "❌ index.html timeline 没插入"
+# 1. JSON schema
+jq empty $F || exit 1
+[ "$(jq '.schools | length' $F)" = "6" ] || exit 1
+jq -r '.schools[].code' $F | paste -sd, - | grep -q "umelb,unsw,uq,usyd,adelaide,monash" || exit 1
 
-# 占位符必须全部替换
-! grep -q "{{" $D/${DATE}.html                          || echo "❌ ${DATE}.html 还有 {{占位符}} 没替换"
-! grep -q "{{" $D/${DATE}-covers.html                   || echo "❌ covers.html 还有 {{占位符}}"
+# 2. 封号红线（body + tags 合并扫）
+jq -r '.schools[].xhsDraft | (.body // "") + " " + ((.tags // []) | join(" "))' $F | \
+  grep -qiE "JR Academy|匠人学院|jiangren\.com|关注公众号|抖音号|加V|VX|薇信|保过|包过" \
+  && { echo "❌ 封号红线命中"; exit 1; } || true
 
-# 6 校 XHS body 都有内容
-for s in umelb unsw uq usyd adelaide monash; do
-  grep -q "id=\"${s}-body\"" $D/${DATE}.html            || echo "❌ $s body 缺"
-done
+# 3. pipeline 渲染
+bun run build:uni-events ${DATE} || exit 1
 
-# 敏感词黑名单（本应在 xhs-body 里扫过，最后 grep 一次兜底）
-! grep -qE '加V|微信号|保过|包过|绝对|第一|唯一' $D/${DATE}.html || echo "⚠️ ${DATE}.html 命中敏感词"
-
-# 封号红线：封面不允许出现 JR Academy / 域名 / 二维码
-! grep -qE 'JR Academy|jiangren\.com|qrcode|qr-code' $D/${DATE}-covers.html || echo "⚠️ covers.html 出现封号红线关键词"
+# 4. HTML 产出
+[ -f src/static/uni-news-social/events/${DATE}.html ] || exit 1
+[ -f src/static/uni-news-social/events/${DATE}-covers.html ] || exit 1
 ```
 
-## 📚 参考实现
+## 📋 产出清单
 
-- `.claude/skills/uni-news-poster.md`（敏感词扫描规则 / 人性化改写要求）
-- `src/static/uni-news-social/events/_template.html`（HTML 骨架 · 6 校版）
-- `src/static/uni-news-social/events/2026-04-20.html`（完整示例 · 原 4 校版，扩展时补 Adelaide / Monash 两块）
-- `src/static/uni-news-social/events/2026-04-20-covers.html`（原 4 张小红书封面示例，扩展时补 Adelaide / Monash）
+```
+src/data/uni-events/{下周一 DATE}.json  ← agent 写（~10KB）
+
+Pipeline 产：
+src/static/uni-news-social/events/{下周一 DATE}.html           ← 6 校并排预告
+src/static/uni-news-social/events/{下周一 DATE}-covers.html    ← 6 张小红书封面
+```
+
+## 🎨 xhsDraft 人性化要求
+
+每校 body 必须：
+- 第一人称 + 具体时间（"下周三 04-29 下午 5 点" > "下周某天"）
+- 段落长短参差
+- emoji 克制（1-2 个）
+- 有个人判断（"我觉得这场比上周那场更值得去因为 XX"）
+- 结尾互动（"有想一起去的评论区扣 1"）
+- 标题 ≤22 字含 emoji
+- 长周末 / 公共假日提示（ANZAC Day / Easter 等）
+
+## 🔗 参考
+
+- **Schema**: `src/data/_schemas/uni-events.schema.json`
+- **Pipeline**: `build/pipelines/uni-events.pipeline.ts`
+- **Templates**: `src/templates/uni-events/events.template.html` + `covers.template.html`
+- **Brand**: `src/data/uni-brand.v1.json`（6 校颜色，pipeline 按 code 取）
+- **最新示例**: `src/data/uni-events/2026-04-22.json`
+- **架构 PRD**: `docs/SCHEDULED_CONTENT_PLATFORM_PRD.md`

@@ -1,192 +1,122 @@
-# /ai-daily-news — 追踪当天 AI 五大热点
+---
+name: ai-daily-news
+description: "追踪当天 AI 五大热点。**新架构（2026-04-24 起）**：agent 只写 src/data/ai-daily/{DATE}.json（~15KB）+ src/content/articles/ai-daily-{DATE}.md（blog 长文），HTML 海报 + 公众号页由 `bun run build:ai-daily` pipeline 渲染。设计目标：把 agent 产出从 300KB+ HTML 压到 < 25KB，规避 Stream idle timeout。"
+argument-hint: "[YYYY-MM-DD 可选，默认今天 AEST]"
+---
 
-全网搜索当天 AI 领域最热门的 5 条新闻，生成中文文章发布到 jr-wiki。
+# /ai-daily-news — 数据驱动版（2026-04-24 重构）
 
-## 使用方法
-```
-/ai-daily-news
-/ai-daily-news 2026-04-03
-```
+## 🚨 为什么用新架构
 
-## 执行步骤
+**老架构**：agent 手写 228KB HTML（poster 库 + mp-article 全 inline style + html2canvas 代码）。routine 执行 10-20 分钟，经常撞 `Stream idle timeout`。
 
-### Step 0: 确定日期（AEST 时区，强制）
+**新架构**：
+- agent 只写 **一份 JSON**（~15KB）+ **一份 blog markdown**（~8KB）
+- HTML 由 `bun run build:ai-daily {DATE}` pipeline 生成（读 JSON → 渲染模板 → 出 poster 薄壳 + mp-article 薄壳）
+- routine 执行 3-5 分钟，基本不会 timeout
+
+**禁止 agent 碰**：HTML / inline style / poster-renderer.js / mp-inline.js / MP_INLINE_STYLES —— 这些全部由 template + pipeline 处理。
+
+## 🛠 执行步骤
+
+### Step 0. 日期（AEST 强制）
 
 ```bash
-# ⚠️ 必须用 Australia/Sydney 时区，不要用系统默认
-# Claude Code 调度器通常跑在 UTC / 美国时区
-# 裸用 date +%Y-%m-%d 会比澳洲慢一天 → schedule 误判"昨天的内容就是今天"
 DATE=${1:-$(TZ='Australia/Sydney' date +%Y-%m-%d)}
+# 去重
+if [ -f "src/data/ai-daily/${DATE}.json" ]; then
+  echo "✅ ${DATE} JSON 已产，跳过（--force 覆盖）"
+  [[ ! "$*" =~ --force ]] && exit 0
+fi
 ```
 
-下文所有 `{date}` / `{YYYY-MM-DD}` 占位符都指这个 `$DATE`（AEST 当天）。
+⚠️ 调度器跑在 UTC，**必须** TZ='Australia/Sydney'。
 
-### Step 1: 全网搜索当天 AI 新闻 + IT 资讯
-
-用 WebSearch 搜索以下关键词（至少搜 6 轮，覆盖不同角度）：
+### Step 1. 搜当天 AI 新闻（8 轮 parallel WebSearch）
 
 ```
 1. "AI news today {date}"
-2. "人工智能 今日新闻 {date}"
-3. "OpenAI OR Anthropic OR Google AI {date}"
-4. "AI startup funding {date}"
-5. "LLM model release {date}"
-6. "AI regulation policy {date}"
+2. "OpenAI OR Anthropic OR Google AI {date}"
+3. "AI startup funding {date}"
+4. "LLM model release {date}"
+5. "AI regulation policy {date}"
+6. "人工智能 今日新闻 {date}"
+7. "AWS OR Azure OR GCP certification {date}"
+8. "free IT course OR free AI course {date}"
 ```
 
-**另外每次必搜 2 类 IT 学习相关（原"每日 IT 资讯"trigger 合并进来的覆盖）**：
+优先源：TechCrunch / The Verge / Bloomberg / Reuters / 36氪 / 机器之心 / Hacker News / OpenAI Blog / Anthropic Blog。
 
-```
-7. "AWS OR Azure OR GCP OR Kubernetes certification {date}"
-   — 认证新消息 / 折扣 / 考试变动 / Databricks / Snowflake / Anthropic CCA-F / Tableau / Salesforce
-8. "free IT course OR free AI course Coursera OR edX {date}"
-   — 全球免费 IT/AI 课程（AWS Training / Microsoft Learn / Google Cloud Skills Boost 等新上线或限免）
-```
+### Step 2. 筛 Top 5（4-5 条 AI 主线 + 1-2 条 IT 认证/课程）
 
-### Step 2: 信息源优先级
+组合原则：影响力 + 新鲜度（当天或前一天）+ 实用性。去重（同一件事不同媒体算一条）。
 
-优先从这些源头抓取：
-- **英文**: TechCrunch, The Verge, Ars Technica, VentureBeat, Bloomberg, Reuters
-- **中文**: 36氪, 机器之心, 量子位, InfoQ, 极客公园
-- **社交**: X/Twitter AI 圈热门讨论, Hacker News, Reddit r/MachineLearning
-- **官方**: OpenAI Blog, Anthropic Blog, Google AI Blog, Meta AI
-- **IT 认证/课程**: AWS Training Blog, Microsoft Learn, Google Cloud Skills Boost, Coursera/edX/Udemy 限免推送, Linux Foundation (CKA/CKS)
+### Step 3. 写 `src/data/ai-daily/{DATE}.json`（主产出）
 
-### Step 3: 筛选 Top 5
+**严格按 `src/data/_schemas/ai-daily.schema.json`**。参考示例：`src/data/ai-daily/2026-04-23.json`。
 
-从搜索结果中筛选最热门的 5 条，标准：
-1. **影响力** — 影响多少人/公司
-2. **新鲜度** — 当天或前一天发生的
-3. **话题性** — 是否引发广泛讨论
-4. **实用性** — 对 JR Academy 学员是否有价值
+关键字段：
+- `summary.items` **必须 5 项**（5 条新闻预告）
+- `news` **必须 5 项**，每项：
+  - `slug` 必须 `^\d{2}-[a-z0-9-]+$` 格式
+  - `bullets` **必须正好 3 条**，`k` 必须是 `"发生了什么"` / `"为什么重要"` / `"对你的影响"` 三个枚举值之一
+  - `accent` 必须 6 位 hex
+- `mp.quickview.items` 3-10 条 HTML 字符串
+- `mp.title` 用简单直接的标题，不强制 ｜ 分割
 
-**组合原则**：5 条里留 **1-2 条**位子给 IT 认证 / 免费课程类（如 "AWS 限免 AI Practitioner 考券" / "Coursera 上线 Claude Code 官方课程 / 现在免费"）。剩下 3-4 条仍是 AI 主线大事件。如果当天确实没有 IT 认证或课程级别值得报的新闻，可以全给 AI，不硬凑。
+**🚨 JSON 字符串里禁止嵌入 ASCII 双引号 `"`**（会破坏 JSON 结构）。要用中文引号就写 `「」` 或 `『』`，需要 ASCII 引号就用 `\"` 显式转义。
 
-去重：同一件事不同媒体报道的算一条。
+### Step 4. 写 `src/content/articles/ai-daily-{DATE}.md`（/blog/ 长文）
 
-### Step 4: 生成文章
+frontmatter + 5 条新闻各 350-600 字正文。格式参考 `src/content/articles/ai-daily-2026-04-23.md`。
 
-在 `src/content/articles/` 下创建一个文件：
+### Step 5. 跑 pipeline + 自检
 
-**文件名格式**: `ai-daily-{YYYY-MM-DD}.md`
+```bash
+# 1. JSON schema 验证
+jq empty src/data/ai-daily/${DATE}.json || exit 1
+[ "$(jq '.news | length' src/data/ai-daily/${DATE}.json)" = "5" ] || exit 1
+[ "$(jq '.summary.items | length' src/data/ai-daily/${DATE}.json)" = "5" ] || exit 1
 
-**frontmatter**:
-```yaml
----
-title: "AI 日报 {YYYY-MM-DD}：{最大新闻一句话，含关键词}"
-description: "今日 AI 五大热点：{热点1}、{热点2}、{热点3}...（120 字以内）"
-publishDate: {YYYY-MM-DD}
-tags:
-  - ai-daily
-  - ai-news
-  - {当天最热关键词，如 claude, openai, llm}
-author: "JR Academy AI 日报"
-keywords: "AI新闻, AI日报, {热点关键词1}, {热点关键词2}"
----
+# 2. pipeline 渲染 HTML
+bun run build:ai-daily ${DATE} || exit 1
+
+# 3. 确认 HTML 产出
+[ -f src/static/ai-news-posters/${DATE}/index.html ] || exit 1
+[ -f src/static/ai-news-posters/${DATE}/mp-article.html ] || exit 1
 ```
 
-**正文格式**（每条新闻）:
+任一自检不过 → `exit 1`，routine 不 commit。
 
-```markdown
-## 1. {新闻标题}
+## 🎯 内容规则（Anti-AI + 深度）
 
-![{alt 描述，含关键词}]({原文 og:image URL})
+**禁词**：值得注意的是、总的来说、此外、综上所述、不可否认、至关重要、旨在、使得/使其、进行了、作为一个、与此同时
 
-**一句话**: {30 字以内概括}
-
-{2-3 段正文，包含：}
-- 发生了什么（事实）
-- 为什么重要（分析）
-- 对开发者/学员的影响（实用角度）
-
-> 来源: [{媒体名}]({原文链接})
-
----
-
-## 2. {下一条新闻}
-...
-```
-
-### 配图规则
-
-- **每条新闻必须有配图**
-- 优先级：原文 og:image > 公司官方 logo/产品截图 > Unsplash 免费图
-- 获取方式：WebFetch 读取原文 HTML，提取 `<meta property="og:image" content="...">` 的 URL
-- alt 文本必须描述图片内容并包含关键词（SEO）
-- 如果 og:image 是空的或无法访问，用 WebSearch 搜 `{关键词} site:unsplash.com` 找替代图
-
-### Step 5: 展示结果
-
-生成完成后展示：
-
-```
-📰 AI 日报 {date} 生成完成
-
-1. 🔥 {热点1标题}
-2. 📢 {热点2标题}
-3. 💰 {热点3标题}
-4. 🛠️ {热点4标题}
-5. 📊 {热点5标题}
-
-文件: src/content/articles/ai-daily-{date}.md
-官网: /blog/ai-daily-{date}
-
-下一步:
-- /preview 本地预览
-- /publish 发布到线上
-- ADMIN_TOKEN=xxx bun run sync 同步到数据库
-```
-
-## 内容规则
-
-- **禁止模版化开场**：不要写"在当今快速发展的AI领域"这种废话
-- **每条新闻必须有原文链接**：不能凭空编造
-- **用人话写**：像资深工程师在群里分享消息，不像新闻稿
-- **有观点**：不只是转述，要说清楚"这件事对你有什么影响"
-- **中文为主，技术术语保留英文**：如 LLM、GPT、Fine-tuning 不翻译
-
-## 降低 AI 率
-
-**绝对禁止的词**：值得注意的是、总的来说、此外、综上所述、不可否认、至关重要、旨在、使得/使其、进行了
-
-**用人话替换**：
-- "此外" → "还有个事"、"顺便说"、或直接另起一段
+**替换**：
+- "此外" → "还有个事"、直接换段
 - "使得" → "让"
 - "具有重要意义" → 说具体为什么重要
 - "进行了优化" → "优化了"
 
-**加人味**：
-- 长短句交替，偶尔一句话单独成段
-- 用口语："说白了"、"踩过坑的都知道"
-- 加个人判断："我觉得"、"实测下来"
-- 用具体数据代替"大量"、"显著"
-- 写完自检：发微信群自然吗？不自然就改
+**加人味**：长短句交替 / 偶尔短句单独成段 / 具体数据代替"大量""显著" / 第一人称判断
 
-## 提升内容深度
+**每条新闻深度**（至少 2 项）：技术拆解 / 行业影响 / 实操建议 / 历史对比 / 争议风险
 
-每条新闻不只是转述事实，必须加入以下至少 2 项：
+## 📋 产出清单
 
-- **技术拆解** — 这个产品/技术底层是怎么实现的
-- **行业影响** — 对哪些公司/岗位/技术栈有影响
-- **实操建议** — 读者今天就能做的具体动作
-- **历史对比** — 和之前的版本/竞品对比，进步在哪
-- **争议/风险** — 不只说好的，也说潜在问题
-
-## 示例
-
-```markdown
-## 1. Anthropic 发布 Claude 4.5 Opus，上下文窗口突破 1M tokens
-
-![Claude 4.5 Opus 发布公告](https://cdn.anthropic.com/images/claude-4-5-announcement.jpg)
-
-**一句话**: 最大上下文窗口的模型，能一次读完整个中型项目的代码。
-
-Anthropic 今天发布了 Claude 4.5 Opus，最大的升级是 1M token 的上下文窗口。
-实测下来，能一次性读入约 3 万行代码（大概一个中型 NestJS 项目的规模）。
-
-对开发者来说，最直接的影响是 Claude Code 现在能理解更大的项目上下文，
-不用再手动拆分文件喂给它。JR Academy 的 jr-academy 后端项目（约 2 万行）
-可以完整放进去。
-
-> 来源: [Anthropic Blog](https://anthropic.com/news/claude-4-5)
 ```
+src/data/ai-daily/{DATE}.json                     ← agent 产（15KB 左右）
+src/content/articles/ai-daily-{DATE}.md           ← agent 产（8KB 左右）
+
+Pipeline 产：
+src/static/ai-news-posters/{DATE}/index.html      ← 海报库薄壳
+src/static/ai-news-posters/{DATE}/mp-article.html ← 公众号发稿页
+```
+
+## 🔗 参考
+
+- **Schema**: `src/data/_schemas/ai-daily.schema.json`
+- **Pipeline**: `build/pipelines/ai-daily.pipeline.ts`
+- **Templates**: `src/templates/xhs-poster/ai-daily.template.html`, `src/templates/mp-article/ai-daily.template.html`
+- **最新示例**: `src/data/ai-daily/2026-04-23.json`
+- **架构 PRD**: `docs/SCHEDULED_CONTENT_PLATFORM_PRD.md`
