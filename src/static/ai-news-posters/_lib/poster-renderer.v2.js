@@ -442,7 +442,55 @@
     drawFooter(ctx, CX, footerY - 60, CW, d.src, articleUrl);
   }
 
-  /* =========================== 合集海报（固定高度，不做 flex） =========================== */
+  /* =========================== 合集海报（flex-height） =========================== */
+
+  // Summary item 布局常量（给 measure + draw 共享）
+  const SUMMARY_TITLE_SIZE = 44;
+  const SUMMARY_TITLE_LINEH = 1.32;
+  const SUMMARY_ITEM_PAD_Y = 26;
+  const SUMMARY_ITEM_GAP = 20;
+  const SUMMARY_ITEM_CAT_H = 42;    // 分类标签高度区
+  const SUMMARY_ITEM_MIN_H = 130;
+  const SUMMARY_ITEM_NUM_LEFT = 120; // 标题相对卡片左侧的偏移
+
+  function layoutSummaryItem(ctx, it, CW) {
+    const titleMaxW = CW - SUMMARY_ITEM_NUM_LEFT - 36;
+    const tSpec = (s, w) => `${w || 900} ${s}px ${FF_CN}`;
+    const tLaid = layoutTokens(
+      ctx, [{ text: it.t }], tSpec,
+      SUMMARY_TITLE_SIZE, SUMMARY_TITLE_LINEH, titleMaxW
+    );
+    const contentH = SUMMARY_ITEM_PAD_Y + SUMMARY_ITEM_CAT_H + 10 +
+                     tLaid.lines.length * tLaid.lineH + SUMMARY_ITEM_PAD_Y;
+    const itemH = Math.max(contentH, SUMMARY_ITEM_MIN_H);
+    return { tLaid, tSpec, titleMaxW, itemH };
+  }
+
+  function measureSummaryPoster(ctx, s) {
+    const CW = W - 2 * (OUTER + BORDER + PAD_X);
+    let y = OUTER + BORDER + PAD_Y;
+
+    // 顶部胶囊 + DIGEST label 行
+    y += 72 + 40;
+
+    // Hero DATE (fit-to-width, 预留最大 150px)
+    y += 150 + 28;
+    y += 52 + 60;    // sub 52px + 间隙
+
+    // 5 个 items（动态）
+    for (const it of s.items) {
+      const { itemH } = layoutSummaryItem(ctx, it, CW);
+      y += itemH + SUMMARY_ITEM_GAP;
+    }
+
+    // footer (分割线 + 品牌 + QR 二维码区域)
+    y += 40 + 200;
+
+    // 底部 padding
+    y += PAD_Y + BORDER + OUTER;
+
+    return Math.ceil(y);
+  }
 
   function drawSummaryPoster(ctx, s, DATE, articleUrl, H) {
     ctx.clearRect(0, 0, W, H);
@@ -455,62 +503,54 @@
     const CW = W - 2 * (OUTER + BORDER + PAD_X);
     let y = OUTER + BORDER + PAD_Y;
 
-    const dateText = DATE.replace(/-/g, '·');
-    ctx.font = `700 36px ${FF_MONO}`;
+    // 顶部小胶囊（只留最简，原日期胶囊文字已上移到 hero 位置）
+    ctx.font = `700 30px ${FF_MONO}`;
     ctx.textBaseline = 'alphabetic';
-    const dateW = ctx.measureText(dateText).width;
     ctx.fillStyle = '#ffce44';
-    roundRectPath(ctx, CX, y, dateW + 44, 72, 100);
+    roundRectPath(ctx, CX, y, 180, 64, 100);
     ctx.fill();
     ctx.strokeStyle = '#10162f';
     ctx.lineWidth = 3;
-    roundRectPath(ctx, CX + 1.5, y + 1.5, dateW + 44 - 3, 69, 100);
+    roundRectPath(ctx, CX + 1.5, y + 1.5, 177, 61, 100);
     ctx.stroke();
     ctx.fillStyle = '#10162f';
-    ctx.fillText(dateText, CX + 22, y + 50);
+    ctx.fillText('AI 日报', CX + 22, y + 44);
 
     ctx.font = `700 36px ${FF_MONO}`;
     ctx.fillStyle = '#ff5757';
     const dig = 'DIGEST';
     const digW = ctx.measureText(dig).width;
-    ctx.fillText(dig, CX + CW - digW, y + 50);
+    ctx.fillText(dig, CX + CW - digW, y + 44);
 
-    y += 72 + 40;
+    y += 64 + 48;
 
-    // Hook
-    const hookSize = 140;
-    const hookSpec = (size, w) => `${w || 900} ${size}px ${FF_DISPLAY}`;
-    const hookLaid = layoutTokens(ctx, s.hook, hookSpec, hookSize, 1.0, CW);
-    for (let li = 0; li < hookLaid.lines.length; li++) {
-      const ly = y + li * hookLaid.lineH;
-      for (const run of hookLaid.lines[li]) {
-        if (!run.hl) continue;
-        ctx.fillStyle = 'rgba(255,206,68,0.75)';
-        const uy = ly + hookSize * 0.9;
-        ctx.fillRect(CX + run.x, uy, run.width, 26);
-      }
-    }
+    // Hero DATE（代替原 hook "今天 5 条 AI 大新闻"）
+    const dateHeroText = DATE.replace(/-/g, ' · ');
+    const dateSpec = size => `900 ${size}px ${FF_DISPLAY}`;
+    const dateSize = fitText(ctx, dateHeroText, dateSpec, CW - 8, 150, 100);
+    ctx.font = dateSpec(dateSize);
     ctx.textBaseline = 'alphabetic';
-    for (let li = 0; li < hookLaid.lines.length; li++) {
-      const ly = y + li * hookLaid.lineH;
-      const baseline = ly + (hookLaid.lineH - hookSize) / 2 + hookSize * 0.82;
-      for (const run of hookLaid.lines[li]) {
-        ctx.font = `900 ${hookSize}px ${FF_DISPLAY}`;
-        ctx.fillStyle = run.hl ? '#ff5757' : '#10162f';
-        ctx.fillText(run.text, CX + run.x, baseline);
-      }
-    }
-    y += hookLaid.lines.length * hookLaid.lineH + 20;
+    ctx.fillStyle = '#10162f';
+    ctx.fillText(dateHeroText, CX, y + dateSize * 0.82);
 
-    ctx.font = `600 48px ${FF_CN}`;
+    // 日期下黄色强调条
+    const dateW = ctx.measureText(dateHeroText).width;
+    ctx.fillStyle = 'rgba(255,206,68,0.75)';
+    ctx.fillRect(CX, y + dateSize * 0.92, Math.min(dateW, CW), 22);
+    y += dateSize + 28;
+
+    // Sub line
+    ctx.font = `700 52px ${FF_CN}`;
     ctx.fillStyle = '#64748b';
-    ctx.fillText(s.sub, CX, y + 48);
-    y += 48 + 48;
+    ctx.fillText(s.sub || '一图看完 · 匠人 AI 日报', CX, y + 52);
+    y += 52 + 60;
 
-    const itemH = 140;
-    const itemGap = 20;
+    // Items（flex-height，标题不再 fitText 缩字号）
     for (let i = 0; i < s.items.length; i++) {
       const it = s.items[i];
+      const { tLaid, tSpec, itemH } = layoutSummaryItem(ctx, it, CW);
+
+      // 卡片框
       ctx.fillStyle = '#ffffff';
       roundRectPath(ctx, CX, y, CW, itemH, 20);
       ctx.fill();
@@ -519,26 +559,32 @@
       roundRectPath(ctx, CX + 2, y + 2, CW - 4, itemH - 4, 18);
       ctx.stroke();
 
-      ctx.font = `700 60px ${FF_MONO}`;
+      // 序号 01-05（垂直居中）
+      ctx.font = `700 64px ${FF_MONO}`;
       ctx.fillStyle = it.numColor || '#10162f';
       ctx.textBaseline = 'alphabetic';
-      ctx.fillText(it.num, CX + 28, y + 80);
+      ctx.fillText(it.num, CX + 26, y + itemH / 2 + 24);
 
+      // 分类标签
       ctx.font = `700 26px ${FF_MONO}`;
       ctx.fillStyle = '#3b82f6';
-      ctx.fillText(it.cat, CX + 140, y + 44);
+      ctx.fillText(it.cat, CX + SUMMARY_ITEM_NUM_LEFT, y + SUMMARY_ITEM_PAD_Y + 26);
 
-      const titleMaxW = CW - 140 - 28;
-      const tSpec = size => `900 ${size}px ${FF_CN}`;
-      const tSize = fitText(ctx, it.t, tSpec, titleMaxW, 48, 32);
-      ctx.font = tSpec(tSize);
-      ctx.fillStyle = '#10162f';
-      ctx.fillText(it.t, CX + 140, y + 44 + 32 + tSize);
+      // 标题（可多行，固定 44px 大字号）
+      drawLaidOut(
+        ctx, tLaid,
+        CX + SUMMARY_ITEM_NUM_LEFT,
+        y + SUMMARY_ITEM_PAD_Y + SUMMARY_ITEM_CAT_H + 10,
+        tSpec, '#10162f',
+        { normalWeight: 900, boldWeight: 900, hlBg: 'transparent' }
+      );
 
-      y += itemH + itemGap;
+      y += itemH + SUMMARY_ITEM_GAP;
     }
 
-    drawFooter(ctx, CX, H - OUTER - BORDER - PAD_Y - 80, CW, '📎 jiangren.com.au/blog/ai-daily', articleUrl);
+    // Footer：位置基于动态 H 反推
+    const footerY = H - OUTER - BORDER - PAD_Y - 170;
+    drawFooter(ctx, CX, footerY, CW, '📎 jiangren.com.au/blog/ai-daily', articleUrl);
   }
 
   /* =========================== Footer =========================== */
@@ -566,11 +612,11 @@
     if (src !== srcText) src = src.slice(0, -1) + '…';
     ctx.fillText(src, cx, y + 48);
 
-    ctx.font = `900 42px ${FF_CN}`;
+    ctx.font = `900 44px ${FF_CN}`;
     ctx.fillStyle = '#10162f';
-    ctx.fillText('JR ACADEMY', cx, y + 48 + 52);
-    const brandW = ctx.measureText('JR ACADEMY').width;
-    ctx.font = `900 42px ${FF_CN}`;
+    ctx.fillText('匠人学院', cx, y + 48 + 52);
+    const brandW = ctx.measureText('匠人学院').width;
+    ctx.font = `900 44px ${FF_CN}`;
     ctx.fillStyle = '#ff5757';
     ctx.fillText(' · AI 日报', cx + brandW, y + 48 + 52);
 
@@ -918,8 +964,13 @@ body {
     const heights = [];
     const shrinkLevels = [];
 
-    // SUMMARY 固定高度
-    heights.push(DEFAULT_H);
+    // SUMMARY 也走 flex
+    if (flexHeight) {
+      const required = measureSummaryPoster(mctx, SUMMARY);
+      heights.push(Math.max(required, 1400));
+    } else {
+      heights.push(DEFAULT_H);
+    }
     shrinkLevels.push(0);
 
     // 单图 NEWS 每张自动选档
