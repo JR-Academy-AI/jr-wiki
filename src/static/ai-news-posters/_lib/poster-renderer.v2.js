@@ -473,9 +473,10 @@
     // 顶部胶囊 + DIGEST label 行
     y += 72 + 40;
 
-    // Hero DATE (fit-to-width, 预留最大 150px)
-    y += 150 + 28;
-    y += 52 + 60;    // sub 52px + 间隙
+    // Hero DATE + 主标题 + sub 预留高度
+    y += 180 + 20;     // date hero 最大 180 + 间隙
+    y += 96 + 28 + 30; // headline 96 + padY*2 ~28 + 间隙
+    y += 44 + 56;      // sub 44 + 间隙
 
     // 5 个 items（动态）
     for (const it of s.items) {
@@ -524,26 +525,41 @@
 
     y += 64 + 48;
 
-    // Hero DATE（代替原 hook "今天 5 条 AI 大新闻"）
-    const dateHeroText = DATE.replace(/-/g, ' · ');
+    // Hero DATE: "4月24日" 去年份
+    const m = DATE.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    const mm = m ? parseInt(m[2], 10) : 0;
+    const dd = m ? parseInt(m[3], 10) : 0;
+    const dateHeroText = `${mm} 月 ${dd} 日`;
     const dateSpec = size => `900 ${size}px ${FF_DISPLAY}`;
-    const dateSize = fitText(ctx, dateHeroText, dateSpec, CW - 8, 150, 100);
+    const dateSize = fitText(ctx, dateHeroText, dateSpec, CW - 8, 180, 130);
     ctx.font = dateSpec(dateSize);
     ctx.textBaseline = 'alphabetic';
     ctx.fillStyle = '#10162f';
     ctx.fillText(dateHeroText, CX, y + dateSize * 0.82);
+    y += dateSize + 20;
 
-    // 日期下黄色强调条
-    const dateW = ctx.measureText(dateHeroText).width;
-    ctx.fillStyle = 'rgba(255,206,68,0.75)';
-    ctx.fillRect(CX, y + dateSize * 0.92, Math.min(dateW, CW), 22);
-    y += dateSize + 28;
+    // 主标题: "AI 五件大事"（黄底高亮块）
+    const headlineText = 'AI 五件大事';
+    const headlineSize = 96;
+    const headlinePadX = 22;
+    const headlinePadY = 14;
+    ctx.font = `900 ${headlineSize}px ${FF_CN}`;
+    const hW = ctx.measureText(headlineText).width;
+    // 黄底
+    ctx.fillStyle = '#ffce44';
+    roundRectPath(ctx, CX, y, hW + headlinePadX * 2, headlineSize + headlinePadY * 2, 12);
+    ctx.fill();
+    // 黑字
+    ctx.fillStyle = '#10162f';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText(headlineText, CX + headlinePadX, y + headlinePadY + headlineSize * 0.82);
+    y += headlineSize + headlinePadY * 2 + 30;
 
     // Sub line
-    ctx.font = `700 52px ${FF_CN}`;
+    ctx.font = `700 44px ${FF_CN}`;
     ctx.fillStyle = '#64748b';
-    ctx.fillText(s.sub || '一图看完 · 匠人 AI 日报', CX, y + 52);
-    y += 52 + 60;
+    ctx.fillText(s.sub || '一图看完 · 匠人 AI 日报', CX, y + 44);
+    y += 44 + 56;
 
     // Items（flex-height，标题不再 fitText 缩字号）
     for (let i = 0; i < s.items.length; i++) {
