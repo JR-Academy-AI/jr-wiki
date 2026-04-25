@@ -17,7 +17,7 @@ v0 的 Team 计划（$30/人/月）在 Premium 基础上加了协作功能：
 | 项目权限管理 | ❌ | ✅ |
 | 审计日志 | ❌ | ✅ |
 
-![v0 Git 集成与团队协作](https://vercel.com/_next/image?url=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Fv1%2Ffront%2Fblog%2Fintroducing-the-new-v0.png&w=1920&q=75)
+![v0 团队计划](https://vercel.com/_next/image?url=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Fv1%2Ffront%2Fblog%2Fv0-plans-for-teams.png&w=1920&q=75)
 
 创建团队：Settings → Teams → Create Team，邀请成员后项目自动共享。
 

@@ -9,7 +9,7 @@ description: "v0 使用中的常见报错、AI 生成死循环、构建失败、
 
 v0 不是每次都能一把生成正确代码。用多了会发现几类反复出现的问题，提前知道怎么修能省不少 credits。
 
-![v0 代码调试](https://vercel.com/_next/image?url=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Fv1%2Ffront%2Fblog%2Fdashboard-redesign.png&w=1920&q=75)
+![v0 代码调试](https://vercel.com/_next/image?url=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Fv1%2Ffront%2Fblog%2Fhow-we-made-v0-an-effective-coding-agent.png&w=1920&q=75)
 
 ### Module not found
 
