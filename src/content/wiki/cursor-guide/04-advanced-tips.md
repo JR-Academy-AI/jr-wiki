@@ -51,7 +51,16 @@ Cursor 已经支持更灵活的 `.cursor/rules/` 目录结构：
     testing.mdc     # 手动引用的规则（Agent 按需读取）
 ```
 
-`.mdc` 文件支持 frontmatter 指定触发条件，比如 `globs: ["**/*.tsx"]` 表示只处理 React 文件。这比单个 `.cursorrules` 灵活得多——前端规范和后端规范分开写，互不干扰。
+每个 `.mdc` 文件的 frontmatter 指定作用范围：
+
+| 类型 | 说明 |
+|------|------|
+| `always` | 每次对话都自动加载 |
+| `auto-attached` | 匹配 glob 模式时自动加载，如 `globs: ["**/*.tsx"]` |
+| `agent-requested` | Agent 根据任务需要自己决定是否读取 |
+| `manual` | 只有你用 `@rules` 手动引用时才加载 |
+
+建议每个项目 5-8 个规则文件，每个不超过 100 行。社区资源 [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) 有 React、Vue、Next.js、Python、Go 等上百个模板可以直接抄。
 
 ## MCP：给 Agent 连接外部工具
 
