@@ -77,4 +77,38 @@ export async function POST(request: Request) {
 
 ## MCP 集成
 
-v0 支持 Model Context Protocol，可连接 Stripe、Supabase 等外部服务。连接后 v0 生成代码时自动考虑已接入的服务，省去手动配置。
+v0 支持 Model Context Protocol，可连接 Stripe、Supabase 等外部服务。在聊天侧边栏点 MCP → 选择服务 → 授权，完成后 v0 生成代码时自动考虑已接入的服务。
+
+目前支持的 MCP 服务：
+
+| 服务 | 能力 |
+|------|------|
+| Supabase | 读取表结构，生成对应 CRUD |
+| Stripe | 生成支付集成代码，读取产品/价格 |
+| Neon | PostgreSQL 连接和查询 |
+| Upstash | Redis 缓存和限流 |
+
+连接 MCP 后 v0 的上下文更丰富——它知道你的数据库有哪些表、Stripe 有哪些产品，生成的代码直接对接真实数据，不再是 placeholder。
+
+## Open in IDE
+
+v0 生成的代码可以一键在本地 IDE 里打开：
+
+1. **Open in Cursor**：点右上角 Open in Cursor 按钮，自动克隆仓库并打开
+2. **Git Clone**：通过 Git 面板复制仓库地址
+
+```bash
+# 通过 Git 面板获取仓库地址后
+git clone https://github.com/你的用户名/v0-项目名.git
+cd v0-项目名
+npm install && npm run dev
+# 在 http://localhost:3000 预览
+```
+
+在 IDE 里改完代码推回 GitHub，v0 会自动同步最新代码。反过来也一样——在 v0 里改了，本地 `git pull` 就能拿到。
+
+## Quick Edit
+
+不需要 AI 介入的小修改，直接在 Code 编辑器里手动改：切换到 Code 标签，找到文件，直接编辑，保存后 Preview 实时刷新。这些改动也会记入版本历史。
+
+Quick Edit 适合改文案、调常量、修 import 路径这种不需要 AI 动脑的操作，而且不消耗 credits。
