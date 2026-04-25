@@ -1,0 +1,9 @@
+title: "Cursor AI IDE 进阶指南"
+description: "从入门到精通 Cursor：Agent Mode 自主编程、Composer 多文件协作、.cursorrules 项目规则、MCP 集成、Background Agent、Tab 补全调优、定价与选型"
+tags:
+  - cursor
+  - ai-coding
+  - vibe-coding
+  - ide
+  - agent-mode
+order: 11
