@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-04-27",
+  "intro": "下周（4/27-5/3）6 校预告｜墨大 Halfway Day · USYD 三连免费场 · Adelaide AUMO 音乐会周六",
+  "schools": [
+    {
+      "code": "umelb",
+      "events": [
+        {
+          "title": "Tofu 星期二 · UMSU Enviro 免费植物餐",
+          "time": "周二 4/28 上午 11:30-下午 2:00",
+          "location": "Campus Canteen · Parkville 及 Southbank 校区",
+          "price": "免费",
+          "category": "社交",
+          "url": "https://umsu.unimelb.edu.au/things-to-do/events/"
+        },
+        {
+          "title": "Halfway Day · 学期半程放松日",
+          "time": "本周内（4/27-5/1）全天",
+          "location": "Market Hall · Parkville",
+          "price": "免费",
+          "category": "社交",
+          "url": "https://students.unimelb.edu.au/student-life/discover-unimelb/events/2026/halfway-day"
+        },
+        {
+          "title": "UMSU 学生自讲讲座之夜 · Week 9",
+          "time": "本周内（具体日期查 UMSU 日历）",
+          "location": "Parkville 校区",
+          "price": "免费",
+          "category": "学术",
+          "url": "https://umsu.unimelb.edu.au/things-to-do/events/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "墨大下周｜学期半程到了怎么玩",
+        "body": "下周是墨大 Semester 1 Week 9，学期过了一半。UMSU 的 Halfway Day 在 Market Hall 举办，有手工艺活动、感官体验区和奖品，适合换换脑子。周二 11:30 在 Parkville 和 Southbank 的 Campus Canteen 还有 UMSU Enviro 的 Tofu Tuesdays，带自己的碗就能免费拿一份植物餐，挺实在的。\n\nWeek 9 还有每学期固定的学生自讲讲座之夜，任何人都可以上去说一个 15 分钟的 talk，也可以去听。去年有人讲了自制发酵食品的全流程，还有人讲了独立游戏开发踩过的坑，话题跨度很大，现场氛围比一般学术讲座轻松很多。\n\n期中压力集中的阶段，两个活动都是很好的出口，不用一整周都对着 Library level 3 的桌子。",
+        "tags": ["#墨尔本大学", "#UMelb", "#澳洲留学", "#墨尔本", "#校园活动", "#留学日常", "#Halfway"]
+      }
+    },
+    {
+      "code": "unsw",
+      "events": [
+        {
+          "title": "Roundhouse Beer Garden 周三原声演出",
+          "time": "周三 4/29 下午（每周固定场）",
+          "location": "Roundhouse Beer Garden · Kensington",
+          "price": "免费",
+          "category": "现场演出",
+          "url": "https://www.arc.unsw.edu.au/roundhouse"
+        },
+        {
+          "title": "Roundhouse Beer Garden 周四现场乐队",
+          "time": "周四 4/30 下午（每周固定场）",
+          "location": "Roundhouse Beer Garden · Kensington",
+          "price": "免费",
+          "category": "现场演出",
+          "url": "https://www.arc.unsw.edu.au/roundhouse"
+        },
+        {
+          "title": "Roundhouse Beer Garden 周五 DJ",
+          "time": "周五 5/1 下午（每周固定场）",
+          "location": "Roundhouse Beer Garden · Kensington",
+          "price": "免费",
+          "category": "现场演出",
+          "url": "https://www.arc.unsw.edu.au/roundhouse"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UNSW 下周｜Roundhouse 三天有现场",
+        "body": "下周 UNSW 的 Roundhouse Beer Garden 有三天连续的免费现场：周三原声弹唱，周四乐队演出，周五 DJ。这是 Arc 每周固定安排，不用报名，走进去就能听。\n\n三天里我最推周三，氛围比较 chill，表演者基本是 UNSW 学生，有时候弹原创的，旁边坐下来聊天也不违和。周五 DJ 场人会多，想找社交感觉的话周五去更合适。\n\n这周 Roundhouse 同时有几场商业演出（Baxter Dury 周三、THRICE 周六），需要买票。Beer Garden 那几场是 Arc 组织的，完全免费，性质不同。\n\n从图书馆走到 Roundhouse 大概 5 分钟，下午有课间隙可以去坐一下。",
+        "tags": ["#UNSW", "#新南威尔士大学", "#澳洲留学", "#悉尼", "#校园活动", "#Roundhouse", "#留学日常"]
+      }
+    },
+    {
+      "code": "uq",
+      "events": [
+        {
+          "title": "UQU 周三市集",
+          "time": "周三 4/29 上午 8:00-下午 3:00",
+          "location": "Campbell Place · St Lucia 校区",
+          "price": "免费入场",
+          "category": "市集",
+          "url": "https://uqu.com.au/whats-on/"
+        },
+        {
+          "title": "Herston Hangouts 周三放松站",
+          "time": "周三 4/29 午间（每周固定）",
+          "location": "Herston 校区",
+          "price": "免费",
+          "category": "社交",
+          "url": "https://life.uq.edu.au/weekly"
+        }
+      ],
+      "xhsDraft": {
+        "title": "UQ 下周｜周三市集+Herston 放松站",
+        "body": "下周 UQ 有两个周三免费活动：St Lucia 的 Campbell Place 每周三开市集，8 点到下午 3 点，摊位有花卉、手工首饰、二手衣服和绿植，价格一般不贵，带现金方便。这个市集每周都有，但每次摊主不完全一样，值得去逛一圈。\n\nHerston 校区那边有 Herston Hangouts，是 UQ Life 每周三给这个校区学生搞的放松站，有免费饮品，有时候有小手工活动。节奏比 St Lucia 慢很多，更适合想静静聊两句的同学。\n\n如果两个校区都没课，St Lucia 市集更丰富；在 Herston 的同学就近去 Hangouts 也挺值的，不用跨校区。",
+        "tags": ["#UQ", "#昆士兰大学", "#澳洲留学", "#布里斯班", "#校园活动", "#市集", "#留学日常"]
+      }
+    },
+    {
+      "code": "usyd",
+      "events": [
+        {
+          "title": "Manning Music 周二午间现场演出",
+          "time": "周二 4/28 中午 12:00-1:00",
+          "location": "Manning Bar · Camperdown",
+          "price": "免费",
+          "category": "现场演出",
+          "url": "https://usu.edu.au/events/"
+        },
+        {
+          "title": "Hermann's Bar 周三趣味竞答之夜",
+          "time": "周三 4/29 下午 4:30-8:00",
+          "location": "Hermann's Bar · Camperdown",
+          "price": "免费",
+          "category": "社交",
+          "url": "https://usu.edu.au/events/"
+        },
+        {
+          "title": "Manning Bar 周四午间宾果游戏",
+          "time": "周四 4/30 中午 12:00-1:00",
+          "location": "Manning Bar · Camperdown",
+          "price": "免费",
+          "category": "社交",
+          "url": "https://usu.edu.au/events/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "USYD 下周｜三天免费活动连着来",
+        "body": "下周 USYD 连续三天都有免费活动：周二中午 Manning Bar 有 Manning Music，学生乐手现场演出，带午饭去边吃边听完全 OK；周三下午 4:30 Hermann's Bar 有固定竞答之夜，一个人去或者组队都行，话题涵盖娱乐、文化、时事，两到三人组队胜算更大；周四中午 Manning Bar 还有 Lunchtime Bingo，玩法简单，有小奖品。\n\n这三个都是 USU 的学期固定项目，不用报名，直接去就能参与。Hermann's 竞答下周是 Ekansh 印度文化学会主办的特别场，比常规场多一点文化氛围，感兴趣可以早点到。\n\n三个活动加起来覆盖了周二到周四的午间和傍晚，没课的间隙都能凑上。",
+        "tags": ["#USYD", "#悉尼大学", "#澳洲留学", "#悉尼", "#校园活动", "#留学日常", "#Manning"]
+      }
+    },
+    {
+      "code": "adelaide",
+      "events": [
+        {
+          "title": "AUMO 年度音乐会「Written in the Stars」",
+          "time": "周六 5/2 下午 6:00",
+          "location": "Elder Hall · Adelaide",
+          "price": "需购票",
+          "category": "现场演出",
+          "url": "https://aumo.org.au/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "阿德莱德下周｜AUMO 音乐会周六开场",
+        "body": "周六晚 6 点，Adelaide 的 Elder Hall 有今年 AUMO 年度音乐会，主题「Written in the Stars」。AUMO 是阿德大医学院的学生管弦乐团，成立于 2008 年，是全球第一个单学院学生乐团。\n\n演出形式很丰富：古典管弦乐、大乐队、宝莱坞舞蹈、合唱和现代舞都有，不是那种严肃的古典音乐厅氛围，整体偏轻松活泼。Elder Hall 是阿德大里音效最好的场地，之前去听过一次讲座，回响效果很好。\n\n演出收入部分捐给南澳囊性纤维化基金会，有公益属性。票数有限，感兴趣的早点去官网查票价和购票入口。阿德这周活动相对少，这场算是出门的好理由。",
+        "tags": ["#AdelaideUni", "#阿德莱德大学", "#澳洲留学", "#阿德莱德", "#校园活动", "#现场演出", "#留学日常"]
+      }
+    },
+    {
+      "code": "monash",
+      "events": [
+        {
+          "title": "午间音乐会 · 作曲与音乐技术研究展演",
+          "time": "周四 4/30 午间（具体时间见 MPAC 网站）",
+          "location": "MPAC · Clayton Campus",
+          "price": "免费",
+          "category": "现场演出",
+          "url": "https://www.monash.edu/performing-arts-centres/whats-on/"
+        }
+      ],
+      "xhsDraft": {
+        "title": "Monash 下周｜作曲系午间音乐会",
+        "body": "下周四 Monash 的 MPAC（表演艺术中心）有一场午间音乐会，由三年级作曲与音乐技术专业的学生现场演出，还会邀请客座艺术家参与，展演他们这学期的创作成果。\n\nMPAC 场地比较小，坐在里面离舞台近，氛围和大型音乐厅完全不同，更像一个小型展演空间。作曲系的现场经常有实验性的东西，有时候会用到电子音效、循环采样之类的，和传统古典演出风格差很多。\n\nClayton 校区这周还在继续免费汤项目（weeks 6-12 固定），中午领完汤再去 MPAC 听音乐会，时间刚好能接上。具体时间在 MPAC 官网查一下，进场不需要提前买票。",
+        "tags": ["#Monash", "#莫纳什大学", "#澳洲留学", "#墨尔本", "#校园活动", "#现场演出", "#留学日常"]
+      }
+    }
+  ]
+}
