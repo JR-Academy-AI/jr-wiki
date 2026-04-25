@@ -66,6 +66,185 @@
     return size;
   }
 
+  function tokensToText(tokens) {
+    return (tokens || []).map(t => t.text || '').join('').replace(/\s+/g, ' ').trim();
+  }
+
+  function drawPaperGrid(ctx, H) {
+    ctx.fillStyle = '#f7f3ea';
+    ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(16,22,47,0.055)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x <= W; x += 62) {
+      ctx.beginPath();
+      ctx.moveTo(x + 0.5, 0);
+      ctx.lineTo(x + 0.5, H);
+      ctx.stroke();
+    }
+    for (let y = 0; y <= H; y += 62) {
+      ctx.beginPath();
+      ctx.moveTo(0, y + 0.5);
+      ctx.lineTo(W, y + 0.5);
+      ctx.stroke();
+    }
+  }
+
+  function drawMarsHeader(ctx, DATE, label) {
+    const dateText = DATE.replace(/-/g, ' · ');
+    ctx.fillStyle = '#10131f';
+    ctx.fillRect(72, 48, 516, 42);
+    ctx.fillStyle = '#fff';
+    ctx.font = `700 22px ${FF_MONO}`;
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText(`JR ACADEMY · AI 日报 · ${label || 'TODAY'}`, 88, 77);
+    ctx.font = `900 24px ${FF_CN}`;
+    ctx.fillStyle = '#10131f';
+    ctx.fillText('匠人 AI 日历', 606, 77);
+    ctx.font = `500 20px ${FF_MONO}`;
+    ctx.fillStyle = '#565967';
+    const dw = ctx.measureText(dateText).width;
+    ctx.fillText(dateText, W - 72 - dw, 76);
+    ctx.strokeStyle = '#10131f';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(72, 110);
+    ctx.lineTo(W - 72, 110);
+    ctx.stroke();
+  }
+
+  function drawStamp(ctx, x, y, text, bg, color) {
+    ctx.fillStyle = bg || '#10131f';
+    ctx.fillRect(x, y, ctx.measureText(text).width + 30, 36);
+    ctx.fillStyle = color || '#fff';
+    ctx.font = `700 18px ${FF_MONO}`;
+    ctx.fillText(text, x + 14, y + 25);
+  }
+
+  function drawSharpBox(ctx, x, y, w, h, fill, stroke, shadow) {
+    if (shadow) {
+      ctx.fillStyle = '#10131f';
+      ctx.fillRect(x + shadow, y + shadow, w, h);
+    }
+    ctx.fillStyle = fill || '#fff';
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeStyle = stroke || '#10131f';
+    ctx.lineWidth = 3;
+    ctx.strokeRect(x + 1.5, y + 1.5, w - 3, h - 3);
+  }
+
+  function drawNewsNode(ctx, x, y, kind) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = '#10131f';
+    ctx.lineWidth = 4;
+    if (kind === 1) {
+      ctx.beginPath();
+      ctx.moveTo(10, 42); ctx.lineTo(98, 42);
+      ctx.moveTo(58, 0); ctx.lineTo(58, 84);
+      ctx.stroke();
+      ['#f7f3ea', '#ffd225', '#e5261f'].forEach((c, idx) => {
+        ctx.fillStyle = c;
+        ctx.beginPath();
+        ctx.arc(idx === 0 ? 18 : idx === 1 ? 58 : 98, 42, 18, 0, Math.PI * 2);
+        ctx.fill(); ctx.stroke();
+      });
+    } else if (kind === 2) {
+      ctx.fillStyle = '#e5261f';
+      ctx.rotate(Math.PI / 4);
+      ctx.fillRect(36, -12, 28, 28);
+      ctx.strokeRect(36, -12, 28, 28);
+      ctx.rotate(-Math.PI / 4);
+      ctx.beginPath();
+      ctx.moveTo(14, 56); ctx.lineTo(108, 56);
+      ctx.stroke();
+    } else {
+      ctx.beginPath();
+      ctx.moveTo(20, 80); ctx.lineTo(66, 6); ctx.lineTo(112, 80); ctx.closePath();
+      ctx.stroke();
+      ['#ffd225', '#f7f3ea', '#e5261f'].forEach((c, idx) => {
+        ctx.fillStyle = c;
+        ctx.beginPath();
+        ctx.arc(idx === 0 ? 20 : idx === 1 ? 66 : 112, idx === 1 ? 6 : 80, 16, 0, Math.PI * 2);
+        ctx.fill(); ctx.stroke();
+      });
+    }
+    ctx.restore();
+  }
+
+  function drawMiniLab(ctx, x, y, scale) {
+    scale = scale || 1;
+    const s = v => v * scale;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.lineWidth = s(4);
+    ctx.strokeStyle = '#10131f';
+    ctx.fillStyle = '#f7f3ea';
+    ctx.fillRect(0, s(128), s(400), s(250));
+    ctx.strokeRect(0, s(128), s(400), s(250));
+    ctx.beginPath();
+    ctx.moveTo(s(-12), s(128));
+    ctx.lineTo(s(412), s(128));
+    ctx.stroke();
+    ctx.fillStyle = '#10131f';
+    ctx.fillRect(s(190), s(235), s(80), s(143));
+    ctx.fillStyle = '#f7f3ea';
+    ctx.strokeRect(s(202), s(252), s(56), s(50));
+    ctx.strokeRect(s(202), s(312), s(56), s(50));
+    ctx.fillStyle = '#ffd225';
+    const wins = [[38, 170], [305, 170], [38, 284], [305, 284]];
+    wins.forEach(([wx, wy]) => {
+      ctx.fillRect(s(wx), s(wy), s(82), s(58));
+      ctx.strokeRect(s(wx), s(wy), s(82), s(58));
+      ctx.beginPath();
+      ctx.moveTo(s(wx + 41), s(wy));
+      ctx.lineTo(s(wx + 41), s(wy + 58));
+      ctx.moveTo(s(wx), s(wy + 29));
+      ctx.lineTo(s(wx + 82), s(wy + 29));
+      ctx.stroke();
+    });
+    ctx.fillStyle = '#10131f';
+    ctx.fillRect(s(194), s(174), s(86), s(36));
+    ctx.fillStyle = '#ffd225';
+    ctx.font = `700 ${s(18)}px ${FF_MONO}`;
+    ctx.fillText('LAB 01', s(206), s(199));
+    ctx.strokeStyle = '#10131f';
+    ctx.beginPath();
+    ctx.moveTo(s(94), s(128));
+    ctx.lineTo(s(94), s(34));
+    ctx.stroke();
+    ctx.fillStyle = '#ff2f1f';
+    ctx.beginPath();
+    ctx.arc(s(94), s(32), s(14), 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.strokeStyle = '#10131f';
+    ctx.beginPath();
+    ctx.moveTo(s(355), s(128));
+    ctx.lineTo(s(355), s(86));
+    ctx.stroke();
+    ctx.fillStyle = '#ff2f1f';
+    ctx.beginPath();
+    ctx.arc(s(405), s(70), s(42), 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.strokeStyle = '#10131f';
+    ctx.beginPath();
+    ctx.moveTo(s(370), s(92));
+    ctx.lineTo(s(432), s(52));
+    ctx.moveTo(s(360), s(70));
+    ctx.lineTo(s(450), s(70));
+    ctx.stroke();
+    ctx.fillStyle = '#ff2f1f';
+    ctx.beginPath();
+    ctx.moveTo(s(312), s(98));
+    ctx.lineTo(s(354), s(108));
+    ctx.lineTo(s(312), s(118));
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
+  }
+
   const ATOM_RE = /[A-Za-z0-9]+(?:[-'’·.][A-Za-z0-9]+)*%?|\s+|[^A-Za-z0-9\s]/g;
 
   function layoutTokens(ctx, tokens, fontSpec, size, lineHeight, maxW) {
@@ -167,6 +346,27 @@
     }
   }
 
+  function ellipsizeToWidth(ctx, text, maxW) {
+    let out = text.replace(/\s+$/g, '');
+    if (ctx.measureText(out).width <= maxW) return out;
+    while (out.length > 1 && ctx.measureText(out + '…').width > maxW) {
+      out = out.slice(0, -1);
+    }
+    return out + '…';
+  }
+
+  function clampLaidOut(ctx, laid, fontSpec, maxLines, maxW) {
+    if (!maxLines || laid.lines.length <= maxLines) return laid;
+    const lines = laid.lines.slice(0, maxLines).map(line => line.map(run => ({ ...run })));
+    const last = lines[lines.length - 1];
+    const text = last.map(run => run.text).join('');
+    ctx.font = fontSpec(laid.size, 500);
+    const clipped = ellipsizeToWidth(ctx, text, maxW);
+    last.length = 0;
+    last.push({ text: clipped, x: 0, width: ctx.measureText(clipped).width });
+    return { ...laid, lines };
+  }
+
   function drawQR(ctx, x, y, size, url) {
     if (typeof qrcode !== 'function') {
       console.error('[poster-renderer.v2] qrcode-generator 未加载');
@@ -214,34 +414,7 @@
   }
 
   function drawShell(ctx, bg, H) {
-    // 投影块
-    ctx.fillStyle = '#10162f';
-    roundRectPath(ctx, OUTER + 14, OUTER + 14, W - OUTER * 2, H - OUTER * 2, RADIUS);
-    ctx.fill();
-
-    const grad = ctx.createLinearGradient(0, OUTER, 0, H - OUTER);
-    grad.addColorStop(0, bg.top);
-    grad.addColorStop(0.5, bg.mid);
-    grad.addColorStop(1, bg.bot);
-    ctx.fillStyle = grad;
-    roundRectPath(ctx, OUTER, OUTER, W - OUTER * 2, H - OUTER * 2, RADIUS);
-    ctx.fill();
-
-    if (bg.topRight) {
-      const rg = ctx.createRadialGradient(W - OUTER - 80, OUTER + 80, 0, W - OUTER - 80, OUTER + 80, 520);
-      rg.addColorStop(0, bg.topRight);
-      rg.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.fillStyle = rg;
-      roundRectPath(ctx, OUTER, OUTER, W - OUTER * 2, H - OUTER * 2, RADIUS);
-      ctx.fill();
-    }
-
-    ctx.strokeStyle = '#10162f';
-    ctx.lineWidth = BORDER;
-    roundRectPath(ctx, OUTER + BORDER / 2, OUTER + BORDER / 2, W - OUTER * 2 - BORDER, H - OUTER * 2 - BORDER, RADIUS - 2);
-    ctx.stroke();
-
-    drawDotDecor(ctx, W - OUTER - 340, OUTER + 20, 320, 320);
+    drawPaperGrid(ctx, H);
   }
 
   /* =========================== 测量（dry-run） =========================== */
@@ -251,6 +424,7 @@
    * 用来选 flex-height 档位
    */
   function measureSinglePoster(ctx, d, shrinkLevel) {
+    if (d && d.idx) return 2100;
     shrinkLevel = shrinkLevel || 0;
     const CW = W - 2 * (OUTER + BORDER + PAD_X);
     let y = OUTER + BORDER + PAD_Y;
@@ -312,134 +486,98 @@
     ctx.clearRect(0, 0, W, H);
     drawShell(ctx, d.bg, H);
 
-    const CX = OUTER + BORDER + PAD_X;
-    const CW = W - 2 * (OUTER + BORDER + PAD_X);
-    let y = OUTER + BORDER + PAD_Y;
+    drawMarsHeader(ctx, DATE, `NEWS ${d.idx || '01'}`);
 
-    // 顶部：日期胶囊 + idx
-    const dateText = DATE.replace(/-/g, '·');
-    ctx.font = `700 36px ${FF_MONO}`;
+    const CX = 72;
+    const CW = W - 144;
+    let y = 146;
+
+    drawSharpBox(ctx, CX, y, 244, 54, '#ffd225', '#10131f', 6);
+    ctx.font = `900 24px ${FF_CN}`;
+    ctx.fillStyle = '#10131f';
     ctx.textBaseline = 'alphabetic';
-    const dateW = ctx.measureText(dateText).width;
-    const dateChipW = dateW + 44;
-    const dateChipH = 72;
-    ctx.fillStyle = '#ffce44';
-    roundRectPath(ctx, CX, y, dateChipW, dateChipH, 100);
-    ctx.fill();
-    ctx.strokeStyle = '#10162f';
-    ctx.lineWidth = 3;
-    roundRectPath(ctx, CX + 1.5, y + 1.5, dateChipW - 3, dateChipH - 3, 100);
-    ctx.stroke();
-    ctx.fillStyle = '#10162f';
-    ctx.fillText(dateText, CX + 22, y + dateChipH / 2 + 36 * 0.35);
+    ctx.fillText(d.catText || 'AI 新闻', CX + 22, y + 36);
+    drawSharpBox(ctx, W - 286, y, 214, 54, '#f7f3ea', '#10131f', 0);
+    ctx.font = `700 22px ${FF_MONO}`;
+    ctx.fillStyle = '#e5261f';
+    ctx.fillText('★', W - 258, y + 35);
+    ctx.fillStyle = '#10131f';
+    ctx.fillText(`${d.idx} / 05`, W - 226, y + 35);
 
-    ctx.font = `700 44px ${FF_MONO}`;
-    const idxW = ctx.measureText(d.idx).width;
-    ctx.font = `700 32px ${FF_MONO}`;
-    const totalW = ctx.measureText(' / 05').width;
-    const idxRightX = CX + CW;
-    ctx.fillStyle = '#10162f';
-    ctx.font = `700 44px ${FF_MONO}`;
-    ctx.fillText(d.idx, idxRightX - idxW - totalW, y + 44 + 12);
-    ctx.fillStyle = '#64748b';
-    ctx.font = `700 32px ${FF_MONO}`;
-    ctx.fillText(' / 05', idxRightX - totalW, y + 44 + 12);
-
-    y += dateChipH + 28;
-
-    // Category
-    ctx.fillStyle = d.accent;
-    ctx.beginPath();
-    ctx.arc(CX + 10, y + 22, 10, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = d.accent + '30';
-    ctx.beginPath();
-    ctx.arc(CX + 10, y + 22, 18, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = '#10162f';
-    ctx.font = `700 32px ${FF_CN}`;
-    ctx.fillText(d.catText, CX + 40, y + 34);
-    y += 50 + 24;
-
-    // Title (with shrink support)
-    const titleSize = Math.max(48, (d.titleSize || 82) - shrinkLevel * 8);
+    y += 104;
+    ctx.font = `900 72px ${FF_MONO}`;
+    ctx.fillStyle = '#e5261f';
+    ctx.fillText(d.idx, CX, y + 6);
+    ctx.font = `900 60px ${FF_CN}`;
+    ctx.fillStyle = '#10131f';
+    const titlePlain = tokensToText(d.title);
     const titleSpec = (s, w) => `${w || 900} ${s}px ${FF_CN}`;
-    const titleLaid = layoutTokens(ctx, d.title, titleSpec, titleSize, 1.12, CW);
-    drawLaidOut(ctx, titleLaid, CX, y, titleSpec, '#10162f', {
-      hlBg: '#ffce44', hlPadX: 10, hlPadY: 6, hlRadius: 6,
-    });
-    y += titleLaid.lines.length * titleLaid.lineH + 24;
-
-    // Oneline 黄底块
-    const oneFontSize = Math.max(34, 44 - shrinkLevel * 4);
-    const onePadX = 36, onePadY = 30;
-    const oneSpec = (s, w) => `${w || 700} ${s}px ${FF_CN}`;
-    const oneLaid = layoutTokens(ctx, d.oneline, oneSpec, oneFontSize, 1.32, CW - onePadX * 2);
-    const oneH = oneLaid.lines.length * oneLaid.lineH + onePadY * 2;
-
-    ctx.fillStyle = '#10162f';
-    roundRectPath(ctx, CX + 10, y + 10, CW, oneH, 24);
-    ctx.fill();
-    ctx.fillStyle = '#ffd76a';
-    roundRectPath(ctx, CX, y, CW, oneH, 24);
-    ctx.fill();
-    ctx.strokeStyle = '#10162f';
-    ctx.lineWidth = 4;
-    roundRectPath(ctx, CX + 2, y + 2, CW - 4, oneH - 4, 22);
-    ctx.stroke();
-
-    drawLaidOut(ctx, oneLaid, CX + onePadX, y + onePadY, oneSpec, '#10162f', {
-      normalWeight: 700, boldWeight: 900, hlBg: 'transparent',
-    });
-    ctx.textBaseline = 'alphabetic';
-    for (let li = 0; li < oneLaid.lines.length; li++) {
-      const ly = y + onePadY + li * oneLaid.lineH;
-      for (const run of oneLaid.lines[li]) {
-        if (!run.bold) continue;
-        const baseline = ly + (oneLaid.lineH - oneFontSize) / 2 + oneFontSize * 0.82;
-        ctx.font = `900 ${oneFontSize}px ${FF_CN}`;
-        ctx.fillStyle = '#ff5757';
-        ctx.fillText(run.text, CX + onePadX + run.x, baseline);
-      }
+    let titleSize = 60;
+    const titleMaxW = CW - 310;
+    let titleLaid = layoutTokens(ctx, [{ text: titlePlain }], titleSpec, titleSize, 1.12, titleMaxW);
+    while (titleLaid.lines.length > 3 && titleSize > 52) {
+      titleSize -= 4;
+      titleLaid = layoutTokens(ctx, [{ text: titlePlain }], titleSpec, titleSize, 1.12, titleMaxW);
     }
+    titleLaid = clampLaidOut(ctx, titleLaid, titleSpec, 3, titleMaxW);
+    drawLaidOut(ctx, titleLaid, CX + 104, y - 62, titleSpec, '#10131f', {
+      hlBg: 'transparent',
+      normalWeight: 900,
+    });
+    y += Math.max(76, titleLaid.lines.length * titleLaid.lineH - 4);
 
-    y += oneH + 28;
+    ctx.strokeStyle = 'rgba(16,19,31,0.22)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(CX, y + 26);
+    ctx.lineTo(CX + CW, y + 26);
+    ctx.stroke();
+    y += 74;
 
-    // 3 bullets
-    const bulletKeySize = 26;
-    const bulletValSize = Math.max(26, 34 - shrinkLevel * 4);
-    const bulletPad = 22;
+    ctx.fillStyle = '#e5261f';
+    ctx.fillRect(CX, y - 10, 6, 82);
+    const oneSpec = (s, w) => `${w || 700} ${s}px ${FF_CN}`;
+    const oneLaid = layoutTokens(ctx, d.oneline, oneSpec, 38, 1.28, CW - 56);
+    drawLaidOut(ctx, oneLaid, CX + 28, y - 4, oneSpec, '#10131f', {
+      hlBg: '#ffd225',
+      normalWeight: 700,
+      boldWeight: 900,
+      hlRadius: 0,
+    });
+    y += Math.max(104, oneLaid.lines.length * oneLaid.lineH + 30);
 
-    for (const b of d.bullets) {
+    const sectionLabels = ['新闻事实', '为什么重要', '对你的影响'];
+    const cardGap = 20;
+    const maxCardBottom = H - 260;
+    const available = maxCardBottom - y;
+    const cardH = Math.max(260, Math.floor((available - cardGap * 2) / 3));
+    const bulletValSize = Math.max(28, Math.min(34, 36 - shrinkLevel * 2));
+
+    for (let i = 0; i < d.bullets.length; i++) {
+      const b = d.bullets[i];
+      const fill = i === 1 ? '#ffd225' : '#f7f3ea';
+      drawSharpBox(ctx, CX, y, CW, cardH, fill, '#10131f', 8);
+      drawStamp(ctx, CX + 28, y + 34, `AI NEWS · ${String(i + 1).padStart(2, '0')}`, '#10131f', '#fff');
+
+      ctx.font = `900 42px ${FF_CN}`;
+      ctx.fillStyle = '#10131f';
+      ctx.fillText(sectionLabels[i] || b.k, CX + 28, y + 112);
+
       const valSpec = (s, w) => `${w || 500} ${s}px ${FF_CN}`;
-      ctx.font = valSpec(bulletValSize);
-      const valLaid = layoutTokens(ctx, [{ text: b.v }], valSpec, bulletValSize, 1.32, CW - bulletPad * 2 - 8);
-      const bulletH = bulletPad * 2 + bulletKeySize + 10 + valLaid.lines.length * valLaid.lineH;
-
-      const bgGrad = ctx.createLinearGradient(0, y, 0, y + bulletH);
-      bgGrad.addColorStop(0, 'rgba(255,241,231,0.95)');
-      bgGrad.addColorStop(1, 'rgba(255,255,255,0.98)');
-      ctx.fillStyle = bgGrad;
-      roundRectPath(ctx, CX, y, CW, bulletH, 16);
-      ctx.fill();
-      ctx.fillStyle = d.accent;
-      ctx.fillRect(CX, y, 8, bulletH);
-
-      ctx.textBaseline = 'alphabetic';
-      ctx.font = `700 ${bulletKeySize}px ${FF_MONO}`;
-      ctx.fillStyle = d.accent;
-      ctx.fillText(b.k.toUpperCase(), CX + 8 + bulletPad, y + bulletPad + bulletKeySize);
-
-      drawLaidOut(ctx, valLaid, CX + 8 + bulletPad, y + bulletPad + bulletKeySize + 10, valSpec, '#10162f', {
-        normalWeight: 500, boldWeight: 700, hlBg: 'transparent',
+      const maxTextH = cardH - 164;
+      const maxLines = Math.max(3, Math.floor(maxTextH / (bulletValSize * 1.42)));
+      const valLaidRaw = layoutTokens(ctx, [{ text: b.v }], valSpec, bulletValSize, 1.42, CW - 76);
+      const valLaid = clampLaidOut(ctx, valLaidRaw, valSpec, maxLines, CW - 76);
+      drawLaidOut(ctx, valLaid, CX + 28, y + 140, valSpec, '#262936', {
+        normalWeight: 500,
+        boldWeight: 800,
+        hlBg: 'transparent',
       });
 
-      y += bulletH + 18;
+      y += cardH + cardGap;
     }
 
-    // Footer（位置基于 canvas H 动态算）
-    const footerY = H - OUTER - BORDER - PAD_Y - 10;
-    drawFooter(ctx, CX, footerY - 60, CW, d.src, articleUrl);
+    drawFooter(ctx, CX, H - 226, CW, d.src, articleUrl);
   }
 
   /* =========================== 合集海报（flex-height） =========================== */
@@ -494,128 +632,105 @@
 
   function drawSummaryPoster(ctx, s, DATE, articleUrl, H) {
     ctx.clearRect(0, 0, W, H);
-    drawShell(ctx, {
-      topRight: 'rgba(59,130,246,0.18)',
-      top: '#ffffff', mid: '#ffffff', bot: '#fff4e7',
-    }, H);
+    drawShell(ctx, {}, H);
+    drawMarsHeader(ctx, DATE, 'TOP 5');
 
-    const CX = OUTER + BORDER + PAD_X;
-    const CW = W - 2 * (OUTER + BORDER + PAD_X);
-    let y = OUTER + BORDER + PAD_Y;
+    const CX = 72;
+    const CW = W - 144;
+    let y = 132;
+    const firstItem = s.items && s.items[0] ? s.items[0] : {};
 
-    // 顶部小胶囊（只留最简，原日期胶囊文字已上移到 hero 位置）
-    ctx.font = `700 30px ${FF_MONO}`;
-    ctx.textBaseline = 'alphabetic';
-    ctx.fillStyle = '#ffce44';
-    roundRectPath(ctx, CX, y, 180, 64, 100);
-    ctx.fill();
-    ctx.strokeStyle = '#10162f';
-    ctx.lineWidth = 3;
-    roundRectPath(ctx, CX + 1.5, y + 1.5, 177, 61, 100);
-    ctx.stroke();
-    ctx.fillStyle = '#10162f';
-    ctx.fillText('AI 日报', CX + 22, y + 44);
+    drawSharpBox(ctx, CX, y, 650, 118, '#ffd225', '#10131f', 8);
+    ctx.font = `900 28px ${FF_MONO}`;
+    ctx.fillStyle = '#10131f';
+    ctx.fillText('今日 AI 日历 · HIGHLIGHT', CX + 28, y + 44);
+    ctx.font = `900 40px ${FF_CN}`;
+    ctx.fillText('5 条新闻，按影响力排序。', CX + 28, y + 92);
 
-    ctx.font = `700 36px ${FF_MONO}`;
-    ctx.fillStyle = '#ff5757';
-    const dig = 'DIGEST';
-    const digW = ctx.measureText(dig).width;
-    ctx.fillText(dig, CX + CW - digW, y + 44);
+    drawSharpBox(ctx, W - 470, y, 398, 118, '#f7f3ea', '#10131f', 0);
+    ctx.font = `900 24px ${FF_CN}`;
+    ctx.fillStyle = '#10131f';
+    ctx.fillText('JR Academy / AI Daily', W - 442, y + 40);
+    ctx.font = `700 22px ${FF_MONO}`;
+    ctx.fillStyle = '#e5261f';
+    ctx.fillText('NEWS LIST · TOP 5', W - 442, y + 76);
+    ctx.fillStyle = '#565967';
+    ctx.fillText('MODEL · PRODUCT · MARKET', W - 442, y + 104);
 
-    y += 64 + 48;
-
-    // Hero 行：日期 + "AI 五件大事" 同行（左：黑字日期，右：黄底高亮块）
+    y += 184;
+    const titleSpec = (s, w) => `${w || 900} ${s}px ${FF_CN}`;
     const m = DATE.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-    const mm = m ? parseInt(m[2], 10) : 0;
-    const dd = m ? parseInt(m[3], 10) : 0;
-    const dateHeroText = `${mm}月${dd}日`;
-    const headlineText = 'AI 五件大事';
-    const rowGap = 28;
-    const headlinePadX = 22;
-    const headlinePadY = 14;
-    const dateSpec = sz => `900 ${sz}px ${FF_DISPLAY}`;
-    const headlineSpec = sz => `900 ${sz}px ${FF_CN}`;
+    const dateTitle = m ? `${Number(m[2])}月${Number(m[3])}日` : DATE;
+    const heroTokens = [
+      { text: `${dateTitle}\nAI 新闻榜，\n` },
+      { text: '5 条必看', hl: true },
+      { text: '。' },
+    ];
+    const heroLaid = layoutTokens(ctx, heroTokens, titleSpec, 86, 1.08, CW);
+    drawLaidOut(ctx, heroLaid, CX, y, titleSpec, '#10131f', {
+      hlBg: '#ffd225',
+      hlPadX: 10,
+      hlPadY: 4,
+      hlRadius: 0,
+      normalWeight: 900,
+    });
+    y += heroLaid.lines.length * heroLaid.lineH + 28;
 
-    // 自适应字号：同时塞下 date + gap + padX + headline + padX
-    const measureRow = (size) => {
-      ctx.font = dateSpec(size);
-      const dw = ctx.measureText(dateHeroText).width;
-      ctx.font = headlineSpec(size);
-      const hw = ctx.measureText(headlineText).width;
-      return { dw, hw, total: dw + rowGap + hw + headlinePadX * 2 };
-    };
-    let heroSize = 120;
-    let row = measureRow(heroSize);
-    while (row.total > CW - 8 && heroSize > 72) {
-      heroSize -= 4;
-      row = measureRow(heroSize);
+    ctx.font = `italic 34px Georgia, serif`;
+    ctx.fillStyle = '#777a84';
+    ctx.fillText('what changed today, why it matters, and what to watch next.', CX, y + 34);
+    y += 92;
+
+    ctx.font = `900 34px ${FF_CN}`;
+    ctx.fillStyle = '#10131f';
+    ctx.fillText(`头条：${firstItem.cat || 'AI'} 这条线最值得先看。`, CX, y);
+    y += 50;
+    ctx.fillStyle = '#ffd225';
+    ctx.fillRect(CX, y - 34, Math.min(CW - 170, 760), 46);
+    ctx.fillStyle = '#10131f';
+    ctx.font = `900 34px ${FF_CN}`;
+    const firstLaid = layoutTokens(ctx, [{ text: firstItem.t || 'AI 新闻摘要' }], (s, w) => `${w || 900} ${s}px ${FF_CN}`, 34, 1.2, CW - 180);
+    drawLaidOut(ctx, firstLaid, CX + 8, y - 34, (s, w) => `${w || 900} ${s}px ${FF_CN}`, '#10131f', {
+      hlBg: 'transparent',
+      normalWeight: 900,
+    });
+    y += firstLaid.lines.length * firstLaid.lineH + 16;
+    ctx.font = `700 32px ${FF_CN}`;
+    ctx.fillText('下面是今天 5 条 AI 新闻列表，适合发小红书 / 朋友圈 / 公众号。', CX, y);
+
+    y += 62;
+    for (let i = 0; i < 5; i++) {
+      const it = s.items[i] || {};
+      const rowH = 118;
+      const fill = i === 0 ? '#ffd225' : '#f7f3ea';
+      drawSharpBox(ctx, CX, y, CW, rowH, fill, '#10131f', i === 0 ? 8 : 0);
+      ctx.font = `900 54px ${FF_MONO}`;
+      ctx.fillStyle = it.numColor || '#10131f';
+      ctx.fillText(it.num || String(i + 1).padStart(2, '0'), CX + 28, y + 76);
+      ctx.font = `900 27px ${FF_CN}`;
+      ctx.fillStyle = '#e5261f';
+      ctx.fillText(it.cat || 'AI 新闻', CX + 118, y + 42);
+      ctx.font = `900 34px ${FF_CN}`;
+      ctx.fillStyle = '#10131f';
+      const rowSpec = (s, w) => `${w || 900} ${s}px ${FF_CN}`;
+      const laidRaw = layoutTokens(ctx, [{ text: it.t || '' }], rowSpec, 34, 1.16, CW - 160);
+      const laid = clampLaidOut(ctx, laidRaw, rowSpec, 2, CW - 160);
+      drawLaidOut(ctx, laid, CX + 118, y + 48, rowSpec, '#10131f', { hlBg: 'transparent' });
+      y += rowH + 14;
     }
 
-    const textY = y + headlinePadY + heroSize * 0.82;
-    ctx.textBaseline = 'alphabetic';
-
-    // 日期（黑字，左侧）
-    ctx.font = dateSpec(heroSize);
-    ctx.fillStyle = '#10162f';
-    ctx.fillText(dateHeroText, CX, textY);
-
-    // 黄底高亮块 + "AI 五件大事"（右侧）
-    const boxX = CX + row.dw + rowGap;
-    ctx.fillStyle = '#ffce44';
-    roundRectPath(ctx, boxX, y, row.hw + headlinePadX * 2, heroSize + headlinePadY * 2, 12);
-    ctx.fill();
-    ctx.fillStyle = '#10162f';
-    ctx.font = headlineSpec(heroSize);
-    ctx.fillText(headlineText, boxX + headlinePadX, textY);
-
-    y += heroSize + headlinePadY * 2 + 36;
-
-    // Sub line
-    ctx.font = `700 44px ${FF_CN}`;
-    ctx.fillStyle = '#64748b';
-    ctx.fillText(s.sub || '一图看完 · 匠人 AI 日报', CX, y + 44);
-    y += 44 + 56;
-
-    // Items（flex-height，标题不再 fitText 缩字号）
-    for (let i = 0; i < s.items.length; i++) {
-      const it = s.items[i];
-      const { tLaid, tSpec, itemH } = layoutSummaryItem(ctx, it, CW);
-
-      // 卡片框
-      ctx.fillStyle = '#ffffff';
-      roundRectPath(ctx, CX, y, CW, itemH, 20);
-      ctx.fill();
-      ctx.strokeStyle = '#10162f';
-      ctx.lineWidth = 4;
-      roundRectPath(ctx, CX + 2, y + 2, CW - 4, itemH - 4, 18);
-      ctx.stroke();
-
-      // 序号 01-05（垂直居中）
-      ctx.font = `700 64px ${FF_MONO}`;
-      ctx.fillStyle = it.numColor || '#10162f';
-      ctx.textBaseline = 'alphabetic';
-      ctx.fillText(it.num, CX + 26, y + itemH / 2 + 24);
-
-      // 分类标签
-      ctx.font = `700 26px ${FF_MONO}`;
-      ctx.fillStyle = '#3b82f6';
-      ctx.fillText(it.cat, CX + SUMMARY_ITEM_NUM_LEFT, y + SUMMARY_ITEM_PAD_Y + 26);
-
-      // 标题（可多行，固定 44px 大字号）
-      drawLaidOut(
-        ctx, tLaid,
-        CX + SUMMARY_ITEM_NUM_LEFT,
-        y + SUMMARY_ITEM_PAD_Y + SUMMARY_ITEM_CAT_H + 10,
-        tSpec, '#10162f',
-        { normalWeight: 900, boldWeight: 900, hlBg: 'transparent' }
-      );
-
-      y += itemH + SUMMARY_ITEM_GAP;
-    }
-
-    // Footer：位置基于动态 H 反推
-    const footerY = H - OUTER - BORDER - PAD_Y - 170;
-    drawFooter(ctx, CX, footerY, CW, '📎 jiangren.com.au/blog/ai-daily', articleUrl);
+    ctx.strokeStyle = '#10131f';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(CX, H - 82);
+    ctx.lineTo(CX + CW, H - 82);
+    ctx.stroke();
+    ctx.font = `700 20px ${FF_MONO}`;
+    ctx.fillStyle = '#565967';
+    ctx.fillText('JR ACADEMY · AI DAILY', CX, H - 34);
+    const issue = '#AI-CALENDAR · TOP 5';
+    const iw = ctx.measureText(issue).width;
+    ctx.fillText(issue, CX + CW - iw, H - 34);
   }
 
   /* =========================== Footer =========================== */
