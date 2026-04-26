@@ -94,9 +94,9 @@
         },
         "items": {
           "type": "array",
-          "minItems": 5,
-          "maxItems": 5,
-          "description": "5 summary items shown on the P0 digest poster",
+          "minItems": 3,
+          "maxItems": 7,
+          "description": "3-7 summary items shown on the P0 digest poster (5 is ideal but pipeline tolerates 3-7)",
           "items": {
             "type": "object",
             "required": ["num", "cat", "t"],
@@ -113,9 +113,9 @@
     },
     "news": {
       "type": "array",
-      "minItems": 5,
-      "maxItems": 5,
-      "description": "5 news stories, rendered as P1-P5 single-image posters",
+      "minItems": 3,
+      "maxItems": 7,
+      "description": "3-7 news stories (5 is ideal), rendered as P1..PN single-image posters",
       "items": { "$ref": "#/definitions/newsItem" }
     }
   },
@@ -192,7 +192,7 @@
             "properties": {
               "k": {
                 "type": "string",
-                "enum": ["发生了什么", "为什么重要", "对你的影响"]
+                "description": "Bullet label. Conventionally one of: 发生了什么 / 为什么重要 / 对你的影响 — but pipeline accepts any short string"
               },
               "v": { "type": "string", "minLength": 20, "maxLength": 200 }
             }

@@ -86,8 +86,8 @@ function validate(data: unknown, file: string): asserts data is AiDailyData {
 		throw new Error(`${file}: invalid or missing "date"`);
 	}
 	if (!d.summary || typeof d.summary !== 'object') throw new Error(`${file}: missing "summary"`);
-	if (!Array.isArray(d.news) || d.news.length !== 5) {
-		throw new Error(`${file}: "news" must have exactly 5 items`);
+	if (!Array.isArray(d.news) || d.news.length < 3 || d.news.length > 7) {
+		throw new Error(`${file}: "news" must have 3-7 items (got ${Array.isArray(d.news) ? d.news.length : 'non-array'})`);
 	}
 }
 
