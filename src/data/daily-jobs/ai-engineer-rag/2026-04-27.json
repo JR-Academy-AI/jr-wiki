@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-04-27",
+  "cohort": "AU",
+  "generatedAt": "2026-04-27T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK returned 403; sources: au.linkedin.com/jobs, recruitment.macquarie.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Software Engineer - AI Enablement",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "recently posted",
+      "url": "https://recruitment.macquarie.com/en_US/careers/JobDetail/Software-Engineer-AI-Enablement/19632",
+      "why": "Macquarie T1 投资银行，AI Enablement 团队专门构建 Agentic AI 生态系统，技术栈包含 LLMOps、Agentic pipeline 和生产级 backend 系统。RAG Bootcamp Phase 2–3（RAG 系统架构 + LangChain + vector DB 设计）的核心输出直接对口本岗位职责（端到端 RAG pipeline + AI workflow 自动化）。金融科技 AI 方向，Macquarie 澳洲市场薪资竞争力强。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "2027 CommBank & Bankwest Graduate Campaign",
+      "company": "Commonwealth Bank (CBA)",
+      "location": "Sydney, NSW",
+      "posted": "recently posted (job ID 4392356699, very fresh)",
+      "url": "https://au.linkedin.com/jobs/view/2027-commbank-bankwest-graduate-campaign-at-commonwealth-bank-4392356699",
+      "why": "CBA Big 4 银行，全球 AI 成熟度 APAC 排名第一（2025 Evident AI Index）。2027 Graduate Campaign Technology 方向涵盖 AI 工程与数据轮转，Bootcamp Phase 1–2（RAG fundamentals + LLM API pipeline）完成后有资格申请；CBA 90 亿澳元 AI 专项投资意味着新 Graduate 直接进入 AI-heavy 实战项目，RAG pipeline 实操经验是技术面试的核心评估点。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别机会 · Named Graduate Program",
+      "title": "Machine Learning Engineer, 2026 PhD Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Remote, Australia / New Zealand",
+      "posted": "late 2025",
+      "url": "https://au.linkedin.com/jobs/view/machine-learning-engineer-2026-phd-graduate-australia-new-zealand-at-atlassian-4203767636",
+      "why": "Atlassian 2026 PhD Graduate ML Engineer 命名项目——AI Experience 团队核心工作包括 LLM 驱动的摘要系统、RAG pipeline 优化和 multi-agent 框架，技术图谱与 RAG Bootcamp Phase 3（RAG + Agents 综合项目）高度重叠。有研究生背景的学员直接申请；非 PhD 学员通过此职位了解 Atlassian AI 团队的评估维度（LLM eval 框架、vector retrieval 精度、agent state management），据此对齐 portfolio 中的 RAG 项目深度和文档标准。"
+    }
+  ]
+}

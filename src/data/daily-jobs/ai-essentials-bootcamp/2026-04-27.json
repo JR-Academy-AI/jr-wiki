@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-04-27",
+  "cohort": "AU",
+  "generatedAt": "2026-04-27T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK returned 403; sources: au.linkedin.com/jobs, au.prosple.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Backend Software Engineer - Gen AI, Design Generation Experience",
+      "company": "Canva",
+      "location": "Remote, ANZ",
+      "posted": "evergreen listing (actively recruiting)",
+      "url": "https://au.linkedin.com/jobs/view/backend-software-engineer-gen-ai-design-generation-experience-open-remote-across-anz-at-canva-4195840222",
+      "why": "Canva T0 独角兽，Gen AI 团队负责设计生成功能核心产品逻辑，用 Python + GenAI API 构建面向数千万用户的 AI feature（图像生成、文本设计 AI 助手）。AI Essentials Phase 3（AI Builder 项目实战）+ Phase 4（API 集成与部署）完成后，学员有足够的作品集案例满足本岗位的生产级 GenAI 工程要求。Remote ANZ 意味着无需搬迁悉尼。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "Software Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Remote, Australia / New Zealand",
+      "posted": "late 2025 · rolling applications open",
+      "url": "https://au.linkedin.com/jobs/view/software-engineer-2026-graduate-australia-new-zealand-at-atlassian-4186928211",
+      "why": "Atlassian T0 顶级科技公司，2026 Graduate 校招职位，全远程 ANZ 工作制。AI Essentials Phase 1–2（Python 工程基础 + GenAI API 工具集成）完成后即满足技术基础门槛；Atlassian 工程文化以实战项目为核心评估标准，Bootcamp 产出的 AI Builder 作品集（API-first GenAI 应用）是与应届理学生区分的差异化优势。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别机会 · Internship",
+      "title": "Summer Intern Program - Digital, Data and AI",
+      "company": "National Australia Bank (NAB)",
+      "location": "Sydney / Melbourne, NSW / VIC",
+      "posted": "2026 intake open (Nov 2026 start)",
+      "url": "https://au.prosple.com/graduate-employers/nab-australia/jobs-internships/summer-intern-program-digital-data-and-ai",
+      "why": "NAB Big 4 银行 2026 暑期实习命名项目，Digital Data & AI 专属方向，Nov 2026 入职。AI Essentials Phase 2（GenAI API + 数据处理流程）结束即达到申请门槛；实习轮转含 AI Automation 和 Digital 产品两个方向，完成后可快速转换为 NAB 正式 Graduate 录用。是 Bootcamp 结束后进入大型银行科技部门最快的正式渠道。"
+    }
+  ]
+}

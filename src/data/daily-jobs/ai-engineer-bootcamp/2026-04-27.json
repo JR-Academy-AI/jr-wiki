@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-04-27",
+  "cohort": "AU",
+  "generatedAt": "2026-04-27T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK returned 403; sources: au.linkedin.com/jobs, au.gradconnection.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Forward Deployed Engineer, GenAI, Google Cloud",
+      "company": "Google",
+      "location": "Sydney, NSW",
+      "posted": "~2 weeks ago (application closes April 30, 2026)",
+      "url": "https://www.linkedin.com/jobs/view/forward-deployed-engineer-genai-google-cloud-at-google-4387710044",
+      "why": "Google T0 品牌，GenAI 战略前沿岗位——作为客户侧 FDE 工程师，直接在客户生产环境中嵌入部署 Vertex AI、Gemini 和 RAG 解决方案。AI Engineer Bootcamp Phase 4（LLM 部署与 API 集成）+ Phase 5（Agentic pipeline 生产化）直接对应本岗位核心要求（Python、GCP、Multi-agent systems）。截止 4 月 30 日，有 GCP 项目经验的学员立刻行动。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "NAB Graduate Program 2027",
+      "company": "National Australia Bank (NAB)",
+      "location": "Sydney / Melbourne, NSW / VIC",
+      "posted": "February 14, 2026",
+      "url": "https://au.linkedin.com/jobs/view/nab-graduate-program-2027-at-nab-4373651406",
+      "why": "NAB Big 4 银行 2027 Graduate 明确招聘 Digital Data & AI 方向，轮转包含 ML 实验与 AI Enablement 项目。Bootcamp Phase 2–3（ML 基础 + LLM API 工程）完成后即达到申请门槛；提供悉尼和墨尔本双城市入职，适合全国学员。2026 年底前提交 2027 届申请。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别机会 · Internship",
+      "title": "Machine Learning Intern, 2026 Summer Australia",
+      "company": "Atlassian",
+      "location": "Remote, Australia",
+      "posted": "March 23, 2026",
+      "url": "https://au.linkedin.com/jobs/view/machine-learning-intern-2026-summer-australia-at-atlassian-4373522819",
+      "why": "Atlassian 2026 Summer ML Intern 命名项目，申请截止 5 月 1 日——AI Experience 团队在 Jira/Confluence 产品线上直接做 LLM 评估与摘要模型优化实验。Bootcamp Phase 2（LLM Prompt Evaluation + 模型调参）结束的学员具备申请条件；Atlassian T0 品牌实习简历含金量高，且全远程无需搬迁。"
+    }
+  ]
+}
