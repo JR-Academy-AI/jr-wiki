@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-04-26T11:52:02.674Z -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 日报 2026-04-26 · 公众号文章（内部）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --mp-primary: #ff5757;
+  --mp-highlight: #ffce44;
+  --mp-dark: #10162f;
+}
+</style>
+<link rel="stylesheet" href="../../_lib/mp-page.v1.css">
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div>
+      <h1>📰 AI 日报 · <span>公众号文章</span> · 2026-04-26</h1>
+      <div class="sub">左侧 375px 手机预览 · 右侧进度 + 操作。点「📋 复制富文本」后粘到公众号编辑器，图片自动抓取 re-host。</div>
+    </div>
+    <div class="acts">
+      <a class="btn" href="./">← 回海报库</a>
+      <button class="btn" id="btn-copy-html">📋 复制富文本</button>
+      <button class="btn primary" id="btn-download-all" disabled>⬇ 下载 6 张 PNG</button>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-bar">
+          <span><span class="dot"></span>mp.weixin.qq.com</span>
+          <span>375px · 预览</span>
+        </div>
+        <article class="mp" id="mp-article">
+<div class="mp-title">DeepSeek V4 / Kimi K2.6 双开源 / Cursor 估值跳 500 亿 / Adobe 数字员工 / TSMC A13 ｜AI 日报 04-26</div>
+<div class="mp-meta">
+  <span class="author">JR Academy AI 日报</span>
+  <span>·</span><span>2026-04-26</span>
+  <span>·</span><span>阅读约 10 分钟</span>
+</div>
+<div class="mp-lead">周末 AI 圈两条开源旗舰直接把局面改写：DeepSeek V4 开源放出 1.6T MoE + 1M 上下文 + KV cache 砍 90%，Kimi K2.6 同步开源、单 Agent 连续编 13 小时 / 集群 300 子 Agent 并发，国产开源第一次同时压制 GPT-5.4 和 Claude Opus 4.6。资本端 Cursor 谈 20 亿美元融资、估值跳到 500 亿，Nvidia 第一次出手押 AI 应用层。Adobe Summit 把 Experience Cloud 整体改名 CX Enterprise、推数字员工 Coworker，跑在 MCP + A2A 协议上。最后 TSMC 北美 Symposium 公布 A13 + N2U + 14-reticle CoWoS 路线图，先进封装彻底变成 AI 主战场。</div>
+<img class="mp-img" src="./poster-0.png" alt="图 1 · 合集海报" data-poster="poster-0" data-file="mp-01-summary.png">
+<div class="mp-caption">图 1 · 合集海报</div>
+<hr class="mp-divider">
+<div class="mp-hook">01 · 开源旗舰</div>
+<div class="mp-h2">DeepSeek V4 开源放出：1.6T MoE + 1M 上下文，把长上下文推理成本砍 90%</div>
+<img class="mp-img" src="./poster-1.png" alt="图 2 · 海报 01" data-poster="poster-1" data-file="mp-02-01-deepseek-v4-open-source.png">
+<div class="mp-caption">图 2 · 海报 01</div>
+<div class="mp-oneline"><strong>一句话</strong>：Pro 1.6T 总参 / 49B 激活，KV cache <strong>比 V3.2 砍 90%</strong></div>
+<p>DeepSeek 04-24 在 Hugging Face 同步放出 V4-Pro 与 V4-Flash 两个 preview 版本。Pro 是 1.6T 总参 / 49B 激活的 MoE，是目前开源世界最大权重模型；Flash 284B / 13B 激活。两个模型都吃 1M token 上下文，全部走标准 MIT 协议 —— weight 直接可下载、本地可跑、可微调，没有任何 commercial license 限制。距上一代 V3.2 只过了大约 4 个月，节奏快得可怕。</p>
+<p>真正值得读两遍的不是参数大小，是架构。V4 引入了 Hybrid Attention：在 1M 上下文条件下，V4-Pro 的单 token FLOPs 只有 V3.2 的 27%、KV cache 只有 10%；V4-Flash 更激进，FLOPs 10%、KV cache 7%。翻译成钱：之前跑 1M context 推理你需要租满血 H100 集群，现在 V4 在同样 token 量下显存占用直接砍掉 90%。MIT Tech Review 给的判断很直接：closes the gap with frontier models —— 开源模型第一次能在长上下文场景咬住 GPT-5.5 和 Claude Opus 4.6。Simon Willison 在他 blog 里测完直接说 almost on the frontier, a fraction of the price。</p>
+<p>对工程师的实操线索很清楚。第一，做 RAG / Code Review / 法律合同分析 / 长文档问答这类「上下文吃 100K+」的场景，立刻测 V4-Flash —— 单 token 推理成本是同档闭源模型的零头。第二，如果你之前在跑 Llama 3.x 或 Qwen 系列 + vLLM 自托管，本周就该把 V4 weight pull 下来对比 benchmark，企业部署 ROI 会被改写。第三，做 Agent 工作流的，1M context 意味着「工作记忆 + 工具历史 + 规划 chain」可以全塞进 prompt 不用 RAG 召回 —— Agent 设计模式接下来会朝「超长 in-context」演化。第四，押注 Anthropic / OpenAI 自研芯片的人也得重新评估 —— 当开源模型推理成本变成原来的 1/10，foundation model 公司的 API 毛利会被压得很厉害。</p>
+<div class="mp-source">来源：<a href="https://simonwillison.net/2026/Apr/24/deepseek-v4/">Simon Willison's Weblog</a> · <a href="https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/">TechCrunch</a> · <a href="https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/">MIT Technology Review</a></div>
+<hr class="mp-divider">
+<div class="mp-hook">02 · 国产开源</div>
+<div class="mp-h2">Kimi K2.6 开源登顶：13 小时连续编码 + 300 子 Agent 并发，国产 Agent 第一次咬住 Claude Code</div>
+<img class="mp-img" src="./poster-2.png" alt="图 3 · 海报 02" data-poster="poster-2" data-file="mp-03-02-kimi-k2-6-open-source.png">
+<div class="mp-caption">图 3 · 海报 02</div>
+<div class="mp-oneline"><strong>一句话</strong>：1T 总参 / 32B 激活 MoE，单任务可调度 <strong>300 个子 Agent</strong></div>
+<p>月之暗面 04-20 正式发布并开源 Kimi K2.6。模型本身是 1T 总参 / 32B 激活的 MoE 架构，统一上下文窗口 256K。它的卖点不是参数大小 —— 是 Agent 工程能力。单 Agent 模式下它能连续编码 13 小时、写或改 4000+ 行代码不停；Agent 集群模式下，它可以动态拆任务、自主生成专门的子 Agent，最多并行调度 300 个子 Agent 完成 4000 个协作步骤。在多个 benchmark 上，K2.6 是第一个在「代码 + 长程任务」两个维度同时压过 GPT-5.4 和 Claude Opus 4.6 的开源模型。</p>
+<p>和今天另一条 DeepSeek V4 放在一起看，国产开源的两条路线就清晰了。DeepSeek V4 押的是「foundation model 通吃 —— 1.6T 参数 + 1M 上下文 + 推理成本砍 90%」，走的是覆盖范围；Kimi K2.6 押的是「Agent 工程化 —— 13 小时不掉链子 + 300 子 Agent 并发」，走的是工程级可靠性。两条路线都对，但解决的是不同问题。Kimi 把模型直接做成「能接进 CI/CD pipeline 跑半天活的数字员工」，比 demo 级 Agent 高一个量级。同步动作是 K2.6 API 涨价 58%，月之暗面在赌「企业客户愿意为可靠的长程作业付钱」，这条赛道接下来 12 个月会爆发出一批 Agent-as-a-Service 产品。</p>
+<p>对工程师的实操线索：第一，做 Code Agent、自动化重构、legacy codebase 升级、跨文件大改造的人，把 K2.6 当 Claude Code 的开源平替直接测一遍 —— 自托管或者走第三方推理 API 都行。第二，做 multi-agent 编排（CrewAI / AutoGen / LangGraph 这类）的，把 orchestrator 切到 K2.6 试一下「子 Agent 并发上限」是不是真的能撑 300 路。第三，对 prompt 工程师来说要换思路 —— 之前你写一个 prompt 让模型一口气出结果，现在 K2.6 鼓励你把任务拆成「主 Agent + 子 Agent + 协作步骤图」的 graph 形式，prompt 设计开始往工作流编排靠。</p>
+<div class="mp-source">来源：<a href="https://www.ithome.com/0/941/385.htm">IT之家</a> · <a href="https://kimi-k2.org/zh/blog/24-kimi-k2-6-release">Kimi 官方博客</a> · <a href="https://www.21jingji.com/article/20260422/herald/5ac0ce6cf7d0c8062db9381f59e8862f.html">21 经济网</a></div>
+<hr class="mp-divider">
+<div class="mp-hook">03 · 融资估值</div>
+<div class="mp-h2">Cursor 谈 20 亿美元融资 / 500 亿美元估值：a16z 领投，Nvidia 第一次出手押 AI 应用层</div>
+<img class="mp-img" src="./poster-3.png" alt="图 4 · 海报 03" data-poster="poster-3" data-file="mp-04-03-cursor-2b-funding.png">
+<div class="mp-caption">图 4 · 海报 03</div>
+<div class="mp-oneline"><strong>一句话</strong>：Andreessen Horowitz 领投，<strong>Nvidia + Thrive 跟投</strong></div>
+<p>CNBC 04-19 率先披露：AI 代码 IDE 公司 Cursor 正在洽谈一轮 20 亿美元融资，对应估值 500 亿美元以上。这一轮由 Andreessen Horowitz 领投，Nvidia 和 Thrive Capital 跟投。Cursor 上一轮估值还在 250 亿美元附近，6 个月不到估值翻倍。这是 AI 应用层赛道第一次出现「单 IDE 产品估值 500 亿美元」的报价 —— 比绝大多数中型 SaaS 上市公司市值都高。</p>
+<p>为什么 Cursor 能拿到这种估值？三个原因。第一，AI Coding 是目前 LLM 应用层 ARR 增速最快的细分赛道，Cursor 的 ARR 在过去 12 个月连续 6 个季度环比 50% 以上增长，已经把 GitHub Copilot 在专业开发者群体里的份额挤掉相当一部分。第二，Cursor 已经从「IDE」演化成「Coding Agent 平台」——它的 Composer / Agent 模式直接对标 Claude Code、Codex 这类 agent 产品，护城河变厚。第三，Nvidia 这次跟投信号意义大于钱本身：Nvidia 之前只投基础模型公司（OpenAI、Anthropic、xAI、Mistral），第一次出手押 AI 应用层头部产品，等于在为下一轮 GPU 需求提前绑定关键工具客户 —— Cursor 跑在哪家云上、用谁的 GPU 推理，对 Nvidia 是真金白银的下游订单。</p>
+<p>对个人和团队的实操线索：第一，做 dev tools / IDE 集成 / 代码 SaaS 的创业者，Cursor 已经把通用 IDE 这条路跑死，下一波机会一定在「垂直行业的 Cursor」 —— 医疗代码（HL7 / FHIR）、法务条款、CAD 工程脚本、金融量化策略、SQL 数据分析师专用 IDE。第二，求职端的 signal 很强：Cursor 拿到这笔钱必然激进招人，加上 Replit Agent、Bolt、Vercel v0 这一票 AI dev tools 公司同时扩张，AI Engineer 岗位池子接下来 12 个月会持续打开。会前端 + 会用 LLM 写工具调用 + 懂 IDE 内部架构的工程师是最稀缺的组合，比纯 LLM 工程师待遇还高。第三，对个人开发者：现在不学 Cursor / Claude Code / Codex 三个里至少一个，2026 下半年简历会直接在 AI 时代落后一个身位 —— 这个工具栈已经从「可选」变成「基本素养」。</p>
+<div class="mp-source">来源：<a href="https://www.cnbc.com/2026/04/19/cursor-ai-2-billion-funding-round.html">CNBC</a></div>
+<hr class="mp-divider">
+<div class="mp-hook">04 · 企业 Agent</div>
+<div class="mp-h2">Adobe 把 Experience Cloud 改名 CX Enterprise：营销栈第一次按 Agent 优先重构</div>
+<img class="mp-img" src="./poster-4.png" alt="图 5 · 海报 04" data-poster="poster-4" data-file="mp-05-04-adobe-cx-enterprise-coworker.png">
+<div class="mp-caption">图 5 · 海报 04</div>
+<div class="mp-oneline"><strong>一句话</strong>：推 Coworker 数字员工，跑在 <strong>MCP + A2A 开放协议</strong></div>
+<p>Adobe Summit 2026 04-20 一口气甩了几个大动作。最重要的一个：Experience Cloud 这个用了十几年的产品线名字被整体改名为 CX Enterprise，同步推出 CX Enterprise Coworker —— 一个完整的 agentic AI 系统，可以跨 Adobe + AWS + Anthropic + Google Cloud + Microsoft + OpenAI 平台编排客户体验工作流，不再是「工具集合」，而是真正能监听信号、推荐 next-best-action、跨多渠道实时执行的数字员工。配套发布的还有 Engagement Intelligence（升级版决策引擎）、Journey Optimizer Loyalty（游戏化忠诚度）、CX Analytics（统一洞察）、Real-Time CDP 扩容（结构化 + 非结构化数据合并）。</p>
+<p>为什么这件事比改名重要？这是企业级 SaaS 公司第一次把整个产品线从「工具集合」彻底重构成「Agent 编排平台」。过去十年 Adobe Experience Cloud 是给营销人员手工配 journey、配规则、配 A/B 实验；现在 CX Enterprise 的核心是 Coworker：营销人员描述目标，Coworker 自己拆任务、自己跨工具执行、人留在审批节点。最关键的细节是协议选择 —— Coworker 跑在 MCP（Model Context Protocol）+ A2A（Agent-to-Agent）这两个开放协议上，意味着第三方 Agent 可以挂进来、Coworker 也可以挂出去到别人的平台。Adobe 在赌一个非常具体的位置：成为 enterprise Agent 编排的中枢平台，类似当年 Salesforce 之于 CRM。配合 Google Cloud Next 2026 上的 A2A 联盟（150+ 组织加入），MCP/A2A 这套协议正在快速变成企业 Agent 的事实标准。</p>
+<p>对工程师和团队的实操线索：第一，做营销自动化、CRM、CDP、客服系统的工程师，立刻去看 MCP 协议规范（Anthropic 维护）和 A2A 协议（Google 主推）—— 这两个协议接下来 12 个月会从「实验性 spec」变成「企业必学」，不会接 MCP 的后端工程师会被边缘化的速度比想象快。第二，写 Adobe / Salesforce / HubSpot 集成的工程师，角色会从「写 ETL 同步数据」变成「设计 Agent playbook」 —— 你的工作不再是连数据，是定义「Coworker 在什么情况下该做什么、调哪些工具、何时找人审批」。第三，新的复合岗位会爆发：prompt 工程师 + 营销/运营背景，因为得有真懂业务的人去写 Coworker 的 playbook。第四，对个人开发者，2026 下半年值得花时间做一个开源 demo —— 比如「我自己的 MCP server，把 Notion / Slack / Gmail 接出来给 Claude Code 用」，这个能力直接就能写进简历。</p>
+<div class="mp-source">来源：<a href="https://news.adobe.com/news/2026/04/adobe-redefines-custome-experience">Adobe News</a> · <a href="https://news.adobe.com/news/2026/04/adobe-unveils-cx-enterprise-coworker">Adobe Unveils CX Enterprise Coworker</a> · <a href="https://martech.org/adobe-rebrands-experience-cloud-as-cx-enterprise-goes-all-in-on-ai-agents/">MarTech</a></div>
+<hr class="mp-divider">
+<div class="mp-hook">05 · 芯片路线</div>
+<div class="mp-h2">TSMC 北美 Symposium：A13 + N2U + 14-reticle CoWoS，AI 芯片瓶颈彻底转向先进封装</div>
+<img class="mp-img" src="./poster-5.png" alt="图 6 · 海报 05" data-poster="poster-5" data-file="mp-06-05-tsmc-a13-coWoS-roadmap.png">
+<div class="mp-caption">图 6 · 海报 05</div>
+<div class="mp-oneline"><strong>一句话</strong>：14-reticle CoWoS <strong>2028 量产</strong>，可塞 10 大 die + 20 HBM</div>
+<p>TSMC 04-22 在加州 Santa Clara 开 2026 北美技术 Symposium，一次性公布了三个量级的更新。第一个是 A13 工艺：在 2025 年公布的 A14 节点基础上做 direct shrink，面积省 6%、设计规则完全后向兼容、2029 进入量产 —— 比 A14 晚一年。第二个是 N2U：基于 N2P 做 design-technology co-optimization，速度提升 3-4% 或功耗降低 8-10%、逻辑密度再涨 1.02-1.03 倍，2028 量产。第三个是先进封装路线图升级：现役 5.5-reticle CoWoS 之外，14-reticle CoWoS 提上日程 —— 单封装可以塞约 10 颗大型计算 die + 20 个 HBM 堆栈，2028 量产。同时 TSMC 董事会批准在亚利桑那 Phoenix 再购入 900 英亩土地，2029 前建成 CoWoS + 3D-IC 美国本土产能。</p>
+<p>翻译成普通话：AI 训练芯片的瓶颈早已经不是「单 die 跑多快」，而是「我能在一个封装里塞多少个 die、塞多少 HBM、互联带宽多大」。Nvidia GB200 用的是 2 颗 Blackwell die + 8 个 HBM，AMD MI400 类似量级；现在 14-reticle CoWoS 把上限直接提到 10 大 die + 20 HBM —— 等于一个封装就是一台老式服务器机架的算力密度。下一代 Nvidia / AMD / Google TPU / AWS Trainium 几乎都会跑在这个新 CoWoS 平台上，没有第二条路。同时 Phoenix 这块 900 英亩地皮意义重大 —— 之前 TSMC 美国厂主要做晶圆制造，先进封装一直留在台湾，现在把先进封装本土化等于把 Nvidia / AMD 整条 AI 供应链拉到美国境内，这是地缘政治 + 能源密集 AI 的双重组合拳。</p>
+<p>对工程师的实操线索：第一，做 ML infra、模型部署、推理优化的人，未来 2 年要习惯「单芯片就是系统」这个新范式 —— 模型并行策略（tensor parallel / expert parallel / context parallel）、KV cache 拆分、attention sharding、kernel fusion 这些技能从「研究方向」变成「工程必修」，每个 senior MLE 都得会。第二，硬件岗位的口袋会被 AI 资本重新装满 —— chip packaging engineer、advanced thermal engineer、SI/PI engineer、co-packaged optics engineer 这些之前小众的硬件岗位接下来 2-3 年会出现大幅薪资涨幅，硬件工程师转 AI infra 是一个被严重低估的窗口。第三，做 LLM serving 的人盯住 vLLM / SGLang / TensorRT-LLM 这些推理引擎对新封装的支持节奏 —— 谁先把 14-reticle CoWoS 的 NVLink 拓扑跑通，谁就拿下下一代部署市场。第四，宏观判断：AI 芯片这条供应链的真实瓶颈已经从「先进制程」转移到「先进封装 + 美国本土化产能」，押 ASML 不如开始关注 Applied Materials、Lam Research、Disco 这些封装设备厂的中长期趋势。</p>
+<div class="mp-source">来源：<a href="https://www.businesswire.com/news/home/20260422346925/en/TSMC-Debuts-A13-Technology-at-2026-North-America-Technology-Symposium">Business Wire / TSMC 官方</a> · <a href="https://www.datacenterdynamics.com/en/news/tsmc-updates-roadmap-with-three-new-process-nodes-breaks-ground-on-arizona-packaging-facility/">Data Center Dynamics</a></div>
+<hr class="mp-divider">
+<div class="mp-quickview">
+  <h3>📌 今日速览</h3>
+  <ul>
+    <li><strong>开源旗舰</strong>：DeepSeek 04-24 开源 V4-Pro（1.6T 总参 / 49B 激活）+ V4-Flash（284B / 13B），1M 上下文，KV cache 比 V3.2 砍 90%</li>
+    <li><strong>国产开源</strong>：Kimi K2.6（1T MoE / 32B 激活）开源，单 Agent 连续编码 13 小时 / 4000 行，集群可调度 300 个子 Agent</li>
+    <li><strong>融资估值</strong>：Cursor 谈 $2B 融资、估值锁 $50B，Andreessen Horowitz 领投，Nvidia 首次跟投 AI 应用层</li>
+    <li><strong>企业 Agent</strong>：Adobe Summit 把 Experience Cloud 改名 CX Enterprise，推 Coworker 数字员工，跑在 MCP + A2A 开放协议</li>
+    <li><strong>芯片路线</strong>：TSMC 北美 Symposium 公布 A13（2029 量产）+ N2U（2028）+ 14-reticle CoWoS（10 大 die + 20 HBM，2028），凤凰城再购 900 英亩</li>
+  </ul>
+</div>
+<div class="mp-cta">
+  <div class="big">🎯 想每天 9 点收到 AI 日报？</div>
+  <div class="sub">关注 JR Academy 公众号 · 回复「AI 日报」自动订阅<br>官网 jiangren.com.au/blog · 历史日报全开放</div>
+</div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h2>🎯 发稿就绪 <span class="tag">READY</span></h2>
+        <div class="render-status done" id="render-status">✅ 文章已就绪，点「📋 复制富文本」粘到公众号</div>
+        <p style="margin-top:10px">海报走同目录 <code>./poster-0.png</code> ~ <code>./poster-5.png</code>（CI 部署时 puppeteer 产出，WeChat 粘贴时自动抓取 re-host）。本地 <code>bun run render:posters</code> 手动生成。</p>
+      </div>
+
+      <div class="card">
+        <h2>📊 稿件信息 <span class="tag">META</span></h2>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="v">6700</div><div class="k">字数</div></div>
+          <div class="stat-item"><div class="v">6</div><div class="k">海报</div></div>
+          <div class="stat-item"><div class="v">5</div><div class="k">新闻</div></div>
+          <div class="stat-item"><div class="v">17</div><div class="k">分钟读</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🚀 发稿 2 步 <span class="tag">FLOW</span></h2>
+        <ol>
+          <li><strong>点「📋 复制富文本」</strong>：图片 URL 自动转成 <code>https://jr-academy-ai.github.io/...</code> 绝对地址。</li>
+          <li><strong>粘到公众号编辑器</strong>：<code>mp.weixin.qq.com</code> → <code>⌘/Ctrl+V</code> → 图文自动 re-host → 预览 → 发布。</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ 日志 <span class="tag">LOG</span></h2>
+        <div id="log"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="../../_lib/mp-inline.v1.js"></script>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：所有复制/粘贴逻辑在 ../../_lib/mp-inline.v1.js。
+ * 数据来源：src/data/ai-daily/2026-04-26.json → build/pipelines/ai-daily.pipeline.ts 生成。
+ * 请勿手改此文件。
+ * ------------------------------------------------------------------ */
+MpInline.init({
+  articleSel: '#mp-article',
+  copyBtnSel: '#btn-copy-html',
+  brand: {"primary":"#ff5757","highlight":"#ffce44","dark":"#10162f","onDark":"#ffffff"},
+  onStatus: (msg, kind) => {
+    const el = document.getElementById('render-status');
+    if (el) { el.textContent = msg; el.className = 'render-status ' + (kind || ''); }
+  },
+  onLog: (msg) => {
+    const log = document.getElementById('log');
+    if (log) log.textContent += msg + '\n';
+  },
+});
+</script>
+</body>
+</html>
