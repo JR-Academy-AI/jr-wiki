@@ -1,0 +1,60 @@
+name: Daily Jobs Sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/daily-jobs/**/*.json'
+  workflow_dispatch:
+    inputs:
+      bootcamp:
+        description: 'Bootcamp slug (optional, omit to sync all today)'
+        required: false
+      date:
+        description: 'Date YYYY-MM-DD (optional)'
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Get changed daily-jobs files
+        id: changes
+        if: github.event_name == 'push'
+        run: |
+          set -e
+          CHANGED=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'src/data/daily-jobs/**/*.json' | tr '\n' ',' | sed 's/,$//')
+          echo "files=$CHANGED" >> "$GITHUB_OUTPUT"
+          echo "Changed files: $CHANGED"
+
+      - name: Sync (push trigger — only changed files)
+        if: github.event_name == 'push' && steps.changes.outputs.files != ''
+        env:
+          JR_ADMIN_TOKEN: ${{ secrets.JR_ADMIN_TOKEN }}
+          JR_API: ${{ secrets.JR_API || 'https://api.jiangren.com.au' }}
+        run: bun run scripts/daily-jobs-sync.ts --files=${{ steps.changes.outputs.files }}
+
+      - name: Sync (manual dispatch — specific file)
+        if: github.event_name == 'workflow_dispatch' && inputs.bootcamp != '' && inputs.date != ''
+        env:
+          JR_ADMIN_TOKEN: ${{ secrets.JR_ADMIN_TOKEN }}
+          JR_API: ${{ secrets.JR_API || 'https://api.jiangren.com.au' }}
+        run: bun run scripts/daily-jobs-sync.ts ${{ inputs.bootcamp }} ${{ inputs.date }}
+
+      - name: Sync (manual dispatch — all today)
+        if: github.event_name == 'workflow_dispatch' && inputs.bootcamp == ''
+        env:
+          JR_ADMIN_TOKEN: ${{ secrets.JR_ADMIN_TOKEN }}
+          JR_API: ${{ secrets.JR_API || 'https://api.jiangren.com.au' }}
+        run: bun run scripts/daily-jobs-sync.ts
