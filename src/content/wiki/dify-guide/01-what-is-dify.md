@@ -45,6 +45,36 @@ Dify 的定位是 **Backend-as-a-Service**（后端即服务）加 **LLMOps**（
 
 整套用 Docker Compose 跑起来，7-8 个容器：API、Worker、Web、PostgreSQL、Redis、Sandbox（代码执行沙箱）。
 
+用 `docker compose ps` 可以看到全貌：
+
+```bash
+$ docker compose ps
+NAME                STATUS        PORTS
+dify-api-1          Up (healthy)  5001/tcp
+dify-worker-1       Up (healthy)
+dify-web-1          Up (healthy)  0.0.0.0:80->3000/tcp
+dify-db-1           Up (healthy)  5432/tcp
+dify-redis-1        Up (healthy)  6379/tcp
+dify-sandbox-1      Up (healthy)
+dify-weaviate-1     Up (healthy)  8080/tcp
+dify-nginx-1        Up (healthy)  0.0.0.0:80->80/tcp
+```
+
+## 快速验证 Dify 是否跑通
+
+部署完之后，一行 `curl` 就能验证 API 可用：
+
+```bash
+# 用你在 App → API Access 里拿到的 key
+curl -s http://localhost/v1/chat-messages \
+  -H "Authorization: Bearer app-xxxxxxxxxxxx" \
+  -H "Content-Type: application/json" \
+  -d '{"inputs":{},"query":"你好","user":"test","response_mode":"blocking"}' \
+  | python3 -m json.tool
+```
+
+返回 `answer` 字段就说明端到端全通了——从 Nginx 到 API 到 LLM Provider 到 Worker 再回来。
+
 ## 跟竞品怎么选
 
 | 维度 | Dify | Coze（扣子） | FastGPT | LangChain |
