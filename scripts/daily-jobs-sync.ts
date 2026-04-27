@@ -25,9 +25,10 @@ const API = process.env.JR_API || 'https://api.jiangren.com.au';
 const TOKEN = process.env.JR_ADMIN_TOKEN || '';
 
 if (!TOKEN) {
-	console.error('❌ JR_ADMIN_TOKEN env var missing. Set it as a GitHub repo secret and reference in the workflow.');
+	console.error('::error::JR_ADMIN_TOKEN env var missing — secret not injected (check repo/env scope of ADMIN_TOKEN secret).');
 	process.exit(1);
 }
+console.log(`▶ token length=${TOKEN.length} api=${API}`);
 
 interface DailyJob {
 	tier: 'aspirational' | 'actionable' | 'special';
@@ -118,7 +119,8 @@ async function syncFile(filePath: string): Promise<{ ok: boolean; bootcamp: stri
 
 	const bulkResp = await postJSON('/admin-cms/jobs/bulk-daily-picks', bulkPayload);
 	if (bulkResp.status !== 200 && bulkResp.status !== 201) {
-		console.error(`  ❌ bulk-daily-picks HTTP ${bulkResp.status}:`, JSON.stringify(bulkResp.data).slice(0, 500));
+		const errSnippet = JSON.stringify(bulkResp.data).slice(0, 500).replace(/\n/g, ' ');
+		console.error(`::error::bulk-daily-picks HTTP ${bulkResp.status} bootcamp=${file.bootcamp} body=${errSnippet}`);
 		return { ok: false, bootcamp: file.bootcamp, date: file.date, created: 0, analyzed: 0, analyzeFailed: 0 };
 	}
 
