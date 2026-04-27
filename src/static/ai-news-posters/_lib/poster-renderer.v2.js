@@ -616,27 +616,30 @@
   }
 
   function measureSummaryPoster(ctx, s) {
-    const CW = W - 2 * (OUTER + BORDER + PAD_X);
-    let y = OUTER + BORDER + PAD_Y;
+    // 必须严格对齐 drawSummaryPoster 的实际排版（118px 紧凑行版式），
+    // 否则 canvas 高度比内容多出几百 px → 封面下半部分一片空白。
+    let y = 132;
 
-    // 顶部胶囊 + DIGEST label 行
-    y += 72 + 40;
+    // 顶部 boxes（黄色 HIGHLIGHT + 右侧 NEWS LIST），固定 118 高 + 间距
+    y += 184;
 
-    // Hero 行：日期 + "AI 五件大事"（单行 flex） + sub 预留高度
-    y += 120 + 24 + 36; // hero 行 ~120 + padY*2 + 间隙
-    y += 44 + 56;       // sub 44 + 间隙
+    // Hero "X月X日\nAI 新闻榜，\n5 条必看。" — 永远 3 行 86px (lineH 1.08)
+    y += Math.ceil(3 * 86 * 1.08) + 28;
 
-    // 5 个 items（动态）
-    for (const it of s.items) {
-      const { itemH } = layoutSummaryItem(ctx, it, CW);
-      y += itemH + SUMMARY_ITEM_GAP;
-    }
+    // italic 'what changed today, why it matters, and what to watch next.'
+    y += 92;
 
-    // footer (分割线 + 品牌 + QR 二维码区域)
-    y += 40 + 200;
+    // '头条：xxx 这条线最值得先看。'
+    y += 50;
 
-    // 底部 padding
-    y += PAD_Y + BORDER + OUTER;
+    // 头条高亮黄条 + 标题（按 1 行计算 34*1.2 + 16 间距）
+    y += Math.ceil(34 * 1.2) + 16 + 32;
+
+    // 5 个 item 行，每行固定 118 高 + 14 间距
+    y += 5 * (118 + 14);
+
+    // 底部分割线 (在 H-82) + 品牌行 (在 H-34) + 安全留白
+    y += 110;
 
     return Math.ceil(y);
   }
