@@ -41,20 +41,20 @@ jobs:
       - name: Sync (push trigger — only changed files)
         if: github.event_name == 'push' && steps.changes.outputs.files != ''
         env:
-          JR_ADMIN_TOKEN: ${{ secrets.JR_ADMIN_TOKEN }}
-          JR_API: ${{ secrets.JR_API || 'https://api.jiangren.com.au' }}
+          JR_ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          JR_API: ${{ secrets.API_URL || 'https://api.jiangren.com.au' }}
         run: bun run scripts/daily-jobs-sync.ts --files=${{ steps.changes.outputs.files }}
 
       - name: Sync (manual dispatch — specific file)
         if: github.event_name == 'workflow_dispatch' && inputs.bootcamp != '' && inputs.date != ''
         env:
-          JR_ADMIN_TOKEN: ${{ secrets.JR_ADMIN_TOKEN }}
-          JR_API: ${{ secrets.JR_API || 'https://api.jiangren.com.au' }}
+          JR_ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          JR_API: ${{ secrets.API_URL || 'https://api.jiangren.com.au' }}
         run: bun run scripts/daily-jobs-sync.ts ${{ inputs.bootcamp }} ${{ inputs.date }}
 
       - name: Sync (manual dispatch — all today)
         if: github.event_name == 'workflow_dispatch' && inputs.bootcamp == ''
         env:
-          JR_ADMIN_TOKEN: ${{ secrets.JR_ADMIN_TOKEN }}
-          JR_API: ${{ secrets.JR_API || 'https://api.jiangren.com.au' }}
+          JR_ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          JR_API: ${{ secrets.API_URL || 'https://api.jiangren.com.au' }}
         run: bun run scripts/daily-jobs-sync.ts
