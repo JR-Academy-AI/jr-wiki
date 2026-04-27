@@ -15,7 +15,7 @@
 
 ## P0 · 薄章节扩字数（< 2000 字 → 2200+ 字）
 
-- [ ] claude-code-guide/01-getting-started.md — expand: 1727→2200+，补 macOS/Linux/Windows install 命令、第一个 prompt 实战示例、常用 keybinding 速查表
+- [x] claude-code-guide/01-getting-started.md — expand: 1727→2200+，补 macOS/Linux/Windows install 命令、第一个 prompt 实战示例、常用 keybinding 速查表
 - [ ] claude-code-guide/02-multi-file-editing.md — expand: 1870→2200+，补真实多文件 refactor case（rename 一个 React component 涉及 5 个文件）+ diff 对比
 - [ ] claude-code-guide/03-git-workflow.md — expand: 1837→2200+，补 PR 创建命令实战 + merge conflict 解决流程 + git worktree 配合用法
 - [ ] n8n-workflow-automation/01-what-is-n8n.md — expand: 1709→2200+，补 n8n vs Zapier vs Make 对比表（含价格 / API 上限）+ self-host vs cloud 决策树
