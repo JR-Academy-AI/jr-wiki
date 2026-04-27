@@ -557,18 +557,16 @@
       const b = d.bullets[i];
       const fill = i === 1 ? '#ffd225' : '#f7f3ea';
       drawSharpBox(ctx, CX, y, CW, cardH, fill, '#10131f', 8);
-      drawStamp(ctx, CX + 28, y + 34, `AI NEWS · ${String(i + 1).padStart(2, '0')}`, '#10131f', '#fff');
-
       ctx.font = `900 42px ${FF_CN}`;
       ctx.fillStyle = '#10131f';
-      ctx.fillText(sectionLabels[i] || b.k, CX + 28, y + 112);
+      ctx.fillText(sectionLabels[i] || b.k, CX + 28, y + 66);
 
       const valSpec = (s, w) => `${w || 500} ${s}px ${FF_CN}`;
-      const maxTextH = cardH - 164;
+      const maxTextH = cardH - 118;
       const maxLines = Math.max(3, Math.floor(maxTextH / (bulletValSize * 1.42)));
       const valLaidRaw = layoutTokens(ctx, [{ text: b.v }], valSpec, bulletValSize, 1.42, CW - 76);
       const valLaid = clampLaidOut(ctx, valLaidRaw, valSpec, maxLines, CW - 76);
-      drawLaidOut(ctx, valLaid, CX + 28, y + 140, valSpec, '#262936', {
+      drawLaidOut(ctx, valLaid, CX + 28, y + 94, valSpec, '#262936', {
         normalWeight: 500,
         boldWeight: 800,
         hlBg: 'transparent',
