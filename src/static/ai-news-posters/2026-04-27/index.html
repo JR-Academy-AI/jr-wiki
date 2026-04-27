@@ -1,0 +1,528 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-04-27T00:03:03.357Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-04-27（Canvas 版）</title>
+<meta name="description" content="2026-04-27 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v2.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v2.js 里。
+ * 数据来源：src/data/ai-daily/2026-04-27.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "schemaVersion": "1.0",
+  "date": "2026-04-27",
+  "theme": "neobrut",
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-04-27",
+  "summary": {
+    "slug": "digest",
+    "frameLabel": "P0 · 合集 <em>· Top 5 一图看完</em>",
+    "tags": [
+      "合集封面",
+      "适合首图",
+      "今日 5 条一图扫完"
+    ],
+    "hook": [
+      {
+        "text": "今天 "
+      },
+      {
+        "text": "5 条",
+        "hl": true
+      },
+      {
+        "text": "\nAI 大新闻"
+      }
+    ],
+    "sub": "一图看完 · 匠人 AI 日报",
+    "items": [
+      {
+        "num": "01",
+        "numColor": "#10a37f",
+        "cat": "旗舰模型",
+        "t": "GPT-5.5 上线 · Codex 跑分 SWE-Bench Pro 58.6%"
+      },
+      {
+        "num": "02",
+        "numColor": "#76b900",
+        "cat": "资本里程碑",
+        "t": "Nvidia 收盘市值破 5 万亿美元，三年涨 14 倍"
+      },
+      {
+        "num": "03",
+        "numColor": "#4285f4",
+        "cat": "芯片自研",
+        "t": "Google TPU v8 拆两条线 · Sunfish 训 / Zebrafish 推"
+      },
+      {
+        "num": "04",
+        "numColor": "#ff5757",
+        "cat": "中国资本",
+        "t": "腾讯阿里入股 DeepSeek · 200 亿估值首轮融资"
+      },
+      {
+        "num": "05",
+        "numColor": "#f59e0b",
+        "cat": "监管转向",
+        "t": "白宫行政令直接覆盖各州 AI 立法 · 联邦统一接管"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-gpt-5-5-launch",
+      "frameLabel": "P1 · 单图 <em>· GPT-5.5 上线</em>",
+      "tags": [
+        "旗舰模型",
+        "OpenAI",
+        "Codex"
+      ],
+      "idx": "01",
+      "catText": "旗舰模型",
+      "accent": "#10a37f",
+      "bg": {
+        "topRight": "rgba(16,163,127,0.14)",
+        "top": "#f0fdf9",
+        "mid": "#ffffff",
+        "bot": "#ecfdf5"
+      },
+      "title": [
+        {
+          "text": "GPT-5.5 上线 · "
+        },
+        {
+          "text": "SWE-Bench Pro 58.6%",
+          "hl": true
+        }
+      ],
+      "titleSize": 70,
+      "oneline": [
+        {
+          "text": "Terminal-Bench 2.0 跑到 "
+        },
+        {
+          "text": "82.7%",
+          "bold": true
+        },
+        {
+          "text": "，token 效率显著优化"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "OpenAI 04-23 发布 GPT-5.5，04-24 同步推出 GPT-5.5 与 GPT-5.5 Pro 的 API。模型已经全量发到 ChatGPT Plus / Pro / Business / Enterprise，以及 Codex。Terminal-Bench 2.0 拿到 82.7%（GPT-5.4 是 75.1%），SWE-Bench Pro 58.6%。整套系统跑在 Nvidia 基础设施上，单 token 延迟和 GPT-5.4 持平但能力提升一档。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是 OpenAI 第一款明确把 agentic coding / computer use / 长程知识工作放在主推位的旗舰。GPT-5.5 的 token 用量比 GPT-5.4 少很多，每兆瓦能耗的 token 输出量提升约 50 倍 —— 等于变相把推理价格再砍一档。MacRumors / NVIDIA Blog 都点出一个细节：Codex 同步换上 GPT-5.5 之后，复杂工单完成率明显改写。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 Coding Agent / RPA / 自动化办公的工程师，本周必须把 prompt 重新对着 GPT-5.5 / Pro 跑一遍 benchmark —— 之前为 GPT-5.4 调过的 system prompt 大概率不是最优。订阅 ChatGPT Plus 的可以直接在 Codex 里换模型。做企业部署的注意 GPT-5.5 Pro 在 multi-step 工具链场景明显比 5.4 稳定，长任务掉链子率下降。"
+        }
+      ],
+      "src": "📎 openai.com · cnbc.com · macrumors.com",
+      "sources": [
+        {
+          "url": "https://openai.com/index/introducing-gpt-5-5/",
+          "title": "Introducing GPT-5.5",
+          "domain": "openai.com"
+        },
+        {
+          "url": "https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html",
+          "title": "OpenAI announces GPT-5.5, its latest artificial intelligence model",
+          "domain": "cnbc.com"
+        },
+        {
+          "url": "https://www.macrumors.com/2026/04/24/openai-gpt-5-5-research-gains/",
+          "title": "OpenAI Debuts GPT-5.5 Claiming Agentic Coding and Research Gains",
+          "domain": "macrumors.com"
+        },
+        {
+          "url": "https://blogs.nvidia.com/blog/openai-codex-gpt-5-5-ai-agents/",
+          "title": "OpenAI's New GPT-5.5 Powers Codex on NVIDIA Infrastructure",
+          "domain": "blogs.nvidia.com"
+        }
+      ],
+      "mp": {
+        "h2": "GPT-5.5 全量上线：Terminal-Bench 2.0 拿 82.7%、SWE-Bench Pro 58.6%，agentic coding 这条线被拉到新高度",
+        "paragraphs": [
+          "OpenAI 04-23 正式发布 GPT-5.5，04-24 把 GPT-5.5 和 GPT-5.5 Pro 同步推上 API。ChatGPT Plus / Pro / Business / Enterprise 全部直接用上，Codex 也同步切到 GPT-5.5。两个核心 benchmark 数字很硬：Terminal-Bench 2.0 从 GPT-5.4 的 75.1% 涨到 82.7%；SWE-Bench Pro（真实 GitHub issue 解决率）58.6%。这两个 benchmark 都是 agent 级别的复合任务测试，不是单轮问答。",
+          "真正值得专门拎出来讲的不是 benchmark，是效率。GPT-5.5 单 token 延迟和 GPT-5.4 完全持平，但单位 token 完成的任务量、以及完成同等任务所需 token 数都明显下降。换算下来，每兆瓦能耗的 token 输出量提升大约 50 倍。这个数字背后的潜台词是：GPT-5.5 在企业级长任务场景里的实际成本比明面定价更低 —— 同样跑一个 agentic 工作流，GPT-5.5 可能用 GPT-5.4 一半的 token 就跑完，再贵的单价也算下来更便宜。NVIDIA 这次罕见地写了一篇 blog 站台 GPT-5.5 在 Codex 里跑在他们硬件上 —— 信号很明确：OpenAI / Nvidia 这条上下游绑定在 agent 时代继续加深。",
+          "对工程师的实操线索：第一，本周把所有跑在 GPT-5.4 上的 system prompt 拿到 GPT-5.5 上重新 benchmark —— 模型换代之后，原本调好的 prompt 不一定最优，特别是 chain-of-thought / 工具调用顺序这些细节。第二，做 Coding Agent / 自动化重构 / RPA 的，把 GPT-5.5 Pro 设为默认 fallback，对长程任务（10+ step）稳定性改善显著。第三，做 RAG 或 customer support agent 的，注意 GPT-5.5 在 computer use 这个能力上的提升 —— 配合 OpenAI 的 Operator 模式，可以接管浏览器/桌面应用做 end-to-end 任务，原来必须人工写 selector 的工作可以交给模型。第四，对个人用户：ChatGPT 里换模型这件事直接做掉，不要继续用旧版 —— Codex 体验差距一周内会拉得很大。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://openai.com/index/introducing-gpt-5-5/\">OpenAI 官方</a> · <a href=\"https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html\">CNBC</a> · <a href=\"https://www.macrumors.com/2026/04/24/openai-gpt-5-5-research-gains/\">MacRumors</a> · <a href=\"https://blogs.nvidia.com/blog/openai-codex-gpt-5-5-ai-agents/\">NVIDIA Blog</a>"
+      }
+    },
+    {
+      "slug": "02-nvidia-5-trillion",
+      "frameLabel": "P2 · 单图 <em>· Nvidia 5T 市值</em>",
+      "tags": [
+        "资本里程碑",
+        "Nvidia",
+        "AI 基建"
+      ],
+      "idx": "02",
+      "catText": "资本里程碑",
+      "accent": "#76b900",
+      "bg": {
+        "topRight": "rgba(118,185,0,0.14)",
+        "top": "#f7fdf0",
+        "mid": "#ffffff",
+        "bot": "#f0f9e0"
+      },
+      "title": [
+        {
+          "text": "Nvidia 收盘市值突破 "
+        },
+        {
+          "text": "5 万亿美元",
+          "hl": true
+        }
+      ],
+      "titleSize": 76,
+      "oneline": [
+        {
+          "text": "三年涨 14 倍，新增 "
+        },
+        {
+          "text": "4.5 万亿美元",
+          "bold": true
+        },
+        {
+          "text": " 市值"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Nvidia 04-24 收盘价 208.27 美元 / 涨 4.3%，市值首次冲过 5 万亿美元，是历史上第三家跨过这条线的公司（前两家：苹果、微软）。Nvidia 用了大约 3 年时间从 1 万亿冲到 5 万亿；苹果和微软分别花了几十年。导火索是 Intel 周四晚盘后财报超预期，第二天 Intel 股价涨 24%、整个芯片板块被点燃。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是 AI 基建周期的具体注脚 —— Blackwell GPU 已经卖断到年中、单卡 4 万美元，Nvidia 给出的指引是 Blackwell + Vera Rubin 这两代架构 2026-2027 累计卖出 1 万亿美元芯片。同期超大规模云厂商（Google / Microsoft / Meta / Amazon）2026 年合计承诺的 AI 基建支出已经超过 6500 亿美元。这个量级的资本开支，等于在告诉所有人「AI infra 这条赛道的需求侧未来 24 个月都不会软」。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做硬件 / chip design / packaging / 数据中心运营的工程师，岗位池子接下来 12 个月会持续打开 —— Nvidia / Broadcom / TSMC / 各大云的 infra 团队都会激进招人。做 AI 应用层的注意：上游成本接下来不是变贵而是变便宜，GPU 供给的瓶颈会逐季缓解（这周 Google 拆 TPU v8 也是这个方向），LLM API 单价大概率全行业再降一档。投资角度（不构成建议）：从「单押 Nvidia」变成「分散到 packaging + HBM + 网络芯片 + 云厂商」是更稳的姿势。"
+        }
+      ],
+      "src": "📎 cnbc.com · benzinga.com · fool.com",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2026/04/24/nvidia-stock-closes-at-record-pushing-market-cap-past-5-trillion.html",
+          "title": "Nvidia stock closes at record, pushing market cap past $5 trillion",
+          "domain": "cnbc.com"
+        },
+        {
+          "url": "https://www.benzinga.com/markets/tech/26/04/52050283/nvidia-tops-5-trillion-market-cap-as-ai-boom-lifts-intel-amd-and-chip-stocks-own-it-dont-trade-it-sa",
+          "title": "Nvidia Tops $5 Trillion Market Cap As AI Boom Lifts Intel, AMD And Chip Stocks",
+          "domain": "benzinga.com"
+        },
+        {
+          "url": "https://www.fool.com/investing/2026/04/24/nvidia-at-5-trillion-buy-sell-or-hold/",
+          "title": "Nvidia at $5 Trillion: Buy, Sell, or Hold?",
+          "domain": "fool.com"
+        }
+      ],
+      "mp": {
+        "h2": "Nvidia 收盘市值破 5 万亿美元：三年涨 14 倍，AI infra 的资本周期才走到一半",
+        "paragraphs": [
+          "Nvidia 04-24（周五）收盘 208.27 美元、涨 4.3%，市值首次冲过 5 万亿美元，是人类商业史上第三家迈过这条线的公司，前两家是苹果和微软。差异在于时间：苹果和微软分别花了几十年从创业走到 5 万亿，Nvidia 从 2022 年底的不到 4000 亿美元市值起步、用了大约 3 年时间冲到 5 万亿，期间累计新增市值超过 4.5 万亿美元。这是过去 10 年最贵的一笔投资 —— 比所有 AI 应用层公司估值加起来还高。导火索是 Intel 周四盘后财报远超预期，第二天 Intel 涨 24% 创下 1987 年以来最大单日涨幅，整个芯片板块被点燃，Nvidia 顺势创新高。",
+          "把这个数字放进 AI infra 的供需大表里看就更清晰了。Nvidia 自己给的指引：Blackwell 系统已经卖断到 2026 年年中、单卡价格大约 4 万美元；Blackwell + Vera Rubin 这两代架构在 2026-2027 累计销售额预计达到 1 万亿美元。需求端，所谓 hyperscaler 四家（Google / Microsoft / Meta / Amazon）以及 OpenAI / Anthropic / xAI 这些模型公司，2026 年合计承诺的 AI 基建支出已经超过 6500 亿美元 —— 这个数字不是估算，是各家公司自己披露的资本开支指引。换句话说：未来 24 个月，AI infra 的需求侧不会软。Nvidia 的 5 万亿市值不是泡沫顶，是中段。",
+          "对工程师和团队的实操线索：第一，硬件赛道的招聘会持续狂热 —— chip design、advanced packaging、co-packaged optics、advanced thermal、网络芯片、HBM 设计等岗位接下来 12 个月会出现明显薪资上行；硬件背景转 AI infra 是被严重低估的窗口。第二，做 AI 应用层的注意上游传导：GPU 供给瓶颈会逐季缓解（本周 Google 把 TPU v8 拆成训练 / 推理两条线就是这个方向），LLM API 单价大概率全行业再降一档 —— 把 6 个月前的 API 成本测算重新做一遍，毛利模型可能要改。第三，宏观判断：从「单押 Nvidia」变成「关注 Broadcom / TSMC / Marvell / 各家云的 infra 资本开支」是更稳的姿势 —— Google 这次把 TPU v8 训练交给 Broadcom、推理交给 MediaTek，意味着「Nvidia 一家通吃」这个叙事的细节正在被改写。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://www.cnbc.com/2026/04/24/nvidia-stock-closes-at-record-pushing-market-cap-past-5-trillion.html\">CNBC</a> · <a href=\"https://www.benzinga.com/markets/tech/26/04/52050283/nvidia-tops-5-trillion-market-cap-as-ai-boom-lifts-intel-amd-and-chip-stocks-own-it-dont-trade-it-sa\">Benzinga</a> · <a href=\"https://www.fool.com/investing/2026/04/24/nvidia-at-5-trillion-buy-sell-or-hold/\">The Motley Fool</a>"
+      }
+    },
+    {
+      "slug": "03-google-tpu-v8-split",
+      "frameLabel": "P3 · 单图 <em>· Google TPU v8 拆分</em>",
+      "tags": [
+        "芯片自研",
+        "Google",
+        "TPU"
+      ],
+      "idx": "03",
+      "catText": "芯片自研",
+      "accent": "#4285f4",
+      "bg": {
+        "topRight": "rgba(66,133,244,0.14)",
+        "top": "#f0f6ff",
+        "mid": "#ffffff",
+        "bot": "#e6efff"
+      },
+      "title": [
+        {
+          "text": "Google TPU v8 "
+        },
+        {
+          "text": "拆训练 / 推理",
+          "hl": true
+        },
+        {
+          "text": " 两条线"
+        }
+      ],
+      "titleSize": 70,
+      "oneline": [
+        {
+          "text": "Sunfish 由 Broadcom 设计、Zebrafish 由 "
+        },
+        {
+          "text": "MediaTek 操刀",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Google Cloud Next '26 (04-22 至 04-24, 拉斯维加斯) 公布 TPU v8 路线图：拆成 Sunfish (TPU 8t, 训练) 与 Zebrafish (TPU 8i, 推理) 两个独立 SKU。Sunfish 由 Broadcom 设计、目标 TSMC 2nm、2027 年底量产，对位 Nvidia Vera Rubin；Zebrafish 由 MediaTek 设计、堆 HBM 和新 Boardfly 互联、专门跑 MoE 推理。同时推 Gemini Enterprise Agent 平台 + Vertex AI Agent Builder 2.0。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是 Google 自研芯片战略的根本性转折 —— 之前 TPU 是「一颗芯片通吃训练 + 推理」，现在变成「专用化分工」。Google 自己给的数字：训练用 TPU 8t 价格性能比 Ironwood 高 2.7 倍，推理用 TPU 8i 单美元性能高 80%。背后是认知变了：MoE 模型推理流量已经远大于训练，必须有一颗为「低延迟稀疏 attention」专门设计的芯片。同时拉 Broadcom + MediaTek + Marvell 三家做 supply chain，等于把 Nvidia 的「一家垄断」叙事拆开了。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 LLM serving 的人立刻盯 vLLM / SGLang / TensorRT-LLM 在 TPU 8i 上的适配进度 —— 谁先把推理 stack 跑通，谁就吃下 Google Cloud 这一波客户。做 Agent 编排的注意 Gemini Enterprise + A2A 协议生态扩张速度，Google 在赌「企业级 multi-agent 编排」这条路；MCP + A2A 接下来 12 个月一定会从 spec 变成 standard。对求职者：Google Cloud / DeepMind / Vertex AI 这三块的招聘会激进打开，特别是 ML infra + 大模型 serving 双栈。"
+        }
+      ],
+      "src": "📎 wccftech.com · nextplatform.com · oplexa.com",
+      "sources": [
+        {
+          "url": "https://wccftech.com/google-splits-tpuv8-strategy-two-chips-broadcom-training-mediatek-inference-duties/",
+          "title": "Google Splits TPUv8 Strategy Into Two Chips, Handing Broadcom Training and MediaTek Inference Duties",
+          "domain": "wccftech.com"
+        },
+        {
+          "url": "https://www.nextplatform.com/compute/2026/04/24/with-tpu-8-google-makes-genai-systems-much-better-not-just-bigger/5218834",
+          "title": "With TPU 8, Google Makes GenAI Systems Much Better, Not Just Bigger",
+          "domain": "nextplatform.com"
+        },
+        {
+          "url": "https://oplexa.com/google-cloud-next-2026/",
+          "title": "Google Cloud Next 2026: Every Major Announcement",
+          "domain": "oplexa.com"
+        }
+      ],
+      "mp": {
+        "h2": "Google Cloud Next '26：TPU v8 拆训练 / 推理两条线，Sunfish + Zebrafish 联手围攻 Nvidia",
+        "paragraphs": [
+          "Google Cloud Next '26 04-22 至 04-24 在拉斯维加斯 Mandalay Bay 开幕，最硬的一条新闻不是 Gemini 模型更新，是 TPU v8 路线图被彻底重构。之前 7 代 TPU 都是「一颗芯片通吃训练和推理」，TPU v8 第一次拆成两个独立产品线：Sunfish (官方代号 TPU 8t) 由 Broadcom 设计、目标 TSMC 2nm、2027 年底量产，专门做大模型训练，对位 Nvidia Vera Rubin；Zebrafish (TPU 8i) 由 MediaTek 设计、堆更多 HBM、配套全新的 Boardfly 互联协议，专门做 MoE 模型的低延迟推理。同时 Google 拉了 Marvell 进 supply chain —— 一颗 AI 芯片，用三家供应商联合设计，这是行业第一次。",
+          "为什么这件事比 Gemini 模型更新重要？因为它说明 Google 的认知变了：训练和推理已经是两个 fundamentally 不同的 workload，必须用不同的芯片架构去优化。MoE 模型流量结构里，推理 token 已经远多于训练 token，「为推理专门设计一颗芯片」的 ROI 完全成立。Google 自己给的数字：TPU 8t 在大规模训练场景下价格性能比 Ironwood 提升 2.7 倍；TPU 8i 在 MoE 推理场景下每美元性能提升 80%。换算到云上 API 价格 —— Vertex AI 跑 Gemini 的成本接下来一年会被压低一档，Gemini API 价格大概率比 GPT 系列继续拉开身位。配套 Google 推出 Gemini Enterprise Agent 平台、Vertex AI Agent Builder 2.0、A2A 协议联盟扩到 150+ 组织，整套打法很清晰：靠自研芯片把「企业级 multi-agent 编排」这块市场打下来，对位 Microsoft Copilot Studio + AWS Bedrock。",
+          "对工程师的实操线索：第一，做 LLM serving 的本周就盯 vLLM、SGLang、TensorRT-LLM 在 TPU 8i 上的适配进度 —— 谁先把推理 stack 跑通，谁就吃下 Google Cloud 这一波从 Nvidia 切到 TPU 的企业客户。第二，做 Agent 编排的（CrewAI / AutoGen / LangGraph 这类框架）必须把 A2A 协议加入下一个 sprint —— Google 这次把 A2A 联盟扩到 150+ 组织，A2A + MCP 已经是事实标准，不接就被边缘化。第三，做硬件的注意 supply chain 信号：Broadcom 在训练芯片的话语权进一步加重、MediaTek 第一次进顶级 AI 芯片设计圈、Marvell 拿到长期订单 —— 这三家股票和招聘的中长期都值得关注。第四，求职端，Google Cloud / DeepMind / Vertex AI 三块的招聘会激进打开，特别是「ML infra + 大模型 serving + Agent 编排」这种复合背景的工程师，跳槽窗口期未来 6-12 个月最佳。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://wccftech.com/google-splits-tpuv8-strategy-two-chips-broadcom-training-mediatek-inference-duties/\">Wccftech</a> · <a href=\"https://www.nextplatform.com/compute/2026/04/24/with-tpu-8-google-makes-genai-systems-much-better-not-just-bigger/5218834\">The Next Platform</a> · <a href=\"https://oplexa.com/google-cloud-next-2026/\">Oplexa - Google Cloud Next 2026 Recap</a>"
+      }
+    },
+    {
+      "slug": "04-tencent-alibaba-deepseek",
+      "frameLabel": "P4 · 单图 <em>· 腾讯阿里入股 DeepSeek</em>",
+      "tags": [
+        "中国资本",
+        "DeepSeek",
+        "腾讯阿里"
+      ],
+      "idx": "04",
+      "catText": "中国资本",
+      "accent": "#ff5757",
+      "bg": {
+        "topRight": "rgba(255,87,87,0.14)",
+        "top": "#fff7f5",
+        "mid": "#ffffff",
+        "bot": "#fff1ec"
+      },
+      "title": [
+        {
+          "text": "腾讯阿里抢入股 "
+        },
+        {
+          "text": "DeepSeek 200 亿美元",
+          "hl": true
+        },
+        {
+          "text": " 估值"
+        }
+      ],
+      "titleSize": 68,
+      "oneline": [
+        {
+          "text": "腾讯报价 20% 股权遭拒，融资规模 "
+        },
+        {
+          "text": "≥ 3 亿美元",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Bloomberg / The Information 04-22 起密集披露：DeepSeek 启动成立以来首轮外部融资，目标募资 3 亿美元以上、估值不低于 200 亿美元。腾讯和阿里同时进场谈，腾讯报价收购 20% 股权 —— 被 DeepSeek 拒绝，认为让出控制权太多。估值锚定的对标公司是同样未上市的 MiniMax（约 400 亿美元估值）。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "DeepSeek 之前从来没拿过外部融资，全靠创始人梁文锋的幻方量化输血。这是国内顶尖开源大模型公司第一次接受大厂战略投资，意义不在钱（DeepSeek 不缺钱），在算力 —— 阿里和腾讯能给的是数据中心 GPU 配额。这条新闻和昨天 V4 开源放在一起读：DeepSeek 想把开源继续推下去 + 同时扩到企业级商业化，必须更多算力。腾讯阿里也在抢「中国版 OpenAI 战略股东」这个位置。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "国内 LLM 商业格局接下来 12 个月会重洗 —— 如果腾讯入股成，DeepSeek 模型会更深嵌入腾讯云 / 微信生态；如果阿里赢，会接进通义千问体系和阿里云。做国内 AI 应用层的：本周关注 DeepSeek 在阿里云 / 腾讯云 的 API 部署节奏，可能出现「跨云特价」。同时这是国内 AI 估值锚的重要事件：DeepSeek 200 亿美元 + MiniMax 400 亿美元 + 字节 / 月之暗面跟上，国内大模型一二级市场估值天花板被抬起来。"
+        }
+      ],
+      "src": "📎 bloomberg.com · theinformation.com · digitimes.com",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-04-22/deepseek-in-talks-to-raise-at-20-billion-value-the-information",
+          "title": "Tencent, Alibaba in Talks to Join DeepSeek's First Funding Round",
+          "domain": "bloomberg.com"
+        },
+        {
+          "url": "https://www.theinformation.com/articles/tencent-alibaba-talks-invest-deepseek-20-billion-plus-valuation",
+          "title": "Tencent, Alibaba in Talks to Invest in DeepSeek at $20 Billion-Plus Valuation",
+          "domain": "theinformation.com"
+        },
+        {
+          "url": "https://www.digitimes.com/news/a20260423VL216/deepseek-funding-alibaba-tencent-competition.html",
+          "title": "Tencent, Alibaba circle DeepSeek in US$20 billion AI deal talks",
+          "domain": "digitimes.com"
+        }
+      ],
+      "mp": {
+        "h2": "腾讯阿里同时抢入股 DeepSeek：200 亿美元估值首轮融资，腾讯 20% 报价被拒",
+        "paragraphs": [
+          "Bloomberg 和 The Information 04-22 几乎同时披露：DeepSeek 启动了成立以来第一轮外部融资，目标募资 3 亿美元以上、估值不低于 200 亿美元。腾讯和阿里同时进场谈判，腾讯一上来就报价收购 20% 股权 —— 被 DeepSeek 拒绝，原因是让出这么大份额会失去对模型路线的控制。阿里同步在谈，但具体条款没披露。整个估值的锚是同样未上市的 MiniMax 约 400 亿美元 —— DeepSeek 内部认为自己应该至少匹配一半。重要背景：DeepSeek 在此之前从来没拿过外部投资人的钱，所有运营成本都是创始人梁文锋的幻方量化对冲基金输血。",
+          "为什么这件事的重量级超过普通融资新闻？三个层面。第一，这是国内顶尖开源大模型公司第一次接受大厂战略投资 —— 之前 DeepSeek 一直坚持独立路线、宁可慢也要拒绝外部资本。立场转变的真实原因不是钱，是算力。这周 V4-Pro 开源放出 1.6T 参数 + 1M 上下文，下一步要做 V5 + 企业级商业化部署，需要的 GPU 配额已经超过幻方自己能撑的量级。阿里和腾讯能给的核心资源是数据中心 GPU 槽位，不是现金。第二，腾讯阿里这次同台竞价，本质是抢「中国版 OpenAI 战略股东」这个稀缺位置 —— Microsoft 之于 OpenAI 的故事，国内大厂都想复制一遍。第三，估值信号传导：DeepSeek 200 亿 + MiniMax 400 亿 + 字节 / 月之暗面跟上，国内大模型一级市场估值天花板被实质性抬起来。",
+          "对中国 AI 生态的实操判断：第一，如果腾讯入股成，DeepSeek 模型会更深嵌入腾讯云 + 微信 + QQ 生态，可能直接进 RTX（实时通讯增强）和小程序工具链。第二，如果阿里赢，DeepSeek 会接进通义千问的开放平台 + 阿里云 PAI，企业 ToB 部署成本会有显著下降。第三种可能（也是 DeepSeek 真正想要的）是腾讯和阿里同时各拿小份额，互相制衡，DeepSeek 保持中立。对国内 AI 应用层的工程师：本周开始关注 DeepSeek V4 在阿里云 / 腾讯云的部署节奏 —— 谁家先上、价格多少，会直接决定接下来 6 个月你应该在哪家云上做 RAG / Agent 部署。对求职者：腾讯混元、阿里通义这两条线接下来一年招聘会更激进，DeepSeek 自己也开始首次大规模社招，深圳 + 杭州 + 北京三地的大模型岗位池子未来 6 个月会显著扩容。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://www.bloomberg.com/news/articles/2026-04-22/deepseek-in-talks-to-raise-at-20-billion-value-the-information\">Bloomberg</a> · <a href=\"https://www.theinformation.com/articles/tencent-alibaba-talks-invest-deepseek-20-billion-plus-valuation\">The Information</a> · <a href=\"https://www.digitimes.com/news/a20260423VL216/deepseek-funding-alibaba-tencent-competition.html\">DIGITIMES</a>"
+      }
+    },
+    {
+      "slug": "05-trump-eo-state-ai-preemption",
+      "frameLabel": "P5 · 单图 <em>· 白宫覆盖各州 AI 法</em>",
+      "tags": [
+        "监管转向",
+        "白宫",
+        "AI 立法"
+      ],
+      "idx": "05",
+      "catText": "监管转向",
+      "accent": "#f59e0b",
+      "bg": {
+        "topRight": "rgba(245,158,11,0.14)",
+        "top": "#fffaeb",
+        "mid": "#ffffff",
+        "bot": "#fef3c7"
+      },
+      "title": [
+        {
+          "text": "白宫行政令 "
+        },
+        {
+          "text": "覆盖各州 AI 立法",
+          "hl": true
+        }
+      ],
+      "titleSize": 72,
+      "oneline": [
+        {
+          "text": "司法部成立 "
+        },
+        {
+          "text": "AI Litigation Task Force",
+          "bold": true
+        },
+        {
+          "text": "，逐州起诉"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "白宫去年 12 月签署的行政令在 2026-04 进入实质执行阶段，Cooley 04-24 一份 50 州梳理报告把图景拼齐：联邦政策直接 preempt 各州 AI 立法，司法部成立 AI Litigation Task Force，对加州 / 科罗拉多 / 纽约等已通过 AI 法的州逐个起诉，理由是「不当干预州际商业」。多州已经主动延后或撤回 AI 法案，原本 2026 年的合规截止期被大量推后。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "美国 AI 监管路径正式从「各州自研」切到「联邦统一接管 + 鼓励创新优先」。这跟欧盟正在讨论的 Digital Omnibus 修法（推迟高风险 AI 合规截止到 2027-2028）方向一致 —— 全球主流监管在松绑。同时 Siemens 公开警告：如果欧盟不放松，AI 投资就转去美国和中国 —— 监管套利已经成为企业明牌策略。这一波信号对 AI startup 是极大的友好。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 AI compliance / risk / legal tech 的工程师注意：之前为 Colorado AI Act / NYC AEDT 这类地方法做的合规框架，本周开始大量被废止 —— 重新对齐到联邦框架（NIST AI RMF + 行政令）。做企业 AI 部署的：之前因为各州法律不统一不敢上的功能，现在窗口打开。做 startup 的：美国市场监管成本下降，意味着新一轮 AI 应用层创业窗口期 —— 特别是 HR / 招聘 / 信用评分这些之前被 EEOC / 各州法律严管的场景，重新可以做了。但欧盟市场仍然要按 EU AI Act 走。"
+        }
+      ],
+      "src": "📎 cooley.com · bloomberg.com · eversheds-sutherland.com",
+      "sources": [
+        {
+          "url": "https://www.cooley.com/news/insight/2026/2026-04-24-state-ai-laws-where-are-they-now",
+          "title": "State AI Laws – Where Are They Now?",
+          "domain": "cooley.com"
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-04-20/siemens-threatens-to-skip-europe-for-ai-spending-due-to-rules",
+          "title": "Siemens Warns EU's AI Rules Will Deter Investment in Europe",
+          "domain": "bloomberg.com"
+        },
+        {
+          "url": "https://www.eversheds-sutherland.com/en/global/insights/gloabl-ai-bulletin-april-2026",
+          "title": "Global AI regulatory update - April 2026",
+          "domain": "eversheds-sutherland.com"
+        }
+      ],
+      "mp": {
+        "h2": "白宫行政令进入执行：司法部组 AI Litigation Task Force 起诉各州 AI 法，全球监管同步松绑",
+        "paragraphs": [
+          "Cooley 律所 04-24 发布的 50 州 AI 立法盘点报告，把过去 4 个月美国 AI 监管的实质性变化整合到了一张表里。核心结论：去年 12 月特朗普签署的行政令（联邦政策 preempt 各州 AI 立法）在 2026 年 4 月进入实质执行阶段。司法部专门成立了 AI Litigation Task Force，对加州、科罗拉多、纽约这些已经通过严苛 AI 法案的州逐个发起诉讼，主要理由是「各州的 AI 监管不当干预州际商业，违宪」。直接结果是：多个州主动延后或撤回原本计划 2026 年生效的 AI 法案 —— Colorado AI Act、Texas TRAIGA、纽约 NYC AEDT 这些都在被重新审视，部分合规截止期已经被推到 2027 甚至 2028。",
+          "把这件事放进全球监管图景里看就更清晰。同期欧盟在推进 Digital Omnibus 提案，核心是把 EU AI Act 高风险条款的合规截止日整体推后到 2027-2028。Bloomberg 04-20 报道 Siemens CEO Roland Busch 公开喊话：如果欧盟不放松监管，西门子的 AI 投资就转去美国和中国，不在欧盟落地。这种「监管套利」正在成为大型企业的明牌策略 —— 哪个市场对 AI 部署友好，资本和团队就去哪。这一波信号合在一起读：美国从「各州各自立法」切到「联邦统一接管 + 鼓励创新优先」；欧盟从「全球最严」往后退一档；中国本来就在加速给大模型颁牌照。三大监管区同步松绑，AI 应用层从合规角度看进入了一个明显的窗口期。",
+          "对工程师和团队的实操线索：第一，做 AI compliance / AI risk / legal tech 的工程师，本周开始重新审视合规框架 —— 之前为 Colorado AI Act、NYC AEDT、Illinois BIPA-like 法案做的检测 / 文档 / 偏见审计模块，相当一部分会被废除或大幅简化。把对齐基线切回到联邦层（NIST AI Risk Management Framework + 白宫行政令）。第二，做企业 AI 部署的：之前因为各州法律不统一不敢上的功能（自动化招聘筛选、AI 客服决策、自动化信贷审批等）现在合规窗口打开 —— 但要清楚这只对美国市场有效，欧盟市场仍然必须按 EU AI Act 走。第三，做 startup 的：美国市场监管摩擦成本下降，意味着新一轮 AI 应用层创业窗口期 —— 特别是 HR / 招聘 / 信用评分 / 保险定价 / 教育评估这些之前被 EEOC + 各州法律严管的高风险场景，重新可以做了。第四，对 AI legal / 政策研究方向的人：未来 12 个月最值得关注的是司法部 AI Task Force 的诉讼判例 —— 先判出的几个案件会成为「联邦 vs 州」AI 监管边界的法律先例，跟当年互联网监管 preemption 类似。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://www.cooley.com/news/insight/2026/2026-04-24-state-ai-laws-where-are-they-now\">Cooley LLP</a> · <a href=\"https://www.bloomberg.com/news/articles/2026-04-20/siemens-threatens-to-skip-europe-for-ai-spending-due-to-rules\">Bloomberg</a> · <a href=\"https://www.eversheds-sutherland.com/en/global/insights/gloabl-ai-bulletin-april-2026\">Eversheds Sutherland</a>"
+      }
+    }
+  ],
+  "mp": {
+    "title": "GPT-5.5 上线 / Nvidia 5T / Google TPU v8 拆 / 腾讯阿里抢 DeepSeek / 白宫覆盖各州 AI 法 ｜AI 日报 04-27",
+    "lead": "周末三件硬事一起来：OpenAI 04-23 发 GPT-5.5、Codex 直接换上、Terminal-Bench 2.0 跑到 82.7%；Nvidia 04-24 收盘市值首破 5 万亿美元、3 年涨 14 倍；Google Cloud Next '26 把 TPU v8 拆成 Sunfish (Broadcom 训) + Zebrafish (MediaTek 推) 两条线，A2A 协议联盟扩到 150+。中国侧腾讯阿里同时抢入股 DeepSeek、200 亿美元估值首轮融资，腾讯报价 20% 股权被拒。最后一条更长线 —— 白宫行政令进入执行，司法部组 AI Litigation Task Force 逐州起诉地方 AI 法，叠加欧盟 Digital Omnibus 推迟合规、全球监管同步松绑。",
+    "meta": {
+      "author": "JR Academy AI 日报",
+      "readTime": "11 分钟"
+    },
+    "quickview": {
+      "title": "📌 今日速览",
+      "items": [
+        "<strong>旗舰模型</strong>：OpenAI 04-23 发 GPT-5.5（Pro 版同步上 API），Terminal-Bench 2.0 82.7% / SWE-Bench Pro 58.6%，Codex 全量切换",
+        "<strong>资本里程碑</strong>：Nvidia 04-24 收盘 208.27 美元，市值首破 5 万亿美元，3 年涨 14 倍，hyperscalers 2026 AI infra 支出已超 6500 亿",
+        "<strong>芯片自研</strong>：Google TPU v8 拆 Sunfish (Broadcom 训, 2027 量产) + Zebrafish (MediaTek 推)，训练价格性能 +2.7x、推理 +80%",
+        "<strong>中国资本</strong>：腾讯阿里同时谈入股 DeepSeek，估值 ≥ 200 亿美元、募资 ≥ 3 亿美元，腾讯 20% 股权报价被拒",
+        "<strong>监管转向</strong>：白宫行政令进入执行，司法部成立 AI Litigation Task Force 起诉加州 / 科罗拉多 / 纽约 AI 法案，欧盟同步推迟合规期"
+      ]
+    },
+    "cta": {
+      "big": "🎯 想每天 9 点收到 AI 日报？",
+      "sub": "关注 JR Academy 公众号 · 回复「AI 日报」自动订阅<br>官网 jiangren.com.au/blog · 历史日报全开放"
+    }
+  }
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+  FLEX_HEIGHT: true,
+  HEIGHT_TIERS: [1480, 1660, 1860, 2100, 2400],
+});
+</script>
+</body>
+</html>
