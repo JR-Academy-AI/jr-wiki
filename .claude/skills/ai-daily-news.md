@@ -51,20 +51,40 @@ fi
 
 组合原则：影响力 + 新鲜度（当天或前一天）+ 实用性。去重（同一件事不同媒体算一条）。
 
-### Step 3. 写 `src/data/ai-daily/{DATE}.json`（主产出）
+### Step 3. 写 `src/data/ai-daily/{DATE}.json`（主产出 · 精简版）
 
-**严格按 `src/data/_schemas/ai-daily.schema.json`**。参考示例：`src/data/ai-daily/2026-04-23.json`。
+**🚨 2026-04-27 精简（规避 CCR stream timeout）**：JSON 输出体积从 ~30KB 砍到 ~7KB。pipeline 已能自动从 `.md` 文件抓深度段、从 summary 派生 lead/quickview/cta。**agent 只写下面列出的 essential 字段**，**所有"省"的字段都禁止写**。
 
-关键字段：
-- `summary.items` **必须 5 项**（5 条新闻预告）
-- `news` **必须 5 项**，每项：
-  - `slug` 必须 `^\d{2}-[a-z0-9-]+$` 格式
-  - `bullets` **必须正好 3 条**，`k` 必须是 `"发生了什么"` / `"为什么重要"` / `"对你的影响"` 三个枚举值之一
-  - `accent` 必须 6 位 hex
-- `mp.quickview.items` 3-10 条 HTML 字符串
-- `mp.title` 用简单直接的标题，不强制 ｜ 分割
+**必写 essential**：
+- `date` = "{DATE}"
+- `summary.hook`: textToken[]
+- `summary.sub`: 字符串
+- `summary.items`: **3-7 项**（不必凑 5）`[{num,cat,numColor,t}]`
+- `news`: **3-7 项**（不必凑 5），每项：
+  - `slug` (^\d{2}-[a-z0-9-]+$)
+  - `idx` (^\d{2}$)
+  - `catText` (≤10字)
+  - `accent` (^#[0-9a-fA-F]{6}$)
+  - `bg`: {top, mid, bot, topRight}
+  - `title`: textToken[]
+  - `oneline`: textToken[]
+  - `bullets`: 3 项 `{k,v}` (k 推荐"发生了什么/为什么重要/对你的影响"但不强制 enum，v 短一点 ≤80 字 — 海报字号舒服)
+  - `src`: 字符串 例 "📎 a.com · b.com"
+- `mp.title`: 公众号标题（不带日期，不带 "AI 日报" 前缀）
 
-**🚨 JSON 字符串里禁止嵌入 ASCII 双引号 `"`**（会破坏 JSON 结构）。要用中文引号就写 `「」` 或 `『』`，需要 ASCII 引号就用 `\"` 显式转义。
+**禁写（pipeline 自动派生 / .md 抓）**：
+- ❌ `news[].mp.*`（paragraphs/h2/sourceHtml 全部 pipeline 从 .md 抓 / 从 title/src 派生）
+- ❌ `news[].sources`（pipeline 不用）
+- ❌ `news[].tags` / `news[].frameLabel`（装饰字段不用）
+- ❌ `mp.lead`（auto-derive）
+- ❌ `mp.newsBodies`（pipeline 从 .md 抓）
+- ❌ `mp.quickview`（auto-derive）
+- ❌ `mp.cta`（默认值已 OK）
+- ❌ `articleUrl` / `schemaVersion` / `theme`（pipeline 默认值）
+
+**🚨 JSON 字符串里禁止嵌入 ASCII 双引号 `"`** — 用 `「」` 或 `\"` 转义。
+
+参考样例：`src/data/ai-daily/2026-04-25.json`（仍是老格式但够用作 schema 参考）。
 
 ### Step 4. 写 `src/content/articles/ai-daily-{DATE}.md`（/blog/ 长文）
 
