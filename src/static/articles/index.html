@@ -131,6 +131,7 @@
     align-items: start;
     transition: all 0.2s ease;
     box-shadow: 0 6px 20px rgba(16,22,47,0.05);
+    cursor: pointer;
   }
   .article:hover {
     transform: translateY(-2px);
@@ -194,6 +195,35 @@
     align-self: center;
   }
   .article:hover .arrow { transform: translateX(4px); }
+
+  .article .actions {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .article .mp-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 700;
+    padding: 5px 10px; border-radius: 6px;
+    text-decoration: none;
+    background: rgba(16,22,47,0.06); color: var(--ink);
+    border: 1px solid var(--border-soft);
+    letter-spacing: 0.03em;
+    transition: all 0.15s;
+  }
+  .article .mp-link:hover {
+    background: var(--brand-red); color: #fff;
+    border-color: var(--brand-red);
+    transform: translateY(-1px);
+  }
+  .article .mp-link.poster {
+    background: rgba(255,212,77,0.18); color: #8a6500;
+    border-color: rgba(255,212,77,0.4);
+  }
+  .article .mp-link.poster:hover {
+    background: var(--brand-gold); color: var(--ink);
+    border-color: var(--brand-gold);
+  }
 
   .empty {
     padding: 60px 30px; text-align: center;
@@ -357,11 +387,17 @@ function render(articles) {
       const d = parseDate(a.publishDate);
       const df = d ? formatDate(d) : { m: '--', d: '--', y: '--' };
       const type = classify(a);
-      const typeLabel = type === 'daily' ? 'AI 日报' : '原创深度';
+      const typeLabel = type === 'daily' ? 'AI 日报' : (type === 'it-daily' ? 'IT 认证' : '原创深度');
       const tags = (a.tags || []).slice(0, 4);
       const url = `https://jiangren.com.au/blog/${a.slug}`;
+
+      // AI 日报 slug 形如 ai-daily-YYYY-MM-DD，对应 /ai-news-posters/{date}/ 有发稿页 + 海报库
+      const aiDailyMatch = (a.slug || '').match(/^ai-daily-(\d{4}-\d{2}-\d{2})$/);
+      const mpUrl = aiDailyMatch ? `../ai-news-posters/${aiDailyMatch[1]}/mp-article.html` : null;
+      const posterUrl = aiDailyMatch ? `../ai-news-posters/${aiDailyMatch[1]}/` : null;
+
       return `
-        <a class="article" href="${url}" target="_blank" rel="noopener">
+        <div class="article" data-href="${url}">
           <div class="date-block">
             <div class="m">${df.m}</div>
             <div class="d">${df.d}</div>
@@ -372,9 +408,15 @@ function render(articles) {
             <div class="title">${escapeHtml(a.title)}</div>
             <div class="desc">${escapeHtml(a.description || '')}</div>
             ${tags.length ? `<div class="tags">${tags.map(t => `<span>#${escapeHtml(t)}</span>`).join('')}</div>` : ''}
+            ${mpUrl ? `
+              <div class="actions">
+                <a class="mp-link" href="${mpUrl}" target="_blank" rel="noopener" data-stop>📋 复制公众号富文本 →</a>
+                <a class="mp-link poster" href="${posterUrl}" target="_blank" rel="noopener" data-stop>🖼 海报库 →</a>
+              </div>
+            ` : ''}
           </div>
           <div class="arrow">→</div>
-        </a>
+        </div>
       `;
     }).join('');
   }
@@ -386,6 +428,13 @@ function render(articles) {
       activeFilter = chip.dataset.filter;
       rerender();
     });
+  });
+
+  // Card 整体可点（去 jiangren.com.au）；点 .actions 里的 mp-link 走自己的 URL
+  list.addEventListener('click', (e) => {
+    if (e.target.closest('[data-stop]')) return;
+    const card = e.target.closest('[data-href]');
+    if (card) window.open(card.dataset.href, '_blank', 'noopener');
   });
 
   rerender();
