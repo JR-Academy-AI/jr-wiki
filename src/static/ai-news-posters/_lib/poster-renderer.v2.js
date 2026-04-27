@@ -355,6 +355,12 @@
     return out + '…';
   }
 
+  function truncateText(text, maxChars) {
+    const normalized = String(text || '').replace(/\s+/g, ' ').trim();
+    if (!maxChars || normalized.length <= maxChars) return normalized;
+    return normalized.slice(0, Math.max(1, maxChars - 1)).replace(/[，。；、\s]+$/g, '') + '…';
+  }
+
   function clampLaidOut(ctx, laid, fontSpec, maxLines, maxW) {
     if (!maxLines || laid.lines.length <= maxLines) return laid;
     const lines = laid.lines.slice(0, maxLines).map(line => line.map(run => ({ ...run })));
@@ -424,46 +430,51 @@
    * 用来选 flex-height 档位
    */
   function measureSinglePoster(ctx, d, shrinkLevel) {
-    if (d && d.idx) return 2100;
     shrinkLevel = shrinkLevel || 0;
-    const CW = W - 2 * (OUTER + BORDER + PAD_X);
-    let y = OUTER + BORDER + PAD_Y;
+    const CX = 72;
+    const CW = W - 144;
+    let y = 146;
 
-    // 日期胶囊 + idx
-    y += 72 + 28;
-    // category
-    y += 50 + 24;
+    // Category stamp + index row. Leave enough vertical room so the badge
+    // does not collide with the large numeric index/title block.
+    y += 150;
 
-    // title
-    const titleSize = Math.max(48, (d.titleSize || 82) - shrinkLevel * 8);
+    // Title block. Keep this aligned with drawSinglePoster(), where long
+    // titles are limited to three lines before the divider.
+    const titlePlain = tokensToText(d.title);
     const titleSpec = (s, w) => `${w || 900} ${s}px ${FF_CN}`;
-    const titleLaid = layoutTokens(ctx, d.title, titleSpec, titleSize, 1.12, CW);
-    y += titleLaid.lines.length * titleLaid.lineH + 24;
+    let titleSize = Math.max(60, Math.min(78, d.titleSize || 72) - shrinkLevel * 2);
+    const titleMaxW = CW - 250;
+    let titleLaid = layoutTokens(ctx, [{ text: titlePlain }], titleSpec, titleSize, 1.12, titleMaxW);
+    while (titleLaid.lines.length > 3 && titleSize > 60) {
+      titleSize -= 4;
+      titleLaid = layoutTokens(ctx, [{ text: titlePlain }], titleSpec, titleSize, 1.12, titleMaxW);
+    }
+    const titleLines = Math.min(titleLaid.lines.length, 3);
+    y += Math.max(76, titleLines * titleLaid.lineH - 4);
+    y += 74;
 
-    // oneline
-    const oneFontSize = Math.max(34, 44 - shrinkLevel * 4);
-    const onePadX = 36, onePadY = 30;
+    // One-line summary.
+    const oneFontSize = Math.max(38, 44 - shrinkLevel * 2);
     const oneSpec = (s, w) => `${w || 700} ${s}px ${FF_CN}`;
-    const oneLaid = layoutTokens(ctx, d.oneline, oneSpec, oneFontSize, 1.32, CW - onePadX * 2);
-    const oneH = oneLaid.lines.length * oneLaid.lineH + onePadY * 2;
-    y += oneH + 28;
+    const oneLaid = layoutTokens(ctx, d.oneline, oneSpec, oneFontSize, 1.28, CW - 56);
+    y += Math.max(104, oneLaid.lines.length * oneLaid.lineH + 30);
 
-    // 3 bullets
-    const bulletKeySize = 26;
-    const bulletValSize = Math.max(26, 34 - shrinkLevel * 4);
-    const bulletPad = 22;
-    for (const b of d.bullets) {
+    // Three content cards. Measure from actual paragraph length instead of
+    // forcing every news poster into a fixed 2100px canvas; otherwise dense
+    // stories get visibly squeezed in P1-P5.
+    const cardGap = 20;
+    const bulletValSize = Math.max(36, Math.min(42, 42 - shrinkLevel * 2));
+    for (const b of d.bullets || []) {
       const valSpec = (s, w) => `${w || 500} ${s}px ${FF_CN}`;
-      const valLaid = layoutTokens(ctx, [{ text: b.v }], valSpec, bulletValSize, 1.32, CW - bulletPad * 2 - 8);
-      const bulletH = bulletPad * 2 + bulletKeySize + 10 + valLaid.lines.length * valLaid.lineH;
-      y += bulletH + 18;
+      const valLaid = layoutTokens(ctx, [{ text: truncateText(b.v, d.posterMaxChars || 92) }], valSpec, bulletValSize, 1.34, CW - 76);
+      const textH = valLaid.lines.length * valLaid.lineH;
+      const cardH = Math.max(300, Math.min(560, 176 + textH));
+      y += cardH + cardGap;
     }
 
-    // footer 占位（分割线 + qr + 品牌）
-    y += 10 + 60 + 100;  // 分割线到 footer 底部的总高度
-
-    // 底部 padding
-    y += PAD_Y + BORDER + OUTER;
+    // Footer + breathing room.
+    y += 226 + OUTER;
 
     return Math.ceil(y);
   }
@@ -504,18 +515,18 @@
     ctx.fillStyle = '#10131f';
     ctx.fillText(`${d.idx} / 05`, W - 226, y + 35);
 
-    y += 104;
-    ctx.font = `900 72px ${FF_MONO}`;
+    y += 150;
+    ctx.font = `900 80px ${FF_MONO}`;
     ctx.fillStyle = '#e5261f';
     ctx.fillText(d.idx, CX, y + 6);
-    ctx.font = `900 60px ${FF_CN}`;
+    ctx.font = `900 72px ${FF_CN}`;
     ctx.fillStyle = '#10131f';
     const titlePlain = tokensToText(d.title);
     const titleSpec = (s, w) => `${w || 900} ${s}px ${FF_CN}`;
-    let titleSize = 60;
-    const titleMaxW = CW - 310;
+    let titleSize = Math.min(78, d.titleSize || 72);
+    const titleMaxW = CW - 250;
     let titleLaid = layoutTokens(ctx, [{ text: titlePlain }], titleSpec, titleSize, 1.12, titleMaxW);
-    while (titleLaid.lines.length > 3 && titleSize > 52) {
+    while (titleLaid.lines.length > 3 && titleSize > 60) {
       titleSize -= 4;
       titleLaid = layoutTokens(ctx, [{ text: titlePlain }], titleSpec, titleSize, 1.12, titleMaxW);
     }
@@ -537,7 +548,7 @@
     ctx.fillStyle = '#e5261f';
     ctx.fillRect(CX, y - 10, 6, 82);
     const oneSpec = (s, w) => `${w || 700} ${s}px ${FF_CN}`;
-    const oneLaid = layoutTokens(ctx, d.oneline, oneSpec, 38, 1.28, CW - 56);
+    const oneLaid = layoutTokens(ctx, d.oneline, oneSpec, 44, 1.22, CW - 56);
     drawLaidOut(ctx, oneLaid, CX + 28, y - 4, oneSpec, '#10131f', {
       hlBg: '#ffd225',
       normalWeight: 700,
@@ -551,20 +562,22 @@
     const maxCardBottom = H - 260;
     const available = maxCardBottom - y;
     const cardH = Math.max(260, Math.floor((available - cardGap * 2) / 3));
-    const bulletValSize = Math.max(28, Math.min(34, 36 - shrinkLevel * 2));
+    const bulletValSize = Math.max(36, Math.min(42, 42 - shrinkLevel * 2));
 
     for (let i = 0; i < d.bullets.length; i++) {
       const b = d.bullets[i];
       const fill = i === 1 ? '#ffd225' : '#f7f3ea';
       drawSharpBox(ctx, CX, y, CW, cardH, fill, '#10131f', 8);
-      ctx.font = `900 42px ${FF_CN}`;
+
+      ctx.font = `900 48px ${FF_CN}`;
       ctx.fillStyle = '#10131f';
       ctx.fillText(sectionLabels[i] || b.k, CX + 28, y + 66);
 
       const valSpec = (s, w) => `${w || 500} ${s}px ${FF_CN}`;
       const maxTextH = cardH - 118;
-      const maxLines = Math.max(3, Math.floor(maxTextH / (bulletValSize * 1.42)));
-      const valLaidRaw = layoutTokens(ctx, [{ text: b.v }], valSpec, bulletValSize, 1.42, CW - 76);
+      const maxLines = Math.max(3, Math.floor(maxTextH / (bulletValSize * 1.34)));
+      const valText = truncateText(b.v, d.posterMaxChars || 92);
+      const valLaidRaw = layoutTokens(ctx, [{ text: valText }], valSpec, bulletValSize, 1.34, CW - 76);
       const valLaid = clampLaidOut(ctx, valLaidRaw, valSpec, maxLines, CW - 76);
       drawLaidOut(ctx, valLaid, CX + 28, y + 94, valSpec, '#262936', {
         normalWeight: 500,
@@ -693,10 +706,7 @@
       normalWeight: 900,
     });
     y += firstLaid.lines.length * firstLaid.lineH + 16;
-    ctx.font = `700 32px ${FF_CN}`;
-    ctx.fillText('下面是今天 5 条 AI 新闻列表，适合发小红书 / 朋友圈 / 公众号。', CX, y);
-
-    y += 62;
+    y += 32;
     for (let i = 0; i < 5; i++) {
       const it = s.items[i] || {};
       const rowH = 118;
@@ -786,10 +796,10 @@ body {
   font-family: "Noto Sans SC", system-ui, sans-serif;
   background: linear-gradient(180deg, #fff 0%, #fff4e7 100%);
   color: var(--brand-dark);
-  padding: 48px 24px 120px;
+  padding: 36px 20px 120px;
   min-height: 100vh;
 }
-.pr-wrap { max-width: 1360px; margin: 0 auto; }
+.pr-wrap { max-width: 1680px; margin: 0 auto; }
 .pr-header { text-align: center; margin-bottom: 40px; }
 .pr-header h1 {
   font-size: 32px; font-weight: 900; letter-spacing: -0.5px;
@@ -832,8 +842,8 @@ body {
 .pr-btn.ghost { background: #fff; color: var(--brand-dark); }
 .pr-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr));
+  gap: 32px;
 }
 .pr-frame {
   background: #fff;
@@ -865,12 +875,13 @@ body {
 .pr-canvas-wrap {
   background: #eef0f4;
   border-radius: 10px;
-  padding: 14px;
+  padding: 16px;
   display: flex; justify-content: center;
   cursor: zoom-in;
 }
 .pr-canvas-wrap canvas {
   width: 100%;
+  max-width: 620px;
   height: auto;
   display: block;
   box-shadow: 8px 8px 0 var(--brand-dark);
