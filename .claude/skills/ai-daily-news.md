@@ -90,6 +90,13 @@ bun run build:ai-daily ${DATE} || exit 1
 
 ## 🎯 内容规则（Anti-AI + 深度）
 
+**🚨 标题铁律（2026-04-27 用户明确）**：
+- ❌ 禁止 `AI 日报 2026-04-27：xxx` —— 不要带"AI 日报"前缀，不要带日期
+- ❌ 禁止 `2026-04-27 AI 日报：xxx`
+- ✅ 直接用 5 条新闻关键词拼，例：`GPT-5.5 上线 / Nvidia 5T 市值 / Google TPU v8 拆训推 / 腾讯阿里抢 DeepSeek / 白宫覆盖各州 AI 法`
+- 适用：md frontmatter `title:` 字段 + JSON `mp.title` 字段 都不带日期前缀
+- 理由：日期已在 URL（`/blog/ai-daily-2026-04-27`）+ publishDate 字段，标题再写一遍冗余且毁 SEO
+
 **禁词**：值得注意的是、总的来说、此外、综上所述、不可否认、至关重要、旨在、使得/使其、进行了、作为一个、与此同时
 
 **替换**：
