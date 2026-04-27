@@ -6,26 +6,66 @@
   "summary": {
     "slug": "digest",
     "frameLabel": "P0 · 合集 <em>· Top 5 一图看完</em>",
-    "tags": ["合集封面", "适合首图", "今日 5 条一图扫完"],
+    "tags": [
+      "合集封面",
+      "适合首图",
+      "今日 5 条一图扫完"
+    ],
     "hook": [
-      { "text": "今天 " },
-      { "text": "5 条", "hl": true },
-      { "text": "\nAI 大新闻" }
+      {
+        "text": "今天 "
+      },
+      {
+        "text": "5 条",
+        "hl": true
+      },
+      {
+        "text": "\nAI 大新闻"
+      }
     ],
     "sub": "一图看完 · 匠人 AI 日报",
     "items": [
-      { "num": "01", "numColor": "#ff5757", "cat": "开源旗舰", "t": "DeepSeek V4 开源 1.6T MoE，1M 上下文 / KV 砍 90%" },
-      { "num": "02", "numColor": "#7c3aed", "cat": "国产开源", "t": "Kimi K2.6 开源登顶，单跑 13 小时编 4000 行" },
-      { "num": "03", "numColor": "#f97316", "cat": "融资估值", "t": "Cursor 谈 20 亿融资，估值跳到 500 亿美元" },
-      { "num": "04", "numColor": "#10b981", "cat": "企业 Agent", "t": "Adobe 推 CX Enterprise + Coworker 数字员工" },
-      { "num": "05", "numColor": "#0ea5e9", "cat": "芯片路线", "t": "TSMC 公布 A13 + N2U，14-reticle CoWoS 2028 量产" }
+      {
+        "num": "01",
+        "numColor": "#ff5757",
+        "cat": "开源旗舰",
+        "t": "DeepSeek V4 开源 1.6T MoE，1M 上下文 / KV 砍 90%"
+      },
+      {
+        "num": "02",
+        "numColor": "#7c3aed",
+        "cat": "国产开源",
+        "t": "Kimi K2.6 开源登顶，单跑 13 小时编 4000 行"
+      },
+      {
+        "num": "03",
+        "numColor": "#f97316",
+        "cat": "融资估值",
+        "t": "Cursor 谈 20 亿融资，估值跳到 500 亿美元"
+      },
+      {
+        "num": "04",
+        "numColor": "#10b981",
+        "cat": "企业 Agent",
+        "t": "Adobe 推 CX Enterprise + Coworker 数字员工"
+      },
+      {
+        "num": "05",
+        "numColor": "#0ea5e9",
+        "cat": "芯片路线",
+        "t": "TSMC 公布 A13 + N2U，14-reticle CoWoS 2028 量产"
+      }
     ]
   },
   "news": [
     {
       "slug": "01-deepseek-v4-open-source",
       "frameLabel": "P1 · 单图 <em>· DeepSeek V4 开源</em>",
-      "tags": ["开源旗舰", "DeepSeek", "MoE"],
+      "tags": [
+        "开源旗舰",
+        "DeepSeek",
+        "MoE"
+      ],
       "idx": "01",
       "catText": "开源旗舰",
       "accent": "#ff5757",
@@ -36,25 +76,58 @@
         "bot": "#fff7ef"
       },
       "title": [
-        { "text": "DeepSeek V4 开源 " },
-        { "text": "1.6T MoE", "hl": true },
-        { "text": "，1M 上下文" }
+        {
+          "text": "DeepSeek V4 开源 "
+        },
+        {
+          "text": "1.6T MoE",
+          "hl": true
+        },
+        {
+          "text": "，1M 上下文"
+        }
       ],
       "titleSize": 74,
       "oneline": [
-        { "text": "Pro 1.6T 总参 / 49B 激活，KV cache " },
-        { "text": "比 V3.2 砍 90%", "bold": true }
+        {
+          "text": "Pro 1.6T 总参 / 49B 激活，KV cache "
+        },
+        {
+          "text": "比 V3.2 砍 90%",
+          "bold": true
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "DeepSeek 04-24 在 Hugging Face 同步开源 V4-Pro 与 V4-Flash 两个 preview。Pro 1.6T 总参 / 49B 激活，是目前开源最大权重模型；Flash 284B / 13B 激活。两个都是 1M token 上下文 MoE，全部 MIT 协议，weight 可下载本地跑、可微调。距上一版 V3.2 仅 4 个月。" },
-        { "k": "为什么重要", "v": "V4 引入 Hybrid Attention 架构，1M 上下文下 V4-Pro 单 token FLOPs 只有 V3.2 的 27%、KV cache 只有 10%；Flash 更狠，FLOPs 10%、KV cache 7%。翻译成钱：长上下文推理成本一夜砍 90%。MIT Tech Review 直接说「closes the gap with frontier models」，开源第一次咬住 GPT-5.5 / Claude Opus。" },
-        { "k": "对你的影响", "v": "做 RAG / Agent / Code Review 这类长上下文吃显存的活，立刻可以测 V4-Flash —— 自托管成本会比之前任何方案都低。如果你之前在跑 Llama 3 / Qwen 加 vLLM，建议本周就把 V4 weight pull 下来跑 benchmark，对企业部署 ROI 改写明显。" }
+        {
+          "k": "发生了什么",
+          "v": "DeepSeek 04-24 在 Hugging Face 同步开源 V4-Pro 与 V4-Flash 两个 preview。Pro 1.6T 总参 / 49B 激活，是目前开源最大权重模型；Flash 284B / 13B 激活。两个都是 1M token 上下文 MoE，全部 MIT 协议，weight 可下载本地跑、可微调。距上一版 V3.2 仅 4 个月。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "V4 引入 Hybrid Attention 架构，1M 上下文下 V4-Pro 单 token FLOPs 只有 V3.2 的 27%、KV cache 只有 10%；Flash 更狠，FLOPs 10%、KV cache 7%。翻译成钱：长上下文推理成本一夜砍 90%。MIT Tech Review 直接说「closes the gap with frontier models」，开源第一次咬住 GPT-5.5 / Claude Opus。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 RAG / Agent / Code Review 这类长上下文吃显存的活，立刻可以测 V4-Flash —— 自托管成本会比之前任何方案都低。如果你之前在跑 Llama 3 / Qwen 加 vLLM，建议本周就把 V4 weight pull 下来跑 benchmark，对企业部署 ROI 改写明显。"
+        }
       ],
       "src": "📎 simonwillison.net · techcrunch.com · technologyreview.com",
       "sources": [
-        { "url": "https://simonwillison.net/2026/Apr/24/deepseek-v4/", "title": "DeepSeek V4 — almost on the frontier, a fraction of the price", "domain": "simonwillison.net" },
-        { "url": "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/", "title": "DeepSeek previews new AI model that closes the gap with frontier models", "domain": "techcrunch.com" },
-        { "url": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/", "title": "Three reasons why DeepSeek's new model matters", "domain": "technologyreview.com" }
+        {
+          "url": "https://simonwillison.net/2026/Apr/24/deepseek-v4/",
+          "title": "DeepSeek V4 — almost on the frontier, a fraction of the price",
+          "domain": "simonwillison.net"
+        },
+        {
+          "url": "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/",
+          "title": "DeepSeek previews new AI model that closes the gap with frontier models",
+          "domain": "techcrunch.com"
+        },
+        {
+          "url": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/",
+          "title": "Three reasons why DeepSeek's new model matters",
+          "domain": "technologyreview.com"
+        }
       ],
       "mp": {
         "h2": "DeepSeek V4 开源放出：1.6T MoE + 1M 上下文，把长上下文推理成本砍 90%",
@@ -69,7 +142,11 @@
     {
       "slug": "02-kimi-k2-6-open-source",
       "frameLabel": "P2 · 单图 <em>· Kimi K2.6 开源</em>",
-      "tags": ["国产开源", "Kimi", "多 Agent"],
+      "tags": [
+        "国产开源",
+        "Kimi",
+        "多 Agent"
+      ],
       "idx": "02",
       "catText": "国产开源",
       "accent": "#7c3aed",
@@ -80,25 +157,58 @@
         "bot": "#f7f4ff"
       },
       "title": [
-        { "text": "Kimi K2.6 开源 " },
-        { "text": "13 小时连写", "hl": true },
-        { "text": " 4000 行" }
+        {
+          "text": "Kimi K2.6 开源 "
+        },
+        {
+          "text": "13 小时连写",
+          "hl": true
+        },
+        {
+          "text": " 4000 行"
+        }
       ],
       "titleSize": 70,
       "oneline": [
-        { "text": "1T 总参 / 32B 激活 MoE，单任务可调度 " },
-        { "text": "300 个子 Agent", "bold": true }
+        {
+          "text": "1T 总参 / 32B 激活 MoE，单任务可调度 "
+        },
+        {
+          "text": "300 个子 Agent",
+          "bold": true
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "月之暗面 04-20 发布并开源 Kimi K2.6：MoE 架构 1T 总参 / 32B 激活，256K 统一上下文窗口。单 Agent 可以连续编码 13 小时、写或改 4000+ 行代码；Agent 集群模式可以拆出 300 个子 Agent 并行跑 4000 步协作任务。代码与长任务两个维度首次超过 GPT-5.4 / Claude Opus 4.6。" },
-        { "k": "为什么重要", "v": "这是国内开源模型第一次在「长程编码 + 多 Agent 编排」两个工程场景同时压制闭源旗舰。比起 V4 押的「长上下文 + 推理成本」，Kimi K2.6 押的是「Agent 持续作业能力」 —— 13 小时不掉链子、300 子 Agent 并发，是真正可以接进 CI/CD pipeline 的工程级能力，不是 demo 级。" },
-        { "k": "对你的影响", "v": "做 Code Agent / 自动化重构 / 大型 codebase 改造的，可以把 K2.6 当 Claude Code 的开源平替试。同时注意 K2.6 涨价 58%（API 端），月之暗面在赌「企业愿意为可靠的长程作业付钱」 —— 这条赛道接下来 12 个月会出现大量「Agent-as-a-Service」类产品。" }
+        {
+          "k": "发生了什么",
+          "v": "月之暗面 04-20 发布并开源 Kimi K2.6：MoE 架构 1T 总参 / 32B 激活，256K 统一上下文窗口。单 Agent 可以连续编码 13 小时、写或改 4000+ 行代码；Agent 集群模式可以拆出 300 个子 Agent 并行跑 4000 步协作任务。代码与长任务两个维度首次超过 GPT-5.4 / Claude Opus 4.6。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是国内开源模型第一次在「长程编码 + 多 Agent 编排」两个工程场景同时压制闭源旗舰。比起 V4 押的「长上下文 + 推理成本」，Kimi K2.6 押的是「Agent 持续作业能力」 —— 13 小时不掉链子、300 子 Agent 并发，是真正可以接进 CI/CD pipeline 的工程级能力，不是 demo 级。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 Code Agent / 自动化重构 / 大型 codebase 改造的，可以把 K2.6 当 Claude Code 的开源平替试。同时注意 K2.6 涨价 58%（API 端），月之暗面在赌「企业愿意为可靠的长程作业付钱」 —— 这条赛道接下来 12 个月会出现大量「Agent-as-a-Service」类产品。"
+        }
       ],
       "src": "📎 ithome.com · kimi-k2.org · 21jingji.com",
       "sources": [
-        { "url": "https://www.ithome.com/0/941/385.htm", "title": "月之暗面最强模型 Kimi K2.6 发布并开源", "domain": "ithome.com" },
-        { "url": "https://kimi-k2.org/zh/blog/24-kimi-k2-6-release", "title": "Kimi K2.6 正式发布：智能体编码时代进入生产阶段", "domain": "kimi-k2.org" },
-        { "url": "https://www.21jingji.com/article/20260422/herald/5ac0ce6cf7d0c8062db9381f59e8862f.html", "title": "月之暗面新模型 Kimi K2.6 发布并开源", "domain": "21jingji.com" }
+        {
+          "url": "https://www.ithome.com/0/941/385.htm",
+          "title": "月之暗面最强模型 Kimi K2.6 发布并开源",
+          "domain": "ithome.com"
+        },
+        {
+          "url": "https://kimi-k2.org/zh/blog/24-kimi-k2-6-release",
+          "title": "Kimi K2.6 正式发布：智能体编码时代进入生产阶段",
+          "domain": "kimi-k2.org"
+        },
+        {
+          "url": "https://www.21jingji.com/article/20260422/herald/5ac0ce6cf7d0c8062db9381f59e8862f.html",
+          "title": "月之暗面新模型 Kimi K2.6 发布并开源",
+          "domain": "21jingji.com"
+        }
       ],
       "mp": {
         "h2": "Kimi K2.6 开源登顶：13 小时连续编码 + 300 子 Agent 并发，国产 Agent 第一次咬住 Claude Code",
@@ -113,7 +223,11 @@
     {
       "slug": "03-cursor-2b-funding",
       "frameLabel": "P3 · 单图 <em>· Cursor 2B 融资</em>",
-      "tags": ["融资估值", "Cursor", "AI Coding"],
+      "tags": [
+        "融资估值",
+        "Cursor",
+        "AI Coding"
+      ],
       "idx": "03",
       "catText": "融资估值",
       "accent": "#f97316",
@@ -124,23 +238,48 @@
         "bot": "#ffedd5"
       },
       "title": [
-        { "text": "Cursor 谈 " },
-        { "text": "20 亿美元融资", "hl": true },
-        { "text": "，估值跳 500 亿" }
+        {
+          "text": "Cursor 谈 "
+        },
+        {
+          "text": "20 亿美元融资",
+          "hl": true
+        },
+        {
+          "text": "，估值跳 500 亿"
+        }
       ],
       "titleSize": 74,
       "oneline": [
-        { "text": "Andreessen Horowitz 领投，" },
-        { "text": "Nvidia + Thrive 跟投", "bold": true }
+        {
+          "text": "Andreessen Horowitz 领投，"
+        },
+        {
+          "text": "Nvidia + Thrive 跟投",
+          "bold": true
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "CNBC 04-19 报道：AI 代码 IDE 公司 Cursor 正在洽谈一轮 20 亿美元融资，估值锁 500 亿美元以上。Andreessen Horowitz 领投，Nvidia 与 Thrive Capital 跟投。Cursor 上一轮估值大约 250 亿美元，半年涨一倍。" },
-        { "k": "为什么重要", "v": "Cursor 是目前 AI Coding 工具赛道里唯一一个 ARR 还在指数曲线上的产品，把 GitHub Copilot 的市场份额一口口吃掉。Nvidia 跟投是新信号 —— 之前 Nvidia 只投基础模型公司，现在开始押「AI 应用层」头部产品，意味着 Nvidia 在为下一轮 GPU 需求绑定关键 AI 工具客户。" },
-        { "k": "对你的影响", "v": "做 dev tools / IDE 集成 / 代码 SaaS 的创业者注意：Cursor 把 IDE 这条路彻底跑通了，下一波机会是「垂直行业的 Cursor」（医疗代码、法务条款、CAD 工程）。求职端：Cursor / Replit Agent / Bolt 这类公司接下来一年会大量招 AI Engineer，前端 + LLM 双栈是稀缺组合。" }
+        {
+          "k": "发生了什么",
+          "v": "CNBC 04-19 报道：AI 代码 IDE 公司 Cursor 正在洽谈一轮 20 亿美元融资，估值锁 500 亿美元以上。Andreessen Horowitz 领投，Nvidia 与 Thrive Capital 跟投。Cursor 上一轮估值大约 250 亿美元，半年涨一倍。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Cursor 是目前 AI Coding 工具赛道里唯一一个 ARR 还在指数曲线上的产品，把 GitHub Copilot 的市场份额一口口吃掉。Nvidia 跟投是新信号 —— 之前 Nvidia 只投基础模型公司，现在开始押「AI 应用层」头部产品，意味着 Nvidia 在为下一轮 GPU 需求绑定关键 AI 工具客户。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 dev tools / IDE 集成 / 代码 SaaS 的创业者注意：Cursor 把 IDE 这条路彻底跑通了，下一波机会是「垂直行业的 Cursor」（医疗代码、法务条款、CAD 工程）。求职端：Cursor / Replit Agent / Bolt 这类公司接下来一年会大量招 AI Engineer，前端 + LLM 双栈是稀缺组合。"
+        }
       ],
       "src": "📎 cnbc.com",
       "sources": [
-        { "url": "https://www.cnbc.com/2026/04/19/cursor-ai-2-billion-funding-round.html", "title": "AI startup Cursor in talks to raise $2 billion at over $50 billion valuation", "domain": "cnbc.com" }
+        {
+          "url": "https://www.cnbc.com/2026/04/19/cursor-ai-2-billion-funding-round.html",
+          "title": "AI startup Cursor in talks to raise $2 billion at over $50 billion valuation",
+          "domain": "cnbc.com"
+        }
       ],
       "mp": {
         "h2": "Cursor 谈 20 亿美元融资 / 500 亿美元估值：a16z 领投，Nvidia 第一次出手押 AI 应用层",
@@ -155,7 +294,11 @@
     {
       "slug": "04-adobe-cx-enterprise-coworker",
       "frameLabel": "P4 · 单图 <em>· Adobe CX Enterprise</em>",
-      "tags": ["企业 Agent", "Adobe", "数字员工"],
+      "tags": [
+        "企业 Agent",
+        "Adobe",
+        "数字员工"
+      ],
       "idx": "04",
       "catText": "企业 Agent",
       "accent": "#10b981",
@@ -166,24 +309,55 @@
         "bot": "#ecfdf5"
       },
       "title": [
-        { "text": "Adobe 把 Experience Cloud " },
-        { "text": "改名 CX Enterprise", "hl": true }
+        {
+          "text": "Adobe 把 Experience Cloud "
+        },
+        {
+          "text": "改名 CX Enterprise",
+          "hl": true
+        }
       ],
       "titleSize": 72,
       "oneline": [
-        { "text": "推 Coworker 数字员工，跑在 " },
-        { "text": "MCP + A2A 开放协议", "bold": true }
+        {
+          "text": "推 Coworker 数字员工，跑在 "
+        },
+        {
+          "text": "MCP + A2A 开放协议",
+          "bold": true
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "Adobe Summit 2026 (04-20) 把 Experience Cloud 整体改名为 CX Enterprise，一口气推出 CX Enterprise Coworker（数字员工），可以跨 Adobe + AWS + Anthropic + Google + Microsoft + OpenAI 平台编排客户体验工作流。配套发布 Engagement Intelligence 决策引擎、Journey Optimizer Loyalty、CX Analytics、Real-Time CDP 升级。" },
-        { "k": "为什么重要", "v": "这是 Adobe 第一次把整个产品线从「工具集合」重构成「Agent 编排平台」 —— 不再是营销人员手工配 journey，而是 Coworker 自动监听信号、推荐 next-best-action、跨渠道执行。重点是 Coworker 跑在 MCP + A2A 开放协议上，意味着第三方 Agent 可以挂进来 —— Adobe 在赌「成为 enterprise Agent 的中枢平台」。" },
-        { "k": "对你的影响", "v": "做营销自动化、CRM、CDP、客服系统的工程师注意：MCP / A2A 协议接下来会从「实验性 spec」变成「企业必学」 —— 不会接 MCP 的工程师 1 年内会被边缘化。同时 prompt 工程师 + 营销背景的复合岗会大爆发，因为有人得真去写 Coworker 的 playbook。" }
+        {
+          "k": "发生了什么",
+          "v": "Adobe Summit 2026 (04-20) 把 Experience Cloud 整体改名为 CX Enterprise，一口气推出 CX Enterprise Coworker（数字员工），可以跨 Adobe + AWS + Anthropic + Google + Microsoft + OpenAI 平台编排客户体验工作流。配套发布 Engagement Intelligence 决策引擎、Journey Optimizer Loyalty、CX Analytics、Real-Time CDP 升级。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是 Adobe 第一次把整个产品线从「工具集合」重构成「Agent 编排平台」 —— 不再是营销人员手工配 journey，而是 Coworker 自动监听信号、推荐 next-best-action、跨渠道执行。重点是 Coworker 跑在 MCP + A2A 开放协议上，意味着第三方 Agent 可以挂进来 —— Adobe 在赌「成为 enterprise Agent 的中枢平台」。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做营销自动化、CRM、CDP、客服系统的工程师注意：MCP / A2A 协议接下来会从「实验性 spec」变成「企业必学」 —— 不会接 MCP 的工程师 1 年内会被边缘化。同时 prompt 工程师 + 营销背景的复合岗会大爆发，因为有人得真去写 Coworker 的 playbook。"
+        }
       ],
       "src": "📎 news.adobe.com · martech.org",
       "sources": [
-        { "url": "https://news.adobe.com/news/2026/04/adobe-redefines-custome-experience", "title": "Adobe Redefines Customer Experience Orchestration with CX Enterprise", "domain": "news.adobe.com" },
-        { "url": "https://news.adobe.com/news/2026/04/adobe-unveils-cx-enterprise-coworker", "title": "Adobe Unveils CX Enterprise Coworker", "domain": "news.adobe.com" },
-        { "url": "https://martech.org/adobe-rebrands-experience-cloud-as-cx-enterprise-goes-all-in-on-ai-agents/", "title": "Adobe rebrands Experience Cloud as CX Enterprise, goes all-in on AI agents", "domain": "martech.org" }
+        {
+          "url": "https://news.adobe.com/news/2026/04/adobe-redefines-custome-experience",
+          "title": "Adobe Redefines Customer Experience Orchestration with CX Enterprise",
+          "domain": "news.adobe.com"
+        },
+        {
+          "url": "https://news.adobe.com/news/2026/04/adobe-unveils-cx-enterprise-coworker",
+          "title": "Adobe Unveils CX Enterprise Coworker",
+          "domain": "news.adobe.com"
+        },
+        {
+          "url": "https://martech.org/adobe-rebrands-experience-cloud-as-cx-enterprise-goes-all-in-on-ai-agents/",
+          "title": "Adobe rebrands Experience Cloud as CX Enterprise, goes all-in on AI agents",
+          "domain": "martech.org"
+        }
       ],
       "mp": {
         "h2": "Adobe 把 Experience Cloud 改名 CX Enterprise：营销栈第一次按 Agent 优先重构",
@@ -198,7 +372,11 @@
     {
       "slug": "05-tsmc-a13-coWoS-roadmap",
       "frameLabel": "P5 · 单图 <em>· TSMC A13 + CoWoS</em>",
-      "tags": ["芯片路线", "TSMC", "先进封装"],
+      "tags": [
+        "芯片路线",
+        "TSMC",
+        "先进封装"
+      ],
       "idx": "05",
       "catText": "芯片路线",
       "accent": "#0ea5e9",
@@ -209,25 +387,56 @@
         "bot": "#e0f2fe"
       },
       "title": [
-        { "text": "TSMC 公布 " },
-        { "text": "A13 + N2U", "hl": true },
-        { "text": "，凤凰城 900 英亩落子" }
+        {
+          "text": "TSMC 公布 "
+        },
+        {
+          "text": "A13 + N2U",
+          "hl": true
+        },
+        {
+          "text": "，凤凰城 900 英亩落子"
+        }
       ],
       "titleSize": 70,
       "oneline": [
-        { "text": "14-reticle CoWoS " },
-        { "text": "2028 量产", "bold": true },
-        { "text": "，可塞 10 大 die + 20 HBM" }
+        {
+          "text": "14-reticle CoWoS "
+        },
+        {
+          "text": "2028 量产",
+          "bold": true
+        },
+        {
+          "text": "，可塞 10 大 die + 20 HBM"
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "TSMC 04-22 北美技术 Symposium 一次甩三个大节点：A13 工艺（A14 直接 shrink，省 6% 面积，2029 量产）、N2U（N2P 进化版，2028 量产）、14-reticle CoWoS（可装 10 颗大 die + 20 个 HBM，2028 量产）。同时董事会批准在凤凰城再买 900 英亩地，2029 前建成 CoWoS + 3D-IC 美国本土产能。" },
-        { "k": "为什么重要", "v": "AI 训练芯片的瓶颈早已不是单 die 性能，是「能塞多大的 system-in-package」。14-reticle CoWoS 直接把 GPU + HBM 上限提到 10 + 20 的规模，下一代 Nvidia / AMD / TPU / Trainium 都会基于这个 platform。Phoenix 落子则是把先进封装本土化 —— 这是地缘政治 + 能源密集 AI 的双重组合拳。" },
-        { "k": "对你的影响", "v": "做 ML infra / 模型部署 / 推理优化的工程师，未来 2 年要习惯「单芯片就是 system」 —— 模型并行策略、KV cache 拆分、attention sharding 这些技能从「研究方向」变成「工程必修」。同时 chip packaging engineer / advanced thermal engineer 这类硬件岗位会涌入大量 AI 资本，硬件生意被 AI 重构。" }
+        {
+          "k": "发生了什么",
+          "v": "TSMC 04-22 北美技术 Symposium 一次甩三个大节点：A13 工艺（A14 直接 shrink，省 6% 面积，2029 量产）、N2U（N2P 进化版，2028 量产）、14-reticle CoWoS（可装 10 颗大 die + 20 个 HBM，2028 量产）。同时董事会批准在凤凰城再买 900 英亩地，2029 前建成 CoWoS + 3D-IC 美国本土产能。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "AI 训练芯片的瓶颈早已不是单 die 性能，是「能塞多大的 system-in-package」。14-reticle CoWoS 直接把 GPU + HBM 上限提到 10 + 20 的规模，下一代 Nvidia / AMD / TPU / Trainium 都会基于这个 platform。Phoenix 落子则是把先进封装本土化 —— 这是地缘政治 + 能源密集 AI 的双重组合拳。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 ML infra / 模型部署 / 推理优化的工程师，未来 2 年要习惯「单芯片就是 system」 —— 模型并行策略、KV cache 拆分、attention sharding 这些技能从「研究方向」变成「工程必修」。同时 chip packaging engineer / advanced thermal engineer 这类硬件岗位会涌入大量 AI 资本，硬件生意被 AI 重构。"
+        }
       ],
       "src": "📎 businesswire.com · datacenterdynamics.com",
       "sources": [
-        { "url": "https://www.businesswire.com/news/home/20260422346925/en/TSMC-Debuts-A13-Technology-at-2026-North-America-Technology-Symposium", "title": "TSMC Debuts A13 Technology at 2026 North America Technology Symposium", "domain": "businesswire.com" },
-        { "url": "https://www.datacenterdynamics.com/en/news/tsmc-updates-roadmap-with-three-new-process-nodes-breaks-ground-on-arizona-packaging-facility/", "title": "TSMC updates roadmap with three new process nodes, breaks ground on Arizona packaging facility", "domain": "datacenterdynamics.com" }
+        {
+          "url": "https://www.businesswire.com/news/home/20260422346925/en/TSMC-Debuts-A13-Technology-at-2026-North-America-Technology-Symposium",
+          "title": "TSMC Debuts A13 Technology at 2026 North America Technology Symposium",
+          "domain": "businesswire.com"
+        },
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/tsmc-updates-roadmap-with-three-new-process-nodes-breaks-ground-on-arizona-packaging-facility/",
+          "title": "TSMC updates roadmap with three new process nodes, breaks ground on Arizona packaging facility",
+          "domain": "datacenterdynamics.com"
+        }
       ],
       "mp": {
         "h2": "TSMC 北美 Symposium：A13 + N2U + 14-reticle CoWoS，AI 芯片瓶颈彻底转向先进封装",
@@ -241,9 +450,12 @@
     }
   ],
   "mp": {
-    "title": "DeepSeek V4 / Kimi K2.6 双开源 / Cursor 估值跳 500 亿 / Adobe 数字员工 / TSMC A13 ｜AI 日报 04-26",
+    "title": "DeepSeek V4 / Kimi K2.6 双开源 / Cursor 估值跳 500 亿 / Adobe 数字员工 / TSMC A13",
     "lead": "周末 AI 圈两条开源旗舰直接把局面改写：DeepSeek V4 开源放出 1.6T MoE + 1M 上下文 + KV cache 砍 90%，Kimi K2.6 同步开源、单 Agent 连续编 13 小时 / 集群 300 子 Agent 并发，国产开源第一次同时压制 GPT-5.4 和 Claude Opus 4.6。资本端 Cursor 谈 20 亿美元融资、估值跳到 500 亿，Nvidia 第一次出手押 AI 应用层。Adobe Summit 把 Experience Cloud 整体改名 CX Enterprise、推数字员工 Coworker，跑在 MCP + A2A 协议上。最后 TSMC 北美 Symposium 公布 A13 + N2U + 14-reticle CoWoS 路线图，先进封装彻底变成 AI 主战场。",
-    "meta": { "author": "JR Academy AI 日报", "readTime": "10 分钟" },
+    "meta": {
+      "author": "JR Academy AI 日报",
+      "readTime": "10 分钟"
+    },
     "quickview": {
       "title": "📌 今日速览",
       "items": [

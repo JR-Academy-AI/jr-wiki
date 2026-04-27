@@ -6,26 +6,66 @@
   "summary": {
     "slug": "digest",
     "frameLabel": "P0 · 合集 <em>· Top 5 一图看完</em>",
-    "tags": ["合集封面", "适合首图", "今日 5 条一图扫完"],
+    "tags": [
+      "合集封面",
+      "适合首图",
+      "今日 5 条一图扫完"
+    ],
     "hook": [
-      { "text": "今天 " },
-      { "text": "5 条", "hl": true },
-      { "text": "\nAI 大新闻" }
+      {
+        "text": "今天 "
+      },
+      {
+        "text": "5 条",
+        "hl": true
+      },
+      {
+        "text": "\nAI 大新闻"
+      }
     ],
     "sub": "一图看完 · 匠人 AI 日报",
     "items": [
-      { "num": "01", "numColor": "#ff5757", "cat": "巨额投资", "t": "Google 砸 400 亿美元投资 Anthropic" },
-      { "num": "02", "numColor": "#7c3aed", "cat": "算力布局", "t": "Anthropic 锁定 1000 亿美元 + 10GW 双家算力" },
-      { "num": "03", "numColor": "#f97316", "cat": "巨头入场", "t": "Bezos AI 实验室融 100 亿美元押注物理世界" },
-      { "num": "04", "numColor": "#10b981", "cat": "产品发布", "t": "OpenAI 推工作空间 Agent + GPT-5.5 定价翻倍" },
-      { "num": "05", "numColor": "#0ea5e9", "cat": "学习福利", "t": "印第安纳大学 GenAI 101 全球免费开放" }
+      {
+        "num": "01",
+        "numColor": "#ff5757",
+        "cat": "巨额投资",
+        "t": "Google 砸 400 亿美元投资 Anthropic"
+      },
+      {
+        "num": "02",
+        "numColor": "#7c3aed",
+        "cat": "算力布局",
+        "t": "Anthropic 锁定 1000 亿美元 + 10GW 双家算力"
+      },
+      {
+        "num": "03",
+        "numColor": "#f97316",
+        "cat": "巨头入场",
+        "t": "Bezos AI 实验室融 100 亿美元押注物理世界"
+      },
+      {
+        "num": "04",
+        "numColor": "#10b981",
+        "cat": "产品发布",
+        "t": "OpenAI 推工作空间 Agent + GPT-5.5 定价翻倍"
+      },
+      {
+        "num": "05",
+        "numColor": "#0ea5e9",
+        "cat": "学习福利",
+        "t": "印第安纳大学 GenAI 101 全球免费开放"
+      }
     ]
   },
   "news": [
     {
       "slug": "01-google-anthropic-40b",
       "frameLabel": "P1 · 单图 <em>· Google 投 Anthropic $40B</em>",
-      "tags": ["巨额投资", "Anthropic", "Google"],
+      "tags": [
+        "巨额投资",
+        "Anthropic",
+        "Google"
+      ],
       "idx": "01",
       "catText": "巨额投资",
       "accent": "#ff5757",
@@ -36,26 +76,61 @@
         "bot": "#fff7ef"
       },
       "title": [
-        { "text": "Google 投资 Anthropic " },
-        { "text": "400 亿美元", "hl": true },
-        { "text": "，估值锁 3800 亿" }
+        {
+          "text": "Google 投资 Anthropic "
+        },
+        {
+          "text": "400 亿美元",
+          "hl": true
+        },
+        {
+          "text": "，估值锁 3800 亿"
+        }
       ],
       "titleSize": 76,
       "oneline": [
-        { "text": "首笔 " },
-        { "text": "100 亿立即到账", "bold": true },
-        { "text": "，余下 300 亿与业绩挂钩" }
+        {
+          "text": "首笔 "
+        },
+        {
+          "text": "100 亿立即到账",
+          "bold": true
+        },
+        {
+          "text": "，余下 300 亿与业绩挂钩"
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "Google 04-24 公告：将向 Anthropic 投资最高 400 亿美元，结构是「100 亿现金立即注入 + 300 亿业绩里程碑解锁」，对应 Anthropic 最新估值 3800 亿美元。Anthropic 同步披露年化营收已破 300 亿美元，Q1 单季环比翻倍。" },
-        { "k": "为什么重要", "v": "这是 Google 在 Anthropic 上的第三轮加码，加上 Amazon 早前公告的 50-200 亿，两巨头在 Anthropic 上累计承诺已超 600 亿美元 —— foundation model 公司的「双股东 + 大客户」结构正式跑通，Anthropic 不再依赖单一靠山。" },
-        { "k": "对你的影响", "v": "Anthropic 拿到弹药后，Claude Code、Claude Design、企业 API 都会再加速；订阅价格短期可能上调，但模型迭代节奏（Sonnet/Opus 月度更新）会更激进。学 Claude Code 工作流的工程师红利窗口至少还有 12 个月。" }
+        {
+          "k": "发生了什么",
+          "v": "Google 04-24 公告：将向 Anthropic 投资最高 400 亿美元，结构是「100 亿现金立即注入 + 300 亿业绩里程碑解锁」，对应 Anthropic 最新估值 3800 亿美元。Anthropic 同步披露年化营收已破 300 亿美元，Q1 单季环比翻倍。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是 Google 在 Anthropic 上的第三轮加码，加上 Amazon 早前公告的 50-200 亿，两巨头在 Anthropic 上累计承诺已超 600 亿美元 —— foundation model 公司的「双股东 + 大客户」结构正式跑通，Anthropic 不再依赖单一靠山。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "Anthropic 拿到弹药后，Claude Code、Claude Design、企业 API 都会再加速；订阅价格短期可能上调，但模型迭代节奏（Sonnet/Opus 月度更新）会更激进。学 Claude Code 工作流的工程师红利窗口至少还有 12 个月。"
+        }
       ],
       "src": "📎 cnbc.com · axios.com · anthropic.com",
       "sources": [
-        { "url": "https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html", "title": "Google to invest up to $40 billion in Anthropic", "domain": "cnbc.com" },
-        { "url": "https://www.axios.com/2026/04/24/google-amazon-anthropic-investment", "title": "Google's $40B Anthropic move is Big Tech's latest huge AI bet", "domain": "axios.com" },
-        { "url": "https://www.anthropic.com/news", "title": "Anthropic News", "domain": "anthropic.com" }
+        {
+          "url": "https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html",
+          "title": "Google to invest up to $40 billion in Anthropic",
+          "domain": "cnbc.com"
+        },
+        {
+          "url": "https://www.axios.com/2026/04/24/google-amazon-anthropic-investment",
+          "title": "Google's $40B Anthropic move is Big Tech's latest huge AI bet",
+          "domain": "axios.com"
+        },
+        {
+          "url": "https://www.anthropic.com/news",
+          "title": "Anthropic News",
+          "domain": "anthropic.com"
+        }
       ],
       "mp": {
         "h2": "Google 砸 400 亿美元投 Anthropic：foundation model 进入「双股东」时代",
@@ -70,7 +145,11 @@
     {
       "slug": "02-anthropic-100b-compute",
       "frameLabel": "P2 · 单图 <em>· Anthropic $100B 算力</em>",
-      "tags": ["算力布局", "TPU", "Trainium"],
+      "tags": [
+        "算力布局",
+        "TPU",
+        "Trainium"
+      ],
       "idx": "02",
       "catText": "算力布局",
       "accent": "#7c3aed",
@@ -81,25 +160,56 @@
         "bot": "#f7f4ff"
       },
       "title": [
-        { "text": "Anthropic 锁 " },
-        { "text": "1000 亿美元", "hl": true },
-        { "text": " 算力 + 10GW 双线" }
+        {
+          "text": "Anthropic 锁 "
+        },
+        {
+          "text": "1000 亿美元",
+          "hl": true
+        },
+        {
+          "text": " 算力 + 10GW 双线"
+        }
       ],
       "titleSize": 72,
       "oneline": [
-        { "text": "Amazon 5GW Trainium + Google " },
-        { "text": "5GW TPU", "bold": true },
-        { "text": "，绕 Nvidia 自建栈" }
+        {
+          "text": "Amazon 5GW Trainium + Google "
+        },
+        {
+          "text": "5GW TPU",
+          "bold": true
+        },
+        {
+          "text": "，绕 Nvidia 自建栈"
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "Anthropic 04-24 同步披露：与 Amazon 签 1000 亿美元算力协议，未来获得最高 5GW 的 AWS Trainium 训练 + 推理集群；与 Google 这一轮拿到 5GW TPU 容量。两家加起来 10GW，规模相当于一座巨型核电站全功率为 Anthropic 单一客户供电。" },
-        { "k": "为什么重要", "v": "这是 foundation model 公司第一次明确「绕开 Nvidia」的算力组合 —— 同时押 Trainium 和 TPU，两家自研芯片厂商谁的性价比上来就用谁。Anthropic 在赌「下一代训练 + 大批量推理」的成本结构由专用芯片定价权重新洗牌。" },
-        { "k": "对你的影响", "v": "做 ML infra / MLOps 的工程师注意：Trainium / TPU 工具链（Neuron SDK / JAX-on-TPU）的市场需求会跟上来，比 CUDA 学的人少，上车窗口大。做模型部署的人，未来 1-2 年得习惯「同一个模型跑在 3 种芯片上」的部署矩阵。" }
+        {
+          "k": "发生了什么",
+          "v": "Anthropic 04-24 同步披露：与 Amazon 签 1000 亿美元算力协议，未来获得最高 5GW 的 AWS Trainium 训练 + 推理集群；与 Google 这一轮拿到 5GW TPU 容量。两家加起来 10GW，规模相当于一座巨型核电站全功率为 Anthropic 单一客户供电。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是 foundation model 公司第一次明确「绕开 Nvidia」的算力组合 —— 同时押 Trainium 和 TPU，两家自研芯片厂商谁的性价比上来就用谁。Anthropic 在赌「下一代训练 + 大批量推理」的成本结构由专用芯片定价权重新洗牌。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 ML infra / MLOps 的工程师注意：Trainium / TPU 工具链（Neuron SDK / JAX-on-TPU）的市场需求会跟上来，比 CUDA 学的人少，上车窗口大。做模型部署的人，未来 1-2 年得习惯「同一个模型跑在 3 种芯片上」的部署矩阵。"
+        }
       ],
       "src": "📎 axios.com · anthropic.com",
       "sources": [
-        { "url": "https://www.axios.com/2026/04/24/google-amazon-anthropic-investment", "title": "Anthropic compute deals with Amazon and Google", "domain": "axios.com" },
-        { "url": "https://www.anthropic.com/news", "title": "Anthropic News", "domain": "anthropic.com" }
+        {
+          "url": "https://www.axios.com/2026/04/24/google-amazon-anthropic-investment",
+          "title": "Anthropic compute deals with Amazon and Google",
+          "domain": "axios.com"
+        },
+        {
+          "url": "https://www.anthropic.com/news",
+          "title": "Anthropic News",
+          "domain": "anthropic.com"
+        }
       ],
       "mp": {
         "h2": "Anthropic 1000 亿美元算力协议：Trainium + TPU 双线绕开 Nvidia",
@@ -114,7 +224,11 @@
     {
       "slug": "03-bezos-prometheus-10b",
       "frameLabel": "P3 · 单图 <em>· Bezos Project Prometheus</em>",
-      "tags": ["巨头入场", "Bezos", "物理 AI"],
+      "tags": [
+        "巨头入场",
+        "Bezos",
+        "物理 AI"
+      ],
       "idx": "03",
       "catText": "巨头入场",
       "accent": "#f97316",
@@ -125,23 +239,48 @@
         "bot": "#ffedd5"
       },
       "title": [
-        { "text": "Bezos AI 实验室融 " },
-        { "text": "100 亿美元", "hl": true },
-        { "text": "，押注物理世界" }
+        {
+          "text": "Bezos AI 实验室融 "
+        },
+        {
+          "text": "100 亿美元",
+          "hl": true
+        },
+        {
+          "text": "，押注物理世界"
+        }
       ],
       "titleSize": 72,
       "oneline": [
-        { "text": "Project Prometheus 目标 " },
-        { "text": "理解物理世界的模型", "bold": true }
+        {
+          "text": "Project Prometheus 目标 "
+        },
+        {
+          "text": "理解物理世界的模型",
+          "bold": true
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "Financial Times 04-21 报道、Bloomberg 跟进确认：Jeff Bezos 个人主导的新 AI 实验室「Project Prometheus」即将完成 100 亿美元融资。该实验室聚焦「能理解物理世界的 foundation model」，不直接和 OpenAI / Anthropic 拼通用对话模型。" },
-        { "k": "为什么重要", "v": "Bezos 此前已通过 Amazon 投资 Anthropic 200 亿美元，这次以个人身份再开 100 亿独立 AI lab，目标方向是「具身智能 + 机器人 + 物理仿真」—— 这是 OpenAI / Anthropic / Google 都没有重兵投入的赛道。Bezos 在押 LLM 之后的下一个范式。" },
-        { "k": "对你的影响", "v": "做机器人、自动驾驶、3D 视觉、物理仿真的工程师，2026 下半年到 2027 整年会迎来大规模招聘潮 —— 不只是 Bezos 一家，FigureAI、1x、Skild、Physical Intelligence 都在抢这条线人才，薪资中位数比纯 LLM 工程师高 30-50%。" }
+        {
+          "k": "发生了什么",
+          "v": "Financial Times 04-21 报道、Bloomberg 跟进确认：Jeff Bezos 个人主导的新 AI 实验室「Project Prometheus」即将完成 100 亿美元融资。该实验室聚焦「能理解物理世界的 foundation model」，不直接和 OpenAI / Anthropic 拼通用对话模型。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Bezos 此前已通过 Amazon 投资 Anthropic 200 亿美元，这次以个人身份再开 100 亿独立 AI lab，目标方向是「具身智能 + 机器人 + 物理仿真」—— 这是 OpenAI / Anthropic / Google 都没有重兵投入的赛道。Bezos 在押 LLM 之后的下一个范式。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做机器人、自动驾驶、3D 视觉、物理仿真的工程师，2026 下半年到 2027 整年会迎来大规模招聘潮 —— 不只是 Bezos 一家，FigureAI、1x、Skild、Physical Intelligence 都在抢这条线人才，薪资中位数比纯 LLM 工程师高 30-50%。"
+        }
       ],
       "src": "📎 bloomberg.com · ft.com",
       "sources": [
-        { "url": "https://www.bloomberg.com/news/articles/2026-04-21/jeff-bezos-nears-10-billion-funding-round-for-ai-lab-ft-says", "title": "Jeff Bezos Nears $10 Billion Funding Round for Project Prometheus", "domain": "bloomberg.com" }
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-04-21/jeff-bezos-nears-10-billion-funding-round-for-ai-lab-ft-says",
+          "title": "Jeff Bezos Nears $10 Billion Funding Round for Project Prometheus",
+          "domain": "bloomberg.com"
+        }
       ],
       "mp": {
         "h2": "Bezos 100 亿美元下注 Project Prometheus：押 LLM 之后的物理世界范式",
@@ -156,7 +295,11 @@
     {
       "slug": "04-openai-workspace-agents",
       "frameLabel": "P4 · 单图 <em>· OpenAI 工作空间 Agent</em>",
-      "tags": ["产品发布", "GPT-5.5", "ChatGPT"],
+      "tags": [
+        "产品发布",
+        "GPT-5.5",
+        "ChatGPT"
+      ],
       "idx": "04",
       "catText": "产品发布",
       "accent": "#10b981",
@@ -167,23 +310,50 @@
         "bot": "#ecfdf5"
       },
       "title": [
-        { "text": "OpenAI 推工作空间 Agent + GPT-5.5 " },
-        { "text": "定价翻倍", "hl": true }
+        {
+          "text": "OpenAI 推工作空间 Agent + GPT-5.5 "
+        },
+        {
+          "text": "定价翻倍",
+          "hl": true
+        }
       ],
       "titleSize": 70,
       "oneline": [
-        { "text": "$5 / $30 每百万 token，" },
-        { "text": "比 GPT-5.4 贵一倍", "bold": true }
+        {
+          "text": "$5 / $30 每百万 token，"
+        },
+        {
+          "text": "比 GPT-5.4 贵一倍",
+          "bold": true
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "OpenAI 04-24 同步发布两件事：一是 ChatGPT Business / Enterprise / Education 上线「工作空间 Agent」，可以跨 Slack / Gmail 等工具自动执行多步任务、走审批流程；二是 GPT-5.5 公开定价 $5/1M 输入 + $30/1M 输出，是 GPT-5.4 的 2 倍，宣称推理能力大幅提升、延迟与 5.4 持平。" },
-        { "k": "为什么重要", "v": "工作空间 Agent 把 ChatGPT 从「问答工具」升级成「数字员工」—— 这是 OpenAI 第一次把 agent 真正接入企业 SaaS 工作流，对应的是 Google 上周发布的「agent 收件箱」，两家在企业 agent 路线上正面开战。GPT-5.5 涨价说明 OpenAI 也在抢 IPO 前的毛利数据。" },
-        { "k": "对你的影响", "v": "用 ChatGPT Plus 跑工作流的人，做好成本翻倍的心理准备 —— OpenAI 接下来的产品形态会更多走「agent 跨工具自动化」，需要你把 prompt 工程升级成「agent 设计 + 工具集成 + 审批流程」组合能力。会写 agent 接 Slack/Gmail 的工程师 2026 是热门岗。" }
+        {
+          "k": "发生了什么",
+          "v": "OpenAI 04-24 同步发布两件事：一是 ChatGPT Business / Enterprise / Education 上线「工作空间 Agent」，可以跨 Slack / Gmail 等工具自动执行多步任务、走审批流程；二是 GPT-5.5 公开定价 $5/1M 输入 + $30/1M 输出，是 GPT-5.4 的 2 倍，宣称推理能力大幅提升、延迟与 5.4 持平。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "工作空间 Agent 把 ChatGPT 从「问答工具」升级成「数字员工」—— 这是 OpenAI 第一次把 agent 真正接入企业 SaaS 工作流，对应的是 Google 上周发布的「agent 收件箱」，两家在企业 agent 路线上正面开战。GPT-5.5 涨价说明 OpenAI 也在抢 IPO 前的毛利数据。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "用 ChatGPT Plus 跑工作流的人，做好成本翻倍的心理准备 —— OpenAI 接下来的产品形态会更多走「agent 跨工具自动化」，需要你把 prompt 工程升级成「agent 设计 + 工具集成 + 审批流程」组合能力。会写 agent 接 Slack/Gmail 的工程师 2026 是热门岗。"
+        }
       ],
       "src": "📎 openai.com · llm-stats.com",
       "sources": [
-        { "url": "https://llm-stats.com/llm-updates", "title": "AI Updates Today April 2026 — GPT-5.5", "domain": "llm-stats.com" },
-        { "url": "https://llm-stats.com/ai-news", "title": "LLM News Today April 2026", "domain": "llm-stats.com" }
+        {
+          "url": "https://llm-stats.com/llm-updates",
+          "title": "AI Updates Today April 2026 — GPT-5.5",
+          "domain": "llm-stats.com"
+        },
+        {
+          "url": "https://llm-stats.com/ai-news",
+          "title": "LLM News Today April 2026",
+          "domain": "llm-stats.com"
+        }
       ],
       "mp": {
         "h2": "OpenAI 工作空间 Agent + GPT-5.5 涨价：从问答工具升级成数字员工",
@@ -198,7 +368,11 @@
     {
       "slug": "05-iu-genai-101-free",
       "frameLabel": "P5 · 单图 <em>· IU GenAI 101 全球免费</em>",
-      "tags": ["学习福利", "GenAI 课程", "免费证书"],
+      "tags": [
+        "学习福利",
+        "GenAI 课程",
+        "免费证书"
+      ],
       "idx": "05",
       "catText": "学习福利",
       "accent": "#0ea5e9",
@@ -209,24 +383,53 @@
         "bot": "#e0f2fe"
       },
       "title": [
-        { "text": "印第安纳大学 GenAI 101 " },
-        { "text": "全球免费", "hl": true },
-        { "text": "开放" }
+        {
+          "text": "印第安纳大学 GenAI 101 "
+        },
+        {
+          "text": "全球免费",
+          "hl": true
+        },
+        {
+          "text": "开放"
+        }
       ],
       "titleSize": 76,
       "oneline": [
-        { "text": "8 模块 16 课时 · 含 " },
-        { "text": "证书 + AI 助教", "bold": true }
+        {
+          "text": "8 模块 16 课时 · 含 "
+        },
+        {
+          "text": "证书 + AI 助教",
+          "bold": true
+        }
       ],
       "bullets": [
-        { "k": "发生了什么", "v": "印第安纳大学 Kelley 商学院 04-16 把原本只对内部的 GenAI 101 课程对全球免费开放：8 个模块 / 16 节课，覆盖 prompt engineering、数据叙事、AI 内容事实核查；自带名为 Crimson 的实时 AI 学习助教；通过即颁发证书。开课至今已招收 11.4 万学生。" },
-        { "k": "为什么重要", "v": "这是少数由顶级研究型大学官方推出、对全球免费、还颁发证书的 GenAI 系统课程。课程同时教 ChatGPT 和 Gemini —— 不绑定单一厂商。Kelley 商学院的招牌也比 Coursera 上一堆来路不明的「AI 大师课」可靠得多，写在简历上完全立得住。" },
-        { "k": "对你的影响", "v": "如果你之前一直在 YouTube / 公众号 / 小红书学 prompt 但没成体系，这门课是低成本上车 —— 完全免费、有结构、有证书、可写简历。建议同时配合 JR Academy 的 Prompt Master 学习路径，把 prompt 从「单次提问」升级到「prompt 工程 + agent 工作流」完整能力栈。" }
+        {
+          "k": "发生了什么",
+          "v": "印第安纳大学 Kelley 商学院 04-16 把原本只对内部的 GenAI 101 课程对全球免费开放：8 个模块 / 16 节课，覆盖 prompt engineering、数据叙事、AI 内容事实核查；自带名为 Crimson 的实时 AI 学习助教；通过即颁发证书。开课至今已招收 11.4 万学生。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是少数由顶级研究型大学官方推出、对全球免费、还颁发证书的 GenAI 系统课程。课程同时教 ChatGPT 和 Gemini —— 不绑定单一厂商。Kelley 商学院的招牌也比 Coursera 上一堆来路不明的「AI 大师课」可靠得多，写在简历上完全立得住。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "如果你之前一直在 YouTube / 公众号 / 小红书学 prompt 但没成体系，这门课是低成本上车 —— 完全免费、有结构、有证书、可写简历。建议同时配合 JR Academy 的 Prompt Master 学习路径，把 prompt 从「单次提问」升级到「prompt 工程 + agent 工作流」完整能力栈。"
+        }
       ],
       "src": "📎 news.iu.edu · ipm.org",
       "sources": [
-        { "url": "https://news.iu.edu/live/news/49928-iu-opens-its-free-generative-ai-course-to-anyone", "title": "IU opens its free generative AI course to anyone worldwide", "domain": "news.iu.edu" },
-        { "url": "https://www.ipm.org/2026-04-17/ius-free-online-generative-ai-course-now-open-to-anyone", "title": "IU's free online generative AI course now open to anyone", "domain": "ipm.org" }
+        {
+          "url": "https://news.iu.edu/live/news/49928-iu-opens-its-free-generative-ai-course-to-anyone",
+          "title": "IU opens its free generative AI course to anyone worldwide",
+          "domain": "news.iu.edu"
+        },
+        {
+          "url": "https://www.ipm.org/2026-04-17/ius-free-online-generative-ai-course-now-open-to-anyone",
+          "title": "IU's free online generative AI course now open to anyone",
+          "domain": "ipm.org"
+        }
       ],
       "mp": {
         "h2": "印第安纳大学 GenAI 101 全球免费：顶尖研究型大学的官方 AI 入门课",
@@ -240,9 +443,12 @@
     }
   ],
   "mp": {
-    "title": "Google 投 Anthropic 400 亿 / Bezos 押物理 AI / OpenAI 工作空间 Agent ｜AI 日报 04-25",
+    "title": "Google 投 Anthropic 400 亿 / Bezos 押物理 AI / OpenAI 工作空间 Agent",
     "lead": "今天 AI 圈一天连发三笔超大额资本动作：Google 公告投资 Anthropic 最高 400 亿美元，对应 3800 亿估值；Anthropic 同步锁定 1000 亿美元 Trainium + 5GW TPU 双线算力；Bezos 个人主导的 AI 实验室 Project Prometheus 接近完成 100 亿融资，押注「物理世界 foundation model」。OpenAI 跟进推工作空间 Agent + GPT-5.5 定价翻倍。最后送一个真福利：印第安纳大学 GenAI 101 课程 04-16 起对全球免费开放，含证书。",
-    "meta": { "author": "JR Academy AI 日报", "readTime": "9 分钟" },
+    "meta": {
+      "author": "JR Academy AI 日报",
+      "readTime": "9 分钟"
+    },
     "quickview": {
       "title": "📌 今日速览",
       "items": [
