@@ -39,8 +39,14 @@ jobs:
           PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         run: bun run render:posters
 
+      # Sync to MongoDB. continue-on-error so a sync failure doesn't block the
+      # GitHub Pages deploy (sync uses ADMIN_TOKEN which expires every 30 days;
+      # historically silently failed, now fails loudly via ::error:: annotations).
+      # Switch to JR_SERVICE_API_KEY (long-lived) to avoid expiry.
       - name: Sync to MongoDB
+        continue-on-error: true
         env:
+          JR_SERVICE_API_KEY: ${{ secrets.JR_SERVICE_API_KEY }}
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           API_URL: https://api.jiangren.com.au
         run: bun run sync-to-db.ts

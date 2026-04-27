@@ -18,10 +18,12 @@ import { join } from 'path';
 
 const DIST = './dist';
 const API_URL = process.env.API_URL || 'http://localhost:3010';
-const ADMIN_TOKEN = process.env.ADMIN_TOKEN || '';
+// Prefer JR_SERVICE_API_KEY (long-lived service-account, jrak_xxx), fall back
+// to ADMIN_TOKEN (legacy 30-day admin JWT, deprecated).
+const ADMIN_TOKEN = process.env.JR_SERVICE_API_KEY || process.env.ADMIN_TOKEN || '';
 
 if (!ADMIN_TOKEN) {
-	console.error('❌ ADMIN_TOKEN is required.');
+	console.error('::error::JR_SERVICE_API_KEY (preferred) or ADMIN_TOKEN env var is required.');
 	process.exit(1);
 }
 
@@ -116,9 +118,12 @@ async function syncEndpoint(endpoint: string, body: Record<string, any>, label: 
 	});
 
 	if (!res.ok) {
-		console.error(`❌ ${label}: ${res.status} ${res.statusText}`);
-		console.error(await res.text());
-		return;
+		const body = await res.text();
+		console.error(`::error::${label} HTTP ${res.status} ${res.statusText} url=${url}`);
+		console.error(body.slice(0, 800));
+		// Was: silently `return`. That hid a 30-day token expiry from everyone, so jr-wiki
+		// articles silently stopped syncing to MongoDB. Throw so the workflow fails loudly.
+		throw new Error(`${label} sync failed: ${res.status} ${res.statusText}`);
 	}
 
 	const result = await res.json();

@@ -38,23 +38,10 @@ jobs:
           echo "files=$CHANGED" >> "$GITHUB_OUTPUT"
           echo "Changed files: $CHANGED"
 
-      - name: Debug — env presence (no values)
-        if: github.event_name == 'push' && steps.changes.outputs.files != ''
-        env:
-          JR_ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-          JR_API: ${{ secrets.API_URL || 'https://api.jiangren.com.au' }}
-        run: |
-          echo "JR_ADMIN_TOKEN length: ${#JR_ADMIN_TOKEN}"
-          echo "JR_API: $JR_API"
-          if [ -z "$JR_ADMIN_TOKEN" ]; then
-            echo "❌ secrets.ADMIN_TOKEN is empty — secret missing or scoped to a different environment"
-          else
-            echo "✅ secret injected (length>0)"
-          fi
-
       - name: Sync (push trigger — only changed files)
         if: github.event_name == 'push' && steps.changes.outputs.files != ''
         env:
+          JR_SERVICE_API_KEY: ${{ secrets.JR_SERVICE_API_KEY }}
           JR_ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           JR_API: ${{ secrets.API_URL || 'https://api.jiangren.com.au' }}
         run: bun run scripts/daily-jobs-sync.ts --files=${{ steps.changes.outputs.files }}
@@ -62,6 +49,7 @@ jobs:
       - name: Sync (manual dispatch — specific file)
         if: github.event_name == 'workflow_dispatch' && inputs.bootcamp != '' && inputs.date != ''
         env:
+          JR_SERVICE_API_KEY: ${{ secrets.JR_SERVICE_API_KEY }}
           JR_ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           JR_API: ${{ secrets.API_URL || 'https://api.jiangren.com.au' }}
         run: bun run scripts/daily-jobs-sync.ts ${{ inputs.bootcamp }} ${{ inputs.date }}
@@ -69,6 +57,7 @@ jobs:
       - name: Sync (manual dispatch — all today)
         if: github.event_name == 'workflow_dispatch' && inputs.bootcamp == ''
         env:
+          JR_SERVICE_API_KEY: ${{ secrets.JR_SERVICE_API_KEY }}
           JR_ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           JR_API: ${{ secrets.API_URL || 'https://api.jiangren.com.au' }}
         run: bun run scripts/daily-jobs-sync.ts

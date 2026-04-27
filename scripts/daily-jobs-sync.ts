@@ -22,10 +22,18 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const API = process.env.JR_API || 'https://api.jiangren.com.au';
-const TOKEN = process.env.JR_ADMIN_TOKEN || '';
+// Prefer JR_SERVICE_API_KEY (long-lived service-account, jrak_xxx);
+// fall back to JR_ADMIN_TOKEN / ADMIN_TOKEN for legacy compat.
+const TOKEN =
+	process.env.JR_SERVICE_API_KEY ||
+	process.env.JR_ADMIN_TOKEN ||
+	process.env.ADMIN_TOKEN ||
+	'';
 
 if (!TOKEN) {
-	console.error('::error::JR_ADMIN_TOKEN env var missing — secret not injected (check repo/env scope of ADMIN_TOKEN secret).');
+	console.error(
+		'::error::JR_SERVICE_API_KEY (preferred), JR_ADMIN_TOKEN, or ADMIN_TOKEN env var is required.'
+	);
 	process.exit(1);
 }
 console.log(`▶ token length=${TOKEN.length} api=${API}`);
