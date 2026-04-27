@@ -27,6 +27,7 @@ import {
 
 const REPO_ROOT = join(dirname(new URL(import.meta.url).pathname), '..', '..');
 const DATA_DIR = join(REPO_ROOT, 'src/data/ai-daily');
+const ARTICLES_DIR = join(REPO_ROOT, 'src/content/articles');
 const TEMPLATE_POSTER = join(REPO_ROOT, 'src/templates/xhs-poster/ai-daily.template.html');
 const TEMPLATE_MP = join(REPO_ROOT, 'src/templates/mp-article/ai-daily.template.html');
 const OUTPUT_BASE = join(REPO_ROOT, 'src/static/ai-news-posters');
@@ -124,11 +125,62 @@ function bulletsToParagraphs(bullets: NewsBullet[]): string[] {
 	});
 }
 
+/* =========================== Parse paragraphs from .md ===========================
+ * 从 src/content/articles/ai-daily-{DATE}.md 解析每条 news 的 3 段正文。
+ * 这样 agent 不必在 JSON 里重复写 mp.newsBodies，省 ~10KB → 规避 stream timeout。
+ *
+ * 期望 .md 结构（按当前 skill）：
+ *   ## 1. {title}
+ *   ![alt](image)
+ *   **一句话**: ...
+ *   段落 1
+ *   段落 2
+ *   段落 3
+ *   > 来源: [name](url) · ...
+ *   ---
+ *   ## 2. {title}
+ *   ...
+ *
+ * 返回 Map<idx 数字, paragraphs[]>（如 1 → [段落 1, 段落 2, 段落 3]）
+ */
+function parseArticleParagraphs(date: string): Map<number, string[]> {
+	const result = new Map<number, string[]>();
+	const mdPath = join(ARTICLES_DIR, `ai-daily-${date}.md`);
+	if (!existsSync(mdPath)) return result;
+
+	const md = readFileSync(mdPath, 'utf-8');
+	// 跳过 frontmatter
+	const body = md.replace(/^---\n[\s\S]*?\n---\n?/, '');
+
+	// 按 ## N. 分割成 sections（N 是数字）
+	const sections = body.split(/^## (\d+)\. /m);
+	// 第一个分片是开头杂物，从 [1] 开始 [num, content, num, content, ...]
+	for (let i = 1; i < sections.length; i += 2) {
+		const idx = Number(sections[i]);
+		const content = sections[i + 1] || '';
+		// 提取「**一句话**: 后面 + 「> 来源:」前面」之间的所有段落
+		const onelineMatch = content.match(/\*\*一句话\*\*[:：][^\n]*\n+([\s\S]*?)(?=\n>\s*来源|\n---\n|$)/);
+		if (!onelineMatch) continue;
+		const between = onelineMatch[1];
+		// 拆段（双换行）+ 过滤掉 image / 空行
+		const paras = between
+			.split(/\n\n+/)
+			.map(p => p.trim())
+			.filter(p => p && !p.startsWith('![') && !p.startsWith('>'));
+		if (paras.length > 0) result.set(idx, paras);
+	}
+
+	return result;
+}
+
 /* =========================== Render article content =========================== */
 
 function renderArticleContent(data: AiDailyData): { html: string; charCount: number } {
 	const mp = data.mp || {};
 	const title = mp.title || `AI 日报 ${data.date}`;
+	// 从 .md 文件 parse 每条 news 的深度段落（agent 可以省 mp.newsBodies）
+	const mdParagraphs = parseArticleParagraphs(data.date);
+	// lead fallback: 用 .md 第一句话作为 lead 起头会更自然
 	const lead = mp.lead || `${data.date} AI 日报，今日 5 条：${data.summary.items.map(i => i.t).join('；')}。`;
 	const author = mp.meta?.author || 'JR Academy AI 日报';
 	const readTime = mp.meta?.readTime || '8 分钟';
@@ -157,7 +209,11 @@ function renderArticleContent(data: AiDailyData): { html: string; charCount: num
 	data.news.forEach((n, i) => {
 		const nmp = n.mp || {};
 		const h2 = nmp.h2 || tokensToPlainText(n.title);
-		const paragraphs = nmp.paragraphs || bulletsToParagraphs(n.bullets);
+		// 段落 fallback 链：1) JSON 显式给 mp.paragraphs 2) .md 文件 parse 出的深度段
+		// 3) bullets 拼接（最差，提纲风格）
+		const idxNum = Number(n.idx);
+		const fromMd = mdParagraphs.get(idxNum);
+		const paragraphs = nmp.paragraphs || (fromMd && fromMd.length > 0 ? fromMd : bulletsToParagraphs(n.bullets));
 		const sourceHtml = nmp.sourceHtml || srcStringToLinks(n.src);
 		const posterImage = nmp.posterImage || `./poster-${i + 1}.png`;
 
