@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-04-28",
+  "cohort": "AU",
+  "generatedAt": "2026-04-28T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK 403)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Machine Learning Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (remote-friendly)",
+      "posted": "2026 graduate program",
+      "url": "https://www.atlassian.com/company/careers/details/17901",
+      "why": "Atlassian AI Experience 团队 2026 届 ML 工程师，核心职责是为 Jira/Confluence 构建 AI summarization 和 AI editor 功能，本质就是在企业产品上搭 RAG + LLM pipeline；技术方向与 RAG Bootcamp 的 Vector DB → LangChain → RAG 主线完全对齐；Atlassian T0 澳洲本土科技公司，12 个月 Grad++ 培养计划，是学员毕业后冲击的最理想目标岗位。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Intern",
+      "title": "Backend Software Engineer Graduate, Trust and Safety Engineering - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "2026 graduate intake (rolling)",
+      "url": "https://lifeattiktok.com/search/7461813336046569735",
+      "why": "TikTok Trust & Safety 团队 2026 届后端工程师，负责构建大规模内容检索和推理服务，实际上包含 embedding search 和 retrieval pipeline 的工程实现；RAG Bootcamp 训练的 vector search + 后端 API 封装能力在此岗有直接应用场景；相比 ML Graduate 门槛低一档，后端工程背景加 RAG 项目 portfolio 即可投递。"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-04-28",
+  "cohort": "AU",
+  "generatedAt": "2026-04-28T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK 403)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Machine Learning Engineer Graduate, Trust and Safety Engineering - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "2026 graduate intake (rolling)",
+      "url": "https://lifeattiktok.com/search/7461813202695768327",
+      "why": "TikTok Trust & Safety 团队 2026 届 ML 工程师岗位，要求用 ML/CV 和数据挖掘构建大规模内容安全分类器；技术栈与 Bootcamp Phase 3（PyTorch 模型训练）和 Phase 4（大规模 ML 系统部署）直接对应；TikTok T1 品牌 + 悉尼本地团队，毕业生投递时用 Phase 3 capstone 项目作 portfolio 展示。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Intern",
+      "title": "Machine Learning Engineer Intern 2026/27",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "open, closes 1 May 2026",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000970227/machine-learning-engineer-intern-202627/",
+      "why": "Canva 悉尼总部 12 周全职 ML 实习，5 月 1 日截止，时间紧迫，本周必须投递；岗位要求 Python + ML 模型训练和部署经验，对应 Bootcamp Phase 1–2 的 scikit-learn/TensorFlow 实训内容；Canva T0 澳洲顶级科技品牌，这份 internship offer 是 JR 学员起跳最高的 ML 入职路径。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · 命名项目/Intern/2026 Start",
+      "title": "Machine Learning Engineer Graduate (TikTok E-Commerce - Conversational AI) - 2026 Start (BS/MS)",
+      "company": "TikTok / ByteDance",
+      "location": "Sydney, NSW",
+      "posted": "2026 graduate intake (rolling)",
+      "url": "https://joinbytedance.com/search/7536340749852969223",
+      "why": "ByteDance 2026 届对话式 AI 方向 ML 工程师，title 明确含 "2026 Start"，属 TikTok 全球 Graduate Program 的一部分；岗位方向是 LLM fine-tuning + conversational retrieval 系统，与 Bootcamp Phase 5（LLM 集成与 API 封装）完美对应；电商对话 AI 是 2026 年 ML 工程师最活跃的落地场景，投递时重点呈现 LLM API 调用和数据管道项目。"
+    }
+  ]
+}

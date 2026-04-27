@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-04-28",
+  "cohort": "AU",
+  "generatedAt": "2026-04-28T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK 403)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Machine Learning Engineer Graduate (TikTok Shop - Data Intelligence) - 2026 Start (BS/MS)",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "2026 graduate intake (rolling)",
+      "url": "https://lifeattiktok.com/search/7537244549992417543",
+      "why": "TikTok Shop 数据智能方向 2026 届 ML 工程师，核心是用 AI/ML 提升电商数据平台的推荐和搜索效率；岗位要求 Python + 数据分析 + 基础 ML 建模，正好匹配 AI Essentials Bootcamp 覆盖的 OpenAI API 调用 + 数据驱动业务分析 track；TikTok T1 品牌，电商 AI 是 2026 年 GenAI 落地最快的行业。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Intern",
+      "title": "Software Engineer Intern Frontend/Backend 2026/27",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "open, closes 1 May 2026",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000970210/software-engineer-intern-frontendbackend-202627/",
+      "why": "Canva 悉尼总部前/后端实习，5 月 1 日截止，本周最后机会；Canva 有成熟的 AI 产品线（Magic Studio / AI image generation），intern 实际参与 AI 功能开发；AI Essentials 学员掌握了 Python 基础和 AI API 调用，满足岗位最低门槛，面试时重点展示 Bootcamp 做的 AI 小工具项目。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · 命名项目/Intern/2026 Start",
+      "title": "2026 Technology (Data) Graduate Program",
+      "company": "Westpac Group",
+      "location": "Sydney / Melbourne / Brisbane / Adelaide / Perth",
+      "posted": "2026 graduate intake",
+      "url": "https://au.gradconnection.com/employers/westpac/jobs/westpac-group-2026-technology-data-graduate-program-sydney-adelaide-melbourne-brisbane-gold-coast-perth/",
+      "why": "Westpac 2026 Technology (Data) Graduate Program，AAGE Top 25 Graduate Employer #7，named 大行 graduate 项目；项目聚焦 data analytics + AI 工具应用，与 AI Essentials Bootcamp 的"用 AI 做数据分析和业务决策"能力画像高度匹配；大行 technology data grad track 是非技术背景学员最稳定的 AI 赋能职业入口，起薪 $75k-$85k + super。"
+    }
+  ]
+}

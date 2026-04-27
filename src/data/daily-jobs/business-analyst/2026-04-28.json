@@ -1,0 +1,39 @@
+{
+  "bootcamp": "business-analyst",
+  "date": "2026-04-28",
+  "cohort": "AU",
+  "generatedAt": "2026-04-28T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK 403)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "2026 Technology (Rotational) Graduate Program",
+      "company": "Westpac Group",
+      "location": "Sydney / Melbourne / Brisbane / Adelaide / Perth",
+      "posted": "2026 graduate intake",
+      "url": "https://au.gradconnection.com/employers/westpac/jobs/westpac-group-2026-technology-rotational-graduate-program-sydney-adelaide-melbourne-brisbane-gold-coast-perth/",
+      "why": "Westpac 2026 Technology Rotational Graduate，AAGE Top 25 雇主 #7，12-24 个月最多 4 次技术轮岗（涵盖 digital/cloud/data/BA 方向）；BA Bootcamp 的 SQL + Power BI + Agile 技能在每次 rotation 都有用武之地，data analytics rotation 与 Bootcamp Phase 3 数据建模项目直接对应；大行 technology grad 是 Junior BA 职业路径里最有结构化培养的起点，起薪 $75k-$90k + super。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Intern",
+      "title": "Data Analytics Graduate Program 2026",
+      "company": "NAB (National Australia Bank)",
+      "location": "Melbourne, VIC / Sydney, NSW",
+      "posted": "2026 graduate intake (engagement phase May-June)",
+      "url": "https://www.nab.com.au/about-us/careers/early-careers/graduate-careers/data-analytics",
+      "why": "NAB Data Analytics Graduate track，毕业生进入 Data Science / Modelling & Analytics 团队担任 Analyst；BA Bootcamp Phase 3 的 Power BI + 数据建模 + SQL 内容完全对应 NAB 所需技能，Bootcamp 结束后拿 analytics 项目成果作为面试作品集；NAB T1 Big4 银行，数据 graduate 培养体系成熟，目前处于 engagement centre 阶段（5-6 月），学员关注官网补录机会。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · 命名项目/Intern/2026 Start",
+      "title": "2026 CommBank & Bankwest Graduate Campaign",
+      "company": "Commonwealth Bank (CBA)",
+      "location": "Sydney, NSW",
+      "posted": "2026 graduate campaign",
+      "url": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/XMLNAME-2026-CommBank---Bankwest-Graduate-Campaign_REQ227539-2",
+      "why": "CBA + Bankwest 统一 2026 Graduate Campaign（REQ227539），命名 2026 年度招聘项目；CBA 是澳洲最大零售银行，technology/data 方向 graduate track 是非技术背景转行 BA 最知名的入口通道；BA Bootcamp 学员以 data analytics 或 IT business analysis 方向投递，面试时用 SQL + Tableau/Power BI 项目展示分析能力，是拿到大行 BA 毕业生岗最实际的路径之一。"
+    }
+  ]
+}
