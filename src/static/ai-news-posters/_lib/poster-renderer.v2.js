@@ -632,8 +632,14 @@
     // '头条：xxx 这条线最值得先看。'
     y += 50;
 
-    // 头条高亮黄条 + 标题（按 1 行计算 34*1.2 + 16 间距）
-    y += Math.ceil(34 * 1.2) + 16 + 32;
+    // 头条高亮黄条 + 标题：按实际文字宽度算行数（draw 用的是 CW-180 = 918px 包裹宽）
+    const firstItem = (s.items && s.items[0]) || {};
+    const firstSpec = (size, w) => `${w || 900} ${size}px ${FF_CN}`;
+    const firstLaid = layoutTokens(
+      ctx, [{ text: firstItem.t || 'AI 新闻摘要' }], firstSpec,
+      34, 1.2, (W - 144) - 180
+    );
+    y += firstLaid.lines.length * firstLaid.lineH + 16 + 32;
 
     // 5 个 item 行，每行固定 118 高 + 14 间距
     y += 5 * (118 + 14);
