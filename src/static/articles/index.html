@@ -259,6 +259,7 @@
   <div class="filters" id="filters">
     <span class="chip active" data-filter="all">全部 <span class="count" id="c-all">–</span></span>
     <span class="chip" data-filter="daily">AI 日报 <span class="count" id="c-daily">–</span></span>
+    <span class="chip" data-filter="it-daily">IT 认证 & 课程 <span class="count" id="c-it-daily">–</span></span>
     <span class="chip" data-filter="original">原创深度 <span class="count" id="c-original">–</span></span>
   </div>
 
@@ -292,8 +293,10 @@ function formatDate(d) {
   };
 }
 function classify(article) {
+  if (article.slug && article.slug.startsWith('it-daily-')) return 'it-daily';
   if (article.slug && article.slug.startsWith('ai-daily-')) return 'daily';
   const tags = article.tags || [];
+  if (tags.includes('it-certs') || tags.includes('it-daily')) return 'it-daily';
   if (tags.includes('ai-daily') || tags.includes('ai-news')) return 'daily';
   return 'original';
 }
@@ -317,12 +320,14 @@ async function load() {
 function render(articles) {
   // Stats
   const daily = articles.filter(a => classify(a) === 'daily');
+  const itDaily = articles.filter(a => classify(a) === 'it-daily');
   const original = articles.filter(a => classify(a) === 'original');
   document.getElementById('stat-total').textContent = articles.length;
   document.getElementById('stat-daily').textContent = daily.length;
   document.getElementById('stat-original').textContent = original.length;
   document.getElementById('c-all').textContent = articles.length;
   document.getElementById('c-daily').textContent = daily.length;
+  document.getElementById('c-it-daily').textContent = itDaily.length;
   document.getElementById('c-original').textContent = original.length;
   if (articles[0]?.publishDate) {
     document.getElementById('stat-latest').textContent = articles[0].publishDate.slice(5);
@@ -330,7 +335,13 @@ function render(articles) {
 
   const list = document.getElementById('list');
   const filterChips = document.querySelectorAll('.chip');
-  let activeFilter = 'all';
+  // 支持 ?filter=it-daily 这种 URL 参数预选 chip
+  const urlFilter = new URLSearchParams(window.location.search).get('filter');
+  const validFilters = ['all', 'daily', 'it-daily', 'original'];
+  let activeFilter = validFilters.includes(urlFilter) ? urlFilter : 'all';
+  filterChips.forEach(c => {
+    c.classList.toggle('active', c.dataset.filter === activeFilter);
+  });
 
   function rerender() {
     const filtered = activeFilter === 'all'
