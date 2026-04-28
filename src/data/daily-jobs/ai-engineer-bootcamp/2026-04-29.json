@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-04-29",
+  "cohort": "AU",
+  "generatedAt": "2026-04-29T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs) + WebFetch → 403 fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Machine Learning Engineer - Editing AI",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "2 weeks ago",
+      "url": "https://au.linkedin.com/jobs/view/senior-machine-learning-engineer-editing-ai-at-canva-3765111184",
+      "why": "Canva T0 品牌 + Editing AI 团队直接做 hypothesis-driven ML feature 开发，覆盖图像生成与文本编辑全链路；Bootcamp Phase 3 LLM fine-tuning 与 multimodal 项目是面试技术问题的直接来源，毕业 12-18 个月内的明确冲刺方向。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "Machine Learning Engineer Graduate (Trust and Safety) - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "1 week ago",
+      "url": "https://lifeattiktok.com/search/7461813202695768327",
+      "why": "TikTok T2 + 明确 Graduate 级别 2026 Start，滚动招募；Trust & Safety 团队构建内容分类器与 safety classifier，Bootcamp Phase 2 文本分类模型训练与模型评估 pipeline 项目是简历核心卖点，毕业即可投。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "专项档 · Atlassian Named Graduate Program",
+      "title": "Machine Learning Engineer, 2026 PhD Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Remote (ANZ)",
+      "posted": "2 months ago",
+      "url": "https://au.linkedin.com/jobs/view/machine-learning-engineer-2026-phd-graduate-australia-new-zealand-at-atlassian-4203767636",
+      "why": "Atlassian T0 + 命名 2026 Graduate Program，专注 LLM & GenAI 研究方向；Bootcamp Phase 3 RAG 系统与 Agentic AI 项目直接对口 Atlassian Intelligence 产品线，有研究背景或学术论文加分，2月开始滚动评审建议立即申请。"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "bootcamp": "business-analyst",
+  "date": "2026-04-29",
+  "cohort": "AU",
+  "generatedAt": "2026-04-29T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs) + WebFetch → 403 fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Senior",
+      "title": "Senior Business Analyst - Process Design",
+      "company": "Commonwealth Bank (CBA)",
+      "location": "Sydney, NSW",
+      "posted": "3 weeks ago",
+      "url": "https://au.linkedin.com/jobs/view/senior-business-analyst-process-design-at-commonwealth-bank-3720748467",
+      "why": "CBA T1 澳洲四大行 + Senior BA 岗位专注流程再设计与数字化转型大型项目；BA Bootcamp Phase 3 的 process mapping workshop 与 BPMN 建模项目是 CBA 面试的直接考察点，毕业 18 个月后进 Big4 银行 Senior BA 的参照标杆。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Analyst (Entry Level, EOI)",
+      "title": "Analyst, Financial Planning & Analysis (Expression of Interest)",
+      "company": "Commonwealth Bank (CBA)",
+      "location": "Sydney, NSW",
+      "posted": "1 month ago",
+      "url": "https://au.linkedin.com/jobs/view/analyst-financial-planning-analysis-expression-of-interest-at-commonwealth-bank-3648414061",
+      "why": "CBA T1 + Expression of Interest pipeline，入门级 Analyst 通道；BA Bootcamp 的 SQL 数据分析、Excel 财务建模与 Tableau 可视化项目是 CBA EOI 筛选的硬技能，提前入库在正式招募窗口前获得优先考虑，建议已完成 Phase 2 的学员立即提交。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "专项档 · Deloitte 2026 Graduate Program (International Students)",
+      "title": "2026 Graduate Program - International Students - Data and Analytics",
+      "company": "Deloitte Australia",
+      "location": "Sydney / Melbourne, NSW / VIC",
+      "posted": "2 months ago",
+      "url": "https://au.gradconnection.com/employers/deloitte/jobs/deloitte-2026-graduate-international-students-data-and-analytics/",
+      "why": "Deloitte T2 + 专为国际留学生设计的 2026 Named Graduate Program，Data & Analytics 通道；BA Bootcamp 国际学员进入咨询行业最常走的路径，Power BI 仪表盘项目与需求规格文档（BRD/FRD）是 Deloitte 面试 case presentation 的标准准备材料。"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-04-29",
+  "cohort": "AU",
+  "generatedAt": "2026-04-29T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs) + WebFetch → 403 fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Machine Learning Engineer - Search Quality",
+      "company": "Canva",
+      "location": "Sydney, NSW (Open to remote across ANZ)",
+      "posted": "3 weeks ago",
+      "url": "https://au.linkedin.com/jobs/view/senior-machine-learning-engineer-search-quality-open-to-remote-across-anz-at-canva-3642772879",
+      "why": "Canva T0 + Search Quality 团队核心工作是优化语义检索精度与相关性排序，与 RAG Bootcamp 的 vector DB 选型、reranking 策略、hybrid search 模块直接对齐；ANZ remote 工作制加分，毕业 12-18 个月内的首选冲刺方向。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "Software Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Remote (ANZ)",
+      "posted": "2 months ago",
+      "url": "https://au.linkedin.com/jobs/view/software-engineer-2026-graduate-australia-new-zealand-at-atlassian-4186928211",
+      "why": "Atlassian T0 + 明确 2026 Graduate、滚动招募（2月至6月）；Confluence AI Search 与 Jira Intelligence 底层均为 RAG 架构，RAG Bootcamp Phase 2 构建 enterprise knowledge base 检索系统的项目在 Atlassian 面试中极具说服力，立即申请。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "专项档 · TikTok 2026 Start Graduate Program",
+      "title": "Machine Learning Engineer Graduate (TikTok BRIC) - 2026 Start (BS/MS)",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "1 week ago",
+      "url": "https://lifeattiktok.com/search/7532027352008837394",
+      "why": "TikTok T2 + 明确 Graduate 2026 Start；BRIC (Business Risk & Integrity Control) 团队构建内容理解 pipeline 与语义分类系统，RAG Bootcamp 学员的 document chunking、embedding 优化与 semantic retrieval 项目经验与该方向高度匹配。"
+    }
+  ]
+}

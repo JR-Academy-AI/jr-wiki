@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-adoption-bootcamp",
+  "date": "2026-04-29",
+  "cohort": "AU",
+  "generatedAt": "2026-04-29T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs) + WebFetch → 403 fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Product Manager - AI Research",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "1 month ago",
+      "url": "https://au.linkedin.com/jobs/view/senior-product-manager-ai-research-at-canva-4316526432",
+      "why": "Canva T0 + AI Research PM 主导 GenAI 功能从研究落地到全球上线的全过程；AI Adoption Bootcamp 的 AI 产品策略、用例评估与 ROI 框架模块与 Canva 把 diffusion model 和 LLM 转化为用户价值的产品决策过程直接对口，毕业 1-2 年内的进阶目标。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "2026 Graduate Program - Technology & Transformation - Data & Analytics",
+      "company": "Deloitte Australia",
+      "location": "Sydney, NSW",
+      "posted": "2 months ago",
+      "url": "https://au.gradconnection.com/employers/deloitte/jobs/deloitte-2026-graduate-program-technology-transformation-data-analytics/",
+      "why": "Deloitte T2 + 明确 2026 Graduate Program；Technology & Transformation 通道做的正是企业 AI 采纳咨询与数字化变革项目，AI Adoption Bootcamp 的变革管理框架、AI business case 撰写课程是 Deloitte 面试 case study 的直接准备，毕业即可投。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "专项档 · IBM Named 2026 Intern/Entry-Level Program",
+      "title": "AI-Centric Solution Architecting for Global IT Intern / Entry-Level Sales Program 2026",
+      "company": "IBM",
+      "location": "Sydney, NSW",
+      "posted": "2 months ago",
+      "url": "https://www.linkedin.com/jobs/view/ai-centric-solution-architecting-for-global-it-intern-entry-level-sales-program-2026-at-ibm-4348682412",
+      "why": "IBM 命名 2026 Intern/Entry-Level 项目，专做 AI Solutions Architecture 与客户技术方案；AI Adoption Bootcamp 的云 AI 服务选型、PoC 设计与 stakeholder presentation 课程直接覆盖 IBM 对候选人的期望技能组合，是国际大厂体系内进入 AI 咨询领域的最快通道之一。"
+    }
+  ]
+}

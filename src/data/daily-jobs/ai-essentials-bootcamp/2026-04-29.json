@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-04-29",
+  "cohort": "AU",
+  "generatedAt": "2026-04-29T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs) + WebFetch → 403 fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Staff Level",
+      "title": "Staff Machine Learning Engineer - Assistant",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "2 weeks ago",
+      "url": "https://au.linkedin.com/jobs/view/staff-machine-learning-engineer-assistant-at-canva-3765106735",
+      "why": "Canva T0 + Assistant 团队做自然语言理解与 LLM 集成，每天服务数千万用户的 AI 交互体验；Essentials Bootcamp GenAI 应用开发模块中 prompt engineering、LLM API 集成正是这个方向的核心技能，毕业 2 年内的进阶冲刺目标。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "Machine Learning Engineer Graduate (TikTok Recommendation) - 2026 Start (BS/MS)",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "1 week ago",
+      "url": "https://lifeattiktok.com/search/7533153947075954951",
+      "why": "TikTok T2 + 明确 Graduate 2026 Start，滚动招募；Recommendation 系统是 GenAI 与传统 ML 的融合地带，Essentials Bootcamp Phase 2 构建 AI 应用 + Phase 3 模型集成与评估项目在面试里直接可讲，毕业即可提交。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "专项档 · Canva Internship 2026/27 · ⚡ 截止 5月1日（仅剩2天）",
+      "title": "Machine Learning Engineer Intern 2026/27",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "1 week ago",
+      "url": "https://au.linkedin.com/jobs/view/machine-learning-engineer-intern-2026-27-at-canva-4394303693",
+      "why": "Canva T0 命名 Intern 项目、5月1日截止（今天起仅剩2天）；Essentials Bootcamp 的 GenAI builder 实战项目 + Python ML 代码量能显著提升 Canva online assessment 通过率；在读或刚完成学习的学员立即申请，错过要等 2027 年。"
+    }
+  ]
+}
