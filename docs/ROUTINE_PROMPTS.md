@@ -5,7 +5,7 @@ date: 2026-04-24
 
 # Scheduled Routine Prompts
 
-复制下面 4 段 prompt 到 https://claude.ai/code/scheduled，**每段对应一条 routine**。
+复制下面 5 段 prompt 到 https://claude.ai/code/scheduled，**每段对应一条 routine**。
 
 ## 🚨 为什么有这个文件
 
@@ -225,9 +225,69 @@ echo "✅ 今天所有 routine 都产了"
 
 ---
 
+## Routine 5 · IT Daily News（每天 09:30 AEST = 23:30 UTC）
+
+**name**: `it-daily-news`
+**cron**: `30 23 * * *` (UTC) = 每天 09:30 AEST
+**timeout**: 12 minutes
+
+🚨 **2026-04-28 新建**：`articles/?filter=it-daily` chip 一直 0 内容（首页 channel.it 入口预留但没生产管线）。这条补上 IT 认证 / 课程聚合内容，slug 前缀 `it-daily-` 自动触发 articles index 分类。
+
+错开 ai-daily 半小时（避免两条 routine 同时抢 git push）。
+
+```
+立即执行下面的 bash 脚本，不要反问、不要征求意见。第一个 tool call 必须是 Bash。
+跑完所有步骤后再总结，中间任何一步 exit 1 都直接报错退出，不要尝试"修复"。
+
+cd /workspace/jr-wiki
+
+DATE=$(TZ='Australia/Sydney' date +%Y-%m-%d)
+echo "▶ Step 1: Running /it-daily-news for $DATE (AEST)"
+
+# 跑 skill：agent 写 1 篇 markdown（无 JSON、无 pipeline、无海报）
+/it-daily-news $DATE
+
+echo "▶ Step 2: Verifying output"
+FILE="src/content/articles/it-daily-${DATE}.md"
+[ -f "$FILE" ] || { echo "❌ md 没产 $FILE"; exit 1; }
+
+# frontmatter 必填
+for k in title description publishDate tags; do
+  grep -qE "^${k}:" "$FILE" || { echo "❌ 缺 frontmatter $k"; exit 1; }
+done
+
+# tags 含 it-daily 或 it-certs（触发 articles 分类）
+grep -qE "^\s*-\s+(it-daily|it-certs)" "$FILE" || { echo "❌ tags 缺 it-daily/it-certs"; exit 1; }
+
+# 至少 3 条新闻 + 链接数 ≥ 新闻数
+COUNT=$(grep -cE "^## [0-9]+\." "$FILE")
+LINKS=$(grep -cE "\[.+\]\(http" "$FILE")
+[ "$COUNT" -ge 3 ] || { echo "❌ 只有 $COUNT 条新闻"; exit 1; }
+[ "$LINKS" -ge "$COUNT" ] || { echo "❌ 链接数 $LINKS < 新闻数 $COUNT"; exit 1; }
+echo "✅ 自检通过：$COUNT 条新闻 / $LINKS 个来源"
+
+echo "▶ Step 3: Commit + push"
+git add "$FILE"
+git commit -m "content: IT 认证日报 ${DATE}" || { echo "✅ 无变更，跳过"; exit 0; }
+
+for i in 1 2 3; do
+  git push && break
+  echo "⚠️ push 第 $i 次失败，10s 后重试"
+  sleep 10
+done
+
+git fetch origin
+LOCAL=$(git rev-parse HEAD)
+REMOTE=$(git rev-parse origin/main)
+[ "$LOCAL" = "$REMOTE" ] || { echo "❌ push 失败 · local=$LOCAL remote=$REMOTE"; exit 1; }
+echo "✅ it-daily-news ${DATE} 已上线 commit=$LOCAL"
+```
+
+---
+
 ## 改 routine 的步骤
 
-1. 改 `.claude/skills/{ai-daily-news,uni-news-poster,uni-events}.md` 任一文件
+1. 改 `.claude/skills/{ai-daily-news,uni-news-poster,uni-events,it-daily-news}.md` 任一文件
 2. 改这个 `docs/ROUTINE_PROMPTS.md`（同步更新对应的 routine prompt）
 3. `git push`
 4. **打开** https://claude.ai/code/scheduled
