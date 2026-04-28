@@ -1,0 +1,343 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-04-28T00:08:31.173Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-04-28（Canvas 版）</title>
+<meta name="description" content="2026-04-28 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v2.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v2.js 里。
+ * 数据来源：src/data/ai-daily/2026-04-28.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "schemaVersion": "1.0",
+  "date": "2026-04-28",
+  "theme": "neobrut",
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-04-28",
+  "summary": {
+    "slug": "digest",
+    "frameLabel": "P0 · 合集 <em>· Top 5 一图看完</em>",
+    "tags": [
+      "合集封面",
+      "适合首图",
+      "今日 5 条一图扫完"
+    ],
+    "hook": [
+      {
+        "text": "今天 "
+      },
+      {
+        "text": "5 条",
+        "hl": true
+      },
+      {
+        "text": "\nAI 大新闻"
+      }
+    ],
+    "sub": "一图看完 · 匠人 AI 日报",
+    "items": [
+      {
+        "num": "01",
+        "numColor": "#d97706",
+        "cat": "本地落地",
+        "t": "Anthropic 悉尼办公室开张 · 前 Snowflake 高管接 ANZ"
+      },
+      {
+        "num": "02",
+        "numColor": "#4285f4",
+        "cat": "模型升级",
+        "t": "Gemini 3 Deep Think 升级 · Deep Research Max 公测"
+      },
+      {
+        "num": "03",
+        "numColor": "#6366f1",
+        "cat": "开源里程碑",
+        "t": "DeepSeek V4-Pro 1.6T 参数开源 · 1M 上下文"
+      },
+      {
+        "num": "04",
+        "numColor": "#1d1d1f",
+        "cat": "语音 Agent",
+        "t": "Grok Voice Think Fast 1.0 接管 Starlink 客服"
+      },
+      {
+        "num": "05",
+        "numColor": "#ff5757",
+        "cat": "跨境收紧",
+        "t": "中国否决 Meta 20 亿收购 Manus · AI M&A 进政治窗口"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-anthropic-sydney-office",
+      "idx": "01",
+      "catText": "本地落地",
+      "accent": "#d97706",
+      "bg": {
+        "topRight": "rgba(217,119,6,0.14)",
+        "top": "#fff7ed",
+        "mid": "#ffffff",
+        "bot": "#ffedd5"
+      },
+      "title": [
+        {
+          "text": "Anthropic 悉尼办公室开张 · "
+        },
+        {
+          "text": "Theo Hourmouzis 接管 ANZ",
+          "hl": true
+        }
+      ],
+      "titleSize": 76,
+      "posterMaxChars": 92,
+      "oneline": [
+        {
+          "text": "前 Snowflake ANZ + ASEAN SVP 跳槽，Anthropic 亚太第 "
+        },
+        {
+          "text": "4 间办公室",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Anthropic 04-27 宣布在悉尼开亚太第 4 间办公室（前 3 个东京 / 班加罗尔 / 首尔在路上），任命前 Snowflake ANZ + ASEAN SVP Theo Hourmouzis 为 ANZ 总经理。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Anthropic 已拿下全球企业 LLM API 支出 40% 份额（OpenAI 从 50% 跌到 27%），同步官方表态 Claude 永不接广告，靠 ToB 站稳。澳新落地 = 抢澳洲银行/政府/CBA/NAB 客户。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "澳洲求职者：Anthropic Sydney 早期员工窗口打开，AI Solutions Architect / Account Executive 都会招。本地企业部署 Claude 的合规和数据驻留问题正式有人接，POC 周期会缩短。"
+        }
+      ],
+      "src": "📎 anthropic.com · channellife.com.au · bloomberg.com"
+    },
+    {
+      "slug": "02-gemini-3-deep-think",
+      "idx": "02",
+      "catText": "模型升级",
+      "accent": "#4285f4",
+      "bg": {
+        "topRight": "rgba(66,133,244,0.14)",
+        "top": "#f0f6ff",
+        "mid": "#ffffff",
+        "bot": "#e6efff"
+      },
+      "title": [
+        {
+          "text": "Gemini 3 "
+        },
+        {
+          "text": "Deep Think 升级",
+          "hl": true
+        },
+        {
+          "text": " · Deep Research Max 上 API"
+        }
+      ],
+      "titleSize": 72,
+      "posterMaxChars": 96,
+      "oneline": [
+        {
+          "text": "Deep Research / Max 双线 · "
+        },
+        {
+          "text": "MCP + 原生图表生成",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Google 04-27 把 Gemini 3 Deep Think 推理模式做了一次大升级，同时 Gemini API 开放 Deep Research + Deep Research Max 两个研究 agent 公测，跑在 Gemini 3.1 Pro 上。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Deep Research 主打速度低成本走交互前端；Deep Research Max 用 extended test-time compute 跑长任务异步研究，原生支持 MCP 协议、出图就用 HTML / Nano Banana 自动渲染图表。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 RAG / Agent 的本周必须把 Deep Research Max 当 OpenAI Deep Research 的对手 benchmark；接 MCP 已是默认动作，没接的产品在 Gemini Enterprise 上拿不到分发。"
+        }
+      ],
+      "src": "📎 blog.google · venturebeat.com · ai.google.dev"
+    },
+    {
+      "slug": "03-deepseek-v4-open-source",
+      "idx": "03",
+      "catText": "开源里程碑",
+      "accent": "#6366f1",
+      "bg": {
+        "topRight": "rgba(99,102,241,0.14)",
+        "top": "#eef2ff",
+        "mid": "#ffffff",
+        "bot": "#e0e7ff"
+      },
+      "title": [
+        {
+          "text": "DeepSeek V4-Pro "
+        },
+        {
+          "text": "1.6T 参数开源",
+          "hl": true
+        },
+        {
+          "text": " · 1M 上下文"
+        }
+      ],
+      "titleSize": 76,
+      "posterMaxChars": 92,
+      "oneline": [
+        {
+          "text": "Pro 1.6T / Active 49B；Flash 284B / Active 13B，"
+        },
+        {
+          "text": "MoE 全开源",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "DeepSeek 04-27 同日发 V4 系列：V4-Pro 1.6 万亿参数 / 49B 激活，是迄今参数最大的开源 MoE；V4-Flash 2840 亿 / 130 亿激活，主打 API 成本。两版本均支持 1M token 上下文。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "V4-Pro 一举拉高开源天花板，参数量首次过 GPT-5 公开规格量级；V4-Flash 把企业 API 单价压到与 Anthropic Haiku 一档。这是融资 200 亿估值之外，DeepSeek 同日的硬技术回应。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "国内做 RAG / Agent 的可以本周开始 V4-Flash 替换 GPT-4o-mini 跑 cost benchmark；做模型蒸馏的拿 V4-Pro 当 teacher，自定义垂域模型成本会降一档。"
+        }
+      ],
+      "src": "📎 caixinglobal.com · caproasia.com · cntechpost.com"
+    },
+    {
+      "slug": "04-grok-voice-think-fast",
+      "idx": "04",
+      "catText": "语音 Agent",
+      "accent": "#1d1d1f",
+      "bg": {
+        "topRight": "rgba(29,29,31,0.12)",
+        "top": "#f5f5f7",
+        "mid": "#ffffff",
+        "bot": "#e8e8ed"
+      },
+      "title": [
+        {
+          "text": "Grok Voice "
+        },
+        {
+          "text": "Think Fast 1.0",
+          "hl": true
+        },
+        {
+          "text": " 接管 Starlink 客服"
+        }
+      ],
+      "titleSize": 72,
+      "posterMaxChars": 96,
+      "oneline": [
+        {
+          "text": "τ-voice Bench 第一 · 25 种语言 · "
+        },
+        {
+          "text": "全双工实时",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "xAI 04-27 发布 Grok Voice Think Fast 1.0 全双工语音 agent，τ-voice Bench 全球第一，已经在 Starlink 电话客服里跑生产。同步开放 Speech-to-Text + Text-to-Speech 独立 API。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "全双工 = 边听边说边打断不撞车，是真客服的硬门槛。原本只有 OpenAI Realtime API 能跑，现在 Grok 进场，价格和延迟都会被压到下一档；25 语言 + 多口音稳定是中后台外包客服的福音。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做 SaaS / 电商客服的本周可以拉 PoC：Grok Voice + 自家工单系统，替换印度外包；做语音助手的开发者直接对接 STT/TTS API，比 ElevenLabs + Whisper 拼装链路简单。"
+        }
+      ],
+      "src": "📎 mpost.io · x.ai · releasebot.io"
+    },
+    {
+      "slug": "05-china-blocks-meta-manus",
+      "idx": "05",
+      "catText": "跨境收紧",
+      "accent": "#ff5757",
+      "bg": {
+        "topRight": "rgba(255,87,87,0.14)",
+        "top": "#fff5f5",
+        "mid": "#ffffff",
+        "bot": "#ffe8e8"
+      },
+      "title": [
+        {
+          "text": "中国否决 Meta "
+        },
+        {
+          "text": "20 亿美元收购 Manus",
+          "hl": true
+        }
+      ],
+      "titleSize": 74,
+      "posterMaxChars": 92,
+      "oneline": [
+        {
+          "text": "Manus 撤回交易，AI "
+        },
+        {
+          "text": "跨境 M&A 进政治窗口",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "中国国家发改委 04-27 要求 Manus 与 Meta 撤回 20 亿美元收购交易。该交易 2025-12 公告，2026-01 北京启动反垄断 + 国安双线调查，华盛顿同步审视，今天落地 = 双向卡死。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "AI Agent 公司是中美技术资产里第一个被两边都按住的样本：核心数据库 + 用户行为数据被同时视为战略资产。结合 Anthropic 在企业 LLM 拿 40%，全球 AI 资产正在按地缘重新切片。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "做跨境 AI 产品的（中国卖海外 / 海外卖中国），数据驻留 + 模型本地部署变硬性合规；融资估值要扣一档「跨境惩罚」。海外岗位优先看本地化已落地的公司，纯 China remote 风险升级。"
+        }
+      ],
+      "src": "📎 cnbc.com · pymnts.com · indexbox.io"
+    }
+  ],
+  "mp": {
+    "title": "Anthropic 入澳 / Gemini 3 Deep Think 升级 / DeepSeek V4 1.6T 开源 / Grok Voice 接管 Starlink / 中国封 Meta 收购 Manus"
+  }
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+  FLEX_HEIGHT: true,
+  HEIGHT_TIERS: [1480, 1660, 1860, 2100, 2400],
+});
+</script>
+</body>
+</html>
