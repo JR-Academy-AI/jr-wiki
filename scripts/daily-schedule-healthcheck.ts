@@ -6,7 +6,8 @@
  *
  * 检查：
  *   1. ai-daily JSON + blog md + 2 个 HTML
- *   2. uni-news：今天必须有 3 校（任意 3 校）的 JSON + 4 个产物
+ *   2. uni-news：今天必须有 2 校（任意 2 校）的 JSON + 4 个产物
+ *               (2026-04-29 改为 2 校 · routine 选 2 + self-heal 补 0~1 = 2-3 校/天)
  *   3. uni-events：只在周日检（DATE = 下周一的 JSON）
  *
  * 用法：bun run scripts/daily-schedule-healthcheck.ts [YYYY-MM-DD]
@@ -85,21 +86,22 @@ if (aiOk) console.log('  → AI Daily routine 产出完整');
 console.log('');
 
 // ─────────────────────────────────────────────────────────────
-// Check 2: Uni News (今天必须有 3 校 · 任意 3 所)
+// Check 2: Uni News (今天必须有 2 校 · 任意 2 所核心 6 校 · 2026-04-29 改)
 // ─────────────────────────────────────────────────────────────
-console.log('━━━ Uni News (3 校轮换) ━━━');
+const MIN_SCHOOLS = 2;
+console.log(`━━━ Uni News (${MIN_SCHOOLS} 校轮换 · 核心 6 校) ━━━`);
 
 const SCHOOLS = ['uq', 'umelb', 'unsw', 'usyd', 'monash', 'anu', 'adelaide', 'rmit', 'uts', 'uwa'];
 const todaySchools = SCHOOLS.filter(s => exists(`src/data/uni-news/${s}/${DATE}.json`));
 
 if (todaySchools.length === 0) {
-	console.log(`  ❌ 今天 0 校产了（应该是 3 校）`);
+	console.log(`  ❌ 今天 0 校产了（应该 ≥${MIN_SCHOOLS} 校）`);
 	issues.push(`Uni News 0 校 — routine 完全没跑或全失败`);
-} else if (todaySchools.length < 3) {
-	console.log(`  ⚠️  今天只有 ${todaySchools.length} 校（${todaySchools.join('/')}），少于 3`);
+} else if (todaySchools.length < MIN_SCHOOLS) {
+	console.log(`  ⚠️  今天只有 ${todaySchools.length} 校（${todaySchools.join('/')}），少于 ${MIN_SCHOOLS}`);
 	warnings.push(`Uni News 只有 ${todaySchools.length} 校（${todaySchools.join('/')}）`);
 } else {
-	console.log(`  ✅ 今天 ${todaySchools.length} 校：${todaySchools.join(' / ')}`);
+	console.log(`  ✅ 今天 ${todaySchools.length} 校：${todaySchools.join(' / ')}（≥${MIN_SCHOOLS} OK）`);
 }
 
 // 每校检 4 产物
@@ -178,7 +180,7 @@ if (issues.length > 0) {
 	console.log('修复方法：');
 	console.log('  1. 本地 cd jr-wiki');
 	console.log(`  2. /ai-daily-news ${DATE}        # 补 AI 日报`);
-	console.log(`  3. /uni-news-poster ${DATE}     # 补大学新闻（自动选 3 校）`);
+	console.log(`  3. /uni-news-poster ${DATE}     # 补大学新闻（自动选 2 校）`);
 	let nextStep = 4;
 	if (dow === 0) {
 		console.log(`  ${nextStep++}. /uni-events                  # 补下周活动预告`);
