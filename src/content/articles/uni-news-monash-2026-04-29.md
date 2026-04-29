@@ -10,7 +10,7 @@ tags:
 author: "JR Academy 大学日报"
 keywords: "莫纳什大学, Monash University, MONASH, 澳洲留学, 大学新闻, 奖学金, 校园动态"
 ---
-<!-- 由 build/pipelines/uni-news.pipeline.ts 自动生成 · 2026-04-29T03:36:03.074Z -->
+<!-- 由 build/pipelines/uni-news.pipeline.ts 自动生成 · 2026-04-29T12:04:36.822Z -->
 
 > 学校：**莫纳什大学 / Monash University**
 > 日期：**2026-04-29**
