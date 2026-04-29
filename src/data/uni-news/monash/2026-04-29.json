@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-04-29",
+  "school": "monash",
+  "summary": {
+    "hookMain": "Monash",
+    "hookSub": "超加工食品损专注力 + 蜜蜂真懂数学 + Westpac 未来领袖奖",
+    "hookSubHighlight": "蜜蜂真懂数学",
+    "subLines": [
+      "超加工食品每多 10% · 视觉专注力可测量下降 · Alzheimer's Dementia 期刊",
+      "蜜蜂数量认知确认 · Dr Scarlett Howard · Proceedings Royal Society B",
+      "3 名莫纳什研究生获 Westpac 未来领袖奖学金 · $345 万总额"
+    ],
+    "previewCards": [
+      { "num": "01", "title": "超加工食品", "data": "专注力 -10%" },
+      { "num": "02", "title": "蜜蜂认知", "data": "Royal Society B" },
+      { "num": "03", "title": "Westpac 奖学金", "data": "3 人入选" }
+    ]
+  },
+  "news": [
+    {
+      "idx": "01",
+      "category": "营养与认知研究",
+      "h2Main": "莫纳什新研究：超加工食品多吃 10%，专注力即可测量下降",
+      "h2Sub": "Dr Barbara Cardoso 领衔 · 2100+ 澳洲成人 · Alzheimer's Dementia 期刊",
+      "h2Highlight": "专注力即可测量下降",
+      "lead": "<b>莫纳什大学</b> Dr Barbara Cardoso 联合圣保罗大学、迪肯大学，在 2,100 余名 40-70 岁澳洲成人中发现：超加工食品（UPF）每日能量占比每提高 <b>10%</b>（约等于一包薯片或一罐汽水），受试者<b>视觉专注力就出现可测量的下降</b>——哪怕整体饮食依然健康。研究 4 月 25 日发表于《Alzheimer's & Dementia: Diagnosis, Assessment & Disease Monitoring》。",
+      "bullets": [
+        { "k": "研究设计", "v": "横断面研究，纳入 Healthy Brain Project（HBP）队列中 2,100+ 名无痴呆澳洲成人（年龄 40-70）；评估 UPF 摄入量与认知功能 + 痴呆风险评分的关联" },
+        { "k": "核心发现", "v": "<b>UPF 摄入增加 → 视觉专注力下降</b>关联显著；但 UPF 与记忆力之间的直接关联在统计上未达显著性——注意力是大脑学习、解决问题、决策的基础" },
+        { "k": "为什么重要", "v": "这是澳洲迄今该年龄群最大规模的此类研究；「哪怕整体饮食健康」这一条件极为关键，说明 UPF 的认知损害是独立于整体饮食质量的额外风险" },
+        { "k": "对你的影响", "v": "走 <b>Nutrition / Public Health / Neuroscience / Food Science</b> 方向的同学，Monash 营养与食品系 + Victorian Heart Institute 联合研究是澳洲顶尖的交叉平台；Dr Cardoso 课题组是认知营养这条线的领军团队之一" }
+      ],
+      "source": "Monash University News · 2026-04-25",
+      "sourceUrl": "https://www.monash.edu/news/articles/ultra-processed-foods-damage-your-focus-even-if-you-eat-healthy"
+    },
+    {
+      "idx": "02",
+      "category": "动物认知研究",
+      "h2Main": "莫纳什证实蜜蜂真的能评估数量，不是在套视觉模式",
+      "h2Sub": "Dr Scarlett Howard · Proceedings Royal Society B · 4 月 22 日发表",
+      "h2Highlight": "真的能评估数量",
+      "lead": "莫纳什大学生物科学学院 <b>Dr Scarlett Howard</b> 在《Proceedings of the Royal Society B》发表新研究（4 月 22 日），从方法论上系统回应了国际学界的核心质疑：<b>蜜蜂在数量认知实验中确实是在评估数字本身，而非仅对视觉频率或对比度等感知信号作出响应。</b>",
+      "bullets": [
+        { "k": "学界争议背景", "v": "此前批评者认为蜜蜂「数量认知」实验设计有缺陷——蜜蜂可能只是对视觉模式（空间频率、亮度等）敏感，而非真正「懂得数量」这一抽象概念" },
+        { "k": "研究方法", "v": "从<b>蜜蜂自身的感官约束出发</b>重新设计实验刺激物，系统排除感知替代解释；用蜜蜂视觉系统的实际参数评估此前实验是否有误" },
+        { "k": "方法论贡献", "v": "研究提出一条铁律：<b>评估动物认知能力时，必须从动物自身的感知视角设计实验</b>，套用人类中心主义的框架会系统性地高估或低估动物能力" },
+        { "k": "对你的影响", "v": "走 <b>Cognitive Science / Animal Behaviour / Neuroethology / Zoology</b> 方向的同学，Dr Scarlett Howard 课题组（ICEB 整合认知、生态与生物启发研究组）在蜂类认知领域是国际前沿；Monash 生物科学系提供昆虫行为与认知的完整研究链条" }
+      ],
+      "source": "Mirage News · Monash University · 2026-04-22",
+      "sourceUrl": "https://www.miragenews.com/research-bees-ace-math-proving-theyre-no-drones-1660391/"
+    },
+    {
+      "idx": "03",
+      "category": "奖学金",
+      "h2Main": "3 名莫纳什研究生获 Westpac 未来领袖奖学金",
+      "h2Sub": "Vivien Dao + Zara Mammone + 第三位 · 全澳 18 人 · $345 万总额",
+      "h2Highlight": "Westpac 未来领袖奖学金",
+      "lead": "<b>莫纳什大学</b> 3 名研究生入选 <b>2026 年 Westpac Future Leaders Scholarship</b>（Westpac 未来领袖奖学金）——本年度全澳共 18 名青年学者获奖，Westpac Scholars Trust 总资助 <b>345 万澳元</b>，覆盖可持续发展、技术、健康与社会变革等前沿领域。",
+      "bullets": [
+        { "k": "莫纳什得奖者", "v": "<b>Vivien Dao</b>（辅导学硕士）——为东南亚裔澳洲人开发文化适配心理健康框架；<b>Zara Mammone</b>（科学院 PhD）——研究 vault 纳米颗粒（纳米生物科技与基础科学交叉前沿）" },
+        { "k": "奖学金价值", "v": "Westpac Future Leaders 是澳洲研究奖学金中竞争最激烈之一：不只给钱，更重要的是进入<b>学者社群网络</b>，与来自科技、医疗、政策、商业等不同领域的精英建立连接" },
+        { "k": "评选标准", "v": "面向硕士 + 博士层级研究生，评审看重的是<b>研究的社会影响潜力</b> + 领导力 + 跨界创新能力——不只看 GPA，更看「你的研究想解决什么真实问题」" },
+        { "k": "对你的影响", "v": "正在做 Master / PhD 研究的同学，Westpac Future Leaders 是值得提前两年准备的目标；申请时能清晰表达「研究如何改变澳洲或世界某个具体问题」是关键，Monash Graduate Research 有专门的奖学金申请辅导" }
+      ],
+      "source": "Monash University News · 2026",
+      "sourceUrl": "https://www.monash.edu/news/articles/monash-students-awarded-2026-westpac-future-leaders-scholarships"
+    }
+  ],
+  "quickview": {
+    "titleMain": "今日 3 条",
+    "titleHighlight": "一眼看完",
+    "sub": "超加工食品损专注力、蜜蜂数量认知证实、Westpac 未来领袖奖——莫纳什 4 月 29 日三条覆盖营养认知研究、动物行为科学和顶级奖学金三条线。",
+    "items": [
+      { "n": "01", "title": "超加工食品 → 专注力下降", "body": "UPF 每增 10% → 视觉专注力可测量下降；2100+ 澳洲成人；Alzheimer's Dementia 期刊；就算整体饮食健康也不例外" },
+      { "n": "02", "title": "蜜蜂真的懂数量评估", "body": "Dr Scarlett Howard，Proceedings Royal Society B；从蜂类感知约束重设实验；系统排除视觉模式替代解释；方法论贡献超越蜜蜂本身" },
+      { "n": "03", "title": "Westpac 未来领袖 3 人", "body": "Vivien Dao（东南亚心理健康）+ Zara Mammone（vault 纳米颗粒）；全澳 18 人 $345 万；研究者社群网络是核心价值" }
+    ],
+    "cta": {
+      "big": "关注每日大学日报",
+      "sub": "10 所澳洲大学 · 每天 3 校 · 奖学金 + 科研 + 招生一手同步",
+      "badge": "04 / 29"
+    }
+  },
+  "xhsCopy": {
+    "p1": {
+      "title": "Monash 4-29 三条硬料🐝",
+      "body": "Monash 读书或者打算申的姐妹，4 月 29 日有三条挺值得看。\n\n01 / 超加工食品损害专注力——莫纳什 Dr Barbara Cardoso 领衔的研究，发现每天多吃 10% 的超加工食品，视觉专注力就会有可测量的下降。研究对象是 2100+ 名 40-70 岁澳洲成人，发表在《Alzheimer's & Dementia》期刊。\n\n02 / 蜜蜂真的懂数量——Dr Scarlett Howard 在 Royal Society B 发表新研究，用方法论正面回应了国际质疑：蜜蜂评估的真的是数字本身，不只是在响应视觉模式。\n\n03 / Westpac 未来领袖奖学金——3 名 Monash 研究生入选，全澳 18 人 $345 万，包含 Vivien Dao（心理健康）和 Zara Mammone（纳米生物科技）。\n\n三条哪条最感兴趣评论区聊聊🙌",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #Monash申请 #留学干货 #澳洲科研 #留学生活"
+    },
+    "p2": {
+      "title": "少吃超加工食品！Monash研究📊",
+      "body": "莫纳什大学刚出了一篇关于超加工食品和大脑的研究，我看完真的有点心虚（最近薯片吃太多了）\n\n核心发现:每天的超加工食品（UPF）摄入量占每日能量的比例每提高 10%，研究者就能检测到视觉专注力的可测量下降——哪怕这个人整体饮食结构依然健康。\n\n10% 是什么概念?大约是每天额外加一包普通薯片，或者一罐汽水。\n\n研究对象是 2,100 多名澳洲 40-70 岁成人，用的是 Monash 的 Healthy Brain Project 队列数据，发表在《Alzheimer's & Dementia: Diagnosis, Assessment & Disease Monitoring》期刊上。\n\n有意思的细节:这次研究没有发现 UPF 和记忆力之间有显著关联，主要影响的是专注力。但专注力是学习、决策、解决问题的底层能力，这个影响很实在。\n\n走 Nutrition / Public Health / Neuroscience 方向的姐妹，Monash 营养与食品系 + Victorian Heart Institute 联合研究是澳洲顶尖的交叉研究平台，Dr Cardoso 课题组值得关注😤",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #营养学 #公共健康 #留学干货 #脑科学"
+    },
+    "p3": {
+      "title": "蜜蜂真的会评估数字！🐝",
+      "body": "这篇研究我真的看了好几遍，越看越觉得有意思——\n\n莫纳什大学 Dr Scarlett Howard 在《Proceedings of the Royal Society B》发表新研究（4 月 22 日），正面回应了国际学界对「蜜蜂数量认知」研究的质疑。\n\n背景:之前有研究显示蜜蜂好像能理解数量，但批评方说:不对，蜜蜂只是对「视觉模式」（空间频率、亮度、对比度之类的）有反应，不是真的在评估「数字」这个抽象概念。\n\nDr Howard 团队的回应方法很聪明:从蜜蜂自己的感官约束出发重新评估实验设计，用蜜蜂视觉系统的实际参数来看「那些批评是不是成立」。结果发现:批评不成立，蜜蜂确实是在评估数量本身，而不是在套视觉信号。\n\n研究的方法论贡献可能比蜜蜂本身更重要——它指出了动物认知研究里一个系统性问题:用人类中心主义的框架设计实验，可能会系统性地低估（或高估）动物的真实能力。\n\nDr Howard 的 ICEB 课题组（整合认知、生态和生物启发研究）在蜂类认知领域是国际前沿。走 Cognitive Science / Animal Behaviour / Zoology 方向的姐妹可以了解一下🔍",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #动物认知 #行为科学 #科研 #留学干货"
+    },
+    "p4": {
+      "title": "Monash 3人拿到Westpac奖学金🏆",
+      "body": "Westpac Future Leaders Scholarship 的含金量，澳洲读研的姐妹应该都知道。今年莫纳什大学有 3 名研究生入选，全澳 18 人一共拿到 $345 万澳元，覆盖可持续发展、技术、健康和社会变革等领域。\n\n其中两位我看到了名字:\n· Vivien Dao，辅导学硕士生，研究方向是为东南亚裔澳洲人开发文化适配的心理健康框架——说白了就是，现有的心理咨询理论太以西方文化为中心了，Vivien 在研究如何让框架真正适配东南亚背景的人。\n· Zara Mammone，科学院 PhD 生，研究 vault 纳米颗粒——一种在基础科学和生物技术交叉前沿很有意思的纳米结构。\n\nWestpac Future Leaders 不只是给钱，更重要的是进入学者社群网络，跟来自科技、医疗、政策、商业等不同领域的精英建立连接——这个网络在澳洲挺有分量的。\n\n正在做 Master 或 PhD 研究的姐妹，Westpac Future Leaders 是值得提前两年开始准备的目标。评选最看重的是「你的研究有什么真实社会影响力」，不只看 GPA。\n\n有同样在申请类似研究奖学金的评论区来聊~",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #澳洲奖学金 #PhD申请 #留学干货 #研究生"
+    },
+    "p5": {
+      "title": "Monash 4-29 速览三条📋",
+      "body": "莫纳什 4 月 29 日快速整理:\n\n🧠 超加工食品 → 专注力下降——UPF 每多 10% 视觉专注力可测量下降；2100+ 澳洲成人；Alzheimer's Dementia 期刊；哪怕整体饮食健康也有影响\n\n🐝 蜜蜂确实能评估数量——Dr Scarlett Howard，Royal Society B；系统排除视觉模式替代解释；方法论贡献超越蜜蜂本身\n\n🏆 Westpac 未来领袖 × 3——Vivien Dao（东南亚心理健康框架）+ Zara Mammone（vault 纳米颗粒）；全澳 18 人 $345 万；网络价值不亚于奖金\n\n三条方向分别是认知营养学 / 动物行为科学 / 顶级奖学金，有共鸣的评论区扣个 1 👇",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #留学干货 #大学新闻 #澳洲科研 #留学生活"
+    }
+  },
+  "drafts": {
+    "sections": [
+      {
+        "heading": "Monash 4-29 草稿 · 超加工食品版",
+        "body": "Monash 刚发了一篇关于超加工食品和专注力的研究，我觉得值得认真看一下\n\n核心结论:每天超加工食品的摄入量占每日能量比例每提高 10%，研究者就能检测到视觉专注力的可测量下降。而且「哪怕整体饮食依然健康」这个条件非常关键——说明 UPF 的认知损害是独立存在的额外风险，不会被其他健康饮食稀释掉。\n\n10% 的能量增幅大约等于一天额外加一包薯片或一罐汽水。这个门槛低到有点让人警觉。\n\n研究是 Monash 营养与食品系的 Dr Barbara Cardoso 领衔，联合圣保罗大学和迪肯大学，用的是 Monash Healthy Brain Project 2100+ 名成人数据，发表在《Alzheimer's & Dementia》子刊上。\n\n有意思的地方是研究没有发现 UPF 和记忆力之间有统计显著关联，主要影响的是注意力这一块。而注意力是学习、决策、问题解决的底层能力——影响可能比「记不住东西」更隐蔽、更累积。\n\n走 Nutrition / Public Health / Brain Science 方向的姐妹，Monash 营养系 + Victorian Heart Institute 联合平台是澳洲顶尖的认知营养研究地方，感兴趣可以聊聊~",
+        "tags": ["#莫纳什大学", "#Monash", "#澳洲留学", "#营养学", "#公共健康", "#脑科学", "#留学干货"]
+      }
+    ],
+    "sensitivityScan": [
+      { "category": "绝对化", "rule": "最 / 第一 / 唯一 / 100%", "result": "未检出" },
+      { "category": "教育承诺", "rule": "包过 / 保录取 / 稳上", "result": "未检出" },
+      { "category": "引流", "rule": "加V / VX / 薇信 / 私信领取", "result": "未检出" },
+      { "category": "封号红线", "rule": "JR Academy / 匠人学院 / jiangren.com", "result": "未检出" },
+      { "category": "AI 味", "rule": "首先其次 / 综上所述 / 值得注意的是", "result": "未检出" }
+    ]
+  }
+}

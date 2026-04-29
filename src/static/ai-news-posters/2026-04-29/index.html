@@ -1,0 +1,307 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-04-29T03:16:25.569Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-04-29（Canvas 版）</title>
+<meta name="description" content="2026-04-29 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v2.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v2.js 里。
+ * 数据来源：src/data/ai-daily/2026-04-29.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "date": "2026-04-29",
+  "summary": {
+    "hook": [
+      "今日 AI 竞速",
+      "五大突破"
+    ],
+    "sub": "GPT-5.5 创最快发布纪录 · DeepSeek V4 携华为芯降价 75% · Gemini 赋能新 Siri · Meta 抛弃开源路线 · 微软 OpenAI 重组合作",
+    "items": [
+      {
+        "num": "01",
+        "cat": "大模型发布",
+        "numColor": "#2563EB",
+        "t": "DeepSeek V4 发布，首度优化华为昇腾，API 永久降价 75%"
+      },
+      {
+        "num": "02",
+        "cat": "大模型发布",
+        "numColor": "#10B981",
+        "t": "GPT-5.5 上线，六周两版本创 OpenAI 最快迭代纪录"
+      },
+      {
+        "num": "03",
+        "cat": "行业合作",
+        "numColor": "#4285F4",
+        "t": "Google 官宣 Gemini 赋能新版 Siri，苹果 AI 底座易主"
+      },
+      {
+        "num": "04",
+        "cat": "大模型发布",
+        "numColor": "#0866FF",
+        "t": "Meta 发布 Muse Spark，首款闭源前沿模型打破开源惯例"
+      },
+      {
+        "num": "05",
+        "cat": "商业动态",
+        "numColor": "#7C3AED",
+        "t": "微软 OpenAI 重签协议，多云开放换停止分成"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-deepseek-v4-huawei",
+      "idx": "01",
+      "catText": "大模型发布",
+      "accent": "#2563EB",
+      "bg": {
+        "top": "#EFF6FF",
+        "mid": "#DBEAFE",
+        "bot": "#BFDBFE",
+        "topRight": "#93C5FD"
+      },
+      "title": [
+        {
+          "text": "DeepSeek V4 发布 · "
+        },
+        {
+          "text": "华为昇腾 + 永久降价 75%",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "中国 AI 最强开源模型升级，"
+        },
+        {
+          "text": "首度深度适配华为芯片，API 价格打到骨折",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "DeepSeek 发布 V4-Flash（284B 参数）与 V4-Pro（1.6T 参数，49B 激活），均支持 100 万 token 上下文，混合专家架构，对标 GPT-5.4 与 Gemini 3.1 Pro"
+        },
+        {
+          "k": "为什么重要",
+          "v": "首次深度优化华为昇腾 Ascend 950 芯片，验证中国自研算力可支撑前沿模型；同步宣布 V4-Pro API 永久降价 75%，缓存命中再打 1 折，引爆中国 AI 价格战"
+        },
+        {
+          "k": "对你的影响",
+          "v": "开发者调用成本骤降 83%，中小企业和个人开发者可以极低成本接入媲美 GPT-5.4 的推理能力，AI 应用落地门槛大幅降低"
+        }
+      ],
+      "src": "📎 bloomberg.com · techcrunch.com · qbitai.com"
+    },
+    {
+      "slug": "02-gpt-5-5-openai",
+      "idx": "02",
+      "catText": "大模型发布",
+      "accent": "#10B981",
+      "bg": {
+        "top": "#ECFDF5",
+        "mid": "#D1FAE5",
+        "bot": "#A7F3D0",
+        "topRight": "#6EE7B7"
+      },
+      "title": [
+        {
+          "text": "OpenAI 发布 GPT-5.5，"
+        },
+        {
+          "text": "六周迭代两版创历史最快节奏",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "GPT-5.4 刚上六周即被取代，"
+        },
+        {
+          "text": "AI 军备竞赛迭代速度已超出行业预期",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "OpenAI 发布 GPT-5.5 与 GPT-5.5 Pro，距 GPT-5.4 仅六周，创下 OpenAI 史上最快主版本迭代纪录；API 同步于 4 月 24 日开放"
+        },
+        {
+          "k": "为什么重要",
+          "v": "GPT-5.5 在代码调试、在线研究、数据分析、文件生成、软件操控等多任务上全面超越前代，说明 OpenAI 已进入「月更」节奏，竞争烈度前所未有"
+        },
+        {
+          "k": "对你的影响",
+          "v": "企业客户和开发者需频繁评估模型升级必要性；对学技术的你意味着 AI 工具能力将每月提升，尽快将 AI 融入工作流可大幅提升竞争力"
+        }
+      ],
+      "src": "📎 fortune.com · cnbc.com · openai.com"
+    },
+    {
+      "slug": "03-gemini-siri-apple",
+      "idx": "03",
+      "catText": "行业合作",
+      "accent": "#4285F4",
+      "bg": {
+        "top": "#EFF6FF",
+        "mid": "#E8F0FE",
+        "bot": "#C7D7FD",
+        "topRight": "#FEF9C3"
+      },
+      "title": [
+        {
+          "text": "Google 官宣 Gemini 赋能新版 Siri，"
+        },
+        {
+          "text": "苹果 AI 底座正式易主",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "苹果放弃自研路线转向 Google，"
+        },
+        {
+          "text": "Gemini 将成为 Apple Intelligence 核心引擎",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Google 官方确认与苹果合作，Gemini 将赋能全新个性化版 Siri，并作为首选云合作伙伴共同开发下一代 Apple Foundation Models，支撑 Apple Intelligence 功能"
+        },
+        {
+          "k": "为什么重要",
+          "v": "苹果曾试图自主研发 AI 模型，此番转向 Google 说明前沿大模型研发成本超出苹果预算意愿；Gemini 借此获得数十亿 iPhone 用户入口，大幅提升 Google 在消费 AI 市场的份额"
+        },
+        {
+          "k": "对你的影响",
+          "v": "iPhone 用户最快 2026 年底即可用到 Gemini 驱动的更智能 Siri；对 AI 从业者意味着手机端 AI 能力将迎来质变，移动场景 AI 应用机会大幅扩大"
+        }
+      ],
+      "src": "📎 macrumors.com · blog.google · siliconangle.com"
+    },
+    {
+      "slug": "04-meta-muse-spark",
+      "idx": "04",
+      "catText": "大模型发布",
+      "accent": "#0866FF",
+      "bg": {
+        "top": "#EEF2FF",
+        "mid": "#E0E7FF",
+        "bot": "#C7D2FE",
+        "topRight": "#A5B4FC"
+      },
+      "title": [
+        {
+          "text": "Meta 发布 Muse Spark，"
+        },
+        {
+          "text": "首款闭源前沿模型颠覆开源传统",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "小扎亲自挂帅 Meta 超级智能实验室，"
+        },
+        {
+          "text": "以商业闭源换取前沿能力，Llama 路线存疑",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Meta 发布 Muse Spark，由新成立的 Meta Superintelligence Labs 打造，首席 AI 官 Alexandr Wang 主导，是 Meta 一年来首款主力新模型，但采用闭源策略"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Meta 过去凭 Llama 开源赢得开发者社区，此番转向闭源意味着 Meta 认为前沿竞争无法在开放框架下实现；Muse Spark 成为继 GPT-5.5、Gemini 3.1 后又一闭源旗舰，前沿赛道进一步向封闭集中"
+        },
+        {
+          "k": "对你的影响",
+          "v": "Llama 系列未来能否延续开源尚存变数；对 AI 学习者而言，优质开源模型窗口期可能收窄，提前掌握 API 调用与提示词工程更显紧迫"
+        }
+      ],
+      "src": "📎 cnbc.com · artificialintelligence-news.com · understandingai.org"
+    },
+    {
+      "slug": "05-microsoft-openai-deal",
+      "idx": "05",
+      "catText": "商业动态",
+      "accent": "#7C3AED",
+      "bg": {
+        "top": "#F5F3FF",
+        "mid": "#EDE9FE",
+        "bot": "#DDD6FE",
+        "topRight": "#C4B5FD"
+      },
+      "title": [
+        {
+          "text": "微软 OpenAI 重签合作协议，"
+        },
+        {
+          "text": "多云自由换停止分成到 2030",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "七年独家捆绑松绑，"
+        },
+        {
+          "text": "OpenAI 可上任意云，微软免付分成获 Azure 优先权",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "微软与 OpenAI 修订合作框架：OpenAI 可将产品部署到任意云服务商，Azure 保留「首发优先」权；微软停止向 OpenAI 支付收入分成，OpenAI 则继续向微软付分成至 2030 年（含上限）"
+        },
+        {
+          "k": "为什么重要",
+          "v": "此前 OpenAI 的 500 亿美元 Amazon 交易曾引发微软法律风险，新协议彻底厘清双方权责；OpenAI 获得多云灵活性，为 AWS、GCP 等更大生态扩张铺路，标志着 AI 基础设施竞争格局重组"
+        },
+        {
+          "k": "对你的影响",
+          "v": "企业采购 OpenAI API 将拥有更多云平台选择，成本竞争有望压低价格；微软 Copilot 与 Azure AI 仍是 OpenAI 在企业市场的核心渠道，短期合作关系不变"
+        }
+      ],
+      "src": "📎 blogs.microsoft.com · techcrunch.com"
+    }
+  ],
+  "mp": {
+    "title": "GPT-5.5 六周两版 / DeepSeek V4 携华为降价 / Gemini 赋能 Siri / Meta 抛弃开源"
+  },
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-04-29"
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+  FLEX_HEIGHT: true,
+  HEIGHT_TIERS: [1480, 1660, 1860, 2100, 2400],
+});
+</script>
+</body>
+</html>
