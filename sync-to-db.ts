@@ -27,6 +27,21 @@ if (!ADMIN_TOKEN) {
 	process.exit(1);
 }
 
+// Diagnostic: which auth path is the runtime actually taking? Prints prefix only,
+// never the full secret. Lets workflow logs answer "did the JR_SERVICE_API_KEY
+// secret actually get added to the repo?" without guesswork.
+const authMode = process.env.JR_SERVICE_API_KEY
+	? `service-api-key (${ADMIN_TOKEN.slice(0, 8)}…, len=${ADMIN_TOKEN.length})`
+	: `legacy-admin-jwt (${ADMIN_TOKEN.slice(0, 6)}…, len=${ADMIN_TOKEN.length})`;
+console.log(`🔑 Auth mode: ${authMode}`);
+if (!ADMIN_TOKEN.startsWith('jrak_')) {
+	console.warn(
+		'::warning::Sync is NOT using a jrak_ service API key. ' +
+			'Either JR_SERVICE_API_KEY secret is missing in GitHub repo settings, ' +
+			'or it holds a value that doesn\'t start with jrak_.'
+	);
+}
+
 const manifestPath = join(DIST, 'manifest.json');
 if (!existsSync(manifestPath)) {
 	console.error('❌ dist/manifest.json not found. Run `bun run build` first.');
