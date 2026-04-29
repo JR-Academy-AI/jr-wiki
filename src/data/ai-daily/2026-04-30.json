@@ -1,0 +1,127 @@
+{
+  "date": "2026-04-30",
+  "summary": {
+    "hook": [
+      {"text": "GPT-5.5 / DeepSeek V4 / Meta LlamaCon /"},
+      {"text": " 白宫指控中国盗 AI / 马斯克出庭", "hl": true}
+    ],
+    "sub": "OpenAI 六周连发两代旗舰；DeepSeek V4 用华为芯片杀价 88%；Meta 首届开发者大会 Llama 下载破十亿；白宫点名中国「工业级」蒸馏盗窃；马斯克亲赴法庭为 OpenAI 创始理念作证",
+    "items": [
+      {"num": "01", "cat": "模型发布", "numColor": "#10b981", "t": "OpenAI 发布 GPT-5.5，六周两代，最强 Agentic 编码"},
+      {"num": "02", "cat": "开源竞争", "numColor": "#8b5cf6", "t": "DeepSeek V4 发布：1.6T 参数 + 华为芯片，定价仅 $3.48/M"},
+      {"num": "03", "cat": "开发者大会", "numColor": "#3b82f6", "t": "Meta LlamaCon 首届：Llama 下载破十亿，推出闭源 Muse Spark"},
+      {"num": "04", "cat": "AI 安全", "numColor": "#ef4444", "t": "白宫指控中国「工业级蒸馏窃密」，呼吁芯片出口管制"},
+      {"num": "05", "cat": "法律", "numColor": "#f59e0b", "t": "马斯克出庭 OpenAI 诉讼，矛头指向盈利化转型"}
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-gpt55-agentic",
+      "idx": "01",
+      "catText": "模型发布",
+      "accent": "#10b981",
+      "bg": {"top": "#ecfdf5", "mid": "#d1fae5", "bot": "#a7f3d0", "topRight": "#6ee7b7"},
+      "title": [
+        {"text": "OpenAI GPT-5.5："},
+        {"text": "六周两代，Agentic 编码再上台阶", "hl": true}
+      ],
+      "oneline": [
+        {"text": "GPT-5.5 于 4 月 23 日上线，"},
+        {"text": "比 GPT-5.4 快六周，主打多步 Agentic 任务完成率与代码调试速度。", "bold": true}
+      ],
+      "bullets": [
+        {"k": "发生了什么", "v": "OpenAI 发布 GPT-5.5，距 GPT-5.4 仅六周，面向付费用户开放 ChatGPT 与 Codex 接入，强调更强的工具调用与多轮任务完成能力。"},
+        {"k": "为什么重要", "v": "六周一代的节奏打破外界对 AI「放缓」的预期，GPT-5.5 在代码调试和长链路 Agentic 任务上显著优于 5.4，直接压制 Claude Sonnet 4.6 基准。"},
+        {"k": "对你的影响", "v": "开发者可在 Codex 和 ChatGPT API 使用 GPT-5.5；求职者准备 AI 辅助编程面试时，新模型提供更精准的代码生成与错误修复。"}
+      ],
+      "src": "📎 fortune.com · openai.com"
+    },
+    {
+      "slug": "02-deepseek-v4",
+      "idx": "02",
+      "catText": "开源竞争",
+      "accent": "#8b5cf6",
+      "bg": {"top": "#f5f3ff", "mid": "#ede9fe", "bot": "#ddd6fe", "topRight": "#c4b5fd"},
+      "title": [
+        {"text": "DeepSeek V4 来了："},
+        {"text": "华为芯 + 1.6T 参数，定价低至 $3.48/M", "hl": true}
+      ],
+      "oneline": [
+        {"text": "4 月 24 日发布的 V4 Pro 是史上最大开源权重模型，"},
+        {"text": "使用华为昇腾 950 代替英伟达，定价仅 OpenAI 的 1/7。", "bold": true}
+      ],
+      "bullets": [
+        {"k": "发生了什么", "v": "DeepSeek 发布 V4 Flash 和 V4 Pro，后者拥有 1.6 万亿参数（49B 激活），上下文窗口 100 万 token，整合「混合注意力架构」。"},
+        {"k": "为什么重要", "v": "V4 首次完全依赖华为昇腾 950 超节点训练，绕开英伟达封锁；同时以 $3.48/M tokens 输出定价（Anthropic $30、OpenAI $25）引发价格战。"},
+        {"k": "对你的影响", "v": "企业 AI 集成成本可降至过去的 1/7；Kimi K2.6 同期发布，本周双模型密集发布使国内大模型应用迎来新一轮部署机会。"}
+      ],
+      "src": "📎 bloomberg.com · cnbc.com · techcrunch.com"
+    },
+    {
+      "slug": "03-meta-llamacon",
+      "idx": "03",
+      "catText": "开发者大会",
+      "accent": "#3b82f6",
+      "bg": {"top": "#eff6ff", "mid": "#dbeafe", "bot": "#bfdbfe", "topRight": "#93c5fd"},
+      "title": [
+        {"text": "Meta LlamaCon 首届大会："},
+        {"text": "十亿下载 + 闭源 Muse Spark 同台亮相", "hl": true}
+      ],
+      "oneline": [
+        {"text": "4 月 29 日 Meta 举办首届 LlamaCon，"},
+        {"text": "宣布 Llama 累计下载突破十亿，并亮相闭源模型 Muse Spark。", "bold": true}
+      ],
+      "bullets": [
+        {"k": "发生了什么", "v": "Meta 在 LlamaCon 上公布 Llama 生态累计下载量超 10 亿，同时展示由首席 AI 官 Alexandr Wang 主导的闭源模型 Muse Spark，支持多模态感知与 Agentic 任务。"},
+        {"k": "为什么重要", "v": "十亿下载证明 Llama 已成开源生态事实标准；Muse Spark 的出现标志 Meta 首次在开源路径之外押注闭源商业模型，战略分叉引发社区讨论。"},
+        {"k": "对你的影响", "v": "开发者可利用 Llama 4 Maverick 和 Scout 构建多模态应用；Muse Spark 后续若对外开放 API，将带来又一竞争性多模态选项。"}
+      ],
+      "src": "📎 ai.meta.com · cnbc.com"
+    },
+    {
+      "slug": "04-whitehouse-china-ai-theft",
+      "idx": "04",
+      "catText": "AI 安全",
+      "accent": "#ef4444",
+      "bg": {"top": "#fef2f2", "mid": "#fee2e2", "bot": "#fecaca", "topRight": "#fca5a5"},
+      "title": [
+        {"text": "白宫出手："},
+        {"text": "指控中国「工业级蒸馏窃密」美国 AI 模型", "hl": true}
+      ],
+      "oneline": [
+        {"text": "4 月 23 日白宫 OSTP 发出备忘录，"},
+        {"text": "指控中国用数万代理账户蒸馏美国前沿 AI，呼吁中止高端芯片出口。", "bold": true}
+      ],
+      "bullets": [
+        {"k": "发生了什么", "v": "白宫科技政策办公室向各联邦机构发出备忘录，点名中国以「工业级蒸馏」手段——用数万代理账户大量请求美国 AI 模型——复制其核心能力。"},
+        {"k": "为什么重要", "v": "这是首次有政府文件正式将 AI「蒸馏窃密」定性为国家级威胁；政策组织随即呼吁封锁能支持此类计算的高端芯片出口，对 Nvidia 等影响重大。"},
+        {"k": "对你的影响", "v": "短期 API 调用限速与账号验证可能收紧；长期来看若出口管制升级，中国 AI 产品（含 DeepSeek）在澳洲及海外的可用性面临更多不确定性。"}
+      ],
+      "src": "📎 npr.org · nextgov.com · cnn.com"
+    },
+    {
+      "slug": "05-musk-altman-trial",
+      "idx": "05",
+      "catText": "法律",
+      "accent": "#f59e0b",
+      "bg": {"top": "#fffbeb", "mid": "#fef3c7", "bot": "#fde68a", "topRight": "#fcd34d"},
+      "title": [
+        {"text": "马斯克出庭："},
+        {"text": "「OpenAI 当年是非营利，我不会出钱搞商业公司」", "hl": true}
+      ],
+      "oneline": [
+        {"text": "4 月 28-29 日马斯克亲赴法庭，"},
+        {"text": "就 OpenAI 营利化转型宣誓作证，诉讼结果或改写 AI 行业治理框架。", "bold": true}
+      ],
+      "bullets": [
+        {"k": "发生了什么", "v": "马斯克在洛杉矶联邦法院出庭，作证称他 2015 年共同创立并资助 OpenAI 的前提是其作为非营利公司对抗谷歌，表示若预期盈利转型绝不会出资。"},
+        {"k": "为什么重要", "v": "这场官司不止是个人恩怨：法庭结果将决定 OpenAI 能否完成 PBC 营利转型，并为未来 AI 公司的公益使命约束力设立先例。"},
+        {"k": "对你的影响", "v": "若 OpenAI 转型被叫停，估值和融资计划将受冲击，GPT 系列 API 定价稳定性存疑；行业投资者须关注裁决走向。"}
+      ],
+      "src": "📎 cnbc.com · cnn.com"
+    }
+  ],
+  "mp": {
+    "title": "GPT-5.5 / DeepSeek V4 突围 / Meta LlamaCon / 白宫指控中国盗 AI / 马斯克出庭"
+  }
+}
