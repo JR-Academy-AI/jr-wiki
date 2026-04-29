@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-04-29T03:36:27.250Z",
+  "lockedAt": "2026-04-29T14:18:48.282Z",
   "version": 1,
   "slugs": [
     {
@@ -176,6 +176,10 @@
     },
     {
       "type": "article",
+      "slug": "uni-news-umelb-2026-04-29"
+    },
+    {
+      "type": "article",
       "slug": "uni-news-unsw-2026-04-25"
     },
     {
@@ -197,6 +201,10 @@
     {
       "type": "article",
       "slug": "uni-news-uq-2026-04-28"
+    },
+    {
+      "type": "article",
+      "slug": "uni-news-uq-2026-04-29"
     },
     {
       "type": "article",
@@ -233,6 +241,10 @@
     {
       "type": "book",
       "slug": "claude-code-guide"
+    },
+    {
+      "type": "book",
+      "slug": "coze-guide"
     },
     {
       "type": "book",
@@ -346,6 +358,31 @@
       "type": "chapter",
       "book": "claude-code-guide",
       "slug": "08-parallel-dev-worktree"
+    },
+    {
+      "type": "chapter",
+      "book": "coze-guide",
+      "slug": "01-what-is-coze"
+    },
+    {
+      "type": "chapter",
+      "book": "coze-guide",
+      "slug": "02-getting-started"
+    },
+    {
+      "type": "chapter",
+      "book": "coze-guide",
+      "slug": "03-core-features"
+    },
+    {
+      "type": "chapter",
+      "book": "coze-guide",
+      "slug": "04-advanced-tips"
+    },
+    {
+      "type": "chapter",
+      "book": "coze-guide",
+      "slug": "05-faq"
     },
     {
       "type": "chapter",
