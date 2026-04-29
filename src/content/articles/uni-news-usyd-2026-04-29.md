@@ -10,7 +10,7 @@ tags:
 author: "JR Academy 大学日报"
 keywords: "悉尼大学, University of Sydney, USYD, 澳洲留学, 大学新闻, 奖学金, 校园动态"
 ---
-<!-- 由 build/pipelines/uni-news.pipeline.ts 自动生成 · 2026-04-29T03:36:03.041Z -->
+<!-- 由 build/pipelines/uni-news.pipeline.ts 自动生成 · 2026-04-29T12:04:38.418Z -->
 
 > 学校：**悉尼大学 / University of Sydney**
 > 日期：**2026-04-29**
