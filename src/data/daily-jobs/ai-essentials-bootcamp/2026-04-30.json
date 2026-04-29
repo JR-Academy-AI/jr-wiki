@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-04-30",
+  "cohort": "AU",
+  "generatedAt": "2026-04-30T07:30:00+10:00",
+  "source": "WebSearch(lifeatcanva.com + gradconnection.com + atlassian.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Machine Learning Engineer - Data AI Research",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "recent",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000639806/machine-learning-engineer-data-ai-research/",
+      "why": "Canva AI Research 团队，聚焦数据驱动的 ML 模型研究与改进，需要扎实的 Python 数据分析与统计基础；T0 品牌，对应 AI Essentials 的 Python 数据处理 + 机器学习基础模块，是理解「真实 AI 工程」的理想目标岗位。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "Machine Learning Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (AU/NZ)",
+      "posted": "2026 Graduate Program",
+      "url": "https://au.gradconnection.com/employers/atlassian/jobs/atlassian-machine-learning-engineer-2026-graduate-australia-new-zealand/",
+      "why": "Atlassian T0 品牌 2026 Graduate 正式岗，Central AI 团队做 LLM 质量评估与 fine-tuning，入职即接触生产系统；AI Essentials 修完 Python + AI 原理模块后可立即投递，Master 学历优先但不强制，团队在 Atlassian Intelligence 功能上发力。"
+    }
+  ]
+}

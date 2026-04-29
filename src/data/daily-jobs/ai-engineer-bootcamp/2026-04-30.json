@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-04-30",
+  "cohort": "AU",
+  "generatedAt": "2026-04-30T07:30:00+10:00",
+  "source": "WebSearch(lifeatcanva.com + au.linkedin.com + gradconnection.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Machine Learning Engineer - Canva AI",
+      "company": "Canva",
+      "location": "Sydney, NSW (AU/NZ remote)",
+      "posted": "recent",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000795677/senior-machine-learning-engineer-canva-ai-anz-remote/",
+      "why": "Canva 澳洲 AI 核心团队，专做对话式 AI 与 GenAI 体验，直接在生产系统上开发大模型应用；T0 品牌，Senior 职级是 AI Engineer Bootcamp 学员完成 Phase 3 LLM 应用开发 + 系统集成模块后 2-3 年内的标杆目标岗。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Associate",
+      "title": "Associate Machine Learning Engineer",
+      "company": "REA Group (realestate.com.au)",
+      "location": "Melbourne, VIC",
+      "posted": "recent",
+      "url": "https://au.linkedin.com/jobs/view/associate-machine-learning-engineer-at-rea-group-4348170500",
+      "why": "REA Group T1 澳洲科技公司，CX AI Experience 团队做个性化推荐与用户决策模型，Associate 职级对应 Bootcamp 毕业生；明确欢迎不完全满足 JD 的候选人，Phase 2 ML pipeline 项目 + Phase 3 推荐系统模块可直接作为申请作品集。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特殊档 · Named Internship",
+      "title": "Machine Learning Engineer Intern 2026/27",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "Closes May 1 2026",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000970227/machine-learning-engineer-intern-202627/",
+      "why": "Canva 2026/27 Summer Intern（12 周，12 月开始），T0 品牌 named program，截止日 5 月 1 日——明天即截止，在读 Bootcamp 学员可凭 Phase 1-2 作品集立即投递，进 Canva 工程团队的最快路径。"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-04-30",
+  "cohort": "AU",
+  "generatedAt": "2026-04-30T07:30:00+10:00",
+  "source": "WebSearch(lifeatcanva.com + atlassian.com/careers)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Machine Learning Engineer - Evaluations (Design Generation)",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "recent",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000743065/senior-machine-learning-engineer-evaluations-design-generation/",
+      "why": "Canva Evaluations 团队专做 GenAI 生成质量评估，大量涉及 RAG 管道测评、embedding 相似度评分与自动 eval 框架搭建——与 RAG Bootcamp 的向量检索质量评估章节高度重合；T0 品牌，Senior 职级是学员 2-3 年后的进阶目标。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "Software Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (AU/NZ)",
+      "posted": "2026 Graduate Program",
+      "url": "https://www.atlassian.com/company/careers/details/17823",
+      "why": "Atlassian 2026 Graduate SWE，岗位描述明确提到 GenAI 应用开发、RAG 优化与 LLM fine-tuning（Atlassian Intelligence 产品线）；T0 品牌，RAG Bootcamp 的向量数据库 + API 集成 + retrieval pipeline 项目可直接对应该岗位技术要求。"
+    }
+  ]
+}

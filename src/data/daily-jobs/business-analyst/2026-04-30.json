@@ -1,0 +1,29 @@
+{
+  "bootcamp": "business-analyst",
+  "date": "2026-04-30",
+  "cohort": "AU",
+  "generatedAt": "2026-04-30T07:30:00+10:00",
+  "source": "WebSearch(recruitment.macquarie.com + nab.com.au)",
+  "jobs": [
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate",
+      "title": "2026 Technology Graduate Programme (Business Analyst / Data)",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "2026 Graduate Programme",
+      "url": "https://recruitment.macquarie.com/en_US/careers/JobDetail/2026-Technology-Graduate-Programme/18136",
+      "why": "Macquarie Group T1 顶级金融科技公司，2026 Technology Graduate Programme 含 BA 与数据方向，12 个月项目轮岗、配专属 buddy 和 mentor；BA Bootcamp 的需求分析 + 金融业务流程建模 + JIRA/Confluence 模块直接对应 Macquarie 内部转型项目交付环境，毕业即可投递。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特殊档 · Named Program",
+      "title": "Technology Talent Program 2026",
+      "company": "NAB (National Australia Bank)",
+      "location": "Sydney / Melbourne, AU",
+      "posted": "Applications opening 2026",
+      "url": "https://www.nab.com.au/about-us/careers/early-careers/technology-talent-program",
+      "why": "NAB T1 Big4 银行 Technology Talent Program 是专为技术转型人才设计的 named program，成功候选人可转入 BA/Data Analyst 岗；BA Bootcamp 的 stakeholder 访谈 + BPMN 流程图 + Agile user story 章节正好对应 NAB 内部敏捷交付框架，银行业 BA 最直接的入行路径之一。"
+    }
+  ]
+}
