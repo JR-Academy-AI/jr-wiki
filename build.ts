@@ -53,6 +53,11 @@ function parseValue(val: string): any {
 	if (val === 'true') return true;
 	if (val === 'false') return false;
 	if (/^-?\d+(\.\d+)?$/.test(val)) return Number(val);
+	if (val.startsWith('[') && val.endsWith(']')) {
+		const inner = val.slice(1, -1).trim();
+		if (!inner) return [];
+		return inner.split(',').map(s => parseValue(s.trim()));
+	}
 	return val;
 }
 
