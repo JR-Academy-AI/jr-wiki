@@ -1,0 +1,9 @@
+title: "CrewAI 实战手册：用 Python 编排多 Agent 协作"
+description: "从安装到上线：CrewAI 多智能体框架完全指南，Agent/Task/Crew/Flow 四大概念、内置工具、Memory 记忆、多模型切换、真实项目实战"
+tags:
+  - crewai
+  - ai-agent
+  - multi-agent
+  - python
+  - automation
+order: 15

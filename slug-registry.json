@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-04-29T14:18:48.282Z",
+  "lockedAt": "2026-04-30T14:40:09.657Z",
   "version": 1,
   "slugs": [
     {
@@ -72,6 +72,10 @@
     },
     {
       "type": "article",
+      "slug": "ai-daily-2026-04-30"
+    },
+    {
+      "type": "article",
       "slug": "ai-tool-supply-chain-security-vercel-oauth"
     },
     {
@@ -125,6 +129,10 @@
     {
       "type": "article",
       "slug": "it-daily-2026-04-29"
+    },
+    {
+      "type": "article",
+      "slug": "it-daily-2026-04-30"
     },
     {
       "type": "article",
@@ -245,6 +253,10 @@
     {
       "type": "book",
       "slug": "coze-guide"
+    },
+    {
+      "type": "book",
+      "slug": "crewai-guide"
     },
     {
       "type": "book",
@@ -382,6 +394,31 @@
     {
       "type": "chapter",
       "book": "coze-guide",
+      "slug": "05-faq"
+    },
+    {
+      "type": "chapter",
+      "book": "crewai-guide",
+      "slug": "01-what-is-crewai"
+    },
+    {
+      "type": "chapter",
+      "book": "crewai-guide",
+      "slug": "02-getting-started"
+    },
+    {
+      "type": "chapter",
+      "book": "crewai-guide",
+      "slug": "03-core-features"
+    },
+    {
+      "type": "chapter",
+      "book": "crewai-guide",
+      "slug": "04-advanced-tips"
+    },
+    {
+      "type": "chapter",
+      "book": "crewai-guide",
       "slug": "05-faq"
     },
     {
