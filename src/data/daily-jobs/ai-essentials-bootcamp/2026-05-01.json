@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-05-01",
+  "cohort": "AU",
+  "generatedAt": "2026-05-01T07:30:00+10:00",
+  "source": "WebSearch(jobs.smartrecruiters.com, atlassian.com/careers, gradconnection)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Senior",
+      "title": "Senior AI Software Engineer",
+      "company": "Lendi Group",
+      "location": "Sydney, NSW (Hybrid)",
+      "posted": "recently posted",
+      "url": "https://jobs.smartrecruiters.com/LendiGroup1/744000076098126-senior-ai-software-engineer",
+      "why": "Lendi Group 公开宣布 2026 年 6 月实现 AI-native 全面转型，Senior AI SE 岗位要求将 AI 嵌入抵押贷款产品全链路；Bootcamp AI Essentials 训练的 prompt engineering + Agentic workflow + 工具链集成，正好对应 Lendi Group 对工程师 'AI 赋能生产' 的核心要求。数百万澳洲人使用的 fintech 平台，实际落地影响力大。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Graduate Program",
+      "title": "Machine Learning Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW",
+      "posted": "program now open",
+      "url": "https://www.atlassian.com/company/careers/details/17901",
+      "why": "Atlassian 2026 Graduate AU&NZ 项目，ML 方向聚焦 AI editor 与 Summarisation 体验改进，需要扎实 Python + ML 基础；是澳洲最具含金量的科技 Graduate Program 之一。Bootcamp AI Essentials 阶段完成 LLM 集成项目的学员可直接用项目经验填充申请材料，AU/NZ 公民或 PR 要求。"
+    }
+  ]
+}

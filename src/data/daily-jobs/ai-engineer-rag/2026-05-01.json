@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-05-01",
+  "cohort": "AU",
+  "generatedAt": "2026-05-01T07:30:00+10:00",
+  "source": "WebSearch(jobs.deloitte.com.au, jobs.smartrecruiters.com/LendiGroup1, lifeattiktok.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Senior Consultant",
+      "title": "Senior Consultant - Gen AI Engineer",
+      "company": "Deloitte",
+      "location": "Sydney, NSW",
+      "posted": "recently posted",
+      "url": "https://jobs.deloitte.com.au/job/Sydney-Senior-Consultant-Gen-AI-Engineer-Sydney-NSW/1063704466/",
+      "why": "Deloitte 澳洲 Data & AI 超 500 名专家团队，Senior Consultant Gen AI Engineer 需要 LLM + RAG + Agentic 框架（LangChain / AutoGen / CrewAI）实战经验，2-4 年门槛；直接对应 Bootcamp Phase 3 RAG pipeline + Phase 4 Agentic AI 生产实战模块，咨询侧落地经验让学员在 1-2 年内即可达到申请门槛。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Mid Level",
+      "title": "Mid Level Software Engineer - AI Native Fintech",
+      "company": "Lendi Group",
+      "location": "Sydney, NSW (Hybrid)",
+      "posted": "recently posted",
+      "url": "https://jobs.smartrecruiters.com/LendiGroup1/744000119026537-mid-level-software-engineer-ai-native-fintech",
+      "why": "Lendi Group 正从传统 fintech 向 AI-native 转型，Mid Level SE 岗位强调 CI/CD + AI 工具链集成 + 'you build it, you own it' 工程文化；Bootcamp RAG 模块输出的 RAG 检索系统 + Python 实战项目，能直接覆盖 Lendi 要求的 AI embedding 与系统设计产出，是本土 fintech 的可实操入口。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Graduate 2026 Start",
+      "title": "Machine Learning Engineer Graduate - CV/NLP/Multimodal LLM (TikTok Trust and Safety) - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "rolling applications open",
+      "url": "https://lifeattiktok.com/search/7517099008936397064",
+      "why": "TikTok Trust & Safety 方向 CV/NLP/Multimodal LLM Graduate 岗，专注用多模态 RAG + NLP 模型保护平台安全；与 Bootcamp Phase 4 多模态 LLM pipeline + RAG 实战直接对应，是 RAG 方向学员最具分量的 Graduate Program 目标，滚动申请早投占优。"
+    }
+  ]
+}

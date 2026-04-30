@@ -1,0 +1,39 @@
+{
+  "bootcamp": "business-analyst",
+  "date": "2026-05-01",
+  "cohort": "AU",
+  "generatedAt": "2026-05-01T07:30:00+10:00",
+  "source": "WebSearch(recruitment.macquarie.com, careers.fdmgroup.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Level",
+      "title": "Business Analyst",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "5 March 2026",
+      "url": "https://recruitment.macquarie.com/en_US/careers/JobDetail/Business-Analyst/20934",
+      "why": "Macquarie T1 金融机构，此 Technical BA 岗位 3 月 5 日发布，核心职责是连接 marketing / product / tech 三方，聚焦 customer data + CRM 集成与 scalable solution 设计；与 Bootcamp 后期 stakeholder requirement mapping + data flow + BPMN 建模实战模块高度对应，学员积累 1-2 年后的理想跳板。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior",
+      "title": "Junior Business Analyst",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "25 February 2026",
+      "url": "https://recruitment.macquarie.com/en_US/careers/JobDetail?jobId=20236",
+      "why": "Macquarie Finance Technology 团队 Junior BA（2 月 25 日发布），支持金融系统变革项目 + Agile 交付 + BPMN 建模；Bootcamp Phase 2 的 requirements elicitation + process modelling + user story 项目产出，直接覆盖 day-1 工作要求，Big4 银行 Junior 起点是 BA 学员最稳健的第一份工作路径。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Named Graduate Program",
+      "title": "Project Grace: Business Analyst Graduate Program (Australia)",
+      "company": "FDM Group",
+      "location": "Sydney / Melbourne, NSW/VIC",
+      "posted": "2026 intakes open",
+      "url": "https://careers.fdmgroup.com/vacancies/1345/project-grace-business-analyst-graduate-program-australia.html",
+      "why": "FDM Group 结构化 Graduate Program，直接输送进 ASX 大四银行 / 保险 / 医疗客户做 BA / Project Officer / Risk Analyst，接受任何专业背景 + 提供 relocation 支持；Bootcamp 学员完成 BA 主线课程后即可申请，零行业经验也接受，是进入 Big4 银行生态最明确的 Graduate 通道。"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-adoption-bootcamp",
+  "date": "2026-05-01",
+  "cohort": "AU",
+  "generatedAt": "2026-05-01T07:30:00+10:00",
+  "source": "WebSearch(careers.google.com, jobs.deloitte.com.au)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Forward Deployed Engineer, GenAI, Google Cloud",
+      "company": "Google",
+      "location": "Sydney, NSW",
+      "posted": "24 April 2026",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/127342643880305350-forward-deployed-engineer/",
+      "why": "Google Cloud 悉尼 4 月 24 日刚发布，Forward Deployed Engineer GenAI 直接 embed 企业客户构建 RAG + Agentic AI 落地方案，要求 3 年 Python ML + prompt engineering / fine-tuning / RAG 经验；完美对应 Bootcamp AI Adoption 最终 Phase 的 GenAI 企业落地与 Solutions Architect 实战培训方向，Google T0 品牌含金量无需多言。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Consultant Level",
+      "title": "Data, AI, and Machine Learning - Opportunities Available",
+      "company": "Deloitte",
+      "location": "Sydney, NSW",
+      "posted": "recently posted",
+      "url": "https://jobs.deloitte.com.au/job/Sydney-Data,-AI,-and-Machine-Learning-Opportunities-Available-NSW/1058983166/",
+      "why": "Deloitte Sydney Data & AI 团队开放式招聘帖，覆盖 Analyst 至 Senior Consultant 多层级，需要 Python / SQL + 云平台（AWS/Azure/GCP）+ AI 咨询项目经验；Bootcamp AI Adoption 模块训练的 AI 产品规划 + 方案设计 + 业务需求转化，切中 Deloitte 对 AI Consultant 候选人要求的 T 型技能组合，大厂背书的入场岗。"
+    }
+  ]
+}

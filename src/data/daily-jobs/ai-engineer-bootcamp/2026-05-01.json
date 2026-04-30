@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-05-01",
+  "cohort": "AU",
+  "generatedAt": "2026-05-01T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs, seek.com.au, join.atlassian.com, lifeattiktok.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Machine Learning Engineer",
+      "company": "Atlassian",
+      "location": "Sydney, NSW",
+      "posted": "recently posted",
+      "url": "https://join.atlassian.com/jobs/19458",
+      "why": "Atlassian Sydney 团队 Senior MLE 岗位，ML 方向专注 LLM + AI editor summarisation 体验，需要生产级 LLM 系统设计能力；与 Bootcamp Phase 3-4 的 RAG pipeline 构建、模型评估、MLOps 实战模块高度对应。Atlassian 是 T0 雇主，此岗对有 2-3 年 Python ML 经验的学员即可竞争。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Graduate Program",
+      "title": "Machine Learning Engineer Graduate, Trust and Safety Engineering - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "rolling applications open",
+      "url": "https://lifeattiktok.com/search/7461813202695768327",
+      "why": "TikTok 2026 Start Graduate 岗位，Trust & Safety 方向需要 ML 分类模型 + NLP + 大规模分布式推理，与 Bootcamp Phase 2 监督学习项目及 Phase 3 LLM pipeline 直接对应；TikTok 是澳洲 AI 领域 T2 顶级科技雇主，Graduate 项目滚动评审，毕业后立即可投。"
+    }
+  ]
+}
