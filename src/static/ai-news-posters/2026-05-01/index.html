@@ -1,0 +1,322 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-04-30T20:09:05.183Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-05-01（Canvas 版）</title>
+<meta name="description" content="2026-05-01 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v2.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v2.js 里。
+ * 数据来源：src/data/ai-daily/2026-05-01.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "date": "2026-05-01",
+  "summary": {
+    "hook": [
+      "🔥 五巨头同周发力",
+      "AI 军备赛全面升级"
+    ],
+    "sub": "OpenAI / DeepSeek / Meta / Anthropic / Google 同周密集出招，模型能力、战略走向、安全边界三线并进",
+    "items": [
+      {
+        "num": "01",
+        "cat": "模型发布",
+        "numColor": "#FF6B35",
+        "t": "GPT-5.5 上线：速度与智能双提升，已向 Plus/Pro 全面开放"
+      },
+      {
+        "num": "02",
+        "cat": "中国 AI",
+        "numColor": "#4E9AF1",
+        "t": "DeepSeek V4 预览：百万 Token 上下文 + 华为昇腾算力联手"
+      },
+      {
+        "num": "03",
+        "cat": "战略转向",
+        "numColor": "#7B61FF",
+        "t": "Meta 放弃开源 Llama，Muse Spark 转走付费 API 闭源路线"
+      },
+      {
+        "num": "04",
+        "cat": "安全 AI",
+        "numColor": "#00C48C",
+        "t": "Anthropic Mythos Preview：网络安全专用前沿模型 + 9 款创意连接器"
+      },
+      {
+        "num": "05",
+        "cat": "AI 智能体",
+        "numColor": "#EA4335",
+        "t": "Google Deep Research Max：单任务 160 次搜索 + MCP 私有数据库"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-gpt-5-5",
+      "idx": "01",
+      "catText": "模型发布",
+      "accent": "#FF6B35",
+      "bg": {
+        "top": "#FF6B35",
+        "mid": "#FF8C42",
+        "bot": "#FFA552",
+        "topRight": "#FFD700"
+      },
+      "title": [
+        {
+          "text": "OpenAI 发布 GPT-5.5"
+        },
+        {
+          "text": " — 速度不降、智能大跨越",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "匹配 GPT-5.4 延迟"
+        },
+        {
+          "text": "，多步推理能力大幅提升",
+          "bold": true
+        },
+        {
+          "text": "，Plus/Pro/API 全面开放"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "OpenAI 于 4 月 23 日发布 GPT-5.5，定位迄今最强模型，擅长编程、在线调研、数据分析等复杂多步任务，GPT-5.5 和 GPT-5.5 Pro 已于 4 月 24 日在 API 上线"
+        },
+        {
+          "k": "为什么重要",
+          "v": "GPT-5.5 在保持与 GPT-5.4 相同 token 延迟的前提下，智能水平大幅提升，正式打破「快 vs 强」的两难取舍，也让 OpenAI「超级 App」战略更近一步"
+        },
+        {
+          "k": "对你的影响",
+          "v": "Plus/Pro/Business/Enterprise 用户可在 ChatGPT 和 Codex 中立即使用，开发者可通过 API 集成，适合构建长链自动化工作流和多工具编排应用"
+        }
+      ],
+      "src": "📎 openai.com · techcrunch.com · cnbc.com"
+    },
+    {
+      "slug": "02-deepseek-v4",
+      "idx": "02",
+      "catText": "中国 AI",
+      "accent": "#4E9AF1",
+      "bg": {
+        "top": "#1A3A6B",
+        "mid": "#2456A4",
+        "bot": "#3B7DD8",
+        "topRight": "#4E9AF1"
+      },
+      "title": [
+        {
+          "text": "DeepSeek V4 发布"
+        },
+        {
+          "text": " — 百万 Token 上下文 + 华为算力",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "V4 Flash + V4 Pro 预览版"
+        },
+        {
+          "text": "，混合注意力架构",
+          "bold": true
+        },
+        {
+          "text": "，开源挑战前沿闭源"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "DeepSeek 于 4 月 24 日发布 V4 Flash 和 V4 Pro 预览版，引入「混合注意力架构」改善超长对话记忆，支持 100 万 Token 上下文；算力方面与华为昇腾 950 超节点合作"
+        },
+        {
+          "k": "为什么重要",
+          "v": "V4 推理基准已追上 GPT-5.2 / Gemini 3.0 Pro / Claude Opus 4.5 等半年前的前沿模型，且以开源方式发布，再次验证「中国 AI 用更低成本追平西方」叙事"
+        },
+        {
+          "k": "对你的影响",
+          "v": "开发者可免费接入 V4 API，华为昇腾 950 量产后成本将进一步下降；企业在选择大模型供应商时又多了一个性价比高且不受美国出口管制限制的选项"
+        }
+      ],
+      "src": "📎 bloomberg.com · techcrunch.com · cnbc.com"
+    },
+    {
+      "slug": "03-meta-muse-spark",
+      "idx": "03",
+      "catText": "战略转向",
+      "accent": "#7B61FF",
+      "bg": {
+        "top": "#3D1A7A",
+        "mid": "#5C2DB5",
+        "bot": "#7B61FF",
+        "topRight": "#A688FF"
+      },
+      "title": [
+        {
+          "text": "Meta 放弃开源 Llama"
+        },
+        {
+          "text": " 推出闭源 Muse Spark",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "首款付费 API 模型"
+        },
+        {
+          "text": "，与 OpenAI 同款商业路线",
+          "bold": true
+        },
+        {
+          "text": "，Llama 超 10 亿次下载"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Meta 4 月 8 日推出 Muse Spark，首次放弃 Llama 开源策略，转向付费 API 商业化，开发者最终需付费使用最新 Meta 模型，与 OpenAI/Anthropic 路线对齐"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Meta 曾是「开源 AI」最重要的推动力，Llama 系列积累了超过 10 亿次下载；此次战略转向意味着开源 AI 的最大企业旗手正式退场，对生态影响深远"
+        },
+        {
+          "k": "对你的影响",
+          "v": "现有 Llama 系列仍可免费使用，但未来 Meta 最新能力将锁定商业付费；依赖 Meta 开源模型构建产品的团队需提前评估供应链风险和迁移成本"
+        }
+      ],
+      "src": "📎 cnbc.com · thenewstack.io · understandingai.org"
+    },
+    {
+      "slug": "04-anthropic-mythos",
+      "idx": "04",
+      "catText": "安全 AI",
+      "accent": "#00C48C",
+      "bg": {
+        "top": "#005540",
+        "mid": "#007A5A",
+        "bot": "#00A37C",
+        "topRight": "#00C48C"
+      },
+      "title": [
+        {
+          "text": "Anthropic 发布 Claude Mythos"
+        },
+        {
+          "text": " — 专为网络安全而生",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "Claude Mythos Preview"
+        },
+        {
+          "text": "，安全任务惊人突出",
+          "bold": true
+        },
+        {
+          "text": "，9 款创意连接器同步上线"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Anthropic 推出 Claude Mythos Preview，定位通用模型但在计算机安全任务上表现格外突出，并同步启动 Project Glasswing 用 Mythos 保护全球关键软件；另发布 9 款创意连接器，集成 Adobe、Blender、Ableton"
+        },
+        {
+          "k": "为什么重要",
+          "v": "安全专用大模型是行业空白，Mythos 首次将 AI 能力系统性用于「防御侧」，而非单纯生产力工具；对 SaaS 安全厂商和 MSSP 来说，这是一次颠覆性的供给侧变化"
+        },
+        {
+          "k": "对你的影响",
+          "v": "IT 和安全团队可申请 Mythos Preview 接入，用于代码漏洞扫描和渗透测试辅助；创意从业者可通过 Claude 连接器用自然语言操控 Blender 3D 场景，极大降低 3D 制作门槛"
+        }
+      ],
+      "src": "📎 anthropic.com · techcrunch.com · androidheadlines.com"
+    },
+    {
+      "slug": "05-google-deep-research-max",
+      "idx": "05",
+      "catText": "AI 智能体",
+      "accent": "#EA4335",
+      "bg": {
+        "top": "#8B0000",
+        "mid": "#B00020",
+        "bot": "#D32F2F",
+        "topRight": "#EA4335"
+      },
+      "title": [
+        {
+          "text": "Google Deep Research Max"
+        },
+        {
+          "text": " — 单任务 160 次搜索",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "Gemini 3.1 Pro 驱动"
+        },
+        {
+          "text": "，MCP 支持私有数据库",
+          "bold": true
+        },
+        {
+          "text": "，后台异步跑深度报告"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Google 发布两款 Gemini 3.1 Pro 研究 Agent：Deep Research（低延迟交互场景）和 Deep Research Max（异步深度综合，最多执行 160 次搜索），并引入 MCP 支持私有数据库安全查询"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Deep Research Max 在 DeepSearchQA 达 93.3%、HLE 达 54.6%；MCP 集成让 AI 可安全访问企业内部数据而无需外泄，开创企业级 AI 研究 Agent 新标准"
+        },
+        {
+          "k": "对你的影响",
+          "v": "Gemini Advanced 用户可立即使用，适合研究员、律师、分析师过夜批量跑报告；通过 MCP 接入内部数据库后，可将公司私有文档作为 AI 分析源，替代传统 BI 查询"
+        }
+      ],
+      "src": "📎 blog.google · venturebeat.com · siliconangle.com"
+    }
+  ],
+  "mp": {
+    "title": "GPT-5.5 / DeepSeek V4 / Meta 弃开源 / Anthropic Mythos / Google 智能体"
+  },
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-05-01"
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+  FLEX_HEIGHT: true,
+  HEIGHT_TIERS: [1480, 1660, 1860, 2100, 2400],
+});
+</script>
+</body>
+</html>
