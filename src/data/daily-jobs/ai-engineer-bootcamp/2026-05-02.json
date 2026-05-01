@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-05-02",
+  "cohort": "AU",
+  "generatedAt": "2026-05-02T07:30:00+10:00",
+  "source": "WebSearch(linkedin.com, accel.com, lifeatcanva.com, talentify.io) — LinkedIn/SEEK direct fetch 403 fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Staff / Lead Platform Engineer (ML & AI)",
+      "company": "Commonwealth Bank",
+      "location": "Sydney, NSW",
+      "posted": "recently",
+      "url": "https://www.talentify.io/job/staff-platform-engineer-aiml-sydney-new-south-wales-au-commonwealth-bank-req245957",
+      "why": "CBA 是澳洲最大银行，正在把 AI 系统性内嵌到全行核心工程体系（AWS 五年合作 + $90M AI 培训投入）；该岗位融合 Platform Engineering 与 ML/AI Ops，要求 LLMOps pipeline 监控、AI Ops 能力；学员 Bootcamp Phase 3 构建的 production LLM pipeline 项目直接对应此岗位职责，是毕业 6–12 个月后的理想目标岗——先研究 JD 找出能力 gap，有的放矢补强 MLflow 和 cloud AI infra。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Graduate",
+      "title": "Machine Learning Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (Remote/Hybrid)",
+      "posted": "2026 Graduate cycle (active)",
+      "url": "https://jobs.accel.com/companies/atlassian/jobs/47455436-machine-learning-engineer-2026-graduate-australia-new-zealand",
+      "why": "Atlassian T0 品牌，2026 Graduate 项目为应届生量身打造，Day 1 就上手 production 代码；角色内容涵盖 LLM 模型集成、GenAI feature 开发和 recommendation systems，与 Bootcamp Phase 1–3（Python + Transformer → RAG → Agent 部署）高度对齐；投简历时重点展示 Bootcamp capstone 中搭建的 LLM pipeline 和 evaluation framework，作为可运行的 portfolio。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "Special · 实习项目",
+      "title": "Machine Learning Engineer Intern 2026/27",
+      "company": "Canva",
+      "location": "Sydney, NSW (Surry Hills campus)",
+      "posted": "application closed 1 May 2026 — watch for next cycle",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000970227/machine-learning-engineer-intern-202627/",
+      "why": "Canva T0 品牌、澳洲最大独角兽；12 周 summer internship（Dec 2026–Feb 2027），专做 ML for design/recommendation；本次 2026/27 申请截止日刚于 5 月 1 日关闭，建议立即收藏页面并在 Canva Early Careers 注册 Job Alert，下一周期通常于 6–7 月开放；Bootcamp 的 Python + OOP + ML 基础正好满足申请要求，是在校学员通过实习拿 T0 品牌背书的最短路径。"
+    }
+  ]
+}

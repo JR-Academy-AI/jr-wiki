@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-05-02",
+  "cohort": "AU",
+  "generatedAt": "2026-05-02T07:30:00+10:00",
+  "source": "WebSearch(linkedin.com, jobs.deloitte.com.au, efinancialcareers.com.au) — LinkedIn/SEEK direct fetch 403 fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Data, AI, and Machine Learning – Opportunities Available",
+      "company": "Deloitte",
+      "location": "Sydney, NSW",
+      "posted": "active (Deloitte jobs portal)",
+      "url": "https://jobs.deloitte.com.au/job/Sydney-Data,-AI,-and-Machine-Learning-Opportunities-Available-NSW/1058983166/",
+      "why": "Deloitte T2 顶部的四大咨询巨头，已承诺 $2B 用于 AI 能力建设；AI Essentials 学员的职业方向多为「用 AI 工具解决真实业务问题」而非纯工程，Deloitte AI & Data Consulting 路线最对口；该岗位要求定量背景 + AI 解决方案设计能力，与 Essentials 课程的 prompt engineering、workflow 自动化、GenAI 工具集成模块直接对应；可作为 12–18 个月目标岗，现在先做一个 AI 自动化 POC 项目作为 portfolio。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Graduate",
+      "title": "Software Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (Remote/Hybrid)",
+      "posted": "2026 Graduate cycle (active)",
+      "url": "https://au.linkedin.com/jobs/view/software-engineer-2026-graduate-australia-new-zealand-at-atlassian-4186928211",
+      "why": "Atlassian T0 品牌，2026 Graduate 接受 AI/CS 方向毕业生；Essentials 学员学完 Python + AI workflow 基础后具备 SWE 入门能力，Atlassian Day 1 就能 push feature 到 production；投时重点展示 Bootcamp 期间用 AI 工具（Copilot / Claude / Cursor）提升开发效率的具体案例，以及 AI Builder 项目中 API 集成和 prompt chaining 的实现细节。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "Special · Graduate Program",
+      "title": "AMP 2026 AI Technology Graduate Program",
+      "company": "AMP",
+      "location": "Sydney, NSW (Quay Quarter Tower)",
+      "posted": "2026 Graduate cycle",
+      "url": "https://www.efinancialcareers.com.au/jobs-Australia-Sydney-AMP_2026_AI_Technology_Graduate_Program.id23041812",
+      "why": "AMP 是澳洲头部金融服务公司；该 Graduate Program 专属 AI Hub，两年全程做 AI 产品落地，配备 mentor + buddy 体系；AI Essentials 学员学完 GenAI 工具应用和 workflow 自动化后，AMP 这类 structured fintech AI program 是从「懂 AI 工具」到「在金融机构落地 AI 产品」的最清晰路径；2026 年申请周期已进行，建议关注 AMP Careers 页面及 GradConnection 获取最新招募状态。"
+    }
+  ]
+}

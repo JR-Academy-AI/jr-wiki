@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-05-02",
+  "cohort": "AU",
+  "generatedAt": "2026-05-02T07:30:00+10:00",
+  "source": "WebSearch(linkedin.com, cba.wd3.myworkdayjobs.com) — LinkedIn/SEEK direct fetch 403 fallback; no viable senior RAG-specific Sydney role found, aspirational skipped",
+  "jobs": [
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Graduate (PhD/Research)",
+      "title": "Machine Learning Engineer, 2026 PhD Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (Remote/Hybrid)",
+      "posted": "2026 Graduate cycle (active)",
+      "url": "https://au.linkedin.com/jobs/view/machine-learning-engineer-2026-phd-graduate-australia-new-zealand-at-atlassian-4203767636",
+      "why": "Atlassian T0 品牌；这个 PhD Graduate 方向专注 LLM、GenAI 和 Multi-modal Agents，与 RAG Bootcamp 核心内容（Embeddings、Vector Search、RAG pipeline 架构、Agentic AI）高度对齐；学员虽不一定是 PhD 在读，但做过 production RAG 项目的技术深度足以竞争——投时重点展示 RAG pipeline 架构设计、embedding 调优和检索评测指标（Hit Rate、MRR）的实战成果，用具体数字说话。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "Special · Graduate Program",
+      "title": "2026 CommBank & Bankwest Graduate Campaign",
+      "company": "Commonwealth Bank",
+      "location": "Sydney, NSW",
+      "posted": "2026 Graduate cycle (start Feb 2026)",
+      "url": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/XMLNAME-2026-CommBank---Bankwest-Graduate-Campaign_REQ227539-2",
+      "why": "CBA 是澳洲最大银行，正将 AI 系统性内嵌到核心运营（AWS 合作覆盖 LLM chatbot + fraud detection RAG 应用）；12–24 个月 rotational program，Engineering/AI 方向 rotation 正好用到 RAG Bootcamp 核心技能（向量搜索、document retrieval pipeline、agentic workflow）；在 CBA 量级的工程体系里积累 LLMOps 生产经验，是从 bootcamp 到 enterprise AI 的理想跳板；注意申请时区分 Engineering stream 以匹配 RAG 背景。"
+    }
+  ]
+}

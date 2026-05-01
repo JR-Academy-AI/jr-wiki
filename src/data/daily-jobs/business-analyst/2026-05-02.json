@@ -1,0 +1,39 @@
+{
+  "bootcamp": "business-analyst",
+  "date": "2026-05-02",
+  "cohort": "AU",
+  "generatedAt": "2026-05-02T07:30:00+10:00",
+  "source": "WebSearch(linkedin.com, jobs.accaglobal.com, gradconnection.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Junior Data Business Analyst – Commodities and Global Markets",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "recently (active listing)",
+      "url": "https://au.linkedin.com/jobs/view/junior-data-business-analyst-commodities-and-global-markets-at-macquarie-group-3843716512",
+      "why": "Macquarie Commodities & Global Markets 是全球最顶尖的商品金融团队，岗位结合量化数据分析（SQL / Python）与业务理解，是 BA 学员的梦中情岗；对应 Bootcamp 的 data analysis、stakeholder communication 和 BI 工具模块；学员当前不一定够得着，但把这份 JD 分解成具体能力缺口，接下来 3 个月针对性补强 SQL 窗口函数、Python pandas 和金融数据分析是最清晰的成长路径。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior",
+      "title": "Junior Business Analyst",
+      "company": "NSW Government (Service NSW)",
+      "location": "Haymarket / Parramatta, NSW",
+      "posted": "April 29, 2026 (3 days ago)",
+      "url": "https://jobs.accaglobal.com/job/13861873/junior-business-analyst/",
+      "why": "NSW 政府 Service NSW 是最稳健的第一份 BA 岗：明确 Junior 职级、3 天前发布、Grade 5/6 薪资 $90,767–$103,729 + super，高于市场 junior 均值；Bootcamp 培养的 requirements gathering、user story writing 和 stakeholder management 能力直接对应岗位描述；政府岗审核周期约 4–6 周，投时附上课程项目中写的 BRD 或 use case document 效果最佳；截止 2026 年 5 月 29 日，现在就去申请。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "Special · Graduate Program",
+      "title": "2026 Technology (Rotational) Graduate Program",
+      "company": "Westpac",
+      "location": "Sydney, Adelaide, Melbourne, Brisbane, Gold Coast, Perth",
+      "posted": "2026 Graduate cycle (active)",
+      "url": "https://au.gradconnection.com/employers/westpac/jobs/westpac-group-2026-technology-rotational-graduate-program-sydney-adelaide-melbourne-brisbane-gold-coast-perth/",
+      "why": "Westpac T1 品牌，2026 年 AAGE Top 25 毕业生雇主第 7 名；Technology Rotational 覆盖工程、业务分析、数据科学、架构和项目管理共 4 轮 6 个月 rotation，BA 学员可在 Westpac 量级内同时积累技术侧和业务侧的 BA 经验，是完整的 T-shaped BA 培养路径；注意大部分 Westpac 岗位需要澳洲/新西兰 PR 或公民资格，投前确认签证状态。"
+    }
+  ]
+}

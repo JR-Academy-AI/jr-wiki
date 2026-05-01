@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-adoption-bootcamp",
+  "date": "2026-05-02",
+  "cohort": "AU",
+  "generatedAt": "2026-05-02T07:30:00+10:00",
+  "source": "WebSearch(linkedin.com, recruitment.macquarie.com, careers.pageuppeople.com) — no viable senior AI PM/Consultant Sydney role found, aspirational skipped",
+  "jobs": [
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior",
+      "title": "Junior Business Analyst – Finance Technology",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "February 25, 2026",
+      "url": "https://recruitment.macquarie.com/en_US/careers/JobDetail?jobId=20236",
+      "why": "Macquarie T1 品牌，Finance Technology 团队直接支撑 Macquarie 量化金融产品和 AI 工具交付；AI Adoption Bootcamp 培养的需求分析、AI 方案设计和 stakeholder alignment 能力在 Finance Tech BA 岗里直接落地；学员在 Bootcamp 学的 AI adoption framework（如何 scope AI project、定义 success metrics、推进变革管理）在这个岗位的日常工作中每周都会用到；投时附上 Bootcamp 期间完成的 AI needs analysis 或 business case 文档作为 portfolio。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "Special · Graduate Program",
+      "title": "NAB Graduate Program 2026",
+      "company": "National Australia Bank (NAB)",
+      "location": "Sydney, NSW",
+      "posted": "2026 Graduate cycle (active)",
+      "url": "https://careers.pageuppeople.com/410/fb/en/job/798602/nab-graduate-program-2026",
+      "why": "NAB 是澳洲四大行之一，正深度整合 GenAI（与 Accenture 合作推进 AI 落地）；Graduate Program 有 Technology/Product 方向 rotation，AI Adoption 学员学完 AI 战略落地、产品 roadmap 规划和 change management 后，可在 NAB 这个规模里实践「如何让大型金融机构接受并部署 AI」；NAB 招募时重视有真实 AI 项目经验，Bootcamp capstone（AI adoption roadmap 或 POC 实施报告）是关键 portfolio 素材；申请时选 Technology 方向并明确表达 AI 产品兴趣。"
+    }
+  ]
+}
