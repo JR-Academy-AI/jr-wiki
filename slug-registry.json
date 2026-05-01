@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-04-30T14:40:09.657Z",
+  "lockedAt": "2026-05-01T14:25:01.907Z",
   "version": 1,
   "slugs": [
     {
@@ -76,6 +76,10 @@
     },
     {
       "type": "article",
+      "slug": "ai-daily-2026-05-01"
+    },
+    {
+      "type": "article",
       "slug": "ai-tool-supply-chain-security-vercel-oauth"
     },
     {
@@ -136,11 +140,19 @@
     },
     {
       "type": "article",
+      "slug": "it-daily-2026-05-01"
+    },
+    {
+      "type": "article",
       "slug": "mcp-protocol-security-ai-agent-rce"
     },
     {
       "type": "article",
       "slug": "npm-publish-security-claude-code-leak"
+    },
+    {
+      "type": "article",
+      "slug": "openai-compute-bet-backfire-2026"
     },
     {
       "type": "article",
@@ -157,6 +169,10 @@
     {
       "type": "article",
       "slug": "uni-news-adelaide-2026-04-28"
+    },
+    {
+      "type": "article",
+      "slug": "uni-news-adelaide-2026-05-01"
     },
     {
       "type": "article",
@@ -216,6 +232,10 @@
     },
     {
       "type": "article",
+      "slug": "uni-news-uq-2026-05-01"
+    },
+    {
+      "type": "article",
       "slug": "uni-news-usyd-2026-04-22"
     },
     {
@@ -249,6 +269,10 @@
     {
       "type": "book",
       "slug": "claude-code-guide"
+    },
+    {
+      "type": "book",
+      "slug": "cline-guide"
     },
     {
       "type": "book",
@@ -370,6 +394,31 @@
       "type": "chapter",
       "book": "claude-code-guide",
       "slug": "08-parallel-dev-worktree"
+    },
+    {
+      "type": "chapter",
+      "book": "cline-guide",
+      "slug": "01-what-is-cline"
+    },
+    {
+      "type": "chapter",
+      "book": "cline-guide",
+      "slug": "02-getting-started"
+    },
+    {
+      "type": "chapter",
+      "book": "cline-guide",
+      "slug": "03-core-features"
+    },
+    {
+      "type": "chapter",
+      "book": "cline-guide",
+      "slug": "04-advanced-tips"
+    },
+    {
+      "type": "chapter",
+      "book": "cline-guide",
+      "slug": "05-faq"
     },
     {
       "type": "chapter",
