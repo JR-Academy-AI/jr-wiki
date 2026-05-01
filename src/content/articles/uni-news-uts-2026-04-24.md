@@ -10,7 +10,7 @@ tags:
 author: "JR Academy 大学日报"
 keywords: "悉尼科技大学, University of Technology Sydney, UTS, 澳洲留学, 大学新闻, 奖学金, 校园动态"
 ---
-<!-- 由 build/pipelines/uni-news.pipeline.ts 自动生成 · 2026-04-30T14:40:17.716Z -->
+<!-- 由 build/pipelines/uni-news.pipeline.ts 自动生成 · 2026-05-01T14:24:54.699Z -->
 
 > 学校：**悉尼科技大学 / University of Technology Sydney**
 > 日期：**2026-04-24**
