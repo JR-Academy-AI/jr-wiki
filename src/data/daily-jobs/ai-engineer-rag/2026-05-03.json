@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-05-03",
+  "cohort": "AU",
+  "generatedAt": "2026-05-03T07:30:00+10:00",
+  "source": "WebSearch(fallback — LinkedIn 403) + atlassian.com + lifeattiktok.com",
+  "jobs": [
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Graduate",
+      "title": "Software Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (hybrid)",
+      "posted": "Rolling applications open",
+      "url": "https://www.atlassian.com/company/careers/details/17823",
+      "why": "Atlassian T0 品牌，Rovo AI（Atlassian 的企业知识库 AI 产品）核心架构正是 RAG + vector search + semantic retrieval；SWE grad 会直接接触文档检索 pipeline、embedding 服务和 LLM 增强搜索；与 ai-engineer-rag Bootcamp Phase 2 vector DB + Phase 3 hybrid search + reranker 项目高度对口；需 ANZ 公民或 PR。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Named Program / 2026 Start",
+      "title": "Machine Learning Engineer Graduate (TikTok Recommendation-Live) - 2026 Start (BS/MS)",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "Rolling applications open",
+      "url": "https://lifeattiktok.com/search/7542584919815325960",
+      "why": "TikTok T2，\"2026 Start\" rolling 申请；推荐算法（Recommendation-Live）团队构建 retrieval + ranking + re-ranking pipeline，与 RAG Bootcamp 的 dense retrieval、BM25 hybrid search、cross-encoder reranker 技能场景完全重叠；是 RAG 工程师最对口的 industry project 之一。"
+    }
+  ]
+}

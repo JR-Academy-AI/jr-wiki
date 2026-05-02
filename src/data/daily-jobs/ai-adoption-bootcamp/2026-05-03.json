@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-adoption-bootcamp",
+  "date": "2026-05-03",
+  "cohort": "AU",
+  "generatedAt": "2026-05-03T07:30:00+10:00",
+  "source": "WebSearch(fallback — LinkedIn 403) + lifeatcanva.com + careers.bcg.com",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Product Manager, Generative AI",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "Recently posted",
+      "url": "https://jobs.airtree.vc/companies/canva/jobs/37184712-senior-product-manager-generative-ai-relocate-to-sydney",
+      "why": "Canva T0 品牌，Sydney 本地，这是 ai-adoption 学员的终极目标职位——在顶级消费产品公司主导 GenAI 功能的 PM 战略与交付；学员当前不一定够得着，但 Bootcamp 学到的 AI strategy、use case prioritization、AI roadmap 与 stakeholder alignment 框架正是这个 Senior PM 的日常工作核心，目标感极强。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Graduate",
+      "title": "Generalist Junior Consultant and Consultants — Sydney & Melbourne",
+      "company": "Boston Consulting Group (BCG)",
+      "location": "Sydney, NSW",
+      "posted": "Open year-round",
+      "url": "https://careers.bcg.com/global/en/job/52461/Consultant-Australia-and-New-Zealand-Sydney-Melbourne-Auckland",
+      "why": "BCG T2，悉尼办公室，Junior Consultant 是 BCG 对应届生和 career switcher 最直接的入口；BCG AI practice 在澳洲 2026 年客户需求激增，Junior Consultant 会直接参与 AI adoption strategy、change management workshop 和 business case 构建，与 ai-adoption Bootcamp 核心训练内容一一对应。"
+    }
+  ]
+}

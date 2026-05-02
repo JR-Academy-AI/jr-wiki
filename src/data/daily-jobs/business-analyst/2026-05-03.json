@@ -1,0 +1,19 @@
+{
+  "bootcamp": "business-analyst",
+  "date": "2026-05-03",
+  "cohort": "AU",
+  "generatedAt": "2026-05-03T07:30:00+10:00",
+  "source": "WebSearch(fallback — LinkedIn 403) + recruitment.macquarie.com",
+  "jobs": [
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Graduate",
+      "title": "Junior Business Analyst",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "Posted 25 Feb 2026",
+      "url": "https://recruitment.macquarie.com/en_US/careers/JobDetail?jobId=20236",
+      "why": "Macquarie T1（全球顶级金融机构），Finance Technology team 的 Junior BA；工作涵盖数字银行产品的 requirements gathering、流程分析、技术-业务桥接，与 BA Bootcamp 的 user story mapping、BRD 撰写、process mapping 核心技能直接对口；T1 金融机构的 BA 经历对学员简历价值极高，Macquarie 以培养强 BA 体系著称。"
+    }
+  ]
+}

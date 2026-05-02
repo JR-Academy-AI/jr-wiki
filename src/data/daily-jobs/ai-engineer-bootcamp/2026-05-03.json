@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-05-03",
+  "cohort": "AU",
+  "generatedAt": "2026-05-03T07:30:00+10:00",
+  "source": "WebSearch(fallback — LinkedIn 403) + atlassian.com + lifeattiktok.com",
+  "jobs": [
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Graduate",
+      "title": "Machine Learning Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (hybrid)",
+      "posted": "Rolling applications open",
+      "url": "https://www.atlassian.com/company/careers/details/17901",
+      "why": "Atlassian T0 品牌，AI Experience team 专注 LLMs + GenAI 在 Jira/Confluence/Rovo 中的落地；要求 Python/Java 背景、ML 基础，与 Bootcamp Phase 1 ML pipeline + Phase 4 LangChain agent 项目直接对口。应届毕业生可投，需 ANZ 公民或 PR，竞争激烈但值得冲刺。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Named Program / 2026 Start",
+      "title": "Machine Learning Engineer Graduate, Trust and Safety Engineering - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "Rolling applications open",
+      "url": "https://lifeattiktok.com/search/7461813202695768327",
+      "why": "TikTok T2，\"2026 Start\" 明确标注，rolling 滚动申请中；Trust & Safety ML 团队构建大规模 NLP classifier + content moderation 模型，与 Bootcamp Phase 2 model training + evaluation 项目直接吻合；需 CS 或相关工程学位，至少熟悉 ML/NLP/CV 其中之一，学完 Bootcamp 主线即可投。"
+    }
+  ]
+}

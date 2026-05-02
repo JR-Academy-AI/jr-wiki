@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-05-03",
+  "cohort": "AU",
+  "generatedAt": "2026-05-03T07:30:00+10:00",
+  "source": "WebSearch(fallback — LinkedIn 403) + gradconnection.com + lifeattiktok.com",
+  "jobs": [
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior/Graduate",
+      "title": "Graduate Backend Software Engineer, TikTok LIVE Foundation (Sydney) - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "Rolling applications open",
+      "url": "https://au.gradconnection.com/employers/tiktok/jobs/tiktok-graduate-backend-software-engineer-tiktok-live-foundation-sydney-2026-start-5/",
+      "why": "TikTok T2，Sydney 本地，Graduate level，\"2026 Start\" 明确；LIVE Foundation 团队开发高并发流媒体基础设施，AI 特性（推荐流、内容摘要、自动字幕）深度嵌入产品；ai-essentials 学员的 LLM API integration + GenAI tooling 能力对接 TikTok AI 产品化场景，后端开发基础加 AI 应用视角即可投。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Named Program / 2026 Start",
+      "title": "Machine Learning Engineer Graduate (TikTok Shop - Data Intelligence) - 2026 Start (BS/MS)",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "Rolling applications open",
+      "url": "https://lifeattiktok.com/search/7537244549992417543",
+      "why": "TikTok T2，\"2026 Start\" rolling 申请；TikTok Shop Data Intelligence 团队用 GenAI + 数据分析驱动电商平台，结合了 AI builder 与数据理解双栈，与 ai-essentials 学员学习的"用 AI 工具构建数据驱动应用"定位高度吻合；与上面 Backend SWE 职位可同投（TikTok 限 2 个职位，按顺序考虑）。"
+    }
+  ]
+}
