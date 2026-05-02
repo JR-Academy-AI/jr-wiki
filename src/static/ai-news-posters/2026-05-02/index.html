@@ -1,0 +1,325 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-05-02T03:08:52.211Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-05-02（Canvas 版）</title>
+<meta name="description" content="2026-05-02 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v2.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v2.js 里。
+ * 数据来源：src/data/ai-daily/2026-05-02.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "date": "2026-05-02",
+  "summary": {
+    "hook": [
+      "马斯克法庭认 Grok 抄 OpenAI",
+      "Claude Security 公测",
+      "DeepSeek 降价 75%",
+      "Meta 裁 8000 转 AI",
+      "GPT-5.5 入驻 AWS"
+    ],
+    "sub": "2026年5月2日 · 法庭爆料、安全产品、价格战、裁员重组、云端扩张五线并进",
+    "items": [
+      {
+        "num": "01",
+        "cat": "法律风波",
+        "numColor": "#D4A017",
+        "t": "马斯克出庭承认 xAI 部分使用 OpenAI 模型蒸馏训练 Grok，诉讼格局陡变"
+      },
+      {
+        "num": "02",
+        "cat": "安全产品",
+        "numColor": "#7C3AED",
+        "t": "Anthropic Claude Security 公测开放，Opus 4.7 驱动代码漏洞扫描，企业客户全面可用"
+      },
+      {
+        "num": "03",
+        "cat": "价格战",
+        "numColor": "#0066CC",
+        "t": "DeepSeek V4-Pro 永久降价 75%，华为昇腾 950 超节点联手，算力成本再降"
+      },
+      {
+        "num": "04",
+        "cat": "行业震荡",
+        "numColor": "#0082FB",
+        "t": "Meta 宣布裁员 8000 人占员工 10%，押注 AI 基础设施投入高达 1350 亿美元"
+      },
+      {
+        "num": "05",
+        "cat": "云端扩张",
+        "numColor": "#10A37F",
+        "t": "GPT-5.5 登陆 Amazon Bedrock，OpenAI 同步改写微软协议，布局 AWS+Google Cloud"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-musk-grok-openai",
+      "idx": "01",
+      "catText": "法律风波",
+      "accent": "#D4A017",
+      "bg": {
+        "top": "#1C1C1E",
+        "mid": "#2C2C2E",
+        "bot": "#3A3A3C",
+        "topRight": "#D4A017"
+      },
+      "title": [
+        {
+          "text": "马斯克法庭认 xAI"
+        },
+        {
+          "text": " 用 OpenAI 模型蒸馏训练 Grok",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "加州法庭作证"
+        },
+        {
+          "text": "承认「部分」用蒸馏法",
+          "bold": true
+        },
+        {
+          "text": "，OpenAI 诉 xAI 案局面陡变"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "马斯克在加州联邦法院就 OpenAI 诉 xAI 案出庭作证，被问及 xAI 是否使用蒸馏技术从 OpenAI 模型提取知识训练 Grok，马斯克回答「部分是」，并称这是行业通行做法"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是马斯克首次在法庭上公开承认蒸馏行为，直接坐实 OpenAI 指控的核心事实；若 xAI 被认定违反条款，可能面临巨额赔偿且被迫公开 Grok 训练数据细节"
+        },
+        {
+          "k": "对你的影响",
+          "v": "模型版权与蒸馏合规性将成为所有 AI 公司的法律红线，使用竞品模型输出来「辅助训练」自家模型的团队需立即审查合规风险，包括微调、数据标注等场景"
+        }
+      ],
+      "src": "📎 techcrunch.com · androidheadlines.com"
+    },
+    {
+      "slug": "02-claude-security-beta",
+      "idx": "02",
+      "catText": "安全产品",
+      "accent": "#7C3AED",
+      "bg": {
+        "top": "#3D1A7A",
+        "mid": "#5C2DB5",
+        "bot": "#7C3AED",
+        "topRight": "#A688FF"
+      },
+      "title": [
+        {
+          "text": "Anthropic Claude Security"
+        },
+        {
+          "text": " 公测全面开放企业客户",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "基于 Opus 4.7"
+        },
+        {
+          "text": "，定时扫描 + 漏洞修复",
+          "bold": true
+        },
+        {
+          "text": "，企业版用户即可接入"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Anthropic 将 Claude Security（前身为 Claude Code Security）从私测推向公测，所有 Claude Enterprise 客户均可使用；功能包括定时扫描、目标扫描、审计系统集成、漏洞追踪，底层跑最新 Opus 4.7 模型"
+        },
+        {
+          "k": "为什么重要",
+          "v": "手工 Code Review 速度跟不上现代 CI/CD 节奏，Claude Security 可在代码合并前自动检出高危漏洞并给出补丁建议；测试显示 89% 漏洞严重程度评估与人工审核一致"
+        },
+        {
+          "k": "对你的影响",
+          "v": "已订阅 Claude Enterprise 的团队无需额外付费即可启用，DevSecOps 流水线可通过 API 定时触发扫描；如果你负责系统安全合规，这是 Anthropic 迄今最直接的落地工具"
+        }
+      ],
+      "src": "📎 infosecurity-magazine.com · business-standard.com · tech.yahoo.com"
+    },
+    {
+      "slug": "03-deepseek-v4-price-cut",
+      "idx": "03",
+      "catText": "价格战",
+      "accent": "#0066CC",
+      "bg": {
+        "top": "#0A2A5C",
+        "mid": "#0D3D8A",
+        "bot": "#1560BD",
+        "topRight": "#0066CC"
+      },
+      "title": [
+        {
+          "text": "DeepSeek V4-Pro"
+        },
+        {
+          "text": " 永久降价 75%，华为昇腾联手提速",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "输出从 $3.48 降至 $0.87"
+        },
+        {
+          "text": "，缓存命中再打一折",
+          "bold": true
+        },
+        {
+          "text": "，1.6 万亿参数开源最大模型"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "DeepSeek 宣布 V4-Pro 永久降价 75%，输出 token 从每百万 $3.48 降至 $0.87，命中缓存的输入再额外打一折；V4-Pro 拥有 1.6 万亿参数（49 亿激活），是目前最大开源权重模型，上下文支持 100 万 token"
+        },
+        {
+          "k": "为什么重要",
+          "v": "此次降价比发布时更激进，结合华为昇腾 950 超节点量产计划，意味着 DeepSeek 未来还有进一步降价空间；已与 GPT-5.5、Gemini 3.0 等前沿闭源模型形成正面价格竞争"
+        },
+        {
+          "k": "对你的影响",
+          "v": "搭建 RAG、代码生成、文档分析等应用的开发者可切换至 DeepSeek V4-Pro，同等质量下成本下降 70%-80%；但需关注美国出口管制对华为算力扩产的潜在风险"
+        }
+      ],
+      "src": "📎 bloomberg.com · techcrunch.com · computing.net · qbitai.com"
+    },
+    {
+      "slug": "04-meta-layoffs-ai-restructure",
+      "idx": "04",
+      "catText": "行业震荡",
+      "accent": "#0082FB",
+      "bg": {
+        "top": "#003A8C",
+        "mid": "#0052C2",
+        "bot": "#0066FF",
+        "topRight": "#0082FB"
+      },
+      "title": [
+        {
+          "text": "Meta 裁员 8000 人"
+        },
+        {
+          "text": " 豪赌 1350 亿美元 AI 基础设施",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "占员工 10%，5 月 20 日执行"
+        },
+        {
+          "text": "，AI 专注 pods 重组",
+          "bold": true
+        },
+        {
+          "text": "，新 CAIO 王晓川主导"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Meta 宣布将于 5 月 20 日裁员约 8000 名员工（约占员工总数 10%），下半年还将继续削减；与此同时将 $1150 亿-$1350 亿投入 AI 基础设施，团队被重组为 AI 专注「pods」，由新任 CAIO Alexandr Wang 旗下 Superintelligence Labs 统一管理"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是 Meta 规模最大的一次战略性瘦身，意味着扎克伯格彻底放弃「全面产品线」打法，把资源集中在 AI 赛道；在 Llama 开源策略刚转向闭源付费后，此次裁员意味着 Meta 的 AI 商业化变现压力已非常迫切"
+        },
+        {
+          "k": "对你的影响",
+          "v": "Meta 广告、AR/VR 等非 AI 业务线裁员幅度最大，若你的产品使用 Meta API 或 SDKs，需关注服务连续性；对 AI 行业求职者，Superintelligence Labs 将是 Meta 增量招聘最集中的方向"
+        }
+      ],
+      "src": "📎 thenextweb.com · cnbc.com · digitimes.com"
+    },
+    {
+      "slug": "05-gpt55-amazon-bedrock",
+      "idx": "05",
+      "catText": "云端扩张",
+      "accent": "#10A37F",
+      "bg": {
+        "top": "#0A4A35",
+        "mid": "#0D6B4E",
+        "bot": "#0F8B66",
+        "topRight": "#10A37F"
+      },
+      "title": [
+        {
+          "text": "GPT-5.5 登陆 Amazon Bedrock"
+        },
+        {
+          "text": "，OpenAI 改写微软协议布局多云",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "AWS + Google Cloud 同时上线"
+        },
+        {
+          "text": "，Codex 也入驻 Bedrock",
+          "bold": true
+        },
+        {
+          "text": "，微软独家时代宣告终结"
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "OpenAI 将 GPT-5.5 及其他前沿模型上线 Amazon Bedrock，同步把 Codex 带入 AWS，并新增 Bedrock Managed Agents 支持；与此同时 OpenAI 改写了与微软的排他合约，正式获准向 AWS 和 Google Cloud 销售"
+        },
+        {
+          "k": "为什么重要",
+          "v": "微软此前通过 Azure 享有 OpenAI 模型的事实独家优势，此次协议重写是 OpenAI 迈向「平台无关」最重要一步；企业可在已有的 AWS 合规框架内直接调用 GPT-5.5，不必再迁移到 Azure"
+        },
+        {
+          "k": "对你的影响",
+          "v": "已在 AWS 上构建产品的团队可通过 Bedrock API 直接访问 GPT-5.5，无需单独管理 OpenAI API Key；Google Cloud Vertex AI 预计也将在近期跟进，形成三大云平台均可调用 OpenAI 模型的格局"
+        }
+      ],
+      "src": "📎 bloomberg.com · releasebot.io"
+    }
+  ],
+  "mp": {
+    "title": "马斯克法庭认 Grok 抄 OpenAI / Claude Security 公测 / DeepSeek 降价 75% / Meta 裁 8000 / GPT-5.5 入驻 AWS"
+  },
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-05-02"
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+  FLEX_HEIGHT: true,
+  HEIGHT_TIERS: [1480, 1660, 1860, 2100, 2400],
+});
+</script>
+</body>
+</html>
