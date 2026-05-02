@@ -1,0 +1,9 @@
+title: "OpenHands 实战指南：开源 AI 编程 Agent"
+description: "从零开始掌握 OpenHands（原 OpenDevin）：Docker 部署、CLI 模式、自主编程、GitHub Issue 自动修复、多模型接入、团队协作——免费开源的 Devin 替代品"
+tags:
+  - openhands
+  - ai-coding
+  - agent
+  - open-source
+  - autonomous-coding
+order: 17

@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-05-01T23:39:36.958Z",
+  "lockedAt": "2026-05-02T14:40:31.249Z",
   "version": 1,
   "slugs": [
     {
@@ -325,6 +325,10 @@
     {
       "type": "book",
       "slug": "notebooklm-guide"
+    },
+    {
+      "type": "book",
+      "slug": "openhands-guide"
     },
     {
       "type": "book",
@@ -664,6 +668,31 @@
     {
       "type": "chapter",
       "book": "notebooklm-guide",
+      "slug": "05-faq"
+    },
+    {
+      "type": "chapter",
+      "book": "openhands-guide",
+      "slug": "01-what-is-openhands"
+    },
+    {
+      "type": "chapter",
+      "book": "openhands-guide",
+      "slug": "02-getting-started"
+    },
+    {
+      "type": "chapter",
+      "book": "openhands-guide",
+      "slug": "03-core-features"
+    },
+    {
+      "type": "chapter",
+      "book": "openhands-guide",
+      "slug": "04-advanced-tips"
+    },
+    {
+      "type": "chapter",
+      "book": "openhands-guide",
       "slug": "05-faq"
     },
     {
