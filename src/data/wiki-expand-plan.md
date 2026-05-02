@@ -21,7 +21,7 @@
 - [x] n8n-workflow-automation/01-what-is-n8n.md — expand: 1709→2200+，补 n8n vs Zapier vs Make 对比表（含价格 / API 上限）+ self-host vs cloud 决策树
 - [x] v0-guide/02-getting-started.md — expand: 1543→2200+，补 v0.dev 注册流程截图描述、第一个 React 组件实战、与 Vercel 部署联动
 - [x] v0-guide/03-core-features.md — expand: 1899→2200+，补 generative UI 实战 case（dashboard 从零生成）+ shadcn/ui 集成细节
-- [ ] windsurf-guide/03-core-features.md — expand: 1873→2200+，补 Cascade 真实多文件改动 case（重构一个 Express middleware）
+- [x] windsurf-guide/03-core-features.md — expand: 1873→2200+，补 Cascade 真实多文件改动 case（重构一个 Express middleware）
 - [ ] windsurf-guide/04-advanced-tips.md — expand: 2038→2400+，补 .windsurfrules 案例（前端项目 / 后端项目）+ Cascade memory 用法
 - [ ] windsurf-guide/05-faq.md — expand: 1741→2200+，补 vs Cursor / vs Claude Code 选型对比表 + 价格说明
 - [ ] windsurf-guide/06-cascade-debugging.md — expand: 1983→2200+，补真实 bug fix 完整流程 + 高效调试 prompt 模板 3-5 个
