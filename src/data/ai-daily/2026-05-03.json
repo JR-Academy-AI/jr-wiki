@@ -1,0 +1,92 @@
+{
+  "date": "2026-05-03",
+  "summary": {
+    "hook": ["DeepSeek V4 震撼上线", "Grok 4.3 降价 40%", "Claude Opus 4.7 亮相"],
+    "sub": "AI 军备竞赛全面加速，开源闭源同台竞技",
+    "items": [
+      {"num":"01","cat":"开源模型","numColor":"#2563EB","t":"DeepSeek V4 1.6万亿参数逼近闭源前沿"},
+      {"num":"02","cat":"AI工具","numColor":"#F97316","t":"Grok 4.3 全面发布，输入价格砍40%"},
+      {"num":"03","cat":"企业安全","numColor":"#7C3AED","t":"Anthropic 发布 Claude Opus 4.7 与安全扫描工具"},
+      {"num":"04","cat":"AI科研","numColor":"#16A34A","t":"谷歌 Deep Research Max 面向专业级自主调研"},
+      {"num":"05","cat":"AI政策","numColor":"#3B82F6","t":"白宫发布全国 AI 政策框架，联邦与各州监管博弈"}
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-deepseek-v4-1t6",
+      "idx": "01",
+      "catText": "开源模型",
+      "accent": "#2563EB",
+      "bg": {"top":"#0A1020","mid":"#0F2A50","bot":"#06111E","topRight":"#2563EB"},
+      "title": [{"text":"DeepSeek V4 "},{"text":"1.6万亿参数上线","hl":true}],
+      "oneline": [{"text":"逼近闭源前沿的"},{"text":"中国开源模型","bold":true}],
+      "bullets": [
+        {"k":"发生了什么","v":"DeepSeek 于5月2日正式发布 V4 系列，旗舰版 V4-Pro 拥有1.6万亿参数（49B激活），Flash 版 284B参数，均支持100万 token 上下文。"},
+        {"k":"为什么重要","v":"V4-Pro 在推理基准上「几乎追平」GPT-5.5 和 Claude Opus 4.7，且 Flash 版定价仅 $0.14/M tokens，再度掀起价格战。"},
+        {"k":"对你的影响","v":"IT从业者和AI工程师可立即通过 API 以极低成本集成 V4-Flash；V4-Pro 75折优惠延至5月31日，适合现在评估迁移。"}
+      ],
+      "src": "📎 techcrunch.com · technologyreview.com"
+    },
+    {
+      "slug": "02-grok-43-price-cut",
+      "idx": "02",
+      "catText": "AI工具",
+      "accent": "#F97316",
+      "bg": {"top":"#180900","mid":"#3A1800","bot":"#0C0400","topRight":"#F97316"},
+      "title": [{"text":"Grok 4.3 "},{"text":"正式上线·输入价降40%","hl":true}],
+      "oneline": [{"text":"百万 token 上下文 + 原生"},{"text":"视频输入","bold":true}],
+      "bullets": [
+        {"k":"发生了什么","v":"xAI 于4月30日完成 Grok 4.3 全量发布：输入价降至 $1.25/M（原 $2），上下文扩至100万 token，新增原生视频输入和 Slides 生成。"},
+        {"k":"为什么重要","v":"Grok 4.3 在长上下文和多模态两个维度同时对齐 GPT-5.5，且价格仅是后者一半，价格战压力持续传导至整个行业。"},
+        {"k":"对你的影响","v":"开发者可评估以 Grok 4.3 替换文档分析、视频摘要类任务；SuperGrok Heavy 订阅用户($300/月)已可使用全部功能。"}
+      ],
+      "src": "📎 venturebeat.com · docs.x.ai"
+    },
+    {
+      "slug": "03-claude-opus-47-security",
+      "idx": "03",
+      "catText": "企业安全",
+      "accent": "#7C3AED",
+      "bg": {"top":"#0C0818","mid":"#1C1040","bot":"#06040E","topRight":"#7C3AED"},
+      "title": [{"text":"Anthropic 发布 "},{"text":"Claude Opus 4.7 + Security Beta","hl":true}],
+      "oneline": [{"text":"更强视觉能力 + 企业级"},{"text":"漏洞扫描","bold":true}],
+      "bullets": [
+        {"k":"发生了什么","v":"Anthropic 同期推出 Claude Opus 4.7（更强视觉和创意输出，定价不变 $5/$25/M）与 Claude Security 公测版（企业代码库漏洞扫描与补丁生成）。"},
+        {"k":"为什么重要","v":"Claude Security 无需自建 agent 即可对代码库持续扫描并给出修复建议，标志着 AI 厂商从「提供模型」向「提供安全服务」延伸。"},
+        {"k":"对你的影响","v":"Claude Enterprise 用户现可申请 Security Beta；开发团队可评估用其替代部分人工代码审计流程，降低安全成本。"}
+      ],
+      "src": "📎 business-standard.com · anthropic.com"
+    },
+    {
+      "slug": "04-google-deep-research-max",
+      "idx": "04",
+      "catText": "AI科研",
+      "accent": "#16A34A",
+      "bg": {"top":"#071410","mid":"#0C2E18","bot":"#040A08","topRight":"#16A34A"},
+      "title": [{"text":"谷歌推出 "},{"text":"Deep Research Max","hl":true}],
+      "oneline": [{"text":"Gemini 3.1 Pro 驱动"},{"text":"专家级自主调研","bold":true}],
+      "bullets": [
+        {"k":"发生了什么","v":"谷歌发布基于 Gemini 3.1 Pro 的新一代 Deep Research Max，可在数十分钟内自主浏览数百个信息源，输出「专家级」综合报告。"},
+        {"k":"为什么重要","v":"Deep Research Max 在内容深度和信息源广度上大幅超越前代；同期 AlphaEvolve 向美国17个国家实验室开放，AI 加速科学研究进入国家级部署。"},
+        {"k":"对你的影响","v":"研究员、顾问和内容创作者可用 Deep Research Max 在时间压力下快速生成有来源支撑的深度报告，效率提升10倍以上。"}
+      ],
+      "src": "📎 blog.google · bnl.gov"
+    },
+    {
+      "slug": "05-whitehouse-ai-policy-framework",
+      "idx": "05",
+      "catText": "AI政策",
+      "accent": "#3B82F6",
+      "bg": {"top":"#08101A","mid":"#112238","bot":"#04080E","topRight":"#3B82F6"},
+      "title": [{"text":"白宫发布 "},{"text":"全国 AI 政策框架","hl":true}],
+      "oneline": [{"text":"联邦统一监管 vs "},{"text":"科罗拉多州AI法案","bold":true}],
+      "bullets": [
+        {"k":"发生了什么","v":"白宫于3月20日发布《国家 AI 政策框架》，建议由现有机构监管 AI（不设新机构），并建议国会凌驾各州 AI 法律，避免「50套不同规则」。"},
+        {"k":"为什么重要","v":"科罗拉多州 AI 法案将于6月30日生效，要求算法影响评估、算法歧视防范和风险管理政策，联邦与各州的监管博弈正式升温。"},
+        {"k":"对你的影响","v":"在美国有业务或客户的 IT 公司须跟踪科罗拉多合规时间线；如联邦预先豁免通过，各州条款或作废，建议暂缓大规模合规改造。"}
+      ],
+      "src": "📎 whitehouse.gov · gunder.com"
+    }
+  ],
+  "mp": {"title": "DeepSeek V4 / Grok 4.3降价40% / Claude Opus 4.7 / 深度研究Max / 白宫AI框架"}
+}
