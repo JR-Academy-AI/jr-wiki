@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-05-02T14:40:31.249Z",
+  "lockedAt": "2026-05-02T23:41:35.981Z",
   "version": 1,
   "slugs": [
     {
@@ -84,6 +84,10 @@
     },
     {
       "type": "article",
+      "slug": "ai-daily-2026-05-03"
+    },
+    {
+      "type": "article",
       "slug": "ai-tool-supply-chain-security-vercel-oauth"
     },
     {
@@ -149,6 +153,10 @@
     {
       "type": "article",
       "slug": "it-daily-2026-05-02"
+    },
+    {
+      "type": "article",
+      "slug": "it-daily-2026-05-03"
     },
     {
       "type": "article",
