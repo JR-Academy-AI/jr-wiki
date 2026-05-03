@@ -1,0 +1,9 @@
+title: "Google Jules 异步编程代理指南"
+description: "从入门到精通 Jules：异步任务队列、Plan-then-Execute 工作流、CLI 与 API 集成、Environment Snapshots、定时任务、AGENTS.md 配置、定价与选型"
+tags:
+  - jules
+  - ai-coding
+  - async-agent
+  - google
+  - gemini
+order: 18
