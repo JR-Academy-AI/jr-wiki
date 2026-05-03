@@ -1,0 +1,308 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-05-03T20:17:32.568Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-05-04（Canvas 版）</title>
+<meta name="description" content="2026-05-04 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v2.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v2.js 里。
+ * 数据来源：src/data/ai-daily/2026-05-04.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "date": "2026-05-04",
+  "summary": {
+    "hook": [
+      "DeepSeek V4 开源逼近 GPT-5.5，",
+      "Grok 4.3 降价 40% Musk 庭审爆料，",
+      "Meta 裁员 8000 人 AI 资本开支却翻倍"
+    ],
+    "sub": "从开源价格战到大厂内部重组，AI 行业格局正在加速重塑",
+    "items": [
+      {
+        "num": "01",
+        "cat": "开源模型",
+        "numColor": "#1677FF",
+        "t": "DeepSeek V4 开源发布，超低价逼近 GPT-5.5"
+      },
+      {
+        "num": "02",
+        "cat": "大模型竞争",
+        "numColor": "#1A1A2E",
+        "t": "Grok 4.3 降价 40%，Musk 法庭承认借鉴 OpenAI 训练数据"
+      },
+      {
+        "num": "03",
+        "cat": "OpenAI",
+        "numColor": "#10A37F",
+        "t": "GPT-5.5 发布但顶配版锁付费，微软解除独家云协议"
+      },
+      {
+        "num": "04",
+        "cat": "Anthropic",
+        "numColor": "#D97706",
+        "t": "Claude Opus 4.7 正式 GA，同步开放创意软件连接器"
+      },
+      {
+        "num": "05",
+        "cat": "科技巨头",
+        "numColor": "#1877F2",
+        "t": "Meta 裁员 8000 人，AI 资本开支却翻倍至 1350 亿美元"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-deepseek-v4-open-source",
+      "idx": "01",
+      "catText": "开源模型",
+      "accent": "#1677FF",
+      "bg": {
+        "top": "#EFF6FF",
+        "mid": "#DBEAFE",
+        "bot": "#BFDBFE",
+        "topRight": "#93C5FD"
+      },
+      "title": [
+        {
+          "text": "DeepSeek V4 正式发布"
+        },
+        {
+          "text": "超低价逼近前沿模型",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "中国AI独角兽"
+        },
+        {
+          "text": "再度震撼硅谷",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "DeepSeek 发布 V4 Flash 和 V4 Pro，均为 MoE 架构，支持百万 token 上下文，结合「混合注意力架构」提升长对话记忆能力"
+        },
+        {
+          "k": "为什么重要",
+          "v": "V4 接近 GPT-5.5 等前沿模型性能，定价仅 $1.74/M tokens，约为 GPT-5.5 的三分之一，且完全开源，再次颠覆 AI 定价体系"
+        },
+        {
+          "k": "对你的影响",
+          "v": "澳洲 IT 从业者和创业者可以极低成本接入媲美顶尖闭源模型的能力，AI 产品成本大幅下降"
+        }
+      ],
+      "src": "📎 techcrunch.com · bloomberg.com · cnn.com"
+    },
+    {
+      "slug": "02-grok-43-price-cut-musk-openai",
+      "idx": "02",
+      "catText": "大模型竞争",
+      "accent": "#1A1A2E",
+      "bg": {
+        "top": "#F8F8FF",
+        "mid": "#E8E8F0",
+        "bot": "#D0D0E0",
+        "topRight": "#B8B8D0"
+      },
+      "title": [
+        {
+          "text": "Grok 4.3 降价 40% 全量上线"
+        },
+        {
+          "text": "Musk 法庭承认借鉴 OpenAI 训练",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "xAI 双线出击："
+        },
+        {
+          "text": "降价扩张 + 法律风险",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "xAI 全量推出 Grok 4.3，API 降价 40%，上下文扩至 100 万 token，首次支持原生视频输入；同日 Musk 在庭审中承认曾用蒸馏技术训练 Grok"
+        },
+        {
+          "k": "为什么重要",
+          "v": "价格战进一步向 API 端传导；Musk 承认蒸馏 OpenAI 模型将成关键证据，知识产权纠纷或影响 xAI 估值与融资节奏"
+        },
+        {
+          "k": "对你的影响",
+          "v": "开发者获得更具竞争力的高性能 API；xAI 法律不确定性或影响企业用户采购决策"
+        }
+      ],
+      "src": "📎 techcrunch.com · tbreak.com · theregister.com"
+    },
+    {
+      "slug": "03-gpt55-launch-microsoft-openai",
+      "idx": "03",
+      "catText": "OpenAI",
+      "accent": "#10A37F",
+      "bg": {
+        "top": "#F0FDF4",
+        "mid": "#DCFCE7",
+        "bot": "#BBF7D0",
+        "topRight": "#86EFAC"
+      },
+      "title": [
+        {
+          "text": "GPT-5.5 发布顶配版锁付费"
+        },
+        {
+          "text": "微软解除 OpenAI 独家云协议",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "OpenAI 同日迎来"
+        },
+        {
+          "text": "新模型与新合作格局",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "OpenAI 正式发布 GPT-5.5，强化智能体编码与 computer use；顶配「Cyber」版仅向付费高级会员开放；微软与 OpenAI 重谈合作，解除云独家，AWS 和 Google Cloud 可同等分发"
+        },
+        {
+          "k": "为什么重要",
+          "v": "GPT-5.5 确立当前智能体编程标杆；微软解除独家意味着 OpenAI 将加速多云分发，提升议价能力，减少对单一云商依赖"
+        },
+        {
+          "k": "对你的影响",
+          "v": "企业用户可在更多云平台调用 OpenAI 模型，采购灵活性大增；Cyber 版锁付费推动高端用户升级订阅"
+        }
+      ],
+      "src": "📎 theregister.com · openai.com · marketingprofs.com"
+    },
+    {
+      "slug": "04-claude-opus-47-creative-connectors",
+      "idx": "04",
+      "catText": "Anthropic",
+      "accent": "#D97706",
+      "bg": {
+        "top": "#FFFBEB",
+        "mid": "#FEF3C7",
+        "bot": "#FDE68A",
+        "topRight": "#FCD34D"
+      },
+      "title": [
+        {
+          "text": "Claude Opus 4.7 正式 GA"
+        },
+        {
+          "text": "开放 Adobe 等创意软件连接器",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "Anthropic 双管齐下："
+        },
+        {
+          "text": "顶级模型 + 创意工作流",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Anthropic 发布 Claude Opus 4.7，在高难度软件工程任务上显著优于 4.6；同步开放与 Adobe、Blender、Ableton、Affinity、Autodesk Fusion 的原生连接器"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Opus 4.7 是目前 Anthropic 最强编码模型，切入创意专业领域，是 AI 从对话工具向专业工作流渗透的重要信号"
+        },
+        {
+          "k": "对你的影响",
+          "v": "IT 从业者编码助力大幅提升；设计师和创意工作者可将 Claude 嵌入 Adobe 等日常软件，无需切换工作流"
+        }
+      ],
+      "src": "📎 anthropic.com · releasebot.io"
+    },
+    {
+      "slug": "05-meta-layoffs-ai-capex",
+      "idx": "05",
+      "catText": "科技巨头",
+      "accent": "#1877F2",
+      "bg": {
+        "top": "#EFF6FF",
+        "mid": "#DBEAFE",
+        "bot": "#BFDBFE",
+        "topRight": "#93C5FD"
+      },
+      "title": [
+        {
+          "text": "Meta 裁员 8000 人"
+        },
+        {
+          "text": "AI 资本开支却翻倍至 1350 亿美元",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "人减 AI 加："
+        },
+        {
+          "text": "Meta 押注全面 AI 化转型",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Meta 宣布 5 月 20 日启动裁员，涉及约 8000 人（占全员 10%），下半年还有更多裁员；同期 2026 年资本开支指引 1150–1350 亿美元，几乎是 2025 年 722 亿美元的翻倍"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是「降本增效→All-in AI 基础设施」战略的直接体现：用人力成本置换数据中心、GPU 和 Llama 模型训练投入，重塑竞争格局"
+        },
+        {
+          "k": "对你的影响",
+          "v": "AI 赋能替代传统职位的趋势加速；IT 求职者需关注 AI 岗位迁移，澳洲科技行业同样面临类似结构调整压力"
+        }
+      ],
+      "src": "📎 thenextweb.com · cnbc.com · fxleaders.com"
+    }
+  ],
+  "mp": {
+    "title": "DeepSeek V4 开源 / Grok 4.3 降价 / GPT-5.5 上线 / Opus 4.7 GA / Meta 裁员 AI 狂奔"
+  },
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-05-04"
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+  FLEX_HEIGHT: true,
+  HEIGHT_TIERS: [1480, 1660, 1860, 2100, 2400],
+});
+</script>
+</body>
+</html>
