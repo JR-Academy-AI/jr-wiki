@@ -1,0 +1,39 @@
+{
+  "bootcamp": "business-analyst",
+  "date": "2026-05-04",
+  "cohort": "AU",
+  "generatedAt": "2026-05-04T07:30:00+10:00",
+  "source": "WebSearch(au.gradconnection.com, macquarie.com) + WebSearch fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Graduate",
+      "title": "2026 Macquarie Graduate Program - Technology and Data",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "2026 Graduate Program · Active",
+      "url": "https://au.gradconnection.com/employers/macquarie-group/jobs/macquarie-group-2026-macquarie-graduate-program-technology-and-data/",
+      "why": "Macquarie（T1，澳洲最顶级投行/资管，以技术驱动著称）的 Technology & Data Graduate 涵盖商业数据分析、产品需求到技术实现的全链路；BA Bootcamp 的 SQL + 数据可视化 + 敏捷 user story + 利益相关者管理模块正是 Macquarie 项目日常，是金融 BA 赛道的最高含金量入口，毕业后直接与顶级投行的 PM/BA 同事并肩工作。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "行动档 · Graduate",
+      "title": "2026 Technology (Data) Graduate Program",
+      "company": "Westpac",
+      "location": "Sydney, NSW (also Adelaide, Melbourne, Brisbane, Gold Coast, Perth)",
+      "posted": "2026 Graduate Program · Active",
+      "url": "https://au.gradconnection.com/employers/westpac/jobs/westpac-group-2026-technology-data-graduate-program-sydney-adelaide-melbourne-brisbane-gold-coast-perth/",
+      "why": "Westpac（T1 Big4 银行，AAGE Top 25 毕业雇主 #7）Technology Data Graduate 专项接受应届毕业生，重点考察 SQL + Power BI + 数据叙事能力；BA Bootcamp 覆盖这些技能的 3 个以上项目，学员有直接匹配的组合作品可以投递，且 Westpac 多城市招聘，提高录取概率。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特殊档 · 实习 Intern Program",
+      "title": "2025/2026 Macquarie Internship Program (Technology and Data) - Sydney",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "2025/2026 Intern Program · Active",
+      "url": "https://au.gradconnection.com/employers/macquarie-group/jobs/macquarie-group-20252026-macquarie-internship-program-technology-and-data-sydney/",
+      "why": "Macquarie 专项实习计划（Intern → Return Offer 转化率业内最高之一），明确标注 2026 周期；适合 BA Bootcamp 在读学员先通过实习积累投行级数据分析案例，毕业后凭 Return Offer 走正式 Graduate 通道，是「实习转正式」的最稳金融 BA 路径。"
+    }
+  ]
+}

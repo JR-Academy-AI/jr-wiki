@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-05-04",
+  "cohort": "AU",
+  "generatedAt": "2026-05-04T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs, lifeatcanva.com, lifeattiktok.com) + WebSearch fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Machine Learning Engineer - Data - AI Research",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "Active listing",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000639806/machine-learning-engineer-data-ai-research/",
+      "why": "Canva（T0，全球 4000 万 MAU 设计平台）悉尼本地 ML 工程师岗，聚焦大规模训练数据 pipeline + 高性能标注基础设施，直接对应 AI Engineer Bootcamp Phase 3 的数据工程与模型部署模块；Canva 在悉尼招 ML 的频率不高，这是学员接触 T0 公司 AI 研究团队的稀缺机会。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "行动档 · Junior/Graduate",
+      "title": "Machine Learning Engineer Graduate (Trust and Safety Engineering) - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "2026 Graduate Program · Rolling",
+      "url": "https://lifeattiktok.com/search/7461813202695768327",
+      "why": "TikTok Trust & Safety 团队用 ML 做大规模内容分类，明确面向 2026 届毕业生；AI Engineer Bootcamp Phase 1-2 的 Python + 监督学习 + 模型评估模块完全覆盖申请要求，是学员毕业后第一个可以认真投递的 T2 规模大厂岗位。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特殊档 · PhD Graduate Program",
+      "title": "AI Machine Learning Engineer Graduate (TikTok Search) - 2026 Start (PhD)",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "2026 Graduate Program · Rolling",
+      "url": "https://lifeattiktok.com/search/7531709006790052114",
+      "why": "TikTok Search 专项 PhD Graduate Program，方向为 NLP + 多模态检索，与 AI Engineer Bootcamp LLM 高阶模块（embedding、semantic search）高度契合；适合有研究背景或在读研究生的学员收藏，是将学术 LLM 研究转化为工业级产品经验的直通车。"
+    }
+  ]
+}

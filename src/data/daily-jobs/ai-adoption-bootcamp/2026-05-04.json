@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-adoption-bootcamp",
+  "date": "2026-05-04",
+  "cohort": "AU",
+  "generatedAt": "2026-05-04T07:30:00+10:00",
+  "source": "WebSearch(lifeattiktok.com, au.prosple.com, deloitte.com.au) + WebSearch fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Graduate PM",
+      "title": "AI Product Manager Graduate (Creative and Brand Innovation) - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "2026 Global Spark Program · Rolling",
+      "url": "https://lifeattiktok.com/search/7537485209698191623",
+      "why": "TikTok Creative & Brand Innovation AI PM 岗位内嵌 Global Spark Program（2 年跨部门轮岗 + 导师辅导），属于业内少有的结构化 AI PM 成长路径；AI Adoption Bootcamp 的 AI 战略框架、需求分析、ROI 量化模块直接对应 PM 日常工作，是学员在 TikTok 体量的产品上验证 AI 采购决策能力的最佳入口。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "行动档 · Graduate Consultant",
+      "title": "2026 Graduate Program - Strategy & AI Consulting",
+      "company": "Deloitte Australia",
+      "location": "Sydney, NSW / Melbourne, VIC",
+      "posted": "Feb 2026 intake (2027 cohort open)",
+      "url": "https://au.prosple.com/graduate-employers/deloitte-australia/jobs-internships/graduate-program-1",
+      "why": "Deloitte Strategy & AI 团队为各行业客户提供 AI 转型咨询，正是 AI Adoption Bootcamp 学员的实战场景——AI 工具选型、变革管理、ROI 量化框架这些模块都是 Deloitte 咨询项目的核心交付物；比甲方 PM 更快接触跨行业 AI 采购/实施案例，是 AI Adoption 方向进咨询的最直接路径。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特殊档 · Graduate Program",
+      "title": "AI Product Manager Graduate (TikTok-Product-Social and Creation) - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "2026 Global Spark Program · Rolling",
+      "url": "https://lifeattiktok.com/search/7532812450681489682",
+      "why": "TikTok Social & Creation Product 团队负责 AI 在内容创作工具中的产品落地，与 AI Adoption Bootcamp AI 产品设计模块直接对口；TikTok 2026 Graduate Program 允许同一申请人最多申请 2 个职位——可与 Creative & Brand Innovation PM 组合投递，一次申请覆盖两条 AI PM 赛道，是 Bootcamp 学员高效利用申请配额的组合策略。"
+    }
+  ]
+}

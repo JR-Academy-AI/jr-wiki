@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-05-04",
+  "cohort": "AU",
+  "generatedAt": "2026-05-04T07:30:00+10:00",
+  "source": "WebSearch(lifeatcanva.com, au.gradconnection.com, lifeattiktok.com) + WebSearch fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Machine Learning Engineer - Canva AI",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "Active listing",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000510813/senior-machine-learning-engineer-canva-ai/",
+      "why": "Canva AI 团队负责驱动对话式 AI 功能（基于大模型 + 可扩展推理系统），正好是 AI Essentials Bootcamp GenAI 应用开发 + prompt engineering 模块的真实生产场景；Senior 岗是 2-3 年后的职业路径目标，帮学员在毕业时就知道「学完 Essentials → 做到 Canva AI 工程师」的每一步能力差距。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "行动档 · Graduate",
+      "title": "2026 CommBank Data Science and Analytics Graduate Program",
+      "company": "Commonwealth Bank",
+      "location": "Sydney, NSW",
+      "posted": "2026 Graduate Program",
+      "url": "https://au.gradconnection.com/employers/commonwealth-bank/jobs/commbank-2026-commbank-data-science-and-analytics-graduate-program/",
+      "why": "CBA（T1，全球 AI 成熟度排名 APAC 第一的银行）Data Science & Analytics Graduate 接受各专业背景，重点考察 Python + 数据分析 + AI 项目经验；AI Essentials Bootcamp 完成后学员有 GenAI 工具应用 + 数据分析的完整项目，能直接写进申请材料，是进 Big4 银行 AI 团队的最快入口。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特殊档 · Graduate Program",
+      "title": "Machine Learning Engineer Graduate (TikTok Shop - Data Intelligence) - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "2026 Graduate Program · Rolling",
+      "url": "https://lifeattiktok.com/search/7537244549992417543",
+      "why": "TikTok Shop Data Intelligence 专项 Graduate Program，聚焦从电商数据中提炼 AI 洞察以驱动业务决策，与 AI Essentials Bootcamp 数据驱动 AI 应用模块直接对口；TikTok 的 2026 Global Spark Program 接受最多两个职位同时申请，可与其他 TikTok AI 岗位组合投递。"
+    }
+  ]
+}

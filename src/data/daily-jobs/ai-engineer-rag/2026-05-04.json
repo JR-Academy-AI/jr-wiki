@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-05-04",
+  "cohort": "AU",
+  "generatedAt": "2026-05-04T07:30:00+10:00",
+  "source": "WebSearch(lifeatcanva.com, nab.com.au, lifeattiktok.com) + WebSearch fallback",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Machine Learning Engineer - Marketing AI",
+      "company": "Canva",
+      "location": "Sydney, NSW (Onsite)",
+      "posted": "Active listing",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000219568/senior-machine-learning-engineer-marketing-ai/",
+      "why": "Canva Marketing AI 团队将 RAG 技术用于个性化营销内容生成，要求工程师将 LLM + vector 检索 pipeline 跑到生产规模；这正是 RAG Bootcamp Phase 4（production RAG + chunking strategy + reranking）的真实业务落地场景，是学员理解「RAG 如何在 Canva 规模的产品中工作」的最直接参照。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "行动档 · Graduate",
+      "title": "Graduate Careers - Digital, Data & AI",
+      "company": "NAB (National Australia Bank)",
+      "location": "Sydney, NSW / Melbourne, VIC",
+      "posted": "2026 Graduate Program · Rolling",
+      "url": "https://www.nab.com.au/about-us/careers/early-careers/graduate-careers/digital-data-ai",
+      "why": "NAB DD&AI 团队正在将 LLM 和 RAG 应用于客服自动化与风控场景，Graduate Program 接受非传统背景并重视 AI 项目经验；RAG Bootcamp 的 LangChain + FAISS/Pinecone + retrieval pipeline 项目输出可以直接放进申请材料，是学员将 RAG 技术带进顶级银行 AI 团队的最快通道。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特殊档 · Graduate Program",
+      "title": "Machine Learning Engineer Graduate (TikTok Recommendation-Live) - 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW",
+      "posted": "2026 Graduate Program · Rolling",
+      "url": "https://lifeattiktok.com/search/7542584919815325960",
+      "why": "TikTok Recommendation-Live 是工业级 embedding 检索 + 实时重排序系统，与 RAG Bootcamp 中向量检索、reranking 和 hybrid search 章节的核心技术几乎完全重叠；TikTok 2026 Graduate Program，适合想把 RAG 技术迁移到推荐系统方向的学员——RAG 和推荐系统在检索工程层面共享大量技术栈。"
+    }
+  ]
+}
