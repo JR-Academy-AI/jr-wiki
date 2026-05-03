@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-05-02T23:41:35.981Z",
+  "lockedAt": "2026-05-03T14:38:46.541Z",
   "version": 1,
   "slugs": [
     {
@@ -208,6 +208,10 @@
     },
     {
       "type": "article",
+      "slug": "uni-news-monash-2026-05-03"
+    },
+    {
+      "type": "article",
       "slug": "uni-news-umelb-2026-04-24"
     },
     {
@@ -237,6 +241,10 @@
     {
       "type": "article",
       "slug": "uni-news-unsw-2026-05-02"
+    },
+    {
+      "type": "article",
+      "slug": "uni-news-unsw-2026-05-03"
     },
     {
       "type": "article",
@@ -273,6 +281,10 @@
     {
       "type": "article",
       "slug": "uni-news-usyd-2026-04-29"
+    },
+    {
+      "type": "article",
+      "slug": "uni-news-usyd-2026-05-03"
     },
     {
       "type": "article",
@@ -317,6 +329,10 @@
     {
       "type": "book",
       "slug": "gamma-guide"
+    },
+    {
+      "type": "book",
+      "slug": "jules-guide"
     },
     {
       "type": "book",
@@ -571,6 +587,31 @@
     {
       "type": "chapter",
       "book": "gamma-guide",
+      "slug": "05-faq"
+    },
+    {
+      "type": "chapter",
+      "book": "jules-guide",
+      "slug": "01-what-is-jules"
+    },
+    {
+      "type": "chapter",
+      "book": "jules-guide",
+      "slug": "02-getting-started"
+    },
+    {
+      "type": "chapter",
+      "book": "jules-guide",
+      "slug": "03-core-features"
+    },
+    {
+      "type": "chapter",
+      "book": "jules-guide",
+      "slug": "04-advanced-tips"
+    },
+    {
+      "type": "chapter",
+      "book": "jules-guide",
       "slug": "05-faq"
     },
     {
