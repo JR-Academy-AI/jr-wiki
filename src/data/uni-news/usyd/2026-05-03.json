@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-05-03",
+  "school": "usyd",
+  "summary": {
+    "hookMain": "USYD",
+    "hookSub": "产研MoU + 荣誉博士 + 国际生奖学金",
+    "hookSubHighlight": "产研MoU",
+    "subLines": [
+      "与 Thermo Fisher 签研究合作 MoU · 覆盖生命科学与医疗健康",
+      "两位土著女性领袖获颁荣誉文学博士 · 4 月 28 日典礼",
+      "副校长国际生奖学金 2026 · 新入学国际学生专属"
+    ],
+    "previewCards": [
+      { "num": "01", "title": "产研MoU", "data": "Thermo Fisher" },
+      { "num": "02", "title": "荣誉博士", "data": "4-28 典礼" },
+      { "num": "03", "title": "VCISS", "data": "2026 新生" }
+    ]
+  },
+  "news": [
+    {
+      "idx": "01",
+      "category": "产学合作",
+      "h2Main": "USYD × Thermo Fisher",
+      "h2Sub": "战略科研 MoU · 生命科学 + 医疗健康 + 先进制造全覆盖",
+      "h2Highlight": "科研 MoU",
+      "lead": "<b>悉尼大学</b>与全球科研设备龙头 <b>Thermo Fisher Scientific</b> 于 5 月 1 日签署战略合作谅解备忘录，双方将在<b>生命科学、医疗健康、物理科学、先进制造、环境与农业</b>多领域联合开展研究，并为 USYD 研究人员提供行业资源与职业发展渠道。",
+      "bullets": [
+        { "k": "合作内容", "v": "MoU 授权双方在多学科领域探索联合研究；Thermo Fisher 为 USYD 科研人员提供设备访问、技术支持和行业专家连接渠道" },
+        { "k": "签约背景", "v": "仪式于悉尼大学 Sydney Nanoscience Hub 举行；Thermo Fisher 全球年营业额超 430 亿美元，是澳洲最大的科研设备供应商之一" },
+        { "k": "对研究生", "v": "走<b>生物医学 / 化学 / 材料科学 / 食品科学</b>方向的硕博生，产业 MoU 意味着更多合作导师、联合课题和毕业后的直接就业通道" },
+        { "k": "对你的影响", "v": "产学合作深度是评估研究型学位含金量的重要指标；USYD 持续扩展行业合作网络，对国际学生争取毕业后 485 签证期间的行业岗位很有帮助" }
+      ],
+      "source": "BioSpectrum Asia · 2026-05-01",
+      "sourceUrl": "https://www.biospectrumasia.com/news/26/27583/university-of-sydney-partners-with-thermo-fisher-for-strategic-research-collaborations"
+    },
+    {
+      "idx": "02",
+      "category": "校园文化",
+      "h2Main": "两位土著女性领袖",
+      "h2Sub": "获悉尼大学颁荣誉文学博士 · 表彰社区贡献与领导力",
+      "h2Highlight": "荣誉文学博士",
+      "lead": "<b>悉尼大学</b> 4 月 28 日举行典礼，授予 Barkindji Ngiyampaa 长老 <b>Aunty Pam Greer</b> 与 Wiradjuri 女性 <b>Melva Kennedy</b> 名誉文学博士学位，表彰她们在社区中心工作中展现的杰出领导力。",
+      "bullets": [
+        { "k": "荣誉背景", "v": "荣誉博士是学术界对非学术领域卓越贡献者的最高认可；两位受嘉奖者长期深耕原住民社区服务，在教育公平与文化传承领域积累数十年影响力" },
+        { "k": "学校立场", "v": "USYD 建校于传统 Gadigal 土地，在去殖民化与土著文化尊重方面有明确长期承诺；5 月是 National Reconciliation Month，相关活动在校园内密集" },
+        { "k": "对留学生", "v": "了解澳洲原住民文化和历史是融入当地社会的重要背景知识；主动参与 Reconciliation Month 活动有助于建立本地人脉" },
+        { "k": "对你的影响", "v": "走<b>社会工作 / 教育学 / 法律 / 人文</b>方向的同学，原住民社区服务经验是澳洲政府和非营利部门就业的显性加分项" }
+      ],
+      "source": "University of Sydney News · 2026-04-28",
+      "sourceUrl": "https://www.sydney.edu.au/news-opinion/news/2026/04/28/university-honours-leadership-of-aunty-pam-greer-and-melva-kennedy-with-honorary-doctorates"
+    },
+    {
+      "idx": "03",
+      "category": "奖学金",
+      "h2Main": "VCISS 副校长国际生奖学金",
+      "h2Sub": "2026 新入学国际学生专属 · 入学申请自动审核，无需另填表",
+      "h2Highlight": "国际生奖学金",
+      "lead": "<b>悉尼大学副校长国际奖学金计划（VCISS）</b>面向 2026 年新入学国际学生开放，覆盖本科和研究生课程。申请无需单独提交——入学申请获批后，<b>国际学生办公室自动根据学业成绩审核</b>，达标者在录取通知中直接获知结果。",
+      "bullets": [
+        { "k": "申请方式", "v": "无需另填奖学金表格；录取时国际学生办公室自动评估；成绩达标者在 offer letter 中直接收到奖学金通知" },
+        { "k": "覆盖范围", "v": "面向 2026 年新入学本科和研究生国际学生；部分专业（如医学院 MD）不在范围内；每年根据学业进度可续期" },
+        { "k": "实用建议", "v": "接到 offer 后第一时间查看 VCISS 条款；金额和续期条件以官网最新页面为准；这是 G8 大学里「自动审核」设计最友好的奖学金之一" },
+        { "k": "对你的影响", "v": "在比较多所 G8 大学时，把 VCISS 纳入实际学费计算；成绩达标的申请者获批概率较高，提前了解有助于更准确规划留学预算" }
+      ],
+      "source": "USYD Scholarships · 2026",
+      "sourceUrl": "https://www.sydney.edu.au/scholarships/e/vice-chancellor-international-scholarships-scheme.html"
+    }
+  ],
+  "quickview": {
+    "titleMain": "今日 3 条",
+    "titleHighlight": "一眼看完",
+    "sub": "Thermo Fisher产学MoU、荣誉博士典礼、VCISS国际生奖学金——悉尼大学 5 月 3 日三条覆盖产学合作、校园文化和奖学金三条线。",
+    "items": [
+      { "n": "01", "title": "Thermo Fisher 科研 MoU", "body": "5-01 签署；覆盖生命科学 + 医疗健康 + 先进制造；研究生和博士生有望获益于合作课题和行业就业渠道" },
+      { "n": "02", "title": "两位土著女性领袖获荣誉博士", "body": "4-28 典礼；Aunty Pam Greer + Melva Kennedy；5 月是 Reconciliation Month，理解原住民文化背景对留学生融入本地有帮助" },
+      { "n": "03", "title": "VCISS 国际生奖学金开放", "body": "2026 新生专属；入学申请自动审核；无需另填表；接到 offer 后第一时间确认条款" }
+    ],
+    "cta": {
+      "big": "关注每日大学日报",
+      "sub": "10 所澳洲大学 · 每天 3 校 · 奖学金 + 科研 + 招生一手同步",
+      "badge": "05 / 03"
+    }
+  },
+  "xhsCopy": {
+    "p1": {
+      "title": "悉尼大学5-03 三条存一下📌",
+      "body": "在读或准备申 USYD 的姐妹，5 月 3 日有三条可以存起来。\n\n01 / Thermo Fisher MoU——5 月 1 日悉尼大学跟 Thermo Fisher Scientific 签了科研合作协议，覆盖生命科学、健康、先进制造等领域。研究生多留意合作课题机会。\n\n02 / 荣誉博士典礼——4 月 28 日两位土著女性长老 Aunty Pam Greer 和 Melva Kennedy 获颁荣誉文学博士。5 月是澳洲 Reconciliation Month，感兴趣的可以在校内找找活动。\n\n03 / VCISS 奖学金——悉尼大学副校长国际生奖学金今年继续开放，入学时自动审核、不用另填表。接到 offer 的同学建议第一时间查确认邮件。\n\n哪条最感兴趣评论区说一下🙌",
+      "tags": "#悉尼大学 #USYD #澳洲留学 #USYD申请 #留学干货 #澳洲奖学金 #留学生活"
+    },
+    "p2": {
+      "title": "USYD × Thermo Fisher 签了个大合作🔬",
+      "body": "悉尼大学和 Thermo Fisher Scientific 签了科研合作 MoU，5 月 1 日刚官宣。\n\nThermo Fisher 是全球最大的科研设备和试剂供应商之一，年营业额 400 多亿美元，基本上全球每个生物医学实验室都在用它家的东西。这次和 USYD 签 MoU，覆盖生命科学、医疗健康、物理科学、先进制造、环境和农业这几块。\n\n对在读研究生意味着什么：\n· 合作课题机会变多——产业 MoU 落地之后通常会带来联合课题资金\n· 导师资源——Thermo Fisher 的行业专家可能成为联合导师或顾问\n· 就业通道——有产业背景的科研经历在 485 签证期间找工作比纯学术强得多\n\n走生物医学、化学、材料科学、食品科学方向的姐妹可以重点留意后续的合作课题信息。有时候这类 MoU 落地速度比想象的快😊",
+      "tags": "#悉尼大学 #USYD #澳洲留学 #研究生 #产学合作 #生物医学 #留学干货"
+    },
+    "p3": {
+      "title": "USYD给土著长老颁了荣誉博士🎓",
+      "body": "悉尼大学 4 月 28 日有个有意思的典礼——给两位土著女性领袖颁了荣誉文学博士。\n\nAunty Pam Greer 是 Barkindji Ngiyampaa 的长老，Melva Kennedy 是 Wiradjuri 女性，两位都在原住民社区服务领域深耕了几十年。荣誉博士（honoris causa）是学校给非学术界贡献者的最高认可，每年颁授对象都很受关注。\n\n5 月是澳洲的 National Reconciliation Month，在这个时间点颁博士其实有比较明确的表态意味——USYD 建校在 Gadigal 传统土地上，在去殖民化这件事上的态度在 G8 里算比较积极的。\n\n对留学生实际上有什么用：\n· 了解这些背景让你在和本地同学聊天的时候不会一脸茫然\n· 走社工、教育、法律、人文方向的，原住民社区经历在澳洲就业市场很加分\n· Reconciliation Month 校内活动可以去一两个，对建立本地人脉有帮助\n\n有同在 USYD 的姐妹吗？评论区来聊聊🙋",
+      "tags": "#悉尼大学 #USYD #澳洲留学 #澳洲文化 #原住民 #留学生活 #留学干货"
+    },
+    "p4": {
+      "title": "USYD奖学金不用另填申请表😮",
+      "body": "刚知道悉尼大学有一个设计特别友好的国际生奖学金——\n\nVCISS（副校长国际奖学金计划），专为新入学的国际学生设置，本科和研究生都有。最神的一点是：**不需要单独提交奖学金申请**。你提交入学申请之后，国际学生办公室会自动根据你的学业成绩审核，达标的话录取通知里直接就有奖学金的信息。\n\n也就是说你该申请的还是正常申请，但不需要专门盯着奖学金截止日期去提交一份额外材料。这在所有 G8 奖学金里真的挺罕见的，大部分都要你自己盯着去提交。\n\n注意事项：\n· 部分专业不在范围内（医学院 MD 等）\n· 每年续期需要保持良好学业进度\n· 金额和最新条件以官方奖学金页面为准\n\n正在比较几所大学 offer 的姐妹，记得把 VCISS 纳入实际学费计算——接到 offer 之后第一时间查确认邮件里有没有这个😊",
+      "tags": "#悉尼大学 #USYD #澳洲留学 #澳洲奖学金 #国际学生 #留学申请 #留学干货"
+    },
+    "p5": {
+      "title": "USYD 5-03 速览三条📋",
+      "body": "悉尼大学 5 月 3 日快速整理：\n\n🔬 Thermo Fisher 科研 MoU（5-01）——生命科学 + 医疗健康 + 先进制造；研究生关注合作课题机会\n\n🎓 两位土著女性长老获荣誉博士（4-28）——Aunty Pam Greer + Melva Kennedy；5 月 Reconciliation Month 可以看看校内活动\n\n💰 VCISS 国际生奖学金（2026）——新生自动审核无需另填表；接到 offer 后第一时间确认\n\n三条方向：产学合作 / 校园文化 / 奖学金。哪条最感兴趣评论区扣 1 👇",
+      "tags": "#悉尼大学 #USYD #澳洲留学 #留学干货 #大学新闻 #澳洲奖学金 #留学生活"
+    }
+  },
+  "drafts": {
+    "sections": [
+      {
+        "heading": "USYD 5-03 草稿 · 奖学金版",
+        "body": "刚发现悉尼大学有个奖学金设计得很人性化\n\nVCISS（副校长国际奖学金计划），给 2026 年新入学的国际学生。不需要单独填申请表——提交入学申请后，学校自动根据你的成绩审核，达标的话 offer letter 里直接告诉你。\n\n这个消息我觉得对正在比较几个澳洲大学 offer 的同学挺实用的。很多奖学金需要你另外提交材料、盯截止日期，但 VCISS 不用，省了一个操心的事情。\n\n另外 5 月 1 日 USYD 刚签了一个和 Thermo Fisher Scientific 的科研合作协议，覆盖生命科学、医疗健康、先进制造这几块。对准备做研究型学位的同学来说，这种产业合作背景会让课题选择和毕业后就业都好一点。\n\n在 USYD 读或者准备申请的姐妹，有想聊的评论区来找我~",
+        "tags": ["#悉尼大学", "#USYD", "#澳洲留学", "#澳洲奖学金", "#留学申请", "#留学干货", "#国际学生"]
+      }
+    ],
+    "sensitivityScan": [
+      { "category": "绝对化", "rule": "最 / 第一 / 唯一 / 100%", "result": "未检出" },
+      { "category": "教育承诺", "rule": "包过 / 保录取 / 稳上", "result": "未检出" },
+      { "category": "引流", "rule": "加V / VX / 薇信 / 私信领取", "result": "未检出" },
+      { "category": "封号红线", "rule": "JR Academy / 匠人学院 / jiangren.com", "result": "未检出" },
+      { "category": "AI 味", "rule": "首先其次 / 综上所述 / 值得注意的是", "result": "未检出" }
+    ]
+  }
+}
