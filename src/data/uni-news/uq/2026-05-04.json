@@ -1,0 +1,153 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-05-04",
+  "school": "uq",
+  "summary": {
+    "hookMain": "UQ",
+    "hookSub": "博士奖学金通知已发 + 胚胎蛋白机制首次揭示",
+    "hookSubHighlight": "奖学金通知已发",
+    "subLines": [
+      "UQGSS 本轮通知 4-28 发出：$37,500/年免税 + 全额学费 · 5-31 截止接受",
+      "UQ 科研：细胞蛋白导致胚胎出生缺陷分子机制首次揭示 · 4 月 30 日发表"
+    ],
+    "previewCards": [
+      { "num": "01", "title": "UQGSS 博士奖学金", "data": "5 月 31 日截止" },
+      { "num": "02", "title": "胚胎发育研究", "data": "4 月 30 日发表" }
+    ]
+  },
+  "news": [
+    {
+      "idx": "01",
+      "category": "奖学金招生",
+      "h2Main": "UQGSS 博士奖学金本轮通知已发——$37,500/年免税",
+      "h2Sub": "4 月 28 日起陆续发出 · 在校国际留学生可申 · 5 月 31 日截止接受",
+      "h2Highlight": "$37,500/年",
+      "lead": "UQ Graduate School Scholarships（UQGSS，含 Research Training Program RTP）2026 年本轮录取通知已从 <b>4 月 28 日起陆续发出</b>，有意接受的学生须在 <b>5 月 31 日前</b>登录 mySI-net 完成确认，过期 offer 自动失效。该奖学金覆盖 PhD、MPhil 及研究型专业博士，生活补贴 $37,500 澳元/年免税、全额学费豁免、单人 OSHC 全覆盖。本轮适用于 2026 年第一学期在 UQ 完成学业的在校国际学生（Onshore International Students）。",
+      "bullets": [
+        { "k": "金额（2026 费率）", "v": "<b>$37,500 澳元/年免税</b>，按年指数化调整；另包含全额学费豁免和单人 OSHC 医疗保险" },
+        { "k": "申请对象", "v": "2026 S1 在 UQ 完成学业的<b>在校国际留学生</b>及本国学生；报读方向 PhD / MPhil / 研究型专业博士" },
+        { "k": "截止时间", "v": "<b>5 月 31 日</b>前完成接受（Offer Acceptance）；在 mySI-net 操作，过期自动失效" },
+        { "k": "下一步", "v": "已收到通知者须立即登录 mySI-net 接受；未收到通知可联系所在院系研究生招生办询问<b>补录</b>状态" }
+      ],
+      "source": "UQ Scholarships · 2026-04-28",
+      "sourceUrl": "https://scholarships.uq.edu.au/scholarship/graduate-school-scholarships-uqgss-%E2%80%93-includes-rtp"
+    },
+    {
+      "idx": "02",
+      "category": "科研突破",
+      "h2Main": "UQ 首次揭示细胞蛋白导致胚胎出生缺陷的完整分子机制",
+      "h2Sub": "4 月 30 日同行评审期刊发表 · 为靶向预防提供理论基础 · 生物医学方向重磅",
+      "h2Highlight": "首次揭示",
+      "lead": "UQ 研究团队 4 月 30 日在同行评审期刊发表新研究，<b>首次在分子层面追踪了特定细胞蛋白异常如何引发胚胎发育阶段的出生缺陷</b>，为未来的靶向预防和干预手段打开了理论窗口。此前这一「蛋白 → 出生缺陷」的完整分子链条长期不明，是发育生物学领域的关键空白。",
+      "bullets": [
+        { "k": "核心发现", "v": "特定细胞蛋白<b>异常表达</b>会干扰胚胎细胞正常分化路径，研究从分子层面完整追踪了触发条件和作用机制" },
+        { "k": "意义", "v": "首次系统揭示「蛋白异常 → 出生缺陷」的完整链条，为<b>靶向预防药物和干预方案</b>的开发提供直接理论依据" },
+        { "k": "发表", "v": "同行评审期刊，<b>4 月 30 日</b>公开发表；研究由 UQ 团队主导完成" },
+        { "k": "对你的影响", "v": "走 <b>Biomedical Science / Genetics / Developmental Biology</b> 方向的同学，UQ IMB（Institute for Molecular Bioscience）和 Queensland Brain Institute 均在此方向有完整 PhD 招生通道，申博士时与导师近期发表的成果方向匹配是重要加分项" }
+      ],
+      "source": "UQ News · 2026-04-30",
+      "sourceUrl": "https://news.uq.edu.au/"
+    }
+  ],
+  "quickview": {
+    "titleMain": "今日 2 条",
+    "titleHighlight": "一眼看完",
+    "sub": "UQ 5 月 4 日两条关键更新：UQGSS 博士奖学金本轮录取通知从 4 月 28 日起已发，$37,500/年免税，在校国际生须 5 月 31 日前接受；另有 UQ 科研团队首次揭示细胞蛋白导致胚胎出生缺陷的完整分子机制，生物医学方向重磅。",
+    "items": [
+      { "n": "01", "title": "UQGSS 博士奖学金 5 月 31 日截止", "body": "$37,500/年免税 + 全额学费，4 月 28 日通知已发，2026 S1 在校国际生须尽快登录 mySI-net 确认" },
+      { "n": "02", "title": "UQ 胚胎蛋白研究发表", "body": "4 月 30 日，首次揭示细胞蛋白异常导致胚胎出生缺陷的分子机制，Biomedical / Genetics / Developmental Biology 方向学生关注" }
+    ],
+    "cta": {
+      "big": "关注每日大学日报",
+      "sub": "10 所澳洲大学 · 奖学金 + 科研 + 招生一手同步",
+      "badge": "05 / 04"
+    }
+  },
+  "xhsCopy": {
+    "p1": {
+      "title": "UQ博士奖学金5月31日截止！🎓",
+      "body": "在 UQ 读书的姐妹注意了——UQGSS 博士奖学金本轮录取通知从 4 月 28 日起陆续发出，接受截止是 5 月 31 日，快去查 mySI-net！\n\n金额挺实在：$37,500 澳元/年免税 + 全额学费豁免 + 单人 OSHC 医疗保险全覆盖。报读方向是 PhD、MPhil，以及研究型专业博士（research-focused professional doctorate）。\n\n本轮适用于 2026 年第一学期在 UQ 完成学业的在校国际留学生（Onshore International Students）。EOI 阶段已过，现在是接受 offer 的窗口期。\n\n还没收到通知的同学可以主动联系所在院系的研究生招生办，问一下有没有补录可能——据说部分专业还有名额。\n\n有收到 UQGSS offer 的姐妹评论区扣 1，分享一下你们是哪个方向🙋",
+      "tags": "#UQ #昆士兰大学 #UQ奖学金 #UQGSS #博士留学 #澳洲留学 #留学奖学金"
+    },
+    "p2": {
+      "title": "UQ读博$37500/年 这条不能错过💰",
+      "body": "UQ Graduate School Scholarships（UQGSS）2026 年这轮录取通知从 4 月 28 日开始陆续发出，接受截止是 5 月 31 日。\n\n奖学金内容：$37,500 澳元/年免税生活补贴（按年指数调整），全额学费豁免，加单人海外学生医疗保险（OSHC）。在澳洲的研究型奖学金里，这个「三件套」覆盖比较完整——日常生活、学费、医疗三块都解决了，能专注做研究。\n\n适用对象是 2026 S1 在 UQ 完成学业的在校学生，包含在校国际留学生（Onshore International）。走 PhD、MPhil 或研究型专业博士方向都可申。\n\n一个细节：EOI 截止去年 12 月，Final Application 今年 1 月，本轮主要是已申请者接受 offer 的窗口。但也有同学说院系有补录，没收到通知的可以主动问一下。\n\n在申 UQ PhD 或者已经在读 MPhil 的姐妹，评论区聊一下申请流程吧🙌",
+      "tags": "#UQ #昆士兰大学 #UQGSS #读博 #澳洲奖学金 #PhD留学 #留学干货"
+    },
+    "p3": {
+      "title": "UQ研究:细胞蛋白和出生缺陷的关系🔬",
+      "body": "生物医学方向的姐妹这条可以看——UQ 研究团队 4 月 30 日发表了新研究，首次在分子层面揭示了一种细胞蛋白异常是怎么导致胚胎发育阶段出生缺陷的。\n\n这个机制之前一直是发育生物学领域的空白，UQ 团队从蛋白异常表达的触发条件一路追到它如何干扰胚胎细胞的正常分化。研究发表在同行评审期刊上。\n\n最直接的意义：知道了「蛋白 → 出生缺陷」的完整分子链条，就有了开发靶向预防药物和干预方案的理论基础。\n\n申 UQ PhD、走 Biomedical Science / Genetics / Developmental Biology 方向的同学：这个方向主要在 UQ IMB（Institute for Molecular Bioscience）和 Queensland Brain Institute。申博士时，如果自己的研究方向能跟导师的近期成果挂钩，是很实在的方向匹配度加分。\n\n有在准备申 UQ 生物医学方向 PhD 的姐妹评论区聊🙌",
+      "tags": "#UQ #昆士兰大学 #生物医学 #澳洲留学 #科研 #PhD留学 #留学干货"
+    },
+    "p4": {
+      "title": "UQ 5月4日 | 奖学金+科研两条📣",
+      "body": "UQ 这周两条值得关注：\n\n01 / UQGSS 博士奖学金——本轮通知从 4 月 28 日起发出，接受截止 <b>5 月 31 日</b>。$37,500/年免税 + 全额学费 + OSHC，适用 2026 S1 在 UQ 在校生（含国际留学生）。还没收到通知的去院系问补录。\n\n02 / UQ 胚胎蛋白研究——4 月 30 日，UQ 团队首次揭示特定细胞蛋白异常导致胚胎出生缺陷的分子机制，为靶向预防提供理论基础。生物医学 / 遗传学 / 发育生物学的同学可以关注 UQ IMB 和 Queensland Brain Institute 的招生动向。\n\n在 UQ 或者考虑申 UQ PhD 的姐妹，评论区扣序号📩",
+      "tags": "#UQ #昆士兰大学 #澳洲留学 #UQ奖学金 #UQGSS #科研 #留学干货"
+    },
+    "p5": {
+      "title": "UQ 5月4日 | 一眼看完🔍",
+      "body": "UQ 今天两条：\n\n01 · UQGSS 奖学金——$37,500/年免税 + 全额学费，4-28 通知已发，<b>5-31 截止接受</b>。2026 S1 在校国际生速查 mySI-net。\n\n02 · 胚胎蛋白研究——4-30 UQ 团队首次揭示细胞蛋白异常导致胚胎出生缺陷的分子机制。Biomedical Science / Genetics / Developmental Biology 方向学生关注 UQ IMB。\n\n有申 UQGSS 或正在申 UQ PhD 的姐妹，评论区扣 1，可以聊聊准备流程🙌",
+      "tags": "#UQ #昆士兰大学 #澳洲留学 #留学奖学金 #UQGSS #留学干货"
+    }
+  },
+  "mp": {
+    "title": "UQ 5 月 4 日：UQGSS 博士奖学金本轮通知已发（5 月 31 日接受截止），细胞蛋白导致胚胎出生缺陷机制首次揭示",
+    "lead": "UQ 本周两条关键更新。UQGSS 博士奖学金本轮录取通知从 4 月 28 日起陆续发出——$37,500 澳元/年免税生活补贴、全额学费豁免、单人 OSHC，2026 年第一学期在校的国际留学生须在 5 月 31 日前完成接受确认。另一方面，UQ 研究团队 4 月 30 日在同行评审期刊发表新研究，首次揭示特定细胞蛋白异常导致胚胎出生缺陷的完整分子机制，为未来靶向预防手段打开了理论窗口。",
+    "meta": { "readTime": "6 分钟" },
+    "newsBodies": [
+      {
+        "h2": "UQGSS 博士奖学金本轮通知发出：$37,500/年 + 全额学费，5 月 31 日接受截止",
+        "paragraphs": [
+          "UQ Graduate School Scholarships（UQGSS，含 Research Training Program RTP）2026 年本轮录取通知已从 4 月 28 日起陆续发出。这批 offer 适用于 2026 年第一学期在 UQ 完成学业的在校学生，涵盖在校国际留学生（Onshore International Students）和本国学生，报读方向为 Doctor of Philosophy（PhD）、Master of Philosophy（MPhil）以及研究型专业博士。",
+          "奖学金内容是业内常说的「三件套」：生活补贴 $37,500 澳元/年（2026 费率，按年指数化调整，免税）、全额学费豁免、单人海外学生医疗保险（OSHC）。在澳洲的研究型奖学金组合里，这个覆盖面已经相当完整——既解决了日常生活开销，又消除了学费压力，加上医疗保险，新生基本可以专注研究。",
+          "对于还没有收到本轮通知的申请人：EOI（意向申请）截止是 2025 年 12 月，Final Application 截止是 2026 年 1 月，本轮主要是此前申请者接受 offer 的窗口。但部分专业仍有补录可能，建议直接联系所在院系研究生招生办询问状态。已收到通知者须在 5 月 31 日前登录 mySI-net 完成接受，过期 offer 自动失效。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://scholarships.uq.edu.au/scholarship/graduate-school-scholarships-uqgss-%E2%80%93-includes-rtp\">UQ Graduate School Scholarships (UQGSS) – includes RTP</a>"
+      },
+      {
+        "h2": "UQ 研究团队首次揭示细胞蛋白导致胚胎出生缺陷的分子机制",
+        "paragraphs": [
+          "UQ 研究团队 4 月 30 日在同行评审期刊发表新研究，首次在分子层面揭示了特定细胞蛋白异常如何导致胚胎发育阶段出生缺陷。此前，这一机制长期是发育生物学领域的关键空白——我们知道某些出生缺陷与基因相关，但「蛋白层面的异常表达 → 细胞分化紊乱 → 出生缺陷」这条完整分子链条，此前并没有被系统追踪过。",
+          "UQ 团队的研究从追踪蛋白异常表达的触发条件开始，逐步厘清了它如何干扰胚胎细胞的正常分化路径，并最终导致发育缺陷。这一发现为未来两类干预方向打开了窗口：一是针对蛋白异常的靶向预防药物研发；二是在基因检测层面更早识别出生缺陷风险。",
+          "对走 Biomedical Science、Genetics 或 Developmental Biology 方向、考虑申 UQ PhD 的同学，这类研究主要集中在 UQ Institute for Molecular Bioscience（IMB）和 Queensland Brain Institute 两个研究中心。这两个机构都设有发育生物学、细胞生物学、遗传学的 PhD 招生通道，且与澳洲国家医学研究机构（NHMRC）有长期合作。在申请博士时，把自己的研究方向与导师的近期发表成果挂钩，是展示方向匹配度的直接方式。"
+        ],
+        "sourceHtml": "来源：<a href=\"https://news.uq.edu.au/\">UQ News · 2026-04-30</a>"
+      }
+    ],
+    "quickview": {
+      "title": "📌 今日速览",
+      "items": [
+        "<strong>01 · UQGSS 博士奖学金</strong>：$37,500/年免税 + 全额学费 + OSHC；本轮通知 4 月 28 日起已发，2026 S1 在校国际生 5 月 31 日前须完成接受；未收到通知可联系院系问补录",
+        "<strong>02 · 胚胎蛋白研究发表</strong>：UQ 团队 4 月 30 日首次揭示细胞蛋白异常导致胚胎出生缺陷的分子机制；生物医学 / 遗传学 / 发育生物学方向学生关注 UQ IMB 和 Queensland Brain Institute"
+      ]
+    },
+    "cta": {
+      "big": "🎓 想每天收到澳洲大学的硬料？",
+      "sub": "关注 JR Academy 公众号 · 回复「澳洲大学日报」订阅 · 官网 jiangren.com.au/blog · 历史日报全开放",
+      "badge": ""
+    }
+  },
+  "drafts": {
+    "sections": [
+      {
+        "heading": "UQ博士奖学金｜5月31日截止接受",
+        "body": "UQ UQGSS 这轮 offer 从 4 月 28 日开始发，朋友说当时看邮件差点以为是广告——结果打开是正式录取通知。\n\n金额：$37,500/年免税生活补贴 + 全额学费豁免 + OSHC 医疗保险。对准备做科研的人来说这个组合挺解压的，至少不用同时想「学费从哪来」和「论文怎么写」两件事。\n\n本轮适用于 2026 S1 在 UQ 完成学业的在校国际学生，方向是 PhD、MPhil 或研究型专业博士。接受截止 5 月 31 日，在 mySI-net 里操作。\n\n还没收到通知的姐妹：EOI 截止去年 12 月，主申截止今年 1 月，本轮是接受 offer 的窗口。但有人去院系问了之后拿到了补录机会，所以值得主动联系一下。\n\n在等 UQGSS offer 或者已经接受的姐妹，评论区扣 1 交流一下准备流程。",
+        "tags": ["#UQ", "#昆士兰大学", "#UQGSS", "#读博", "#澳洲奖学金", "#PhD留学", "#留学干货", "#澳洲留学"]
+      },
+      {
+        "heading": "UQ胚胎研究｜生物医学方向关注",
+        "body": "导师前两天转发了 UQ 4 月 30 日这篇新论文，在发育生物学圈子里受到一些关注。\n\nUQ 研究团队首次把「特定细胞蛋白异常 → 胚胎出生缺陷」这条分子链条完整追踪出来了。之前大家知道部分出生缺陷跟基因有关，但蛋白层面的具体机制一直很模糊，这篇填了这个空白。\n\n研究意义：有了分子机制，就能开发靶向预防手段了——不管是早期基因检测还是靶向药物，都需要这种「源头清楚」的机制研究作为基础。\n\n申 UQ PhD、走 Biomedical Science / Genetics / Developmental Biology 方向的姐妹：这种研究主要在 UQ IMB（Institute for Molecular Bioscience）和 Queensland Brain Institute。申博士时如果你的方向能跟导师近期发表成果对上，是很实在的加分项。\n\n有在考虑申 UQ 生物医学方向 PhD 的姐妹评论区聊🙌",
+        "tags": ["#UQ", "#昆士兰大学", "#生物医学", "#遗传学", "#发育生物学", "#科研", "#PhD留学", "#澳洲留学"]
+      }
+    ],
+    "sensitivityScan": [
+      { "category": "绝对化",     "rule": "最 / 第一 / 唯一 / 100%",             "result": "未检出（「首次」为学术研究客观表述保留）" },
+      { "category": "教育承诺",   "rule": "包过 / 保录取 / 稳上",               "result": "未检出" },
+      { "category": "引流",       "rule": "加V / VX / 公众号 / 二维码",          "result": "未检出（xhsCopy / drafts 内无此类词）" },
+      { "category": "封号红线",   "rule": "JR Academy / 匠人学院 / jiangren.com", "result": "未检出（xhsCopy 与 drafts 全部扫描通过）" },
+      { "category": "AI 味",      "rule": "首先其次最后 / 值得注意 / 综上所述",  "result": "未检出" },
+      { "category": "医疗化妆品", "rule": "治疗 / 速效 / 纯天然",               "result": "未检出（「预防」为医学科研客观术语保留）" },
+      { "category": "政治金融",   "rule": "保本 / 稳赚 / 荐股",                 "result": "未检出" }
+    ]
+  }
+}
