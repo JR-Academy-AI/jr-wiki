@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Marketing Topics · 内容选题包</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --brand-red: #ff5757;
+  --brand-dark: #10162f;
+  --brand-yellow: #ffce44;
+  --brand-blue: #3b82f6;
+  --brand-green: #10b981;
+  --bg-cream: #fff1e7;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "DM Sans", "Noto Sans SC", sans-serif;
+  background: var(--bg-cream);
+  color: var(--brand-dark);
+  min-height: 100vh;
+  padding: 60px 24px 120px;
+  line-height: 1.65;
+}
+.wrap { max-width: 920px; margin: 0 auto; }
+
+header.page { margin-bottom: 40px; }
+.eyebrow {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase;
+  background: var(--brand-dark); color: #fff;
+  padding: 6px 14px; margin-bottom: 18px;
+}
+h1.page-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 900; letter-spacing: -1px; line-height: 1.05;
+  margin-bottom: 14px;
+}
+header.page > p { font-size: 15px; color: #444; max-width: 720px; }
+header.page a { color: var(--brand-red); font-weight: 700; }
+
+.note {
+  margin: 28px 0 0;
+  background: #fff;
+  border: 3px solid var(--brand-dark);
+  box-shadow: 6px 6px 0 var(--brand-dark);
+  padding: 18px 22px;
+  font-size: 13px; color: #333;
+  line-height: 1.7;
+}
+.note strong { color: var(--brand-red); }
+.note code {
+  background: var(--bg-cream);
+  padding: 1px 5px;
+  border: 1px solid #ddd;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+}
+
+.status {
+  margin: 48px 0;
+  padding: 24px;
+  background: #fff;
+  border: 3px dashed var(--brand-dark);
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  color: #666;
+}
+.status.error {
+  border-style: solid;
+  border-color: var(--brand-red);
+  background: #fff5f5;
+  color: var(--brand-dark);
+  text-align: left;
+}
+.status.error strong { color: var(--brand-red); }
+.status button {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--brand-dark); color: #fff;
+  border: 0; padding: 8px 16px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px; font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.status button:hover { background: var(--brand-red); }
+
+article.entry {
+  background: #fff;
+  border: 3px solid var(--brand-dark);
+  box-shadow: 8px 8px 0 var(--brand-dark);
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+article.entry > header {
+  background: var(--brand-dark); color: #fff;
+  padding: 18px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.entry-date {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 18px; font-weight: 700;
+  letter-spacing: 1px;
+}
+.entry-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 1px;
+}
+.entry-meta a { color: var(--brand-yellow); text-decoration: none; }
+.entry-meta a:hover { text-decoration: underline; }
+
+.md-body { padding: 28px 32px 36px; }
+.md-body h1 { font-family: "Bricolage Grotesque", sans-serif; font-size: 28px; margin: 0 0 12px; line-height: 1.2; }
+.md-body h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 22px; margin: 28px 0 10px; line-height: 1.25; padding-bottom: 6px; border-bottom: 2px solid var(--brand-dark); }
+.md-body h3 { font-size: 17px; margin: 20px 0 8px; }
+.md-body p { margin: 10px 0; font-size: 15px; }
+.md-body ul, .md-body ol { margin: 10px 0 10px 24px; }
+.md-body li { margin: 4px 0; font-size: 15px; }
+.md-body strong { color: var(--brand-dark); font-weight: 700; }
+.md-body a { color: var(--brand-red); }
+.md-body a:hover { text-decoration: underline; }
+.md-body code {
+  background: var(--bg-cream);
+  padding: 1px 6px;
+  border: 1px solid #e0d6cc;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+}
+.md-body pre {
+  background: var(--brand-dark); color: #fff;
+  padding: 14px 18px;
+  margin: 14px 0;
+  overflow-x: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+}
+.md-body pre code { background: transparent; border: 0; color: inherit; padding: 0; }
+.md-body blockquote {
+  border-left: 4px solid var(--brand-red);
+  padding: 4px 16px;
+  margin: 14px 0;
+  background: var(--bg-cream);
+  color: #555;
+  font-style: italic;
+}
+.md-body hr {
+  border: 0;
+  border-top: 2px dashed var(--brand-dark);
+  margin: 28px 0;
+}
+.md-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 14px 0;
+  font-size: 14px;
+}
+.md-body th, .md-body td {
+  border: 2px solid var(--brand-dark);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.md-body th { background: var(--brand-yellow); font-weight: 700; }
+.md-body img { max-width: 100%; height: auto; }
+
+.entry-error {
+  padding: 20px 24px;
+  background: #fff5f5;
+  color: var(--brand-dark);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+}
+.entry-error a { color: var(--brand-red); }
+
+footer.page { margin-top: 60px; padding-top: 24px; border-top: 2px solid rgba(16,22,47,0.15); font-size: 12px; color: #999; font-family: "JetBrains Mono", monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="page">
+  <span class="eyebrow">Internal · noindex</span>
+  <h1 class="page-title">Marketing Topics</h1>
+  <p>每周内容选题包 · 数据来自 <a href="https://github.com/JR-Academy-AI/omni-report/tree/main/marketing-topics" target="_blank" rel="noopener">omni-report/marketing-topics</a>，浏览器实时拉取，无需重新部署。</p>
+  <div class="note">
+    <strong>运营内部工具</strong>。本页 <code>noindex, nofollow</code>，不参与 SEO。push 新 md 到 omni-report 后约 30 秒内刷新本页即可看到最新内容。
+  </div>
+</header>
+
+<main id="feed">
+  <div class="status" id="status">⏳ 正在从 omni-report 拉取最新选题包…</div>
+</main>
+
+<footer class="page">
+  jr-wiki · marketing-topics viewer · 跨仓只读 · marked.js (CDN)
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+(function () {
+  var REPO = 'JR-Academy-AI/omni-report';
+  var DIR = 'marketing-topics';
+  var API_URL = 'https://api.github.com/repos/' + REPO + '/contents/' + DIR;
+  var feed = document.getElementById('feed');
+  var statusEl = document.getElementById('status');
+
+  if (typeof marked !== 'undefined' && marked.use) {
+    marked.use({ gfm: true, breaks: false });
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function showError(title, detail) {
+    statusEl.className = 'status error';
+    statusEl.innerHTML =
+      '<strong>' + escapeHtml(title) + '</strong><br>' +
+      '<div style="margin-top:8px;line-height:1.7">' + detail + '</div>' +
+      '<button onclick="location.reload()">重试</button>';
+  }
+
+  function dateFromName(name) {
+    var m = name.match(/^(\d{4}-\d{2}-\d{2})/);
+    return m ? m[1] : name.replace(/\.md$/, '');
+  }
+
+  function renderEntry(file, body, error) {
+    var date = dateFromName(file.name);
+    var rawHref = file.html_url || ('https://github.com/' + REPO + '/blob/main/' + DIR + '/' + file.name);
+    var sizeKb = file.size ? Math.round(file.size / 102.4) / 10 : null;
+
+    var html = ['<article class="entry">'];
+    html.push('<header>');
+    html.push('<div class="entry-date">' + escapeHtml(date) + '</div>');
+    html.push('<div class="entry-meta">');
+    if (sizeKb !== null) html.push(sizeKb + ' KB · ');
+    html.push('<a href="' + escapeHtml(rawHref) + '" target="_blank" rel="noopener">view on GitHub →</a>');
+    html.push('</div>');
+    html.push('</header>');
+
+    if (error) {
+      html.push('<div class="entry-error">');
+      html.push('<strong>加载失败</strong>: ' + escapeHtml(error.message || String(error)));
+      html.push('<br><a href="' + escapeHtml(rawHref) + '" target="_blank" rel="noopener">直接到 GitHub 看 →</a>');
+      html.push('</div>');
+    } else {
+      var rendered;
+      try {
+        rendered = marked.parse(body);
+      } catch (e) {
+        rendered = '<pre>' + escapeHtml(body) + '</pre>';
+      }
+      html.push('<div class="md-body">' + rendered + '</div>');
+    }
+    html.push('</article>');
+    return html.join('');
+  }
+
+  fetch(API_URL, { headers: { 'Accept': 'application/vnd.github+json' } })
+    .then(function (res) {
+      if (res.status === 403) {
+        return res.json().then(function (j) {
+          var msg = (j && j.message) || '';
+          if (/rate limit/i.test(msg)) {
+            throw new Error('RATE_LIMIT');
+          }
+          throw new Error('403: ' + msg);
+        });
+      }
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (list) {
+      if (!Array.isArray(list)) throw new Error('Unexpected response shape');
+      var files = list
+        .filter(function (f) { return f.type === 'file' && /\.md$/i.test(f.name) && f.name !== '.gitkeep'; })
+        .sort(function (a, b) { return a.name < b.name ? 1 : a.name > b.name ? -1 : 0; });
+
+      if (files.length === 0) {
+        statusEl.textContent = '暂无 marketing-topics 内容。';
+        return;
+      }
+
+      statusEl.textContent = '⏳ 正在拉取 ' + files.length + ' 篇选题包正文…';
+
+      return Promise.allSettled(files.map(function (f) {
+        return fetch(f.download_url).then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.text();
+        });
+      })).then(function (results) {
+        statusEl.remove();
+        var html = files.map(function (f, i) {
+          var r = results[i];
+          if (r.status === 'fulfilled') return renderEntry(f, r.value, null);
+          return renderEntry(f, null, r.reason);
+        }).join('');
+        feed.insertAdjacentHTML('beforeend', html);
+      });
+    })
+    .catch(function (err) {
+      if (err.message === 'RATE_LIMIT') {
+        showError('GitHub API 限流', 'GitHub Contents API 匿名限流 60 req/hr/IP，已超额。请等 1 小时后再试，或换网络环境。');
+      } else {
+        showError('加载失败', escapeHtml(err.message || String(err)) +
+          '<br><br>可以直接到 <a href="https://github.com/' + REPO + '/tree/main/' + DIR + '" target="_blank" rel="noopener">omni-report/' + DIR + '</a> 查看。');
+      }
+    });
+})();
+</script>
+
+</body>
+</html>
