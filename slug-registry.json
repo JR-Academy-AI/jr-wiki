@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-05-04T00:20:12.513Z",
+  "lockedAt": "2026-05-04T15:03:29.377Z",
   "version": 1,
   "slugs": [
     {
@@ -356,6 +356,10 @@
     },
     {
       "type": "book",
+      "slug": "kiro-guide"
+    },
+    {
+      "type": "book",
       "slug": "lovable-guide"
     },
     {
@@ -632,6 +636,31 @@
     {
       "type": "chapter",
       "book": "jules-guide",
+      "slug": "05-faq"
+    },
+    {
+      "type": "chapter",
+      "book": "kiro-guide",
+      "slug": "01-what-is-kiro"
+    },
+    {
+      "type": "chapter",
+      "book": "kiro-guide",
+      "slug": "02-getting-started"
+    },
+    {
+      "type": "chapter",
+      "book": "kiro-guide",
+      "slug": "03-core-features"
+    },
+    {
+      "type": "chapter",
+      "book": "kiro-guide",
+      "slug": "04-advanced-tips"
+    },
+    {
+      "type": "chapter",
+      "book": "kiro-guide",
       "slug": "05-faq"
     },
     {
