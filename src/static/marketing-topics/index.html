@@ -15,6 +15,7 @@
   --brand-yellow: #ffce44;
   --brand-blue: #3b82f6;
   --brand-green: #10b981;
+  --brand-orange: #c2410c;
   --bg-cream: #fff1e7;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,9 +27,10 @@ body {
   padding: 60px 24px 120px;
   line-height: 1.65;
 }
-.wrap { max-width: 920px; margin: 0 auto; }
+.wrap { max-width: 1080px; margin: 0 auto; }
+.wrap.detail { max-width: 920px; }
 
-header.page { margin-bottom: 40px; }
+header.page { margin-bottom: 36px; }
 .eyebrow {
   display: inline-block;
   font-family: "JetBrains Mono", monospace;
@@ -44,18 +46,18 @@ h1.page-title {
   margin-bottom: 14px;
 }
 header.page > p { font-size: 15px; color: #444; max-width: 720px; }
-header.page a { color: var(--brand-red); font-weight: 700; }
+header.page a { color: var(--brand-orange); font-weight: 700; }
 
 .note {
-  margin: 28px 0 0;
+  margin: 24px 0 0;
   background: #fff;
   border: 3px solid var(--brand-dark);
   box-shadow: 6px 6px 0 var(--brand-dark);
-  padding: 18px 22px;
+  padding: 16px 22px;
   font-size: 13px; color: #333;
   line-height: 1.7;
 }
-.note strong { color: var(--brand-red); }
+.note strong { color: var(--brand-orange); }
 .note code {
   background: var(--bg-cream);
   padding: 1px 5px;
@@ -65,7 +67,7 @@ header.page a { color: var(--brand-red); font-weight: 700; }
 }
 
 .status {
-  margin: 48px 0;
+  margin: 40px 0;
   padding: 24px;
   background: #fff;
   border: 3px dashed var(--brand-dark);
@@ -94,14 +96,92 @@ header.page a { color: var(--brand-red); font-weight: 700; }
 }
 .status button:hover { background: var(--brand-red); }
 
+/* List view */
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.card {
+  display: flex; flex-direction: column;
+  background: #fff;
+  border: 3px solid var(--brand-dark);
+  box-shadow: 8px 8px 0 var(--brand-dark);
+  text-decoration: none; color: inherit;
+  transition: transform .12s, box-shadow .12s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0 var(--brand-dark);
+}
+.card-header {
+  background: var(--brand-dark); color: #fff;
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.card-date {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 17px; font-weight: 700;
+  letter-spacing: 1px;
+}
+.card-size {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--brand-yellow);
+  letter-spacing: 1px;
+}
+.card-body { padding: 18px 22px 22px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.card-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 18px; font-weight: 800;
+  line-height: 1.3;
+}
+.card-preview {
+  font-size: 13px; color: #555;
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-cta {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(16,22,47,0.2);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px; font-weight: 700;
+  color: var(--brand-orange);
+}
+.card-cta .arrow { font-size: 18px; transition: transform .15s; }
+.card:hover .card-cta .arrow { transform: translateX(4px); }
+.card.broken .card-body { color: #999; }
+.card.broken .card-cta { color: #999; }
+
+/* Detail view */
+.back {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px; font-weight: 700;
+  color: var(--brand-dark);
+  border: 2px solid var(--brand-dark);
+  padding: 8px 14px;
+  background: #fff;
+  transition: background .15s, color .15s;
+}
+.back:hover { background: var(--brand-dark); color: #fff; }
+
 article.entry {
   background: #fff;
   border: 3px solid var(--brand-dark);
   box-shadow: 8px 8px 0 var(--brand-dark);
-  margin-bottom: 40px;
   overflow: hidden;
 }
-article.entry > header {
+article.entry > header.entry-header {
   background: var(--brand-dark); color: #fff;
   padding: 18px 24px;
   display: flex; align-items: center; justify-content: space-between;
@@ -175,31 +255,22 @@ article.entry > header {
 .md-body th { background: var(--brand-yellow); font-weight: 700; }
 .md-body img { max-width: 100%; height: auto; }
 
-.entry-error {
-  padding: 20px 24px;
-  background: #fff5f5;
-  color: var(--brand-dark);
-  font-family: "JetBrains Mono", monospace;
-  font-size: 13px;
-}
-.entry-error a { color: var(--brand-red); }
-
 footer.page { margin-top: 60px; padding-top: 24px; border-top: 2px solid rgba(16,22,47,0.15); font-size: 12px; color: #999; font-family: "JetBrains Mono", monospace; }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap" id="wrap">
 
 <header class="page">
   <span class="eyebrow">Internal · noindex</span>
   <h1 class="page-title">Marketing Topics</h1>
-  <p>每周内容选题包 · 数据来自 <a href="https://github.com/JR-Academy-AI/omni-report/tree/main/marketing-topics" target="_blank" rel="noopener">omni-report/marketing-topics</a>，浏览器实时拉取，无需重新部署。</p>
+  <p>每周内容选题包 · 数据来自 <a href="https://github.com/JR-Academy-AI/omni-report/tree/main/marketing-topics" target="_blank" rel="noopener">omni-report/marketing-topics</a>，浏览器实时跨仓拉取，无需重新部署。</p>
   <div class="note">
-    <strong>运营内部工具</strong>。本页 <code>noindex, nofollow</code>，不参与 SEO。push 新 md 到 omni-report 后约 30 秒内刷新本页即可看到最新内容。
+    <strong>运营内部工具</strong>。本页 <code>noindex, nofollow</code>，不参与 SEO。push 新 md 到 omni-report 后约 30 秒内刷新本页即可看到最新内容。点击列表卡片进入详情页。
   </div>
 </header>
 
-<main id="feed">
+<main id="view">
   <div class="status" id="status">⏳ 正在从 omni-report 拉取最新选题包…</div>
 </main>
 
@@ -215,25 +286,19 @@ footer.page { margin-top: 60px; padding-top: 24px; border-top: 2px solid rgba(16
   var REPO = 'JR-Academy-AI/omni-report';
   var DIR = 'marketing-topics';
   var API_URL = 'https://api.github.com/repos/' + REPO + '/contents/' + DIR;
-  var feed = document.getElementById('feed');
+  var view = document.getElementById('view');
   var statusEl = document.getElementById('status');
 
   if (typeof marked !== 'undefined' && marked.use) {
     marked.use({ gfm: true, breaks: false });
   }
 
+  var state = { files: [], bodies: {} };
+
   function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
-  }
-
-  function showError(title, detail) {
-    statusEl.className = 'status error';
-    statusEl.innerHTML =
-      '<strong>' + escapeHtml(title) + '</strong><br>' +
-      '<div style="margin-top:8px;line-height:1.7">' + detail + '</div>' +
-      '<button onclick="location.reload()">重试</button>';
   }
 
   function dateFromName(name) {
@@ -241,36 +306,131 @@ footer.page { margin-top: 60px; padding-top: 24px; border-top: 2px solid rgba(16
     return m ? m[1] : name.replace(/\.md$/, '');
   }
 
-  function renderEntry(file, body, error) {
-    var date = dateFromName(file.name);
+  function extractTitle(md) {
+    if (!md) return null;
+    var m = md.match(/^\s*#\s+(.+)$/m);
+    return m ? m[1].trim() : null;
+  }
+
+  function extractPreview(md) {
+    if (!md) return '';
+    var lines = md.split('\n');
+    var collected = [];
+    for (var i = 0; i < lines.length; i++) {
+      var ln = lines[i].trim();
+      if (!ln) continue;
+      if (/^#+\s/.test(ln)) continue;
+      if (/^[-*]{3,}$/.test(ln)) continue;
+      var text = ln
+        .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+        .replace(/[*_`>#]/g, '')
+        .trim();
+      if (text) collected.push(text);
+      if (collected.join(' ').length > 200) break;
+    }
+    return collected.join(' ');
+  }
+
+  function setStatus(msg) {
+    if (!statusEl || !statusEl.parentNode) return;
+    statusEl.className = 'status';
+    statusEl.textContent = msg;
+  }
+
+  function showError(title, detail) {
+    view.innerHTML =
+      '<div class="status error">' +
+        '<strong>' + escapeHtml(title) + '</strong><br>' +
+        '<div style="margin-top:8px;line-height:1.7">' + detail + '</div>' +
+        '<button onclick="location.reload()">重试</button>' +
+      '</div>';
+  }
+
+  function renderList() {
+    document.getElementById('wrap').classList.remove('detail');
+    if (!state.files.length) {
+      view.innerHTML = '<div class="status">暂无 marketing-topics 内容。</div>';
+      return;
+    }
+    var html = ['<div class="list">'];
+    state.files.forEach(function (f) {
+      var date = dateFromName(f.name);
+      var body = state.bodies[f.name];
+      var hasBody = typeof body === 'string';
+      var title = hasBody ? extractTitle(body) : null;
+      var preview = hasBody ? extractPreview(body) : '';
+      var sizeKb = f.size ? Math.round(f.size / 102.4) / 10 : null;
+      var classes = 'card' + (hasBody ? '' : ' broken');
+      html.push('<a class="' + classes + '" href="#' + encodeURIComponent(date) + '">');
+      html.push('<div class="card-header">');
+      html.push('<div class="card-date">' + escapeHtml(date) + '</div>');
+      if (sizeKb !== null) html.push('<div class="card-size">' + sizeKb + ' KB</div>');
+      html.push('</div>');
+      html.push('<div class="card-body">');
+      if (title) html.push('<div class="card-title">' + escapeHtml(title) + '</div>');
+      if (preview) {
+        html.push('<div class="card-preview">' + escapeHtml(preview) + '</div>');
+      } else if (!hasBody) {
+        html.push('<div class="card-preview">⚠️ 正文加载失败，可点击查看 GitHub 原文。</div>');
+      }
+      html.push('<div class="card-cta"><span>查看详情</span><span class="arrow">→</span></div>');
+      html.push('</div>');
+      html.push('</a>');
+    });
+    html.push('</div>');
+    view.innerHTML = html.join('');
+  }
+
+  function renderDetail(date) {
+    document.getElementById('wrap').classList.add('detail');
+    var file = null;
+    for (var i = 0; i < state.files.length; i++) {
+      if (dateFromName(state.files[i].name) === date) { file = state.files[i]; break; }
+    }
+    if (!file) {
+      view.innerHTML =
+        '<a class="back" href="#">← 返回列表</a>' +
+        '<div class="status error"><strong>未找到对应日期</strong><br>' +
+        '<div style="margin-top:8px">' + escapeHtml(date) + ' 在 marketing-topics 中不存在。</div></div>';
+      return;
+    }
+    var body = state.bodies[file.name];
     var rawHref = file.html_url || ('https://github.com/' + REPO + '/blob/main/' + DIR + '/' + file.name);
     var sizeKb = file.size ? Math.round(file.size / 102.4) / 10 : null;
-
-    var html = ['<article class="entry">'];
-    html.push('<header>');
-    html.push('<div class="entry-date">' + escapeHtml(date) + '</div>');
+    var html = [];
+    html.push('<a class="back" href="#">← 返回列表</a>');
+    html.push('<article class="entry">');
+    html.push('<header class="entry-header">');
+    html.push('<div class="entry-date">' + escapeHtml(dateFromName(file.name)) + '</div>');
     html.push('<div class="entry-meta">');
     if (sizeKb !== null) html.push(sizeKb + ' KB · ');
     html.push('<a href="' + escapeHtml(rawHref) + '" target="_blank" rel="noopener">view on GitHub →</a>');
     html.push('</div>');
     html.push('</header>');
-
-    if (error) {
-      html.push('<div class="entry-error">');
-      html.push('<strong>加载失败</strong>: ' + escapeHtml(error.message || String(error)));
-      html.push('<br><a href="' + escapeHtml(rawHref) + '" target="_blank" rel="noopener">直接到 GitHub 看 →</a>');
-      html.push('</div>');
-    } else {
+    if (typeof body === 'string') {
       var rendered;
-      try {
-        rendered = marked.parse(body);
-      } catch (e) {
-        rendered = '<pre>' + escapeHtml(body) + '</pre>';
-      }
+      try { rendered = marked.parse(body); } catch (e) { rendered = '<pre>' + escapeHtml(body) + '</pre>'; }
       html.push('<div class="md-body">' + rendered + '</div>');
+    } else {
+      html.push('<div class="md-body"><div class="status error">' +
+        '<strong>正文加载失败</strong>: ' + escapeHtml((body && body.message) || '未知错误') +
+        '<br><a href="' + escapeHtml(rawHref) + '" target="_blank" rel="noopener">直接到 GitHub 看 →</a>' +
+        '</div></div>');
     }
     html.push('</article>');
-    return html.join('');
+    view.innerHTML = html.join('');
+    window.scrollTo(0, 0);
+  }
+
+  function route() {
+    var hash = location.hash.replace(/^#/, '');
+    if (hash) {
+      try { hash = decodeURIComponent(hash); } catch (e) {}
+      renderDetail(hash);
+    } else {
+      renderList();
+    }
   }
 
   fetch(API_URL, { headers: { 'Accept': 'application/vnd.github+json' } })
@@ -278,9 +438,7 @@ footer.page { margin-top: 60px; padding-top: 24px; border-top: 2px solid rgba(16
       if (res.status === 403) {
         return res.json().then(function (j) {
           var msg = (j && j.message) || '';
-          if (/rate limit/i.test(msg)) {
-            throw new Error('RATE_LIMIT');
-          }
+          if (/rate limit/i.test(msg)) throw new Error('RATE_LIMIT');
           throw new Error('403: ' + msg);
         });
       }
@@ -289,30 +447,28 @@ footer.page { margin-top: 60px; padding-top: 24px; border-top: 2px solid rgba(16
     })
     .then(function (list) {
       if (!Array.isArray(list)) throw new Error('Unexpected response shape');
-      var files = list
+      state.files = list
         .filter(function (f) { return f.type === 'file' && /\.md$/i.test(f.name) && f.name !== '.gitkeep'; })
         .sort(function (a, b) { return a.name < b.name ? 1 : a.name > b.name ? -1 : 0; });
 
-      if (files.length === 0) {
-        statusEl.textContent = '暂无 marketing-topics 内容。';
+      if (state.files.length === 0) {
+        renderList();
         return;
       }
 
-      statusEl.textContent = '⏳ 正在拉取 ' + files.length + ' 篇选题包正文…';
+      setStatus('⏳ 正在拉取 ' + state.files.length + ' 篇选题包正文…');
 
-      return Promise.allSettled(files.map(function (f) {
-        return fetch(f.download_url).then(function (res) {
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          return res.text();
+      return Promise.allSettled(state.files.map(function (f) {
+        return fetch(f.download_url).then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.text();
         });
       })).then(function (results) {
-        statusEl.remove();
-        var html = files.map(function (f, i) {
+        state.files.forEach(function (f, i) {
           var r = results[i];
-          if (r.status === 'fulfilled') return renderEntry(f, r.value, null);
-          return renderEntry(f, null, r.reason);
-        }).join('');
-        feed.insertAdjacentHTML('beforeend', html);
+          state.bodies[f.name] = r.status === 'fulfilled' ? r.value : (r.reason || new Error('failed'));
+        });
+        route();
       });
     })
     .catch(function (err) {
@@ -323,6 +479,8 @@ footer.page { margin-top: 60px; padding-top: 24px; border-top: 2px solid rgba(16
           '<br><br>可以直接到 <a href="https://github.com/' + REPO + '/tree/main/' + DIR + '" target="_blank" rel="noopener">omni-report/' + DIR + '</a> 查看。');
       }
     });
+
+  window.addEventListener('hashchange', route);
 })();
 </script>
 
