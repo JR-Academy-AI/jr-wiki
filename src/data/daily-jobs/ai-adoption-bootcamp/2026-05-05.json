@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-adoption-bootcamp",
+  "date": "2026-05-05",
+  "cohort": "AU",
+  "generatedAt": "2026-05-05T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK returned 403)",
+  "jobs": [
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior",
+      "title": "Junior Technology Consultant – AI & Data",
+      "company": "EY",
+      "location": "Sydney, NSW",
+      "posted": "Recently posted",
+      "url": "https://eyglobal.yello.co/jobs/An1Um9KoZw7GKQMNBztiug",
+      "why": "EY 明确 Junior 标签的 AI & Data 咨询岗，入场级 Technology Consultant；AI Adoption Bootcamp 的 AI 需求分析、变革管理和数据战略模块直接对应该岗位的客户交付职责，学完 Bootcamp 核心课程即可投递，EY 多行业客户环境有助快速积累 AI 落地方法论案例。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "亮点档 · Named Program",
+      "title": "2026 Graduate Program – Technology & Transformation: Data & Analytics",
+      "company": "Deloitte Australia",
+      "location": "Sydney / Melbourne",
+      "posted": "Posted Feb 2026; applications closed 7 Apr 2026",
+      "url": "https://au.gradconnection.com/employers/deloitte/jobs/deloitte-2026-graduate-program-technology-transformation-data-analytics/",
+      "why": "Deloitte T&T Data & Analytics Graduate Program，涵盖数据战略、预测建模和高级分析，Graduate Learning Academy 提供系统培训；AI Adoption Bootcamp 的 AI 战略咨询方向正好对接 Deloitte 数字化转型项目，2026 届申请窗口已关闭，但学员可以此作为 2027 届备战目标（7 月或明年 1 月开始）。"
+    }
+  ]
+}

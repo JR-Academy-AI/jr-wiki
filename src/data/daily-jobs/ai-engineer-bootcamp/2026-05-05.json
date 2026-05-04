@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-05-05",
+  "cohort": "AU",
+  "generatedAt": "2026-05-05T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK returned 403)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "AI Engineer (Enterprise Data Platforms)",
+      "company": "EY",
+      "location": "Sydney, NSW",
+      "posted": "8 Feb 2026",
+      "url": "https://careers.ey.com/ey/job/Sydney-AI-Engineer-(Enterprise-Data-Platforms),-AI-and-Data,-Technology-Consulting-NSW-2000/1291634301/",
+      "why": "EY 澳洲 AI & Data 实践的主力工程岗，2026 年 2 月发布，要求 LLM/GenAI 应用设计、Agentic AI workflow、Python 和云架构能力，覆盖 Bootcamp Phase 2（RAG + 向量数据库）和 Phase 3（LLM 生产部署）的核心技术栈；积累 2-3 年后可直接投递，EY 的 Big4 品牌对比小公司可显著提升简历权重。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior",
+      "title": "Junior AI Engineers (Associates/Senior Associates)",
+      "company": "EY",
+      "location": "Sydney, NSW",
+      "posted": "Recently posted",
+      "url": "https://careers.ey.com/ey/job/Junior-AI-Engineers-(AssociatesSenior-Associates)-Technology-Consulting,-AI-&-Data-048583/1201028301/",
+      "why": "EY 明确打 Junior 标签的 AI 工程岗，Associate 入场级，覆盖金融、政府、零售等多行业客户项目；Bootcamp LLM 开发模块学完即有基础投递，Big4 咨询环境能快速积累跨行业 AI 落地案例，是从学员→从业者的最短路径之一。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "亮点档 · Named Program",
+      "title": "Software Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (remote-friendly)",
+      "posted": "Open – recruiting Feb–Jun 2026",
+      "url": "https://www.atlassian.com/company/careers/details/17823",
+      "why": "Atlassian 2026 届 Grad++ 项目，Backend/ML 系统方向均可申请，12 个月加速培训 + 世界级工程文化；Bootcamp 学员以 Atlassian 作为终极目标岗，提前备战其 ML/AI 系统面试（LLM 应用、可扩展性设计），T0 品牌简历背书价值最高。"
+    }
+  ]
+}

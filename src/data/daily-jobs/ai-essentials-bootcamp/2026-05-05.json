@@ -1,0 +1,19 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-05-05",
+  "cohort": "AU",
+  "generatedAt": "2026-05-05T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK returned 403)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Agentic AI Developer",
+      "company": "EY",
+      "location": "Sydney, NSW",
+      "posted": "Recently posted",
+      "url": "https://careers.ey.com/ey/job/Agentic-AI-Developer,-AI-&-Data,-Technology-Consulting-048583/1182296901/",
+      "why": "EY Agentic AI 专项开发岗，要求 LangChain + LLM + Python，3 年经验可投；Essentials Bootcamp 的 AI Builder 方向（工具链集成、Agent 编排）直接对应该岗位核心职责，是学员学完 AI 应用开发模块后的清晰职业方向，Big4 品牌在客户侧有更大项目规模与影响力。"
+    }
+  ]
+}

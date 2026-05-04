@@ -1,0 +1,39 @@
+{
+  "bootcamp": "business-analyst",
+  "date": "2026-05-05",
+  "cohort": "AU",
+  "generatedAt": "2026-05-05T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK returned 403)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Junior Data & AI Solutions Business Analyst",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "Recently posted",
+      "url": "https://recruitment.macquarie.com/en_US/careers/JobDetail/Junior-Data-AI-Solutions-Business-Analyst/19733",
+      "why": "Macquarie Group T1 金融机构，Data & AI Solutions 方向 BA，要求 2+ 年数据管理或 AI 项目 BA 经验；Bootcamp 的数据需求分析、业务流程建模和 AI 解决方案规划课程正是该岗位核心，学完 Bootcamp 后 1-2 年积累即可冲刺，Macquarie 品牌对于 BA 职业路径是澳洲市场顶尖跳板。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "可投档 · Junior",
+      "title": "Junior Business Analyst",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "Recently posted",
+      "url": "https://recruitment.macquarie.com/en_US/careers/JobDetail?jobId=20236",
+      "why": "Macquarie Group 直招 Junior BA，T1 金融机构入场级岗位；Bootcamp 的需求分析、敏捷交付和利益相关方管理课程直接对应 Macquarie Delivery and Execution Services 团队所需能力，毕业后即可投递，Macquarie 的大型企业环境和严格项目标准有助快速建立专业 BA 方法论积累。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "亮点档 · Named Program",
+      "title": "2026 Transformation Graduate Program – Business Analyst",
+      "company": "Westpac",
+      "location": "Sydney, NSW",
+      "posted": "Feb 2026 cohort active; 2027 intake TBC",
+      "url": "https://au.gradconnection.com/employers/westpac/jobs/westpac-group-2026-transformation-graduate-program-sydney/",
+      "why": "Westpac 变革 Graduate Program BA 方向，12 个月 3 轮轮岗 + 永久员工入职；Bootcamp 的数字化转型分析和变革管理模块与该项目高度匹配，2026 届已开始，学员以此为参照备战 2027 届申请（通常 6-8 月开放），澳洲 Big4 银行 Westpac 的 BA 路径是金融科技赛道的标准起点。"
+    }
+  ]
+}

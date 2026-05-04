@@ -1,0 +1,19 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-05-05",
+  "cohort": "AU",
+  "generatedAt": "2026-05-05T07:30:00+10:00",
+  "source": "WebSearch fallback (LinkedIn/SEEK returned 403)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Agentic AI Solution Architect",
+      "company": "EY",
+      "location": "Sydney, NSW",
+      "posted": "Recently posted",
+      "url": "https://careers.ey.com/ey/job/Agentic-AI-Solution-Architect,-AI-&-Data,-Technology-Consulting-048583/1182295801/",
+      "why": "EY Agentic AI 解决方案架构师是 RAG 工程师的长期职业天花板：需要 LLM/agent 全栈能力 + 企业级 AI 架构设计；Bootcamp RAG 课程覆盖的向量检索、chunk 策略、混合检索（BM25+dense）、re-ranking 正是该岗位基础技术储备，3-5 年后从 RAG 工程师向 AI 解决方案架构师进阶的最直接路径。"
+    }
+  ]
+}
