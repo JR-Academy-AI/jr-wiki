@@ -133,6 +133,43 @@
   .markdown-body :is(h1, h2, h3, h4)[id] {
     scroll-margin-top: 20px;
   }
+  /* mermaid 图容器 */
+  .markdown-body .mermaid {
+    background: #fafbfc;
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 24px 16px;
+    margin: 24px 0;
+    text-align: center;
+    overflow-x: auto;
+  }
+  .markdown-body .mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+  /* 4 档分工 legend（CSS-only chip） */
+  .legend-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 0;
+    padding: 12px 16px;
+    background: #f6f8fa;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .legend-row .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  .legend-ai { background: #e9d5ff; color: #5b21b6; border: 1px solid #7c3aed; }
+  .legend-aiHuman { background: #dbeafe; color: #1e3a8a; border: 1px solid #3b82f6; }
+  .legend-humanAi { background: #dcfce7; color: #14532d; border: 1px solid #16a34a; }
+  .legend-manual { background: #fef3c7; color: #78350f; border: 1px solid #f59e0b; }
 </style>
 </head>
 <body>
@@ -151,12 +188,31 @@
   <span id="last-updated"></span>
 </div>
 
+<div class="legend-row">
+  <strong style="font-size:13px;color:#57606a;margin-right:4px;">分工图例：</strong>
+  <span class="legend-item legend-ai">🤖 AI 全自动</span>
+  <span class="legend-item legend-aiHuman">🤖→✏️ AI 起稿人工 review</span>
+  <span class="legend-item legend-humanAi">✏️←🤖 人工为主 AI 辅助</span>
+  <span class="legend-item legend-manual">✏️ 纯人工</span>
+</div>
+
 <article id="content" class="markdown-body">
   <div class="loading">📖 加载中...</div>
 </article>
 
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
 <script>
+  // 把 ```mermaid 代码块转成 <pre class="mermaid"> 让 mermaid.js 自动渲染
+  const mermaidRenderer = {
+    code(token) {
+      if (token.lang === 'mermaid') {
+        return `<pre class="mermaid">${token.text}</pre>`;
+      }
+      return false; // fallback 到默认 renderer
+    }
+  };
+
   (async () => {
     const root = document.getElementById('content');
     try {
@@ -176,9 +232,30 @@
         md = md.slice(fmMatch[0].length);
       }
 
-      // 渲染
+      // 渲染（mermaid 自定义 + GFM）
+      marked.use({ renderer: mermaidRenderer });
       marked.use({ gfm: true, breaks: false, mangle: false, headerIds: true });
       root.innerHTML = marked.parse(md);
+
+      // 初始化 mermaid 并渲染
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: 'base',
+          themeVariables: {
+            fontFamily: '-apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif',
+            fontSize: '14px',
+            primaryColor: '#dbeafe',
+            primaryTextColor: '#1e3a8a',
+            primaryBorderColor: '#3b82f6',
+            lineColor: '#6b7280',
+            secondaryColor: '#fef3c7',
+            tertiaryColor: '#dcfce7'
+          },
+          flowchart: { curve: 'basis', padding: 12, nodeSpacing: 30, rankSpacing: 40 }
+        });
+        await mermaid.run({ querySelector: '.mermaid' });
+      }
 
       document.title = title + ' · 匠人学院';
 

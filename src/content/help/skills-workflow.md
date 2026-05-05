@@ -9,9 +9,6 @@ order: 99
 
 > 给员工看的"做一件具体事，要走哪些步骤、哪些 AI 做、哪些人工做"的工作流图谱。
 >
-> ⚠️ 本文档是**运营内部工具页**（noindex / nofollow），公网链接不参与索引。
-> 文档里相对链接（`../../docs/...`）指向 git repo 内部文件，浏览器里点不通——员工去 IDE / GitHub 看源 repo 即可。
->
 > **不是 skill 索引**（→ 看 [`docs/SKILLS_CATALOG.md`](../../../docs/SKILLS_CATALOG.md)，76 个 skill 按功能分 13 类）
 > **不是入职清单**（→ 看本目录 [`SKILL.md`](./SKILL.md) + `reference/week-1-checklist.md`）
 > **是工作场景 → 完整流程 + AI/人工分工**（本文档）
@@ -74,57 +71,32 @@ order: 99
 
 ### 流程图（17 步）
 
-```
-[1. 选活动 topic + 拍板]
-       │ ✏️ Marketing 主管 + 老板
-       ▼
-[2. 写策划案（人群 / 情绪 / 8 框架）]
-       │ 🤖→✏️ /offline-event-content-design
-       ▼
-[3. 策划案 review + 沙盘推演]
-       │ ✏️ 主管 + 老板（必给 100 分量表评分）
-       ▼
-[4. 选场地 + 排时间 + 嘉宾邀请]
-       │ ✏️ 活动统筹
-       ▼
-[5. 写活动详情页文章（Notion 写作）]
-       │ 🤖→✏️ /offline-event-article-quality
-       ▼
-[6. 详情页发到网站 + 报名表上线]
-       │ ✏️←🤖 Marketing / 开发
-       ▼
-[7. 出宣发海报 prompt（多版本 A/B）]
-       │ 🤖 /xhs-poster
-       ▼
-[8. 海报上传 ChatGPT 跑 persona 测试]
-       │ 🤖→✏️ /poster-user-test (ChatGPT)
-       ▼
-[9. 写公众号宣发文章（C 类推广文结构）]
-       │ 🤖→✏️ /wechat-article-quality
-       ▼
-[10. 写小红书 5 篇切角文案]
-       │ 🤖→✏️ /xhs-draft + /xhs-review + /xhs-score
-       ▼
-[11. 招募 + 培训 EA + 准备物料]
-       │ ✏️←🤖 /offline-event-sop（活动统筹）
-       ▼
-[12. 活动当天执行（签到 / 主持 / 流程）]
-       │ ✏️ 全员
-       ▼
-[13. 现场拍照 + 短视频素材采集]
-       │ ✏️ 摄影 / 设计 / 视频剪辑
-       ▼
-[14. 24h 内出复盘 / Recap 文章]
-       │ 🤖→✏️ /offline-event-article-quality
-       ▼
-[15. EOI 名单倒入系统 + 派单]
-       │ ✏️←🤖 /eoi-followup intake mode
-       ▼
-[16. 24h / 72h / 7d 三道闸跟进]
-       │ ✏️←🤖 /eoi-followup script + status mode（课程顾问）
-       ▼
-[17. 单活动 ROI 计算 + 复盘归档]
-       │ 🤖 /eoi-followup roi mode（Marketing 主管）
+```mermaid
+flowchart TD
+    s1["1. 选活动 topic + 拍板<br/>✏️ Marketing 主管 + 老板"]:::manual
+    s2["2. 写策划案<br/>🤖→✏️ /offline-event-content-design"]:::aiHuman
+    s3["3. 策划案 review + 沙盘推演<br/>✏️ 主管 + 老板"]:::manual
+    s4["4. 选场地 + 嘉宾邀请<br/>✏️ 活动统筹"]:::manual
+    s5["5. 写活动详情页文章<br/>🤖→✏️ /offline-event-article-quality"]:::aiHuman
+    s6["6. 详情页发到网站 + 报名表<br/>✏️←🤖 Marketing / 开发"]:::humanAi
+    s7["7. 出宣发海报 prompt<br/>🤖 /xhs-poster"]:::ai
+    s8["8. 海报 ChatGPT persona 测试<br/>🤖→✏️ /poster-user-test"]:::aiHuman
+    s9["9. 写公众号宣发文章<br/>🤖→✏️ /wechat-article-quality"]:::aiHuman
+    s10["10. 写小红书 5 篇切角<br/>🤖→✏️ /xhs-draft + /xhs-review + /xhs-score"]:::aiHuman
+    s11["11. 招募 + 培训 EA + 物料<br/>✏️←🤖 /offline-event-sop"]:::humanAi
+    s12["12. 活动当天执行<br/>✏️ 全员"]:::manual
+    s13["13. 现场拍照 + 短视频素材<br/>✏️ 摄影 / 视频剪辑"]:::manual
+    s14["14. 24h 内出 Recap 文章<br/>🤖→✏️ /offline-event-article-quality"]:::aiHuman
+    s15["15. EOI 名单倒入 + 派单<br/>✏️←🤖 /eoi-followup intake"]:::humanAi
+    s16["16. 24h / 72h / 7d 三道闸跟进<br/>✏️←🤖 /eoi-followup script + status"]:::humanAi
+    s17["17. 单活动 ROI 计算<br/>🤖 /eoi-followup roi"]:::ai
+
+    s1 --> s2 --> s3 --> s4 --> s5 --> s6 --> s7 --> s8 --> s9 --> s10 --> s11 --> s12 --> s13 --> s14 --> s15 --> s16 --> s17
+
+    classDef ai fill:#e9d5ff,stroke:#7c3aed,color:#1e1b4b,stroke-width:2px
+    classDef aiHuman fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a,stroke-width:2px
+    classDef humanAi fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef manual fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:2px
 ```
 
 ### 详细分工
@@ -174,45 +146,28 @@ order: 99
 
 ### 流程图（13 步）
 
-```
-[1. 提 topic 候选]
-       │ ✏️ Marketing
-       ▼
-[2. topic 可行性闸（爆款潜力 / 标题强度）]
-       │ 🤖 /webinar-topic-feasibility
-       ▼
-[3. 主管 review 评分 + 拍板]
-       │ ✏️ 主管（< 60 砍 / 60-79 改 / ≥ 80 直接做）
-       ▼
-[4. 邀请讲师 + 排档期]
-       │ ✏️ Marketing
-       ▼
-[5. 出讲座海报 prompt + persona 测试]
-       │ 🤖→✏️ /xhs-poster + /poster-user-test (ChatGPT)
-       ▼
-[6. 写讲座详情页 + 公众号 + 小红书 5 篇]
-       │ 🤖→✏️ /offline-event-article-quality + /wechat-article-quality + /xhs-*
-       ▼
-[7. 招生宣发 + EDM + 群发链接]
-       │ ✏️←🤖 Marketing
-       ▼
-[8. 直播彩排（讲师 + Marketing 主持）]
-       │ ✏️ 讲师 + Marketing
-       ▼
-[9. 直播执行（讲师 + 助理）]
-       │ ✏️ 讲师 + 主持
-       ▼
-[10. 录播剪辑 + 上传 / 长青化标题]
-       │ 🤖→✏️ 视频剪辑
-       ▼
-[11. 听众转化跟进（24h 内）]
-       │ ✏️←🤖 课程顾问 + /eoi-followup
-       ▼
-[12. 录播衍生（公众号长文 / 小红书拆 5 篇 / Bootcamp lesson 素材）]
-       │ 🤖→✏️ /xhs-draft + /wechat-article-quality
-       ▼
-[13. 复盘 + 录播长尾监控]
-       │ ✏️←🤖 Marketing
+```mermaid
+flowchart TD
+    s1["1. 提 topic 候选<br/>✏️ Marketing"]:::manual
+    s2["2. topic 可行性闸<br/>🤖 /webinar-topic-feasibility"]:::ai
+    s3["3. 主管 review 评分 + 拍板<br/>✏️ 主管"]:::manual
+    s4["4. 邀请讲师 + 排档期<br/>✏️ Marketing"]:::manual
+    s5["5. 出讲座海报 + persona 测试<br/>🤖→✏️ /xhs-poster + /poster-user-test"]:::aiHuman
+    s6["6. 写讲座详情页 + 公众号 + 小红书<br/>🤖→✏️ 多 skill 组合"]:::aiHuman
+    s7["7. 招生宣发 + EDM + 群发<br/>✏️←🤖 Marketing"]:::humanAi
+    s8["8. 直播彩排<br/>✏️ 讲师 + Marketing"]:::manual
+    s9["9. 直播执行<br/>✏️ 讲师 + 主持"]:::manual
+    s10["10. 录播剪辑 + 长青化标题<br/>🤖→✏️ 视频剪辑"]:::aiHuman
+    s11["11. 听众转化跟进 24h 内<br/>✏️←🤖 /eoi-followup"]:::humanAi
+    s12["12. 录播衍生内容<br/>🤖→✏️ /xhs-draft + /wechat-article-quality"]:::aiHuman
+    s13["13. 复盘 + 录播长尾监控<br/>✏️←🤖 Marketing"]:::humanAi
+
+    s1 --> s2 --> s3 --> s4 --> s5 --> s6 --> s7 --> s8 --> s9 --> s10 --> s11 --> s12 --> s13
+
+    classDef ai fill:#e9d5ff,stroke:#7c3aed,color:#1e1b4b,stroke-width:2px
+    classDef aiHuman fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a,stroke-width:2px
+    classDef humanAi fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef manual fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:2px
 ```
 
 ### 详细分工
@@ -258,36 +213,25 @@ order: 99
 
 ### 流程图（10 步）
 
-```
-[1. 看每日选题灵感]
-       │ 🤖 /xhs-topic-picker
-       ▼
-[2. 选切角 + 选账号]
-       │ ✏️ 新媒体（按账号人设）
-       ▼
-[3. AI 写初稿 3 切角]
-       │ 🤖 /xhs-draft（痛点版 / 故事版 / 干货版）
-       ▼
-[4. 选最佳切角 + 注入真实数据]
-       │ ✏️←🤖 新媒体
-       ▼
-[5. 出封面 + 内文图 prompt]
-       │ 🤖 /xhs-poster
-       ▼
-[6. 配图上传 ChatGPT 跑 persona 测试]
-       │ 🤖→✏️ /poster-user-test (ChatGPT)
-       ▼
-[7. 违禁词 + 降 AI 率检查]
-       │ 🤖 /xhs-review
-       ▼
-[8. 9 维度评分（发布线 75 分）]
-       │ 🤖 /xhs-score
-       ▼
-[9. < 75 改 / ≥ 75 通过 / 主管拍板]
-       │ ✏️ 新媒体（自决）+ 主管（必要时）
-       ▼
-[10. 发布 + 前 24h 监控（爆款放大 / 翻车止损）]
-       │ ✏️←🤖 新媒体
+```mermaid
+flowchart TD
+    s1["1. 看每日选题灵感<br/>🤖 /xhs-topic-picker"]:::ai
+    s2["2. 选切角 + 选账号<br/>✏️ 新媒体"]:::manual
+    s3["3. AI 写初稿 3 切角<br/>🤖 /xhs-draft 痛点 / 故事 / 干货"]:::ai
+    s4["4. 选最佳切角 + 注入真实数据<br/>✏️←🤖 新媒体"]:::humanAi
+    s5["5. 出封面 + 内文图 prompt<br/>🤖 /xhs-poster"]:::ai
+    s6["6. 配图 ChatGPT persona 测试<br/>🤖→✏️ /poster-user-test"]:::aiHuman
+    s7["7. 违禁词 + 降 AI 率检查<br/>🤖 /xhs-review"]:::ai
+    s8["8. 9 维度评分 发布线 75 分<br/>🤖 /xhs-score"]:::ai
+    s9["9. 拍板要不要发<br/>✏️ 新媒体 + 主管"]:::manual
+    s10["10. 发布 + 前 24h 监控<br/>✏️←🤖 新媒体"]:::humanAi
+
+    s1 --> s2 --> s3 --> s4 --> s5 --> s6 --> s7 --> s8 --> s9 --> s10
+
+    classDef ai fill:#e9d5ff,stroke:#7c3aed,color:#1e1b4b,stroke-width:2px
+    classDef aiHuman fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a,stroke-width:2px
+    classDef humanAi fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef manual fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:2px
 ```
 
 ### 详细分工
@@ -329,33 +273,24 @@ order: 99
 
 ### 流程图（9 步）
 
-```
-[1. 选选题（结合活动 / 课程 / 热点）]
-       │ ✏️ Marketing 主管 + 文案
-       ▼
-[2. 决定 5 类内容结构]
-       │ ✏️ 文案（A 资讯/B 教程/C 推广/D 故事/E 观点）
-       ▼
-[3. AI 起稿（按结构）]
-       │ 🤖 /blog-longform-writer 或 /wechat-article-quality 起稿
-       ▼
-[4. 改 / 注入真实数据 / 反 AI 味]
-       │ ✏️←🤖 文案
-       ▼
-[5. 出双尺寸封面 prompt（大图 + 小图 ≥ 24px 字号）]
-       │ 🤖 /xhs-poster
-       ▼
-[6. 封面 persona 测试]
-       │ 🤖→✏️ /poster-user-test (ChatGPT)
-       ▼
-[7. 9 维度评分（发布线 75）]
-       │ 🤖 /wechat-article-quality
-       ▼
-[8. 主管 review + 排版（手机端预览）]
-       │ ✏️ 主管
-       ▼
-[9. 发布 + 24h 监控（打开率 / 完读率 / 在看）]
-       │ ✏️←🤖 新媒体
+```mermaid
+flowchart TD
+    s1["1. 选选题<br/>✏️ Marketing 主管 + 文案"]:::manual
+    s2["2. 决定 5 类内容结构<br/>✏️ 文案 A / B / C / D / E 类"]:::manual
+    s3["3. AI 起稿 按结构<br/>🤖 /blog-longform-writer 或 /wechat-article-quality"]:::ai
+    s4["4. 改 + 注入真实数据 + 反 AI 味<br/>✏️←🤖 文案"]:::humanAi
+    s5["5. 出双尺寸封面 prompt<br/>🤖 /xhs-poster 公众号尺寸"]:::ai
+    s6["6. 封面 ChatGPT persona 测试<br/>🤖→✏️ /poster-user-test"]:::aiHuman
+    s7["7. 9 维度评分 发布线 75<br/>🤖 /wechat-article-quality"]:::ai
+    s8["8. 主管 review + 排版<br/>✏️ 主管"]:::manual
+    s9["9. 发布 + 24h 监控<br/>✏️←🤖 新媒体"]:::humanAi
+
+    s1 --> s2 --> s3 --> s4 --> s5 --> s6 --> s7 --> s8 --> s9
+
+    classDef ai fill:#e9d5ff,stroke:#7c3aed,color:#1e1b4b,stroke-width:2px
+    classDef aiHuman fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a,stroke-width:2px
+    classDef humanAi fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef manual fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:2px
 ```
 
 ### 详细分工
@@ -396,27 +331,22 @@ order: 99
 
 ### 流程图（7 步）
 
-```
-[1. 活动结束，收到 EOI 名单]
-       │ ✏️ Marketing（Aurora / Seren）
-       ▼
-[2. 名单倒入系统 + 派单]
-       │ ✏️←🤖 /eoi-followup intake mode → 落盘 curriculum/events/{slug}/eoi.json
-       ▼
-[3. ⏰ 24h 闸：first contact（必须）]
-       │ ✏️←🤖 课程顾问 + /eoi-followup script mode
-       ▼
-[4. ⏰ 72h 闸：update 沟通]
-       │ ✏️←🤖 课程顾问
-       ▼
-[5. ⏰ 7d 闸：close 决策]
-       │ ✏️ 课程顾问（成 / 不成 / 延后）
-       ▼
-[6. 状态回填系统]
-       │ ✏️←🤖 /eoi-followup status mode
-       ▼
-[7. 单活动 ROI 计算 + 归档]
-       │ 🤖 /eoi-followup roi mode（主管）
+```mermaid
+flowchart TD
+    s1["1. 收 EOI 名单<br/>✏️ Marketing Aurora / Seren"]:::manual
+    s2["2. 倒入系统 + 派单<br/>✏️←🤖 /eoi-followup intake"]:::humanAi
+    s3["3. ⏰ 24h 闸 first contact<br/>✏️←🤖 课程顾问 + /eoi-followup script"]:::humanAi
+    s4["4. ⏰ 72h 闸 update 沟通<br/>✏️←🤖 课程顾问"]:::humanAi
+    s5["5. ⏰ 7d 闸 close 决策<br/>✏️ 课程顾问"]:::manual
+    s6["6. 状态回填系统<br/>✏️←🤖 /eoi-followup status"]:::humanAi
+    s7["7. 单活动 ROI 计算<br/>🤖 /eoi-followup roi"]:::ai
+
+    s1 --> s2 --> s3 --> s4 --> s5 --> s6 --> s7
+
+    classDef ai fill:#e9d5ff,stroke:#7c3aed,color:#1e1b4b,stroke-width:2px
+    classDef aiHuman fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a,stroke-width:2px
+    classDef humanAi fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef manual fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:2px
 ```
 
 ### 详细分工
@@ -456,36 +386,25 @@ order: 99
 
 ### 流程图（10 步）
 
-```
-[1. 市场调研（竞品 / 需求 / 招聘趋势）]
-       │ 🤖 /bootcamp-research
-       ▼
-[2. 写 PRD（定位 / 用户 / 路径）]
-       │ 🤖→✏️ /bootcamp-plan
-       ▼
-[3. 老板 sign-off PRD]
-       │ ✏️ 老板
-       ▼
-[4. 自动生成大纲（模块 / lesson / 时长）]
-       │ 🤖 /career-bootcamp 或 /bootcamp-curriculum-creator
-       ▼
-[5. 大纲 review（教学主管 + 老板）]
-       │ ✏️ 教学主管 + 老板
-       ▼
-[6. 静态页生成（curriculum/{slug}/ 工作区）]
-       │ 🤖 同上
-       ▼
-[7. 本地静态页预览（确认视觉 / 文案）]
-       │ ✏️ 课程 PM
-       ▼
-[8. 大纲扩展为完整内容（所有 lesson 详细）]
-       │ 🤖→✏️ /expand-outline + /lesson-design
-       ▼
-[9. 同步到 production（Skills Data Manager）]
-       │ ✏️←🤖 /bootcamp-sync (SDM localhost:5188)
-       ▼
-[10. 上线后审计（体检翻车风险）]
-       │ 🤖 /curriculum-review
+```mermaid
+flowchart TD
+    s1["1. 市场调研<br/>🤖 /bootcamp-research"]:::ai
+    s2["2. 写 PRD<br/>🤖→✏️ /bootcamp-plan"]:::aiHuman
+    s3["3. 老板 sign-off PRD<br/>✏️ 老板"]:::manual
+    s4["4. 自动生成大纲<br/>🤖 /career-bootcamp 或 /bootcamp-curriculum-creator"]:::ai
+    s5["5. 大纲 review<br/>✏️ 教学主管 + 老板"]:::manual
+    s6["6. 静态页生成<br/>🤖 同上"]:::ai
+    s7["7. 本地静态页预览<br/>✏️ 课程 PM"]:::manual
+    s8["8. 大纲扩展为完整内容<br/>🤖→✏️ /expand-outline + /lesson-design"]:::aiHuman
+    s9["9. 同步到 production<br/>✏️←🤖 Skills Data Manager"]:::humanAi
+    s10["10. 上线后审计<br/>🤖 /curriculum-review"]:::ai
+
+    s1 --> s2 --> s3 --> s4 --> s5 --> s6 --> s7 --> s8 --> s9 --> s10
+
+    classDef ai fill:#e9d5ff,stroke:#7c3aed,color:#1e1b4b,stroke-width:2px
+    classDef aiHuman fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a,stroke-width:2px
+    classDef humanAi fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef manual fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:2px
 ```
 
 ### 详细分工
@@ -528,30 +447,23 @@ order: 99
 
 ### 流程图（8 步）
 
-```
-[1. 总指挥规划（FUNNEL_PLAN.md 单一真相文档）]
-       │ 🤖 /course-funnel-architect（调度下面 4 个子 skill）
-       ▼
-[2. ¥99 / $29 引流课设计（quick win 完整闭环）]
-       │ 🤖→✏️ /intro-course-design
-       ▼
-[3. 主课三档定价（自学 / 教学 / 陪跑）]
-       │ 🤖→✏️ /main-course-tier-design
-       ▼
-[4. D0-D7 不推销过渡序列]
-       │ 🤖→✏️ /funnel-handoff-design
-       ▼
-[5. 风险审计（翻车点扫描）]
-       │ 🤖 /curriculum-positioning-audit
-       ▼
-[6. 维护 FUNNEL_PLAN.md（单一真相）]
-       │ ✏️←🤖 课程 PM
-       ▼
-[7. 老板 sign-off（漏斗 + 定价）]
-       │ ✏️ 老板
-       ▼
-[8. 上线 + 数据监控（引流课 → 主课转化率）]
-       │ ✏️←🤖 课程 PM + Marketing
+```mermaid
+flowchart TD
+    s1["1. 总指挥规划<br/>🤖 /course-funnel-architect"]:::ai
+    s2["2. ¥99 / $29 引流课设计<br/>🤖→✏️ /intro-course-design"]:::aiHuman
+    s3["3. 主课三档定价<br/>🤖→✏️ /main-course-tier-design"]:::aiHuman
+    s4["4. D0-D7 不推销过渡序列<br/>🤖→✏️ /funnel-handoff-design"]:::aiHuman
+    s5["5. 风险审计<br/>🤖 /curriculum-positioning-audit"]:::ai
+    s6["6. 维护 FUNNEL_PLAN.md<br/>✏️←🤖 课程 PM"]:::humanAi
+    s7["7. 老板 sign-off<br/>✏️ 老板"]:::manual
+    s8["8. 上线 + 数据监控<br/>✏️←🤖 课程 PM + Marketing"]:::humanAi
+
+    s1 --> s2 --> s3 --> s4 --> s5 --> s6 --> s7 --> s8
+
+    classDef ai fill:#e9d5ff,stroke:#7c3aed,color:#1e1b4b,stroke-width:2px
+    classDef aiHuman fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a,stroke-width:2px
+    classDef humanAi fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef manual fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:2px
 ```
 
 ### 详细分工
@@ -591,24 +503,21 @@ order: 99
 
 ### 流程图（通用 6 步 + 角色专属 ramp-up）
 
-```
-[Day 1 上午: HR + IT 开账号 / 加群 / 装 VPN]
-       │ ✏️ HR + IT + 新员工
-       ▼
-[Day 1 下午: Buddy 1:1 + 看公司视频 + 读简介]
-       │ ✏️ 新员工 + Buddy
-       ▼
-[Day 2: 员工手册 + 工作模式 + 求助 4 阶段]
-       │ ✏️ 新员工
-       ▼
-[Day 3-5: 角色专属 ramp-up（按下表分流）]
-       │ ✏️←🤖 /employee-onboarding + 各角色专属 skill
-       ▼
-[Day 4-5: 第一份上手任务（真实活，不是模拟）]
-       │ ✏️←🤖 新员工 + Buddy
-       ▼
-[Day 7: Manager 1:1 review（30/60/90 day plan）]
-       │ ✏️ 新员工 + Manager
+```mermaid
+flowchart TD
+    s1["Day 1 上午<br/>HR + IT 开账号 / 加群 / 装 VPN<br/>✏️ HR + IT + 新员工"]:::manual
+    s2["Day 1 下午<br/>Buddy 1:1 + 公司视频 + 读简介<br/>✏️ 新员工 + Buddy"]:::manual
+    s3["Day 2<br/>员工手册 + 工作模式 + 求助 4 阶段<br/>✏️ 新员工"]:::manual
+    s4["Day 3-5<br/>角色专属 ramp-up<br/>✏️←🤖 /employee-onboarding"]:::humanAi
+    s5["Day 4-5<br/>第一份上手任务 真实活<br/>✏️←🤖 新员工 + Buddy"]:::humanAi
+    s6["Day 7<br/>Manager 1:1 review 30/60/90 plan<br/>✏️ 新员工 + Manager"]:::manual
+
+    s1 --> s2 --> s3 --> s4 --> s5 --> s6
+
+    classDef ai fill:#e9d5ff,stroke:#7c3aed,color:#1e1b4b,stroke-width:2px
+    classDef aiHuman fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a,stroke-width:2px
+    classDef humanAi fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef manual fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:2px
 ```
 
 ### 12 角色专属 ramp-up（Day 3-5）
@@ -650,31 +559,37 @@ order: 99
 👥 **主要参与人**：Marketing / 课程运营 / 课程顾问
 ⏱ **每天**：1-2 小时（不含创作）
 
-### 流程图（7 步）
+### 流程图（7 步 + 中段 3 路 AI 产物分流）
 
+```mermaid
+flowchart TD
+    s1["09:00 Daily Standup 10 min<br/>✏️ 全员"]:::manual
+    s2["09:15 检查每日 AI 生成产物<br/>✏️←🤖 Marketing 主管"]:::humanAi
+    s2a["/daily-jobs<br/>🤖 每日 3 岗位 → Bootcamp PM"]:::ai
+    s2b["omni-report 5 cron<br/>🤖 SEO/竞品/选题/AI 可见度/增长 → Marketing"]:::ai
+    s2c["/xhs-topic-picker<br/>🤖 每日 9 选题 → 新媒体"]:::ai
+    s3["10:00 EOI 跟进 24h / 72h / 7d 闸<br/>✏️←🤖 课程顾问 + /eoi-followup"]:::humanAi
+    s4["午间 内容产出<br/>🤖→✏️ W3 / W4 流程"]:::aiHuman
+    s5["下午 邮件 / 群消息 / 客服<br/>✏️ 全员"]:::manual
+    s6["16:00 每日内容发布 + 监控前 24h<br/>✏️←🤖 新媒体"]:::humanAi
+    s7["18:00 周报 / 日报<br/>✏️ 全员"]:::manual
+
+    s1 --> s2
+    s2 --> s2a
+    s2 --> s2b
+    s2 --> s2c
+    s2a --> s3
+    s2b --> s3
+    s2c --> s3
+    s3 --> s4 --> s5 --> s6 --> s7
+
+    classDef ai fill:#e9d5ff,stroke:#7c3aed,color:#1e1b4b,stroke-width:2px
+    classDef aiHuman fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a,stroke-width:2px
+    classDef humanAi fill:#dcfce7,stroke:#16a34a,color:#14532d,stroke-width:2px
+    classDef manual fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:2px
 ```
-[09:00 Daily Standup（10 min 全员同步）]
-       │ ✏️ 全员
-       ▼
-[09:15 检查每日 AI 生成产物（运营中心 dashboard）]
-       │ ✏️←🤖 Marketing 主管
-       ├─ /daily-jobs（每日 3 个岗位）→ Bootcamp PM
-       ├─ omni-report 5 cron routine（SEO / 竞品 / 选题 / AI 可见度 / 增长）→ Marketing
-       └─ /xhs-topic-picker（每日 9 选题）→ 新媒体
-       ▼
-[10:00 EOI 跟进（24h / 72h / 7d 闸）]
-       │ ✏️←🤖 课程顾问 + /eoi-followup
-       ▼
-[午间 内容产出（按 W3 / W4 流程跑）]
-       │ 🤖→✏️ Marketing / 新媒体
-       ▼
-[下午 邮件 / 群消息回复 / 客服]
-       │ ✏️ 全员
-       ▼
-[16:00 每日内容发布 + 监控前 24h（小红书 / 公众号）]
-       │ ✏️←🤖 新媒体
-       ▼
-[18:00 周报 / 日报（每周一交，每日 daily 不强制）]
+
+（注：上面的"每日 daily 日报不强制"原版备注已并入 step 7）
        │ ✏️ 全员
 ```
 
