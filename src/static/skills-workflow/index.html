@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Skills Workflow 图谱 · 匠人学院员工版</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.5.1/github-markdown-light.css">
+
+<style>
+  :root {
+    color-scheme: light;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #f6f8fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    color: #1f2328;
+  }
+  body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 24px 80px;
+  }
+  .top-banner {
+    background: #FFF8E7;
+    border: 2px solid #FFB800;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4d3800;
+  }
+  .top-banner strong {
+    color: #B85C00;
+    font-weight: 700;
+  }
+  .top-banner a {
+    color: #B85C00;
+    text-decoration: underline;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 12px 0 24px;
+    font-size: 13px;
+    color: #57606a;
+  }
+  .meta-row .badge {
+    background: #ddf4ff;
+    color: #0969da;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 36px 48px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .markdown-body table {
+    display: table;
+    width: 100%;
+  }
+  .markdown-body pre {
+    background: #f6f8fa;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .markdown-body pre code {
+    background: transparent;
+    padding: 0;
+  }
+  .markdown-body h1 {
+    border-bottom: 3px solid #d97757;
+    padding-bottom: 12px;
+  }
+  .markdown-body h2 {
+    border-bottom: 2px solid #e1e4e8;
+    padding-bottom: 8px;
+    margin-top: 40px;
+  }
+  .markdown-body h3 {
+    margin-top: 32px;
+  }
+  /* 移动端 */
+  @media (max-width: 767px) {
+    body { padding: 12px 8px 60px; }
+    .markdown-body { padding: 20px 16px; border-radius: 8px; }
+    .markdown-body h1 { font-size: 24px; }
+    .markdown-body h2 { font-size: 20px; }
+    .markdown-body h3 { font-size: 17px; }
+    .markdown-body table { font-size: 13px; }
+  }
+  /* loading */
+  .loading, .error {
+    text-align: center;
+    padding: 80px 20px;
+    color: #57606a;
+    font-size: 16px;
+  }
+  .error {
+    background: #ffe8e8;
+    border: 1px solid #ff5555;
+    color: #b30000;
+    border-radius: 8px;
+    margin: 32px auto;
+    max-width: 600px;
+    text-align: left;
+    padding: 20px;
+  }
+  /* 打印优化 */
+  @media print {
+    body { background: white; padding: 0; max-width: 100%; }
+    .top-banner, .meta-row { display: none; }
+    .markdown-body { box-shadow: none; padding: 0; max-width: 100%; }
+  }
+  /* 锚点滚动 offset */
+  .markdown-body :is(h1, h2, h3, h4)[id] {
+    scroll-margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  ⚠️ <strong>员工内部工具页</strong>（noindex / 公网链接不参与索引）。
+  这是 <code>.claude/skills/employee-onboarding/SKILLS_WORKFLOW.md</code> 的渲染镜像。
+  权威源在 git repo：<a href="https://bitbucket.org/jiang_ren/jr-academy-ai/src/main/.claude/skills/employee-onboarding/SKILLS_WORKFLOW.md" target="_blank" rel="noopener">查看源文件</a>
+</div>
+
+<div class="meta-row">
+  <span class="badge">9 个 workflow</span>
+  <span class="badge">4 档 AI/人工分工</span>
+  <span class="badge">10 条红线总表</span>
+  <span class="badge">12 角色速查</span>
+  <span id="last-updated"></span>
+</div>
+
+<article id="content" class="markdown-body">
+  <div class="loading">📖 加载中...</div>
+</article>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script>
+  (async () => {
+    const root = document.getElementById('content');
+    try {
+      // dist/skills-workflow/index.html 上一级 → content/help/skills-workflow.md
+      const res = await fetch('../content/help/skills-workflow.md', { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status} 读取 markdown 失败`);
+      let md = await res.text();
+
+      // 抽 frontmatter（不渲染但取 title）
+      const fmMatch = md.match(/^---\n([\s\S]*?)\n---\n/);
+      let title = 'Skills Workflow 图谱';
+      if (fmMatch) {
+        const titleLine = fmMatch[1].split('\n').find(l => l.trim().startsWith('title:'));
+        if (titleLine) {
+          title = titleLine.replace(/^title:\s*"?/, '').replace(/"$/, '').trim();
+        }
+        md = md.slice(fmMatch[0].length);
+      }
+
+      // 渲染
+      marked.use({ gfm: true, breaks: false, mangle: false, headerIds: true });
+      root.innerHTML = marked.parse(md);
+
+      document.title = title + ' · 匠人学院';
+
+      // last-updated 时间戳（从 fetch 响应头）
+      const lastMod = res.headers.get('last-modified');
+      if (lastMod) {
+        document.getElementById('last-updated').textContent = '· 最后更新 ' + new Date(lastMod).toLocaleString('zh-CN', { timeZone: 'Australia/Sydney' });
+      }
+    } catch (err) {
+      root.innerHTML = `<div class="error">
+        <strong>⚠️ 加载失败：${err.message}</strong>
+        <p>可能原因：① markdown 还没 deploy 完（GitHub Pages 通常 1-2 分钟生效）；② 路径变化。</p>
+        <p>请联系 Lightman 或 marketing 主管。</p>
+        <p>tried: <code>../content/help/skills-workflow.md</code></p>
+      </div>`;
+    }
+  })();
+</script>
+</body>
+</html>
