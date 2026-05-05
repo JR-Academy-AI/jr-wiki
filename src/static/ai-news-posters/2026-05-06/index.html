@@ -1,0 +1,308 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-05-05T20:02:24.933Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-05-06（Canvas 版）</title>
+<meta name="description" content="2026-05-06 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v2.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v2.js 里。
+ * 数据来源：src/data/ai-daily/2026-05-06.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "date": "2026-05-06",
+  "summary": {
+    "hook": [
+      "Claude Opus 4.7 视觉大升级",
+      "GPT-5.5 进驻亚马逊云",
+      "DeepSeek V4 成本再破纪录"
+    ],
+    "sub": "48 小时内三大实验室同期交出成绩单，AI 军备赛白热化",
+    "items": [
+      {
+        "num": "01",
+        "cat": "模型发布",
+        "numColor": "#7C3AED",
+        "t": "Anthropic 发布 Claude Opus 4.7，高清视觉 + 百万上下文"
+      },
+      {
+        "num": "02",
+        "cat": "云端合作",
+        "numColor": "#059669",
+        "t": "GPT-5.5 登陆亚马逊 Bedrock，OpenAI 全面拥抱云厂商"
+      },
+      {
+        "num": "03",
+        "cat": "中国AI",
+        "numColor": "#DC2626",
+        "t": "DeepSeek V4 发布，华为 Ascend 芯片助力，成本低于 GPT-5.4 mini"
+      },
+      {
+        "num": "04",
+        "cat": "版权战争",
+        "numColor": "#1D4ED8",
+        "t": "5 大出版商起诉 Meta，Llama 训练数据版权纠纷升级"
+      },
+      {
+        "num": "05",
+        "cat": "行业动态",
+        "numColor": "#B45309",
+        "t": "马斯克法庭认了：Grok 曾蒸馏 OpenAI 模型，xAI 估值 1.75 万亿"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-claude-opus-47",
+      "idx": "01",
+      "catText": "模型发布",
+      "accent": "#7C3AED",
+      "bg": {
+        "top": "#EDE9FE",
+        "mid": "#DDD6FE",
+        "bot": "#C4B5FD",
+        "topRight": "#F5F3FF"
+      },
+      "title": [
+        {
+          "text": "Anthropic 发布 Claude Opus 4.7"
+        },
+        {
+          "text": "高清视觉 + 百万上下文正式来袭",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "Opus 4.7 支持 2576px 高清图像、1M token 上下文，"
+        },
+        {
+          "text": "成首个「高分辨率视觉」旗舰模型",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Anthropic 发布 Claude Opus 4.7，图像分辨率升至 2576px / 3.75MP，1M token 上下文，全面上线 API / Bedrock / Vertex AI / Foundry"
+        },
+        {
+          "k": "为什么重要",
+          "v": "视觉能力跃升让 Opus 4.7 可处理高清设计稿、医学影像，长文档能力直接挑战 Gemini 1.5 Pro"
+        },
+        {
+          "k": "对你的影响",
+          "v": "AI 工程师可借其做多模态 agent；非技术用户只需升级套餐即可体验高质量图文分析"
+        }
+      ],
+      "src": "📎 anthropic.com · github.blog · devtoolpicks.com"
+    },
+    {
+      "slug": "02-gpt55-amazon-bedrock",
+      "idx": "02",
+      "catText": "云端合作",
+      "accent": "#059669",
+      "bg": {
+        "top": "#D1FAE5",
+        "mid": "#A7F3D0",
+        "bot": "#6EE7B7",
+        "topRight": "#ECFDF5"
+      },
+      "title": [
+        {
+          "text": "GPT-5.5 正式登陆亚马逊 Bedrock"
+        },
+        {
+          "text": "OpenAI 全面拥抱主流云厂商",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "AWS 用户现可在 Bedrock 直接调用 GPT-5.5 / 5.4，"
+        },
+        {
+          "text": "统一安全管控与成本核算",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "OpenAI 与 AWS 达成合作，GPT-5.5 / GPT-5.4 及 Codex 编程 agent 入驻 Amazon Bedrock，支持 AWS 凭证直接鉴权"
+        },
+        {
+          "k": "为什么重要",
+          "v": "企业无需在「OpenAI API」和「自建云」间二选一，降低合规摩擦，Bedrock 用户量有望快速增长"
+        },
+        {
+          "k": "对你的影响",
+          "v": "AWS 生态开发者可零迁移接入最新 GPT 模型；IT 岗位需新增 Bedrock 集成与安全管理技能"
+        }
+      ],
+      "src": "📎 aws.amazon.com · bloomberg.com"
+    },
+    {
+      "slug": "03-deepseek-v4-huawei",
+      "idx": "03",
+      "catText": "中国AI",
+      "accent": "#DC2626",
+      "bg": {
+        "top": "#FEE2E2",
+        "mid": "#FECACA",
+        "bot": "#FCA5A5",
+        "topRight": "#FFF5F5"
+      },
+      "title": [
+        {
+          "text": "DeepSeek V4 发布：1 万亿参数"
+        },
+        {
+          "text": "7 项成本指标跑赢 GPT-5.4 mini",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "DeepSeek 携华为 Ascend 950 芯片"
+        },
+        {
+          "text": "再次以低成本冲击美系旗舰",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "DeepSeek V4 Pro 发布，1 万亿参数，混合注意力架构，100 万 token 上下文，SWE-bench 81%，华为 Ascend 950「超节点」集群支撑训练"
+        },
+        {
+          "k": "为什么重要",
+          "v": "7 项成本指标中 V4 有 5 项低于 GPT-5.4 mini，再次证明中国 AI 的性价比优势，美系独大格局持续被冲击"
+        },
+        {
+          "k": "对你的影响",
+          "v": "开发者可以更低价格获得顶级编码能力；中美 AI 芯片竞争格局再添变数，科技股估值将受冲击"
+        }
+      ],
+      "src": "📎 cnn.com · nist.gov · technologyreview.com"
+    },
+    {
+      "slug": "04-meta-publishers-lawsuit",
+      "idx": "04",
+      "catText": "版权战争",
+      "accent": "#1D4ED8",
+      "bg": {
+        "top": "#DBEAFE",
+        "mid": "#BFDBFE",
+        "bot": "#93C5FD",
+        "topRight": "#EFF6FF"
+      },
+      "title": [
+        {
+          "text": "5 大出版商联合起诉 Meta"
+        },
+        {
+          "text": "Llama 训练数据版权战全面升级",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "爱思唯尔、Hachette 等巨头曼哈顿联邦法院提诉，"
+        },
+        {
+          "text": "指控 Meta 盗版数百万书籍训练 Llama",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Elsevier、Cengage、Hachette、Macmillan、McGraw-Hill 联名起诉 Meta，指其未经授权用数百万书籍/期刊训练 Llama 系列模型"
+        },
+        {
+          "k": "为什么重要",
+          "v": "这是出版行业规模最大的集体诉讼；Meta 此前在类似案件以「合理使用」胜诉，但新案情或改变裁决走向"
+        },
+        {
+          "k": "对你的影响",
+          "v": "若出版商胜诉，AI 公司训练数据成本将暴涨，开源模型生态面临重塑；版权合规将成 AI 工程师必学技能"
+        }
+      ],
+      "src": "📎 thenextweb.com · usnews.com"
+    },
+    {
+      "slug": "05-musk-grok-openai-distillation",
+      "idx": "05",
+      "catText": "行业动态",
+      "accent": "#B45309",
+      "bg": {
+        "top": "#FEF3C7",
+        "mid": "#FDE68A",
+        "bot": "#FCD34D",
+        "topRight": "#FFFBEB"
+      },
+      "title": [
+        {
+          "text": "马斯克法庭认了：Grok 曾蒸馏"
+        },
+        {
+          "text": "OpenAI 模型，xAI 上市估值 1.75 万亿",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "Musk vs OpenAI 庭审第一周，马斯克承认 xAI 用蒸馏技术"
+        },
+        {
+          "text": "借鉴 OpenAI 输出训练 Grok",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "加州联邦法庭庭审中，马斯克承认 xAI 对 OpenAI 模型使用了蒸馏技术，并称这是行业通行做法；xAI 计划随 SpaceX 上市，目标估值 1.75 万亿美元"
+        },
+        {
+          "k": "为什么重要",
+          "v": "模型蒸馏被大规模使用但合法性存疑；判决将影响行业「借用」竞争对手输出来训练自家模型的惯例"
+        },
+        {
+          "k": "对你的影响",
+          "v": "若蒸馏被判违法，中小 AI 公司靠 GPT 输出快速迭代的路径将受阻；AI 行业法律风险认知将成职场加分项"
+        }
+      ],
+      "src": "📎 techcrunch.com · technologyreview.com · androidheadlines.com"
+    }
+  ],
+  "mp": {
+    "title": "Claude Opus 4.7 / GPT-5.5 亚马逊 / DeepSeek V4 / 出版商告 Meta / Musk 认了蒸馏 OpenAI"
+  },
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-05-06"
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+  FLEX_HEIGHT: true,
+  HEIGHT_TIERS: [1480, 1660, 1860, 2100, 2400],
+});
+</script>
+</body>
+</html>
