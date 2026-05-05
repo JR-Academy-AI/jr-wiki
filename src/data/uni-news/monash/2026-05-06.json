@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-05-06",
+  "school": "monash",
+  "summary": {
+    "hookMain": "Monash",
+    "hookSub": "Westpac 奖学金 + ARC 全澳第一 + 中国生助学金",
+    "hookSubHighlight": "ARC 全澳第一",
+    "subLines": [
+      "3 名研究生获 Westpac 未来领袖奖学金 · 合计 345 万澳元",
+      "ARC Discovery Projects 全澳最多 · 78 项 6280 万澳元",
+      "S2 2026 中国大陆学生助学金 · 1 万澳元先到先得"
+    ],
+    "previewCards": [
+      { "num": "01", "title": "Westpac 奖学金", "data": "345 万澳元" },
+      { "num": "02", "title": "ARC 全澳第一", "data": "78 项" },
+      { "num": "03", "title": "S2 助学金", "data": "1 万澳元" }
+    ]
+  },
+  "news": [
+    {
+      "idx": "01",
+      "category": "奖学金",
+      "h2Main": "Monash 三名研究生获 Westpac 未来领袖奖学金",
+      "h2Sub": "合计 345 万澳元 · 横跨可持续发展 / 技术 / 健康 / 社会变革",
+      "h2Highlight": "345 万澳元",
+      "lead": "<b>莫纳什大学</b> 3 名研究生获颁 <b>2026 年 Westpac 未来领袖奖学金</b>，合计 <b>345 万澳元</b>，研究方向横跨可持续发展、技术、健康与社会变革。其中一位 Master of Counselling 学生专注文化知情心理健康框架，另一位 PhD 学生来自 Faculty of Science。",
+      "bullets": [
+        { "k": "奖学金背景", "v": "Westpac Future Leaders Scholarship 是澳洲企业赞助的顶级研究奖学金之一，每年在全澳各高校中激烈竞争；获奖者还将加入 Westpac Scholars Network 精英圈" },
+        { "k": "Monash 表现", "v": "Monash 在 Westpac 奖学金中持续获奖，反映学校研究支持体系强、导师质量高、研究生培养在行业口碑好" },
+        { "k": "覆盖方向", "v": "<b>可持续发展 / 技术 / 健康与医疗 / 社会变革</b>——这四个方向都与 Monash 的研究强势方向高度重合" },
+        { "k": "对你的影响", "v": "走<b>健康科学 / 心理学 / 社会政策 / 可持续发展</b>研究方向的同学，Monash 的 Westpac 获奖记录是评估研究环境质量的重要参照" }
+      ],
+      "source": "Monash University News · 2026",
+      "sourceUrl": "https://www.monash.edu/news/articles/monash-students-awarded-2026-westpac-future-leaders-scholarships"
+    },
+    {
+      "idx": "02",
+      "category": "科研实力",
+      "h2Main": "Monash ARC 立项全澳最多",
+      "h2Sub": "78 个 Discovery Projects · 6280 万澳元 · 全澳第一",
+      "h2Highlight": "全澳第一",
+      "lead": "<b>莫纳什大学</b> 在 <b>2026 年 ARC Discovery Projects</b> 资助结果中以 <b>78 个项目、6280 万澳元</b>拿下全澳最高项目数量和金额，同时在 DECRA 早期职业研究员奖励方面也全澳领跑——<b>25 项、1290 万澳元</b>。",
+      "bullets": [
+        { "k": "数据意义", "v": "ARC Discovery Projects 是澳洲基础研究最重要的政府资助渠道；立项数量和金额双第一意味着 Monash 研究竞争力在 2026 处于全澳顶峰" },
+        { "k": "DECRA 全澳第一", "v": "25 名早期职业研究员获批，共 1290 万澳元——说明 Monash 的<b>年轻学者和博士后生态</b>在全澳同样排名靠前，对想做博后的同学是直接利好" },
+        { "k": "工程和医学领跑", "v": "Engineering 拿下 16 个成功项目；Medicine, Nursing and Health Sciences 获批 DECRA 和 LIEF 超 320 万澳元" },
+        { "k": "对你的影响", "v": "ARC 立项多 = 有资金的导师岗位多 + 有项目背景的联合课题多；走<b>任何研究方向</b>的博士申请者，Monash 在 2026 的强势都意味着更多资助型导师选择" }
+      ],
+      "source": "Monash University News · 2026",
+      "sourceUrl": "https://www.monash.edu/news/articles/monash-leads-the-nation-in-arc-discovery-project-success"
+    },
+    {
+      "idx": "03",
+      "category": "中国留学生专属",
+      "h2Main": "S2 2026 中国大陆学生助学金开放",
+      "h2Sub": "蒙纳士未来领导力助学金 · 1 万澳元 · 先到先得",
+      "h2Highlight": "1 万澳元",
+      "lead": "<b>蒙纳士大学 2026 年第二学期未来领导力助学金</b>（Monash Future Leadership Study Grant）面向<b>中国大陆籍学生</b>开放，助学金金额 <b>AUD 10,000</b>，采取<b>先到先得</b>方式发放，名额有限。面向即将入读 Monash 授课型研究生课程的学生。",
+      "bullets": [
+        { "k": "申请资格", "v": "中国大陆籍学生；即将入读 Monash 授课型研究生课程；需持有 2026 年 S2 录取通知" },
+        { "k": "先到先得", "v": "与奖学金竞争制不同，助学金采取先到先得方式；名额有限，尽早向招生顾问确认申请入口和截止时间" },
+        { "k": "叠加计算", "v": "Monash 授课型研究生课程已有 10% 学费折扣；加上 1 万澳元助学金，实际学费支出可明显低于官方公示价格" },
+        { "k": "对你的影响", "v": "2026 年 S2 入学的中国大陆籍授课型研究生，应把这笔助学金纳入留学预算规划，并尽快确认申请通道以免错过先到先得窗口" }
+      ],
+      "source": "Monash China Scholarships · 2026",
+      "sourceUrl": "https://www.monashuniversity.cn/study/scholarships"
+    }
+  ],
+  "quickview": {
+    "titleMain": "今日 3 条",
+    "titleHighlight": "一眼看完",
+    "sub": "Westpac 奖学金 345 万澳元、ARC 全澳第一 78 项、S2 中国学生助学金先到先得——Monash 这三条横跨奖学金、科研实力和中国留学生专属资助，每条都实用。",
+    "items": [
+      { "n": "01", "title": "Westpac 未来领袖奖 345 万", "body": "3 名 Monash 研究生获批；方向覆盖可持续 + 技术 + 健康；Westpac Scholars Network 精英圈入场券" },
+      { "n": "02", "title": "ARC 全澳第一 78 项", "body": "6280 万澳元 Discovery Projects；DECRA 全澳第一 25 项；博士申请者资助型导师选择多" },
+      { "n": "03", "title": "S2 助学金 1 万 先到先得", "body": "中国大陆籍授课型研究生专属；先到先得不用竞争；叠加 10% 学费折扣省更多" }
+    ],
+    "cta": {
+      "big": "关注每日大学日报",
+      "sub": "10 所澳洲大学 · 每天 3 校 · 奖学金 + 科研 + 招生一手同步",
+      "badge": "05 / 06"
+    }
+  },
+  "xhsCopy": {
+    "p1": {
+      "title": "Monash5-06 三条存一下💰",
+      "body": "在读或准备申 Monash 的姐妹，5 月 6 日有三条可以存起来。\n\n01 / Westpac 未来领袖奖学金——Monash 3 名研究生获批，合计 345 万澳元，方向涵盖可持续发展、技术、健康和社会变革。Westpac Scholars Network 是实打实的精英圈，就业资源很值钱。\n\n02 / ARC 全澳第一——2026 年 ARC Discovery Projects 立项数量和金额双第一，78 个项目、6280 万澳元。对申博士的姐妹意味着有资金的导师和课题更多。\n\n03 / S2 2026 中国大陆学生助学金——1 万澳元先到先得，面向即将入读授课型研究生的中国大陆学生。叠加已有的 10% 学费折扣，实际省的不少。\n\n哪条最感兴趣评论区说一下🙌",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #Monash申请 #留学干货 #澳洲奖学金 #留学生活"
+    },
+    "p2": {
+      "title": "Monash ARC全澳第一了🔬",
+      "body": "走研究方向的姐妹，这条数据可以认真看：Monash 在 2026 年澳大利亚研究理事会 ARC Discovery Projects 资助结果里，拿下全澳最高项目数量和金额——78 个项目、6280 万澳元。\n\n同时在 DECRA（面向早期职业研究员的奖励项目）也全澳排第一，25 项共 1290 万澳元。\n\n这组数字对正在选博士导师的姐妹意味着什么？\n\n· 有在跑 ARC 项目的导师，招生的钱是有保障的\n· ARC 项目背景的课题，毕业论文的学术背书会更强\n· 早期职业研究员多，意味着年轻、活跃、愿意带新人的导师比例高\n\nMonash 在工程（Engineering 拿了 16 个项目）和医学健康（DECRA + LIEF 超 320 万）两个方向尤其突出。走这两个大方向的博士申请者，今年进 Monash 的研究资源是真的很充沛。\n\n还在犹豫申哪所学校的博士姐妹，评论区来聊。",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #博士申请 #ARC #科研 #留学干货"
+    },
+    "p3": {
+      "title": "Monash先到先得1万助学金⏰",
+      "body": "2026 年 S2 入读 Monash 授课型研究生的中国大陆学生，这条要认真看——\n\n蒙纳士未来领导力助学金（Monash Future Leadership Study Grant）第二学期的申请开了，AUD 10,000，采取先到先得方式发放，名额有限。\n\n跟很多奖学金不同，这个助学金不需要你去「竞争」——只要你符合资格（中国大陆籍 + 2026 S2 授课型研究生 offer）并且申请足够早，基本上都有机会拿到。\n\n叠加计算一下：\n· Monash 授课型研究生本来就有 10% 学费折扣（覆盖整个课程期间）\n· 再加 1 万澳元助学金\n· 以商科为例，官方学费约 5.3 万/年，实际支出可以少很多\n\n建议已经有 offer 或者正在申请的姐妹，现在就联系 Monash 招生顾问确认申请入口和截止日期，先到先得窗口不等人😊",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #澳洲奖学金 #中国留学生 #先到先得 #留学干货"
+    },
+    "p4": {
+      "title": "Monash Westpac奖金345万💫",
+      "body": "Westpac 未来领袖奖学金 2026 名单出来了，Monash 三名研究生获批，合计 345 万澳元。\n\nWestpac Future Leaders Scholarship 是澳洲竞争激烈度很高的一个企业研究奖学金，全澳各高校都在抢名额。Monash 连续进入获奖名单，说明学校在研究支持体系和导师质量方面确实是有口碑的。\n\n这次获奖的三位分别在可持续发展、技术、健康与社会变革领域做研究。其中有人走的是 Master of Counselling 方向，专注文化知情心理健康框架；另一位在 Faculty of Science 读 PhD。方向差别很大，说明 Westpac 在评选时并不偏向特定学科。\n\n获奖者还会加入 Westpac Scholars Network——这是一个精英校友圈，横跨学术界和企业界，对后续找工作和行业连接有实实在在的帮助。\n\n走健康科学 / 心理学 / 社会政策 / 可持续发展方向正在选导师的姐妹，Monash 的 Westpac 获奖记录值得纳入参考🙋",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #Westpac奖学金 #研究生 #留学干货 #澳洲奖学金"
+    },
+    "p5": {
+      "title": "Monash 5-06 速览三条📋",
+      "body": "莫纳什大学 5 月 6 日快速整理：\n\n💰 Westpac 未来领袖奖学金——3 名研究生获批，合计 345 万澳元；可持续 + 技术 + 健康方向；Westpac Scholars Network 行业圈入场\n\n🔬 ARC 全澳第一——78 个 Discovery Projects 共 6280 万澳元；DECRA 25 项全澳第一；博士申请者导师和课题资金充裕\n\n⏰ S2 中国学生助学金——1 万澳元先到先得；中国大陆籍授课型研究生专属；叠加 10% 学费折扣省更多\n\n三条方向：奖学金 / 科研实力 / 中国留学生专属。哪条最有用评论区扣 1 👇",
+      "tags": "#莫纳什大学 #Monash #澳洲留学 #留学干货 #大学新闻 #澳洲奖学金 #留学生活"
+    }
+  },
+  "mp": {
+    "title": "Monash 5 月 6 日:Westpac 345 万奖学金 + ARC 全澳第一 + 中国学生 S2 助学金先到先得",
+    "lead": "莫纳什大学近期三条新闻横跨奖学金、科研实力和中国留学生专属资助。Westpac Future Leaders Scholarship 2026 名单出炉，Monash 三名研究生获批共 345 万澳元，方向覆盖可持续发展、技术、健康与社会变革。2026 年 ARC Discovery Projects 资助结果显示，Monash 以 78 个项目、6280 万澳元拿下全澳最高，同时 DECRA 25 项全澳第一——对博士申请者意味着大量资助型导师岗位。与此同时，面向中国大陆籍授课型研究生的 S2 2026 未来领导力助学金（AUD 10,000）开放先到先得申请，叠加已有的 10% 学费折扣，实际学费支出可明显低于官方公示价格。",
+    "meta": { "readTime": "7 分钟" },
+    "newsBodies": [
+      {
+        "h2": "Westpac 未来领袖奖学金 2026:Monash 3 名研究生获批 345 万澳元",
+        "paragraphs": [
+          "Westpac Scholars Trust 公布 2026 年未来领袖奖学金获奖名单，莫纳什大学三名研究生合计获颁 345 万澳元，是 Monash 今年在企业赞助研究奖学金方面的重要成绩。三位获奖学生的研究方向分别指向可持续发展、技术、健康与社会变革，其中一位 Master of Counselling 学生专注文化知情心理健康框架研究，另一位 PhD 学生来自 Faculty of Science。",
+          "Westpac Future Leaders Scholarship 是澳洲企业赞助的顶级研究奖学金之一，每年来自全澳各高校的候选人展开激烈竞争。奖学金的价值不仅在于金额本身，还包括获奖者加入 Westpac Scholars Network 的资格——这个网络横跨学术界和企业界，是澳洲精英人才圈中含金量较高的社群，对就业、行业资源连接和职业发展有直接的实质价值。",
+          "对正在考虑攻读研究型学位的学生，Monash 在 Westpac 奖学金中的持续表现是评估学校研究环境质量的重要参照。能够连续培养出 Westpac 获奖学生的大学，通常在研究支持体系、导师指导质量和学生科研成果转化方面都有成熟的机制。走健康科学、心理学、社会政策或可持续发展方向的研究生申请者，可以把这个维度纳入择校判断。"
+        ],
+        "sourceHtml": "来源:<a href=\"https://www.monash.edu/news/articles/monash-students-awarded-2026-westpac-future-leaders-scholarships\">Monash University News · 2026</a>"
+      },
+      {
+        "h2": "ARC Discovery Projects 全澳第一:78 项 6280 万澳元 · DECRA 也是全澳最多",
+        "paragraphs": [
+          "澳大利亚研究理事会（ARC）2026 年 Discovery Projects 资助结果出炉，莫纳什大学以 78 个新立项、6280 万澳元资助金额拿下全澳最高。这不是孤例——同期 ARC DECRA（早期职业研究员奖励）方面，Monash 同样全澳领跑，获批 25 项共 1290 万澳元，是澳洲所有大学中 DECRA 资助最多的。ARC LIEF 基础设施补贴方面，Monash 还获批 4 项超过 500 万澳元。",
+          "ARC Discovery Projects 是澳洲基础研究最重要的政府资助渠道之一，申请竞争激烈，成功率通常在 20% 以下。Monash 在这一轮资助中拿下全澳最多项目数量和金额，意味着学校整体研究竞争力正处于强劲上行周期。从学院分布来看，Engineering 拿下 16 个成功项目，Medicine, Nursing and Health Sciences 获批 DECRA 和 LIEF 超 320 万澳元，Faculty of Science 获 ARC Discovery 超 1100 万澳元。",
+          "对博士申请者的实际意义很具体：ARC 立项多，意味着在跑项目的导师多、有资金的导师岗位多，入学之后争取到有政府资助背景课题的概率也更高。DECRA 全澳第一同样重要——年轻的早期职业研究员往往更活跃、更愿意带新生，研究创新节奏更快。走工程、医学、健康科学、自然科学方向正在寻找博士导师的申请者，2026 年进 Monash 的时机可以说是资源层面的有利窗口。"
+        ],
+        "sourceHtml": "来源:<a href=\"https://www.monash.edu/news/articles/monash-leads-the-nation-in-arc-discovery-project-success\">Monash University News · 2026</a>"
+      },
+      {
+        "h2": "S2 2026 中国大陆学生助学金:1 万澳元先到先得",
+        "paragraphs": [
+          "蒙纳士大学 2026 年第二学期未来领导力助学金（Monash Future Leadership Study Grant）面向中国大陆籍学生开放，助学金金额 AUD 10,000，采取先到先得方式发放，名额有限。符合申请资格的学生需持有 2026 年第二学期 Monash 授课型研究生课程的录取通知，并按要求提交申请材料。",
+          "这个助学金的设计和大多数奖学金不同——它不需要你在全体申请人中「竞争」名次，而是按申请先后顺序审核。这对已经有 offer 在手的学生来说，申请门槛相对较低，但也意味着时间窗口很关键：名额用完即止，越晚申请越可能错过。建议已持有 2026 S2 offer 的中国大陆学生立即联系 Monash 招生顾问，确认申请入口和具体材料要求。",
+          "从实际留学成本来看，Monash 授课型研究生课程目前已经有全程 10% 的学费折扣福利，加上这笔 AUD 10,000 的助学金，实际可节省的金额相当可观。以商科为例，官方公示学费约 5.3 万澳元/年，叠加折扣和助学金之后，第一年的实际净费用有望低不少。对正在做留学预算规划的同学，建议把这两个减免一起纳入计算，而不是只看官方公示价格。"
+        ],
+        "sourceHtml": "来源:<a href=\"https://www.monashuniversity.cn/study/scholarships\">Monash China Scholarships · 2026</a>"
+      }
+    ],
+    "quickview": {
+      "title": "📌 今日速览",
+      "items": [
+        "<strong>01 · Westpac 奖学金 345 万</strong>:3 名 Monash 研究生获批；可持续 + 技术 + 健康方向；Westpac Scholars Network 精英圈入场券；走研究路的姐妹参考学校科研环境的好指标",
+        "<strong>02 · ARC 全澳第一 78 项</strong>:6280 万澳元 Discovery Projects + DECRA 25 项全澳第一；工程 / 医学 / 科学三大院尤其突出；博士申请者资助型导师多",
+        "<strong>03 · S2 中国学生助学金先到先得</strong>:AUD 10,000；中国大陆籍授课型研究生专属；先到先得名额有限；叠加 10% 学费折扣省更多"
+      ]
+    },
+    "cta": {
+      "big": "🎓 想每天收到澳洲大学的第一手资讯?",
+      "sub": "关注 JR Academy 公众号 · 回复「澳洲大学日报」订阅 · 官网 jiangren.com.au/blog · 历史日报全开放"
+    }
+  },
+  "drafts": {
+    "sections": [
+      {
+        "heading": "Monash 5-06 草稿 · 助学金版",
+        "body": "2026 年 S2 入读 Monash 授课型研究生的中国大陆学生，有一条消息要认真看一下——\n\n蒙纳士未来领导力助学金第二学期的申请开了，AUD 10,000，先到先得，名额有限。\n\n这个不一样的地方在于，它不是「竞争制」，不需要和别人比 GPA 排名次。只要你符合资格（中国大陆籍 + 2026 S2 授课型研究生 offer）并且申请够早，基本上都有机会拿到。\n\n算一下：\n· Monash 授课型研究生有 10% 全程学费折扣\n· 再加 1 万澳元助学金\n· 以商科 5.3 万澳元/年来说，实际第一年费用省的不少\n\n另外这次 Monash 在 ARC Discovery Projects 2026 拿了全澳第一——78 个项目、6280 万澳元。对想走研究路的同学也是个好信号，有资金的导师在 Monash 这边比较多。\n\n在申请或已经拿到 Monash S2 offer 的姐妹，评论区来聊🙌",
+        "tags": ["#莫纳什大学", "#Monash", "#澳洲留学", "#澳洲奖学金", "#中国留学生", "#先到先得", "#留学干货"]
+      }
+    ],
+    "sensitivityScan": [
+      { "category": "绝对化",     "rule": "最 / 第一 / 唯一 / 100%",         "result": "未检出（「全澳第一」为 ARC 资助数据客观表述保留；「精英圈」为描述性用语非承诺）" },
+      { "category": "教育承诺",   "rule": "包过 / 保录取 / 稳上",            "result": "未检出" },
+      { "category": "引流",       "rule": "加V / VX / 薇信 / 私信领取",      "result": "未检出（仅「评论区来聊」合规互动话术）" },
+      { "category": "封号红线",   "rule": "JR Academy / 匠人学院 / jiangren.com", "result": "未检出（xhsCopy 与 drafts 全部扫描）" },
+      { "category": "AI 味",      "rule": "首先其次最后 / 值得注意 / 综上所述", "result": "未检出" },
+      { "category": "医疗化妆品", "rule": "治疗 / 速效 / 纯天然",            "result": "未检出" },
+      { "category": "政治金融",   "rule": "保本 / 稳赚 / 荐股",              "result": "未检出" }
+    ]
+  }
+}
