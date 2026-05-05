@@ -24,7 +24,7 @@
 - [x] windsurf-guide/03-core-features.md — expand: 1873→2200+，补 Cascade 真实多文件改动 case（重构一个 Express middleware）
 - [x] windsurf-guide/04-advanced-tips.md — expand: 2038→2400+，补 .windsurfrules 案例（前端项目 / 后端项目）+ Cascade memory 用法
 - [x] windsurf-guide/05-faq.md — expand: 1741→2200+，补 vs Cursor / vs Claude Code 选型对比表 + 价格说明
-- [ ] windsurf-guide/06-cascade-debugging.md — expand: 1983→2200+，补真实 bug fix 完整流程 + 高效调试 prompt 模板 3-5 个
+- [x] windsurf-guide/06-cascade-debugging.md — expand: 1983→2200+，补真实 bug fix 完整流程 + 高效调试 prompt 模板 3-5 个
 
 ## P1 · 缺图
 
