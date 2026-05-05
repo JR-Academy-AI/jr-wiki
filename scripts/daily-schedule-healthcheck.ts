@@ -9,6 +9,8 @@
  *   2. uni-news：今天必须有 2 校（任意 2 校）的 JSON + 4 个产物
  *               (2026-04-29 改为 2 校 · routine 选 2 + self-heal 补 0~1 = 2-3 校/天)
  *   3. uni-events：只在周日检（DATE = 下周一的 JSON）
+ *   4. it-daily：每天 1 篇 blog md (2026-05-05 加)
+ *   5. weekly-holidays：只在周日检 latest.json mtime = 今天 (2026-05-05 加)
  *
  * 用法：bun run scripts/daily-schedule-healthcheck.ts [YYYY-MM-DD]
  *      不传日期 → 用今天的 AEST 日期
@@ -137,7 +139,21 @@ if (exists(hubFile)) {
 console.log('');
 
 // ─────────────────────────────────────────────────────────────
-// Check 3: Uni Events (周日检 · DATE = 下周一)
+// Check 3: IT Daily News (每天 1 篇 blog md)
+// ─────────────────────────────────────────────────────────────
+console.log('━━━ IT Daily News ━━━');
+
+const itDailyFile = `src/content/articles/it-daily-${DATE}.md`;
+if (exists(itDailyFile)) {
+	console.log(`  ✅ ${itDailyFile}`);
+} else {
+	console.log(`  ❌ 缺 ${itDailyFile}`);
+	issues.push(`IT Daily 缺 ${itDailyFile}`);
+}
+console.log('');
+
+// ─────────────────────────────────────────────────────────────
+// Check 4: Uni Events (周日检 · DATE = 下周一)
 // ─────────────────────────────────────────────────────────────
 console.log('━━━ Uni Events (周日产下周一预告) ━━━');
 
@@ -165,6 +181,41 @@ if (dow === 0) {
 console.log('');
 
 // ─────────────────────────────────────────────────────────────
+// Check 5: Weekly Holidays (周日检 · latest.json mtime = 今天 AEST)
+// ─────────────────────────────────────────────────────────────
+console.log('━━━ Weekly Holidays (周日刷新 latest.json) ━━━');
+
+if (dow === 0) {
+	const dailyFile = `src/data/weekly-holidays/${DATE}.json`;
+	const latestFile = `src/data/weekly-holidays/latest.json`;
+	if (exists(dailyFile)) {
+		console.log(`  ✅ ${dailyFile}`);
+	} else {
+		console.log(`  ❌ 缺 ${dailyFile}`);
+		issues.push(`Weekly Holidays 缺 ${dailyFile}`);
+	}
+	if (exists(latestFile)) {
+		const mtime = fs.statSync(path.join(ROOT, latestFile)).mtime;
+		const mtimeAest = new Intl.DateTimeFormat('en-CA', {
+			timeZone: 'Australia/Sydney',
+			year: 'numeric', month: '2-digit', day: '2-digit',
+		}).format(mtime);
+		if (mtimeAest === DATE) {
+			console.log(`  ✅ latest.json mtime = ${DATE} (今天刷新过)`);
+		} else {
+			console.log(`  ⚠️  latest.json mtime = ${mtimeAest} (期望 ${DATE})`);
+			warnings.push(`Weekly Holidays latest.json 没刷新 (mtime=${mtimeAest})`);
+		}
+	} else {
+		console.log(`  ❌ 缺 ${latestFile}`);
+		issues.push(`Weekly Holidays 缺 ${latestFile}`);
+	}
+} else {
+	console.log(`  ⏭️  非周日，跳过（weekly-holidays 周日 09:00 AEST 跑）`);
+}
+console.log('');
+
+// ─────────────────────────────────────────────────────────────
 // 汇总
 // ─────────────────────────────────────────────────────────────
 console.log('━━━ 汇总 ━━━');
@@ -181,9 +232,11 @@ if (issues.length > 0) {
 	console.log('  1. 本地 cd jr-wiki');
 	console.log(`  2. /ai-daily-news ${DATE}        # 补 AI 日报`);
 	console.log(`  3. /uni-news-poster ${DATE}     # 补大学新闻（自动选 2 校）`);
-	let nextStep = 4;
+	console.log(`  4. /it-daily-news ${DATE}        # 补 IT 认证日报`);
+	let nextStep = 5;
 	if (dow === 0) {
 		console.log(`  ${nextStep++}. /uni-events                  # 补下周活动预告`);
+		console.log(`  ${nextStep++}. /weekly-holidays             # 补节假日 latest.json`);
 	}
 	console.log(`  ${nextStep++}. git push`);
 	console.log(`  ${nextStep}. 上 https://claude.ai/code/scheduled 看 routine 日志找根因`);

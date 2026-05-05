@@ -96,23 +96,36 @@ for s in $SCHOOLS; do
   esac
 done
 
-# 跑 skill 3 次（每校一次），由 skill 内部产 md + JSON
+# 跑 skill 3 次（每校一次）·skill 自己跑 Step 5（pipeline）+ Step 6（hub）
+# 2026-05-05 起 skill 里 Step 5/6 已强制 imperative（不跑会 exit 1）
 for SCHOOL in $SCHOOLS; do
   echo "▶ 处理 $SCHOOL"
   /uni-news-poster $DATE $SCHOOL || { echo "❌ skill 失败 $SCHOOL"; exit 1; }
 done
 
-# 跑 pipeline + 验证产出
+# 🚨 routine bash 兜底校验（skill 即使返回 0 也再查一遍 4 产物齐全）
+# 5 月连续 4 天（05-01/02/03/05）skill 跑完 md+json 就 silent return，导致缺 render 阶段
+# 这里发现缺产物就**自动补跑 pipeline + rebuild hub**，不再靠 self-heal
 for SCHOOL in $SCHOOLS; do
-  bun run build:uni-news $DATE $SCHOOL || { echo "❌ pipeline 失败 $SCHOOL"; exit 1; }
   OUT=src/static/uni-news-social/${DATE}/${SCHOOL}
+  MISSING=0
   for f in xhs-posters.html mp-article.html xhs-drafts.md; do
-    [ -f $OUT/$f ] || { echo "❌ 缺 $OUT/$f"; exit 1; }
+    [ -f $OUT/$f ] || { echo "⚠️ skill 没产 $OUT/$f · 兜底跑 pipeline"; MISSING=1; }
   done
-  [ -f src/content/articles/uni-news-${SCHOOL}-${DATE}.md ] || { echo "❌ 缺 blog md $SCHOOL"; exit 1; }
+  [ -f src/content/articles/uni-news-${SCHOOL}-${DATE}.md ] || { echo "⚠️ 缺 blog md $SCHOOL · 兜底跑 pipeline"; MISSING=1; }
+
+  if [ $MISSING -eq 1 ]; then
+    bun run build:uni-news $DATE $SCHOOL || { echo "❌ 兜底 pipeline 也失败 $SCHOOL"; exit 1; }
+    # 重新校验
+    for f in xhs-posters.html mp-article.html xhs-drafts.md; do
+      [ -f $OUT/$f ] || { echo "❌ 兜底后仍缺 $OUT/$f"; exit 1; }
+    done
+    [ -f src/content/articles/uni-news-${SCHOOL}-${DATE}.md ] || { echo "❌ 兜底后仍缺 blog md $SCHOOL"; exit 1; }
+    echo "✅ 兜底 pipeline 救回 $SCHOOL"
+  fi
 done
 
-# rebuild hub
+# rebuild hub（兜底 · skill 应该已跑过，但万一漏了再跑一次幂等的）
 node scripts/rebuild-uni-hub.mjs || { echo "❌ rebuild-uni-hub 失败"; exit 1; }
 
 # Commit + push（3 次重试）

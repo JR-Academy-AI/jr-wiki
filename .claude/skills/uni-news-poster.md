@@ -126,16 +126,24 @@ universityNameCn: "{中文名}"
 | 医疗化妆品 | 治疗 / 速效 / 纯天然 | 大学新闻不碰 |
 | 政治金融 | 保本 / 稳赚 / 年化 / 荐股 | 大学新闻不碰 |
 
-### Step 5. 跑 pipeline + 自检
+### Step 5. 🚨 立即执行下面的 Bash — 不要跳过、不要总结、不要"我打算..."
+
+> **2026-05-05 立的强制规则**：5 月连续 4 天（05-01/02/03/05）routine 跑完 Step 4（写 md+json）就退出，没跑 Step 5/6 → blog md / 海报 / mp / xhs-drafts 全缺，要 self-heal commit 救。根因：agent 把 markdown 代码块当"参考资料"。
+>
+> **铁律**：写完 md+json 后**立即** `Bash` 执行下面整段；任何 `exit 1` 直接报错退出，不要尝试"修复"或"换个写法"。Step 5 跑完之前**禁止**给用户写总结。
 
 ```bash
+set -e
+
 for s in $SCHOOLS; do
+  echo "▶ Step 5 · $s · 自检 + pipeline 渲染"
   F=src/data/uni-news/$s/${DATE}.json
+
   # 1. JSON schema 验证
-  jq empty $F || exit 1
-  N=$(jq '.news | length' $F); [ $N -ge 2 ] && [ $N -le 4 ] || exit 1
+  jq empty $F || { echo "❌ JSON 解析失败 $F"; exit 1; }
+  N=$(jq '.news | length' $F); [ $N -ge 2 ] && [ $N -le 4 ] || { echo "❌ news 数量 $N 不在 2-4"; exit 1; }
   for p in p1 p2 p3 p4 p5; do
-    jq -e ".xhsCopy.$p.title and .xhsCopy.$p.body and .xhsCopy.$p.tags" $F >/dev/null || exit 1
+    jq -e ".xhsCopy.$p.title and .xhsCopy.$p.body and .xhsCopy.$p.tags" $F >/dev/null || { echo "❌ xhsCopy.$p 缺字段"; exit 1; }
   done
 
   # 2. 封号红线扫描（xhsCopy + drafts 正文，跳过 sensitivityScan 表和 mp.cta）
@@ -146,18 +154,24 @@ for s in $SCHOOLS; do
   # 3. mp.title 禁 ｜{校}日报 后缀
   jq -r '.mp.title // ""' $F | grep -qE '｜.*日报|\| .*日报' && { echo "❌ mp.title 违规"; exit 1; } || true
 
-  # 4. pipeline 渲染
-  bun run build:uni-news ${DATE} $s || exit 1
+  # 4. pipeline 渲染（必跑 · 不跑 = 缺海报/mp/blog md）
+  bun run build:uni-news ${DATE} $s || { echo "❌ pipeline 失败 $s"; exit 1; }
 
-  # 5. 4 个产物齐全
+  # 5. 4 个产物齐全（缺一个就是 Step 5 没真跑通）
   OUT=src/static/uni-news-social/${DATE}/$s
-  [ -f $OUT/xhs-posters.html ] && [ -f $OUT/mp-article.html ] && \
-    [ -f $OUT/xhs-drafts.md ] && [ -f src/content/articles/uni-news-$s-${DATE}.md ] || exit 1
+  for f in $OUT/xhs-posters.html $OUT/mp-article.html $OUT/xhs-drafts.md src/content/articles/uni-news-$s-${DATE}.md; do
+    [ -f $f ] || { echo "❌ 缺产物 $f · pipeline 没跑"; exit 1; }
+  done
+  echo "✅ Step 5 · $s · 4 产物齐"
 done
 
-# 6. rebuild hub
-node scripts/rebuild-uni-hub.mjs || exit 1
+# 6. rebuild hub（必跑 · 不跑 = hub 永远停在最后一次手工编辑日期）
+echo "▶ Step 6 · rebuild uni-news hub"
+node scripts/rebuild-uni-hub.mjs || { echo "❌ rebuild-uni-hub 失败"; exit 1; }
+echo "✅ Step 6 · hub 重建完成"
 ```
+
+**Step 5/6 跑完前禁止**：写 markdown 总结 / 改任何无关文件 / 给用户讲 "我已经..." 的话术。**只能跑 bash**。
 
 ## 📋 产出清单（每校）
 
