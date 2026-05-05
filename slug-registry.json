@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-05-04T23:36:07.059Z",
+  "lockedAt": "2026-05-05T14:14:20.704Z",
   "version": 1,
   "slugs": [
     {
@@ -252,6 +252,10 @@
     },
     {
       "type": "article",
+      "slug": "uni-news-umelb-2026-05-05"
+    },
+    {
+      "type": "article",
       "slug": "uni-news-unsw-2026-04-25"
     },
     {
@@ -269,6 +273,10 @@
     {
       "type": "article",
       "slug": "uni-news-unsw-2026-05-03"
+    },
+    {
+      "type": "article",
+      "slug": "uni-news-unsw-2026-05-05"
     },
     {
       "type": "article",
@@ -369,6 +377,10 @@
     {
       "type": "book",
       "slug": "lovable-guide"
+    },
+    {
+      "type": "book",
+      "slug": "manus-guide"
     },
     {
       "type": "book",
@@ -694,6 +706,31 @@
     {
       "type": "chapter",
       "book": "lovable-guide",
+      "slug": "05-faq"
+    },
+    {
+      "type": "chapter",
+      "book": "manus-guide",
+      "slug": "01-what-is-manus"
+    },
+    {
+      "type": "chapter",
+      "book": "manus-guide",
+      "slug": "02-getting-started"
+    },
+    {
+      "type": "chapter",
+      "book": "manus-guide",
+      "slug": "03-core-features"
+    },
+    {
+      "type": "chapter",
+      "book": "manus-guide",
+      "slug": "04-advanced-tips"
+    },
+    {
+      "type": "chapter",
+      "book": "manus-guide",
       "slug": "05-faq"
     },
     {
