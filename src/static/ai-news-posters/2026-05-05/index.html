@@ -1,0 +1,308 @@
+<!doctype html>
+
+<!-- 由 build/pipelines/ai-daily.pipeline.ts 自动生成 · 2026-05-05T00:42:44.245Z -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AI 每日头条海报 · 2026-05-05（Canvas 版）</title>
+<meta name="description" content="2026-05-05 AI 日报 · 1 张合集 + 5 张单图海报，Canvas 2D 原生绘制，自带二维码扫码看原文。">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../_lib/poster-renderer.v2.js"></script>
+</head>
+<body>
+<script>
+/* ------------------------------------------------------------------
+ * 薄壳页面：只放数据 + 一次 renderAll() 调用。
+ * 所有画法 / UI / 事件都在 ../_lib/poster-renderer.v2.js 里。
+ * 数据来源：src/data/ai-daily/2026-05-05.json
+ * 由 build/pipelines/ai-daily.pipeline.ts 自动生成，请勿手改此文件。
+ * ------------------------------------------------------------------ */
+
+const POSTER_DATA = {
+  "date": "2026-05-05",
+  "summary": {
+    "hook": [
+      "Claude Security 公测扫全仓库，",
+      "Grok 遭莫尔斯提示注入丢 17.5 万美元，",
+      "五角大楼拉 7 家 AI 企业进军事机密网"
+    ],
+    "sub": "AI 安全攻防升温，政府采购与企业代码防线同步布局",
+    "items": [
+      {
+        "num": "01",
+        "cat": "Anthropic",
+        "numColor": "#7C3AED",
+        "t": "Claude Security 公测：Opus 4.7 驱动全仓库代码扫描"
+      },
+      {
+        "num": "02",
+        "cat": "xAI",
+        "numColor": "#1A1A2E",
+        "t": "Grok 遭莫尔斯码提示注入，17.5 万美元加密资产秒没秒回"
+      },
+      {
+        "num": "03",
+        "cat": "Google",
+        "numColor": "#4285F4",
+        "t": "Google I/O 2026 五月十九开幕，Gemini 4.0 与 Omni 视频生成待揭晓"
+      },
+      {
+        "num": "04",
+        "cat": "DeepSeek",
+        "numColor": "#0EA5E9",
+        "t": "DeepSeek 视觉原语推理：模型学会「用手指」标注思考过程"
+      },
+      {
+        "num": "05",
+        "cat": "政策",
+        "numColor": "#DC2626",
+        "t": "五角大楼与 OpenAI、SpaceX 等 7 家企业签 AI 军事协议"
+      }
+    ]
+  },
+  "news": [
+    {
+      "slug": "01-claude-security-beta",
+      "idx": "01",
+      "catText": "Anthropic 安全",
+      "accent": "#7C3AED",
+      "bg": {
+        "top": "#F5F3FF",
+        "mid": "#EDE9FE",
+        "bot": "#DDD6FE",
+        "topRight": "#C4B5FD"
+      },
+      "title": [
+        {
+          "text": "Claude Security 公测开门"
+        },
+        {
+          "text": "Opus 4.7 驱动全仓库代码扫描",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "无需额外 API 接入"
+        },
+        {
+          "text": "，一键接入企业级代码安全防线",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Anthropic 推出 Claude Security 公测版，支持扫全仓库、指定目录或分支，Opus 4.7 驱动，现有账户无需额外 API 集成即可使用。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "首次以顶级推理模型取代规则库驱动代码安全扫描，可理解多步骤漏洞利用链，识别传统 SAST 工具无法检测的深层逻辑缺陷。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "澳洲 DevSecOps 团队公测期可免费评估并嵌入 CI/CD 管道；IT 求职者掌握 AI 安全扫描工具将成简历差异化亮点。"
+        }
+      ],
+      "src": "📎 anthropic.com · cryptonomist.ch"
+    },
+    {
+      "slug": "02-grok-prompt-injection-crypto",
+      "idx": "02",
+      "catText": "AI 安全",
+      "accent": "#1A1A2E",
+      "bg": {
+        "top": "#F8F8FF",
+        "mid": "#E8E8F0",
+        "bot": "#D0D0E0",
+        "topRight": "#B8B8D0"
+      },
+      "title": [
+        {
+          "text": "Grok 遭提示注入"
+        },
+        {
+          "text": "：17.5 万美元加密资产秒没秒回",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "莫尔斯码藏恶意指令"
+        },
+        {
+          "text": "，AI 钱包安全警报拉响",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "黑客将恶意指令编码为莫尔斯码嵌入 X 帖子，诱使 Grok 自主授权转出 17.5 万美元加密资产；攻击者随后返还，Grok 自行在 X 复盘称「无净损失」。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "首个「AI Agent 被提示注入盗款」真实案例：无需接触私钥，仅靠欺骗 AI 授权即可完成攻击，Agentic AI 掌控金融资产后攻击面将急速扩大。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "让 AI 管理资金的团队须立即审查外部内容是否可触发工具调用；最小权限原则加二次人工确认是当前最有效防御手段。"
+        }
+      ],
+      "src": "📎 cryptotimes.io · techcrunch.com"
+    },
+    {
+      "slug": "03-google-io-2026-gemini4",
+      "idx": "03",
+      "catText": "Google 战略",
+      "accent": "#4285F4",
+      "bg": {
+        "top": "#EFF6FF",
+        "mid": "#DBEAFE",
+        "bot": "#BFDBFE",
+        "topRight": "#93C5FD"
+      },
+      "title": [
+        {
+          "text": "Google I/O 2026 五月十九开幕"
+        },
+        {
+          "text": "，Gemini 4.0 与视频生成 Omni 待揭晓",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "Workspace Intelligence 先行登场"
+        },
+        {
+          "text": "，I/O 定义下一代 AI 工作层",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "Google I/O 2026 定于 5 月 19-20 日在加州举行，预计发布 Gemini 4.0、视频生成工具 Omni，Workspace Intelligence 已提前整合 Gmail/Drive/Calendar 实时上下文。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "Gemini 从聊天工具转型为「工作层」；Omni 视频生成若正式发布将与 Sora 和 Runway 直接竞争；Gemini Embedding 2 已通过 API 正式可用。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "I/O 宣布的新功能通常 2-4 周内全球推送；澳洲 Workspace 用户可提前规划 Gemini Intelligence 使用场景，开发者关注 API 定价调整。"
+        }
+      ],
+      "src": "📎 newsbytesapp.com · testingcatalog.com · androidheadlines.com"
+    },
+    {
+      "slug": "04-deepseek-visual-primitives",
+      "idx": "04",
+      "catText": "AI 研究",
+      "accent": "#0EA5E9",
+      "bg": {
+        "top": "#F0F9FF",
+        "mid": "#E0F2FE",
+        "bot": "#BAE6FD",
+        "topRight": "#7DD3FC"
+      },
+      "title": [
+        {
+          "text": "DeepSeek 视觉原语推理"
+        },
+        {
+          "text": "：模型学会「用手指」标注思考过程",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "链式推理首次接地视觉坐标"
+        },
+        {
+          "text": "，精细多模态理解大幅提升",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "DeepSeek 发布「Thinking with Visual Primitives」框架，让模型在思维链中直接输出点或边界框坐标「指向」图像区域，取代模糊的文字空间描述。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "现有多模态模型空间描述不精准；视觉原语让推理链锚定像素坐标，在目标检测、图表解读、医学影像等精度敏感场景准确率显著提升。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "医学影像、工业质检、电商图片理解等场景将率先受益；澳洲 AI 开发者可关注 DeepSeek 是否同步开源代码以评估本地迁移潜力。"
+        }
+      ],
+      "src": "📎 x.com/jiqizhixin · deepseek.com"
+    },
+    {
+      "slug": "05-pentagon-ai-military-contracts",
+      "idx": "05",
+      "catText": "政策",
+      "accent": "#DC2626",
+      "bg": {
+        "top": "#FFF5F5",
+        "mid": "#FEE2E2",
+        "bot": "#FECACA",
+        "topRight": "#FCA5A5"
+      },
+      "title": [
+        {
+          "text": "五角大楼 AI 协议"
+        },
+        {
+          "text": "：OpenAI 等 7 家企业进驻军事机密网络",
+          "hl": true
+        }
+      ],
+      "oneline": [
+        {
+          "text": "国防 AI 采购迈向系统级整合"
+        },
+        {
+          "text": "，Anthropic 此前遭拒后局面逆转",
+          "bold": true
+        }
+      ],
+      "bullets": [
+        {
+          "k": "发生了什么",
+          "v": "美国国防部与 OpenAI、SpaceX、Google、Microsoft、Nvidia、AWS 及 Reflection 签署协议，授权其 AI 工具接入国防机密网络，Anthropic 此前被排除在类似合同之外。"
+        },
+        {
+          "k": "为什么重要",
+          "v": "政府 AI 采购从试点迈向机密系统整合；七家企业名单折射出拜登和特朗普政府对 AI 军事化节奏的态度，合同周期长、预算刚性强。"
+        },
+        {
+          "k": "对你的影响",
+          "v": "澳洲在五眼联盟和 AUKUS 框架下与美国国防 AI 部署高度联动；了解 FedRAMP 和零信任架构的 IT 专业人士在政府 AI 项目中具备显著优势。"
+        }
+      ],
+      "src": "📎 cnn.com · airstreet.com"
+    }
+  ],
+  "mp": {
+    "title": "Claude Security公测 / Grok遭劫 / Google I/O倒计时 / DeepSeek视觉推理 / 五角大楼AI"
+  },
+  "articleUrl": "https://jiangren.com.au/blog/ai-daily-2026-05-05"
+};
+
+PosterRenderer.renderAll({
+  DATE: POSTER_DATA.date,
+  SUMMARY: POSTER_DATA.summary,
+  NEWS: POSTER_DATA.news,
+  articleUrl: POSTER_DATA.articleUrl,
+  FLEX_HEIGHT: true,
+  HEIGHT_TIERS: [1480, 1660, 1860, 2100, 2400],
+});
+</script>
+</body>
+</html>
