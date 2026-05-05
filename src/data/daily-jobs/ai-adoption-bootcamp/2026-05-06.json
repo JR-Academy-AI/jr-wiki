@@ -1,0 +1,39 @@
+{
+  "bootcamp": "ai-adoption-bootcamp",
+  "date": "2026-05-06",
+  "cohort": "AU",
+  "generatedAt": "2026-05-06T07:30:00+10:00",
+  "source": "WebSearch(jobs.deloitte.com.au + gradconnection.com + lifeattiktok.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Data, AI, and Machine Learning – Opportunities Available",
+      "company": "Deloitte",
+      "location": "Sydney, NSW",
+      "posted": "Listed 2026, rolling intake",
+      "url": "https://jobs.deloitte.com.au/job/Sydney-Data,-AI,-and-Machine-Learning-Opportunities-Available-NSW/1058983166/",
+      "why": "Deloitte 悉尼 Data/AI/ML 方向持续招聘 Consultant 至 Senior Consultant；AI Adoption Bootcamp 的 AI 战略框架、ROI 分析和 AI 实施路径模块直接对应 Deloitte 对 'AI/ML solution delivery' 和 '客户 AI 顾问' 的岗位要求；Big4 AI 顾问是 Adoption 学员最高频的 aspirational 目标，Deloitte Sydney 是该方向在澳洲招聘最活跃的雇主。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "行动档 · Junior / Graduate",
+      "title": "2026 Graduate – Data Analytics Program (International Students Welcome)",
+      "company": "EY",
+      "location": "Sydney / Melbourne, AU",
+      "posted": "Listed 2025–2026",
+      "url": "https://au.gradconnection.com/employers/ey/jobs/ey-ey-2026-graduate-data-analytics-program/",
+      "why": "EY 澳洲 2026 届 Data Analytics Graduate，Technology Consulting 方向，明确接受国际学生申请；AI Adoption Bootcamp 的数据叙事、Tableau/Power BI 和 AI 产品策略模块直接对应 EY 对 'data-driven storytelling' 和 '客户 AI 实施支持' 的 graduate 能力要求；Big4 名企 + 国际生友好 + 2026 年内即可入职，是 Adoption 学员最具可操作性的实投目标。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Intern / Named Program",
+      "title": "AI Product Manager Graduate – TikTok Product (Social & Creation) – 2026 Start",
+      "company": "TikTok",
+      "location": "Sydney, NSW / Singapore",
+      "posted": "Listed 2026, rolling intake",
+      "url": "https://lifeattiktok.com/search/7532812450681489682",
+      "why": "TikTok 明确招 2026 届 AI Product Manager Graduate，专注 Social & Creation AI 产品方向；AI Adoption Bootcamp 的 AI 需求分析、用户场景定义和产品路线图模块直接对应 PM 岗的核心 competency；TikTok T2 头部科技公司 + 明确 2026 Start + AI PM 方向高度吻合，是 Adoption 学员转型 AI PM 的稀缺 named program 机会。"
+    }
+  ]
+}

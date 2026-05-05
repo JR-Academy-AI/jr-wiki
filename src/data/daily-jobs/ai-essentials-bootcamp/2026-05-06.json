@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-essentials-bootcamp",
+  "date": "2026-05-06",
+  "cohort": "AU",
+  "generatedAt": "2026-05-06T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs + atlassian.com + lifeatcanva.com + gradconnection.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Software Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (Remote-friendly)",
+      "posted": "Listed 2025–2026 rolling intake",
+      "url": "https://www.atlassian.com/company/careers/details/17823",
+      "why": "Atlassian 2026 届 SWE Graduate 岗面向 AU/NZ，工程方向覆盖 AI Editor、Summarisation 等 GenAI 产品特性；AI Essentials 课程结束后学员具备 Prompt 工程、API 集成和 GenAI 工具链能力，恰好对接 Atlassian 产品 AI 化的需求；T0 品牌 + 澳洲居民可直接申请，是 Essentials 学员有信心冲刺的理想目标。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Intern / Named Program",
+      "title": "Software Engineer Intern – Frontend / Backend 2026/27",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "Listed Mar 2026, open intake",
+      "url": "https://www.lifeatcanva.com/en/jobs/6000000000970210/software-engineer-intern-frontendbackend-202627/",
+      "why": "Canva 2026/27 年度 12 周暑期 intern，12 月开课；AI Essentials 课程覆盖 Python、REST API 和 GenAI 工具链，恰好能应对 Canva intern HackerRank 筛题；Canva 以 Generative AI 为产品战略核心，intern 期间可直接接触 AI 相关产品组，T0 品牌且 AU/NZ 全职工作权即可申请。"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "bootcamp": "ai-engineer-bootcamp",
+  "date": "2026-05-06",
+  "cohort": "AU",
+  "generatedAt": "2026-05-06T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs + seek.com.au + atlassian.com + gradconnection.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Machine Learning Engineer, 2026 Graduate Australia & New Zealand",
+      "company": "Atlassian",
+      "location": "Sydney, NSW (Remote-friendly)",
+      "posted": "Listed 2025–2026 rolling intake",
+      "url": "https://www.atlassian.com/company/careers/details/17901",
+      "why": "Atlassian Central AI Group 专为提升全线产品（Confluence/Jira）AI 特性质量而设，该 2026 届 ML Engineer Graduate 岗汇报 AI Experience team，核心工作是 LLM pipeline 调优与 embedding 质量评估，正好对应 Bootcamp Phase 2-3 的 RAG 和模型微调项目；Atlassian T0 品牌，AU/NZ PR 身份即可申，学员完成 Phase 1-2 后有竞争力投递。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Intern / Named Program",
+      "title": "Machine Learning Engineer Intern – ANZ",
+      "company": "Canva",
+      "location": "Sydney, NSW",
+      "posted": "Listed 2025–2026",
+      "url": "https://au.gradconnection.com/employers/canva/jobs/canva-machine-learning-engineer-intern-anz/",
+      "why": "Canva ANZ 专设 ML Engineer 实习，明确 ANZ 本地 intern；Bootcamp Phase 2 RAG pipeline 项目和 Phase 3 Agent 构建经验可直接作为 portfolio 投递；Canva T0 品牌、工程文化开放、intern 转正率高，是 AI Engineer 方向学员打响第一份 ML 经验的最优通道。"
+    }
+  ]
+}

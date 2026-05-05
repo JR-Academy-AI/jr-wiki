@@ -1,0 +1,39 @@
+{
+  "bootcamp": "business-analyst",
+  "date": "2026-05-06",
+  "cohort": "AU",
+  "generatedAt": "2026-05-06T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs + gradconnection.com + cba.wd3.myworkdayjobs.com)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "Senior Market Data Sourcing Business Analyst",
+      "company": "Macquarie Group",
+      "location": "Sydney, NSW",
+      "posted": "Listed recently",
+      "url": "https://www.linkedin.com/jobs/view/senior-market-data-sourcing-business-analyst-at-macquarie-group-4073404468",
+      "why": "Macquarie 集团金融市场数据采购 BA 岗，Senior 级别，专注市场数据供应商合同谈判和需求分析；BA Bootcamp 的金融领域需求分析、利益相关方管理和 SQL 数据建模模块直接对应该岗核心 competency；Macquarie T1 顶级金融机构 + Sydney CBD + 明确 Senior BA 赛道，是学员 2-3 年工作经验后的理想职业目标。"
+    },
+    {
+      "tier": "actionable",
+      "tierLabel": "行动档 · Junior / Graduate",
+      "title": "2026 Project Grace: Business Analyst Graduate Program",
+      "company": "FDM Group",
+      "location": "Sydney / Melbourne, AU",
+      "posted": "Listed 2026, Feb/Mar/Apr start dates",
+      "url": "https://au.gradconnection.com/employers/fdm-group/jobs/fdm-group-2026-project-grace-business-analyst-graduate-program/",
+      "why": "FDM Project Grace BA 专项 Graduate 计划，2026 年 2/3/4 月三档开课；12 周 Skills Lab 覆盖 Excel/SQL/BI 工具 + Agile 交付，结业后直接派驻澳洲 Big4 银行 client 项目；BA Bootcamp 学员已具备 BPMN 和 User Story 基础，FDM 是以真实客户环境验证能力的最快通道，且只需澳洲 PR/Citizen，无需工作经验。"
+    },
+    {
+      "tier": "special",
+      "tierLabel": "特别档 · Named Campaign",
+      "title": "2026 CommBank & Bankwest Graduate Campaign",
+      "company": "Commonwealth Bank of Australia",
+      "location": "Sydney, NSW",
+      "posted": "Listed 2025–2026",
+      "url": "https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/XMLNAME-2026-CommBank---Bankwest-Graduate-Campaign_REQ227539-2",
+      "why": "CBA 2026 Graduate 统一招聘 Campaign，含 Business Analyst、Data Analyst、Project Manager 多方向；CBA T1 最大银行品牌，Graduate 转正即永久雇员，Feb 起步；BA Bootcamp 的结构化需求分析 + 敏捷交付项目可直接作为申请材料，建议学员 8 月前开始追踪该 Campaign 的开放时间线，不能错过 rolling 截止窗口。"
+    }
+  ]
+}

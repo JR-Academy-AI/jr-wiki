@@ -1,0 +1,19 @@
+{
+  "bootcamp": "ai-engineer-rag",
+  "date": "2026-05-06",
+  "cohort": "AU",
+  "generatedAt": "2026-05-06T07:30:00+10:00",
+  "source": "WebSearch(au.linkedin.com/jobs + seek.com.au)",
+  "jobs": [
+    {
+      "tier": "aspirational",
+      "tierLabel": "理想档 · Mid-Senior",
+      "title": "LLM / RAG / AI Agent Engineer",
+      "company": "TALi Technologies",
+      "location": "Australia (Hybrid)",
+      "posted": "Listed ~1–2 months ago",
+      "url": "https://www.linkedin.com/jobs/view/llm-rag-ai-agent-engineer-at-tali-technologies-4340870753",
+      "why": "TALi Technologies 专做 AI-powered ADHD 临床评估产品，当前在招 LLM/RAG/AI Agent 全栈工程师；岗位三大核心——RAG pipeline 构建、LLM 微调/推理优化、Agent 工具链——与 RAG Bootcamp 整条课程主线完全对应；这是市场上 title 和技术要求最贴合 RAG 课程方向的在招岗位之一，学员应以此岗标准打磨 portfolio，作为结课后首投目标。"
+    }
+  ]
+}
