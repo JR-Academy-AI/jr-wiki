@@ -203,16 +203,6 @@
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
 <script>
-  // 把 ```mermaid 代码块转成 <pre class="mermaid"> 让 mermaid.js 自动渲染
-  const mermaidRenderer = {
-    code(token) {
-      if (token.lang === 'mermaid') {
-        return `<pre class="mermaid">${token.text}</pre>`;
-      }
-      return false; // fallback 到默认 renderer
-    }
-  };
-
   (async () => {
     const root = document.getElementById('content');
     try {
@@ -232,10 +222,19 @@
         md = md.slice(fmMatch[0].length);
       }
 
-      // 渲染（mermaid 自定义 + GFM）
-      marked.use({ renderer: mermaidRenderer });
-      marked.use({ gfm: true, breaks: false, mangle: false, headerIds: true });
+      // marked 渲染（GFM + 标题 ID）
+      marked.use({ gfm: true, breaks: false });
       root.innerHTML = marked.parse(md);
+
+      // 把 marked 输出的 <pre><code class="language-mermaid"> 转成 mermaid 期望的 <pre class="mermaid">
+      // 这样不依赖 marked 版本的 renderer API 变化
+      root.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+        const pre = codeEl.parentElement;
+        const wrapper = document.createElement('pre');
+        wrapper.className = 'mermaid';
+        wrapper.textContent = codeEl.textContent;
+        pre.replaceWith(wrapper);
+      });
 
       // 初始化 mermaid 并渲染
       if (typeof mermaid !== 'undefined') {
