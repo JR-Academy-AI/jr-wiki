@@ -1,10 +1,14 @@
 {
-  "lockedAt": "2026-07-26T23:49:25.308Z",
+  "lockedAt": "2026-07-28T13:39:26.838Z",
   "version": 1,
   "slugs": [
     {
       "type": "article",
       "slug": "ai-coding-tools-app-store-boom-2026"
+    },
+    {
+      "type": "article",
+      "slug": "ai-course-to-job-gap"
     },
     {
       "type": "article",
@@ -320,6 +324,14 @@
     },
     {
       "type": "article",
+      "slug": "ai-engineer-resume-projects"
+    },
+    {
+      "type": "article",
+      "slug": "ai-engineer-vs-ai-researcher"
+    },
+    {
+      "type": "article",
       "slug": "ai-hackathon-weekly"
     },
     {
@@ -424,6 +436,10 @@
     },
     {
       "type": "article",
+      "slug": "frontend-backend-fullstack-to-ai"
+    },
+    {
+      "type": "article",
       "slug": "gemma-4-developer-guide"
     },
     {
@@ -441,6 +457,10 @@
     {
       "type": "article",
       "slug": "gpt-5-6-sol-terra-luna-guide"
+    },
+    {
+      "type": "article",
+      "slug": "how-to-choose-ai-learning-platform"
     },
     {
       "type": "article",
@@ -705,6 +725,14 @@
     {
       "type": "article",
       "slug": "openai-gpt56-government-stake-regulatory-moat-2026"
+    },
+    {
+      "type": "article",
+      "slug": "project-vs-course-vs-bootcamp"
+    },
+    {
+      "type": "article",
+      "slug": "python-depth-for-ai-projects"
     },
     {
       "type": "article",
