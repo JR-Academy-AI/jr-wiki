@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-08-05T23:46:44.148Z",
+  "lockedAt": "2026-08-06T01:14:59.345Z",
   "version": 1,
   "slugs": [
     {
@@ -1977,6 +1977,16 @@
       "type": "chapter",
       "book": "kiro-guide",
       "slug": "05-faq"
+    },
+    {
+      "type": "chapter",
+      "book": "kiro-guide",
+      "slug": "06-kiro-crew"
+    },
+    {
+      "type": "chapter",
+      "book": "kiro-guide",
+      "slug": "07-2026-new-features"
     },
     {
       "type": "chapter",
