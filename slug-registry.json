@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-08-12T23:42:48.942Z",
+  "lockedAt": "2026-08-13T01:15:51.973Z",
   "version": 1,
   "slugs": [
     {
@@ -2215,6 +2215,16 @@
       "type": "chapter",
       "book": "openhands-guide",
       "slug": "05-faq"
+    },
+    {
+      "type": "chapter",
+      "book": "openhands-guide",
+      "slug": "06-planning-mode"
+    },
+    {
+      "type": "chapter",
+      "book": "openhands-guide",
+      "slug": "07-automations-cost-tracking"
     },
     {
       "type": "chapter",
