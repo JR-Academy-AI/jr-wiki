@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-08-19T23:51:02.400Z",
+  "lockedAt": "2026-08-20T01:10:33.477Z",
   "version": 1,
   "slugs": [
     {
@@ -2033,6 +2033,16 @@
       "type": "chapter",
       "book": "kiro-guide",
       "slug": "05-faq"
+    },
+    {
+      "type": "chapter",
+      "book": "kiro-guide",
+      "slug": "06-team-collaboration"
+    },
+    {
+      "type": "chapter",
+      "book": "kiro-guide",
+      "slug": "07-ci-cd-integration"
     },
     {
       "type": "chapter",
